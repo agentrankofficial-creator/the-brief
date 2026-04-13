@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief — Apr 13, 2026</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--blue:#60a5fa;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* HEADER */
+header{border-bottom:1px solid var(--accent);padding:32px 0 20px;margin-bottom:0}
+.header-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.logo{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;font-weight:700}
+.date{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.headline-bar{margin-top:16px;font-size:13px;color:var(--muted);font-family:var(--font-ui);line-height:1.6}
+.headline-bar strong{color:var(--text)}
+
+/* NAV STRIP */
+.nav-strip{display:flex;gap:6px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:24px}
+.nav-pill{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:20px;background:var(--surface);color:var(--dim);cursor:pointer;border:1px solid var(--border);transition:all .2s;user-select:none}
+.nav-pill:hover,.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+
+/* SECTION LABELS */
+.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:24px 0 12px;display:flex;align-items:center;gap:8px}
+.section-label .dot{display:inline-block;width:8px;height:8px;border-radius:2px}
+
+/* STORY CARD */
+.story-card{background:var(--surface);border-radius:10px;margin-bottom:16px;overflow:hidden;border:1px solid var(--border);transition:border-color .2s}
+.story-card:hover{border-color:#3f3f46}
+.story-header{padding:20px 22px 16px;cursor:pointer;position:relative}
+.story-header:hover{background:var(--surface2)}
+.story-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.tag{font-family:var(--font-ui);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:3px;font-weight:700}
+.tag-geo{background:#e0525220;color:var(--red)}
+.tag-ai{background:#c8a03020;color:var(--accent)}
+.tag-india{background:#60a5fa20;color:var(--blue)}
+.tag-science{background:#4ade8020;color:var(--green)}
+.tag-crypto{background:#a78bfa20;color:#a78bfa}
+.tag-finance{background:#f472b620;color:#f472b6}
+.tag-opportunity{background:#c8a03020;color:var(--accent)}
+.trend-arrow{font-family:var(--font-ui);font-size:11px;font-weight:700}
+.trend-up{color:var(--red)}
+.trend-stable{color:var(--accent)}
+.trend-down{color:var(--green)}
+.time-horizon{font-family:var(--font-ui);font-size:9px;color:var(--dim);background:var(--surface2);padding:2px 7px;border-radius:3px}
+.decision-badge{font-family:var(--font-ui);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:800}
+.badge-act{background:#e0525230;color:var(--red);border:1px solid #e0525240}
+.badge-watch{background:#c8a03025;color:var(--accent);border:1px solid #c8a03035}
+.badge-note{background:#71717a20;color:var(--dim);border:1px solid #71717a30}
+.story-title{font-family:var(--font-body);font-size:20px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:6px}
+.story-summary{font-size:15px;color:var(--muted);line-height:1.65}
+.expand-hint{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:10px;display:flex;align-items:center;gap:4px}
+.expand-hint .chevron{transition:transform .2s;display:inline-block}
+.story-card.open .expand-hint .chevron{transform:rotate(90deg)}
+
+/* DEPTH LAYERS */
+.layer{display:none;border-top:1px solid var(--border);padding:0}
+.story-card.open .layer-1{display:block}
+.story-card.open.deep .layer-2{display:block}
+.layer-content{padding:18px 22px}
+.layer-label{font-family:var(--font-ui);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:10px 22px 0;font-weight:700}
+
+.so-what{background:var(--surface2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0;margin:12px 0}
+.so-what-label{font-family:var(--font-ui);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:4px}
+.so-what p{font-size:14px;color:var(--text);line-height:1.6;margin:0}
+
+.action-box{background:#c8a03010;border:1px solid #c8a03025;border-radius:6px;padding:14px 18px;margin:12px 0}
+.action-box-label{font-family:var(--font-ui);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.action-box ul{list-style:none;padding:0}
+.action-box li{font-family:var(--font-ui);font-size:13px;color:var(--text);padding:4px 0;padding-left:16px;position:relative}
+.action-box li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+
+.contrarian{background:#e0525210;border:1px solid #e0525220;border-radius:6px;padding:14px 18px;margin:12px 0}
+.contrarian-label{font-family:var(--font-ui);font-size:11px;color:var(--red);font-weight:700;margin-bottom:4px}
+.contrarian p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+
+.connections{margin:12px 0}
+.connections-label{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.conn-links{display:flex;flex-wrap:wrap;gap:6px}
+.conn-chip{font-family:var(--font-ui);font-size:11px;color:var(--muted);background:var(--surface2);padding:4px 10px;border-radius:12px;cursor:pointer;border:1px solid var(--border);transition:all .15s}
+.conn-chip:hover{color:var(--accent);border-color:var(--accent)}
+
+.source-row{font-family:var(--font-ui);font-size:11px;color:var(--dim);padding-top:10px;border-top:1px solid var(--border);margin-top:12px}
+.source-row a{color:var(--accent);text-decoration:none}
+.source-row a:hover{text-decoration:underline}
+
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;color:var(--accent);background:none;border:1px solid var(--accent);padding:6px 14px;border-radius:4px;cursor:pointer;margin-top:10px;transition:all .15s}
+.deep-dive-btn:hover{background:var(--accent);color:#0a0a0b}
+
+/* STORY CONNECTIONS MAP */
+.connections-map{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin:24px 0}
+.connections-map h3{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.chain{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.chain-node{font-family:var(--font-ui);font-size:12px;color:var(--text);background:var(--surface2);padding:4px 10px;border-radius:4px;cursor:pointer;border:1px solid var(--border);transition:all .15s}
+.chain-node:hover{border-color:var(--accent);color:var(--accent)}
+.chain-arrow{color:var(--dim);font-size:12px}
+
+/* QUICK HITS */
+.quick-hit{padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start}
+.quick-hit:last-child{border-bottom:none}
+.qh-bullet{color:var(--accent);font-size:16px;line-height:1.6;flex-shrink:0}
+.qh-text{font-size:14px;color:var(--muted);line-height:1.6}
+.qh-text strong{color:var(--text)}
+.qh-source{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+
+/* COVERAGE SCORECARD */
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin:24px 0}
+.scorecard h3{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.score-item{display:flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:12px}
+.score-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.score-dot.covered{background:var(--green)}
+.score-dot.partial{background:var(--accent)}
+.score-dot.missed{background:var(--red)}
+.score-name{color:var(--muted)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:24px 0 40px;margin-top:24px}
+footer p{font-family:var(--font-ui);font-size:11px;color:var(--dim);line-height:1.7}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .story-title{font-size:17px}
+  .story-header{padding:16px}
+  .layer-content{padding:14px 16px}
+  .score-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<header>
+<div class="header-row">
+  <span class="logo">THE BRIEF</span>
+  <span class="date">Sunday, April 13, 2026 · Evening Edition</span>
+</div>
+<div class="headline-bar" style="margin-top:14px;">
+  <strong>Dalio: Step 9 of World War</strong> · Trump Threatens Hormuz Blockade · Anthropic $30B · Nikkei +7.84% · FIIs Dump ₹1.79L Cr · Artemis II Lands
+</div>
+</header>
+
+<!-- TOPIC NAV -->
+<div class="nav-strip">
+  <div class="nav-pill active" onclick="filterStories('all')">All</div>
+  <div class="nav-pill" onclick="filterStories('geo')">Geopolitics</div>
+  <div class="nav-pill" onclick="filterStories('ai')">AI & Tech</div>
+  <div class="nav-pill" onclick="filterStories('india')">India</div>
+  <div class="nav-pill" onclick="filterStories('finance')">Markets</div>
+  <div class="nav-pill" onclick="filterStories('science')">Science</div>
+  <div class="nav-pill" onclick="filterStories('crypto')">Crypto</div>
+  <div class="nav-pill" onclick="filterStories('opportunity')">Opportunities</div>
+</div>
+
+<!-- STORY CONNECTION MAP -->
+<div class="connections-map">
+  <h3>How Today's Stories Connect</h3>
+  <div class="chain">
+    <span class="chain-node" onclick="scrollToStory('dalio')">Dalio: Step 9 of 13</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('dalio')">Iran Talks Collapse</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('dalio')">Trump: Hormuz Blockade</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('dalio')">Oil Panic</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('rbi')">RBI Holds</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('fii')">FII → Japan/US</span>
+  </div>
+  <div class="chain">
+    <span class="chain-node" onclick="scrollToStory('anthropic')">Anthropic $30B</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('agents')">Agent Safety Moat</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('it-ai')">Indian IT Crossroads</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('nuclear')">Energy Infrastructure</span>
+  </div>
+  <div class="chain">
+    <span class="chain-node" onclick="scrollToStory('kreditbee')">KreditBee Unicorn</span>
+    <span class="chain-arrow">→</span>
+    <span class="chain-node" onclick="scrollToStory('nykaa')">Nykaa Momentum</span>
+    <span class="chain-arrow">↔</span>
+    <span class="chain-node" onclick="scrollToStory('fii')">India Repricing</span>
+  </div>
+</div>
+
+<!-- ==================== THE LEAD ==================== -->
+<div class="section-label"><span class="dot" style="background:var(--red)"></span> <span style="color:var(--red)">THE LEAD</span></div>
+
+<div class="story-card" id="dalio" data-tags="geo finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-geo">GEOPOLITICS</span>
+      <span class="trend-arrow trend-up">↑ ESCALATING</span>
+      <span class="time-horizon">THIS QUARTER</span>
+      <span class="decision-badge badge-act">ACT</span>
+    </div>
+    <div class="story-title">Dalio Says We're at Step 9 of World War. Trump Threatens Hormuz Blockade.</div>
+    <div class="story-summary">Ray Dalio maps a 13-step world war cycle — says we're at Step 9 (simultaneous multi-theater conflicts, hardening alliances). US-Iran talks collapsed after 21 hours. Then Trump threatened to blockade the Strait of Hormuz. Supertankers already U-turning. Oil in panic.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand analysis</div>
+  </div>
+  
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Dalio has published a detailed 13-step world war escalation framework, and places us at <strong style="color:var(--red);">Step 9</strong> — simultaneous multi-theater conflicts with hardening alliance structures. He points to active shooting wars (Ukraine-Russia, Israel-Gaza-Lebanon-Syria, Yemen-Sudan, US-Israel-Iran) alongside non-shooting economic, trade, and technology wars. His quote: <em style="color:var(--text);">"The monetary order, some domestic political orders, and the geopolitical world order are breaking down."</em> He draws parallels to 1913–14 and 1938–39, with a US-China confrontation over Taiwan as the most consequential risk, peaking around 2028.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Then it got worse. US VP JD Vance led 21 hours of marathon talks in Islamabad — the highest-level US-Iran meeting since the 1979 revolution — and they collapsed. Iran's demands: control of the Strait of Hormuz, release of frozen assets, war reparations, and a regional ceasefire. Vance called Washington's proposal a "final and best offer." <strong style="color:var(--red);">Then Trump threatened to blockade the Strait of Hormuz entirely</strong> (CNN, NPR — April 12). Two supertankers had already U-turned. Oil is in full panic mode.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;"><strong style="color:var(--text);">Global market reaction this week:</strong> Sensex -0.36%, Nifty Bank -1.39%. But globally: S&P 500 +3.56%, Nikkei 225 <strong style="color:var(--green);">+7.84%</strong>, FTSE 100 +1.55%, Shanghai +2.74%. Capital is flowing OUT of India and INTO Japan, US, and North Asia. The divergence is the story.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>A Hormuz blockade would shut off ~20% of global oil supply. This isn't a tail risk anymore — it's a stated policy threat from the US President. Dalio's Step 9 framework gives you the macro lens: this is not one conflict, it's a system of conflicts reinforcing each other. Defense, energy infrastructure, gold, and hard assets are the hedge. Japan's +7.84% week tells you where the smart money is rotating.</p>
+      </div>
+
+      <div class="action-box">
+        <div class="action-box-label">WHAT TO DO</div>
+        <ul>
+          <li>Audit EM exposure — capital is actively rotating to Japan, Taiwan, South Korea</li>
+          <li>Hormuz blockade risk = oil shock scenario. Energy longs, airline/transport shorts</li>
+          <li>Gold is Dalio's explicit recommendation (he's been saying this since Feb 2026)</li>
+          <li>Defense sector is a structural multi-year play across US, India, Europe</li>
+          <li>Watch for Iran's response to "final and best offer" within 48-72 hours</li>
+        </ul>
+      </div>
+
+      <div class="contrarian">
+        <div class="contrarian-label">CONTRARIAN VIEW</div>
+        <p>Trump's Hormuz blockade threat may be negotiation leverage, not intent. Iran's foreign ministry said "no one expected a deal in one day" — diplomatic language for "we're still talking." Pakistan is actively mediating and urged both sides to continue upholding the existing ceasefire. Vance explicitly left the door open, calling Washington's proposal a "final and best offer" — which means it's still on the table. The 21 hours of face time was itself a breakthrough (highest-level US-Iran contact since 1979). Markets may be pricing in the worst case while the base case is a messy, extended negotiation that eventually produces a framework — not a blockade.</p>
+      </div>
+      
+      <div class="connections">
+        <div class="connections-label">CONNECTED STORIES</div>
+        <div class="conn-links">
+          <span class="conn-chip" onclick="scrollToStory('fii')">FII Exodus ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('rbi')">RBI Holds ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('nuclear')">Energy Infra ↗</span>
+        </div>
+      </div>
+
+      <button class="deep-dive-btn" onclick="toggleDeep(event, this)">Go Deeper ▸</button>
+      
+      <div class="source-row">
+        Sources: <a href="https://x.com/RayDalio/status/2041531182018367773" target="_blank">Ray Dalio on X</a> · <a href="https://mail.blockworks.com/p/april-is-the-cruelest-month" target="_blank">The Breakdown (Blockworks)</a> · Economic Times · ET Markets Weekly Wrap
+      </div>
+    </div>
+  </div>
+  
+  <div class="layer layer-2">
+    <div class="layer-label">DEEP DIVE — FULL SOURCE CONTENT</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">Dalio's 13-Step Framework (via Time, Benzinga, Fortune):</strong> Dalio defines Step 9 as multi-theater conflicts with hardening alliance structures. He maps the current state: Ukraine-Russia, Israel-Gaza-Lebanon-Syria, Yemen-Sudan, US-Israel-Iran (shooting wars) + US-China tech war, trade war, financial sanctions (non-shooting wars). He says: "I have many indicators suggesting that we are in the part of the Big Cycle when the monetary order, some domestic political orders, and the geopolitical world order are breaking down." In February 2026, he explicitly recommended gold as the best protection against a "capital war of weaponizing money."</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">From CNN/NPR (Apr 12):</strong> After talks collapsed, Trump stated the US will blockade the Strait of Hormuz. This is a major escalation — Hormuz handles ~20% of global oil supply. Iran's demands included: control of Hormuz, release of frozen assets abroad, war reparations, and a regional ceasefire including Lebanon. Vance called Washington's proposal a "final and best offer." Iran's foreign ministry: "No one had expected a deal in one day." Pakistan's FM Ishaq Dar urged both sides to continue upholding the existing ceasefire.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">From The Breakdown (Blockworks):</strong> Also covered: ZachXBT exposed a DPRK IT-worker operation generating ~$1M/month — 390 fabricated identities, forged documents, crypto-to-fiat conversions. Lucas Bruder (Jito Labs CEO) proposes rebranding MEV to "Transaction Ordering Value" (TOV).</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;"><strong style="color:var(--text)">From ET Markets Weekly Wrap:</strong> Sensex -0.36%, Nifty Bank -1.39%. Angel One -92% in one week. Ather Energy +143%. HDFC Bank and ICICI Bank near 52-week lows. Weekly FII cash outflow: ₹29,425 Cr. FII index futures: -₹6,080 Cr. FII index options: -₹13,188 Cr.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SIGNAL BOARD ==================== -->
+<div class="section-label"><span class="dot" style="background:var(--accent)"></span> <span style="color:var(--accent)">SIGNAL BOARD</span></div>
+
+<!-- Anthropic -->
+<div class="story-card" id="anthropic" data-tags="ai" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-ai">AI / SCALE</span>
+      <span class="trend-arrow trend-up">↑ ACCELERATING</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">Anthropic Hits $30B Revenue Run Rate. Perplexity at $450M.</div>
+    <div class="story-summary">Up from $9B at end of 2025. 1,000+ business customers at $1M+/year — doubled since February. Signed deal with Google/Broadcom for GW-scale TPU capacity. Perplexity's AI agent platform drove 50% monthly revenue growth.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">The numbers are staggering. Anthropic's revenue has more than tripled in ~4 months. The Google/Broadcom TPU deal for multiple gigawatts coming online in 2027 signals they're building for a world where demand is 10x what it is today. Meanwhile, Perplexity hit $450M ARR with 100M+ monthly active users — the AI agent pivot is working.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Also from OurCrowd this week: BlackRock backed quantum computing firm IQM with €50M ahead of its 2026 IPO. Valar Atomics raised $450M at $2B for nuclear energy. Ledger raised $380M at $1.5B for crypto hardware wallets. The infrastructure layer beneath AI is attracting serious capital.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>AI revenue acceleration is no longer a future event — it's the present. The infrastructure buildout (energy, chips, data centers) is the investable derivative. Anthropic's $30B run rate validates the entire thesis that enterprises will pay massively for frontier AI.</p>
+      </div>
+      
+      <div class="connections">
+        <div class="connections-label">CONNECTED STORIES</div>
+        <div class="conn-links">
+          <span class="conn-chip" onclick="scrollToStory('agents')">Agent Safety ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('nuclear')">Energy Infra ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('it-ai')">Indian IT ↗</span>
+        </div>
+      </div>
+      
+      <button class="deep-dive-btn" onclick="toggleDeep(event, this)">Go Deeper ▸</button>
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d82aee8614f545" target="_blank">OurCrowd Weekly Newsletter</a></div>
+    </div>
+  </div>
+  <div class="layer layer-2">
+    <div class="layer-label">DEEP DIVE</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">Anthropic CFO Krishna Rao:</strong> "This groundbreaking partnership with Google and Broadcom is a continuation of our disciplined approach to scaling infrastructure: we are building the capacity necessary to serve the exponential growth we have seen in our customer base while also enabling Claude to define the frontier of AI development."</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">Perplexity details:</strong> Launched Perplexity Computer in February, adding usage-based pricing on top of subscriptions. Now has tens of thousands of enterprise clients. The strategic pivot from search engine to AI agent platform is the revenue catalyst.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;"><strong style="color:var(--text)">Other funding signals this week:</strong> Sycamore (AI agent orchestration) raised $65M Seed led by Lightspeed. Nitra (AI healthcare platform) raised $187M across Series A & B. Scentian Bio ("digital nose" biosensors) raised $4M. The AI investment wave is broadening beyond foundation models.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Global Markets -->
+<div class="story-card" id="global-markets" data-tags="finance geo" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-finance">GLOBAL MARKETS</span>
+      <span class="trend-arrow trend-up">↑ DIVERGING</span>
+      <span class="time-horizon">THIS WEEK</span>
+      <span class="decision-badge badge-act">ACT</span>
+    </div>
+    <div class="story-title">The Great Rotation: Japan +7.84%, US +3.56%, India -0.36%</div>
+    <div class="story-summary">Global capital is actively rotating out of India into Japan, US, Taiwan, and South Korea. Nikkei had its best week since 2020. S&P 500 recovering. India and China lagging. The divergence is the trade.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;"><strong style="color:var(--text)">Weekly scorecard:</strong></p>
+      <table style="width:100%;font-family:var(--font-ui);font-size:13px;border-collapse:collapse;margin-bottom:14px;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:6px 0;color:var(--muted);">Nikkei 225 (Japan)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">57,402</td>
+          <td style="padding:6px 0;color:var(--green);text-align:right;font-weight:700;">+7.84%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:6px 0;color:var(--muted);">S&P 500 (US)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">6,816</td>
+          <td style="padding:6px 0;color:var(--green);text-align:right;font-weight:700;">+3.56%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:6px 0;color:var(--muted);">Shanghai Composite (China)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">3,986</td>
+          <td style="padding:6px 0;color:var(--green);text-align:right;">+2.74%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:6px 0;color:var(--muted);">FTSE 100 (UK)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">10,595</td>
+          <td style="padding:6px 0;color:var(--green);text-align:right;">+1.55%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:6px 0;color:var(--muted);">Sensex (India)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">77,550</td>
+          <td style="padding:6px 0;color:var(--red);text-align:right;">-0.36%</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 0;color:var(--muted);">Nifty Bank (India)</td>
+          <td style="padding:6px 0;color:var(--text);text-align:right;">51,549</td>
+          <td style="padding:6px 0;color:var(--red);text-align:right;font-weight:700;">-1.39%</td>
+        </tr>
+      </table>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Japan's +7.84% is the standout. The yen carry trade unwind that crushed the Nikkei last year has reversed — foreign capital is flooding back in as Japan offers real earnings growth + BOJ normalization. US markets recovered on hopes that Iran talks would produce a deal (they didn't, so Monday could give back gains). India is the odd one out: Sensex down, Bank Nifty down 1.39%, FIIs selling relentlessly.</p>
+
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>The global rotation is not temporary. FIIs are making a relative-value call: Japan and Taiwan offer better earnings visibility at lower valuations than India. For an investor thinking like a global allocator (not a domestic one), the question is: why overweight India at 20x when Japan offers similar growth at 14x with currency tailwind? India needs Q4 earnings to answer that question.</p>
+      </div>
+
+      <div class="action-box">
+        <div class="action-box-label">WHAT TO DO</div>
+        <ul>
+          <li>Consider Japan ETFs (Nikkei exposure) for tactical allocation</li>
+          <li>US market recovery may reverse Monday if Hormuz blockade threat escalates</li>
+          <li>Gold at ₹1,52,690 (-₹744 this week) — Dalio's explicit hedge recommendation</li>
+          <li>USD/INR at 92.73 — rupee stability is the swing factor for India returns in dollar terms</li>
+        </ul>
+      </div>
+
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d821265a26c20f" target="_blank">SBNRI Weekly</a> · <a href="https://mail.google.com/mail/u/0/#all/19d81bbc64c80e5b" target="_blank">ET Markets Weekly Wrap</a> · <a href="https://mail.google.com/mail/u/0/#all/19d8141d7bf0991a" target="_blank">Morning Brew</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- FII Exodus -->
+<div class="story-card" id="fii" data-tags="india finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-india">INDIA / FLOWS</span>
+      <span class="trend-arrow trend-up">↑ WORSENING</span>
+      <span class="time-horizon">THIS QUARTER</span>
+      <span class="decision-badge badge-act">ACT</span>
+    </div>
+    <div class="story-title">Foreign Capital Reprices the India Premium. FIIs Dump ₹1.79L Cr YTD.</div>
+    <div class="story-summary">Foreign ownership at a 14-year low. India slipped to 4th in MSCI EM Index — behind China, Taiwan, South Korea. Zerodha's Nithin Kamath: foreign investor interest has "pretty much died out." Nifty premium compressed from 73% to ~27%.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">This is not a cyclical blip. Between Sep 2024 and Nov 2025, FPIs pulled out nearly $28B. India's MSCI EM weighting drop triggers passive outflows mechanically. The structural story — demographics, digital infra, manufacturing — is intact. What was overextended was the price investors were willing to pay while earnings underwhelmed.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Three catalysts for recovery: (1) Currency stability — rupee depreciation is converting positive equity returns into negative dollar returns. (2) Strong Q4 FY26 earnings from banks, capital goods, consumption. (3) Oil below $85/barrel. The silver lining: domestic SIP flows hit record ₹32,087 Cr in March.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>Q4 FY26 earnings season is the make-or-break moment. A strong print resets the narrative. A miss extends the pain through H1 FY27. FPIs aren't exiting India altogether — they're becoming hyper-selective: telecom, capital goods, infra, BFSI. Avoid IT and consumption where visibility is weak.</p>
+      </div>
+      
+      <div class="action-box">
+        <div class="action-box-label">WHAT TO DO</div>
+        <ul>
+          <li>Watch Q4 FY26 results from banks and capital goods sectors</li>
+          <li>Overweight domestic-demand plays: telecom, infra, BFSI</li>
+          <li>Underweight IT and discretionary consumption until earnings visibility improves</li>
+          <li>Track INR/USD — any India-US trade deal progress is a catalyst</li>
+        </ul>
+      </div>
+      
+      <div class="contrarian">
+        <div class="contrarian-label">CONTRARIAN VIEW</div>
+        <p>The bearish case is strong — ₹48,210 Cr sold in April alone (half the month gone), ₹52,000 Cr in March, ₹1.79L Cr YTD. This is accelerating, not stabilizing. But here's the counter: FIIs are selling India to fund rotations into Japan (+7.84% this week), Taiwan, and South Korea — not because India is broken, but because it was overpriced relative to those alternatives. The Nifty at 20x (down from 25x+) with corporate balance sheets stronger than any previous cycle is approaching fair value, not crisis value. The real question isn't "are FIIs leaving?" — it's "at what price do they come back?" If Q4 FY26 earnings deliver, 20x on an accelerating earnings trajectory looks cheap to global allocators. The danger: if oil stays above $85, earnings won't deliver, and the repricing has further to go.</p>
+      </div>
+      
+      <div class="connections">
+        <div class="connections-label">CONNECTED STORIES</div>
+        <div class="conn-links">
+          <span class="conn-chip" onclick="scrollToStory('dalio')">Dalio WW3 ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('rbi')">RBI Holds ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('kreditbee')">KreditBee ↗</span>
+          <span class="conn-chip" onclick="scrollToStory('nykaa')">Nykaa ↗</span>
+        </div>
+      </div>
+      
+      <button class="deep-dive-btn" onclick="toggleDeep(event, this)">Go Deeper ▸</button>
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d813e25a534485" target="_blank">Inc42 Markets</a> · <a href="https://mail.google.com/mail/u/0/#all/19d821265a26c20f" target="_blank">SBNRI Weekly</a></div>
+    </div>
+  </div>
+  <div class="layer layer-2">
+    <div class="layer-label">DEEP DIVE</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">Key data points:</strong> Nifty 50 at ~20x earnings. EM premium compressed from 73% to 27%. FPIs sold $18.9B in 2025 alone. March FII outflow: ₹52,000 Cr in first fortnight. Weekly FII cash outflow: ₹29,425 Cr.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;"><strong style="color:var(--text)">Sector snapshot:</strong> Angel One -92% in one week. HDFC Bank and ICICI Bank near 52-week lows. Ather Energy +143%. Prime Focus +163%. NALCO +115%. The market is violently rotating — old large-cap darlings being dumped, mid-cap/momentum names surging.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;"><strong style="color:var(--text)">Policy lever:</strong> India's LTCG/STCG framework and rising STT add friction. "Fixing or simplifying these taxes is probably the quickest and easiest thing the government can do to bring money back" — Tarun Singh, Highbrow Securities.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Agent Safety -->
+<div class="story-card" id="agents" data-tags="ai" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-ai">AI / INFRASTRUCTURE</span>
+      <span class="trend-arrow trend-up">↑ EMERGING</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">Agent Safety Is the New Competitive Moat</div>
+    <div class="story-summary">Guild AI's CEO (ex-Netscape, ex-Meta) is building the safety layer for AI agents. Azeem Azhar says Mythos Preview means critical infrastructure is systemically mispriced. The control layer isn't a feature — it's the entire product category.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Two converging signals this week. The Deep View profiled Guild AI — a startup deploying dozens of workflow-specific agents across enterprises while tracking everything they do. The product launched in fall 2025 and found itself at the center of enterprise AI by early 2026. Topics covered: bottom-up innovation, agent supervision platforms, why safety infrastructure is the new competitive moat.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Separately, Azeem Azhar (Exponential View) analyzed Anthropic's Mythos Preview and concluded: "the most significant and immediate implication of Mythos is on how we price risk. Critical infrastructure is the asset class that is most exposed and is systemically mispriced." He also highlighted Helen Toner's essay arguing we should stop debating AGI and instead describe "vivid, concrete milestones."</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>When agents can execute autonomously, the cost of being wrong goes up 100x. Agent supervision, governance, and audit trails aren't a nice-to-have — they're the rails. Sycamore ($65M Seed from Lightspeed) is building agent orchestration for exactly this reason. This is a category, not a feature.</p>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://archive.thedeepview.com/p/the-race-to-control-ai-agents-begins" target="_blank">The Deep View</a> · <a href="https://www.exponentialview.co/p/ev-569" target="_blank">Exponential View #569</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- RBI / India Macro -->
+<div class="story-card" id="rbi" data-tags="india finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-india">INDIA / MACRO</span>
+      <span class="trend-arrow trend-stable">→ HOLDING</span>
+      <span class="time-horizon">THIS QUARTER</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">RBI Holds for Third Time. World Bank Cuts India Growth to 6.6%.</div>
+    <div class="story-summary">MPC unanimously held repo at 5.25%, prioritizing stability as crude spikes. World Bank down from 7.6% to 6.6% for FY27. But equity MF inflows surged 56% MoM and SIPs hit a record ₹32,087 Cr. Domestic conviction unshaken.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">The RBI is threading a needle: oil is spiking, geopolitical risk is elevated, but domestic growth needs support. Their answer: hold and watch. The World Bank still considers India among the fastest-growing major economies, citing strong forex reserves, low inflation, and new FTAs with EU and UK. The real story is domestic retail investors — SIP flows are structural and provide a demand floor the market has never had before.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>Rates aren't going up. They're easing toward 6% in H2 FY27 if oil cooperates. This supports credit growth and consumption in the back half of the year. The SIP structural bid means violent selloffs get bought — but it also means less upside compression during rallies. The floor is higher, but so is the ceiling.</p>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d821265a26c20f" target="_blank">SBNRI Weekly</a> · <a href="https://mail.google.com/mail/u/0/#all/19d81bbc64c80e5b" target="_blank">ET Markets Weekly Wrap</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- KreditBee -->
+<div class="story-card" id="kreditbee" data-tags="india finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-india">INDIA / FINTECH</span>
+      <span class="trend-arrow trend-stable">→ STEADY</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">KreditBee Becomes India's 128th Unicorn at $1.25B</div>
+    <div class="story-summary">$280M Series E, 3X oversubscribed, in a quarter where startup funding was down 26% YoY. 30K loans/day, 18M customers. Revenue ₹3,300 Cr, profits up 45%. IPO planned for late 2026.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">What makes KreditBee notable isn't the unicorn tag — it's the fundamentals. 93.5% on-time repayment rate (99% within 30 days). 90% unsecured lending with tight 4% approval rates. AUM at ₹15,000 Cr (+44% YoY). Revenue at ₹3,300 Cr with real profits. They underwrite using 150 data sources and AI/ML models trained on 8 Cr applications. The moat is the underwriting engine, not the brand.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">The five-year plan: IPO by end of 2026 (₹1,000 Cr fresh issue), then a small finance bank licence. This is the playbook — NBFC → IPO → banking licence → cheaper capital → product expansion.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>If you're tracking Indian fintech IPOs for late 2026, KreditBee joins the pipeline alongside Ather Energy and others. The 3X oversubscription during a funding drought is the real signal — investors are paying up for profitability and underwriting discipline, not growth-at-all-costs.</p>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d802b860b37a3d" target="_blank">Inc42 The Outline</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Artemis II -->
+<div class="story-card" id="artemis" data-tags="science" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-science">SCIENCE / FRONTIER</span>
+      <span class="trend-arrow trend-stable">→ MILESTONE</span>
+      <span class="time-horizon">THIS DECADE</span>
+      <span class="decision-badge badge-note">NOTE</span>
+    </div>
+    <div class="story-title">Artemis II Splashes Down. Humans Went Farther Than Ever.</div>
+    <div class="story-summary">10-day mission, farthest any human has traveled from Earth. Heat shield survived re-entry at 32x speed of sound. Crewed moon landing targeted for 2028. Also: first primate civil war documented, and FDA may approve the first anti-aging drug — for dogs.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">The Orion capsule's heat shield performance is the unsung story — this was widely considered the most dangerous part of the mission. It clears the path for Artemis III (crewed landing, 2028) and reignites the commercial space narrative. Expect Lockheed Martin, Boeing, and SpaceX to see renewed interest.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;"><strong style="color:var(--text)">Other frontier signals:</strong> Scientists documented the first confirmed primate civil war in Uganda — 200 chimps splitting after key "social bridge" males died, raising deep questions about evolutionary roots of conflict. And Loyal (San Francisco biotech) is closing in on FDA approval for LOY-002, the first drug to slow aging in any species. If approved, it hits market by end of 2026.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;">In materials science, a T. rex collagen handbag was created via biotech — extracting ancient protein fragments, inserting them into animal cells, growing collagen into leather. Expected to fetch $500K at auction. A novelty today, a preview of tomorrow's materials revolution.</p>
+      
+      <div class="source-row">Sources: <a href="https://www.superhuman.ai/p/sunday-special-artemis-2-makes-a-successful-splashdown" target="_blank">Superhuman AI Sunday Special</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== OPPORTUNITIES ==================== -->
+<div class="section-label"><span class="dot" style="background:var(--accent)"></span> <span style="color:var(--accent)">OPPORTUNITY RADAR</span></div>
+
+<!-- Nykaa -->
+<div class="story-card" id="nykaa" data-tags="india opportunity finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-opportunity">OPPORTUNITY</span>
+      <span class="trend-arrow trend-up">↑ INFLECTING</span>
+      <span class="time-horizon">THIS QUARTER</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">Nykaa: Strongest Quarter in 3 Years</div>
+    <div class="story-summary">Projects high-twenties revenue growth in Q4 FY26 — strongest in 12 quarters. FY26 at upper end of mid-20% range. Honasa Consumer also sees 20-30% Q4 growth.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">If Nykaa delivers, it's a momentum inflection for the entire D2C / consumer tech cohort. Honasa (Mamaearth parent) also guiding 20-30% Q4 growth — suggesting this isn't company-specific but a sector turn. The question: can consumer discretionary hold up if oil-driven inflation hits purchasing power in Q1 FY27?</p>
+      
+      <div class="action-box">
+        <div class="action-box-label">WHAT TO DO</div>
+        <ul>
+          <li>Wait for actual Q4 numbers before adding positions</li>
+          <li>If both Nykaa and Honasa beat guidance, it's a sector signal</li>
+          <li>Watch for margin expansion, not just revenue growth</li>
+        </ul>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d813e25a534485" target="_blank">Inc42 Markets</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Nuclear / Energy Infra -->
+<div class="story-card" id="nuclear" data-tags="ai opportunity" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-ai">ENERGY / AI INFRA</span>
+      <span class="trend-arrow trend-up">↑ SURGING</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-act">ACT</span>
+    </div>
+    <div class="story-title">Nuclear & Data Center Energy: The AI Bottleneck Play</div>
+    <div class="story-summary">Valar Atomics raised $450M at $2B. Crusoe building 2.1GW campus in Texas for Microsoft. Energy is the pick-and-shovel play for the AI boom.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Nuclear energy startup Valar Atomics raised $450M at $2B valuation. Crusoe is expanding its Abilene, Texas campus to 2.1GW total capacity — including a 900MW facility with onsite power plant specifically for Microsoft's AI infrastructure. Microsoft's Noelle Walsh: "Crusoe's facility reflects the type of large-scale infrastructure that supports next generation AI."</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">This converges with the Dalio thesis. If geopolitical conflict disrupts energy supply chains, countries and companies with domestic energy infrastructure win. Nuclear + renewables + onsite generation = energy independence for AI compute.</p>
+      
+      <div class="so-what">
+        <div class="so-what-label">SO WHAT</div>
+        <p>Energy infrastructure is simultaneously the AI bottleneck and the geopolitical hedge. Nuclear, grid modernization, and power generation are the convergence trade. This is the "sell pickaxes during the gold rush" play for 2026-2030.</p>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d82aee8614f545" target="_blank">OurCrowd Weekly</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Indian IT -->
+<div class="story-card" id="it-ai" data-tags="india ai opportunity" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-india">INDIA / AI</span>
+      <span class="trend-arrow trend-up">↑ CRITICAL</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">Indian IT's AI Crossroads: $190B Services Surplus at Risk</div>
+    <div class="story-summary">Accenture's quarterly AI revenue: $1.1B. Plans to invest $5B/year in AI acquisitions. Indian IT barely beginning M&A after years of caution. AI threatens India's $190B services trade surplus.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Two ET Prime stories converge: Accenture is pressing the AI pedal through aggressive M&A while Indian IT firms sit cautious. Simultaneously, AI is challenging the labour-arbitrage model that underpins India's $190B services trade surplus. GCC-led services are growing, but the question is whether India can move up the value chain fast enough.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">SaaS is also facing an AI shake-up, and Indian IT's large SaaS partnerships are being disrupted. The next 2 quarters reveal who's adapting (TCS offering 25K fresher jobs, keeping hiring flexible) and who's exposed.</p>
+      
+      <div class="contrarian">
+        <div class="contrarian-label">CONTRARIAN VIEW</div>
+        <p>India's IT workforce is uniquely positioned to retrain for AI-native services. The $190B surplus is a lagging indicator. GCCs are already hiring AI talent in India faster than anywhere else. The risk is overstated if you believe India's cost-quality mix adapts within 2-3 years.</p>
+      </div>
+      
+      <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d7f905caa7e217" target="_blank">ET Prime</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== ALSO ON YOUR RADAR ==================== -->
+<div class="section-label"><span class="dot" style="background:var(--dim)"></span> <span style="color:var(--dim)">ALSO ON YOUR RADAR</span></div>
+
+<!-- GLP-1 -->
+<div class="story-card" id="glp1" data-tags="science finance" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-science">BIOTECH / HEALTH</span>
+      <span class="time-horizon">THIS YEAR</span>
+      <span class="decision-badge badge-watch">WATCH</span>
+    </div>
+    <div class="story-title">GLP-1 Drugs: Genetic Key to Unlocking Precision Obesity Treatment</div>
+    <div class="story-summary">Scientists found genetic evidence explaining why two people can take the same GLP-1 drug and have wildly different experiences. Could enable genetic testing before prescription. 1B+ people affected globally.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Azeem Azhar flagged this as one of the week's most important stories. GLP-1s already reshape healthcare spending (Novo Nordisk, Eli Lilly). The genetic precision angle could massively expand the addressable market by converting non-responders into responders. Think: companion diagnostics for obesity drugs, the way BRCA testing works for cancer.</p>
+      
+      <div class="source-row">Sources: <a href="https://www.exponentialview.co/p/ev-569" target="_blank">Exponential View #569</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Education -->
+<div class="story-card" id="education" data-tags="ai" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-ai">AI / SOCIETY</span>
+      <span class="time-horizon">THIS DECADE</span>
+      <span class="decision-badge badge-note">NOTE</span>
+    </div>
+    <div class="story-title">The Great Value Inversion: Education Must Be Reimagined</div>
+    <div class="story-summary">Universities offer degrees as if 20th-century returns persist. Azeem Azhar argues we need a Humboldtian reset — designing environments rather than curricula. The AI era demands fundamentally different human development.</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Azhar draws a parallel to 1809 Prussia — a country in free fall that reimagined education from scratch. Wilhelm von Humboldt argued for Bildung: the free development of a whole human being, designing environments rather than curricula. In an AI age where skills become obsolete in 2-3 year cycles, this isn't philosophy — it's a business model question for every edtech company and every parent making school decisions.</p>
+      
+      <div class="source-row">Sources: <a href="https://www.exponentialview.co/p/ev-569" target="_blank">Exponential View #569</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- DPRK / Crypto -->
+<div class="story-card" id="dprk" data-tags="crypto" onclick="toggleCard(this, event)">
+  <div class="story-header">
+    <div class="story-meta">
+      <span class="tag tag-crypto">CRYPTO / SECURITY</span>
+      <span class="time-horizon">NOW</span>
+      <span class="decision-badge badge-act">ACT</span>
+    </div>
+    <div class="story-title">North Korean IT Workers: $1M/Month Operation Exposed</div>
+    <div class="story-summary">ZachXBT published data from a compromised DPRK payment server. 390 fabricated identities, forged documents, crypto-to-fiat conversions. Also: Jito Labs CEO argues MEV should be renamed to "Transaction Ordering Value."</div>
+    <div class="expand-hint"><span class="chevron">▸</span> Click to expand</div>
+  </div>
+  <div class="layer layer-1">
+    <div class="layer-label">ANALYSIS</div>
+    <div class="layer-content">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;">The DPRK dataset is significant: chat logs, fabricated identities, forged legal documents, and crypto-to-fiat conversion records. This isn't just a crypto problem — these IT workers are e
