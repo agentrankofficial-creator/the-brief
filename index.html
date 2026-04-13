@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief — Apr 13, 2026 · Morning</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--blue:#60a5fa;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:720px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--accent);padding:32px 0 20px;margin-bottom:0}
+.header-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.logo{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;font-weight:700}
+.date{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.headline-bar{margin-top:16px;font-size:13px;color:var(--muted);font-family:var(--font-ui);line-height:1.6}
+.headline-bar strong{color:var(--text)}
+.nav-strip{display:flex;gap:6px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:24px}
+.nav-pill{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:20px;background:var(--surface);color:var(--dim);cursor:pointer;border:1px solid var(--border);transition:all .2s;user-select:none}
+.nav-pill:hover,.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:24px 0 12px;display:flex;align-items:center;gap:8px}
+.section-label .dot{display:inline-block;width:8px;height:8px;border-radius:2px}
+.story-card{background:var(--surface);border-radius:10px;margin-bottom:16px;overflow:hidden;border:1px solid var(--border);transition:border-color .2s}
+.story-card:hover{border-color:#3f3f46}
+.story-header{padding:20px 22px 16px;cursor:pointer;position:relative}
+.story-header:hover{background:var(--surface2)}
+.story-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.tag{font-family:var(--font-ui);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:3px;font-weight:700}
+.tag-geo{background:#e0525220;color:var(--red)}
+.tag-ai{background:#c8a03020;color:var(--accent)}
+.tag-india{background:#60a5fa20;color:var(--blue)}
+.tag-markets{background:#f472b620;color:#f472b6}
+.tag-crypto{background:#a78bfa20;color:#a78bfa}
+.tag-science{background:#4ade8020;color:var(--green)}
+.tag-opportunity{background:#c8a03020;color:var(--accent)}
+.trend-arrow{font-family:var(--font-ui);font-size:11px;font-weight:700}
+.trend-up{color:var(--red)}
+.trend-stable{color:var(--accent)}
+.trend-down{color:var(--green)}
+.time-horizon{font-family:var(--font-ui);font-size:9px;color:var(--dim);background:var(--surface2);padding:2px 7px;border-radius:3px}
+.decision-badge{font-family:var(--font-ui);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:800}
+.badge-act{background:#e0525230;color:var(--red);border:1px solid #e0525240}
+.badge-watch{background:#c8a03025;color:var(--accent);border:1px solid #c8a03035}
+.badge-note{background:#71717a20;color:var(--dim);border:1px solid #71717a30}
+.story-title{font-family:var(--font-body);font-size:20px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:6px}
+.story-summary{font-size:15px;color:var(--muted);line-height:1.65}
+.expand-hint{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:10px;display:flex;align-items:center;gap:4px}
+.expand-hint .chevron{transition:transform .2s;display:inline-block}
+.story-card.open .expand-hint .chevron{transform:rotate(90deg)}
+.layer{display:none;border-top:1px solid var(--border);padding:0}
+.story-card.open .layer-1{display:block}
+.story-card.open.deep .layer-2{display:block}
+.layer-content{padding:18px 22px}
+.layer-label{font-family:var(--font-ui);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:10px 22px 0;font-weight:700}
+.so-what{background:var(--surface2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0;margin:12px 0}
+.so-what-label{font-family:var(--font-ui);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:4px}
+.so-what p{font-size:14px;color:var(--text);line-height:1.6;margin:0}
+.action-box{background:#c8a03010;border:1px solid #c8a03025;border-radius:6px;padding:14px 18px;margin:12px 0}
+.action-box-label{font-family:var(--font-ui);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.action-box ul{list-style:none;padding:0}
+.action-box li{font-family:var(--font-ui);font-size:13px;color:var(--text);padding:4px 0;padding-left:16px;position:relative}
+.action-box li::before{content:"\2192";position:absolute;left:0;color:var(--accent)}
+.contrarian{background:#e0525210;border:1px solid #e0525220;border-radius:6px;padding:14px 18px;margin:12px 0}
+.contrarian-label{font-family:var(--font-ui);font-size:11px;color:var(--red);font-weight:700;margin-bottom:4px}
+.contrarian p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+.connections{margin:12px 0}
+.connections-label{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.conn-links{display:flex;flex-wrap:wrap;gap:6px}
+.conn-chip{font-family:var(--font-ui);font-size:11px;color:var(--muted);background:var(--surface2);padding:4px 10px;border-radius:12px;cursor:pointer;border:1px solid var(--border);transition:all .15s}
+.conn-chip:hover{color:var(--accent);border-color:var(--accent)}
+.source-row{font-family:var(--font-ui);font-size:11px;color:var(--dim);padding-top:10px;border-top:1px solid var(--border);margin-top:12px}
+.source-row a{color:var(--accent);text-decoration:none}
+.source-row a:hover{text-decoration:underline}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;color:var(--accent);background:none;border:1px solid var(--accent);padding:6px 14px;border-radius:4px;cursor:pointer;margin-top:10px;transition:all .15s}
+.deep-dive-btn:hover{background:var(--accent);color:#0a0a0b}
+.connections-map{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin:24px 0}
+.connections-map h3{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.chain{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.chain-node{font-family:var(--font-ui);font-size:12px;color:var(--text);background:var(--surface2);padding:4px 10px;border-radius:4px;cursor:pointer;border:1px solid var(--border);transition:all .15s}
+.chain-node:hover{border-color:var(--accent);color:var(--accent)}
+.chain-arrow{color:var(--dim);font-size:12px}
+.markets-table{width:100%;border-collapse:collapse;margin:16px 0;font-family:var(--font-ui);font-size:13px}
+.markets-table th{text-align:left;color:var(--dim);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--border)}
+.markets-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text)}
+.markets-table .up{color:var(--green)}
+.markets-table .down{color:var(--red)}
+.quick-hit{padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start}
+.quick-hit:last-child{border-bottom:none}
+.qh-bullet{color:var(--accent);font-size:16px;line-height:1.6;flex-shrink:0}
+.qh-text{font-size:14px;color:var(--muted);line-height:1.6}
+.qh-text strong{color:var(--text)}
+.qh-source{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin:24px 0}
+.scorecard h3{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.score-item{display:flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:12px}
+.score-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.score-dot.covered{background:var(--green)}
+.score-dot.partial{background:var(--accent)}
+.score-dot.missed{background:var(--red)}
+.score-name{color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:24px 0 40px;margin-top:24px}
+footer p{font-family:var(--font-ui);font-size:11px;color:var(--dim);line-height:1.7}
+@media(max-width:600px){
+  .story-title{font-size:17px}
+  .story-header{padding:16px}
+  .layer-content{padding:14px 16px}
+  .score-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header>
+<div class="header-row">
+  <span class="logo">THE BRIEF</span>
+  <span class="date">Monday, April 13, 2026 &middot; Morning Edition</span>
+</div>
+<div class="headline-bar" style="margin-top:14px;">
+  <strong>Hormuz Blockade Goes Live</strong> &middot; Orb&aacute;n Ousted in Landslide &middot; SaaS Stocks Crater on AI Fears &middot; Nvidia Backs RISC-V at $3.65B &middot; Oil Jumps 8% Above $100
+</div>
+</header>
+
+<!-- TOPIC NAV -->
+<div class="nav-strip">
+  <span class="nav-pill active" onclick="filterStories('all')">All</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics')">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('ai')">AI</span>
+  <span class="nav-pill" onclick="filterStories('india')">India</span>
+  <span class="nav-pill" onclick="filterStories('markets')">Markets</span>
+  <span class="nav-pill" onclick="filterStories('science')">Science</span>
+  <span class="nav-pill" onclick="filterStories('crypto')">Crypto</span>
+  <span class="nav-pill" onclick="filterStories('opportunity')">Opportunities</span>
+</div>
+
+<!-- GLOBAL MARKETS TABLE -->
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:24px">
+<div style="font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:700">Global Markets Snapshot</div>
+<table class="markets-table">
+<tr><th>Index</th><th>Level</th><th>Change</th></tr>
+<tr><td>S&amp;P 500</td><td>6,816.89</td><td class="down">-0.11%</td></tr>
+<tr><td>Nikkei 225</td><td>56,512.21</td><td class="down">-0.72%</td></tr>
+<tr><td>FTSE 100</td><td>8,720</td><td class="down">-0.45% (est)</td></tr>
+<tr><td>Shanghai Comp</td><td>3,258</td><td class="down">-0.38% (est)</td></tr>
+<tr><td>Sensex</td><td>75,925</td><td class="down">-2.09%</td></tr>
+<tr><td>Nifty Bank</td><td>51,200</td><td class="down">-1.8% (est)</td></tr>
+<tr><td>Gold</td><td>&#8377;1,51,899</td><td class="down">-0.49%</td></tr>
+<tr><td>USD/INR</td><td>93.30</td><td class="up">+0.68%</td></tr>
+<tr><td>WTI Crude</td><td>$104.82</td><td class="up">+8.54%</td></tr>
+<tr><td>BTC</td><td>~$83,500</td><td class="up">+1.63%</td></tr>
+</table>
+<div style="font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:8px">Oil surges 8%+ as Hormuz blockade begins &middot; Dollar strengthens on safe-haven flows &middot; Japan bond yield hits 29-yr high</div>
+</div>
+
+<!-- STORY CONNECTIONS MAP -->
+<div class="connections-map">
+<h3>How Today's Stories Connect</h3>
+<div class="chain">
+  <span class="chain-node" onclick="scrollToStory('hormuz')">Hormuz Blockade</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('nifty')">Oil Above $100</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('india-impact')">India: Air Ambulances, Jet Fuel</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('nifty')">Nifty -2%, FII Selling</span>
+</div>
+<div class="chain">
+  <span class="chain-node" onclick="scrollToStory('orban')">Orb&aacute;n Ousted</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('hormuz')">Trump's Global Setback</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('hormuz')">Dalio: Step 9 World War</span>
+</div>
+<div class="chain">
+  <span class="chain-node" onclick="scrollToStory('saas')">SaaS-pocalypse</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('anthropic')">Anthropic $30B Run Rate</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('nvidia-sifive')">Nvidia Backs RISC-V</span>
+  <span class="chain-arrow">&rarr;</span>
+  <span class="chain-node" onclick="scrollToStory('yc-india')">YC: AI Funding Gap</span>
+</div>
+</div>
+
+<!-- ============ THE LEAD ============ -->
+<div class="section-label"><span class="dot" style="background:var(--red)"></span> THE LEAD</div>
+
+<div class="story-card" data-category="geopolitics" data-id="hormuz" id="hormuz">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-geo">Geopolitics</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">NOW</span>
+    <span class="decision-badge badge-act">ACT</span>
+  </div>
+  <div class="story-title">Hormuz Blockade Goes Live: US Navy Begins Policing Iranian Port Traffic as Peace Talks Collapse</div>
+  <div class="story-summary">CENTCOM confirms the US naval blockade of Iranian ports began at 14:00 GMT today, blocking all maritime traffic entering and exiting Iranian coastal areas. Oil surges 8% above $100/bbl. Trump threatens to intercept any vessel that paid Iran a transit toll. Iran calls it "piracy."</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The shift from announcement to execution is the critical inflection. On Sunday, after JD Vance failed to reach a deal in Pakistan, Trump declared the blockade. By Monday morning, CENTCOM operationalized it. The scope is narrower than feared &mdash; only Iranian ports, not all strait traffic &mdash; but still represents the most aggressive US naval action in the Gulf since 1988's Operation Praying Mantis.</p>
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The sticking points in Pakistan: Iran demanded continued control of Hormuz toll collection and refused to surrender enriched uranium stockpile. The US demanded both. Neither side blinked.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>This is no longer a diplomatic signal &mdash; it's kinetic. Oil will likely stay above $100 until either a new round of talks is announced or Iran retaliates. Every asset class is now pricing in an extended confrontation. India faces acute pressure: jet fuel costs have already nearly doubled, and INR is weakening.</p>
+    </div>
+
+    <div class="action-box">
+      <div class="action-box-label">WHAT TO DO</div>
+      <ul>
+        <li>Re-evaluate energy-exposed positions. Oil &amp; gas producers benefit; airlines, logistics, paint, and chemical companies face margin compression.</li>
+        <li>Watch gold &mdash; it dipped on strong dollar but typically rallies on sustained conflict.</li>
+        <li>Track UK mine-sweeper deployment as signal of coalition-building.</li>
+        <li>Indian investors: defensive sectors (pharma, FMCG, IT) outperform in prolonged conflict scenarios.</li>
+      </ul>
+    </div>
+
+    <div class="contrarian">
+      <div class="contrarian-label">CONTRARIAN VIEW</div>
+      <p>Markets may be overreacting. The blockade targets only Iranian ports, not the full strait. ~21% of global oil passes through Hormuz, but most of it goes to non-Iranian ports which remain open. If Iran doesn't retaliate militarily, this could be a slow squeeze rather than a crisis. Traders who view the talks breakdown as "temporary" may limit the selloff.</p>
+    </div>
+
+    <div class="connections">
+      <div class="connections-label">Connected Stories</div>
+      <div class="conn-links">
+        <span class="conn-chip" onclick="scrollToStory('orban')">Orb&aacute;n Ousted &rarr; Trump's Global Clout</span>
+        <span class="conn-chip" onclick="scrollToStory('india-impact')">India: Air Ambulance Costs Double</span>
+        <span class="conn-chip" onclick="scrollToStory('nifty')">Sensex -2.09%</span>
+      </div>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d83bc5b090eac8">Semafor Flagship</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84fa4ff46c162">ET Markets Morning</a>, <a href="https://www.aljazeera.com/news/liveblog/2026/4/13/iran-war-live-us-military-to-block-iranian-port-traffic-in-hormuz-strait">Al Jazeera</a>, <a href="https://www.cnbc.com/2026/04/12/trump-iran-war-strait-of-hormuz.html">CNBC</a></div>
+
+    <button class="deep-dive-btn" onclick="toggleDeep(this)">Go Deeper &darr;</button>
+  </div>
+</div>
+<div class="layer layer-2">
+  <div class="layer-label">Deep Dive</div>
+  <div class="layer-content">
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">Timeline of collapse:</strong> The two-week ceasefire triggered a relief rally last week. Talks in Islamabad were meant to formalize it into a lasting deal. Vance led the US delegation; Iran's sticking points were Hormuz sovereignty and uranium stockpile. After marathon sessions, both sides left the door open for further diplomacy but no date was set.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">Market mechanics:</strong> WTI jumped 8.54% to $104.82/bbl. Brent gained 7.27% to $102.51. Japan's bond yield hit a 29-year high as energy import costs spike. US inflation surged in March (Friday's data) &mdash; war-driven gas prices the culprit. This week's earnings season (Goldman reports Monday) will be parsed for conflict-impact commentary.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">Iran's response:</strong> Iran's armed forces called the blockade "an illegal act amounting to piracy." Trump also threatened China with 50% tariffs if it provides military assistance to Iran &mdash; US intelligence suggests China may have shipped missiles to Iran, per NYT. Beijing denied this.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7"><strong style="color:var(--text)">Ray Dalio's framework:</strong> In a widely-shared post, Dalio argues we're at Step 9 of a 13-step world war cycle &mdash; multi-theater conflicts across continents. He compares the period to 1913&ndash;14 and 1938&ndash;39, puts odds of a new major military conflict within 5 years at >50%, with US-China over Taiwan peaking around 2028. Markets, he says, are "badly mispricing" this environment.</p>
+  </div>
+</div>
+</div>
+
+<!-- ============ SIGNAL BOARD ============ -->
+<div class="section-label"><span class="dot" style="background:var(--accent)"></span> SIGNAL BOARD</div>
+
+<!-- STORY: Orban -->
+<div class="story-card" data-category="geopolitics" data-id="orban" id="orban">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-geo">Geopolitics</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS WEEK</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Orb&aacute;n Ousted After 16 Years: P&eacute;ter Magyar Wins Two-Thirds Majority in Hungary</div>
+  <div class="story-summary">Hungary's Peter Magyar won a landslide with 53.6% of the vote and 138 of 199 parliamentary seats. Record 77% turnout. Orb&aacute;n conceded "surprisingly early." EU leaders celebrate; Trump loses his closest European ally.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The two-thirds majority is what makes this seismic &mdash; Magyar can amend Hungary's constitution, undo Orb&aacute;n's institutional capture, and unblock the &euro;90B EU loan to Ukraine that Orb&aacute;n had vetoed. For Trump, this is a double blow: he lost an ideological showcase abroad on the same weekend his Iran diplomacy collapsed.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>Europe's far-right axis just lost its anchor. Orb&aacute;n was "central to Trumpism, more important than almost any American in the movement," per historians. French, British, and German right-wingers had already broken with Trump over the Iran war. This may accelerate the EU's pivot toward strategic autonomy from Washington.</p>
+    </div>
+
+    <div class="contrarian">
+      <div class="contrarian-label">CONTRARIAN VIEW</div>
+      <p>Orb&aacute;n's institutions are deeply entrenched &mdash; courts, media, state companies are packed with loyalists. Magyar's real test begins now. And Slovak PM Fico vowed to continue the anti-EU push solo. The structural shift may take years, not weeks.</p>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d83bc5b090eac8">Semafor Flagship</a>, <a href="https://www.npr.org/2026/04/12/nx-s1-5782671/hungary-viktor-orban-concedes-defeat">NPR</a>, <a href="https://www.cnn.com/2026/04/12/world/live-news/hungary-election-orban-magyar">CNN</a></div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this)">Go Deeper &darr;</button>
+  </div>
+</div>
+<div class="layer layer-2">
+  <div class="layer-label">Deep Dive</div>
+  <div class="layer-content">
+    <p style="font-size:13px;color:var(--muted);line-height:1.7">Magyar ran on an anti-corruption platform as a conservative &mdash; not a leftist. He promised "Hungary has chosen Europe." The supermajority allows constitutional amendments. EU Commission President von der Leyen immediately celebrated. JD Vance had campaigned for Orb&aacute;n last week &mdash; his defeat is personally embarrassing for the US VP. The &euro;90B Ukraine loan, long blocked by Budapest, could now move forward, fundamentally shifting the war's financial calculus. Putin loses his main EU ally.</p>
+  </div>
+</div>
+</div>
+
+<!-- STORY: SaaS-pocalypse -->
+<div class="story-card" data-category="ai markets" data-id="saas" id="saas">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-ai">AI</span>
+    <span class="tag tag-markets">Markets</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS QUARTER</span>
+    <span class="decision-badge badge-act">ACT</span>
+  </div>
+  <div class="story-title">SaaS-pocalypse: Enterprise Software Stocks Crater as AI Cannibalizes Legacy Products</div>
+  <div class="story-summary">Figma has lost half its value in 2026. Asana is down 60%. ServiceNow fell 8% Friday. UBS reports over half its corporate calls now include "containing" non-AI software spending. AI firms like Anthropic are building tools that directly replace cybersecurity, legal, and HR software.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">This is no longer theoretical. UBS's finding &mdash; that over half its enterprise conversations mention squeezing non-AI software budgets &mdash; is a death knell for the "rising tide lifts all boats" thesis in SaaS. Companies are actively reallocating spend from legacy vendors to AI tools. Anthropic's Mythos, which scans code for vulnerabilities, is directly competing with Palo Alto Networks and CrowdStrike. UK regulators are holding urgent meetings to assess Mythos's risks.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>The AI disruption of software has moved from "someday" to "this earnings season." This is particularly relevant for Indian IT services &mdash; Kotak flags Anthropic's Mythos as a disruption risk to India's IT growth. TCS CEO Krithivasan pushes back, calling it an opportunity, but the market is nervous. Figma at $7.9B enterprise value is now less than half the $20B Adobe planned to pay in 2022.</p>
+    </div>
+
+    <div class="action-box">
+      <div class="action-box-label">WHAT TO DO</div>
+      <ul>
+        <li>Revisit any SaaS holdings &mdash; especially collaboration tools (Asana, Notion) and design tools (Figma) most exposed to AI substitution.</li>
+        <li>Cybersecurity may not be the safe haven investors assumed &mdash; AI firms are entering the space directly.</li>
+        <li>Indian IT: watch TCS and Infosys earnings closely for AI deal commentary. TCS reported record $40.7B TCV in FY26.</li>
+      </ul>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d83bc1ad83b1fa">The Information</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84972adaa3652">ET AI</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84b0de73dc39e">ETtech Morning Dispatch</a></div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this)">Go Deeper &darr;</button>
+  </div>
+</div>
+<div class="layer layer-2">
+  <div class="layer-label">Deep Dive</div>
+  <div class="layer-content">
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">The numbers:</strong> ServiceNow -8%, Snowflake -8%, Salesforce -3.5%, Palo Alto -6.7%, CrowdStrike -4% in a single Friday session. Figma's enterprise value ($7.9B) is less than half what Adobe was willing to pay pre-antitrust block. Asana is down 60% YTD.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">Anthropic's invasion:</strong> Anthropic launched tools for legal, financial, and HR tasks, directly impacting partner companies. Its Mythos cybersecurity tool scans code for vulnerabilities &mdash; a direct threat to existing security vendors. UK financial regulators are in "urgent talks" with government cyber security agency and major banks about Mythos's implications.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7"><strong style="color:var(--text)">CoreWeave deal:</strong> CoreWeave struck a multi-year deal to develop and run Anthropic's Claude AI models, with first servers coming online later this year. Meta is poaching OpenAI's Stargate data center executives. xAI spending pushed SpaceX to a nearly $5 billion loss. The infrastructure buildout accelerates even as the software it replaces collapses.</p>
+  </div>
+</div>
+</div>
+
+<!-- STORY: Nvidia SiFive -->
+<div class="story-card" data-category="ai" data-id="nvidia-sifive" id="nvidia-sifive">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-ai">AI</span>
+    <span class="trend-arrow trend-stable">&rarr; HOLDING</span>
+    <span class="time-horizon">THIS YEAR</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Nvidia Backs RISC-V Chip Startup SiFive at $3.65B &mdash; Open-Source Silicon Enters the AI Data Center</div>
+  <div class="story-summary">SiFive raised $400M in an oversubscribed round led by Atreides Management with Nvidia as a notable new investor. The company builds CPUs on RISC-V, a royalty-free open architecture, and is integrating with Nvidia's CUDA and NVLink ecosystem.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">Nvidia isn't just making a financial bet &mdash; it's integrating SiFive's RISC-V designs into its own ecosystem (CUDA software, NVLink Fusion rack servers). This is a strategic flanking move against Intel and AMD. If RISC-V CPUs can pair seamlessly with Nvidia GPUs in AI data centers, it creates a new architecture stack entirely outside ARM/x86. SiFive's business model mirrors ARM &mdash; licensing designs rather than manufacturing chips &mdash; giving it capital-light economics.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>This is the open-source moment for silicon. With Apollo, T. Rowe Price, and D1 Capital also backing the round, institutional conviction is high. The last raise was $175M in 2022, making this a significant step up in ambition. Watch for data center adoption announcements in H2 2026.</p>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d8571c41f38f5c">Everything AI and Tech</a></div>
+  </div>
+</div>
+</div>
+
+<!-- STORY: India Markets -->
+<div class="story-card" data-category="india markets" data-id="nifty" id="nifty">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-india">India</span>
+    <span class="tag tag-markets">Markets</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS WEEK</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Sensex -2.09%, Nifty -1.99% as Oil Shock Slams India &mdash; But Big Bulls Go Bargain Hunting</div>
+  <div class="story-summary">Indian markets slide as oil jumps above $100 and the Hormuz blockade begins. But D-Street superstars are buying the dip: Q4 disclosures show big bulls loaded up during the crash. Nifty upside seen at 24,500&ndash;24,600 with support at 23,700.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The divergence is instructive: FIIs are covering short bets but staying wary, while domestic institutional investors and HNI "superstars" are accumulating. Key names in focus: LIC, Maruti Suzuki, Sun Pharma, TCS, HUL. Global banks are playing hedge cards after RBI's blow on rupee bets. New-age tech stocks added $10B in market cap last week during the ceasefire rally, led by Ola Electric and Honasa Consumer.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>India is uniquely exposed to Hormuz &mdash; it imports ~85% of its crude, much of it through the strait. Rising oil = wider current account deficit, weaker rupee, higher inflation. But the bargain-hunting by institutional bulls suggests this is being treated as a dip, not a structural break. The India inflation print due today (4:00 PM IST) will be the next catalyst.</p>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d84fa4ff46c162">ET Markets Morning</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84c0968229f5a">ET Prime</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84ad0c6a657bd">Inc42</a></div>
+  </div>
+</div>
+</div>
+
+<!-- STORY: Anthropic -->
+<div class="story-card" data-category="ai" data-id="anthropic" id="anthropic">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-ai">AI</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS QUARTER</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Anthropic Hits $30B Run Rate, Surpasses OpenAI &mdash; Signs Multi-Gigawatt TPU Deal with Google/Broadcom</div>
+  <div class="story-summary">Revenue run rate 3x'd from $9B (end of 2025) to $30B in April 2026. 1,000+ business customers now spend $1M+/year (doubled since February). 80% enterprise revenue. New hardware deal with Google and Broadcom for next-gen TPU capacity coming online in 2027.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The trajectory is unprecedented in tech: $1B (start 2025) &rarr; $4.5B (mid-2025) &rarr; $9B (year-end) &rarr; $14B (Feb 2026) &rarr; $30B (April 2026). This is faster than any software company in history. The 80% enterprise mix gives it very different economics than consumer-heavy OpenAI ($25B ARR). CoreWeave also signed a multi-year deal to run Claude models.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>Anthropic is now the revenue leader in frontier AI. The Google/Broadcom TPU deal for "multiple gigawatts" of compute signals it's building for 10x scale. For Indian IT: TCS COO specifically called out "Claude Cowork and Claude Mythos" as potential disruptors &mdash; but also sees "big opportunity" in GenAI-driven legacy modernization.</p>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d82aee8614f545">OurCrowd</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84972adaa3652">ET AI</a>, <a href="https://www.pymnts.com/artificial-intelligence-2/2026/anthropic-hits-30-billion-run-rate-as-enterprise-demand-accelerates/">PYMNTS</a></div>
+  </div>
+</div>
+</div>
+
+<!-- STORY: YC India -->
+<div class="story-card" data-category="ai india" data-id="yc-india" id="yc-india">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-ai">AI</span>
+    <span class="tag tag-india">India</span>
+    <span class="trend-arrow trend-stable">&rarr; HOLDING</span>
+    <span class="time-horizon">THIS QUARTER</span>
+    <span class="decision-badge badge-note">NOTE</span>
+  </div>
+  <div class="story-title">YC Partner: "AI Money Is Crowding at the Top" &mdash; Early Founders Scramble for Scraps</div>
+  <div class="story-summary">Y Combinator's Ankit Gupta says giant AI labs are soaking up mega cheques while young builders fight for limited capital. YC is doubling down on India with its first Startup School in Bengaluru (25,000 applications for 2,000 seats) and stepping up outreach at IIT Delhi.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The funding bifurcation is real: Anthropic raises billions while seed-stage AI startups struggle. Gupta dismisses AI bubble fears &mdash; "growth looks unrealistic only until real-world adoption kicks in." Meanwhile, Indian startup funding rebounded 174% last week to $362M across 23 deals, led by KreditBee's $280M unicorn round. Fintech is the top-funded sector; AI and ecommerce lead in deal activity.</p>
+
+    <div class="so-what">
+      <div class="so-what-label">SO WHAT</div>
+      <p>India has talent and market scale to compete in AI &mdash; but only if early-stage capital improves. YC's Bengaluru push (12.5x oversubscribed) signals conviction. For founders: the window to build AI applications on top of frontier models (rather than competing with them) is optimal right now.</p>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d84b0de73dc39e">ETtech Morning Dispatch</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84ad0c6a657bd">Inc42 Daily Brief</a></div>
+  </div>
+</div>
+</div>
+
+<!-- STORY: India Iran Impact -->
+<div class="story-card" data-category="india geopolitics" data-id="india-impact" id="india-impact">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-india">India</span>
+    <span class="tag tag-geo">Geopolitics</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">NOW</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Air Ambulances, Gold Imports, and SpiceJet: Iran War's Ripple Effects Across India</div>
+  <div class="story-summary">Jet fuel for non-scheduled operators has surged from INR 96/litre to INR 217 &mdash; nearly doubling air ambulance costs and disrupting organ transport. Natural diamonds lose sheen globally but India's wedding demand buffers. SpiceJet desperately hunts for a lifeline.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">ET Prime's deep dive reveals the human cost: air ambulance fares sometimes now exceed treatment costs. International medical evacuations and domestic organ transport are being priced out, hitting middle-class patients hardest. Commercial airlines are shielded (different fuel pricing), but non-scheduled operators face the full brunt.</p>
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">Meanwhile, gold imports remain controlled through a "cozy club" consignment route that hampers price discovery. Global natural diamond prices have plunged 46%, but India's wedding traditions provide a unique buffer. SpiceJet is furloughing staff, delaying salaries by 2+ months, and piling up GST/TDS/PF dues.</p>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d84c0968229f5a">ET Prime</a></div>
+  </div>
+</div>
+</div>
+
+<!-- ============ OPPORTUNITY RADAR ============ -->
+<div class="section-label"><span class="dot" style="background:var(--accent)"></span> OPPORTUNITY RADAR</div>
+
+<div class="story-card" data-category="opportunity india" data-id="ola-electric">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-opportunity">Opportunity</span>
+    <span class="tag tag-india">India</span>
+    <span class="trend-arrow trend-stable">&rarr; HOLDING</span>
+    <span class="time-horizon">THIS QUARTER</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Ola Electric's Comeback Bet: Sales +150% in March, New Indigenous LFP Battery Could Slash Costs</div>
+  <div class="story-summary">March sales jumped to 10,117 units (up 150% from Feb). Daily orders crossed 1,000 last week. Gross margins improved to 34.3%. The indigenous 46100 LFP cell &mdash; cheaper, thermally stable &mdash; is awaiting approval and could be integrated next quarter.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px">The turnaround has three pillars: (1) "Hyperservice" push &mdash; 80%+ same-day servicing, loaner bikes for longer repairs; (2) Cost control &mdash; quarterly opex halved from &#8377;840 Cr to &#8377;484 Cr; (3) LFP battery &mdash; cheaper iron-phosphate chemistry reduces commodity exposure and assembly complexity. But credibility gap is real: breakeven target revised from 50K to 25K to 15K units. EBITDA margin is still -68.7%.</p>
+
+    <div class="action-box">
+      <div class="action-box-label">WHAT TO DO</div>
+      <ul>
+        <li>Don't chase the recent stock rally &mdash; wait for Q4 FY26 results for confirmation.</li>
+        <li>Watch LFP cell approval timeline &mdash; if approved next quarter, it changes unit economics fundamentally.</li>
+        <li>Delhi's EV Policy 2.0 draft (phased bans on petrol 2-wheelers) is a long-term tailwind.</li>
+      </ul>
+    </div>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d8511dbbb349f8">Finshots</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84ad0c6a657bd">Inc42</a></div>
+  </div>
+</div>
+</div>
+
+<div class="story-card" data-category="opportunity ai" data-id="perplexity">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-opportunity">Opportunity</span>
+    <span class="tag tag-ai">AI</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS QUARTER</span>
+    <span class="decision-badge badge-watch">WATCH</span>
+  </div>
+  <div class="story-title">Perplexity's AI Agent Pivot Drives 50% Monthly Revenue Growth &mdash; ARR Hits $450M</div>
+  <div class="story-summary">Perplexity shifted from chatbot search to advanced AI agents with usage-based pricing. Revenue grew 50% in a single month. 100M+ monthly active users including tens of thousands of enterprise clients. This is the "agents eat SaaS" thesis made real.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7">The pivot from "Google competitor" to "AI agent platform" is working faster than anyone expected. The usage-based model (credits for top-tier subscribers, then pay-per-use) aligns incentives better than flat subscriptions. With Perplexity Computer launched in February, the company is moving from information retrieval to task execution &mdash; exactly the kind of capability that's making SaaS stocks crater.</p>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d82aee8614f545">OurCrowd</a></div>
+  </div>
+</div>
+</div>
+
+<!-- ============ ALSO ON YOUR RADAR ============ -->
+<div class="section-label"><span class="dot" style="background:var(--dim)"></span> ALSO ON YOUR RADAR</div>
+
+<div class="story-card" data-category="india" data-id="glp1">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-india">India</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS YEAR</span>
+    <span class="decision-badge badge-note">NOTE</span>
+  </div>
+  <div class="story-title">India Made GLP-1s Cheap. Now Expensive Weight-Loss Coaches Are Cashing In</div>
+  <div class="story-summary">Semaglutide went off-patent in India; 50+ pharma companies flooded the market with generics. A new ecosystem of "management programs" &mdash; from HealthifyMe to WhatsApp communities &mdash; is monetizing the coaching layer. Mounjaro sales dipped 15%.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7">The Ken's deep dive shows a familiar pattern: the drug becomes cheap, but an expensive services layer emerges around it. Endocrinologist fees have shot up. AI-generated before-and-after photos drive demand. Black market imports of Retatrutide (still in clinical trials) are showing up in WhatsApp groups. This is a consumer health trend with investable implications for healthtech platforms.</p>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d84805263f755a">The Ken</a></div>
+  </div>
+</div>
+</div>
+
+<div class="story-card" data-category="science" data-id="quantum">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-science">Science</span>
+    <span class="trend-arrow trend-up">&uarr; ESCALATING</span>
+    <span class="time-horizon">THIS DECADE</span>
+    <span class="decision-badge badge-note">NOTE</span>
+  </div>
+  <div class="story-title">Google: Get Post-Quantum Cryptography Ready by 2029 &mdash; "Q-Day" Closer Than You Think</div>
+  <div class="story-summary">Google warned cryptography must be quantum-ready by 2029. Quantum computing power required to break standard encryption has "drastically dropped since 2012." BlackRock backs quantum firm IQM with &euro;50M ahead of IPO. IMF chief warns monetary system "not ready for AI cyber threats."</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7">"Q-day" &mdash; when quantum computers render existing encryption useless &mdash; was always 10 years away. It's now 3 years away by Google's estimate. Physicist Scott Aaronson agrees the transition timeline is "wise." IQM (OurCrowd portfolio) is scaling operations ahead of a 2026 IPO. The IMF chief warned the global monetary system is "not ready for AI cyber threats" &mdash; quantum + AI is a compounding risk for financial infrastructure.</p>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d83bc5b090eac8">Semafor</a>, <a href="https://mail.google.com/mail/u/0/#all/19d82aee8614f545">OurCrowd</a>, <a href="https://mail.google.com/mail/u/0/#all/19d84972adaa3652">ET AI</a></div>
+  </div>
+</div>
+</div>
+
+<div class="story-card" data-category="crypto" data-id="dprk">
+<div class="story-header" onclick="toggleCard(this)">
+  <div class="story-meta">
+    <span class="tag tag-crypto">Crypto</span>
+    <span class="trend-arrow trend-stable">&rarr; HOLDING</span>
+    <span class="time-horizon">NOW</span>
+    <span class="decision-badge badge-note">NOTE</span>
+  </div>
+  <div class="story-title">DPRK IT Worker Ring Exposed: 390 Accounts, $1M/Month, Fabricated Identities</div>
+  <div class="story-summary">ZachXBT published a dataset from a compromised North Korean payment server exposing a coordinated IT-worker operation. Chat logs, forged legal documents, and crypto-to-fiat conversion records tied to 390 accounts generating ~$1M/month.</div>
+  <div class="expand-hint"><span class="chevron">&#9654;</span> Expand for analysis</div>
+</div>
+<div class="layer layer-1">
+  <div class="layer-label">Analysis</div>
+  <div class="layer-content">
+    <p style="font-size:14px;color:var(--text);line-height:1.7">The scale of DPRK's crypto operations continues to expand. This dataset &mdash; exfiltrated from an internal server after a worker's device was compromised &mdash; is the most granular look yet at operational mechanics. For anyone hiring remote developers or using crypto platforms: KYC and identity verification are non-negotiable. The data shows fabricated identities passing standard checks.</p>
+
+    <div class="source-row">Sources: <a href="https://mail.google.com/mail/u/0/#all/19d8235adb81aa5d">Blockworks (The Breakdown)</a></div>
+  </div>
+</div>
+</div>
+
+<!-- ============ QUICK HITS ============ -->
+<div class="section-label"><span class="dot" style="background:var(--dim)"></span> QUICK HITS</div>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px">
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Sam Altman's home attacked with molotov cocktail.</strong> 20-year-old arrested; had written about AI "leading to human extinction." Altman linked it to "great anxiety" about AI. <span class="qh-source">Semafor</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Asha Bhosle, "the sound of Bollywood," dies at 92.</strong> The legendary playback singer behind "Dum Maro Dum" and thousands of other songs. <span class="qh-source">Semafor</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Walmart introducing digital price tags</strong> in US stores this year. Critics worry about "dynamic pricing" &mdash; US lawmakers may seek to ban it at large grocers. <span class="qh-source">Semafor</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>xAI spending pushed SpaceX to a nearly $5 billion loss.</strong> Musk's AI ambitions are straining even SpaceX's finances. <span class="qh-source">The Information</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Microplastics research may have been skewed</strong> by scientists' latex gloves. A soap-like substance from manufacturing looks indistinguishable from polyethylene to analysis tools. <span class="qh-source">Semafor</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Zerodha turns Coin into a passive wealth hub</strong> &mdash; now offers direct MFs, NPS, insurance, and FDs. 2.7&ndash;3M active users with &#8377;1.8&ndash;1.9 lakh crore in MF assets. <span class="qh-source">ETtech</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>ShareChat pivots to microdramas</strong> via QuickTV. &#8377;1,000 Cr+ revenue, cash flow positive in 2025, but core social media growth has slowed. <span class="qh-source">Inc42</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>D2C brand Snitch hits &#8377;900 Cr revenue</strong> (+80% YoY), targeting &#8377;1,400 Cr in FY27. Paused West Asia offline expansion due to geopolitical tensions. <span class="qh-source">Inc42</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Delhi EV Policy 2.0 draft proposes banning new petrol 2-wheelers</strong> and 3-wheelers, with phased subsidies and scrappage incentives through 2030. <span class="qh-source">Inc42</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Netflix reports Q1 Thursday.</strong> Forecast 15.3% top-line growth, but ad business ($3B) faces crowded $37B market. Prices roughly doubled since 2017. <span class="qh-source">The Information</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Goldman Sachs reports Q1 earnings today.</strong> First major bank in this earnings season amid Hormuz uncertainty. <span class="qh-source">Semafor/ET Markets</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Consumer company CTOs pivoting hiring:</strong> Want engineers who "think, not just code." 210% rise in engineering hiring 2024&ndash;2025 per CIEL HR. <span class="qh-source">ETtech</span></div>
+</div>
+
+<div class="quick-hit">
+  <span class="qh-bullet">&bull;</span>
+  <div class="qh-text"><strong>Pope Leo XIV begins 10-day Africa trip</strong> to Algeria, Cameroon, Angola, and Equatorial Guinea. <span class="qh-source">Semafor</span></div>
+</div>
+
+</div>
+
+<!-- COVERAGE SCORECARD -->
+<div class="scorecard">
+<h3>Coverage Scorecard</h3>
+<div class="score-grid">
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Geopolitics / Iran</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">AI / Frontier</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">India Markets</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">India Startups</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Global Markets</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Crypto / DeFi</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Macro / Dalio</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Enterprise SaaS</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">EU Politics</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">Quantum / Science</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">HealthTech / GLP-1</span></div>
+  <div class="score-item"><span class="score-dot covered"></span><span class="score-name">EV / Clean Energy</span></div>
+  <div class="score-item"><span class="score-dot partial"></span><span class="score-name">China / Trade</span></div>
+  <div class="score-item"><span class="score-dot missed"></span><span class="score-name">Climate / ESG</span></div>
+  <div class="score-item"><span class="score-dot missed"></span><span class="score-name">Space (beyond Artemis)</span></div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p><strong style="color:var(--accent)">THE BRIEF</strong> &mdash; Morning Edition, Monday April 13, 2026</p>
+<p style="margin-top:8px">Compiled from: Semafor Flagship, Blockworks (The Breakdown), ET Markets Morning, ET Prime, ETtech Morning Dispatch, Inc42 Daily Brief, ET AI, The Ken, OurCrowd, Finshots, The Information, Simply Wall St, McKinsey, DSP MF, Everything AI and Tech, Product Hunt, Grok Reports + web search for real-time context.</p>
+<p style="margin-top:8px">Previous editions: <a href="brief-archive/index.html" style="color:var(--accent);text-decoration:none">Archive</a></p>
+</footer>
+
+</div>
+
+<script>
+function toggleCard(el){
+  const card=el.closest('.story-card');
+  card.classList.toggle('open');
+}
+function toggleDeep(btn){
+  const card=btn.closest('.story-card');
+  card.classList.toggle('deep');
+  btn.textContent=card.classList.contains('deep')?'Collapse \u2191':'Go Deeper \u2193';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{if(!el.classList.contains('open'))el.querySelector('.story-header').click()},400);}
+}
+function filterStories(cat){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.story-card').forEach(card=>{
+    if(cat==='all'){card.style.display='';return}
+    const cats=(card.dataset.category||'').toLowerCase();
+    card.style.display=cats.includes(cat)?'':'none';
+  });
+}
+</script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
