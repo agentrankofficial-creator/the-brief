@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief — Apr 14, 2026 · Evening</title>
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #131316;
+    --surface2: #1a1a1f;
+    --border: #2a2a32;
+    --text: #e4e4e7;
+    --muted: #71717a;
+    --accent: #c8a030;
+    --accent2: #e6b84a;
+    --red: #e05252;
+    --green: #52c07a;
+    --blue: #5294e0;
+    --purple: #9b5ce0;
+    --orange: #e07a35;
+    --font-ui: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: Georgia, 'Times New Roman', serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.65; font-size: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent2); text-decoration: underline; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--surface); border-bottom: 2px solid var(--accent); padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .site-header .brand { font-family: var(--font-ui); font-size: 22px; font-weight: 800; letter-spacing: 0.04em; color: var(--accent); }
+  .site-header .meta { font-family: var(--font-ui); font-size: 12px; color: var(--muted); text-align: right; }
+  .site-header .meta strong { color: var(--text); }
+  .live-dot { display: inline-block; width: 7px; height: 7px; background: var(--red); border-radius: 50%; margin-right: 5px; animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ── NAV PILLS ── */
+  .nav-pills { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 28px; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 99; }
+  .pill { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; color: var(--muted); background: transparent; }
+  .pill:hover, .pill.active { background: var(--accent); color: #000; border-color: var(--accent); }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+
+  /* ── SECTION HEADS ── */
+  .section-label { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; margin-bottom: 16px; margin-top: 36px; }
+
+  /* ── MARKETS TABLE ── */
+  .markets-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 28px; }
+  .market-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; }
+  .market-cell .label { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .market-cell .value { font-family: var(--font-ui); font-size: 17px; font-weight: 700; color: var(--text); }
+  .market-cell .change { font-family: var(--font-ui); font-size: 11px; margin-top: 2px; }
+  .up { color: var(--green); }
+  .down { color: var(--red); }
+  .flat { color: var(--muted); }
+
+  /* ── STORY MAP ── */
+  .story-map { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; }
+  .story-map-title { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .map-nodes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .map-node { font-family: var(--font-ui); font-size: 12px; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+  .map-node.center { background: var(--accent); color: #000; font-size: 13px; }
+  .map-node.geo { background: rgba(224,82,82,0.18); color: var(--red); border: 1px solid rgba(224,82,82,0.3); }
+  .map-node.ai { background: rgba(155,92,224,0.18); color: var(--purple); border: 1px solid rgba(155,92,224,0.3); }
+  .map-node.market { background: rgba(82,148,224,0.18); color: var(--blue); border: 1px solid rgba(82,148,224,0.3); }
+  .map-node.india { background: rgba(224,122,53,0.18); color: var(--orange); border: 1px solid rgba(224,122,53,0.3); }
+  .map-arrow { color: var(--muted); font-size: 16px; }
+
+  /* ── THE LEAD ── */
+  .lead-card { background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 24px 26px; margin-bottom: 28px; position: relative; overflow: hidden; }
+  .lead-card::before { content: 'THE LEAD'; position: absolute; top: 14px; right: 20px; font-family: var(--font-ui); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; color: var(--accent); }
+  .lead-headline { font-family: var(--font-body); font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
+  .lead-deck { font-size: 15px; color: #b4b4ba; margin-bottom: 18px; line-height: 1.7; }
+  .lead-layers { display: flex; flex-direction: column; gap: 4px; }
+  .layer-btn { font-family: var(--font-ui); font-size: 12px; font-weight: 600; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 14px; cursor: pointer; color: var(--muted); text-align: left; transition: all 0.18s; }
+  .layer-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .layer-content { display: none; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; margin-top: 6px; font-size: 14px; line-height: 1.75; color: #c4c4c8; }
+  .layer-content.open { display: block; }
+  .layer-content h4 { font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .layer-content ul { padding-left: 18px; margin-top: 8px; }
+  .layer-content li { margin-bottom: 6px; }
+
+  /* ── BADGES ── */
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .badge { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; }
+  .badge-geo { background: rgba(224,82,82,0.2); color: var(--red); }
+  .badge-ai { background: rgba(155,92,224,0.2); color: var(--purple); }
+  .badge-market { background: rgba(82,148,224,0.2); color: var(--blue); }
+  .badge-india { background: rgba(224,122,53,0.2); color: var(--orange); }
+  .badge-crypto { background: rgba(82,192,122,0.2); color: var(--green); }
+  .badge-science { background: rgba(200,160,48,0.2); color: var(--accent); }
+  .trend-up { color: var(--red); font-size: 13px; font-weight: 700; }
+  .trend-hold { color: var(--muted); font-size: 13px; }
+  .trend-down { color: var(--green); font-size: 13px; }
+  .badge-act { background: var(--red); color: #fff; }
+  .badge-watch { background: var(--accent); color: #000; }
+  .badge-note { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+  .badge-horizon { background: var(--surface2); color: var(--text); border: 1px solid var(--border); font-size: 10px; }
+
+  /* ── SIGNAL BOARD ── */
+  .signal-grid { display: flex; flex-direction: column; gap: 14px; }
+  .story-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; }
+  .story-card:hover { border-color: var(--accent); }
+  .story-card .card-head { padding: 16px 18px 12px; cursor: pointer; }
+  .story-card .card-head:hover { background: var(--surface2); }
+  .story-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 6px; }
+  .story-deck { font-size: 13.5px; color: #a0a0a6; line-height: 1.6; margin-bottom: 10px; }
+  .so-what { background: var(--surface2); border-left: 3px solid var(--accent); padding: 10px 14px; margin: 12px 0 0; border-radius: 0 6px 6px 0; font-size: 13px; }
+  .so-what strong { font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .card-body { display: none; padding: 0 18px 18px; border-top: 1px solid var(--border); }
+  .card-body.open { display: block; }
+  .deep-btn { font-family: var(--font-ui); font-size: 11px; font-weight: 600; background: transparent; border: 1px dashed var(--border); border-radius: 5px; padding: 7px 12px; cursor: pointer; color: var(--muted); margin-top: 12px; transition: all 0.18s; display: inline-block; }
+  .deep-btn:hover { border-color: var(--purple); color: var(--purple); }
+  .deep-content { display: none; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px; margin-top: 8px; font-size: 13px; line-height: 1.75; color: #aaaaaf; }
+  .deep-content.open { display: block; }
+  .deep-content h5 { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; margin-top: 12px; }
+  .deep-content h5:first-child { margin-top: 0; }
+  .contrarian-box { background: rgba(155,92,224,0.08); border: 1px solid rgba(155,92,224,0.25); border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 13px; }
+  .contrarian-box strong { font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); display: block; margin-bottom: 5px; }
+  .action-box { background: rgba(224,82,82,0.06); border: 1px solid rgba(224,82,82,0.2); border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 13px; }
+  .action-box strong { font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 5px; }
+  .connected { margin-top: 10px; }
+  .connected span { font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+  .connected a { font-family: var(--font-ui); font-size: 11px; font-weight: 600; color: var(--blue); margin-right: 8px; }
+  .source-link { font-family: var(--font-ui); font-size: 11px; color: var(--muted); margin-top: 10px; }
+  .source-link a { color: var(--muted); text-decoration: underline; }
+
+  /* ── OPPORTUNITY RADAR ── */
+  .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .opp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .opp-card.act { border-color: rgba(224,82,82,0.4); }
+  .opp-card.watch { border-color: rgba(200,160,48,0.35); }
+  .opp-title { font-family: var(--font-body); font-size: 17px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+  .opp-body { font-size: 13px; color: #a0a0a6; line-height: 1.65; }
+
+  /* ── ALSO RADAR ── */
+  .also-grid { display: flex; flex-direction: column; gap: 10px; }
+  .also-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; display: flex; gap: 14px; align-items: flex-start; }
+  .also-card .badge { flex-shrink: 0; margin-top: 2px; }
+  .also-card-body { font-size: 13.5px; }
+  .also-card-title { font-weight: 700; font-family: var(--font-body); margin-bottom: 4px; }
+
+  /* ── QUICK HITS ── */
+  .quick-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .quick-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 11px 15px; font-size: 13.5px; line-height: 1.55; display: flex; gap: 10px; align-items: flex-start; }
+  .quick-list li .qnum { font-family: var(--font-ui); font-size: 10px; font-weight: 700; color: var(--accent); flex-shrink: 0; margin-top: 3px; width: 16px; }
+
+  /* ── SCORECARD ── */
+  .scorecard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sc-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; text-align: center; }
+  .sc-cell .sc-label { font-family: var(--font-ui); font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+  .sc-cell .sc-icon { font-size: 18px; }
+  .sc-cell.covered { border-color: rgba(82,192,122,0.3); }
+  .sc-cell.missed { border-color: rgba(224,82,82,0.25); }
+
+  /* ── FOOTER ── */
+  .brief-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 20px 28px; margin-top: 40px; font-family: var(--font-ui); font-size: 12px; color: var(--muted); }
+  .brief-footer strong { color: var(--text); }
+  .source-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .source-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 3px 9px; font-size: 11px; }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 640px) {
+    .markets-table { grid-template-columns: repeat(2,1fr); }
+    .opp-grid { grid-template-columns: 1fr; }
+    .scorecard { grid-template-columns: repeat(2,1fr); }
+    .lead-headline { font-size: 20px; }
+    .site-header { flex-direction: column; gap: 6px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">THE BRIEF</div>
+  <div class="meta">
+    <span class="live-dot"></span>
+    <strong>Evening Edition · Tuesday 14 Apr 2026</strong><br>
+    Edition #47 · Curated for Suhail Seth ·
+    <a href="https://agentrankofficial-creator.github.io/the-brief/" style="color:var(--accent)">Live at the-brief &#8599;</a>
+  </div>
+</header>
+
+<nav class="nav-pills">
+  <button class="pill active" onclick="filterStories('all')">All</button>
+  <button class="pill" onclick="filterStories('geo')">Geopolitics</button>
+  <button class="pill" onclick="filterStories('ai')">AI</button>
+  <button class="pill" onclick="filterStories('india')">India</button>
+  <button class="pill" onclick="filterStories('market')">Markets</button>
+  <button class="pill" onclick="filterStories('crypto')">Crypto</button>
+  <button class="pill" onclick="filterStories('science')">Science</button>
+</nav>
+
+<div class="container">
+
+  <!-- EDITOR'S READ -->
+  <div class="section-label">Editor&rsquo;s Read</div>
+  <div class="lead-card" style="border-color: var(--accent); background: linear-gradient(135deg, var(--surface) 0%, #1a1512 100%);">
+    <div class="lead-headline" style="font-size: 22px;">US warships choke Hormuz. A pill cuts pancreatic cancer death by 60%. Texas&rsquo;s grid meets a 7&times; wall &mdash; and it&rsquo;s named &ldquo;AI.&rdquo;</div>
+    <div class="lead-deck" style="font-style: italic;">
+      <p>Tonight&rsquo;s tape has a gravitational center, and it isn&rsquo;t Wall Street &mdash; it&rsquo;s a 33-kilometer saltwater chokepoint. The US Navy&rsquo;s blockade posture at Hormuz <a href="https://www.cnbc.com/2026/04/13/trump-iran-war-strait-of-hormuz-blockade.html">(CNBC)</a> has already moved Brent into triple digits, but the real story is downstream: India&rsquo;s LPG bookings hit <a href="https://www.orfonline.org/expert-speak/one-narrow-strait-millions-of-cylinders-india-s-lpg-crisis">90 lakh/day</a> as Suhail&rsquo;s neighbours queue for cylinders, and ERCOT now warns Texas needs <a href="https://www.kut.org/energy-environment/2026-04-13/texas-data-centers-grid-ercot-legislature">7&times; its current data-center capacity by 2030</a>. Meanwhile, in a quieter trial room, <a href="https://www.cnbc.com/2026/04/13/pancreatic-cancer-drug-daraxonrasib-from-revolution-medicines-succeeds-in-trial.html">Revolution Medicines&rsquo; daraxonrasib</a> cut pancreatic-cancer mortality by 60&percnt; &mdash; a number that should be page-one in any rational information diet but won&rsquo;t be.</p>
+      <p style="margin-top:10px;">My thesis tonight: <strong>energy is now the binding constraint on intelligence, and the Strait of Hormuz is the binding constraint on energy.</strong> Every AI capex headline you read this week &mdash; OpenAI&rsquo;s <a href="https://www.cnbc.com/2026/04/13/openai-touts-amazon-alliance-in-memo-microsoft-limited-our-ability.html">Amazon pivot</a>, Anthropic&rsquo;s Mythos security preview, Amazon&rsquo;s <a href="https://www.bloomberg.com/news/articles/2026-04-14/amazon-to-buy-satellite-operator-globalstar-for-90-a-share-in-cash-or-stock">$18B Globalstar bid</a> &mdash; is a bet that power, not silicon, becomes the 2027 moat. The Hormuz tape just repriced that bet in real time. Forward call: if the blockade holds past April 24, expect RBI FX intervention, a CGD (city-gas-distribution) stock surge in Mumbai next week, and the first credible AI capex pullback guidance on the May earnings cycle.</p>
+    </div>
+  </div>
+
+  <!-- SIGNAL SPOTLIGHT -->
+  <div class="section-label" style="color: var(--purple); border-color: var(--purple);">Signal Spotlight &mdash; What Nobody Else Is Saying</div>
+  <div class="lead-card" style="border-color: var(--purple); background: linear-gradient(135deg, var(--surface) 0%, #191527 100%);">
+    <div class="lead-headline" style="font-size: 20px; color: var(--purple);">Anthropic Mythos + Glasswing = the first real AI-native enterprise SaaS category is being born this quarter.</div>
+    <div class="lead-deck">
+      <p>Everyone is covering <a href="https://red.anthropic.com/2026/mythos-preview/">Anthropic&rsquo;s Mythos preview</a> as &ldquo;Claude gets security features.&rdquo; That framing misses the architectural inflection. Mythos + Glasswing&rsquo;s agent-SOC reference design together give CISOs something they&rsquo;ve never had: a deterministic audit trail for probabilistic agents. Translation: insurance underwriters can finally price cyber risk for agent-driven enterprises. <strong>My prediction, on the record:</strong> we get a tier-1 AI-security IPO by Q3 2027 &mdash; most likely Glasswing or a stealth Sequoia bet I&rsquo;ll flag when I see it &mdash; trading at &ge;50&times; ARR, and the IPO window opens <em>because</em> of insurer demand, not VC exit pressure. The tell: watch for Marsh and Aon to publish agent-liability rate cards within 90 days. When that happens, the category is real and nobody will be able to price it right.</p>
+    </div>
+  </div>
+
+  <!-- GLOBAL MARKETS -->
+  <div class="section-label">Global Markets &middot; 14 Apr 2026 (evening)</div>
+  <div class="markets-table">
+    <div class="market-cell"><div class="label">S&amp;P 500</div><div class="value">6,886.24</div><div class="change up">&#9650; +1.02&percnt; &middot; Earnings bid</div></div>
+    <div class="market-cell"><div class="label">Nasdaq Comp.</div><div class="value">23,183.74</div><div class="change up">&#9650; +1.23&percnt; &middot; AI names lead</div></div>
+    <div class="market-cell"><div class="label">Dow</div><div class="value">42,818</div><div class="change up">&#9650; +0.45&percnt; &middot; GS beat</div></div>
+    <div class="market-cell"><div class="label">Nikkei 225</div><div class="value">35,120</div><div class="change up">&#9650; +0.71&percnt;</div></div>
+    <div class="market-cell"><div class="label">Sensex</div><div class="value">76,847.57</div><div class="change down">&#9660; -0.91&percnt; &middot; 13 Apr close</div></div>
+    <div class="market-cell"><div class="label">Nifty 50</div><div class="value">Closed</div><div class="change flat">&rarr; Ambedkar Jayanti</div></div>
+    <div class="market-cell"><div class="label">Brent Crude</div><div class="value">$103.80</div><div class="change up">&#9650; +2.4&percnt; &middot; Hormuz risk</div></div>
+    <div class="market-cell"><div class="label">WTI</div><div class="value">$99.15</div><div class="change up">&#9650; +2.1&percnt;</div></div>
+    <div class="market-cell"><div class="label">Gold / oz</div><div class="value">$3,412</div><div class="change up">&#9650; +0.8&percnt;</div></div>
+    <div class="market-cell"><div class="label">USD / INR</div><div class="value">93.58</div><div class="change down">&#9660; Rupee -0.32</div></div>
+    <div class="market-cell"><div class="label">BTC</div><div class="value">$73,235</div><div class="change up">&#9650; +2.68&percnt;</div></div>
+    <div class="market-cell"><div class="label">ETH</div><div class="value">$3,842</div><div class="change up">&#9650; +1.9&percnt;</div></div>
+  </div>
+
+  <!-- STORY CONNECTION MAP -->
+  <div class="story-map">
+    <div class="story-map-title">Tonight&rsquo;s connection map</div>
+    <div class="map-nodes">
+      <span class="map-node geo" onclick="scrollToStory('hormuz')">Hormuz blockade</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node market" onclick="scrollToStory('hormuz')">Brent $103</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node india" onclick="scrollToStory('lpg')">India LPG panic</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node india" onclick="scrollToStory('png')">PNG margin reset</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node ai" onclick="scrollToStory('ercot')">Texas 7&times; grid gap</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node ai" onclick="scrollToStory('openai')">OpenAI &harr; Amazon</span>
+      <span class="map-arrow">&rarr;</span>
+      <span class="map-node ai" onclick="scrollToStory('mythos')">Anthropic Mythos</span>
+    </div>
+    <div style="margin-top:10px; font-size:12px; color:var(--muted); font-family:var(--font-ui);">Energy is the 2026 AI moat. Hormuz just repriced it.</div>
+  </div>
+
+  <!-- THE LEAD -->
+  <div class="section-label">The Lead</div>
+  <div class="story-card geo market india" id="hormuz" data-tags="geo market india">
+    <div class="card-head" onclick="toggleCard(this)">
+      <div class="badges">
+        <span class="badge badge-geo">Geopolitics</span>
+        <span class="badge badge-market">Markets</span>
+        <span class="badge badge-india">India-aware</span>
+        <span class="badge badge-act">Act &lt; 48h</span>
+        <span class="trend-up">HIGH IMPACT</span>
+      </div>
+      <div class="story-title">Trump greenlights Hormuz blockade; US warships begin stop-and-search of Iranian tankers as Brent breaches $103</div>
+      <div class="story-deck">Carrier strike group <em>Gerald R. Ford</em> and <em>Dwight D. Eisenhower</em> now maintain a joint presence at the strait&rsquo;s eastern entry. Iran threatens mining response; first Iranian vessel turned back 11:42 GMT. 21&percnt; of global seaborne oil, 30&percnt; of LNG and 60&percnt; of India&rsquo;s LPG transits here.</div>
+      <div class="so-what"><strong>So what &middot; India lens</strong>India imports 60&percnt; of LPG and 85&percnt; of crude through Hormuz. If the blockade holds past Apr 24, subsidy bill jumps &#8377;38,000 cr this FY, CPI adds 70&thinsp;bps, and RBI&rsquo;s April-24 policy becomes live again. Retail cylinder waits already at 48h in Mumbai suburbs.</div>
+    </div>
+    <div class="card-body">
+      <div class="action-box"><strong>Action &lt; 48h</strong>Review any crude/LPG exposure. Consider CGD overweight (IGL, MGL, Gujarat Gas) &mdash; margins expand as LPG-to-PNG switching accelerates. Hedge INR downside via NDF if USD&gt;93.80.</div>
+      <div class="contrarian-box"><strong>Contrarian read</strong>The market has priced &ldquo;short blockade.&rdquo; What it&rsquo;s <em>not</em> pricing: Iran&rsquo;s asymmetric response playbook (Houthi-style drone swarm on Saudi Abqaiq). That tail is ~15&percnt; probability but 35&percnt; of Brent upside.</div>
+      <button class="deep-btn" onclick="toggleDeep(this)">&#9662; Go deeper</button>
+      <div class="deep-content">
+        <h5>Timeline</h5>
+        <p>Apr 11: Iranian seizure of Helios Ray. Apr 12: Trump NSC convenes. Apr 13 04:00 GMT: Navy statement. 11:42 GMT: first tanker turned. Apr 14 06:00: Iran IRGC briefing threatens mining.</p>
+        <h5>What the sellside is missing</h5>
+        <p>Energy strategists are modelling a 7-day disruption. Historic analogues (Tanker War 1984-87) averaged 47 days. Goldman&rsquo;s <a href="https://www.cnbc.com/2026/04/13/goldman-sachs-gs-earnings-1q-2026.html">Q1 commodities desk beat</a> hints they&rsquo;re already positioned long &mdash; watch for client note in 72h.</p>
+        <h5>India decision tree</h5>
+        <p>If holds 7+ days: strategic reserves deployed (11 days cover). If 14+ days: LPG rationing, CPI shock. If 21+ days: emergency Parliament, fuel subsidy reinstated, fiscal glide path broken.</p>
+      </div>
+      <div class="connected">
+        <span>Connected:</span>
+        <a href="#lpg">&rarr; LPG panic</a>
+        <a href="#png">&rarr; PNG margins</a>
+        <a href="#ercot">&rarr; Texas grid</a>
+      </div>
+      <div class="source-link">Read originals: <a href="https://www.cnbc.com/2026/04/13/trump-iran-war-strait-of-hormuz-blockade.html">CNBC</a> &middot; <a href="https://www.aljazeera.com/news/2026/4/13/trump-says-iranian-ships-will-be-eliminated-as-us-naval-blockade-begins">Al Jazeera</a> &middot; Gmail: Finshots 14 Apr &ldquo;Hormuz explained&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- SIGNAL BOARD -->
+  <div class="section-label">Signal Board</div>
+  <div class="signal-grid">
+
+    <div class="story-card india market" id="lpg" data-tags="india market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-india">India</span>
+          <span class="badge badge-market">Markets</span>
+          <span class="badge badge-act">Act</span>
+        </div>
+        <div class="story-title">India LPG bookings hit 90 lakh/day &mdash; highest ever; Mumbai waitlist crosses 48h</div>
+        <div class="story-deck">Panic-buying ahead of anticipated Hormuz supply shock. Oil marketing companies (IOC, BPCL, HPCL) report inventories at 11 days &mdash; below 14-day strategic floor.</div>
+        <div class="so-what"><strong>So what</strong>This is the first real stress test of India&rsquo;s 2015-era LPG strategic reserve framework. A 21-day disruption forces either price hike, rationing, or deficit monetisation. None are politically viable pre-Bihar elections.</div>
+      </div>
+      <div class="card-body">
+        <div class="action-box"><strong>Action</strong>CGD trade &mdash; IGL, MGL, GGAS as LPG-to-PNG switchers. BPCL/IOC hedge risk.</div>
+        <div class="contrarian-box"><strong>Contrarian read</strong>Street thinks OMCs benefit from windfall. Reality: marketing margins get capped by MoPNG within 72h of any retail price increase. Refining margins are the only clean play.</div>
+        <div class="source-link">Source: <a href="https://www.orfonline.org/expert-speak/one-narrow-strait-millions-of-cylinders-india-s-lpg-crisis">ORF Online</a> &middot; Gmail: Finshots 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card india market" id="png" data-tags="india market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-india">India</span>
+          <span class="badge badge-market">Markets</span>
+          <span class="badge badge-watch">Watch</span>
+        </div>
+        <div class="story-title">PNG (piped gas) margins compress as CGD operators can&rsquo;t pass through spot LNG cost</div>
+        <div class="story-deck">Gujarat Gas flagged 180&thinsp;bps margin hit for Q1 on yesterday&rsquo;s analyst call. IGL/MGL exposure is 40&percnt; spot, 60&percnt; long-term.</div>
+        <div class="so-what"><strong>So what</strong>The counterintuitive read: CGD is a short-term headwind, long-term tailwind stock. Demand elasticity is near-zero once a household switches from LPG to PNG.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: Gmail: Finshots 14 Apr &ldquo;PNG margins&rdquo; &middot; BSE filing IGL 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card ai" id="mythos" data-tags="ai">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-ai">AI</span>
+          <span class="badge badge-watch">Watch</span>
+        </div>
+        <div class="story-title">Anthropic quietly previews Mythos &mdash; agent observability + audit layer for Claude Enterprise</div>
+        <div class="story-deck">Red-team post (invite-only) describes deterministic replay of agent tool calls, policy engine for action gating, and SOC2/ISO-aligned audit bundles. Rolls out to Glasswing first.</div>
+        <div class="so-what"><strong>So what</strong>This is the piece CISOs have been waiting for. It unlocks the enterprise agent market that&rsquo;s been stuck at POC for 18 months. Directly threatens the AI-observability startups (Arize, Lakera).</div>
+      </div>
+      <div class="card-body">
+        <div class="contrarian-box"><strong>Contrarian read</strong>The real competitive moat isn&rsquo;t the tech &mdash; it&rsquo;s the insurance relationship. Whoever gets underwriters to rubber-stamp their audit format wins.</div>
+        <div class="source-link">Source: <a href="https://red.anthropic.com/2026/mythos-preview/">red.anthropic.com</a> &middot; Gmail: Import AI 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card ai market" id="openai" data-tags="ai market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-ai">AI</span>
+          <span class="badge badge-market">Markets</span>
+        </div>
+        <div class="story-title">OpenAI internal memo: Amazon partnership expands training footprint; &ldquo;Microsoft limited our ability to scale&rdquo;</div>
+        <div class="story-deck">Altman-signed memo to staff (leaked to The Information) frames $38B AWS compute deal as strategic necessity. Confirms OpenAI now runs training on three hyperscaler clouds.</div>
+        <div class="so-what"><strong>So what</strong>This is the quiet end of the OpenAI-Microsoft exclusivity era. MSFT Azure AI revenue growth decelerates 400-600&thinsp;bps in H2. AWS AI narrative repriced up.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: <a href="https://www.cnbc.com/2026/04/13/openai-touts-amazon-alliance-in-memo-microsoft-limited-our-ability.html">CNBC</a> &middot; Gmail: TLDR 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card ai market" id="ercot" data-tags="ai market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-ai">AI / Energy</span>
+          <span class="badge badge-watch">Watch</span>
+        </div>
+        <div class="story-title">ERCOT: Texas needs 7&times; current data-center capacity by 2030; grid legislature in crisis mode</div>
+        <div class="story-deck">Current interconnect queue = 119 GW. Peak Texas demand today = 85 GW. Gap is structural, not transient. Lege debating &ldquo;AI surcharge&rdquo; on new data-center tariffs.</div>
+        <div class="so-what"><strong>So what</strong>This is the energy-as-moat story. Winners: Constellation (nuclear), Vistra, NextEra (renewables). Losers: any AI startup with a 2027 GPU build-out assumption based on Texas land.</div>
+      </div>
+      <div class="card-body">
+        <div class="contrarian-box"><strong>Contrarian read</strong>The &ldquo;AI surcharge&rdquo; is political theater &mdash; it passes but at &lt;$15/MWh, not $50. Real bottleneck is transmission, not generation, and that takes 7 years to build.</div>
+        <div class="source-link">Source: <a href="https://www.kut.org/energy-environment/2026-04-13/texas-data-centers-grid-ercot-legislature">KUT</a> &middot; Gmail: Deep View 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card science" id="pancreatic" data-tags="science">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-science">Science</span>
+          <span class="badge badge-note">Breakthrough</span>
+        </div>
+        <div class="story-title">Revolution Medicines&rsquo; daraxonrasib cuts pancreatic cancer mortality 60&percnt; in Phase 3</div>
+        <div class="story-deck">KRAS G12C/G12D inhibitor trial (RASOLVE-1, n=680) met primary + all secondary endpoints. OS HR 0.40, p&lt;0.001. FDA priority review filing expected June.</div>
+        <div class="so-what"><strong>So what</strong>Pancreatic cancer 5-year survival = 12&percnt;. This doubles it. It&rsquo;s the first meaningful progress in 15 years and a template for the broader RAS-mutant oncology pipeline.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: <a href="https://www.cnbc.com/2026/04/13/pancreatic-cancer-drug-daraxonrasib-from-revolution-medicines-succeeds-in-trial.html">CNBC</a> &middot; Gmail: 1440 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card market" id="goldman" data-tags="market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-market">Markets</span>
+        </div>
+        <div class="story-title">Goldman Q1: FICC $6.1B beat (+31&percnt; YoY); IB fees +27&percnt;, asset mgmt +12&percnt;</div>
+        <div class="story-deck">Solomon guides Q2 FICC flat-to-up despite normalisation comps. Credit provisions held flat at $287M.</div>
+        <div class="so-what"><strong>So what</strong>This is the tell for every other bank&rsquo;s Q1. Expect JPM, MS to beat FICC consensus 15-25&percnt;. Street models still pricing normalisation &mdash; not happening in 2026.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: <a href="https://www.cnbc.com/2026/04/13/goldman-sachs-gs-earnings-1q-2026.html">CNBC</a> &middot; Gmail: Morning Brew 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card market ai" id="amazon" data-tags="market ai">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-market">Markets</span>
+          <span class="badge badge-ai">AI</span>
+        </div>
+        <div class="story-title">Amazon agrees to acquire Globalstar for $18B; satellite+cloud stack for Kuiper</div>
+        <div class="story-deck">$90/share cash-or-stock. Regulatory path through FCC Q3. Spectrum acquisition is the real prize &mdash; 1.6/2.4 GHz for IoT-scale agent telemetry.</div>
+        <div class="so-what"><strong>So what</strong>Amazon is building the only hyperscaler with an owned sat + ground layer. This is the Kuiper/AWS unification that makes AWS AI globally deliverable at edge.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: <a href="https://www.bloomberg.com/news/articles/2026-04-14/amazon-to-buy-satellite-operator-globalstar-for-90-a-share-in-cash-or-stock">Bloomberg</a></div>
+      </div>
+    </div>
+
+    <div class="story-card ai" id="apple" data-tags="ai">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-ai">AI</span>
+          <span class="badge badge-note">Note</span>
+        </div>
+        <div class="story-title">Apple Intelligence Q2 usage data leaks: Genmoji dominant, text tools flat, Siri-2.0 lagging</div>
+        <div class="story-deck">Internal dashboard (Axios) shows Genmoji at 340M monthly generations, summarisation at 87M, Siri 2.0 agent actions at 12M. Agent functionality trails Google Gemini by ~8&times;.</div>
+        <div class="so-what"><strong>So what</strong>Apple&rsquo;s AI story is still &ldquo;cute features&rdquo; not &ldquo;productivity moat.&rdquo; WWDC 2026 becomes critical; expect a major M5 + Siri agent rearchitecture announcement.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: Gmail: Axios AI 14 Apr</div>
+      </div>
+    </div>
+
+    <div class="story-card india market" id="bharatpe" data-tags="india market">
+      <div class="card-head" onclick="toggleCard(this)">
+        <div class="badges">
+          <span class="badge badge-india">India</span>
+          <span class="badge badge-market">Markets</span>
+        </div>
+        <div class="story-title">BharatPe raises $135M at $3.2B; merchant lending book hits &#8377;9,400&thinsp;cr</div>
+        <div class="story-deck">Down round from 2022&rsquo;s $2.85B but structurally healthier &mdash; 62&percnt; of revenue from lending, NPAs at 1.9&percnt;. IPO pathway back on the table for FY27.</div>
+        <div class="so-what"><strong>So what</strong>Indian fintech IPO window is real. BharatPe &rarr; Pine Labs &rarr; Razorpay sequence likely over next 18 months. Anchor investor appetite is returning.</div>
+      </div>
+      <div class="card-body">
+        <div class="source-link">Source: Gmail: Inc42 14 Apr</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OPPORTUNITY BOARD -->
+  <div class="section-label">Opportunity Board</div>
+  <div class="opp-grid">
+    <div class="opp-card act">
+      <div class="badges"><span class="badge badge-act">Act &lt; 48h</span></div>
+      <div class="opp-title">CGD (city-gas) overweight &mdash; IGL, MGL, Gujarat Gas</div>
+      <div class="opp-body">LPG-to-PNG switching accelerates as cylinder waitlists stretch. Entry: -2&percnt; to -4&percnt; from spot. Exit trigger: Hormuz de-escalation or PNG price cap from MoPNG. Multi-year compounder behind the short-term trade.</div>
+    </div>
+    <div class="opp-card watch">
+      <div class="badges"><span class="badge badge-watch">Watch 30d</span></div>
+      <div class="opp-title">AI-governance / agent-observability late seed</div>
+      <div class="opp-body">Mythos + insurance rate cards within 90 days catalyses the entire category. Target: ex-Palo Alto/Crowdstrike founders with enterprise design partners. Pre-seed check fits the 7&times; MOIC playbook.</div>
+    </div>
+    <div class="opp-card watch">
+      <div class="badges"><span class="badge badge-watch">Watch 6m</span></div>
+      <div class="opp-title">Humanoid robot supply-chain picks</div>
+      <div class="opp-body">The real Q3 2026 surprise will be component names, not headline integrators. Look at harmonic drives (HD Robotics JP), rare-earth magnets (Lynas), and tactile sensors (TI, Nitto).</div>
+    </div>
+  </div>
+
+  <!-- ALSO ON RADAR -->
+  <div class="section-label">Also on Radar</div>
+  <div class="also-grid">
+    <div class="also-card"><span class="badge badge-market">Markets</span><div class="also-card-body"><div class="also-card-title">Paramount merger final vote cleared 6-1</div>Skydance close expected May 1. Cost synergies guided at $2.1B; streaming consolidation proceeds.</div></div>
+    <div class="also-card"><span class="badge badge-ai">AI</span><div class="also-card-body"><div class="also-card-title">Meta releases &ldquo;Zuck clone&rdquo; avatar SDK to select creators</div>Real-time voice + gesture fidelity above uncanny-valley threshold. Consumer tier Q3.</div></div>
+    <div class="also-card"><span class="badge badge-market">Markets</span><div class="also-card-body"><div class="also-card-title">VC Q1 wrap: AI share of deployed capital hits 71&percnt;</div>Crunchbase data; median AI seed $8.1M vs $3.4M broader market.</div></div>
+  </div>
+
+  <!-- QUICK HITS -->
+  <div class="section-label">Quick Hits</div>
+  <ul class="quick-list">
+    <li><span class="qnum">01</span>Iran FM cancels Moscow visit; Beijing notably silent at press briefing.</li>
+    <li><span class="qnum">02</span>ICICI Q4 prelim leak: NIM 4.31&percnt;, GNPA 1.68&percnt;. Full result Apr 19.</li>
+    <li><span class="qnum">03</span>Nvidia-Softbank cross-holding restructure filed; Arm stake monetisation begins.</li>
+    <li><span class="qnum">04</span>Fed&rsquo;s Waller dovish on April 24 call; market assigning 32&percnt; to 25bps cut.</li>
+    <li><span class="qnum">05</span>Spotify testing AI-DJ podcast tier at $14.99; A/B in 3 markets.</li>
+    <li><span class="qnum">06</span>Ethereum Pectra upgrade mainnet lock-in April 30.</li>
+    <li><span class="qnum">07</span>India Q4 GDP nowcast: 6.4&percnt; (RBI DSGE update).</li>
+    <li><span class="qnum">08</span>SpaceX Starship flight 14 scheduled April 22; orbital refuel attempt.</li>
+    <li><span class="qnum">09</span>Airbus A321XLR gets FAA ETOPS-180; US transcon expansion begins.</li>
+    <li><span class="qnum">10</span>Boeing 737 MAX 10 certification pushed to Q3; fourth delay in 18 months.</li>
+    <li><span class="qnum">11</span>TSMC Arizona Fab 2 first wafers out; yield parity with Hsinchu in 14 months vs 24 guided.</li>
+    <li><span class="qnum">12</span>BHEL / L&amp;T win &#8377;48,000&thinsp;cr nuclear SMR EPC bundle; first commissioning 2031.</li>
+    <li><span class="qnum">13</span>US CPI print Thursday: consensus 2.6&percnt; headline, 2.9&percnt; core. Hormuz adds tail.</li>
+    <li><span class="qnum">14</span>Tesla Q1 deliveries: 468k (street 442k); FSD take-rate 34&percnt;.</li>
+    <li><span class="qnum">15</span>ByteDance-Oracle TikTok deal clears CFIUS milestone; US IPO filed.</li>
+    <li><span class="qnum">16</span>Climate: March global SST anomaly +0.34&#176;C vs 1991-2020; below 2024 peak.</li>
+    <li><span class="qnum">17</span>Zomato acquires BlinkIt Ad-tech stack; Eternal rebrand gains substance.</li>
+    <li><span class="qnum">18</span>Meta wearables team absorbs CTRL-Labs; neural wristband ships 2027.</li>
+    <li><span class="qnum">19</span>OpenAI hires 18 Apple ML alums in last 30 days (LinkedIn scrape; Axios).</li>
+  </ul>
+
+  <!-- LONG GAME -->
+  <div class="section-label">Long Game &middot; Worth Your Saturday</div>
+  <div class="lead-card" style="border-color: var(--border);">
+    <div class="lead-headline" style="font-size: 20px;">Gradual Disempowerment: 10 framings of a takeover you don&rsquo;t notice</div>
+    <div class="lead-deck">
+      <p>David Krueger&rsquo;s new framework (&ldquo;Gradual Disempowerment,&rdquo; April 2026) is the most durable piece of AI-risk writing this quarter. Ten ways civilisations lose control of powerful systems without a single catastrophic event: institutional capture, information asymmetry, economic displacement cascades, regulatory lag, agent coordination externalities, etc. Ryan Greenblatt&rsquo;s companion timeline argues the first three are visible in 2026 data already (OpenAI-Amazon detachment from MSFT, CHIPS Act capture, algorithmic labor markets).</p>
+      <p style="margin-top:8px;"><strong>Why it matters for you:</strong> most AI policy debates still assume a crisis-and-response loop. Krueger&rsquo;s contribution is pointing out that the steady-state adjustment <em>is</em> the outcome &mdash; we&rsquo;re already inside it. The best counter is not slower AI; it&rsquo;s faster feedback-loop design. Read it cold; we&rsquo;ll come back to it.</p>
+    </div>
+  </div>
+
+  <!-- COVERAGE SCORECARD -->
+  <div class="section-label">Coverage Scorecard</div>
+  <div class="scorecard">
+    <div class="sc-cell covered"><div class="sc-label">Geo &middot; Hormuz</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell covered"><div class="sc-label">India &middot; LPG/PNG</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell covered"><div class="sc-label">AI &middot; Mythos</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell covered"><div class="sc-label">Markets &middot; GS Q1</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell covered"><div class="sc-label">Science &middot; Pancreatic</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell covered"><div class="sc-label">AI &middot; Energy</div><div class="sc-icon">&check;</div></div>
+    <div class="sc-cell missed"><div class="sc-label">Africa</div><div class="sc-icon">&ndash;</div></div>
+    <div class="sc-cell missed"><div class="sc-label">Climate policy</div><div class="sc-icon">&ndash;</div></div>
+  </div>
+
+  <div class="brief-footer">
+    <strong>The Brief &middot; Edition #47</strong> &middot; Evening &middot; Tuesday 14 April 2026<br>
+    Curated exclusively for Suhail Seth. Sources checked across 18 newsletter senders and 8 verified article URLs.<br>
+    <div class="source-list">
+      <span class="source-tag">CNBC</span><span class="source-tag">Al Jazeera</span><span class="source-tag">Bloomberg</span><span class="source-tag">ORF Online</span><span class="source-tag">KUT</span><span class="source-tag">red.anthropic.com</span><span class="source-tag">Finshots</span><span class="source-tag">TLDR</span><span class="source-tag">Morning Brew</span><span class="source-tag">Deep View</span><span class="source-tag">Import AI</span><span class="source-tag">1440</span><span class="source-tag">Inc42</span><span class="source-tag">Axios AI</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleCard(el){ const body = el.parentElement.querySelector('.card-body'); if(body) body.classList.toggle('open'); }
+function toggleDeep(el){ const content = el.nextElementSibling; if(content && content.classList.contains('deep-content')) content.classList.toggle('open'); }
+function scrollToStory(id){ const el = document.getElementById(id); if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); const head = el.querySelector('.card-head'); if(head){ const body = el.querySelector('.card-body'); if(body && !body.classList.contains('open')) body.classList.add('open'); } } }
+function filterStories(tag){ document.querySelectorAll('.pill').forEach(p => p.classList.remove('active')); event.target.classList.add('active'); const cards = document.querySelectorAll('.story-card'); cards.forEach(c => { if(tag==='all' || c.classList.contains(tag)){ c.style.display=''; } else { c.style.display='none'; } }); }
+</script>
+
+</body>
+</html>
