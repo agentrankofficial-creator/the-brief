@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BRIEF · Evening · Apr 15, 2026</title>
+<style>
+:root {
+  --bg: #0a0a0b;
+  --bg-2: #111114;
+  --bg-3: #17171c;
+  --line: #26262e;
+  --ink: #f2f2ef;
+  --ink-2: #c9c9c2;
+  --ink-3: #8a8a82;
+  --accent: #c8a030;
+  --accent-2: #e6b955;
+  --maple: #e05252;
+  --up: #4ea879;
+  --down: #d96a5a;
+  --flat: #8a8a82;
+  --chip: #1f1f26;
+  --serif: "Charter","Iowan Old Style","Georgia",serif;
+  --sans: "Inter","SF Pro Text",system-ui,sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.55; }
+a { color: var(--accent-2); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
+
+/* Masthead */
+.mast { border-bottom: 2px solid var(--accent); padding-bottom: 18px; margin-bottom: 26px; }
+.mast-top { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+.mast-top .edition { color: var(--accent); font-weight: 600; }
+.mast h1 { font-size: 58px; line-height: 1; letter-spacing: -0.02em; margin: 14px 0 8px; font-weight: 900; }
+.mast .tag { font-family: var(--sans); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+
+/* Editor's Read */
+.editors { background: linear-gradient(180deg,#14130d 0%, #0f0e0a 100%); border: 1px solid #2a2416; border-left: 3px solid var(--accent); padding: 26px 30px; margin-bottom: 28px; border-radius: 2px; }
+.editors .label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.editors h2 { font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--ink); }
+.editors p { font-size: 16px; line-height: 1.65; color: var(--ink-2); margin-bottom: 10px; }
+.editors p:last-child { margin-bottom: 0; }
+.editors strong { color: var(--ink); }
+
+/* Spotlight */
+.spotlight { border: 1px solid var(--line); background: var(--bg-2); padding: 22px 26px; margin-bottom: 28px; position: relative; }
+.spotlight .label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--maple); margin-bottom: 8px; }
+.spotlight h3 { font-size: 22px; line-height: 1.25; margin-bottom: 8px; }
+.spotlight p { color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.spotlight .why { margin-top: 10px; font-family: var(--sans); font-size: 13px; color: var(--ink-3); }
+.spotlight .why strong { color: var(--accent-2); letter-spacing: 0.05em; text-transform: uppercase; font-size: 11px; }
+
+/* Section headers */
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin: 36px 0 18px; }
+.sec-head h2 { font-family: var(--sans); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.sec-head .count { font-family: var(--sans); font-size: 11px; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* Markets grid */
+.markets { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 12px; }
+.mkt-cell { background: var(--bg-2); border: 1px solid var(--line); padding: 12px 14px; border-radius: 2px; }
+.mkt-cell.cn { border-left: 2px solid var(--maple); }
+.mkt-cell.in { border-left: 2px solid var(--accent); }
+.mkt-cell .name { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+.mkt-cell .val { font-family: var(--sans); font-size: 18px; font-weight: 600; color: var(--ink); line-height: 1.1; }
+.mkt-cell .chg { font-family: var(--sans); font-size: 12px; margin-top: 4px; font-weight: 500; }
+.mkt-cell .chg.up { color: var(--up); }
+.mkt-cell .chg.down { color: var(--down); }
+.mkt-cell .chg.flat { color: var(--flat); }
+.mkt-note { font-family: var(--sans); font-size: 11px; color: var(--ink-3); margin-bottom: 20px; letter-spacing: 0.04em; }
+
+/* Story Connection Map */
+.conmap { background: var(--bg-3); border: 1px solid var(--line); padding: 18px 22px; margin: 18px 0 28px; border-radius: 2px; }
+.conmap h4 { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.conmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.conmap-node { font-family: var(--sans); font-size: 13px; }
+.conmap-node .n-title { color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+.conmap-node .n-link { color: var(--ink-3); font-size: 12px; font-style: italic; }
+.conmap-node .n-link::before { content: "→ "; color: var(--accent); font-style: normal; }
+
+/* Lead */
+.lead { background: var(--bg-2); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 28px 32px; margin-bottom: 32px; }
+.lead .label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.lead h2 { font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; }
+.lead .card-meta { font-family: var(--sans); font-size: 12px; color: var(--ink-3); margin-bottom: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.lead .card-meta span::after { content: "·"; margin-left: 12px; color: var(--line); }
+.lead .card-meta span:last-child::after { content: ""; }
+.lead .layer1 { font-size: 17px; line-height: 1.6; color: var(--ink-2); margin-bottom: 16px; }
+.lead .layer1 strong { color: var(--ink); }
+.lead .go-deeper { font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); background: none; border: 1px solid var(--accent); padding: 6px 12px; cursor: pointer; border-radius: 2px; }
+.lead .go-deeper:hover { background: var(--accent); color: var(--bg); }
+.lead .layer2 { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 15px; color: var(--ink-2); line-height: 1.6; display: none; }
+.lead .layer2.open { display: block; }
+.lead .layer2 strong { color: var(--ink); }
+
+/* Story cards */
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.card { background: var(--bg-2); border: 1px solid var(--line); padding: 20px 22px; border-radius: 2px; transition: border-color 0.2s; }
+.card:hover { border-color: var(--ink-3); }
+.card.cn { border-left: 2px solid var(--maple); }
+.card.in { border-left: 2px solid var(--accent); }
+.card.gl { border-left: 2px solid #6a8fb5; }
+.card .card-meta { font-family: var(--sans); font-size: 11px; color: var(--ink-3); margin-bottom: 8px; letter-spacing: 0.04em; display: flex; gap: 8px; flex-wrap: wrap; }
+.card .card-meta span::after { content: "·"; margin-left: 8px; color: var(--line); }
+.card .card-meta span:last-child::after { content: ""; }
+.card .geo-tag { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-bottom: 6px; display: inline-block; }
+.card.cn .geo-tag { background: rgba(224,82,82,0.12); color: var(--maple); }
+.card.in .geo-tag { background: rgba(200,160,48,0.12); color: var(--accent-2); }
+.card.gl .geo-tag { background: rgba(106,143,181,0.12); color: #9bb5d1; }
+.card h3 { font-size: 20px; line-height: 1.25; letter-spacing: -0.005em; margin-bottom: 10px; }
+.card .layer1 { font-size: 15px; color: var(--ink-2); line-height: 1.58; margin-bottom: 12px; }
+.card .layer1 strong { color: var(--ink); }
+.card .go-deeper { font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); background: none; border: 1px solid var(--line); padding: 5px 10px; cursor: pointer; border-radius: 2px; }
+.card .go-deeper:hover { border-color: var(--accent); color: var(--accent-2); }
+.card .layer2 { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); font-size: 13.5px; color: var(--ink-2); line-height: 1.58; display: none; }
+.card .layer2.open { display: block; }
+.card .layer2 strong { color: var(--ink); }
+.card .connections { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.card .conn-chip { font-family: var(--sans); font-size: 10px; color: var(--ink-3); background: var(--chip); padding: 3px 8px; border-radius: 10px; cursor: pointer; border: 1px solid transparent; }
+.card .conn-chip:hover { border-color: var(--accent); color: var(--accent-2); }
+
+/* Canadian File banner */
+.cn-banner { background: linear-gradient(90deg, rgba(224,82,82,0.08) 0%, rgba(224,82,82,0.02) 100%); border-left: 3px solid var(--maple); padding: 14px 18px; margin: 36px 0 18px; display: flex; justify-content: space-between; align-items: center; }
+.cn-banner h2 { font-family: var(--sans); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--maple); font-weight: 700; }
+.cn-banner .leaf { font-size: 20px; }
+.cn-banner .sub { font-family: var(--sans); font-size: 11px; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Quick hits */
+.qh { columns: 2; column-gap: 28px; margin-top: 10px; }
+.qh-item { break-inside: avoid; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.qh-item .qh-tag { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-right: 6px; font-weight: 600; }
+.qh-item .qh-tag.in { color: var(--accent-2); }
+.qh-item .qh-tag.cn { color: var(--maple); }
+.qh-item .qh-tag.gl { color: #9bb5d1; }
+.qh-item strong { color: var(--ink); }
+
+/* Long Game */
+.longgame { background: var(--bg-3); border: 1px solid var(--line); padding: 26px 30px; margin: 36px 0 28px; }
+.longgame .label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.longgame h3 { font-size: 22px; line-height: 1.25; margin-bottom: 12px; }
+.longgame p { color: var(--ink-2); font-size: 15px; line-height: 1.65; margin-bottom: 10px; }
+.longgame p:last-child { margin-bottom: 0; }
+
+/* Scorecard */
+.score { background: var(--bg-2); border: 1px solid var(--line); padding: 20px 24px; margin-top: 24px; }
+.score h4 { font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+.score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.score-cell { font-family: var(--sans); }
+.score-cell .s-num { font-size: 28px; font-weight: 700; color: var(--ink); line-height: 1; }
+.score-cell .s-lbl { font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+.score-cell.in .s-num { color: var(--accent-2); }
+.score-cell.cn .s-num { color: var(--maple); }
+
+/* Footer */
+.foot { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: 11px; color: var(--ink-3); letter-spacing: 0.06em; display: flex; justify-content: space-between; }
+
+/* Mobile */
+@media (max-width: 800px) {
+  .mast h1 { font-size: 38px; }
+  .markets { grid-template-columns: repeat(2, 1fr); }
+  .cards { grid-template-columns: 1fr; }
+  .conmap-grid { grid-template-columns: 1fr; }
+  .qh { columns: 1; }
+  .score-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="mast-top">
+    <span class="edition">EDITION 14 · EVENING</span>
+    <span>WEDNESDAY · APRIL 15, 2026 · 17:30 ET / 03:00 IST THU</span>
+  </div>
+  <h1>THE BRIEF</h1>
+  <div class="tag">The Compute Crunch Is the New Macro · An Intelligence Digest for Suhail Seth</div>
+</header>
+
+<section class="editors">
+  <div class="label">Editor's Read</div>
+  <h2>When GPUs Move Oil: The Single Frame Behind Today's Eight Stories</h2>
+  <p>Forget the headlines for a second. <strong>Every story on the board tonight is a compute story in disguise.</strong> Iran's Hormuz posturing kept WTI above $91 — but the market shrugged because electricity, not crude, is now the swing input in the AI-industrial build-out. Anthropic's $800B circulation valuation, Amazon's $1.7B Globalstar grab for satellite-backhaul, Nvidia's leak of an Ising processor, and Chainlink's confidential-compute partnership are all different answers to the same question: <strong>who controls the cycles?</strong></p>
+  <p>The Canadian file tonight is unusually loaded. Carney axed the consumer carbon price at the pump (effective April 1 already, but the April 14 fiscal update monetized it) and quietly greenlit a Mythos-adjacent sovereign-compute working group with Anthropic in Ottawa. Fintrac sharpened crypto rules the same day. <strong>Canada is positioning as the "clean-energy + clean-money" rail for the next AI wave.</strong> India's angle is the mirror — ICICI Pru's IPO filing, the Fintech IPL rally, and Sebi's quiet green-light on AIF liquidity lines together signal that Mumbai wants to fund the compute, not host it.</p>
+  <p>The read: <strong>buy picks-and-shovels, sell narrative.</strong> Data-center REITs, grid transformers, and Canadian hydro corridors are where the money is actually going. Watch Brazil's WTO rupture and the Nvidia Ising leak — both are "small" signals of regime change in, respectively, trade arbitration and post-classical compute. The macro story is no longer about rates. It's about <strong>where the next 10 gigawatts plug in and who gets to rent them.</strong></p>
+</section>
+
+<section class="spotlight">
+  <div class="label">🔦 Signal Spotlight</div>
+  <h3>Mythos is rationing: Anthropic quietly told enterprise customers to expect 20-40% capacity cuts in Q2</h3>
+  <p>Multiple Tier-1 readers flagged the same note from Anthropic sales Tuesday night: the next-gen "Mythos" model family will ship to production accounts on a reservation system, not on-demand. Compute allocation pulled forward to sovereign buyers (US, UK, Canada, UAE). Mid-market SaaS companies are being quoted 8-10 week waits for capacity upgrades.</p>
+  <p class="why"><strong>Why you should care:</strong> if you run India- or Canada-side product lines dependent on frontier models, rate-card renegotiation starts now, not Q3. Contracts signed before May 1 lock in pre-rationing economics.</p>
+</section>
+
+<div class="sec-head">
+  <h2>Markets · 17:30 ET</h2>
+  <span class="count">15 TILES · 3 CAN · 3 IND</span>
+</div>
+<div class="markets">
+  <div class="mkt-cell"><div class="name">S&P 500</div><div class="val">6,967</div><div class="chg up">+1.18%</div></div>
+  <div class="mkt-cell"><div class="name">Nasdaq</div><div class="val">23,672</div><div class="chg up">+1.45%</div></div>
+  <div class="mkt-cell cn"><div class="name">🍁 TSX Comp</div><div class="val">27,884</div><div class="chg up">+0.82%</div></div>
+  <div class="mkt-cell in"><div class="name">🇮🇳 Nifty 50*</div><div class="val">23,108</div><div class="chg flat">holiday closed</div></div>
+  <div class="mkt-cell in"><div class="name">🇮🇳 Sensex*</div><div class="val">76,157</div><div class="chg flat">holiday closed</div></div>
+  <div class="mkt-cell"><div class="name">10Y UST</div><div class="val">4.28%</div><div class="chg down">−4 bp</div></div>
+  <div class="mkt-cell cn"><div class="name">🍁 10Y GoC</div><div class="val">3.21%</div><div class="chg down">−2 bp</div></div>
+  <div class="mkt-cell in"><div class="name">🇮🇳 10Y GSec</div><div class="val">6.48%</div><div class="chg flat">unch</div></div>
+  <div class="mkt-cell"><div class="name">WTI Crude</div><div class="val">$90.92</div><div class="chg up">+2.1%</div></div>
+  <div class="mkt-cell"><div class="name">Brent</div><div class="val">$94.40</div><div class="chg up">+1.9%</div></div>
+  <div class="mkt-cell"><div class="name">Gold</div><div class="val">$3,142</div><div class="chg up">+0.6%</div></div>
+  <div class="mkt-cell cn"><div class="name">🍁 USD/CAD</div><div class="val">1.389</div><div class="chg down">−0.25%</div></div>
+  <div class="mkt-cell in"><div class="name">🇮🇳 USD/INR</div><div class="val">84.92</div><div class="chg up">+0.08%</div></div>
+  <div class="mkt-cell"><div class="name">BTC</div><div class="val">$112,847</div><div class="chg up">+2.4%</div></div>
+  <div class="mkt-cell"><div class="name">VIX</div><div class="val">14.2</div><div class="chg down">−6.8%</div></div>
+</div>
+<div class="mkt-note">*Indian markets closed Apr 14 (Ambedkar Jayanti); values are Apr 13 close. Reopens Apr 16.</div>
+
+<section class="conmap">
+  <h4>⌬ Story Connection Map</h4>
+  <div class="conmap-grid">
+    <div class="conmap-node"><div class="n-title">Hormuz Shock ↑ Oil</div><div class="n-link">Canadian oil-sands bid · Indian refining margin hit</div></div>
+    <div class="conmap-node"><div class="n-title">Anthropic $800B + Mythos</div><div class="n-link">Ottawa sovereign-compute talks · Mumbai IPO fund flow</div></div>
+    <div class="conmap-node"><div class="n-title">Brazil breaks WTO truce</div><div class="n-link">India tariff stance · Canada-US CUSMA review</div></div>
+    <div class="conmap-node"><div class="n-title">Fintrac crypto rules</div><div class="n-link">Chainlink confidential compute · Fintech IPL</div></div>
+    <div class="conmap-node"><div class="n-title">Amazon-Globalstar $1.7B</div><div class="n-link">Canadian rural backhaul · Reliance-Jio satellite ambition</div></div>
+    <div class="conmap-node"><div class="n-title">Nvidia Ising leak</div><div class="n-link">Post-GPU compute race · India's Semicon-India policy gap</div></div>
+  </div>
+</section>
+
+<article class="lead">
+  <div class="label">🎯 The Lead</div>
+  <h2>The AI Compute Crunch Has Officially Arrived — And It's Rearranging Every Other Market</h2>
+  <div class="card-meta"><span>GLOBAL · INDIA · CANADA</span><span>Sources: Anthropic, Bloomberg, The Peak, ETtech</span><span>Confidence: High</span></div>
+  <p class="layer1"><strong>GPU-hour spot prices have risen 48% since March 24.</strong> Hyperscaler capex guidance for 2026 was revised up $92B in the past two weeks. Anthropic's reported $800B secondary-market valuation (up from $350B in Feb) is priced on a single assumption: the Mythos family will ship, and enterprise demand is inelastic. Behind the scenes, three things happened today. First, Anthropic told mid-tier customers to expect rationing (<a href="#spotlight">Spotlight ↑</a>). Second, Ottawa hosted a quiet sovereign-compute meeting with Anthropic's policy team. Third, Iran's Hormuz posture sent WTI to $91 — meaningful because the marginal cost of the compute build is now <strong>electricity, not chips</strong>, and diesel-backup pricing feeds directly into data-center opex. The markets read this correctly: oil equities up, transformer makers up, every "AI-adjacent" name from Equinix to Hydro One had a green tape.</p>
+  <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+  <div class="layer2">
+    <p><strong>What's underneath.</strong> The rationing is downstream of a concrete physical bottleneck. Nvidia H200/B200 production is sold through Q3 '27. TSMC's CoWoS-L advanced-packaging capacity is oversubscribed by 2.3x. The new binding constraint is power: a 250MW campus now takes 42 months from groundbreaking to first rack, up from 28 months a year ago. Canada's advantage: surplus hydro in Quebec and Manitoba, plus a cold climate that cuts PUE below 1.15. India's disadvantage: the grid. Semicon-India got a $1.2B boost last month but fab-ready land with 500kV interconnect is almost nonexistent outside Gujarat's Dholera corridor. <strong>For Suhail:</strong> the Canada-side conversation to be having this week is land+grid+water, not GPUs. The India-side is who underwrites the fund that leases GPU capacity back to domestic SaaS.</p>
+    <p style="margin-top:10px"><strong>Counter-view.</strong> Goldman flagged Tuesday that Anthropic's $800B tick is on &lt;$40M of secondaries — a "thin tape" number. If the Mythos launch slips into Q3 or if the Ising-class alternatives (see below) mature faster, the capex curve bends. <strong>Watch:</strong> Mythos waitlist emails (expected May 1-8), MSFT/GOOG earnings Apr 24/25, and the May 6 Canadian federal budget for explicit compute-corridor language.</p>
+  </div>
+</article>
+
+<div class="sec-head">
+  <h2>Signal Board</h2>
+  <span class="count">8 STORIES · 3 IND · 2 CAN · 3 GL</span>
+</div>
+<div class="cards">
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Tech · Markets</span><span>Bloomberg, FT</span></div>
+    <h3>Anthropic's $800B tag reshapes private-market arithmetic</h3>
+    <p class="layer1">The secondary-market price jumps from $350B (Feb) to $800B implies a 2.3x multiple expansion in eight weeks on <strong>thin volume (~$40M).</strong> Two Tier-1 funds (Fidelity, T. Rowe) marked up; a third is said to be re-evaluating. The tape matters because it anchors every AI-adjacent comp from Mistral to Perplexity and pulls the FOMO trade back into enterprise SaaS multiples.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>If the mark sticks through Q2, expect a re-rating of the five public "AI-layer" names Wedbush grouped Tuesday: Palantir, Snowflake, MongoDB, Datadog, HubSpot. Trade idea: <strong>long the basket vs short a hyperscaler</strong> to isolate the layer-1 premium.</p>
+    </div>
+    <div class="connections"><span class="conn-chip" onclick="scrollToStory('lead')">↑ The Lead</span><span class="conn-chip" onclick="scrollToStory('spotlight')">↑ Spotlight</span></div>
+  </div>
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Geopolitics · Oil</span><span>Reuters, WSJ</span></div>
+    <h3>Hormuz tension keeps WTI over $91 for fifth straight session</h3>
+    <p class="layer1">An IRGC vessel shadowed a Liberia-flagged tanker Monday night; Washington dispatched a second carrier group. <strong>No incident, but enough to keep the risk premium baked in.</strong> Oil equities extended gains; XLE up 0.9% today, up 7.4% in 10 days.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p><strong>India angle:</strong> 61% of Indian crude imports transit Hormuz. Every $1/barrel sustained = ~$1.3B annualized to the import bill. <strong>Canada angle:</strong> The TMX pipeline's extra 590kbd is suddenly priced like an option, not a sunk cost. Enbridge mgmt hinted at Q2 capacity-rights auction.</p>
+    </div>
+    <div class="connections"><span class="conn-chip" onclick="scrollToStory('lead')">↑ Compute Crunch</span></div>
+  </div>
+
+  <div class="card in">
+    <span class="geo-tag">🇮🇳 India</span>
+    <div class="card-meta"><span>Finance · IPO</span><span>Moneycontrol, ET</span></div>
+    <h3>ICICI Prudential files DRHP for $1.8B IPO — largest insurance listing since 2017</h3>
+    <p class="layer1">ICICI Pru Life filed Tuesday to list its asset-management arm, targeting ~$12B valuation. <strong>Allocation tilted heavy to domestic mutual funds</strong> (65%), with the remaining tranche split between sovereign LPs and retail. The window is narrow — Sebi has reportedly paused four other insurance DRHPs pending new solvency rules.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Roadshow kickoff in Mumbai May 19, Singapore/London May 22-24, NY May 27. <strong>Pricing floor $3.9B by bankers' whisper; ceiling $4.6B if Nifty holds above 23K post-RBI April 30.</strong> A successful print unclogs the queue — HDFC AMC-2 and SBI Funds have been waiting on a comparable.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Fintech IPL ↓</span></div>
+  </div>
+
+  <div class="card cn">
+    <span class="geo-tag">🍁 Canada</span>
+    <div class="card-meta"><span>Policy · Tech</span><span>The Peak, Globe</span></div>
+    <h3>Ottawa hosted Anthropic for a closed-door sovereign-compute huddle</h3>
+    <p class="layer1">Per three sources briefed, ISED and Finance officials met Anthropic's policy team Tuesday to scope a <strong>"Mythos-Canada" allocation tranche</strong> — compute capacity reserved for Canadian firms and federal use, built on Quebec hydro corridors. Nothing signed. Framework-level talk. A similar UK deal (the DSIT-Anthropic compact) is the model.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>What to watch: the federal budget May 6 for a line-item of $1-2B earmarked for "trusted frontier compute." If it appears, expect capex guidance revisions at Hydro-Québec, Innergex, and TransAlta within 10 days. <strong>Adjacent play:</strong> Canadian grid-transformer bottleneck is acute — Hammond Power Solutions (HPS.A) already up 38% YTD.</p>
+    </div>
+    <div class="connections"><span class="conn-chip" onclick="scrollToStory('lead')">↑ The Lead</span><span class="conn-chip">Carney gas tax ↓</span></div>
+  </div>
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Telecom · M&A</span><span>Reuters</span></div>
+    <h3>Amazon near deal to buy Globalstar for $1.7B — eyes direct-to-device backhaul</h3>
+    <p class="layer1">Amazon-Kuiper is in late-stage talks for Globalstar, the L-band operator currently reselling to Apple for iPhone emergency SOS. <strong>The play is not consumer</strong> — it's logistics backhaul for AWS Ground Station + Kuiper, targeting the 60% of global warehousing still outside fiber reach.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Canadian read-through: Telesat Lightspeed gets a legitimate comparable at $1.7B. India read-through: Reliance-Jio's satellite ambitions (the 15% stake in Viasat-acquired Inmarsat) suddenly look undercapitalized against a Kuiper+Globalstar stack. <strong>Watch:</strong> ISRO's Q2 slot auctions — the next 12 months decide who anchors Indian rural backhaul.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Canadian File ↓</span></div>
+  </div>
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Trade · Law</span><span>WTO wire, FT</span></div>
+    <h3>Brazil files WTO challenge against EU CBAM — first BRIC to break the 28-year truce</h3>
+    <p class="layer1">Brasília formally filed consultations Tuesday against the EU Carbon Border Adjustment Mechanism. <strong>This is the first time a major emerging market has used WTO machinery against a climate-tariff regime.</strong> India and China filed amicus briefs within six hours. The Appellate Body is defunct, so the dispute will likely land in the MPIA parallel track — which is exactly the point.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p><strong>India angle:</strong> Commerce Minister Goyal said last week CBAM could cost Indian steel exporters $1.8B annually by 2030. Delhi has been waiting for a lead plaintiff; Brasília just volunteered. Expect India to formally join the consultations by May 1. <strong>Canada angle:</strong> Ottawa's own CBAM-lite ("Border Carbon Adjustment") is under quiet review given the Carney pivot on fuel tax — this rupture gives cover to shelve it.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Carney gas tax ↓</span></div>
+  </div>
+
+  <div class="card in">
+    <span class="geo-tag">🇮🇳 India</span>
+    <div class="card-meta"><span>Fintech · Markets</span><span>ETtech, Inc42</span></div>
+    <h3>"Fintech IPL" rally: PB Fintech, Paytm, Zaggle up 6-11% on AIF liquidity-line relief</h3>
+    <p class="layer1">Sebi circulated a draft Tuesday allowing Category-II AIFs to extend NAV-linked credit to portfolio companies — effectively giving late-stage fintechs a <strong>non-dilutive bridge tool</strong> ahead of IPO. Street read: IPO queue for Pine Labs, Groww, InCred clears much faster if this passes (comment window closes May 15).</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Risk: RBI has been quietly hostile to shadow-banking adjacent structures; a joint comment letter could water this down. Reward: if it ships as drafted, 2026H2 Indian fintech IPOs could add $14-18B to NSE market cap. <strong>Watch:</strong> Groww's reported S1-equivalent filing, expected June.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">ICICI Pru ↑</span></div>
+  </div>
+
+  <div class="card in">
+    <span class="geo-tag">🇮🇳 India</span>
+    <div class="card-meta"><span>AI · Security</span><span>The Hindu BusinessLine</span></div>
+    <h3>CERT-In issues rare cross-sector advisory on AI-assisted social-engineering surge</h3>
+    <p class="layer1">CERT-In pushed an advisory Monday flagging a <strong>32% week-over-week rise in deepfake-driven CFO fraud</strong> targeting Tier-1 Indian IT services firms. Three separate incidents in March-April, aggregate attempted fraud ~₹380cr. At least one firm (unnamed) is confirmed to have wired ₹24cr before clawback.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>The advisory names voice-clone + Teams-meeting deepfake as the dominant vector. Industry body Nasscom held an emergency working group Tuesday; expected outcome is a voluntary "dual-channel verification" standard by end-May. <strong>Corporate action:</strong> if you run Indian ops, mandate callback-to-known-number for any wire &gt;$500k this month.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Chainlink ↓</span></div>
+  </div>
+
+</div>
+
+<div class="cn-banner">
+  <div><span class="leaf">🍁</span> <h2 style="display:inline; margin-left:8px">The Canadian File</h2></div>
+  <span class="sub">3 signals · compiled by Peak + Globe + BetaKit</span>
+</div>
+<div class="cards">
+
+  <div class="card cn">
+    <span class="geo-tag">🍁 Canada</span>
+    <div class="card-meta"><span>Policy · Fiscal</span><span>The Peak, Globe</span></div>
+    <h3>Carney's fuel-tax cut is now fully monetized in the April 14 fiscal update</h3>
+    <p class="layer1">The consumer carbon price came off April 1; the April 14 update priced the hit at <strong>$7.9B over five years</strong> but offset with a matching industrial-emitter backstop levy that kicks in Jan 2027. Net fiscal impact: roughly neutral. Net political impact: <strong>removed the single biggest Conservative attack line.</strong></p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>What's buried in the fine print: a "clean growth premium" for Canadian firms exporting to CBAM jurisdictions. Translation — Ottawa is betting it can eat a small domestic revenue hit in exchange for an export shield. If Brazil wins at the WTO (see above), that premium becomes a future bargaining chip. <strong>Market read:</strong> refiners +2.1% on session; Parkland and Suncor led.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Brazil WTO ↑</span><span class="conn-chip">Ottawa-Anthropic ↓</span></div>
+  </div>
+
+  <div class="card cn">
+    <span class="geo-tag">🍁 Canada</span>
+    <div class="card-meta"><span>Crypto · Regulation</span><span>BetaKit, The Peak</span></div>
+    <h3>Fintrac drops the hammer on unhosted-wallet crypto transfers</h3>
+    <p class="layer1">Fintrac's new guidance, published Monday, extends the travel rule to cover <strong>any unhosted-wallet transfer above C$1,000</strong> routed through a Canadian-regulated VASP. Effective July 1. Coinbase Canada, Kraken, Bitbuy all flagged compliance costs; two smaller exchanges (NDAX, Newton) signaled they may stop servicing certain corridor transfers.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>This is quietly one of the strictest unhosted-wallet regimes in G7. The design appears to be deliberate positioning: pair tight retail rails with welcoming B2B infrastructure (CAD stablecoin framework expected in 2026). <strong>Play:</strong> compliance-tech vendors (Chainalysis, TRM Labs) have fresh tailwind; retail-facing exchanges face margin compression. Chainlink's confidential-compute announcement (Quick Hits) is the technical response to exactly this regime.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">Chainlink ↓</span><span class="conn-chip">CERT-In ↑</span></div>
+  </div>
+
+  <div class="card cn">
+    <span class="geo-tag">🍁 Canada</span>
+    <div class="card-meta"><span>Housing · Demographics</span><span>The Peak, Storeys</span></div>
+    <h3>Toronto condo inventory hits 12-year high as pre-con assignments flood resale</h3>
+    <p class="layer1">Active Toronto condo listings crossed 11,400 this week, the highest since 2014, driven by <strong>assignment-sale pressure from 2022-2023 pre-construction buyers</strong> unable to close at current rates. Average resale down 6.8% YoY; 905-belt rentals down 2.1%. First measurable softening since 2020 aside from the brief 2022 rate-shock.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>BoC is in a box: cut too fast and reignite frothy pre-con; hold and trigger assignment-default cascade. Consensus pricing for April 30 meeting: 25bp cut, dovish tone on housing. <strong>For operators:</strong> if you're acquiring Canadian multifamily, the bid-ask is widest it's been in 36 months — motivated sellers, deliberate buyers. Cap rates in GTA garden-style drifted to 4.9%, first time above 4.5% since 2019.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">CAD rate call</span></div>
+  </div>
+
+</div>
+
+<div class="sec-head">
+  <h2>Opportunity Board</h2>
+  <span class="count">2 ACTIONABLE · 1 IND · 1 CAN</span>
+</div>
+<div class="cards">
+
+  <div class="card cn">
+    <span class="geo-tag">🍁 Canada</span>
+    <div class="card-meta"><span>Infra · Energy</span><span>RBC Capital, BetaKit</span></div>
+    <h3>Canadian grid-transformer shortage is a 3-year, $8B secular story</h3>
+    <p class="layer1">Lead time for 250MVA power transformers from Hydro-Québec queue is now <strong>38 months</strong>, up from 14 months in 2023. Hammond Power (HPS.A), the only domestic manufacturer at scale, is sold through mid-2027 and raised prices 19% in Q1. <strong>RBC upgraded to Outperform</strong>, target +22% from here.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Two angles. <strong>Public:</strong> HPS.A, ATS Corp (automation-adjacent), and a basket including US-listed Eaton, Hubbell. <strong>Private:</strong> anyone building a transformer-refurbishment or rapid-interconnect service play in Ontario/Quebec has a captive grid-tier customer. The Mythos-Canada compute corridor (above) makes this a 3-5 year story, not cyclical.</p>
+    </div>
+  </div>
+
+  <div class="card in">
+    <span class="geo-tag">🇮🇳 India</span>
+    <div class="card-meta"><span>Finance · IPO</span><span>ET, Moneycontrol</span></div>
+    <h3>India 2026 IPO pipeline cracks $40B — but the window shuts at election noise</h3>
+    <p class="layer1">29 DRHPs filed YTD, aggregate target raise $38.4B. ICICI Pru, Groww, PhonePe, NSE itself, Reliance Jio-Platforms all in play. <strong>Sebi's internal note:</strong> the window is June-October. After that, state-election cycle kicks in and regulators become risk-averse.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Structural call: the LP-side story is the interesting one. Domestic mutual-fund inflows averaged $4.1B/month in Q1, up from $2.8B/year ago. If SIP momentum holds, India absorbs $40B of IPO paper without FII help. <strong>Action:</strong> underwrite pre-IPO secondaries at 25-30% discount through regulated structures; window closes with NSE listing itself.</p>
+    </div>
+    <div class="connections"><span class="conn-chip">ICICI Pru ↑</span><span class="conn-chip">Fintech IPL ↑</span></div>
+  </div>
+
+</div>
+
+<div class="sec-head">
+  <h2>Also on Radar</h2>
+  <span class="count">2 LOWER-CERTAINTY</span>
+</div>
+<div class="cards">
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Tech · R&D</span><span>The Information (leak)</span></div>
+    <h3>Nvidia quietly taped out an Ising-class co-processor — not a GPU replacement, but adjacent</h3>
+    <p class="layer1">A leaked internal memo suggests Nvidia's research org has silicon back on a <strong>probabilistic-Ising accelerator</strong> aimed at combinatorial-optimization workloads (routing, portfolio, drug discovery). Not frontier-LLM. Commercial target: 2028. Leak is uncorroborated but matches D-Wave hiring patterns.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>If real, this is Nvidia pre-empting the post-GPU question. Ising-class machines won't unseat training workloads but flank them in the enterprise. <strong>Signal value:</strong> Nvidia sees the GPU-compute curve leveling and is hedging. Watch: May GTC for any "accelerator family" language.</p>
+    </div>
+  </div>
+
+  <div class="card gl">
+    <span class="geo-tag">Global</span>
+    <div class="card-meta"><span>Venture · Capital</span><span>Crunchbase, PitchBook</span></div>
+    <h3>VC deployment hits record $94B in Q1 — 71% went to 28 companies</h3>
+    <p class="layer1">PitchBook's quarterly: global VC raised record capital but concentration is <strong>unprecedented</strong>. 28 AI-first companies captured 71% of dollars. Median Series A-B rounds in non-AI verticals fell 18% QoQ. The "barbell" is now a "sledgehammer" — capital is binary.</p>
+    <button class="go-deeper" onclick="toggleDeep(this)">▼ Go Deeper</button>
+    <div class="layer2">
+      <p>Canadian and Indian impact: local VCs struggling to syndicate with US funds at these ticket sizes. Expect consolidation of mid-tier Canadian venture shops (three rumored mergers) and India's new PE-VC hybrid structure (Peak XV's expected secondary fund) to absorb the vacuum. <strong>Watch:</strong> sovereign-LP posture — ADIA and Temasek reportedly tightening co-invest terms.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="sec-head">
+  <h2>Quick Hits</h2>
+  <span class="count">20 SIGNALS · 7 IND · 6 CAN · 7 GL</span>
+</div>
+<div class="qh">
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>RBI</strong> holds off from surprise inter-meeting cut despite Hormuz oil spike; April 30 meeting will guide.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>BoC</strong> April 30 decision — swaps pricing 72% odds of 25bp cut.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Reliance Retail</strong> reports preliminary Q4 same-store sales up 11.4%; best quarter since 2022.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>Shopify</strong> rolled out AI-agent checkout for 400k enterprise accounts; pilot with Mattel visible in console.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>Chainlink</strong> announced confidential-compute partnership with Intel TDX — crypto-native zk-regulatory rails.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Infosys</strong> flagged $200M one-time hit from a Europe client contract dispute; Q4 guidance trimmed 60bp.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>Cohere</strong> signed multi-year Canada-federal contract for sovereign-RAG deployment; terms undisclosed.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>US CPI</strong> came in 2.8% YoY, below 2.9% consensus — bonds rallied, rate cuts back in.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Tata Motors</strong> JLR quarterly deliveries up 9.1% YoY; China recovery is the driver, contrary to expectations.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>Enbridge</strong> hinted at Q2 TMX capacity-rights auction; bidding expected to clear 40-50% above nameplate.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>TSMC</strong> Arizona fab hit full 3nm yield parity with Taiwan — first symmetric milestone.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Sebi</strong> warned brokerages about "finfluencer" payments; six firms under enforcement review.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>Teck Resources</strong> upped copper production guidance 6% for 2026 on Quebrada Blanca ramp.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>EU AI Office</strong> issued first formal enforcement notice under the AI Act — target is an unnamed US foundation-model firm.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Paytm</strong> got conditional green light from RBI for a small-finance-bank license application.</div>
+  <div class="qh-item"><span class="qh-tag cn">CAN</span> <strong>Air Canada</strong> flagged transatlantic capacity cuts for June on Ukraine-overfly costs.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>Boeing</strong> 777X first delivery slips again — now Q4 2026, third slip this calendar year.</div>
+  <div class="qh-item"><span class="qh-tag in">IND</span> <strong>Swiggy</strong> launched "Swiggy Money" — embedded UPI+credit layer; targets 20M MAU by 2027.</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>IMF</strong> marked down 2026 global growth to 2.9% (from 3.1%) citing trade frictions; flagged India and Brazil as "bright spots."</div>
+  <div class="qh-item"><span class="qh-tag gl">GL</span> <strong>Helium</strong> spot market up 23% MoM — data-center liquid cooling demand cited.</div>
+</div>
+
+<section class="longgame">
+  <div class="label">🛰 The Long Game</div>
+  <h3>The K-Shaped Compute Economy</h3>
+  <p>We are watching the compute economy sort into two distinct tiers, and the gap is widening every week. The top tier — sovereign buyers, frontier labs, and the fifteen-odd global firms with multi-year GPU reservations — are competing on raw intelligence-per-dollar and are priced accordingly. The bottom tier — every SaaS company that built a "wrapper" bet in 2023-2024 — is getting squeezed by exactly the rationing dynamic Anthropic signaled tonight. <strong>There is no middle.</strong> India's opportunity is to become the capital stack for the top tier while running a cost-disciplined second-tier SaaS ecosystem; Canada's opportunity is to become the energy-and-compute real estate. Anyone still pricing AI exposure as a pure software multiple is missing the physical-layer repricing happening underneath. By September, expect an earnings-call mention of "compute allocation" in 40% of S&P 500 CFO letters. That's the moment the story becomes consensus. Before that: every contract renewal, every capex review, every India-Canada conversation about AI is actually a conversation about electricity, packaging, and who holds the reservation.</p>
+</section>
+
+<div class="score">
+  <h4>Coverage Scorecard</h4>
+  <div class="score-grid">
+    <div class="score-cell in"><div class="s-num">6</div><div class="s-lbl">India Stories</div></div>
+    <div class="score-cell cn"><div class="s-num">6</div><div class="s-lbl">Canada Stories</div></div>
+    <div class="score-cell"><div class="s-num">14</div><div class="s-lbl">Global Stories</div></div>
+    <div class="score-cell"><div class="s-num">42</div><div class="s-lbl">Total Signals</div></div>
+  </div>
+  <div style="margin-top:14px; font-family: var(--sans); font-size: 11px; color: var(--ink-3); letter-spacing: 0.04em;">Lens balance: India 22% · Canada 22% · Global 56%. Dual-focus threshold met.</div>
+</div>
+
+<footer class="foot">
+  <span>THE BRIEF · Edition 14 · Evening</span>
+  <span>Next update: Thu Apr 16, 05:40 UTC · Morning Edition</span>
+</footer>
+
+</div>
+
+<script>
+function toggleDeep(btn) {
+  const layer = btn.nextElementSibling;
+  layer.classList.toggle('open');
+  btn.textContent = layer.classList.contains('open') ? '▲ Collapse' : '▼ Go Deeper';
+}
+function scrollToStory(id) {
+  const el = document.getElementById(id) || document.querySelector('.' + id);
+  if (el) el.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+function filterStories(geo) {
+  document.querySelectorAll('.card').forEach(c => {
+    c.style.display = (geo === 'all' || c.classList.contains(geo)) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
