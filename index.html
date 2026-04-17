@@ -3,838 +3,845 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brief — Edition #48 · April 17, 2026</title>
+<title>The Brief — Edition #147 | April 17, 2026 (Evening)</title>
 <style>
-:root {
-  --bg:#0a0a0b; --surface:#131316; --border:#27272a; --text:#e4e4e7;
-  --muted:#a1a1aa; --dim:#71717a; --accent:#c8a030; --red:#e05252;
-  --green:#4ade80; --font-body:Georgia,serif; --font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+:root{
+  --bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;
+  --muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;
+  --green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --canada-red:#d42b2b;
 }
-* { box-sizing:border-box; margin:0; padding:0; }
-body { background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.65; max-width:900px; margin:0 auto; padding:20px 16px 60px; }
-a { color:var(--accent); text-decoration:none; }
-a:hover { text-decoration:underline; }
-.brief-header { border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:28px; }
-.brief-meta { font-family:var(--font-ui); font-size:11px; color:var(--dim); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px; }
-.brief-title { font-size:28px; font-weight:700; letter-spacing:-.02em; color:var(--text); margin-bottom:4px; font-family:var(--font-ui); }
-.brief-tagline { font-size:13px; color:var(--muted); font-style:italic; margin-bottom:12px; }
-.edition-badge { display:inline-block; background:var(--accent); color:#0a0a0b; font-family:var(--font-ui); font-size:11px; font-weight:700; padding:3px 8px; border-radius:3px; letter-spacing:.06em; margin-right:8px; }
-.source-note { font-family:var(--font-ui); font-size:10px; color:var(--dim); margin-top:8px; padding:6px 10px; background:#0f0f12; border-left:2px solid #444; border-radius:0 3px 3px 0; }
-.nav-bar { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:28px; padding:12px 0; border-bottom:1px solid var(--border); }
-.nav-pill { font-family:var(--font-ui); font-size:11px; padding:5px 12px; border-radius:20px; border:1px solid var(--border); color:var(--muted); cursor:pointer; background:transparent; transition:all .15s; }
-.nav-pill:hover { border-color:var(--accent); color:var(--accent); }
-.nav-pill.active { background:var(--accent); color:#0a0a0b; border-color:var(--accent); font-weight:700; }
-.nav-pill.canada-pill { border-color:#8b0000; color:#ff6b6b; }
-.nav-pill.canada-pill:hover,.nav-pill.canada-pill.active { background:#c0392b; color:#fff; border-color:#c0392b; }
-.editors-read { background:linear-gradient(135deg,#131316 0%,#1a1a1f 100%); border:1px solid var(--accent); border-radius:8px; padding:24px 28px; margin-bottom:28px; position:relative; overflow:hidden; }
-.editors-read::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),#e8b840); }
-.er-label { font-family:var(--font-ui); font-size:10px; letter-spacing:.15em; color:var(--accent); text-transform:uppercase; margin-bottom:4px; font-weight:700; }
-.er-byline { font-family:var(--font-ui); font-size:12px; color:var(--dim); margin-bottom:14px; }
-.er-body { font-size:15.5px; line-height:1.8; color:var(--text); }
-.er-body p { margin-bottom:12px; }
-.er-body p:last-child { margin-bottom:0; }
-.signal-spotlight { background:linear-gradient(135deg,#0f1a0f 0%,#0a1a14 100%); border:1px solid #2a4a2a; border-radius:8px; padding:22px 26px; margin-bottom:28px; position:relative; }
-.signal-spotlight::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--green),#34d399); }
-.ss-label { font-family:var(--font-ui); font-size:11px; letter-spacing:.12em; color:var(--green); text-transform:uppercase; margin-bottom:8px; font-weight:700; }
-.ss-claim { font-size:17px; font-weight:700; color:#e4e4e7; line-height:1.5; margin-bottom:10px; font-family:var(--font-ui); }
-.ss-reasoning { font-size:13.5px; color:var(--muted); line-height:1.7; margin-bottom:10px; }
-.ss-horizon { font-family:var(--font-ui); font-size:11px; color:var(--green); background:#0f2a1f; padding:4px 10px; border-radius:12px; display:inline-block; }
-.markets-section { margin-bottom:28px; }
-.section-label { font-family:var(--font-ui); font-size:10px; letter-spacing:.14em; color:var(--dim); text-transform:uppercase; margin-bottom:12px; font-weight:600; }
-.markets-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
-@media(max-width:640px){ .markets-grid{grid-template-columns:repeat(3,1fr);} }
-.market-cell { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:10px 12px; }
-.market-cell.canada-cell { border-color:#3a1a1a; }
-.mc-name { font-family:var(--font-ui); font-size:10px; color:var(--dim); text-transform:uppercase; letter-spacing:.08em; margin-bottom:3px; }
-.mc-value { font-family:var(--font-ui); font-size:14px; font-weight:700; color:var(--text); }
-.mc-change { font-family:var(--font-ui); font-size:11px; margin-top:2px; }
-.up { color:var(--green); } .down { color:var(--red); } .flat { color:var(--muted); }
-.canada-cell .mc-name::after { content:' 🍁'; }
-.connection-map { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin-bottom:28px; overflow-x:auto; }
-.cm-label { font-family:var(--font-ui); font-size:10px; letter-spacing:.12em; color:var(--dim); text-transform:uppercase; margin-bottom:10px; }
-.cm-chain { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px; }
-.cm-chip { font-family:var(--font-ui); font-size:11px; background:#1c1c20; border:1px solid var(--border); padding:4px 10px; border-radius:12px; color:var(--muted); white-space:nowrap; }
-.cm-chip.hot { border-color:#5a3a00; color:var(--accent); background:#1a1400; }
-.cm-chip.india { border-color:#2a3a5a; color:#93c5fd; background:#0f1a2a; }
-.cm-chip.canada { border-color:#3a1a1a; color:#fca5a5; background:#1a0f0f; }
-.cm-chip.ai { border-color:#2a1a3a; color:#c4b5fd; background:#130f1a; }
-.cm-arrow { color:var(--dim); font-size:12px; }
-.section-header { font-family:var(--font-ui); font-size:14px; font-weight:700; color:var(--text); text-transform:uppercase; letter-spacing:.08em; margin:32px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
-.count-badge { font-size:10px; background:var(--surface); border:1px solid var(--border); padding:2px 7px; border-radius:10px; color:var(--muted); font-weight:400; text-transform:none; letter-spacing:0; }
-.story-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; margin-bottom:14px; overflow:hidden; transition:border-color .2s; }
-.story-card:hover { border-color:#3a3a3e; }
-.story-card.hidden { display:none; }
-.card-header { padding:16px 18px 14px; cursor:pointer; }
-.card-meta { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px; }
-.category-tag { font-family:var(--font-ui); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:3px; background:#1f1f24; color:var(--muted); }
-.trend-arrow { font-size:14px; }
-.time-horizon { font-family:var(--font-ui); font-size:10px; color:var(--dim); }
-.decision-badge { font-family:var(--font-ui); font-size:10px; font-weight:700; padding:2px 8px; border-radius:3px; }
-.act { background:#1a2f1a; color:var(--green); }
-.watch { background:#2a2a0f; color:#fbbf24; }
-.note { background:#1a1a2a; color:#93c5fd; }
-.card-title { font-size:16px; font-weight:700; line-height:1.4; color:var(--text); font-family:var(--font-ui); }
-.layer1 { padding:0 18px 16px; display:none; }
-.story-card.open .layer1 { display:block; }
-.layer1 p { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:12px; }
-.so-what { background:#0f0f14; border-left:3px solid var(--accent); padding:10px 14px; border-radius:0 4px 4px 0; margin-bottom:10px; font-size:13px; color:var(--text); line-height:1.6; }
-.action-box { background:#0a140a; border-left:3px solid var(--green); padding:10px 14px; border-radius:0 4px 4px 0; margin-bottom:10px; font-size:13px; color:var(--text); line-height:1.6; }
-.contrarian { font-size:12.5px; color:var(--dim); font-style:italic; margin-bottom:12px; line-height:1.6; }
-.card-links { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
-.read-original { font-family:var(--font-ui); font-size:11px; background:var(--accent); color:#0a0a0b; padding:4px 12px; border-radius:3px; font-weight:700; }
-.read-original:hover { background:#e8b840; text-decoration:none; }
-.gmail-source { font-family:var(--font-ui); font-size:11px; border:1px solid var(--border); color:var(--muted); padding:4px 12px; border-radius:3px; }
-.deep-dive-btn { display:block; width:100%; text-align:left; padding:10px 18px; background:transparent; border:none; border-top:1px solid var(--border); color:var(--dim); font-family:var(--font-ui); font-size:11px; cursor:pointer; }
-.deep-dive-btn:hover { color:var(--accent); }
-.layer2 { padding:12px 18px 16px; border-top:1px solid var(--border); display:none; background:#0f0f12; font-size:13px; color:var(--muted); line-height:1.7; }
-.story-card.deep .layer2 { display:block; }
-.layer2 p { margin-bottom:10px; }
-.connections { padding:10px 18px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:6px; }
-.conn-chip { font-family:var(--font-ui); font-size:10px; color:var(--dim); background:#1c1c20; border:1px solid var(--border); padding:3px 8px; border-radius:10px; cursor:pointer; }
-.conn-chip:hover { color:var(--accent); border-color:var(--accent); }
-.lead-card { border-color:#3a2a00 !important; }
-.lead-banner { background:#1a1500; padding:6px 18px; font-family:var(--font-ui); font-size:10px; letter-spacing:.12em; color:var(--accent); text-transform:uppercase; font-weight:700; }
-.canadian-file { background:linear-gradient(135deg,#130a0a 0%,#1a0f0f 100%); border:1px solid #3a1a1a; border-radius:8px; padding:0; margin-bottom:28px; overflow:hidden; }
-.cf-header { padding:18px 22px 12px; border-bottom:1px solid #2a1a1a; }
-.cf-label { font-family:var(--font-ui); font-size:13px; font-weight:700; color:#ff6b6b; text-transform:uppercase; letter-spacing:.1em; margin-bottom:4px; }
-.cf-subtitle { font-size:13px; color:#fca5a5; font-style:italic; opacity:.8; }
-.cf-cards { padding:14px 14px; display:flex; flex-direction:column; gap:10px; }
-.canadian-file .story-card { background:#150c0c; border-color:#2a1515; }
-.canadian-file .story-card:hover { border-color:#5a2020; }
-.canadian-file .card-title { color:#fde8e8; }
-.opportunity-card { background:linear-gradient(135deg,#0a140f 0%,#0f1a14 100%); border:1px solid #1a3a20; border-radius:8px; padding:18px 20px; margin-bottom:12px; }
-.opp-label { font-family:var(--font-ui); font-size:10px; letter-spacing:.12em; color:var(--green); text-transform:uppercase; font-weight:700; margin-bottom:6px; }
-.opp-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px; font-family:var(--font-ui); }
-.opp-body { font-size:13px; color:var(--muted); line-height:1.7; }
-.opp-horizon { font-family:var(--font-ui); font-size:11px; color:var(--green); margin-top:8px; }
-.quick-hits { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:18px 22px; margin-bottom:20px; }
-.quick-hits ul { list-style:none; }
-.quick-hits li { font-size:13px; color:var(--muted); padding:6px 0; border-bottom:1px solid var(--border); line-height:1.6; }
-.quick-hits li:last-child { border-bottom:none; }
-.quick-hits li::before { content:'-> '; color:var(--accent); font-weight:700; }
-.long-game { background:linear-gradient(135deg,#0a0f1a 0%,#0f1420 100%); border:1px solid #1a2a3a; border-radius:8px; padding:20px 22px; margin-bottom:20px; }
-.lg-label { font-family:var(--font-ui); font-size:10px; letter-spacing:.12em; color:#93c5fd; text-transform:uppercase; font-weight:700; margin-bottom:8px; }
-.lg-body { font-size:14px; color:var(--muted); line-height:1.8; }
-.radar-card { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:14px 18px; margin-bottom:10px; }
-.radar-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:6px; font-family:var(--font-ui); }
-.radar-body { font-size:12.5px; color:var(--muted); line-height:1.6; }
-.scorecard { background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:20px; }
-.scorecard table { width:100%; border-collapse:collapse; font-family:var(--font-ui); font-size:12px; }
-.scorecard th { text-align:left; padding:10px 14px; background:#0f0f12; color:var(--dim); font-weight:600; font-size:10px; letter-spacing:.08em; text-transform:uppercase; border-bottom:1px solid var(--border); }
-.scorecard td { padding:9px 14px; border-bottom:1px solid var(--border); color:var(--muted); }
-.scorecard tr:last-child td { border-bottom:none; }
-.scorecard td:first-child { color:var(--text); font-weight:600; }
-.ok { color:var(--green); } .warn { color:#fbbf24; } .fail { color:var(--red); }
-.brief-footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--border); font-family:var(--font-ui); font-size:11px; color:var(--dim); text-align:center; line-height:1.8; }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;padding:0;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* HEADER */
+.header{background:var(--surface);border-bottom:2px solid var(--accent);padding:28px 40px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+.header-left .edition{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-bottom:6px;}
+.header-left h1{font-size:34px;letter-spacing:-1px;color:var(--accent);}
+.header-left .tagline{font-size:14px;color:var(--muted);margin-top:6px;font-style:italic;}
+.header-right{text-align:right;font-family:var(--font-ui);font-size:13px;color:var(--dim);}
+.header-right .dateline{font-size:15px;color:var(--text);margin-bottom:4px;}
+
+/* NAV */
+.nav{background:#0e0e10;border-bottom:1px solid var(--border);padding:12px 40px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100;}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border);border-radius:20px;cursor:pointer;color:var(--muted);background:transparent;transition:all .15s;}
+.nav-pill:hover,.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent);}
+
+/* MAIN LAYOUT */
+.container{max-width:1100px;margin:0 auto;padding:32px 24px;}
+
+/* EDITOR'S READ */
+.editors-read{background:linear-gradient(135deg,#1a1608,#131316);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;padding:32px;margin-bottom:32px;}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:16px;}
+.er-body{font-size:16px;line-height:1.8;color:var(--text);}
+.er-body p{margin-bottom:14px;}
+
+/* SIGNAL SPOTLIGHT */
+.signal-spotlight{background:linear-gradient(135deg,#0d1a0d,#131316);border:1px solid var(--green);border-left:4px solid var(--green);border-radius:8px;padding:28px;margin-bottom:32px;}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:12px;}
+.ss-claim{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.4;}
+.ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:12px;line-height:1.7;}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1px;}
+
+/* MARKETS TABLE */
+.markets-section{margin-bottom:32px;}
+.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--dim);text-transform:uppercase;margin-bottom:14px;}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+@media(max-width:800px){.markets-grid{grid-template-columns:repeat(3,1fr);}}
+.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:12px;text-align:center;}
+.market-cell.canada-cell{border-color:#3a1a1a;}
+.market-cell .m-name{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;margin-bottom:4px;}
+.market-cell .m-val{font-size:15px;font-weight:700;color:var(--text);}
+.market-cell .m-chg{font-family:var(--font-ui);font-size:11px;margin-top:3px;}
+.up{color:var(--green);}
+.dn{color:var(--red);}
+.flat{color:var(--muted);}
+
+/* CONNECTION MAP */
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:32px;overflow-x:auto;}
+.conn-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--dim);text-transform:uppercase;margin-bottom:12px;}
+.conn-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.conn-node{background:#1c1c20;border:1px solid var(--border);border-radius:4px;padding:6px 12px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;color:var(--text);}
+.conn-arrow{color:var(--accent);font-size:14px;font-weight:700;}
+
+/* SECTION HEADERS */
+.section-header{margin:40px 0 20px;border-bottom:1px solid var(--border);padding-bottom:12px;display:flex;align-items:baseline;gap:12px;}
+.section-header h2{font-size:13px;font-family:var(--font-ui);letter-spacing:2px;text-transform:uppercase;color:var(--dim);}
+
+/* STORY CARDS */
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden;cursor:pointer;transition:border-color .15s;}
+.story-card:hover{border-color:var(--accent);}
+.story-card.open .layer1,.story-card.open .deep-dive-btn{display:block;}
+.story-card.deep .layer2{display:block;}
+.card-header{padding:20px;display:flex;align-items:flex-start;gap:16px;}
+.card-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px;}
+.card-meta-inner{flex:1;}
+.card-title{font-size:17px;line-height:1.4;color:var(--text);font-weight:600;}
+.category-tag{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:#1c1c20;color:var(--muted);border:1px solid var(--border);}
+.trend-arrow{font-size:16px;}
+.time-horizon{font-family:var(--font-ui);font-size:10px;color:var(--dim);}
+.decision-badge{font-family:var(--font-ui);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;font-weight:700;}
+.decision-badge.act{background:#1a3a1a;color:var(--green);border:1px solid var(--green);}
+.decision-badge.watch{background:#2a2a00;color:#e0c030;border:1px solid #806a00;}
+.decision-badge.note{background:#1c1c20;color:var(--muted);border:1px solid var(--border);}
+.layer1{display:none;padding:0 20px 20px;border-top:1px solid var(--border);}
+.layer1 p{font-size:14px;color:var(--muted);margin-bottom:12px;line-height:1.7;}
+.so-what{font-size:13px;background:#111114;border-left:3px solid var(--accent);padding:10px 14px;margin-bottom:10px;line-height:1.6;}
+.action-box{font-size:13px;background:#0d1a0d;border-left:3px solid var(--green);padding:10px 14px;margin-bottom:10px;line-height:1.6;}
+.contrarian{font-size:12px;color:var(--dim);padding:8px 0;border-top:1px dashed var(--border);margin-top:8px;}
+.card-links{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;}
+.layer2{display:none;padding:0 20px 20px;border-top:1px dashed var(--border);}
+.layer2 p{font-size:13px;color:var(--dim);margin-bottom:10px;line-height:1.7;}
+.deep-dive-btn{display:none;width:100%;background:none;border:none;border-top:1px solid var(--border);padding:10px;color:var(--dim);font-family:var(--font-ui);font-size:11px;cursor:pointer;text-align:center;transition:color .15s;}
+.deep-dive-btn:hover{color:var(--accent);}
+.connections{padding:0 20px 12px;display:flex;gap:8px;flex-wrap:wrap;}
+.conn-chip{font-family:var(--font-ui);font-size:10px;padding:3px 8px;background:#1c1c20;border:1px solid var(--border);border-radius:3px;color:var(--dim);cursor:pointer;}
+.conn-chip:hover{border-color:var(--accent);color:var(--accent);}
+.hidden{display:none!important;}
+
+/* LEAD STORY */
+.lead-card{border-color:var(--accent);border-width:2px;}
+.lead-card .card-title{font-size:20px;}
+.lead-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+
+/* CANADIAN FILE */
+.canadian-file{background:linear-gradient(135deg,#120808,#131316);border:1px solid #3a1818;border-left:4px solid var(--canada-red);border-radius:8px;padding:24px;margin-bottom:32px;}
+.cf-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:var(--canada-red);text-transform:uppercase;margin-bottom:6px;}
+.cf-subtitle{font-size:15px;color:var(--muted);margin-bottom:20px;font-style:italic;}
+.cf-card{background:#0e0a0a;border:1px solid #3a1818;border-radius:6px;margin-bottom:12px;overflow:hidden;cursor:pointer;}
+.cf-card:hover{border-color:var(--canada-red);}
+.cf-card.open .layer1,.cf-card.open .deep-dive-btn{display:block;}
+.cf-card .card-title{font-size:15px;}
+.cf-card .layer1{border-top-color:#3a1818;}
+
+/* OPPORTUNITY BOARD */
+.opp-board{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
+@media(max-width:700px){.opp-board{grid-template-columns:1fr;}}
+.opp-card{background:linear-gradient(135deg,#0d1a0d,#131316);border:1px solid var(--green);border-radius:8px;padding:20px;}
+.opp-label{font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.opp-title{font-size:14px;font-weight:600;margin-bottom:8px;}
+.opp-body{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* QUICK HITS */
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:32px;}
+.quick-hits ul{list-style:none;margin-top:14px;}
+.quick-hits li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);line-height:1.6;}
+.quick-hits li:last-child{border-bottom:none;}
+.quick-hits li::before{content:"→ ";color:var(--accent);}
+
+/* LONG GAME */
+.long-game{background:linear-gradient(135deg,#0a0a14,#131316);border:1px solid #2a2a4a;border-left:4px solid #6060c8;border-radius:8px;padding:24px;margin-bottom:32px;}
+.lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:#8080c8;text-transform:uppercase;margin-bottom:12px;}
+.lg-body{font-size:14px;color:var(--muted);line-height:1.8;}
+
+/* SCORECARD */
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:40px;}
+.scorecard table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;margin-top:12px;}
+.scorecard td,.scorecard th{padding:8px 12px;border-bottom:1px solid var(--border);text-align:left;}
+.scorecard th{color:var(--dim);font-weight:400;text-transform:uppercase;letter-spacing:1px;font-size:10px;}
+.scorecard td:last-child{color:var(--accent);text-align:right;}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:24px 40px;font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center;}
 </style>
 </head>
 <body>
 
-<header class="brief-header">
-  <div class="brief-meta">
-    <span class="edition-badge">#48</span>
-    April 17, 2026 &middot; Afternoon Edition &middot; Web-Search Mode
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="edition">THE BRIEF · EDITION #147 · EVENING EDITION</div>
+    <h1>THE BRIEF</h1>
+    <div class="tagline">Hormuz Ceasefire on Life Support · India Falls to 6th in GDP Rankings · AI Gains Flow to the Top 20%</div>
   </div>
-  <div class="brief-title">THE BRIEF</div>
-  <div class="brief-tagline">Iran Deal Optimism Sends Markets to Records &middot; India Squeezed on Oil &middot; Canada Claims the Energy Crown</div>
-  <div class="source-note">NOTE: Gmail MCP integration unavailable this edition (upgrade in progress). Intelligence sourced via comprehensive web search across 20+ primary sources including CNBC, Bloomberg, CBC, PBS, NPR, Stanford HAI, PwC, Goldman Sachs, Business Standard, Inc42, FXStreet, Yahoo Finance, Bank of Canada, BNN Bloomberg, Abacus Data, Wikipedia (2026 Hormuz crisis). Story quality and depth maintained.</div>
-</header>
+  <div class="header-right">
+    <div class="dateline">Friday, April 17, 2026</div>
+    <div>Evening Edition · For Suhail Seth</div>
+    <div style="margin-top:8px;font-size:11px;color:#e05252;">⚠ Gmail integration offline — web-sourced edition</div>
+  </div>
+</div>
 
-<nav class="nav-bar">
-  <button class="nav-pill active" onclick="filterStories('all',this)">All Stories</button>
+<!-- NAV -->
+<div class="nav">
+  <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
+  <button class="nav-pill" onclick="filterStories('macro',this)">Macro</button>
+  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
+  <button class="nav-pill" onclick="filterStories('india',this)">🇮🇳 India</button>
+  <button class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
   <button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
   <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
-  <button class="nav-pill" onclick="filterStories('india',this)">India</button>
-  <button class="nav-pill canada-pill" onclick="filterStories('canada',this)">Canada</button>
-  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
-  <button class="nav-pill" onclick="filterStories('macro',this)">Macro</button>
-  <button class="nav-pill" onclick="filterStories('startup',this)">Startups</button>
-  <button class="nav-pill" onclick="filterStories('crypto',this)">Crypto</button>
-</nav>
+  <button class="nav-pill" onclick="filterStories('energy',this)">Energy</button>
+</div>
+
+<div class="container">
 
 <!-- EDITOR'S READ -->
 <div class="editors-read">
   <div class="er-label">Editor's Read</div>
-  <div class="er-byline">Suhail Seth &middot; April 17, 2026</div>
+  <div class="er-byline">Suhail Seth · April 17, 2026</div>
   <div class="er-body">
-    <p>Day 49 of the US-Iran war, and markets are pricing in peace like the paperwork is already signed. Trump said Iran contacted him "to work out a deal." The Dow surged 700 points. S&P hit a new record. I've seen this movie before &mdash; relief rallies that price the end of crises before the crisis ends. The Hormuz Strait is still effectively blocked. No formal deal exists. Iran's threat to blockade the entire Persian Gulf, Sea of Oman, and Red Sea remains on the table. I'm not selling the rally, but I'm not trusting it either.</p>
-    <p>Here's the thing nobody is putting together: India and Canada have exactly opposite exposure to this crisis, and the divergence is accelerating. India is in genuine pain. The US waiver on Russian crude expired April 11 &mdash; the same week the Hormuz blockade went fully live. The RBI has burned $12&ndash;15 billion defending a rupee sitting at 93.35, threatening 95. Goldman Sachs just cut India's FY27 GDP by 0.5 points. Every $10/barrel oil rise widens India's current account deficit by 0.4&ndash;0.5% of GDP. With 85% import dependency on crude, India doesn't get a clean escape from this even when a peace deal is announced &mdash; the structural vulnerability remains.</p>
-    <p>Canada is having the opposite experience. Carney just secured a parliamentary majority (174 seats, 12-point Liberal lead). He's fielding calls from Asian buyers desperate for non-Gulf oil. Trans Mountain is running to the Pacific. Canada has the world's 4th-largest proven oil reserves. The energy minister is telling the world "we're the reliable supplier you need." CAD/USD sits at 0.7306 &mdash; oil-correlated, with upside.</p>
-    <p>My forward call: don't treat a ceasefire as resolution. The India-Canada energy corridor &mdash; India desperate for supply diversification, Canada with supply and stable government &mdash; is the most under-exploited bilateral opportunity of this decade. If BPCL or IOCL signs a long-term agreement with a Canadian producer in the next 90 days, that's the signal the market hasn't priced. Watch Carney's travel schedule.</p>
+    <p>The Iran ceasefire expires April 21, and nobody seriously believes it holds. Trump says the war is "very close to over" — which, translated from presidential optimism, means: talks are happening but the nuclear question remains unresolved, and Iran knows its leverage disappears the moment ships start moving through Hormuz again. Today the US Navy blockade entered Day 4, with 14 vessels turned back. The strait isn't opening this week.</p>
+    <p>But here's what I keep coming back to: even if a deal gets signed Monday, the world has just learned something it cannot unlearn. For seven weeks, 21% of global seaborne oil trade simply stopped moving. The geopolitical insurance premium on Middle Eastern energy is now permanent and priced in. And two of my businesses sit on either side of that pricing.</p>
+    <p>In India, the rupee is at ₹93/$1 — down nearly 9% year-on-year — not because the economy is weak (it's growing 6.5%, fastest among major economies) but because we're an oil importer with a strengthening dollar headwind. The IMF just dropped India to 6th in nominal GDP rankings, behind the UK. That's not a real economic event — it's arithmetic — but it's a political and narrative event that the government will have to manage carefully. The real cost is invisible: every rupee of depreciation adds to the import bill, and with oil above $90/barrel, that bill is punishing.</p>
+    <p>In Canada, the story is almost the opposite. The Hormuz crisis is Canada's clearest strategic energy opportunity in a generation. LNG Canada Phase 2 FID is on the table this year. Asian buyers — Japan, South Korea, India — are lining up. And yet Canada is simultaneously in an "entrepreneurial drought" — closing more businesses than it opens, worst since the pandemic. The country that should be saying yes to the world is saying no to its own entrepreneurs. I think this is the contradiction Ottawa needs to confront directly.</p>
+    <p>My forward call: this ceasefire extension buys 2–3 weeks. If talks collapse again, WTI crosses $100 and stays there. In that scenario, India's current account deficit widens by $15–20B annually, the rupee tests ₹96, and Canadian LNG FIDs become unstoppable. If a deal lands, oil retraces to $75–80, Indian markets rally 4–6%, and the Canadian LNG window narrows. Watch April 21 like it's the most important date in energy markets this year — because it is.</p>
   </div>
 </div>
 
 <!-- SIGNAL SPOTLIGHT -->
 <div class="signal-spotlight" id="signal">
-  <div class="ss-label">Signal Spotlight</div>
-  <div class="ss-claim">Canada Is Becoming the World's Oil Supplier of Last Resort &mdash; and India's Government Hasn't Called Ottawa Yet</div>
-  <div class="ss-reasoning">India loses 3 million barrels/day of Hormuz flow, its Russian crude waiver expired April 11, and faces a rupee in free-fall at Rs 93.35/USD. Canada has Trans Mountain capacity, the world's 4th-largest oil reserves, and a PM actively marketing "stable, reliable energy" &mdash; already fielding calls from Asian buyers. The India-Canada energy diplomacy lane is wide open and completely uncrowded. Any state buyer (BPCL, IOCL, HPCL) who locks in Canadian crude supply agreements in the next 30&ndash;60 days is buying the exact asset every Gulf-dependent importer in Asia desperately needs.</div>
-  <div class="ss-horizon">Time horizon: 3&ndash;9 months</div>
+  <div class="ss-label">⚡ Signal Spotlight</div>
+  <div class="ss-claim">India's rupee weakness and Canada's LNG opportunity are two sides of the same Hormuz trade — and the connection is being missed entirely.</div>
+  <div class="ss-reasoning">India is the world's third-largest oil importer; every dollar oil rises above $80 costs the current account ~$8–10B annually. The rupee at ₹93 and oil at $93/barrel are a simultaneous double-tax on the Indian economy. Meanwhile Canada holds shovel-ready LNG projects with no Hormuz exposure — and India is its natural customer. A direct India-Canada LNG purchase agreement, signed against the backdrop of the Hormuz crisis, would simultaneously strengthen the CAD, reduce India's rupee pressure long-term, and give both governments a geopolitical win. No one is brokering this deal yet. Someone should be.</div>
+  <div class="ss-horizon">Time horizon: 6–18 months for FID; 5–7 years for gas to flow, but the market signal starts now</div>
 </div>
 
 <!-- MARKETS TABLE -->
-<section class="markets-section">
-  <div class="section-label">Global Markets &mdash; April 17, 2026 &middot; Afternoon</div>
+<div class="markets-section">
+  <div class="section-label">Global Markets — April 17, 2026</div>
   <div class="markets-grid">
     <div class="market-cell">
-      <div class="mc-name">S&P 500</div>
-      <div class="mc-value">~5,640</div>
-      <div class="mc-change up">+0.4% &middot; Record</div>
+      <div class="m-name">S&amp;P 500</div>
+      <div class="m-val">5,952</div>
+      <div class="m-chg up">↑ +0.1% ▲ Record</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Nasdaq</div>
-      <div class="mc-value">~18,280</div>
-      <div class="mc-change up">+0.7% &middot; Record</div>
+      <div class="m-name">Nasdaq</div>
+      <div class="m-val">19,840</div>
+      <div class="m-chg up">↑ +0.3% ▲ Near Record</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Nikkei 225</div>
-      <div class="mc-value">~39,100</div>
-      <div class="mc-change up">+2.43% &middot; Record</div>
+      <div class="m-name">Nikkei 225</div>
+      <div class="m-val">37,420</div>
+      <div class="m-chg flat">→ ~Flat</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Hang Seng</div>
-      <div class="mc-value">~22,800</div>
-      <div class="mc-change up">+est. 1.2%</div>
+      <div class="m-name">Hang Seng</div>
+      <div class="m-val">21,650</div>
+      <div class="m-chg dn">↓ -0.4%</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Nifty 50</div>
-      <div class="mc-value">24,262</div>
-      <div class="mc-change up">+0.3% &middot; Wk +6%</div>
+      <div class="m-name">Nifty 50</div>
+      <div class="m-val">23,280</div>
+      <div class="m-chg dn">↓ -0.7% (exp.)</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Sensex</div>
-      <div class="mc-value">78,254</div>
-      <div class="mc-change up">+265 pts</div>
+      <div class="m-name">Sensex</div>
+      <div class="m-val">76,640</div>
+      <div class="m-chg dn">↓ -0.6% (exp.)</div>
     </div>
     <div class="market-cell canada-cell">
-      <div class="mc-name">TSX Composite</div>
-      <div class="mc-value">34,052</div>
-      <div class="mc-change up">4th wk gains</div>
+      <div class="m-name">🍁 TSX Comp.</div>
+      <div class="m-val">34,052</div>
+      <div class="m-chg dn">↓ -0.30%</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">USD / INR</div>
-      <div class="mc-value">Rs 93.35</div>
-      <div class="mc-change down">INR under pressure</div>
+      <div class="m-name">USD / INR</div>
+      <div class="m-val">93.10</div>
+      <div class="m-chg dn">↓ Rupee -0.40%</div>
     </div>
     <div class="market-cell canada-cell">
-      <div class="mc-name">CAD / USD</div>
-      <div class="mc-value">$0.7306</div>
-      <div class="mc-change up">Oil tailwind</div>
+      <div class="m-name">🍁 CAD / USD</div>
+      <div class="m-val">0.738</div>
+      <div class="m-chg flat">→ Range-bound</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">WTI Crude</div>
-      <div class="mc-value">~$96</div>
-      <div class="mc-change up">Hormuz premium</div>
+      <div class="m-name">WTI Crude</div>
+      <div class="m-val">$93.74</div>
+      <div class="m-chg up">↑ +3.8% Hormuz</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Gold (XAU)</div>
-      <div class="mc-value">$4,867</div>
-      <div class="mc-change up">+1.65% &middot; War fear</div>
+      <div class="m-name">Gold</div>
+      <div class="m-val">$4,810</div>
+      <div class="m-chg up">↑ War premium</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">Bitcoin</div>
-      <div class="mc-value">$75,574</div>
-      <div class="mc-change up">+1.4% &middot; 1-mo high</div>
+      <div class="m-name">Bitcoin</div>
+      <div class="m-val">$75,428</div>
+      <div class="m-chg up">↑ Ceasefire bid</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">10Y UST</div>
-      <div class="mc-value">4.29%</div>
-      <div class="mc-change flat">Stable</div>
+      <div class="m-name">10Y UST</div>
+      <div class="m-val">4.42%</div>
+      <div class="m-chg flat">→ Stable</div>
     </div>
     <div class="market-cell canada-cell">
-      <div class="mc-name">10Y GoC</div>
-      <div class="mc-value">~3.72%</div>
-      <div class="mc-change flat">BoC held 2.25%</div>
+      <div class="m-name">🍁 10Y GoC</div>
+      <div class="m-val">3.18%</div>
+      <div class="m-chg flat">→ Hold signal</div>
     </div>
     <div class="market-cell">
-      <div class="mc-name">VIX</div>
-      <div class="mc-value">~18.2</div>
-      <div class="mc-change down">Fear fading</div>
+      <div class="m-name">VIX</div>
+      <div class="m-val">17.8</div>
+      <div class="m-chg dn">↓ Calming</div>
     </div>
   </div>
-  <div style="margin-top:8px;font-family:var(--font-ui);font-size:10px;color:var(--dim);">S&P/Nasdaq/Nifty/Sensex via Yahoo Finance &middot; WTI/Brent via CNBC/EIA &middot; BTC via Yahoo Finance &middot; INR via FXStreet &middot; CAD/USD via Bloomberg/BoC &middot; Gold via Trading Economics (confirmed $4,867.39) &middot; Hang Seng/10Y GoC estimated. Intraday approximations where confirmed close unavailable.</div>
-</section>
+  <div style="font-size:11px;color:var(--dim);margin-top:8px;font-family:var(--font-ui);">Note: Nifty/Sensex are expected open levels. Some data estimated from latest available sources. 10Y GoC estimated from BoC rate path.</div>
+</div>
 
 <!-- CONNECTION MAP -->
 <div class="connection-map">
-  <div class="cm-label">Story Connection Map</div>
-  <div class="cm-chain">
-    <span class="cm-chip hot">HORMUZ BLOCKADE DAY 49</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip india">INDIA OIL DOUBLE SHOCK</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip india">INR 93.35 / RBI -$14B</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip india">GOLDMAN CUTS INDIA GDP</span>
+  <div class="conn-label">Today's Story Connection Map</div>
+  <div class="conn-strip">
+    <div class="conn-node">HORMUZ BLOCKED</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">OIL $93+</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">INR ₹93</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">INDIA DROPS TO 6th GDP</div>
   </div>
-  <div class="cm-chain">
-    <span class="cm-chip hot">HORMUZ DISRUPTION</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip canada">CANADA RELIABLE SUPPLIER</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip canada">CARNEY MAJORITY MANDATE</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip canada">MANUFACTURING TARIFF PAUSE</span>
+  <div class="conn-strip" style="margin-top:10px;">
+    <div class="conn-node">HORMUZ BLOCKED</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">ASIA ENERGY CRISIS</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">CANADA LNG FID WINDOW</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">BUT: ENTREPRENEURIAL DROUGHT</div>
   </div>
-  <div class="cm-chain">
-    <span class="cm-chip hot">IRAN DEAL OPTIMISM</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip">S&P RECORD / DOW +700</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip">OIL EASES FROM $100</span>
-    <span class="cm-arrow">+</span>
-    <span class="cm-chip">GOLD STILL $4,867</span>
+  <div class="conn-strip" style="margin-top:10px;">
+    <div class="conn-node">SCOTUS KILLS IEEPA</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">NEW 10% GLOBAL TARIFF</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">SECTION 301 INDIA PROBE</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">INDIA-US TRADE RISK</div>
   </div>
-  <div class="cm-chain">
-    <span class="cm-chip ai">STANFORD AI INDEX 2026</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip ai">ANTHROPIC #1 GLOBALLY</span>
-    <span class="cm-arrow">+</span>
-    <span class="cm-chip ai">PWC: 20% CAPTURE 74%</span>
-    <span class="cm-arrow">&rarr;</span>
-    <span class="cm-chip ai">AI BIFURCATION ECONOMY</span>
+  <div class="conn-strip" style="margin-top:10px;">
+    <div class="conn-node">STANFORD AI INDEX</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">ANTHROPIC LEADS</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">PwC: 74% GAINS → 20% FIRMS</div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-node">WINNER-TAKE-ALL AI</div>
   </div>
 </div>
 
 <!-- THE LEAD -->
-<div class="section-header">THE LEAD</div>
-
-<div class="story-card lead-card open" data-cat="geopolitics markets" id="lead-hormuz">
-  <div class="lead-banner">TOP STORY &middot; DAY 49 OF US-IRAN WAR</div>
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">Geopolitics &middot; Energy &middot; Markets</span>
-      <span class="trend-arrow">&#8597;</span>
-      <span class="time-horizon">Days &mdash; ongoing</span>
-      <span class="decision-badge watch">WATCH</span>
+<div class="section-header">
+  <h2>⚡ The Lead</h2>
+</div>
+<div class="story-card lead-card open" data-cat="geopolitics energy macro" id="lead-hormuz" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="lead-label">THE LEAD</div>
+      <div class="card-meta">
+        <span class="category-tag">Geopolitics</span>
+        <span class="category-tag">Energy</span>
+        <span class="trend-arrow up">↑</span>
+        <span class="time-horizon">Now → Apr 21 ceasefire deadline</span>
+        <span class="decision-badge watch">WATCH</span>
+      </div>
+      <div class="card-title">Hormuz Ceasefire Has Until April 21. Here's What Happens Either Way.</div>
     </div>
-    <div class="card-title">Iran Signals "Deal" Talks &mdash; Markets Celebrate, But the Hormuz Blockade Is Still Live and Peace Is Not Signed</div>
   </div>
   <div class="layer1">
-    <p>Day 49 of the US-Iran war. Trump stated Monday morning that Iran had contacted his administration "to work out a deal," triggering a 700-point Dow surge and a fresh S&P 500 record close. Brent crude eased from near $100 to the $96&ndash;99 range, though physical supply through the Strait of Hormuz remains severely constrained. The Pentagon confirmed its blockade has "fully halted economic trade going into and out of Iran by sea," with 10,000+ US troops, 12+ Navy ships and fighter jets in the Gulf of Oman. Iran meanwhile maintains a threat to block shipping across the Persian Gulf, Sea of Oman, and Red Sea if the US blockade continues. Goldman Sachs estimates Brent stays above $100 throughout 2026 if the closure persists another month. The war began February 28, 2026, when the US and Israel launched an air war against Iran and assassinated Supreme Leader Khamenei.</p>
-    <div class="so-what">
-      <strong>SO WHAT IN INDIA:</strong> India imports 85% of its crude (5.5 million bpd) and has already lost ~3 million bpd of Hormuz-routed flow. The US waiver on Russian crude expired April 11. The RBI has burned $12&ndash;15 billion defending the rupee (now Rs 93.35, threatening 95). Goldman cut India's FY27 GDP forecast 0.5pp to 6.5%. Every $10/bbl oil rise worsens India's current account deficit by 0.4&ndash;0.5% of GDP. India also imports 40% of fertilizer needs from the Gulf &mdash; adding food inflation as a secondary transmission mechanism. A peace deal helps the rupee, but India's structural energy vulnerability does not resolve overnight.<br><br>
-      <strong>SO WHAT IN CANADA:</strong> Canada is oil-positive. WCS and WTI are elevated. TSX energy stocks are running. Carney is actively marketing Canada as the reliable energy alternative. Trans Mountain flows to Pacific markets &mdash; exactly what Asia-Pacific buyers starved of Gulf oil need. CAD/USD at 0.7306 reflects oil-correlated strength with further upside while energy prices stay elevated.
-    </div>
-    <div class="action-box"><strong>ACTION:</strong> Don't trust the relief rally as a resolution signal. Monitor whether the ceasefire holds past the current extension window. Key trigger: if a formal Iran nuclear/security deal is announced, INR recovers sharply and Indian energy import costs ease &mdash; that's the moment to be long India equities. In Canada, lock in TSX energy exposure now before a peace deal compresses oil prices. Asymmetric window: India pain is real, Canada gain is real, the resolution trade flips both simultaneously.</div>
-    <div class="contrarian">&#128161; <em>Bear case: Iran "signaling" willingness to talk is not a signed deal. Multiple previous ceasefire rounds failed, including the Islamabad talks that collapsed April 12. If talks break down again, the next oil leg could push Brent through $105 and India's rupee could breach Rs 95 &mdash; a level that changes import-cost math for every India-facing business.</em></div>
+    <p>The fragile US-Iran truce brokered through Pakistan is set to expire April 21. Marathon talks in Islamabad last weekend broke down over Iran's nuclear demands. Trump says the war is "very close to over" and an in-principle ceasefire extension is being discussed — but 14 vessels were turned back by the US Navy blockade today alone, Day 4 of the blockade. Brent crude has held near $125/barrel since the strait effectively closed; WTI trades at $93–95. The IEA has flagged that Europe has ~6 weeks of jet fuel remaining if supplies stay blocked.</p>
+    <div class="so-what"><strong>SO WHAT:</strong><br>
+    <strong>India:</strong> India imports ~85% of its oil. With the rupee already at ₹93/$1 and WTI near $94, the combined FX + commodity shock is devastating to the current account. Every $10/barrel above $80 costs India ~$8–10B/year in extra import bills. The rupee is the transmission mechanism — and it's already cracking.<br><br>
+    <strong>Canada:</strong> Alberta crude (Western Canadian Select) is not Hormuz-linked. Canadian oil and LNG have a structural premium right now — no maritime choke-point exposure. This is the best demand environment in Canadian energy history for expanding export capacity. The ceasefire is actually bad for Canadian energy bulls in the short term — a deal sends oil to $75 fast.</div>
+    <div class="action-box"><strong>ACTION:</strong> April 21 is the binary trigger. If ceasefire collapses: WTI breaks $100 — hedge Indian operations' energy exposure, accelerate any conversations about Canadian LNG FID partnerships. If deal lands: Indian equities rally hard, take profit on any energy positions. Set a calendar reminder for April 20 — pre-position the day before.</div>
+    <div class="contrarian">💭 <em>Bear case for Canadian energy: A deal, even a fragile one, collapses oil 15–20% overnight. WCS (Western Canadian Select) follows. The FID window reopens only if instability returns. Don't over-rotate on a single geopolitical event.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://www.cnbc.com/2026/04/16/iran-war-oil-price-strait-hormuz.html" target="_blank">Read original &rarr;</a>
-      <a class="read-original" href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Crisis timeline &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:morning%40finshots.in" target="_blank">Finshots inbox</a>
+      <a class="read-original" href="https://www.cnbc.com/2026/04/16/iran-oil-tanker-traffic-strait-hormuz.html" target="_blank">Read original (CNBC) →</a>
+      <a class="read-original" href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Full crisis timeline →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>The geography:</strong> The Strait of Hormuz is 21 miles wide at its narrowest point. Roughly 20% of the world's daily oil supply (21 million bpd) normally transits it. The US blockade involves carrier strike groups at the mouth of the strait, intercepting vessels attempting to pay Iran toll fees. 13 ships were deterred in the first days of the blockade per Pentagon reporting.</p>
-    <p><strong>Why the Russian oil angle doubles the India pain:</strong> India was buying ~1.5 million bpd of Russian crude under the US waiver &mdash; discounted supply under Western sanctions. That waiver expired April 11, simultaneous with the Hormuz blockade hardening. India must now source replacement supply on the spot market at elevated prices, with no discount pathway available.</p>
-    <p><strong>Goldman's math on Brent:</strong> "Another month of Hormuz closure means over $100 Brent throughout 2026." ANZ estimates $88/barrel on resolution. The spread between war and peace for India's current account is approximately $12/barrel &mdash; or roughly 0.5&ndash;0.6% of GDP in CAD widening.</p>
-    <p><strong>Canada's Trans Mountain advantage:</strong> The Trans Mountain Expansion (TMX), completed 2024, tripled capacity on the pipeline from Alberta to Burnaby BC &mdash; adding ~590,000 bpd of Pacific-coast export capacity. This connects directly to Asian buyers who normally source from the Gulf. It is the most strategically valuable piece of energy infrastructure in the current global supply reshuffle.</p>
+    <p><strong>The six-week damage report:</strong> Since late February, ~11 million barrels/day of crude production have been effectively offline. Export volumes from the Middle East Gulf fell from 15M to 7M barrels/day. The IEA calls this "the largest supply disruption in the history of the global oil market." Before the war, ~25% of world seaborne oil and 20% of global LNG moved through Hormuz.</p>
+    <p><strong>Iran's leverage calculus:</strong> Iran knows that reopening Hormuz means losing its only bargaining chip on the nuclear file. The IRGC has laid sea mines and conducted 21 confirmed attacks on merchant ships. Even if a ceasefire holds, full shipping normalization takes weeks — mine clearance operations alone are complex.</p>
+    <p><strong>Historical comparator:</strong> The 1980s tanker war saw attacks on 546 vessels but the strait never fully closed. This is categorically worse. Insurance rates for Hormuz transits remain 12–15x normal levels even with the current truce in effect.</p>
   </div>
   <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('india-oil')">India Oil Double Shock</span>
-    <span class="conn-chip" onclick="scrollToStory('canada-energy')">Canada Energy Play</span>
-    <span class="conn-chip" onclick="scrollToStory('gold-record')">Gold at $4,867</span>
-    <span class="conn-chip" onclick="scrollToStory('crypto-btc')">BTC War Hedge</span>
+    <span class="conn-chip" onclick="scrollToStory('india-gdp')">→ India GDP Drop</span>
+    <span class="conn-chip" onclick="scrollToStory('canada-lng')">→ Canada LNG Opportunity</span>
+    <span class="conn-chip" onclick="scrollToStory('india-rupee')">→ INR Weakness</span>
   </div>
 </div>
 
 <!-- SIGNAL BOARD -->
-<div class="section-header">SIGNAL BOARD <span class="count-badge">7 stories</span></div>
+<div class="section-header">
+  <h2>📡 Signal Board</h2>
+</div>
 
-<div class="story-card" data-cat="india macro markets" id="india-oil">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">India &middot; Energy &middot; Macro</span>
-      <span class="trend-arrow">&#8595;</span>
-      <span class="time-horizon">Weeks&ndash;months</span>
-      <span class="decision-badge act">ACT</span>
+<!-- India GDP -->
+<div class="story-card" data-cat="india macro markets" id="india-gdp" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">India</span>
+        <span class="category-tag">Macro</span>
+        <span class="trend-arrow dn">↓</span>
+        <span class="time-horizon">Narrative risk: Now</span>
+        <span class="decision-badge watch">WATCH</span>
+      </div>
+      <div class="card-title">India Slips to 6th in IMF GDP Rankings — It's Currency Math, Not Economic Failure</div>
     </div>
-    <div class="card-title">India's Oil Double Shock: Russian Waiver Dead, Hormuz Still Blocked &mdash; Rs 93.35 and Falling</div>
   </div>
   <div class="layer1">
-    <p>India faces what MUFG Research calls a "double-barreled energy squeeze." First barrel: the US waiver allowing India to import Russian crude at discount expired April 11, removing ~1.5 million bpd of discounted supply India relied on since 2022. Second barrel: the Hormuz blockade cut ~3 million bpd of India's Gulf-routed crude. Together, India's 5.5 million bpd import machine is scrambling for replacement supply in a spot market where Brent is near $99. The RBI has deployed $12&ndash;15 billion in forex reserves to defend the rupee &mdash; now at Rs 93.35 &mdash; but MUFG Research warns USD/INR could push past 95 if the crisis continues. Goldman Sachs trimmed India's FY27 GDP forecast 0.5pp to 6.5%. Food inflation is a secondary risk: India imports ~40% of fertilizer from the Middle East. Global investors pulled over $3 billion from Indian equities in March alone.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> For India-facing businesses, this is a cost-of-inputs story with a duration risk. Every input that touches energy (logistics, manufacturing, chemicals, agriculture) reprices upward. Watch: if RBI turns hawkish to defend INR rather than support growth, the credit environment tightens meaningfully. For Canadian operations: zero direct exposure to India's oil shock; actually benefits from higher WTI prices in the Canadian energy sector.</div>
-    <div class="action-box"><strong>ACTION:</strong> Stress-test India business margins against Rs 95/USD scenario. The break-even math changes at that level for import-intensive operations. Review rupee hedging strategy &mdash; the cost of carry is higher but the risk of doing nothing is now larger than at any point in 2024 or 2025. The services export engine (IT, pharma) earns USD and is largely immune to oil prices &mdash; lean into that for cash management.</div>
-    <div class="contrarian">&#128161; <em>Bull case: Nifty is up 6% this week &mdash; the market is already pricing in resolution. India's Q4 FY26 earnings season is in progress, and strong corporate results (especially IT and pharma) could offset macro headwinds. India's direct tax collections grew 7.1% to Rs 22.8 lakh crore by March 17 &mdash; fiscal space exists to absorb some subsidy burden.</em></div>
+    <p>The IMF's April 2026 World Economic Outlook puts India's nominal GDP at $4.15 trillion — behind the UK ($4.26T) and Japan ($4.38T), dropping India to 6th place. This lands with political force: politicians have been promising India becomes the 4th-largest economy. The rupee's slide from ₹84.6/$ in 2024 to ₹88.5 in 2025 (and now ₹93+) is the mechanical cause — India's GDP grew ~9% in rupee terms, but dollar-conversion erased the gain. A Feb 2026 base-year revision by MoSPI knocked a further ~4% off the nominal figure.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> This is a narrative crisis more than an economic one — India is still the world's fastest-growing major economy at 6.5% real GDP. But the optics matter. Expect the government to redouble rhetoric around "India at 3rd by 2030," and possibly accelerate RBI intervention to support the rupee. For businesses operating in INR with dollar costs, the FX headwind is very real.<br><br>
+    <strong>SO WHAT in Canada:</strong> The dollar's global strength (which is hurting INR) is also keeping CAD subdued at ~$0.738 USD. But Canada is a commodity exporter — a strong USD + high oil prices is actually net positive for CAD revenues denominated in USD.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have INR-denominated assets with dollar-priced inputs (energy, electronics, capital goods), review currency hedging strategy urgently. The rupee at ₹95 is not impossible by Q3 if Hormuz stays closed. Dollar-cost averaging into USD-denominated assets from INR is sensible here.</div>
+    <div class="contrarian">💭 <em>Counter: India's real GDP growth at 6.5% remains the fastest globally. PPP rankings (where India is 3rd) tell a different story. Nominal GDP ranking is a snapshot of exchange-rate math, not economic strength. Don't mistake the score for the game.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://www.cnbc.com/2026/04/14/us-hormuz-blockade-hits-india-just-as-russian-oil-purchase-waiver-expires-deepening-energy-worries.html" target="_blank">Read original &rarr;</a>
-      <a class="read-original" href="https://www.anandrathipms.com/blog/us-iran-conflict-2026-india-economy-impact.php" target="_blank">Full impact analysis &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:morning%40finshots.in" target="_blank">Finshots inbox</a>
+      <a class="read-original" href="https://www.businesstoday.in/latest/economy/story/growing-fast-yet-slipping-why-india-dropped-to-6th-in-imf-gdp-rankings-526044-2026-04-16" target="_blank">Read original (BusinessToday) →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>The fertilizer angle:</strong> India imports ~40% of fertilizer needs from the Middle East (UAE, Saudi Arabia, Qatar). Disruption to these supply chains feeds directly into agricultural input costs, which feeds into food inflation. Food has an outsized CPI weight in India &mdash; this is a non-trivial secondary transmission.</p>
-    <p><strong>RBI's dilemma:</strong> Caught between defending the rupee (sell dollars, potentially hike rates) and supporting growth (looser conditions). Governor Sanjay Malhotra has not signaled a policy shift. The Rs 95 level is considered the threshold where import pass-through to CPI becomes severe. RBI's forex buffer ($580B+ before recent drawdown) gives more runway than the 2013 Taper Tantrum &mdash; but burning $14B in weeks is the warning signal.</p>
-    <p><strong>Historical context:</strong> The last comparable INR stress was the 2013 Taper Tantrum (USD/INR shot from 55 to 68 in months). Current level Rs 93.35 reflects substantial pre-existing depreciation since 2022 (from ~74). The pace of the current move &mdash; driven by simultaneous oil shock and capital outflows &mdash; is what warrants attention.</p>
+    <p><strong>The base-year revision effect:</strong> When MoSPI shifted the base year from 2011-12 to 2022-23, it revised down India's nominal GDP by ~4%. This is a statistical correction, not an economic one — but it compounds with the currency effect to create a double-whammy in the IMF rankings.</p>
+    <p><strong>The UK comparison:</strong> The UK economy is not actually growing faster than India — UK real GDP growth is forecast at ~1.2% for 2026. India beat the UK purely because the pound strengthened against the dollar while the rupee weakened. This is entirely a currency story.</p>
+    <p><strong>Path back to 5th:</strong> For India to reclaim 5th, the rupee needs to stabilize below ₹87/$. Given current Hormuz dynamics, that seems optimistic before H2 2026 at the earliest.</p>
   </div>
   <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">Hormuz Crisis</span>
-    <span class="conn-chip" onclick="scrollToStory('canada-energy')">Canada Energy Play</span>
+    <span class="conn-chip" onclick="scrollToStory('india-rupee')">→ Rupee Weakness</span>
+    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">→ Hormuz Crisis</span>
   </div>
 </div>
 
-<div class="story-card" data-cat="ai" id="ai-stanford">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">AI &middot; Technology</span>
-      <span class="trend-arrow">&#8593;</span>
-      <span class="time-horizon">Now &mdash; 2027</span>
-      <span class="decision-badge act">ACT</span>
+<!-- India Rupee -->
+<div class="story-card" data-cat="india markets macro" id="india-rupee" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">India</span>
+        <span class="category-tag">Markets</span>
+        <span class="trend-arrow dn">↓</span>
+        <span class="time-horizon">Immediate pressure</span>
+        <span class="decision-badge act">ACT</span>
+      </div>
+      <div class="card-title">The Rupee at ₹93: RBI Is Fighting, But Oil + Dollar Is Winning</div>
     </div>
-    <div class="card-title">Stanford 2026 AI Index: Anthropic Leads Globally, Best Models Hit 50%+ on "Humanity's Last Exam"</div>
   </div>
   <div class="layer1">
-    <p>Stanford HAI's 2026 AI Index (released April 13) shows Anthropic leading global model rankings as of March 2026, trailed by xAI, Google, and OpenAI. The capability leap is the headline: best models now score above 50% on "Humanity's Last Exam" (HLE) &mdash; a 3,000+ question PhD-level test. OpenAI's o1 scored 8.8% on HLE in 2025. The latest top models score ~50%. That is not iteration; it is a phase change. AI adoption is outpacing both the PC and internet adoption curves. Generative AI tools are valued at $172 billion annually to US consumers by early 2026. The US leads China by 2.7% on the HAI capability index &mdash; essentially parity. Both OpenAI ($40B raise at $300B valuation) and Anthropic ($13B raise at $183B) are reportedly heading toward IPOs in late 2026. The report also flags a transparency crisis: leading labs including OpenAI, Anthropic, and Google have stopped disclosing training parameter counts, dataset sizes, and training duration.</p>
-    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> India's government launched a Rs 10,000 crore FoF specifically targeting deep tech/AI this week &mdash; timed against this backdrop. India AI startup funding is up 73% in Q1 2026. The question is whether Indian AI companies are building on the 50%-HLE wave or whether they're building last-generation solutions on current models.<br><br>
-    <strong>SO WHAT IN CANADA:</strong> Toronto-based Cohere competes in the enterprise AI space against these same labs. The 2.7% US-China gap (vs. 15%+ three years ago) means the competitive landscape is converging fast. Canadian AI strategy depends on whether Cohere and MILA ecosystem companies stay at the frontier of this converging field.</div>
-    <div class="action-box"><strong>ACTION:</strong> The 20% vs. 80% AI dynamic from the PwC story is powered by this capability curve. Audit your current AI deployments: are they built on models that were frontier 18 months ago? The gap between model generations is now measured in capability doublings, not increments. Any AI workflow built on sub-frontier models is already at a competitive disadvantage.</div>
-    <div class="contrarian">&#128161; <em>Nature published a study this week showing human scientists still outperform the best AI agents on genuinely novel research tasks. Benchmarks test known-answer questions; true scientific novelty remains a human advantage. The 50% HLE score may overstate real-world capability for original problem-solving.</em></div>
+    <p>The USD/INR rate touched ₹93.37 this week — a three-week low — as rising oil prices from Hormuz fears and broadly stronger dollar sentiment combined. The rupee is down 8.94% over the past 12 months. RBI has intervened — pushing lenders to unwind offshore arbitrage positions — and temporarily stabilized around ₹93.10. But the structural pressures (oil import bill, capital outflows, Trump tariffs on Indian goods) haven't eased.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> For any business with USD-priced inputs — technology, energy, capital equipment — this is a 9% cost increase versus last year. Import-heavy sectors (electronics, pharma raw materials) are getting squeezed. Export-oriented businesses (IT services, specialty chemicals) get a tailwind — their dollar revenues buy more rupees.<br><br>
+    <strong>SO WHAT in Canada:</strong> The same dollar strength that's hurting INR is keeping CAD range-bound at $0.738. But Canada's current account benefits from oil exports priced in USD — a strong dollar actually boosts Alberta's revenue in CAD terms.</div>
+    <div class="action-box"><strong>ACTION:</strong> Businesses with significant USD payables should consider locking in forward contracts at current levels before April 21 (Hormuz deadline). If ceasefire collapses, rupee could test ₹96 within days. If deal lands, cover slowly — don't over-hedge on the downside.</div>
+    <div class="contrarian">💭 <em>The RBI has $650B+ in reserves. It has firepower to defend the rupee. The structural story for INR over 3–5 years remains positive as India's current account improves. This is cyclical pain, not structural rot.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank">IEEE Spectrum &rarr;</a>
-      <a class="read-original" href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank">Full Stanford report &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:newsletter%40thedeepview.co" target="_blank">Deep View inbox</a>
+      <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-04-13/inr-usd-why-is-india-s-rupee-so-weak-how-is-the-rbi-defending-the-currency" target="_blank">Read original (Bloomberg) →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>The HLE benchmark:</strong> "Humanity's Last Exam" was designed to be genuinely hard &mdash; questions that GPT-4 level models scored near 0% on. Going from 8.8% (2025) to 50%+ (2026) in one year is the equivalent of going from grandmaster-level to superhuman in chess, compressed into 12 months.</p>
-    <p><strong>The China convergence:</strong> The 2.7% US-China gap on HAI's aggregate capability index was 15%+ three years ago. Convergence is accelerating. For enterprise strategy: assume capability parity within 18 months. Differentiation will be about application layer, data moats, and regulatory access &mdash; not raw model performance.</p>
-    <p><strong>IPO signal:</strong> If Anthropic IPOs while holding the #1 Stanford ranking, it will be the most anticipated tech IPO since Meta. The cascade effect on AI sector valuations &mdash; including Indian and Canadian AI startups &mdash; would be enormous. Model this into your portfolio assumptions for H2 2026.</p>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('ai-pwc')">PwC AI Bifurcation</span>
-    <span class="conn-chip" onclick="scrollToStory('india-startup')">India Startup FoF</span>
+    <p><strong>The triple-squeeze:</strong> India faces three simultaneous pressures on the rupee: (1) oil import bill surge from Hormuz; (2) capital outflows as US rates stay elevated; (3) Trump tariff uncertainty, which has kept FDI flows subdued. Any one of these is manageable. All three together is why the RBI is running hard to stand still.</p>
+    <p><strong>The arbitrage play the RBI is targeting:</strong> Offshore NDF (non-deliverable forward) markets were trading the rupee at a significant discount to onshore rates, creating an arbitrage that amplified selling pressure. The RBI's intervention to unwind these positions is a known playbook — it worked in 2022–23 as well.</p>
   </div>
 </div>
 
-<div class="story-card" data-cat="ai macro" id="ai-pwc">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">AI &middot; Strategy</span>
-      <span class="trend-arrow">&#8593;</span>
-      <span class="time-horizon">Now &mdash; ongoing</span>
-      <span class="decision-badge act">ACT</span>
+<!-- Stanford AI Index -->
+<div class="story-card" data-cat="ai macro" id="stanford-ai" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">AI</span>
+        <span class="category-tag">Tech</span>
+        <span class="trend-arrow up">↑</span>
+        <span class="time-horizon">Annual benchmarking</span>
+        <span class="decision-badge watch">WATCH</span>
+      </div>
+      <div class="card-title">Stanford AI Index 2026: Anthropic Leads, China Nearly Erased the Gap, and Adoption Is Moving Faster Than Anyone Expected</div>
     </div>
-    <div class="card-title">PwC: 20% of Companies Capture 74% of All AI Economic Gains &mdash; and the Gap Compounds Every Quarter</div>
   </div>
   <div class="layer1">
-    <p>PwC surveyed 1,217 senior executives across 25 sectors and found a widening AI wealth divide. The top 20% of companies by AI deployment generate 7.2x more AI-driven revenue and efficiency gains than the average competitor. The defining difference is not budget or talent &mdash; it is intent. Leaders use AI as a "catalyst for growth and business reinvention," not just productivity. They are twice as likely to redesign workflows around AI rather than layering tools onto existing processes. They make decisions without human intervention at 2.8x the rate of peers. Bottom line: 56% of surveyed companies report no significant financial benefit from AI yet. Only 33% report meaningful gains in cost or revenue.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The bifurcation is already priced into stock market differentials between AI-native and traditional companies &mdash; but it is not priced into most business strategy cycles. In India, where AI startup funding jumped 73% in Q1 2026, the companies building AI-native workflows are definitionally in the 20%. In Canada, Shopify (autonomous commerce AI) and Cohere (enterprise AI) are in the 20%. The gap to the 80% compounds at the pace of model improvement &mdash; which, per Stanford today, is a phase change per year.</div>
-    <div class="action-box"><strong>ACTION:</strong> Map your current AI use cases. Categorize each as: (A) AI as tool on existing workflow, or (B) AI enabling a new workflow or revenue line that didn't exist without AI. Your B/A ratio is your AI maturity index. PwC's leaders are running autonomous AI workflows at 1.9x the rate of competitors. If none of your deployments currently operate autonomously, you are in the 80%.</div>
-    <div class="contrarian">&#128161; <em>The sample is self-reported by executives who have every incentive to frame AI use optimistically for investors. The true test is earnings comps over the next 6&ndash;8 quarters &mdash; where the 20% vs. 80% gap either shows up in revenue or doesn't. Early-adopter bias in the sample cannot be ruled out.</em></div>
+    <p>Stanford HAI's 2026 AI Index — the authoritative annual snapshot — dropped this week. Top findings: Anthropic's Claude Opus 4.6 leads global model rankings, with Google's Gemini 3.1 Pro close behind; both clear 50% on the notoriously hard "Humanity's Last Exam." Models now beat human expert baseline (81.2%) on graduate-level science questions, hitting 93%. Corporate AI investment doubled in 2025 to $581.7 billion. Generative AI hit 53% global adoption in three years — faster than the PC or internet. And AI's Foundation Model Transparency Index dropped from 58 to 40 — the big labs stopped disclosing training data sizes.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> India's creator economy ($15B today, projected $61B by 2033) is directly in the path of this wave. AI-powered influencers and agent-driven storefronts are already disrupting the creator model. Indian businesses that are not experimenting with AI workflows are compounding a skills deficit that's getting more expensive every quarter.<br><br>
+    <strong>SO WHAT in Canada:</strong> The transparency drop is notable for Canadian AI governance — Canada has been positioning itself as the "responsible AI" alternative to US Big Tech. If the foundation model labs are now less transparent, that's actually an opening for Canadian policy differentiation. Cohere (Toronto) remains the best-positioned Canadian AI company to capitalize on enterprise demand for explainable, auditable AI.</div>
+    <div class="action-box"><strong>ACTION:</strong> The PwC data (see next card) confirms: 74% of AI gains flow to 20% of companies. The time for AI pilots is over — it's time to decide which of your businesses is in the 20% or the 80%. That strategic choice is more urgent in April 2026 than it was six months ago.</div>
+    <div class="contrarian">💭 <em>The benchmarks are getting gamed. Models are trained on benchmark-adjacent data, and "50% on Humanity's Last Exam" may reflect overfitting more than genuine reasoning. Nature recently found human scientists still outperform the best AI agents on truly novel complex tasks.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-performance-study.html" target="_blank">PwC press release &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:dan%40tldrnewsletter.com" target="_blank">TLDR inbox</a>
+      <a class="read-original" href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank">Read original (Stanford HAI) →</a>
+      <a class="read-original" href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank">IEEE Spectrum analysis →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>Growth vs. productivity framing:</strong> PwC's key finding is that AI leaders are not primarily using AI to cut headcount or reduce costs. They are using it to enter new markets, launch new products, and capture converging industry opportunities. This matches what we see in Shopify (Canada), Swiggy (India), and Infosys (India) trajectories &mdash; AI enabling revenue lines that did not exist 24 months ago.</p>
-    <p><strong>The autonomous workflow threshold:</strong> Companies "making decisions without human intervention at 2.8x the rate" means: automated credit underwriting, AI-driven inventory optimization, algorithmic ad buying, automated contract review. These are not edge cases &mdash; they are the operational fabric of leading companies. The 20% have normalized this; the 80% still have humans in every loop.</p>
+    <p><strong>The China convergence:</strong> The US leads China by only 2.7% on Stanford's aggregate benchmark. This is the smallest gap since Stanford began tracking. The geopolitical implications are significant — AI capability parity means export controls on chips become the primary lever, and the Section 301 investigation (see tariffs card) takes on new strategic dimensions.</p>
+    <p><strong>The transparency retreat:</strong> Google, Anthropic, and OpenAI all stopped disclosing dataset sizes and training durations for their latest models. The Transparency Index fell from 58 to 40. This is the opposite of what regulatory frameworks (EU AI Act, Canada's AIDA) require. Expect a collision between model labs and regulators in H2 2026.</p>
+    <p><strong>Energy implications:</strong> AI data center electricity demand is a major and growing factor. With Hormuz disrupting global energy markets, the power cost of training frontier models is rising — this is an underappreciated connection between the geopolitical and AI stories.</p>
   </div>
   <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('ai-stanford')">Stanford AI Index</span>
-    <span class="conn-chip" onclick="scrollToStory('india-startup')">India Startup FoF</span>
+    <span class="conn-chip" onclick="scrollToStory('pwc-ai')">→ PwC AI Gains</span>
+    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">→ Energy Costs for AI</span>
   </div>
 </div>
 
-<div class="story-card" data-cat="macro geopolitics" id="china-tariff">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">Trade &middot; Macro &middot; Geopolitics</span>
-      <span class="trend-arrow">&#8595;</span>
-      <span class="time-horizon">Days&ndash;weeks</span>
-      <span class="decision-badge watch">WATCH</span>
+<!-- PwC AI -->
+<div class="story-card" data-cat="ai macro" id="pwc-ai" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">AI</span>
+        <span class="category-tag">Strategy</span>
+        <span class="trend-arrow up">↑</span>
+        <span class="time-horizon">Strategic: Now</span>
+        <span class="decision-badge act">ACT</span>
+      </div>
+      <div class="card-title">PwC: 74% of AI's Financial Gains Are Going to Just 20% of Companies — And the Gap Is Accelerating</div>
     </div>
-    <div class="card-title">Trump Threatens 50% Tariffs on China Over Iran Arms Report &mdash; and 100% Pharma Tariff Is Already Live</div>
   </div>
   <div class="layer1">
-    <p>After reports surfaced that Beijing was preparing to deliver air defense systems to Iran, Trump threatened 50% tariffs on all Chinese goods. The threat comes atop existing Section 301/232 tariffs that survived the Supreme Court's February 2026 ruling striking down IEEPA-based tariffs. The 100% tariff on pharmaceutical imports (Section 232, effective April 6) is already live &mdash; a direct hit on India's generic drug export industry, which sends ~$8.7B of pharma to the US annually. India's Sun Pharma, Dr Reddy's, and Cipla are in the firing line. A Court of International Trade ruling on remaining tariff challenges (Section 122 tariffs, oral argument April 10) could come within 15 days.</p>
-    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> The 100% pharma tariff is the most underreported India story this week. Indian generics supply ~40% of US generic drugs by volume. A future extension of high tariffs to generics (even at 25&ndash;50%) would be a structural disruption to Indian pharma revenues. Watch Sun Pharma, Dr Reddy's guidance in their next earnings. The China arms-to-Iran angle could also benefit India: if China-US trade frictions escalate, India remains a preferred alternative supplier in several categories.<br><br>
-    <strong>SO WHAT IN CANADA:</strong> Canada secured a 6-month manufacturing tariff pause (April 15 announcement) and is playing the strategic patience game. Carney has positioned Canada as the non-adversarial, non-China supply chain alternative. If the 50% China tariff escalates, Canada benefits as a substitute supplier of commodities and manufactured goods to the US.</div>
-    <div class="action-box"><strong>ACTION:</strong> If you have pharma supply chain exposure in India, model a 25&ndash;50% US generic tariff scenario now &mdash; even though the current 100% applies to patented pharma, the direction of travel is clear. For Canadian manufacturing businesses: the current tariff pause is an opportunity to lock in US supply relationships that assume favorable treatment through October 2026.</div>
-    <div class="contrarian">&#128161; <em>Trump tariff threats have historically been negotiating tactics. The IEEPA tariffs were struck down by SCOTUS, narrowing the President's toolkit. A 50% China tariff via Section 301 would face immediate legal challenges and WTO proceedings, likely resulting in partial implementation at best.</em></div>
+    <p>PwC's 2026 AI Performance Study (1,217 senior executives, 25 sectors) finds that the top 20% of firms capture 74% of all AI-driven revenue and efficiency gains. The top performers generate 7.2x more AI-driven value than the average company. The distinguishing factor isn't AI budget — it's whether firms use AI for growth and business model reinvention vs. just productivity/automation. Only 33% of companies report any financial gain from AI. 56% report no significant benefit despite spending heavily.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The AI ROI gap is now a competitive moat question, not a technology question. The 80% of companies stuck in pilot purgatory are not failing because AI doesn't work — they're failing because they're applying AI to optimize existing processes rather than create new business lines. The leaders are using AI to enter adjacent industries. PwC calls this "industry convergence."<br><br>
+    <strong>India/Canada lens:</strong> Indian IT services companies (TCS, Infosys, Wipro) are classically in the "productivity" camp — using AI to reduce headcount per dollar of revenue. That's the 80%. The companies winning are the ones creating new product lines. Canadian firms like Shopify (down 28% YTD but still printing 30%+ revenue growth) are in the 20%.</div>
+    <div class="action-box"><strong>ACTION:</strong> Audit your current AI spending: what % is productivity automation vs. new revenue creation? If it's more than 70% automation-focused, you're in the 80% camp. The shift to "industry convergence" — using AI to enter adjacent markets — is where the 7.2x multiple comes from.</div>
+    <div class="contrarian">💭 <em>Survivorship bias: we're seeing the winners' playbooks, not the graveyard of companies that tried "industry convergence" with AI and failed expensively. Not every firm can or should expand beyond their sector. Capital discipline still matters.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://www.cnbc.com/2026/04/13/trump-threatens-50percent-tariffs-on-china-as-report-suggests-plans-for-arms-shipment-to-iran.html" target="_blank">Read original &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:dan%40axios.com" target="_blank">Axios inbox</a>
+      <a class="read-original" href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-performance-study.html" target="_blank">Read original (PwC) →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>The SCOTUS ruling context:</strong> The Supreme Court struck down IEEPA-based tariffs in February 2026, ruling that IEEPA did not grant unlimited tariff authority. Remaining tariffs rely on Section 301 (unfair trade practices) and Section 232 (national security) &mdash; narrower scope but legally more durable.</p>
-    <p><strong>India pharma exposure depth:</strong> India supplies ~40% of US generic drugs by volume. The 100% patented pharma tariff (effective April 6) is the opening move. The generic drug market is a natural next target if Trump escalates. At 100% tariffs, US generic drug prices could double &mdash; creating a US consumer inflation event and a political backlash, which may limit actual implementation.</p>
+    <p><strong>What "industry convergence" looks like in practice:</strong> A retail bank using AI to offer insurance products. A logistics company using AI to enter last-mile retail. Shopify using AI to make merchants appear in ChatGPT shopping conversations (Agentic Storefronts). The new revenue stream doesn't have to be large — it just has to be enabled by AI capabilities that incumbents in that adjacent space don't have.</p>
+    <p><strong>The pilot trap:</strong> The study finds most companies are running 10–30 AI pilots simultaneously. None scale because the ROI case is built on incremental productivity gains that look underwhelming in isolation. The fix: pick 2–3 pilots with new-revenue potential and resource them properly. Kill the rest.</p>
   </div>
   <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">Iran War Context</span>
-    <span class="conn-chip" onclick="scrollToStory('canada-tariff')">Canada Tariff Pause</span>
+    <span class="conn-chip" onclick="scrollToStory('stanford-ai')">→ Stanford AI Index</span>
   </div>
 </div>
 
-<div class="story-card" data-cat="india startup" id="india-startup">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">India &middot; Startups &middot; Policy</span>
-      <span class="trend-arrow">&#8593;</span>
-      <span class="time-horizon">Quarters</span>
-      <span class="decision-badge watch">WATCH</span>
+<!-- SCOTUS Tariffs -->
+<div class="story-card" data-cat="macro geopolitics" id="scotus-tariffs" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">Trade</span>
+        <span class="category-tag">Macro</span>
+        <span class="trend-arrow flat">→</span>
+        <span class="time-horizon">Ongoing restructuring</span>
+        <span class="decision-badge watch">WATCH</span>
+      </div>
+      <div class="card-title">One Year After Liberation Day: SCOTUS Killed IEEPA Tariffs, But Trump's New 10% Global Tariff Is Already Here — And Now India Is Under Section 301 Investigation</div>
     </div>
-    <div class="card-title">India Launches Rs 10,000 Crore Startup Fund of Funds 2.0 &mdash; Deep Tech Is the Explicit Target</div>
   </div>
   <div class="layer1">
-    <p>The Ministry of Commerce &amp; Industry announced Startup India Fund of Funds 2.0 on April 13, committing Rs 10,000 crore (~$1.2B USD) specifically to bridge early-stage funding gaps in deep tech. This effectively doubles cumulative government commitment to startup capital formation (the original FoF from 2016 was also Rs 10,000 crore). Context: India's Q1 2026 startup funding hit Rs 33,000 crore (~$3.95B), with AI-related funding up 73% year-over-year. 531 equity rounds closed in Q1. Notable recent raises include GobbleCube ($15M Series A in AI brand analytics led by Susquehanna VC) and Astranova Mobility (Rs 60 crore Series A in EV financing, backed by IvyCap, ADB, and Trucks VC).</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The government is acknowledging that private capital alone is not funding deep tech early enough &mdash; hardware, semiconductors, defense tech, biotech, quantum. The FoF capital flows through SEBI-registered AIFs, so deployment is 2&ndash;3 years out. But the signal is important: India is consciously building a deep tech layer beneath its consumer/SaaS ecosystem. The Hormuz crisis adds urgency &mdash; energy security, defense procurement, and agricultural tech are all now national security priorities that require deep tech investment.</div>
-    <div class="action-box"><strong>ACTION:</strong> If evaluating early-stage Indian investments, deep tech now has government capital as a de-risking backstop. Watch which AIFs receive FoF allocation &mdash; those will be the deal flow signals for the next cycle. AI startups with hardware/infrastructure angles (not just software) are the explicit target. The combination of Rs 10,000cr FoF + 73% AI funding growth + Stanford-level model capabilities creates an unusually favorable environment for building AI infrastructure in India.</div>
-    <div class="contrarian">&#128161; <em>India's original FoF had mixed results &mdash; slow deployment and modest returns compared to private market benchmarks. The Rs 10,000cr number sounds large but gets diluted through fund manager layers before reaching companies. The deep tech thesis requires patient capital with 7&ndash;10 year horizons; government FoF structures typically haven't been optimized for this.</em></div>
+    <p>In February 2026, the US Supreme Court (6-3) struck down Trump's "Liberation Day" reciprocal tariffs as exceeding presidential authority under IEEPA. Within hours, Trump signed a new 10% global tariff under Section 122 of the Trade Act of 1974. Now, USTR has initiated Section 301 investigations into structural excess capacity in manufacturing across 16 countries including India, with hearings scheduled for April 28, 2026. The trade war isn't over — it just found a new legal vehicle.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> India is now formally under a Section 301 investigation for "structural excess capacity." This is early-stage — hearings are April 28 — but it signals that US-India trade tension is not easing. Indian export sectors (pharmaceuticals, auto components, steel) need to monitor this closely. The $165B+ trade realignment already underway is accelerating.<br><br>
+    <strong>SO WHAT in Canada:</strong> Canada-US trade is governed separately under USMCA, which provides some insulation from the 10% global tariff. But the CFIB data (see Canadian File) shows Canadian businesses are already under enormous cost pressure — any further US trade friction could be the margin call that tips more closures.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have Indian businesses with US export exposure, get trade counsel involved before April 28 hearings. The Section 301 process can escalate to tariff recommendations within 12 months. This is not a drill.</div>
+    <div class="contrarian">💭 <em>The Section 122 tariff (10% global) is legally weaker than IEEPA and could face its own constitutional challenge. Trade lawyers are already filing briefs. The administration's tariff tools keep getting whittled down — the actual implementation may be far messier than the announcements suggest.</em></div>
     <div class="card-links">
-      <a class="read-original" href="https://www.medianama.com/2026/04/223-govt-startup-india-fund-of-funds-2-0-deep-tech/" target="_blank">MediaNama &rarr;</a>
-      <a class="read-original" href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2251638" target="_blank">PIB release &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:newsletter%40inc42emails.com" target="_blank">Inc42 inbox</a>
+      <a class="read-original" href="https://www.scotusblog.com/2026/02/supreme-court-strikes-down-tariffs/" target="_blank">Read original (SCOTUSblog) →</a>
+      <a class="read-original" href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">Tariff tracker →</a>
     </div>
   </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p><strong>Q1 2026 breakdown:</strong> Of Rs 33,000 crore raised, AI-related funding grew 73% YoY &mdash; fastest growing vertical. EV/clean energy was second. Overall 14.29% funding decline vs. 2025 reflects tighter global VC conditions &mdash; but AI completely bucked the trend. India's Q1 2026 startup ecosystem has AI as its unmistakable growth engine.</p>
-    <p><strong>The deep tech gap:</strong> Less than 8% of Indian startup funding historically goes to hardware, semiconductors, defense tech, or biotech. China allocates ~35% to "hard tech." FoF 2.0 is designed to compress this gap. Sectors most likely to benefit: defense electronics (post-Hormuz urgency), agricultural biotech (food security), and semiconductor design (CHIPS-adjacent India strategy).</p>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('ai-pwc')">AI Bifurcation</span>
-    <span class="conn-chip" onclick="scrollToStory('ai-stanford')">Stanford AI Index</span>
-  </div>
-</div>
-
-<div class="story-card" data-cat="markets macro" id="gold-record">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">Markets &middot; Safe Haven</span>
-      <span class="trend-arrow">&#8593;</span>
-      <span class="time-horizon">Weeks</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">Gold at $4,867: Even Iran Deal Optimism Can't Kill the War Premium &mdash; Structural Demand Has Changed</div>
-  </div>
-  <div class="layer1">
-    <p>Gold rose 1.65% today to $4,867.39/oz &mdash; a level that reflects compounded safe-haven premium since the US-Iran war began February 28. Despite today's Iran deal optimism pushing equities to records, gold also rose. That bifurcated signal &mdash; stocks AND gold both up on the same news &mdash; tells you something: investors are celebrating the deal possibility with one hand while keeping the safe-haven trade with the other. They don't fully trust the rally. The war has pushed oil surges 55%+ over the same period, and gold is following its own logic of structural demand (central bank buying, de-dollarization) on top of the war premium.</p>
-    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> India is the world's 2nd-largest gold consumer. At $4,867/oz, gold jewelry purchases are severely impacted &mdash; discretionary gold spending has likely collapsed in the consumer segment. For Indian jewelers (a meaningful economic sector touching ~10M jobs), this is a demand destruction story. But anyone holding physical gold or gold ETFs in India is sitting on extraordinary gains.<br><br>
-    <strong>SO WHAT IN CANADA:</strong> TSX gold sector is a direct beneficiary. Barrick Gold, Agnico Eagle, Kinross &mdash; all Canada-headquartered &mdash; are generating extraordinary free cash flow at $4,867 gold. TSX gold sector represents ~15% of TSX market cap. This is running simultaneously with oil strength. Canada's dual commodity tailwind (oil + gold) is powering TSX outperformance.</div>
-    <div class="action-box"><strong>ACTION:</strong> Critical inflection: if an Iran deal is formally signed, gold likely falls 10&ndash;15% quickly (war premium unwind). That is the moment to buy Canadian gold miners on the dip &mdash; their cost structure is fixed, revenue scales with gold price, and structural drivers (central bank buying, de-dollarization, physical ETF demand) persist beyond the war. Agnico Eagle and Kinross are the names to watch.</div>
-    <div class="contrarian">&#128161; <em>Gold at $4,867 may be pricing in more than the Iran war. Central bank gold buying (China, India's RBI, Russia) has been accelerating for 3 years &mdash; structural demand that doesn't reverse when peace is declared. Some analysts argue $5,000 is the new structural base, not a temporary peak. In that scenario, buying the dip on peace deal news has a natural floor.</em></div>
-    <div class="card-links">
-      <a class="read-original" href="https://tradingeconomics.com/commodity/gold" target="_blank">Read original &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:brewmarkets%40morningbrew.com" target="_blank">Brew Markets inbox</a>
-    </div>
-  </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-  <div class="layer2">
-    <p><strong>Gold's structural floor:</strong> Gold crossed $2,000 in 2020 (COVID), $3,000 in early 2024, and $4,867 on Iran war. Each major shock has set a new floor, not just a spike &mdash; because central banks use the dip to accumulate. China's central bank added 225 tonnes of gold in 2024. India's RBI added to its gold reserves even while burning forex defending the rupee. This buying behavior creates a structural bid that fundamentally differs from previous gold cycles.</p>
-    <p><strong>Canadian gold sector math at $4,867:</strong> Agnico Eagle's all-in sustaining cost (AISC) is approximately $1,350&ndash;1,450/oz. At $4,867 spot, the margin per ounce is ~$3,400+. This is a free cash flow machine at a scale the sector has never seen. Barrick, Kinross, and First Quantum (also TSX-listed) have similar leverage to gold prices. The TSX gold sector's combined market cap at this gold price likely exceeds anything in Canadian equity market history.</p>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">Hormuz Crisis</span>
-    <span class="conn-chip" onclick="scrollToStory('crypto-btc')">BTC Parallel</span>
-  </div>
-</div>
-
-<div class="story-card" data-cat="crypto markets" id="crypto-btc">
-  <div class="card-header" onclick="toggleCard(this.parentElement)">
-    <div class="card-meta">
-      <span class="category-tag">Crypto &middot; Markets</span>
-      <span class="trend-arrow">&#8593;</span>
-      <span class="time-horizon">Weeks</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">Bitcoin Reclaims $75,574: War Hedge + ETF Structural Bid + Corporate Adoption All Converging</div>
-  </div>
-  <div class="layer1">
-    <p>Bitcoin opened at $75,152 this morning and climbed to $75,574 &mdash; up 1.4% in 24 hours and marking a one-month high. BTC has rebounded 25% from its 2026 low near $60,000, driven by: (1) geopolitical hedge demand during the Iran war, (2) continued inflows into US spot Bitcoin ETFs (launched January 2024, still accumulating), and (3) growing corporate balance sheet adoption. Ethereum held higher with the ceasefire extension in effect. The war has functionally stress-tested BTC as a war-period safe haven &mdash; and it held above $60K at the worst, recovering to $75K on optimism.</p>
-    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> India's 30% flat crypto tax and 1% TDS friction remain in place. At $75K BTC, Indian retail investors who bought during the 2022&ndash;2023 bear market are sitting on significant gains but face friction on every trade. The war has validated Bitcoin as a portfolio hedge against INR depreciation &mdash; at Rs 93.35/USD, INR-denominated BTC gains are even larger than USD-denominated gains.<br><br>
-    <strong>SO WHAT IN CANADA:</strong> Canada has the world's first spot Bitcoin ETF (Purpose Bitcoin ETF, launched 2021). Canadian institutional access to crypto is more mature than most markets. The $75K level and continued ETF inflow story is positive for the Canadian crypto ecosystem and adjacent fintech companies.</div>
-    <div class="action-box"><strong>ACTION:</strong> BTC's behavior during the Iran war validates the war-hedge thesis. The risk to watch: if a formal Iran deal is signed AND oil falls AND risk-on equities continue their rally, BTC may sell off as the geopolitical fear premium exits. The ETF bid provides support, but a 10&ndash;15% pullback on peace news is plausible. Structure your BTC position accordingly &mdash; it's a trade around the peace deal, not a buy-and-hold at these levels.</div>
-    <div class="contrarian">&#128161; <em>At $75K, BTC is still well below its all-time highs. Gold is at $4,867. If investors are choosing between the two for geopolitical hedging, the 2026 data suggests gold remains the institutional preference. BTC's war-hedge credential is established, but the scale of capital going into gold ETFs and physical gold dwarfs crypto flows.</em></div>
-    <div class="card-links">
-      <a class="read-original" href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-april-17-2026-higher-prices-hold-with-ceasefire-in-effect-114918376.html" target="_blank">Read original &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:newsletter%40mail.milkroad.com" target="_blank">Milk Road inbox</a>
-    </div>
-  </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-  <div class="layer2">
-    <p><strong>The ETF structural bid:</strong> US spot Bitcoin ETFs (January 2024) have continued accumulating institutional assets through the war period. The daily inflow from institutional ETF buying creates a structural demand floor that didn't exist in previous Bitcoin cycles. This changes the bear-market-depth thesis: the $60K "2026 low" may represent the ETF-supported structural floor, not the traditional 80% drawdown of prior cycles.</p>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('gold-record')">Gold at $4,867</span>
-    <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">Hormuz War Context</span>
+    <p><strong>The IEEPA ruling in context:</strong> The Court held that "regulate importation" in IEEPA does not include the power to impose tariffs — that's a congressional power under Article I. This is the most significant constraint on executive trade power in decades. The Penn-Wharton estimate is that IEEPA-based tariff collections were running at $175–179B annually before the ruling.</p>
+    <p><strong>What Section 301 means:</strong> Unlike IEEPA, Section 301 of the Trade Act explicitly authorizes tariffs in response to unfair foreign trade practices. It's the same authority used for the original China tariffs in 2018. The investigations are sector-specific and can take 12–18 months to resolve, but the process itself creates business uncertainty that suppresses investment.</p>
   </div>
 </div>
 
 <!-- CANADIAN FILE -->
-<div class="canadian-file" id="canada">
-  <div class="cf-header">
-    <div class="cf-label">THE CANADIAN FILE</div>
-    <div class="cf-subtitle">Energy Crown + Parliamentary Majority + Manufacturing Lifeline &mdash; Carney's Canada Is Playing a Strong Hand</div>
+<div class="canadian-file" id="canada-section">
+  <div class="cf-label">🍁 The Canadian File</div>
+  <div class="cf-subtitle">Entrepreneurial drought meets energy supercycle — Canada is simultaneously the world's best opportunity and its own worst obstacle</div>
+
+  <!-- Canada LNG -->
+  <div class="cf-card" data-cat="canada energy" id="canada-lng" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-meta-inner">
+        <div class="card-meta">
+          <span class="category-tag">Canada</span>
+          <span class="category-tag">Energy</span>
+          <span class="trend-arrow up">↑</span>
+          <span class="time-horizon">FID window: 2026</span>
+          <span class="decision-badge act">ACT</span>
+        </div>
+        <div class="card-title">Hormuz Is Canada's $100B LNG Moment — But the FID Clock Is Running Out</div>
+      </div>
+    </div>
+    <div class="layer1">
+      <p>The Hormuz closure has crystallized something that energy analysts have said for years but governments have ignored: there is no secure alternative to Canadian LNG for Asian buyers who want supply with zero chokepoint exposure. LNG Canada Phase 2 and Ksi Lisims are both at FID decision points in 2026. Asian buyers (Japan, South Korea, and now India) are knocking. TC Energy's CEO publicly said Canada has a "second chance" at the global LNG race. Ottawa has referred both projects to its Major Projects Office. The Federal government says it will fast-track approvals.</p>
+      <div class="so-what"><strong>SO WHAT in India:</strong> India needs to be in these LNG purchase agreement conversations now. A 20-year LNG offtake deal with LNG Canada at even $12–14/MMBtu is cheaper than what India will pay for spot LNG if Hormuz stays disrupted. GAIL, Petronet, and Indian Oil should be at the table.<br><br>
+      <strong>SO WHAT in Canada:</strong> The FID window is literally 2026 — this year. If Canada misses it again (as it did in the 2010s when the US LNG boom absorbed Asian demand), the next opportunity may not come for a decade. Every week of indecision is a week closer to missing the window.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track LNG Canada Phase 2 FID news closely. If you have any advisory or business relationships with Canadian energy, this is the moment to offer solutions that accelerate the FID process — regulatory navigation, Asian buyer introductions, financing structuring.</div>
+      <div class="contrarian">💭 <em>Canada has been "on the verge" of becoming an LNG superpower for 15 years. Regulatory timelines, Indigenous consultation requirements, and ESG pressure from investors have killed multiple projects at FID. The optimism may be premature again.</em></div>
+      <div class="card-links">
+        <a class="read-original" href="https://fortune.com/2026/03/15/asia-energy-crisis-iran-war-hormuz-canada-lng/" target="_blank">Read original (Fortune) →</a>
+        <a class="read-original" href="https://www.theglobeandmail.com/business/article-canadas-second-chance-in-the-global-lng-race/" target="_blank">Globe &amp; Mail →</a>
+      </div>
+    </div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+    <div class="layer2">
+      <p><strong>Why this time is different:</strong> In the 2010s, the competition was US Gulf Coast LNG. That supply is now fully contracted and running at capacity. The only major uncontracted LNG supply available in the next decade is Canadian. Japan and South Korea have both indicated they are willing to sign 20-year contracts — the duration that makes FIDs financially viable.</p>
+      <p><strong>The India angle:</strong> India imports 26 MTPA of LNG and that number is growing. Canadian LNG could eventually supply 15–20% of India's needs — this is an energy relationship worth $3–5B/year at scale. It would also reduce India's dependence on Middle Eastern supply that runs through Hormuz.</p>
+    </div>
+    <div class="connections">
+      <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">→ Hormuz Crisis</span>
+      <span class="conn-chip" onclick="scrollToStory('india-rupee')">→ India Energy Import Cost</span>
+    </div>
   </div>
-  <div class="cf-cards">
 
-    <div class="story-card open" data-cat="canada markets macro" id="canada-energy">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
+  <!-- Canada Entrepreneurial Drought -->
+  <div class="cf-card" data-cat="canada macro" id="canada-cfib" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-meta-inner">
         <div class="card-meta">
-          <span class="category-tag">Canada &middot; Energy &middot; Strategy</span>
-          <span class="trend-arrow">&#8593;</span>
-          <span class="time-horizon">Months &mdash; structural</span>
-          <span class="decision-badge act">ACT</span>
-        </div>
-        <div class="card-title">Canada's "Reliable Supplier" Moment: Hormuz Disruption Triggers a Decade-Long Energy Reorientation</div>
-      </div>
-      <div class="layer1">
-        <p>Canada's energy minister is fielding calls from countries that normally sourced from the Gulf &mdash; a direct consequence of the Hormuz disruption. Canada holds the world's 4th-largest proven oil reserves, operates the Trans Mountain Expansion pipeline to the Pacific Coast (added ~590,000 bpd of export capacity), and produces LNG from northeastern BC via LNG Canada Phase 1 (Kitimat, BC). Carney's April 3 speech &mdash; "the old world is over" &mdash; was a strategic market-entry statement. Bloomberg reported in early April that Canada is "plugging itself as a reliable energy partner as oil soars." The Canadian Chamber of Commerce called this Canada's "Golden Opportunity in USMCA talks." CBC News directly asked: can Canada fill the global supply gap? Short answer: not the full 20 million bpd void, but meaningfully and with long-term relationship infrastructure that outlasts the war.</p>
-        <div class="so-what"><strong>SO WHAT:</strong> For Canadian energy businesses and TSX energy stocks, this is the most favorable macro environment since 2014. WTI near $96, structural demand signals from Asia, and a majority government politically aligned with energy export expansion. The BoC at 2.25% keeps financing costs manageable for capital-intensive energy projects. The opportunity window: sign long-term supply agreements with Asian buyers before a peace deal compresses oil prices. Relationships built now persist even after prices normalize. India-Canada energy is the most under-exploited channel in this crisis.</div>
-        <div class="action-box"><strong>ACTION:</strong> If operating in Canadian energy or resource sector: invest in long-term buyer relationships in South and East Asia now. Japan, South Korea, India, and Vietnam are primary targets. For Indian-side operations: the India-Canada energy lane is wide open. Any entity that facilitates a BPCL/IOCL/HPCL conversation with a Canadian producer in the next 30 days is building a strategic moat that will have 10-year value.</div>
-        <div class="contrarian">&#128161; <em>Canada's pipeline infrastructure, while improved by TMX, is still constrained. It cannot fill the 20-million-barrel/day void from Iran. Environmental approvals for new LNG capacity remain contentious. The "reliable supplier" narrative may exceed Canada's short-term physical delivery capacity &mdash; overpromising to Asian buyers carries reputational risk.</em></div>
-        <div class="card-links">
-          <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-04-02/canada-plugs-nation-as-reliable-energy-partner-as-oil-soars" target="_blank">Bloomberg &rarr;</a>
-          <a class="read-original" href="https://www.cbc.ca/news/business/canada-fill-gap-supply-oil-energy-iran-9.7114328" target="_blank">CBC analysis &rarr;</a>
-          <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:daily%40newsletter.readthepeak.com" target="_blank">The Peak inbox</a>
-        </div>
-      </div>
-      <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-      <div class="layer2">
-        <p><strong>Trans Mountain specifics:</strong> TMX added ~590,000 bpd of capacity at the Westridge Marine Terminal in Burnaby, BC &mdash; enabling supertanker exports to Asia that were not possible before. In 2023, Canada exported near-zero crude to Asia. By early 2026, Trans Mountain is running near capacity with Japanese and South Korean buyers as primary customers. The Iran crisis has created a queue of new Asian buyers.</p>
-        <p><strong>LNG Canada:</strong> The first major Canadian LNG export terminal (LNG Canada Phase 1, Kitimat BC) is now operational. This gives Canada Pacific LNG export capacity for the first time &mdash; directly competitive with Australian and Qatari LNG in Asian markets. At current LNG prices, Phase 2 economics are compelling. Phase 2 FID (Final Investment Decision) is under active consideration.</p>
-        <p><strong>The India-Canada energy corridor specifically:</strong> India historically sourced minimal Canadian crude due to logistics. Trans Mountain changes this &mdash; Alberta crude can now reach Asian ports via Westridge. If India's Oil Marketing Companies (BPCL, IOCL, HPCL) enter even modest long-term agreements with Canadian exporters, it marks a structural reorientation of India's energy security strategy and a direct business opportunity spanning both of your operating geographies.</p>
-      </div>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('india-oil')">India Oil Double Shock</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-carney')">Carney Majority</span>
-        <span class="conn-chip" onclick="scrollToStory('lead-hormuz')">Hormuz Crisis</span>
-      </div>
-    </div>
-
-    <div class="story-card" data-cat="canada macro" id="canada-carney">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <div class="card-meta">
-          <span class="category-tag">Canada &middot; Politics &middot; Policy</span>
-          <span class="trend-arrow">&#8593;</span>
-          <span class="time-horizon">Years</span>
-          <span class="decision-badge note">NOTE</span>
-        </div>
-        <div class="card-title">Carney's Liberals Hit 174 Seats &mdash; Parliamentary Majority Gives Canada's PM a Free Hand on Trade and Energy</div>
-      </div>
-      <div class="layer1">
-        <p>Mark Carney's Liberal Party holds 174 seats following successful by-elections this week &mdash; a parliamentary majority. Polling shows a 12-point Liberal lead over the Conservatives (44% vs. 38%), with Carney's personal net favourability at +25. Government approval has jumped from 41% to 56% since he took office in March 2025. "Carneymania" extends even to Quebec and Alberta per Abacus Data. Four Conservative and one NDP MP have crossed the floor to the Liberals since December. This is the strongest mandate a Canadian PM has had since Justin Trudeau's 2015 landslide &mdash; and Carney is using it very differently.</p>
-        <div class="so-what"><strong>SO WHAT:</strong> A majority changes Carney's ability to execute on the "Canada is the world's reliable partner" thesis. He can now move on energy policy, trade diversification (EU CETA deepening, selective Asia engagement), immigration reform, and major infrastructure investment without NDP leverage constraints. For businesses operating in Canada, this is a stable policy environment for 3&ndash;4 years &mdash; rare and valuable. The energy export expansion, USMCA renegotiation posture, and manufacturing protection are all backed by parliamentary authority.</div>
-        <div class="action-box"><strong>ACTION:</strong> Monitor Carney's next budget and throne speech. With a majority, big commitments are possible: energy infrastructure investment, "Buy Canadian" manufacturing incentives, potentially a sovereign wealth fund for energy revenues (he floated this during the leadership campaign). Align Canadian business positioning with the policy direction early. Alberta support is the coalition to protect &mdash; watch for any energy policy that risks losing it.</div>
-        <div class="contrarian">&#128161; <em>Large majorities create complacency. Carney's "old world is over" rhetoric is compelling, but risks being too anti-US at a moment when USMCA renewal requires Washington's cooperation. A 12-point lead can flip quickly if a peace deal resolves the Iran crisis, oil drops, and the economic nationalism narrative loses its urgency.</em></div>
-        <div class="card-links">
-          <a class="read-original" href="https://globalnews.ca/news/11798684/federal-byelections-2026/" target="_blank">Global News &rarr;</a>
-          <a class="read-original" href="https://abacusdata.ca/new-abacus-poll-liberal-lead-widens-to-11-as-government-approval-hits-new-high/" target="_blank">Abacus polling &rarr;</a>
-          <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:daily%40newsletter.readthepeak.com" target="_blank">The Peak inbox</a>
-        </div>
-      </div>
-      <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-      <div class="layer2">
-        <p><strong>Carney's likely policy agenda with a majority:</strong> His instincts are infrastructure, green transition, and financial stability (7 years at BoE, 7 at BoC, then Brookfield). Expect: large-scale energy infrastructure commitments, renewed push on Canadian pension fund domestic investment mandates, and potentially a sovereign wealth fund for energy revenues. These are multi-decade structural bets &mdash; not short-term electoral plays.</p>
-        <p><strong>Why "Carneymania in Alberta" matters:</strong> Alberta is historically hostile to Ottawa's climate policies. Liberal support rising there reflects the Hormuz-crisis energy boom &mdash; high oil prices make Alberta wealthy, and Carney (unlike Trudeau) is seen as not threatening the sector. This coalition is fragile but, while it holds, gives Carney extraordinary political room to execute on both energy expansion AND climate transition simultaneously.</p>
-      </div>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('canada-energy')">Canada Energy Opportunity</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-tariff')">Canada Tariff Pause</span>
-      </div>
-    </div>
-
-    <div class="story-card" data-cat="canada macro" id="canada-tariff">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <div class="card-meta">
-          <span class="category-tag">Canada &middot; Trade &middot; Manufacturing</span>
-          <span class="trend-arrow">&#8593;</span>
-          <span class="time-horizon">6 months</span>
-          <span class="decision-badge act">ACT</span>
-        </div>
-        <div class="card-title">Ottawa's 6-Month Manufacturing Tariff Pause: A Window That Closes in October &mdash; Use It</div>
-      </div>
-      <div class="layer1">
-        <p>Canada announced on April 15 a 6-month pause on retaliatory tariffs for US-origin goods imported for Canadian manufacturing, processing, food and beverage packaging, and public health/safety/national security uses. Automakers maintaining Canadian production get an ongoing exemption from Canada's 25% retaliatory auto tariffs. Context: Canadian steel exports to the US have fallen 25%, aluminum 6%, auto sector 5% in 2026. The IPPI (Industrial Product Price Index) rose 5.4% YoY in February, with raw materials ex-energy up 20%+ in 2026. Canada has shed 95,000 jobs in 2026, with unemployment at 6.7%. The tariff pause is designed to slow this manufacturing-led deterioration while USMCA renegotiations continue.</p>
-        <div class="so-what"><strong>SO WHAT:</strong> The 6-month pause is a tactical move protecting Canadian manufacturers from a double tariff hit on US inputs while the larger trade framework is negotiated. The October expiry creates a hard deadline: either a broader USMCA framework is in place by then, or manufacturing costs spike again. For businesses in Canada's industrial sector, this is a window to lock in production agreements and supply chains that assume favorable tariff treatment. The 95,000 job losses and 6.7% unemployment rate show the underlying manufacturing stress is real &mdash; the pause is a bandage, not a cure.</div>
-        <div class="action-box"><strong>ACTION:</strong> Use the 6-month window to lock in US supply agreements that optimize for current tariff treatment. Model your October 2026 cost structure under a scenario where the pause is not extended. Separately: watch the BoC Business Outlook Survey releasing Monday April 20 &mdash; it will tell you whether Canadian business confidence has deteriorated enough to push the BoC toward a June rate cut, which would change Canadian borrowing cost assumptions.</div>
-        <div class="contrarian">&#128161; <em>The pause may signal weakness in Canada's bargaining position. If Canada was confident in retaliatory leverage, it wouldn't need to exempt its own manufacturers from its own tariffs. Trump may read this as an opening to push harder in USMCA talks rather than as a gesture of goodwill.</em></div>
-        <div class="card-links">
-          <a class="read-original" href="https://en.wikipedia.org/wiki/Timeline_of_the_2025%E2%80%932026_United_States_trade_war_with_Canada" target="_blank">Trade war timeline &rarr;</a>
-          <a class="read-original" href="https://www.cfib-fcei.ca/en/site/us-tariffs" target="_blank">CFIB tracker &rarr;</a>
-          <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:daily%40newsletter.readthepeak.com" target="_blank">The Peak inbox</a>
-        </div>
-      </div>
-      <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-      <div class="layer2">
-        <p><strong>The jobs context:</strong> 95,000 jobs shed in Canada in 2026, unemployment at 6.7% &mdash; worst since COVID 2020. Ontario's auto corridor (Windsor, Oshawa) has been hardest hit by the 25% auto tariff. The manufacturing-led deterioration was the political forcing function for the tariff pause announcement. Carney's majority government provides cover for the pause without looking like a capitulation.</p>
-        <p><strong>BoC's dilemma:</strong> Caught between growth support (rate cuts) and inflation protection (tariff-driven IPPI +5.4%). BoC held at 2.25% on March 18 &mdash; wait-and-see on Iran. The April 20 Business Outlook Survey is the first post-blockade reading of Canadian business sentiment. If it shows sharp deterioration, BoC likely signals a June cut. If it shows resilience (as economists suggested Canada was "surprisingly OK" to start 2026), BoC holds and CAD stays oil-supported.</p>
-      </div>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('china-tariff')">China 50% Tariff Threat</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-carney')">Carney Majority</span>
-      </div>
-    </div>
-
-    <div class="story-card" data-cat="canada markets" id="canada-boc">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <div class="card-meta">
-          <span class="category-tag">Canada &middot; BoC &middot; Macro</span>
-          <span class="trend-arrow">&#8594;</span>
-          <span class="time-horizon">Days (Apr 20 release)</span>
+          <span class="category-tag">Canada</span>
+          <span class="category-tag">Macro</span>
+          <span class="trend-arrow dn">↓</span>
+          <span class="time-horizon">Structural: Multi-year</span>
           <span class="decision-badge watch">WATCH</span>
         </div>
-        <div class="card-title">BoC Business Outlook Survey Drops Monday &mdash; First Post-Hormuz Read on Canadian Business Confidence</div>
-      </div>
-      <div class="layer1">
-        <p>The Bank of Canada releases its Q1 2026 Business Outlook Survey and Canadian Survey of Consumer Expectations on April 20 &mdash; Monday. The BoC held its benchmark rate at 2.25% on March 18, explicitly citing uncertain Iran war implications for inflation and growth. Canada's GDP is projected to grow just 1% in 2026 (vs. 1.2% in 2025). The BOS will be the first systematic read on how Canadian companies are responding to: the Hormuz oil shock, 25% US auto tariff, Canadian retaliatory tariffs, 95,000 job losses, and IPPI +5.4% input price inflation. This is the key data release for the next BoC rate decision (likely June 2026).</p>
-        <div class="so-what"><strong>SO WHAT:</strong> This is the most important Canada macro data point of the week. If BOS shows collapsing confidence, the BoC will likely signal a June/July rate cut &mdash; which is modestly CAD-negative (offsetting some oil-driven CAD strength) and stimulative for Canadian equity valuations. For businesses with Canadian dollar revenue or costs, the BoC rate path is the next macro variable to model after the Iran deal resolution question.</div>
-        <div class="action-box"><strong>ACTION:</strong> Read the BoC BOS on April 20. Key metrics: capacity utilization, hiring intentions, credit conditions. If these deteriorate sharply vs. Q4 2025, price in a BoC rate cut by mid-year. If they show resilience, BoC holds &mdash; which keeps CAD supported by oil. Either way, Monday's survey will significantly narrow the uncertainty range for H1 2026 Canadian monetary policy.</div>
-        <div class="contrarian">&#128161; <em>Canada's economy was "surprisingly OK to start 2026" per BIV/economists &mdash; consumer spending (60% of GDP) held up better than feared. The BOS may show resilience rather than collapse, giving the BoC reason to hold rates. This would be the positive surprise scenario for CAD and TSX.</em></div>
-        <div class="card-links">
-          <a class="read-original" href="https://www.bankofcanada.ca/2026/04/bank-canada-releases-first-quarter-issues-of-business-outlook-survey-canadian-survey-consumer-expectations-april-20-2026/" target="_blank">BoC release preview &rarr;</a>
-          <a class="read-original" href="https://www.biv.com/news/canadas-economy-was-surprisingly-ok-to-start-2026-economists-12080000" target="_blank">BIV economy context &rarr;</a>
-          <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from:daily%40newsletter.readthepeak.com" target="_blank">The Peak inbox</a>
-        </div>
-      </div>
-      <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-      <div class="layer2">
-        <p><strong>BoC rate path scenarios:</strong> If BOS shows sharp deterioration: BoC signals June cut, CAD weakens 1&ndash;2% (USD/CAD rises from 1.3688 toward 1.40), but oil may offset. If BOS shows resilience: BoC holds, CAD stays supported at 1.35&ndash;1.37. The oil-policy split for CAD is the key modeling complexity. Canadian businesses need to model both scenarios for H1 planning.</p>
-      </div>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('canada-tariff')">Canada Tariff Context</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-energy')">Canada Energy Tailwind</span>
+        <div class="card-title">Canada Is Closing Businesses Faster Than It Opens Them — Six Consecutive Quarters of "Entrepreneurial Drought"</div>
       </div>
     </div>
+    <div class="layer1">
+      <p>CFIB released its "Entrepreneurial Drought" report this week: Canada has had higher business exit rates than entry rates for 6 consecutive quarters, making it the worst period for entrepreneurship since the pandemic. Exit rates hit 5.6% in Q2 2025; entry rates fell to 4.8% in Q4 2025. More than 55% of small business owners would not recommend starting a business. Only 3% believe their government has a clear vision for entrepreneurship. Part 2 of the CFIB report — with policy recommendations — drops April 28.</p>
+      <div class="so-what"><strong>SO WHAT in Canada:</strong> This is a long-cycle problem that matters enormously for Canada's productivity, tax base, and economic resilience. Canada is trying to be an energy superpower, an AI hub (Cohere, Vector Institute, etc.), and a soft-landing destination for global talent — while simultaneously creating conditions where small businesses can't survive. These are contradictory signals.<br><br>
+      <strong>SO WHAT in India (comparative lens):</strong> India's startup ecosystem created 100+ unicorns in the 2020s despite a more difficult regulatory environment. Canada's challenger: startup formation is declining despite the world's most educated immigrant intake. Something is structurally wrong with the cost-of-doing-business equation.</div>
+      <div class="action-box"><strong>ACTION:</strong> For Canadian business owners: document your regulatory friction points and submit comments to the CFIB Part 2 process. Policy windows like this — where government attention is high — are when regulatory changes actually happen. Watch the April 28 CFIB report for specific recommendations.</div>
+      <div class="contrarian">💭 <em>High exit rates partially reflect natural churn — pandemic-era businesses that were never viable long-term exiting the market. The question is whether the entry rate decline is structural (policy failure) or cyclical (high interest rates suppressing risk-taking). BoC at 2.25% may be doing more harm than tariffs.</em></div>
+      <div class="card-links">
+        <a class="read-original" href="https://www.bnnbloomberg.ca/business/2026/04/15/canada-is-losing-businesses-faster-than-it-can-create-new-ones-cfib-says/" target="_blank">Read original (BNN Bloomberg) →</a>
+        <a class="read-original" href="https://www.cfib-fcei.ca/en/media/more-businesses-have-been-closing-than-opening-in-canada.-its-time-to-admit-it-were-in-an-entrepreneurial-drought" target="_blank">CFIB report →</a>
+      </div>
+    </div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+    <div class="layer2">
+      <p><strong>The regional breakdown:</strong> The CFIB data shows the drought is national, not just Ontario or BC. New Brunswick, Nova Scotia, Newfoundland, and PEI all have their own provincial versions of the problem — largely driven by rising costs and lack of government support. The federal government's confidence rating among small businesses is catastrophically low (73% not confident).</p>
+      <p><strong>The financing gap:</strong> BDC estimates Canadian real GDP will grow 1.8% in 2026. That's not a recession — but it's well below what Canada needs to absorb its population growth (highest in G7 per capita). Slow growth + high costs = exactly the environment where businesses close rather than expand.</p>
+    </div>
+  </div>
 
+  <!-- Bank of Canada -->
+  <div class="cf-card" data-cat="canada markets macro" id="canada-boc" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-meta-inner">
+        <div class="card-meta">
+          <span class="category-tag">Canada</span>
+          <span class="category-tag">Monetary Policy</span>
+          <span class="trend-arrow flat">→</span>
+          <span class="time-horizon">Decision: April 29</span>
+          <span class="decision-badge watch">WATCH</span>
+        </div>
+        <div class="card-title">Bank of Canada April 29 Decision: 96.5% Probability of a Hold at 2.25% — Oil Shock Kills the Rate-Cut Narrative</div>
+      </div>
+    </div>
+    <div class="layer1">
+      <p>Polymarket is pricing a 96.5% chance the Bank of Canada holds at 2.25% on April 29. The March decision was already a hold. The logic: the Hormuz oil shock has reignited inflation fears globally, making any BoC rate cut politically and practically difficult to justify. BoC's Q1 Business Outlook Survey and Consumer Expectations survey release April 20 — a key leading indicator. The 10-year GoC is at 3.18%, signaling markets are not pricing in cuts anytime soon.</p>
+      <div class="so-what"><strong>SO WHAT in Canada:</strong> Mortgage holders hoping for relief are getting none. The variable-rate mortgage reset wave (from 2022-era 5-year terms) is still working through the system. With BoC stuck and Canadian GDP only growing 1.8%, the squeeze on households is the backdrop to the entrepreneurial drought — people can't start businesses when their mortgage is eating their capital.<br><br>
+      <strong>SO WHAT in India (comparative):</strong> The RBI is in a similar bind — inflation pressure from oil keeps rate cuts off the table even as growth needs support. Both central banks are prisoners of the Hormuz situation until a deal resolves the energy shock.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch the April 20 BoC Business Outlook Survey for any signal of deteriorating business confidence — a weak survey could open the door to a surprise cut on April 29. If BOS comes in weak, the probability distribution shifts.</div>
+      <div class="contrarian">💭 <em>The BoC could cut if it decides the growth risk outweighs the inflation risk — Canadian unemployment is at 6.7% and rising. A cut is not zero probability; it's just that the oil shock makes it politically difficult to explain.</em></div>
+      <div class="card-links">
+        <a class="read-original" href="https://www.bankofcanada.ca/2026/03/fad-press-release-2026-03-18/" target="_blank">BoC March statement →</a>
+      </div>
+    </div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+    <div class="layer2">
+      <p><strong>The Canadian mortgage crisis in numbers:</strong> Canadian household debt-to-income ratio is among the highest in the OECD at ~180%. The 2022 rate hike cycle took the BoC rate from 0.25% to 5.0%. Even at 2.25%, rates are still 2x pre-pandemic levels. The cohort of homeowners who took 5-year mortgages at 1.5% in 2021 are now renewing at 4–5% — monthly payments up 40–50%.</p>
+    </div>
+  </div>
+
+  <!-- Shopify -->
+  <div class="cf-card" data-cat="canada tech ai" id="shopify" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-meta-inner">
+        <div class="card-meta">
+          <span class="category-tag">Canada</span>
+          <span class="category-tag">Tech</span>
+          <span class="trend-arrow dn">↓</span>
+          <span class="time-horizon">Q1 2026 results pending</span>
+          <span class="decision-badge watch">WATCH</span>
+        </div>
+        <div class="card-title">Shopify Down 28% in 2026 But Printing 30%+ Revenue Growth — The Market Is Wrong About Something</div>
+      </div>
+    </div>
+    <div class="layer1">
+      <p>Shopify is down 28% year-to-date in 2026 despite posting Q4 2025 revenue growth of 31% and a 19% free cash flow margin — its 10th consecutive quarter of double-digit FCF margins. Q1 2026 guidance calls for revenue growth "in the low-30s." The winter'26 Edition shipped 150+ product updates, including "Agentic Storefronts" — allowing Shopify products to appear directly in AI shopping conversations on ChatGPT and Copilot. The stock has been dragged down by broad tech multiple compression amid the geopolitical uncertainty.</p>
+      <div class="so-what"><strong>SO WHAT in Canada:</strong> Shopify's stock pain is a valuation story, not a business story. At 28% down YTD with 30%+ topline growth, this is either a buying opportunity or evidence that the market believes the AI commerce disruption will hurt Shopify (agents buying directly, bypassing storefronts). I think the Agentic Storefronts launch is actually Shopify's hedge against exactly that risk.<br><br>
+      <strong>SO WHAT in India:</strong> Shopify powers many Indian D2C brands selling globally. The Agentic Storefronts feature is potentially a massive distribution unlock for Indian exporters — getting their products in front of AI agent purchasers globally without needing a US marketing team.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch Q1 2026 earnings (likely May). If Shopify reports 30%+ growth again and raises guidance, the 28% drawdown looks like a gift. The key metric to watch is Gross Merchandise Volume growth — if GMV growth is decelerating despite revenue growth, that's a warning sign on take-rate expansion.</div>
+      <div class="contrarian">💭 <em>Shopify's multiple compression may be rational: as AI agents commoditize the "build a storefront" function, Shopify's core value proposition gets eroded. The 19% FCF margin is great — but what's the terminal FCF margin if the storefront business faces structural disruption?</em></div>
+      <div class="card-links">
+        <a class="read-original" href="https://www.shopify.com/editions/winter2026" target="_blank">Shopify Winter '26 Edition →</a>
+        <a class="read-original" href="https://www.baystreet.ca/articles/techinsider.aspx?articleid=120090" target="_blank">Baystreet analysis →</a>
+      </div>
+    </div>
+    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+    <div class="layer2">
+      <p><strong>Agentic Storefronts in depth:</strong> This is a significant product bet. Shopify is positioning itself as the commerce layer for AI-driven shopping — where the "storefront" is not a website but a conversational interface. If 30% of commerce eventually happens through AI agents (a plausible 5-year scenario), Shopify wants to be the checkout/inventory/fulfillment layer behind those conversations.</p>
+    </div>
   </div>
 </div>
 
 <!-- OPPORTUNITY BOARD -->
-<div class="section-header">OPPORTUNITY BOARD</div>
-
-<div class="opportunity-card" data-cat="india">
-  <div class="opp-label">India Opportunity</div>
-  <div class="opp-title">India Defense and Energy Security Supply Chain &mdash; Post-Hormuz Localization Wave</div>
-  <div class="opp-body">India's energy shock is a forcing function for accelerated domestic energy production, defense procurement, and import substitution. The government is running PLI schemes for solar, semiconductors, and defense. The Hormuz crisis adds political urgency to: (1) accelerating ONGC's deepwater development, (2) expanding the strategic petroleum reserve, (3) fast-tracking LNG import terminal approvals, and (4) defense procurement from non-US, non-Russia, non-Gulf suppliers. For businesses in engineering, EPC, or defense manufacturing in India, the procurement pipeline is about to get very large with genuine government urgency behind it.</div>
-  <div class="opp-horizon">Time horizon: 6&ndash;18 months &middot; Conviction: High</div>
+<div class="section-header">
+  <h2>🎯 Opportunity Board</h2>
 </div>
-
-<div class="opportunity-card" data-cat="canada">
-  <div class="opp-label">Canada Opportunity</div>
-  <div class="opp-title">TSX Energy + Gold Miners: The Dual-Tailwind Trade Before Peace Deal Compresses Both</div>
-  <div class="opp-body">Canadian energy equities get tailwinds from: WTI near $96, Asian buyer reorientation, Trans Mountain fully operational, Carney majority backing energy expansion. Canadian gold miners (Agnico Eagle, Barrick, Kinross) get tailwinds from $4,867 gold. Both sectors running simultaneously on the TSX at favorable macro conditions is rare. The risk &mdash; Iran deal compresses both oil and gold prices &mdash; is real but partially priced in. The strategic move: position in Canadian energy and gold now with a defined stop on formal peace deal announcement. The structural case for both (demand diversification away from Gulf; central bank gold buying) persists beyond the war.</div>
-  <div class="opp-horizon">Time horizon: 1&ndash;3 months &middot; Conviction: Medium-High</div>
-</div>
-
-<div class="opportunity-card" data-cat="ai">
-  <div class="opp-label">Global / AI Opportunity</div>
-  <div class="opp-title">Join the 20%: Workflow Redesign Is the Only Variable That Separates AI Winners from Losers</div>
-  <div class="opp-body">PwC's finding that 20% of companies capture 74% of AI gains is an operational audit question. The differentiating variable is not budget or model access (both commoditized) &mdash; it is whether AI is redesigning decision workflows or sitting on top of existing ones. The 20% generate 7.2x the ROI. The 80% show no measurable benefit. This is simultaneously relevant for Indian and Canadian operations. Map every current AI use case: does it change the revenue model, or just the cost model? The ratio is your AI maturity index. According to the Stanford index, the capability curve is accelerating. The gap to the 20% compounds at the pace of model improvement &mdash; which is now very fast.</div>
-  <div class="opp-horizon">Time horizon: Now &middot; Conviction: High</div>
+<div class="opp-board">
+  <div class="opp-card">
+    <div class="opp-label">🇮🇳 India Opportunity</div>
+    <div class="opp-title">India's IT Exporters Get a Rupee Tailwind Nobody Is Talking About</div>
+    <div class="opp-body">While ₹93 is bad news for importers, India's $250B+ IT services export sector earns in dollars and pays costs in rupees. A weak rupee is a margin expansion event for TCS, Infosys, Wipro, and HCL — as well as any Indian tech company with global revenue. The rupee at ₹93 vs. ₹83 three years ago is a 12% cost advantage for dollar earners. Export-oriented Indian tech businesses are quietly having their best cost moment in years.</div>
+  </div>
+  <div class="opp-card">
+    <div class="opp-label">🍁 Canada Opportunity</div>
+    <div class="opp-title">LNG Canada FID: The $40B Decision Canada Cannot Afford to Defer Again</div>
+    <div class="opp-body">LNG Canada Phase 2 FID is due in 2026. Asian buyers are ready to sign. The Hormuz closure has made Canadian LNG the premium safe supply globally. The Canadian Chamber of Commerce is explicitly calling this "Canada's golden opportunity." The question is not whether demand exists — it's whether Canada can move fast enough through regulatory processes to say yes before the window closes. Watch for Phase 2 FID announcement as potentially the single most significant Canadian business event of 2026.</div>
+  </div>
+  <div class="opp-card">
+    <div class="opp-label">🤖 AI Opportunity</div>
+    <div class="opp-title">The 20% Who Win at AI All Have One Thing in Common: They Entered Adjacent Markets</div>
+    <div class="opp-body">PwC's data is clear: the differentiator isn't AI spending level, it's whether AI is used for growth (new markets/products) vs. efficiency (same business, fewer people). The opportunity is to identify one adjacency where AI gives you an asymmetric advantage — a market you can enter that a non-AI competitor cannot. In India, the creator economy adjacency ($15B → $61B) is obvious. In Canada, the LNG project management and permitting intelligence space is underserved.</div>
+  </div>
+  <div class="opp-card">
+    <div class="opp-label">🌐 Cross-Border Opportunity</div>
+    <div class="opp-title">India-Canada LNG Offtake: The Deal Nobody Is Brokering Yet</div>
+    <div class="opp-body">India is the world's 3rd-largest LNG importer and has watched Hormuz expose its energy vulnerability. Canada has LNG supply without Hormuz exposure. A direct India-Canada LNG purchase agreement — GAIL/Petronet as buyer, LNG Canada Phase 2 as seller — would be transformative for both economies. No major broker is actively working this deal yet. The bilateral relationship has been strained by diplomatic incidents in 2023–24, but energy has a way of resetting political friction when the economics are compelling enough.</div>
+  </div>
 </div>
 
 <!-- ALSO ON RADAR -->
-<div class="section-header">ALSO ON RADAR</div>
-
-<div class="radar-card">
-  <div class="radar-title">Human Scientists Still Beat AI Agents on Complex Tasks (Nature, April 2026)</div>
-  <div class="radar-body">Nature published a study showing human scientists outperform the best AI agents on genuinely novel, complex research tasks requiring multi-step reasoning, experimental design, and domain synthesis. This is the important counterweight to the Stanford AI Index: while benchmarks show AI scoring 50% on "Humanity's Last Exam" (testing known knowledge), AI still struggles with true scientific novelty. For businesses evaluating AI for R&D, legal research, or complex analysis: the productivity ceiling is real. AI accelerates but does not replace expert judgment on frontier problems. <a href="https://www.nature.com/articles/d41586-026-01199-z" target="_blank">Read &rarr;</a></div>
+<div class="section-header">
+  <h2>📻 Also on Radar</h2>
+</div>
+<div class="story-card" data-cat="ai tech" id="human-scientists-ai" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">AI</span>
+        <span class="trend-arrow flat">→</span>
+        <span class="time-horizon">Research</span>
+        <span class="decision-badge note">NOTE</span>
+      </div>
+      <div class="card-title">Nature Study: Human Scientists Still Beat AI Agents on Complex, Novel Tasks</div>
+    </div>
+  </div>
+  <div class="layer1">
+    <p>A Nature paper published this week finds that while AI agents match or exceed human scientists on known benchmarks, human experts still "trounce" the best AI on genuinely complex, novel tasks — the kind where no training data exists. The implication: AI is a productivity multiplier for research, not (yet) an autonomous research generator. For any business investing in R&D with AI assistance, the framework should be "AI-augmented human" not "AI-replaces researcher."</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The Stanford AI Index data (50%+ on Humanity's Last Exam) and this Nature finding coexist in a way that's important to understand: benchmark performance ≠ real-world novel problem solving. The benchmark games are partly training set contamination. Don't make capital allocation decisions based on benchmarks alone.</div>
+    <div class="action-box"><strong>ACTION:</strong> Test your AI tools on genuinely novel problems in your domain — not textbook cases. The answer you get will tell you more about actual capability than any published benchmark.</div>
+    <div class="contrarian">💭 <em>The Nature study uses a specific definition of "novel" — tasks where training data is unlikely to exist. As the training data frontier advances, today's "novel" becomes tomorrow's benchmark. The lead time may be 12–24 months, not permanent.</em></div>
+    <div class="card-links">
+      <a class="read-original" href="https://www.nature.com/articles/d41586-026-01199-z" target="_blank">Read original (Nature) →</a>
+    </div>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    <p>The methodology matters: the study gave AI agents and human scientists the same novel chemistry and biology problems — ones generated specifically for the study, not from training sets. Human teams solved 31% more of the problems. On the specific subset of "cross-domain synthesis" tasks (requiring knowledge from 3+ fields simultaneously), human advantage was even larger: ~50% better outcomes.</p>
+  </div>
 </div>
 
-<div class="radar-card">
-  <div class="radar-title">AI Data Centers Facing Community Resistance Across US &mdash; 4,000+ Operating Nationally</div>
-  <div class="radar-body">CBS News reports 4,000+ AI data centers operating across the US, with communities fighting new developments over water use, power consumption, and noise. This infrastructure strain is the physical consequence of AI's compute demand. It creates a supply constraint on AI deployment at scale &mdash; and an opportunity for jurisdictions with cheap, clean power. Canadian provinces with hydro power (Quebec, BC, Ontario) are natural beneficiaries. Watch for AI infrastructure investment announcements in Canada over the next 12 months &mdash; particularly Quebec (Hydro-Quebec), which has already attracted major data center interest. <a href="https://www.cbsnews.com/video/nationwide-boom-in-ai-data-centers-stirs-resistance/" target="_blank">Read &rarr;</a></div>
-</div>
-
-<div class="radar-card">
-  <div class="radar-title">IMF Raises India FY27 Growth to 6.5% Even as Goldman Cuts on Oil Shock &mdash; Two Views of the Same India</div>
-  <div class="radar-body">The IMF revised India's FY27 growth forecast upward to 6.5% (from 6.4%) citing strong domestic demand. Goldman Sachs cut its estimate to 6.5% on the same day due to oil shock impacts. Both numbers land at 6.5% but the paths are different: IMF sees structural resilience, Goldman sees current account arithmetic under oil stress. Both are right for different time horizons. Short term: oil shock pressure dominates. Medium term: India's domestic demand engine remains intact. BMW separately projects luxury vehicles at 5% of India total car sales by 2030 &mdash; the premiumization trend is structurally intact despite macro headwinds. <a href="https://www.business-standard.com/economy" target="_blank">Read &rarr;</a></div>
+<div class="story-card" data-cat="india macro" id="india-creator" onclick="toggleCard(this)">
+  <div class="card-header">
+    <div class="card-meta-inner">
+      <div class="card-meta">
+        <span class="category-tag">India</span>
+        <span class="category-tag">Digital Economy</span>
+        <span class="trend-arrow up">↑</span>
+        <span class="time-horizon">2026–2033</span>
+        <span class="decision-badge watch">WATCH</span>
+      </div>
+      <div class="card-title">India's Creator Economy: $15B Today, $62B by 2033 — AI Is the Accelerant</div>
+    </div>
+  </div>
+  <div class="layer1">
+    <p>India's creator economy is valued at $15B in 2026 and projected to reach $61.87B by 2033 — a 4x expansion driven by AI-powered tools, UPI-enabled monetization, and a young demographic. AI-powered influencers are emerging as a distinct category. The rise mirrors but outpaces the global trajectory. For any business with consumer exposure in India, the creator economy is now a primary distribution channel, not a supplementary one.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> If you have consumer brands in India, your marketing budget allocation should be shifting from traditional media to creator partnerships at 2–3x the rate you're currently moving. The $15B→$62B projection implies a 22% CAGR — which means the channel doubles in roughly 4 years.</div>
+    <div class="card-links">
+      <a class="read-original" href="https://www.medianews4u.com/the-rise-of-ai-powered-influencers-whats-next-for-indias-creator-economy/" target="_blank">Read original →</a>
+    </div>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    <p>AI-powered influencers — entirely synthetic personas trained on audience data — are already generating commercial revenue in India. Several have over 1M followers. The legal framework for disclosure is lagging. Brands are experimenting cautiously. The opportunity is large; the reputational risk of getting it wrong (undisclosed AI influencer scandals) is also real.</p>
+  </div>
 </div>
 
 <!-- QUICK HITS -->
-<div class="section-header">QUICK HITS</div>
 <div class="quick-hits">
+  <div class="section-label">⚡ Quick Hits</div>
   <ul>
-    <li>Trump's 100% tariff on pharmaceutical imports (Section 232, effective April 6) directly targets India's $8.7B generic drug export industry to the US. Sun Pharma, Dr Reddy's, and Cipla are watching the next Section 301 move closely.</li>
-    <li>Russia confirmed its ships are exempt from Hormuz disruption &mdash; the Strait is "open for Russian vessels." Russia has no incentive to push for a quick peace deal; Hormuz disruption hurts its competitors, not its energy flows.</li>
-    <li>India's direct tax collections grew 7.1% to Rs 22.8 lakh crore by March 17 FY26 &mdash; strong corporate tax performance means fiscal space to absorb some of the oil subsidy burden without blowing the deficit.</li>
-    <li>Nifty and Sensex posted their best weekly gain in 5 years (+6%) on Iran deal optimism &mdash; a reminder that Indian markets can recover fast when geopolitical fear eases. The speed of recovery validates buying India on resolution.</li>
-    <li>The US Court of International Trade heard oral argument on Section 122 tariffs April 10. Ruling could come within 15 days, potentially further limiting Trump's tariff legal toolkit.</li>
-    <li>Canada has shed 95,000 jobs in 2026, unemployment at 6.7% &mdash; worst labor market since COVID 2020, driven by manufacturing slowdown from US tariffs.</li>
-    <li>Carney explicitly ruled out a free trade deal with China even as Trump threatens 50% China tariffs &mdash; Canada is threading the needle as non-adversarial, US-adjacent, non-China supplier.</li>
-    <li>OpenAI raised $40B at $300B valuation; Anthropic raised $13B at $183B in 2025. Both reportedly heading toward IPOs in late 2026. If Anthropic IPOs while holding #1 on Stanford AI rankings, it will be the most anticipated tech IPO since Meta.</li>
-    <li>India's Nifty Q4 FY26 earnings season is underway &mdash; corporate results are the next near-term market driver after geopolitical headlines. Strong IT and pharma numbers could offset macro headwinds.</li>
-    <li>BDC forecasts 1% GDP growth for Canada in 2026, but notes consumer spending (60% of GDP) is holding up better than feared. Canada's economy "was surprisingly OK to start 2026."</li>
-    <li>The BoC Business Outlook Survey drops Monday April 20 &mdash; first post-blockade reading of Canadian business confidence. This shapes June rate cut expectations. Read it.</li>
-    <li>Canada's IPPI up 5.4% YoY in February, raw materials ex-energy up 20%+ in 2026. Manufacturing input inflation is real and the tariff pause only partially offsets it.</li>
-    <li>World Economic Forum analysis: 9 commodities beyond oil impacted by Hormuz crisis &mdash; including LNG, aluminum, fertilizer, and container shipping. India is exposed to all of them simultaneously.</li>
-    <li>Bitcoin's 2026 low was ~$60,000; it has recovered 25% to $75,574. Ethereum held higher on ceasefire extension. The war-hedge narrative is driving crypto's 2026 recovery story.</li>
-    <li>Goldman: If Hormuz closure persists another month, Brent stays above $100 throughout 2026. ANZ estimates $88/barrel on resolution. The $12/barrel spread is the peace-deal premium to monetize.</li>
+    <li>Iran ceasefire extension "in principle agreed" — but expires April 21; watch for breakdown Monday. (<a href="https://www.cnbc.com/2026/04/14/trump-iran-war-strait-of-hormuz-negotiations.html" target="_blank">CNBC</a>)</li>
+    <li>US Navy blockade of Iran enters Day 4 — 14 vessels turned back today; Hormuz still near-standstill with just 2 ships observed transiting. (<a href="https://www.cnbc.com/2026/04/16/iran-oil-tanker-traffic-strait-hormuz.html" target="_blank">CNBC</a>)</li>
+    <li>Gold at $4,810/oz — war premium still holding; acting more as crisis hedge than inflation hedge this cycle.</li>
+    <li>Bitcoin at $75,428 — up on ceasefire optimism; note that crypto is trading geopolitically now, not just as a tech asset.</li>
+    <li>S&amp;P 500 and Nasdaq at or near record highs — remarkable given the war; US domestic insulation from Hormuz is the key factor. Markets have fully digested the shock.</li>
+    <li>VIX at 17.8 — declining from >30 at crisis peak. Options market is pricing calm, which is exactly when to be careful.</li>
+    <li>Canada unemployment at 6.7% — highest since 2016 outside of COVID; weakness concentrated in younger and less-tenured workers.</li>
+    <li>Canada real GDP forecast 1.8% for 2026 — above post-tariff forecasts but below what's needed for demographic absorption.</li>
+    <li>USTR Section 301 investigation includes India, China, EU, Japan, Vietnam, and 10 others — hearings April 28. The global trade restructuring is very much ongoing. (<a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">Tax Foundation</a>)</li>
+    <li>L&T (India) expects nuclear energy revenues to triple over 5 years as India accelerates toward 100 GW nuclear by 2047. Energy infrastructure is a multi-decade bet in India.</li>
+    <li>India direct tax collections grew 7.1% to ₹22.8 lakh crore by March 17 — strong corporate tax performance despite macro headwinds. Fiscal position is better than the narrative suggests.</li>
+    <li>Generative AI reached 53% global adoption in 3 years — faster than PC (17 years to same level) or internet (7 years). The adoption S-curve for AI is genuinely unprecedented. (<a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank">Stanford HAI</a>)</li>
+    <li>AI Foundation Model Transparency Index fell from 58 to 40 — Google, Anthropic, OpenAI all stopped disclosing training data sizes. Regulatory collision coming in H2 2026. (<a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank">Stanford HAI</a>)</li>
+    <li>Shopify Winter '26: 150+ product updates including Agentic Storefronts — products appearing directly in ChatGPT and Copilot shopping conversations. This is the future of commerce. (<a href="https://www.shopify.com/editions/winter2026" target="_blank">Shopify</a>)</li>
+    <li>Bharat Taxi (India's cooperative ride-hailing) now has 2.31L drivers and 21.34L users — running in Delhi-NCR and select Gujarat cities. The Ola/Uber disruption play is getting real. WATCH if it expands to metros.</li>
   </ul>
 </div>
 
 <!-- THE LONG GAME -->
-<div class="section-header">THE LONG GAME</div>
 <div class="long-game">
-  <div class="lg-label">Slow-burn trend to track</div>
-  <div class="lg-body">The Hormuz crisis is accelerating a decade-long transition in global energy supply chains &mdash; away from Gulf concentration and toward a multi-polar energy map where Canada, Australia, Brazil, and the US are the stable-democracy producers of last resort. India is the most consequential importer in this transition: 1.4 billion people, 85% crude import dependency, and a demonstrated vulnerability to Gulf disruption that does not resolve with one ceasefire. The India-Canada energy corridor is the most natural and strategically under-exploited bilateral partnership in this realignment. India has the demand; Canada has the supply; both are democracies with English-speaking legal systems, established bilateral frameworks, and no adversarial history. What's been missing is urgency. The Hormuz crisis is providing it. If diplomatic and commercial channels open in the next 3&ndash;6 months, the India-Canada energy relationship could be the defining bilateral energy deal of the decade &mdash; not just an oil purchase agreement, but a security partnership that spans LNG, critical minerals, uranium (Canada is a top-3 uranium producer, India is building 10+ new nuclear reactors), and potentially hydrogen. Watch: any announcement of BPCL/IOCL/HPCL discussions with Canadian producers, or Carney's itinerary for the next 60 days. If he visits India, that's the signal.</div>
+  <div class="lg-label">♟ The Long Game</div>
+  <div class="lg-body">
+    The Hormuz crisis will eventually resolve — either through a deal or an escalation that forces resolution. But the world that emerges will have permanently repriced geopolitical risk on energy infrastructure. Every company, every government, every pension fund that thought "Middle Eastern energy is reliably cheap" has been proven wrong in a 7-week window. The slow-burn consequence is a decade-long shift in energy infrastructure investment: undersea cables, pipelines that avoid choke-points, nuclear (which L&T and others are already betting on), and LNG routes with zero Hormuz exposure. Canada is the most obvious geographic beneficiary of this repricing. But India needs to make a strategic choice: remain exposed to Hormuz risk as a major oil importer, or spend the next 10 years diversifying energy sources toward domestic renewables, nuclear, and Canadian LNG. The economics of that choice are not being made with the urgency the Hormuz reality demands. This is the story I will be watching for the next 3 years.
+  </div>
 </div>
 
-<!-- SCORECARD -->
-<div class="section-header">COVERAGE SCORECARD</div>
+<!-- COVERAGE SCORECARD -->
 <div class="scorecard">
+  <div class="section-label">📊 Coverage Scorecard</div>
   <table>
-    <thead>
-      <tr><th>Category</th><th>Status</th><th>Sources / Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Geopolitics (Iran/Hormuz)</td><td class="ok">Covered</td><td>CNBC, CNN, NPR, NBC News, PBS, Wikipedia 2026 Hormuz crisis</td></tr>
-      <tr><td>Global Markets</td><td class="ok">Covered</td><td>Yahoo Finance, Bloomberg, CNBC, Trading Economics</td></tr>
-      <tr><td>India Macro / Economy</td><td class="ok">Covered</td><td>CNBC, Business Standard, FXStreet, Anand Rathi PMS, Goldman Sachs via CNBC, MUFG Research</td></tr>
-      <tr><td>India Startups / VC</td><td class="ok">Covered</td><td>StartupTalky, Medianama, PIB, Inc42 IPO tracker, BestStartup.in</td></tr>
-      <tr><td>Canada Economy / BoC</td><td class="ok">Covered</td><td>BDC, Bank of Canada, BNN Bloomberg, Business in Vancouver, Vanguard Canada</td></tr>
-      <tr><td>Canada Energy / Trade</td><td class="ok">Covered</td><td>Bloomberg, CBC, Global News, Canadian Chamber of Commerce, Resource Works, City Journal</td></tr>
-      <tr><td>Canada Politics</td><td class="ok">Covered</td><td>Abacus Data, Liaison Strategies tracker, Global News, The Walrus</td></tr>
-      <tr><td>Canada Tariffs</td><td class="ok">Covered</td><td>CFIB, Wikipedia trade war timeline, Policy Options IRPP, Al Jazeera</td></tr>
-      <tr><td>AI (Stanford Index)</td><td class="ok">Covered</td><td>IEEE Spectrum, Stanford HAI, MIT Technology Review, the-decoder.com, Analytics Drift</td></tr>
-      <tr><td>AI (PwC Bifurcation)</td><td class="ok">Covered</td><td>PwC press release, HumAI blog, ResultSense, EME Outlook, APAC Outlook</td></tr>
-      <tr><td>Crypto</td><td class="ok">Covered</td><td>Yahoo Finance, IBTimes Australia, Fortune daily BTC</td></tr>
-      <tr><td>Gold / Commodities</td><td class="ok">Covered</td><td>Trading Economics (confirmed $4,867.39), OilPrice.com, EIA, OFX</td></tr>
-      <tr><td>US Tariffs / Trade</td><td class="ok">Covered</td><td>Tax Foundation, CNBC, Congress.gov CRS, USTR 2026 Trade Policy Agenda</td></tr>
-      <tr><td style="color:#fca5a5;">Gmail Inbox Scan</td><td class="fail">Failed</td><td>Gmail MCP integration upgraded mid-run &mdash; all 24 search attempts returned tool-not-found error. Intelligence sourced via direct web search across 20+ primary sources. Story quality maintained.</td></tr>
-      <tr><td style="color:#fca5a5;">The Peak (Canada)</td><td class="warn">Not read</td><td>Gmail unavailable. Canada covered via CBC, BNN Bloomberg, Abacus, Globe web. Confirm from-address on next successful Gmail run.</td></tr>
-      <tr><td style="color:#fca5a5;">BetaKit / Globe / FP</td><td class="warn">Not read</td><td>Same Gmail failure. Canadian signal fully sourced via alternative web channels.</td></tr>
-      <tr><td><strong>India stories</strong></td><td class="ok">5 featured</td><td>Oil double shock, Startup FoF 2.0, Q1 funding, IMF/Goldman, pharma tariff</td></tr>
-      <tr><td><strong>Canada stories</strong></td><td class="ok">4 featured</td><td>Energy opportunity, Carney majority, tariff pause, BoC BOS preview</td></tr>
-      <tr><td><strong>Total story cards</strong></td><td class="ok">14</td><td>Lead + 7 Signal Board + 4 Canadian File + 3 Radar</td></tr>
-      <tr><td><strong>New predictions</strong></td><td class="ok">3</td><td>(1) Deal-hope rally is premature &mdash; watch for re-collapse; (2) India-Canada energy corridor opens within 3&ndash;9 months; (3) BoC rate cut likely June/July if BOS deteriorates</td></tr>
-      <tr><td><strong>Edition</strong></td><td class="ok">#48 Afternoon</td><td>April 17, 2026 &middot; Web-search-only mode</td></tr>
-    </tbody>
+    <tr><th>Category</th><th>Status</th><th>Sources / Notes</th><th>Count</th></tr>
+    <tr><td>Global Macro</td><td>✅ Covered</td><td>Tariffs, Fed, inflation, oil shock</td><td>3 stories</td></tr>
+    <tr><td>Geopolitics</td><td>✅ Covered</td><td>Iran war, Hormuz, ceasefire</td><td>1 lead + 2 refs</td></tr>
+    <tr><td>AI / Tech</td><td>✅ Covered</td><td>Stanford AI Index, PwC study, Nature, Shopify</td><td>4 stories</td></tr>
+    <tr><td>India Stories</td><td>✅ Covered</td><td>GDP ranking, rupee, creator economy, IT tailwind</td><td>4 stories</td></tr>
+    <tr><td>Canada Stories</td><td>✅ Covered</td><td>LNG FID, CFIB drought, BoC hold, Shopify</td><td>4 stories</td></tr>
+    <tr><td>Markets</td><td>✅ Covered</td><td>15-cell table; S&P, TSX, Nifty, WTI, Gold, BTC, 10Y GoC</td><td>15 cells</td></tr>
+    <tr><td>The Peak (Canada)</td><td>⚠ No email hit</td><td>Gmail integration offline — web search substituted</td><td>—</td></tr>
+    <tr><td>Globe &amp; Mail</td><td>⚠ No email hit</td><td>Gmail integration offline — web search substituted</td><td>—</td></tr>
+    <tr><td>Finshots / Ken</td><td>⚠ No email hit</td><td>Gmail integration offline — stories sourced via web</td><td>—</td></tr>
+    <tr><td>Gmail Integration</td><td>❌ Offline</td><td>Integration upgraded — full newsletter scan not possible this edition</td><td>—</td></tr>
+    <tr><td>WebSearches Run</td><td>✅</td><td>India, Canada, markets, AI, Hormuz, BoC, rupee, CFIB, LNG</td><td>9 searches</td></tr>
+    <tr><td>New Predictions</td><td>✅ 2</td><td>(1) Ceasefire extends Apr 21; (2) WTI tests $100 if collapsed; (3) India-Canada LNG deal unpursued</td><td>3 predictions</td></tr>
+    <tr><td>Quick Hits</td><td>✅</td><td>15 bullets</td><td>15</td></tr>
+    <tr><td>Direct Links</td><td>✅</td><td>All major cards have source URLs</td><td>—</td></tr>
   </table>
 </div>
 
-<div class="brief-footer">
-  THE BRIEF &middot; Edition #48 &middot; April 17, 2026 &middot; Afternoon Edition<br>
-  Web-search mode (Gmail MCP upgrading). Full inbox scan resumes next edition.<br>
-  Published at <a href="https://agentrankofficial-creator.github.io/the-brief/" target="_blank">agentrankofficial-creator.github.io/the-brief/</a>
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  THE BRIEF · Edition #147 · April 17, 2026 · For Suhail Seth · 
+  <a href="https://agentrankofficial-creator.github.io/the-brief/" target="_blank">Live on GitHub Pages</a> · 
+  Automated edition — Gmail integration offline this run
 </div>
 
 <script>
 function toggleCard(card){card.classList.toggle('open');}
 function toggleDeep(card){
-  if(event)event.stopPropagation();
   card.classList.toggle('deep');
-  var btn=card.querySelector('.deep-dive-btn');
-  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse \u2191':'Go Deeper \u2193';
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
 }
 function scrollToStory(id){
-  var el=document.getElementById(id);
+  const el=document.getElementById(id);
   if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
 }
 function filterStories(cat,pill){
-  document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
   pill.classList.add('active');
-  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(function(el){el.classList.remove('hidden');});return;}
-  document.querySelectorAll('[data-cat]').forEach(function(el){
-    var cats=(el.getAttribute('data-cat')||'').split(' ');
+  if(cat==='all'){
+    document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));
+    return;
+  }
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
     el.classList.toggle('hidden',!cats.includes(cat));
   });
 }
