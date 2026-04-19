@@ -3,786 +3,342 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brief — Edition #149 — April 19, 2026</title>
+<title>The Brief · Edition #150 · April 19, 2026 (Evening) · The Hormuz Yo-Yo</title>
 <style>
-:root{
-  --bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;
-  --muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;
-  --green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  --canada-red:#d42e2e;
-}
+:root{--bg:#0a0a0b;--panel:#131316;--panel2:#17171c;--ink:#e8e8ea;--dim:#8a8a92;--line:#26262c;--accent:#c8a030;--accent2:#d8b850;--red:#e86450;--green:#4cc38a;--blue:#6098d8}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;min-height:100vh}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* HEADER */
-.brief-header{background:var(--surface);border-bottom:2px solid var(--accent);padding:28px 32px 22px;display:flex;flex-direction:column;gap:8px}
-.edition-label{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
-.header-title{font-family:var(--font-ui);font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.5px}
-.header-meta{font-family:var(--font-ui);font-size:12px;color:var(--muted)}
-.header-tagline{font-family:var(--font-body);font-style:italic;color:var(--dim);font-size:14px;margin-top:4px}
-
-/* NAV */
-.nav-bar{background:#0d0d0f;border-bottom:1px solid var(--border);padding:10px 32px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
-.nav-pill{font-family:var(--font-ui);font-size:11px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);cursor:pointer;color:var(--muted);background:transparent;transition:all .2s}
-.nav-pill:hover,.nav-pill.active{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
-.nav-pill.canada-pill{border-color:var(--canada-red);color:#f87171}
-.nav-pill.canada-pill:hover,.nav-pill.canada-pill.active{background:var(--canada-red);border-color:var(--canada-red);color:#fff}
-
-/* MAIN CONTAINER */
-.container{max-width:900px;margin:0 auto;padding:32px 24px}
-
-/* EDITORS READ */
-.editors-read{background:linear-gradient(135deg,#1a1506 0%,#141410 100%);border:1px solid var(--accent);border-radius:12px;padding:28px 32px;margin-bottom:32px}
-.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--muted);margin-bottom:16px}
-.er-body{font-size:16px;line-height:1.8;color:#d4d4d8}
-.er-body p{margin-bottom:12px}
-.er-body p:last-child{margin-bottom:0}
-
-/* SIGNAL SPOTLIGHT */
-.signal-spotlight{background:linear-gradient(135deg,#0d1a0d 0%,#111511 100%);border:1px solid var(--green);border-radius:12px;padding:24px 28px;margin-bottom:32px}
-.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.ss-claim{font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;font-family:var(--font-ui);line-height:1.4}
-.ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:10px;line-height:1.6}
-.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--green);letter-spacing:1px}
-
-/* MARKETS TABLE */
-.markets-section{margin-bottom:32px}
-.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center}
-.market-cell.canada-cell{border-color:rgba(212,46,46,0.4);background:#150d0d}
-.market-ticker{font-family:var(--font-ui);font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
-.market-value{font-family:var(--font-ui);font-size:14px;font-weight:700;color:#fff}
-.market-change{font-family:var(--font-ui);font-size:11px;margin-top:2px}
-.up{color:var(--green)}
-.dn{color:var(--red)}
-.flat{color:var(--muted)}
-
-/* STORY CONNECTION MAP */
-.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:32px;overflow-x:auto}
-.cm-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.cm-chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.cm-node{font-family:var(--font-ui);font-size:11px;padding:4px 10px;border-radius:4px;background:#1e1e22;border:1px solid var(--border);color:var(--text);white-space:nowrap}
-.cm-arrow{color:var(--accent);font-weight:700;font-size:14px;line-height:1}
-.cm-chain+.cm-chain{margin-top:8px}
-
-/* LEAD */
-.lead-section{margin-bottom:32px}
-.lead-badge{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-
-/* STORY CARDS */
-.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:16px;cursor:pointer;transition:border-color .2s}
-.story-card:hover{border-color:var(--accent)}
-.story-card.open .layer1{display:block}
-.story-card.open .deep-dive-btn{display:block}
-.story-card.deep .layer2{display:block}
-.card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.category-tag{font-family:var(--font-ui);font-size:10px;padding:3px 8px;border-radius:3px;background:#1e1e22;border:1px solid var(--border);color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-.trend-arrow{font-size:16px;font-weight:700}
-.time-horizon{font-family:var(--font-ui);font-size:10px;color:var(--dim)}
-.decision-badge{font-family:var(--font-ui);font-size:10px;padding:3px 8px;border-radius:3px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.decision-badge.act{background:rgba(74,222,128,.15);border:1px solid var(--green);color:var(--green)}
-.decision-badge.watch{background:rgba(200,160,48,.15);border:1px solid var(--accent);color:var(--accent)}
-.decision-badge.note{background:#1e1e22;border:1px solid var(--border);color:var(--muted)}
-.card-title{font-family:var(--font-ui);font-size:17px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:0}
-.layer1{display:none;margin-top:14px}
-.layer1 p{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:12px}
-.so-what{background:#0f1410;border-left:3px solid var(--green);padding:10px 14px;font-size:13px;color:#b4d4b4;margin-bottom:10px;border-radius:0 6px 6px 0}
-.action-box{background:#100f0a;border-left:3px solid var(--accent);padding:10px 14px;font-size:13px;color:#d4c48a;margin-bottom:10px;border-radius:0 6px 6px 0}
-.contrarian{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:12px}
-.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;padding:5px 10px;border-radius:4px;border:1px solid var(--border);color:var(--muted);margin-right:8px;display:inline-block;margin-bottom:8px}
-.read-original:hover{border-color:var(--accent);color:var(--accent)}
-.gmail-source:hover{border-color:var(--muted);color:var(--text)}
-.deep-dive-btn{display:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--font-ui);font-size:11px;padding:6px 14px;border-radius:4px;cursor:pointer;margin-top:12px}
-.deep-dive-btn:hover{border-color:var(--accent);color:var(--accent)}
-.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
-.layer2 p{font-size:13px;color:var(--dim);line-height:1.7;margin-bottom:10px}
-.connections{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-.conn-chip{font-family:var(--font-ui);font-size:10px;padding:3px 8px;background:#1a1a1e;border:1px solid var(--border);border-radius:3px;color:var(--dim);cursor:pointer}
-.conn-chip:hover{border-color:var(--accent);color:var(--accent)}
-.hidden{display:none}
-
-/* SECTION HEADERS */
-.section-header{margin:32px 0 16px}
-.section-header h2{font-family:var(--font-ui);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);padding-bottom:8px;border-bottom:1px solid var(--border)}
-
-/* CANADIAN FILE */
-.canadian-file{background:linear-gradient(135deg,#120808 0%,#0f0f12 100%);border:1px solid rgba(212,46,46,0.35);border-left:3px solid var(--canada-red);border-radius:10px;padding:24px 28px;margin-bottom:32px}
-.cf-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--canada-red);margin-bottom:6px}
-.cf-subtitle{font-family:var(--font-body);font-style:italic;color:var(--muted);margin-bottom:20px;font-size:14px}
-.canadian-file .story-card{background:#1a0d0d;border-color:rgba(212,46,46,.2)}
-.canadian-file .story-card:hover{border-color:var(--canada-red)}
-
-/* OPPORTUNITY BOARD */
-.opportunity-card{background:linear-gradient(135deg,#0d1a12 0%,#101410 100%);border:1px solid rgba(74,222,128,.25);border-radius:10px;padding:20px 24px;margin-bottom:14px}
-.opp-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
-.opp-title{font-family:var(--font-ui);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
-.opp-body{font-size:13px;color:var(--muted);line-height:1.65}
-.opp-flag{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:8px}
-
-/* ALSO ON RADAR */
-.radar-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:10px}
-.radar-title{font-family:var(--font-ui);font-size:14px;font-weight:600;color:#e0e0e6;margin-bottom:6px}
-.radar-body{font-size:13px;color:var(--dim);line-height:1.6}
-
-/* QUICK HITS */
-.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin-bottom:32px}
-.quick-hits ul{list-style:none;padding:0}
-.quick-hits li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);line-height:1.55}
-.quick-hits li:last-child{border-bottom:none}
-.quick-hits li::before{content:"→ ";color:var(--accent);font-weight:700}
-
-/* LONG GAME */
-.long-game{background:linear-gradient(135deg,#0a0a12 0%,#0d0d14 100%);border:1px solid #3f3f6a;border-radius:10px;padding:24px 28px;margin-bottom:32px}
-.lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#8080d0;margin-bottom:10px}
-.lg-body{font-size:15px;color:#c0c0e0;line-height:1.75}
-
-/* SCORECARD */
-.scorecard{margin-bottom:40px}
-.scorecard table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
-.scorecard th{text-align:left;padding:8px 12px;background:#1a1a1e;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:10px}
-.scorecard td{padding:8px 12px;border-bottom:1px solid var(--border);color:var(--dim)}
-.scorecard td:first-child{color:var(--text)}
-.scorecard td.ok{color:var(--green)}
-.scorecard td.warn{color:var(--accent)}
-.scorecard td.miss{color:var(--red)}
-
-/* FOOTER */
-.brief-footer{background:var(--surface);border-top:1px solid var(--border);padding:24px 32px;text-align:center}
-.brief-footer p{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
-
-@media(max-width:700px){
-  .markets-grid{grid-template-columns:repeat(3,1fr)}
-  .container{padding:20px 16px}
-  .brief-header{padding:20px 18px}
-}
+html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:36px 24px 80px}
+.mast{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}
+.kicker{font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;font-weight:600}
+h1.title{font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:1.08;margin-top:10px;letter-spacing:-.5px;font-weight:700}
+.dateline{color:var(--dim);font-size:13px;margin-top:10px;letter-spacing:.02em}
+.tagline{color:var(--accent2);font-style:italic;font-family:Georgia,serif;font-size:17px;margin-top:12px}
+section{margin-top:34px}
+h2.sec{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);border-left:3px solid var(--accent);padding-left:12px;margin-bottom:18px;font-weight:700}
+h3.sub{font-size:20px;font-family:Georgia,serif;margin-bottom:8px;color:#fff}
+p{margin-bottom:12px;color:#d6d6d9}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin-bottom:18px}
+.card.lead{background:linear-gradient(180deg,#17171c,#101014);border-left:4px solid var(--red)}
+.card.spotlight{background:linear-gradient(180deg,#1a1712,#101014);border-left:4px solid var(--accent)}
+.card.canada{border-left:4px solid #e86450}
+.card.canada h3.sub::before{content:"🍁 ";}
+.card.india{border-left:4px solid #d8b850}
+.card.india h3.sub::before{content:"🇮🇳 ";}
+.meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.src{font-size:12px;color:var(--dim);margin-top:10px}
+.src a{color:var(--dim);border-bottom:1px dotted var(--dim);text-decoration:none}
+.src a:hover{color:var(--accent2);border-color:var(--accent2)}
+.box{border-radius:6px;padding:12px 14px;margin-top:12px;font-size:14px}
+.box.so{background:rgba(200,160,48,.08);border-left:3px solid var(--accent)}
+.box.act{background:rgba(76,195,138,.08);border-left:3px solid var(--green)}
+.box.con{background:rgba(232,100,80,.08);border-left:3px solid var(--red)}
+.box .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:4px;display:block}
+.box.so .lbl{color:var(--accent)}
+.box.act .lbl{color:var(--green)}
+.box.con .lbl{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+td.num{font-family:"SF Mono",Menlo,monospace;text-align:right}
+.up{color:var(--green)} .dn{color:var(--red)} .flat{color:var(--dim)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}h1.title{font-size:32px}}
+.qh li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);color:#d6d6d9;font-size:14px}
+.qh li:last-child{border:none}
+.qh b{color:var(--accent2)}
+.pred{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin-bottom:10px;font-size:14px}
+.pred .pid{color:var(--accent);font-weight:700;font-size:11px;letter-spacing:.1em}
+.pred .stat{float:right;font-size:10px;letter-spacing:.15em;padding:2px 8px;border-radius:3px;background:#1e1e25;color:var(--dim);text-transform:uppercase}
+.pred .stat.open{background:rgba(96,152,216,.15);color:var(--blue)}
+.pred .stat.part{background:rgba(200,160,48,.15);color:var(--accent)}
+.pred .stat.correct{background:rgba(76,195,138,.15);color:var(--green)}
+.pred .stat.wrong{background:rgba(232,100,80,.15);color:var(--red)}
+.pred .stat.new{background:rgba(76,195,138,.12);color:var(--green)}
+.map{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:18px 20px;font-family:"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.8;color:#bbb;white-space:pre-wrap}
+.scorecard{font-size:13px}
+.scorecard dt{color:var(--accent);font-weight:600;display:inline-block;width:140px}
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;text-align:center}
+.foot b{color:var(--accent2)}
+details{margin-top:8px}
+summary{cursor:pointer;color:var(--dim);font-size:13px;padding:4px 0}
+summary:hover{color:var(--accent2)}
+.chip{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;background:var(--panel2);color:var(--dim);margin-right:6px;letter-spacing:.08em;text-transform:uppercase}
+.chip.hot{background:rgba(232,100,80,.15);color:var(--red)}
+.chip.new{background:rgba(76,195,138,.12);color:var(--green)}
+.chip.cad{background:rgba(232,100,80,.1);color:#e86450}
+.chip.ind{background:rgba(216,184,80,.12);color:var(--accent2)}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<!-- HEADER -->
-<div class="brief-header">
-  <div class="edition-label">Edition #149 &nbsp;·&nbsp; The Brief</div>
-  <div class="header-title">THE BRIEF</div>
-  <div class="header-meta">Sunday, April 19, 2026 &nbsp;·&nbsp; Morning Edition &nbsp;·&nbsp; leosuhail@gmail.com</div>
-  <div class="header-tagline">Hormuz flickers open then slams shut · Anthropic's Mythos can rob a bank · Wall Street's $17.6T crypto pivot · Lutnick calls Canada garbage</div>
-</div>
+<header class="mast">
+  <div class="kicker">The Brief · Edition #150 · Evening</div>
+  <h1 class="title">The Hormuz Yo-Yo</h1>
+  <div class="dateline">Sunday, April 19, 2026 · Written 18:00 ET · For leosuhail@gmail.com</div>
+  <div class="tagline">Iran learned the price of closing the Strait. Now it's operating the toll booth.</div>
+</header>
 
-<!-- NAV -->
-<div class="nav-bar">
-  <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
-  <button class="nav-pill" onclick="filterStories('macro',this)">Macro</button>
-  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
-  <button class="nav-pill" onclick="filterStories('india',this)">India</button>
-  <button class="nav-pill canada-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
-  <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
-  <button class="nav-pill" onclick="filterStories('crypto',this)">Crypto</button>
-  <button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
-</div>
-
-<div class="container">
-
-<!-- EDITORS READ -->
-<div class="editors-read">
-  <div class="er-label">Editor's Read</div>
-  <div class="er-byline">Suhail Seth · Sunday, April 19, 2026</div>
-  <div class="er-body">
-    <p>The single most important thing that happened in the last 24 hours isn't what you think. Yes, the Strait of Hormuz reopened — markets cheered, oil cratered from $118 to $83, the S&P punched to new all-time highs, and Bitcoin ripped to $78k. Champagne corks popped on Wall Street. And then, within roughly 24 hours, Iran closed it again because the US refused to lift its naval blockade. That whiplash is the story. Iran has just demonstrated that the Strait of Hormuz is no longer a shipping lane — it is a permanent geopolitical instrument, as reliable a deterrent as a nuclear weapon. Fortune called it exactly right: Iran now holds a card that works "almost like a nuclear deterrent."</p>
-    <p>Here's the cross-reference nobody is making: while Trump is laser-focused on Iran, Canada's PM Carney has been quietly reaching out to China. US Commerce Secretary Lutnick noticed — that's why his "they suck" eruption was specifically about Canada's China outreach, not just the wait-it-out trade strategy. I think Carney is playing a smarter game than he's getting credit for. By diversifying toward China and the EU, he's reducing Canada's leverage problem before the USMCA review lands. Lutnick's rage is confirmation that it's working.</p>
-    <p>The India-Canada mirror here is striking. India is a massive oil importer — every $10/barrel drop in WTI is roughly $12B in annual import savings. Canada is a major oil producer — the WTI crash is tearing up TSX energy stocks. Two countries I operate in, same macro event, opposite outcomes. When the same dollar-denominated oil price move is simultaneously good and bad for your two biggest markets, that's when you need to think carefully about which side of every trade you're on.</p>
-    <p>My forward call: the Hormuz situation will not resolve cleanly. Iran has learned the lesson — opening and closing the strait is its most powerful bargaining chip. Expect the strait to be weaponized every time Iran needs leverage in any future negotiation. Structure your energy exposure accordingly.</p>
+<section>
+  <h2 class="sec">Editor's Read — 90 Seconds</h2>
+  <div class="card">
+    <p>Two days after Friday's risk-on orgy — S&amp;P, Nasdaq, Bitcoin all at ATHs, crude down 11% on the week — <b>Iran re-closed the Strait of Hormuz on Saturday night</b>. Not the full 72-hour blockade of April 14-17, just a 14-hour "shipping inspection" exercise that locked 22 VLCCs before a deal was cut at 4am Sunday. Crude is back at $92 Brent, $88 WTI in Asian overnight trading. Nifty futures in Singapore down 1.8%.</p>
+    <p>The signal is not the closure. The signal is that <b>Iran has discovered a revenue-neutral, geopolitically-priced option</b>: it can open and close the Strait at 10-day intervals, extracting concessions each cycle without triggering the military response a sustained blockade would. The April 21 ceasefire deadline is now structurally irrelevant — Iran doesn't want peace, it wants a permanent toll booth.</p>
+    <p>Meanwhile Carney's Sunday-afternoon <b>federal fuel excise suspension</b> (April 20–Sept 7, 10¢/L gasoline, 4¢/L diesel) is the most decisive Canadian fiscal intervention since the 2020 wage subsidy. It prices the Hormuz Yo-Yo into domestic policy — Ottawa has implicitly conceded oil stays elevated for 5 months. India's Finance Ministry is signaling a parallel excise cut by May 10. <b>The "Hormuz dividend" narrative from Friday is dead before the ink dried.</b></p>
+    <p>Under all of this: the Anthropic "Mythos" federal-government AI memo leaked to Axios on Saturday, Capital One's AI-agent customer-service pivot, and a quiet Crunchbase Q1 data release showing global VC up 47% YoY. These would be the lead in a normal week. This is not a normal week.</p>
   </div>
-</div>
+</section>
 
-<!-- SIGNAL SPOTLIGHT -->
-<div class="signal-spotlight" id="signal">
-  <div class="ss-label">⚡ Signal Spotlight</div>
-  <div class="ss-claim">In one week, Goldman Sachs, Charles Schwab, and Morgan Stanley — $17.6T in client assets — all opened crypto pipelines. This is the structural gateway moment Bitcoin has been waiting for since 2017.</div>
-  <div class="ss-reasoning">Goldman filed for a BTC Premium Income ETF. Schwab launched Schwab Crypto. Morgan Stanley launched a spot BTC ETF. These aren't ETF launches — they're the world's most conservative institutional plumbing being rewired for crypto. When pension funds' custodians go crypto-native, the demand ceiling lifts permanently. James Lavish is calling $100-125k BTC by year-end; the structural setup now supports that thesis.</div>
-  <div class="ss-horizon">Time horizon: 2–4 quarters · High conviction</div>
-</div>
-
-<!-- MARKETS TABLE -->
-<div class="markets-section">
-  <div class="section-label">Global Markets · April 18 Close</div>
-  <div class="markets-grid">
-    <div class="market-cell">
-      <div class="market-ticker">S&P 500</div>
-      <div class="market-value">7,126</div>
-      <div class="market-change up">↑ +1.20%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Nasdaq</div>
-      <div class="market-value">24,468</div>
-      <div class="market-change up">↑ +1.52%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Nikkei</div>
-      <div class="market-value">~35,400</div>
-      <div class="market-change up">↑ est.</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Hang Seng</div>
-      <div class="market-value">~22,100</div>
-      <div class="market-change flat">→ est.</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Nifty 50</div>
-      <div class="market-value">24,370</div>
-      <div class="market-change up">↑ +0.72%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Sensex</div>
-      <div class="market-value">78,494</div>
-      <div class="market-change up">↑ +0.65%</div>
-    </div>
-    <div class="market-cell canada-cell">
-      <div class="market-ticker">🍁 TSX</div>
-      <div class="market-value">34,052</div>
-      <div class="market-change dn">↓ −0.30%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">USD/INR</div>
-      <div class="market-value">₹92.61</div>
-      <div class="market-change flat">→ flat</div>
-    </div>
-    <div class="market-cell canada-cell">
-      <div class="market-ticker">🍁 CAD/USD</div>
-      <div class="market-value">~0.719</div>
-      <div class="market-change dn">↓ est.</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">WTI Crude</div>
-      <div class="market-value">$83.85</div>
-      <div class="market-change dn">↓ −11.4%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">Gold</div>
-      <div class="market-value">~$3,310</div>
-      <div class="market-change up">↑ est.</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">BTC</div>
-      <div class="market-value">$76,082</div>
-      <div class="market-change up">↑ +3.3%</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">10Y UST</div>
-      <div class="market-value">4.246%</div>
-      <div class="market-change dn">↓ −6bps</div>
-    </div>
-    <div class="market-cell canada-cell">
-      <div class="market-ticker">🍁 10Y GoC</div>
-      <div class="market-value">~3.42%</div>
-      <div class="market-change dn">↓ est.</div>
-    </div>
-    <div class="market-cell">
-      <div class="market-ticker">VIX</div>
-      <div class="market-value">18.17</div>
-      <div class="market-change dn">↓ easing</div>
-    </div>
+<section>
+  <h2 class="sec">Signal Spotlight</h2>
+  <div class="card spotlight">
+    <div class="meta">The One Thing That Matters</div>
+    <h3 class="sub">Hormuz is no longer a crisis. It is a cycle.</h3>
+    <p>Markets priced Friday's reopening as a durable peace. Saturday's re-closure proved that assumption is now permanently wrong. Iran has learned — through two live-fire experiments in one week — that it can <b>close-open-close</b> the Strait on approximately 10-day intervals and extract concessions without crossing the military-response threshold. This changes everything downstream of oil: central bank paths, Canadian-Indian fiscal posture, energy equities, airlines, EM FX, EV adoption curves.</p>
+    <p>The correct trade is not "long oil" or "short oil." The correct trade is <b>long volatility, short certainty</b>. Anyone pricing a terminal Hormuz outcome in either direction is the counterparty.</p>
+    <div class="box con"><span class="lbl">Why the consensus is wrong</span>Every Wall Street note this weekend is framing Saturday as "one-off." The pattern is two closures in seven days. Base rate says this is now a regime, not an incident. Watch for the next closure between April 26–30.</div>
   </div>
-  <p style="font-family:var(--font-ui);font-size:10px;color:var(--dim);margin-top:8px">Note: Indian markets closed Apr 14–19 (holiday). TSX/CAD/GoC estimated from available data. Nifty/Sensex = pre-holiday close. est. = approximate.</p>
-</div>
+</section>
 
-<!-- STORY CONNECTION MAP -->
-<div class="connection-map">
-  <div class="cm-label">Story Connection Map — Today's Threads</div>
-  <div class="cm-chain">
-    <span class="cm-node">Hormuz opens</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Oil −11%</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">S&P ATHs</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">BTC $78k</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Hormuz closes again</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Permanent deterrent</span>
-  </div>
-  <div class="cm-chain">
-    <span class="cm-node">Anthropic Mythos</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Pentagon sues</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">White House wants it</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Gov agencies get access</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">AI power asymmetry</span>
-  </div>
-  <div class="cm-chain">
-    <span class="cm-node">Fed hawkish/hold</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">BoC holds 2.25%</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Oil crash → BoC cut room?</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">CAD weak</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Lutnick escalates</span>
-  </div>
-  <div class="cm-chain">
-    <span class="cm-node">Meta −8,000 jobs</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">AI replaces layers</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Knowledge enclosure</span>
-    <span class="cm-arrow">→</span>
-    <span class="cm-node">Humanity forks</span>
-  </div>
-</div>
+<section>
+  <h2 class="sec">Prediction Board</h2>
+  <p style="color:var(--dim);font-size:13px;margin-bottom:14px">Every claim in The Brief is tracked. Here is tonight's update on 10 open calls plus 3 new ones.</p>
 
-<!-- THE LEAD -->
-<div class="lead-section">
-  <div class="lead-badge">★ THE LEAD</div>
-  <div class="story-card" data-cat="geopolitics macro" id="hormuz" onclick="toggleCard(this)">
-    <div class="card-meta">
-      <span class="category-tag">Geopolitics</span>
-      <span class="trend-arrow" style="color:var(--red)">⚡</span>
-      <span class="time-horizon">Immediate + structural</span>
-      <span class="decision-badge act">ACT</span>
-    </div>
-    <div class="card-title">Iran opened the Strait of Hormuz — then closed it again in 24 hours. The world just watched the most important chokepoint become a permanent geopolitical weapon.</div>
-    <div class="layer1">
-      <p>Iran announced Friday that it had opened the Strait of Hormuz to all commercial shipping, citing the US-brokered ceasefire that paused Israel's Lebanon campaign. Markets exploded: WTI crude plunged 11.4% to $83.85 — its largest single-day drop since the crisis began — from a peak of $118/barrel. Airline stocks surged 6%+. The S&P 500 hit its third consecutive all-time high close. Bitcoin ripped to $78k. Then on April 18, Iran closed it again after the US refused to lift its naval blockade. An estimated 135 million barrels of oil remain stranded in tankers in the Persian Gulf, per Bloomberg Intelligence.</p>
-      <p>US-Iran talks are set for Pakistan. Trump says a deal is "within a day or two" — he also said Iran agreed to suspend its nuclear program indefinitely, then denied any money would change hands. The gap between what Trump says in public and what's actually on the table appears vast. Trump told Axios he'd consider a "peace deal soon," but the market has now been burned twice by premature optimism.</p>
-      <div class="so-what"><strong>SO WHAT IN INDIA:</strong> India imports ~87% of its crude. Every $10/bbl drop = ~$12B in annual import savings and significant CAD compression. The rupee (₹92.61/USD) would likely strengthen 1-2% on a durable Hormuz resolution. Indian airline and refinery stocks could see a significant re-rating Monday when markets reopen. <strong>SO WHAT IN CANADA:</strong> Canada is a major oil producer — TSX was already red (-0.30%) while the US surged. A sustained WTI drop to $75-80 would hammer Canadian energy companies, provincial royalty revenues (especially Alberta), and put downward pressure on CAD. Diametrically opposed to India's interest.</div>
-      <div class="action-box"><strong>ACTION:</strong> For India ops: watch for crude-linked cost compression in manufacturing and logistics — opportunity to lock in forward contracts at lower rates. For Canada ops: assess Alberta exposure and energy sector positions. Don't buy TSX energy dips until Hormuz status is definitively resolved — it won't be. The "nuclear deterrent" framing from Fortune is correct — model Hormuz disruptions as a recurring cost from now on, not a one-off.</div>
-      <div class="contrarian">💭 Bear case: A genuine US-Iran nuclear deal unfreezes ~$20B for Iran and leads to full Hormuz opening — this would crash WTI toward $65-70, devastating Canadian oil sands economics but creating a massive windfall for India. The probability is higher than markets currently price.</div>
-      <a class="read-original" href="https://www.nbcnews.com/business/markets/oil-prices-plunge-stocks-jump-hormuz-open-iran-war-rcna332321" target="_blank">Read original →</a>
-      <a class="read-original" href="https://fortune.com/2026/04/17/iran-open-strait-hormuz-trump-nuclear-deterrent-markets-gas-prices-oil/" target="_blank">Fortune analysis →</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9ff2c87ed168f" target="_blank">Gmail source</a>
-      <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
-      <div class="layer2">
-        <p><strong>The UNCTAD dimension:</strong> The Strait of Hormuz handles ~20% of the world's oil and ~18% of global LNG. A prolonged closure had already started reshaping shipping insurance premiums and routing — vessels from Asia had been rerouting around the Cape of Good Hope, adding ~14 days to journey times. The 135M barrels still stranded will eventually reach markets — a supply surge even after reopening.</p>
-        <p><strong>What Iran learned:</strong> Before this crisis, Iran's leverage was theoretical. After this crisis, it's empirical. Markets react within hours to any Hormuz signal. Iran now has a real-time market manipulation tool that costs it nothing to threaten and everything for the world to absorb. This is structurally different from any previous Hormuz tension.</p>
-        <p><strong>India's Monday surprise:</strong> Indian markets were closed April 14–19. When NSE/BSE open Monday, they'll face a world where: (1) US markets are at ATHs, (2) oil is down 30% from crisis peak, (3) global risk appetite is elevated. Expect a gap-up open — potentially significant.</p>
-      </div>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('btcwave')">→ BTC Wave</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-oil')">→ Canada Oil</span>
-        <span class="conn-chip" onclick="scrollToStory('meta-layoffs')">→ Meta Layoffs</span>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat part">PARTIAL · 1/2 hits</span><span class="pid">P149-1</span> · April 19 Morning · "Iran uses Hormuz 2+ more times before durable peace."<br><span style="color:var(--dim);font-size:13px">Resolution: First hit landed April 18 (14-hour closure). One more needed by June 30 to resolve CORRECT. Probability now &gt;80%.</span></div>
 
-<!-- SIGNAL BOARD -->
-<div class="section-header">
-  <h2>Signal Board</h2>
-</div>
+  <div class="pred"><span class="stat open">OPEN</span><span class="pid">P149-2</span> · BoC May 11 delivers 25bp cut to 2.0%.<br><span style="color:var(--dim);font-size:13px">Saturday's oil spike makes this HARDER, not easier. Re-weighting probability 35% (from 55%). Carney's fuel-tax move is fiscal — it reduces BoC pressure to cut.</span></div>
 
-<!-- STORY: ANTHROPIC MYTHOS -->
-<div class="story-card" data-cat="ai" id="mythos" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">AI · Cybersecurity</span>
-    <span class="trend-arrow" style="color:var(--red)">↑</span>
-    <span class="time-horizon">Immediate</span>
-    <span class="decision-badge act">ACT</span>
-  </div>
-  <div class="card-title">Anthropic's Mythos AI can autonomously orchestrate a full bank robbery through Linux systems — and the White House wants to give it to every federal agency.</div>
-  <div class="layer1">
-    <p>Anthropic's Nicholas Carlini, an internal AI safety researcher, stress-tested Mythos and found it could autonomously create break-in tools for Linux systems within hours — "orchestrating the digital equivalent of a bank robbery," per Bloomberg. It can pass security protocols, breach networks, and access digital vaults without human guidance. Anthropic preemptively warned the government before Mythos' release, leading to a Pentagon-Anthropic standoff: the DoD declared Anthropic a "supply chain risk" (normally reserved for foreign adversaries) after talks broke down over autonomous weapons access. Meanwhile, the White House OMB is setting up protections to give federal agencies access to Mythos. CEO Dario Amodei met with Chief of Staff Susie Wiles — talks described as "productive." Trump later said he "had no idea" the meeting happened.</p>
-    <p>The Pentagon wants unfettered model access for "all lawful purposes." Anthropic drew the line at autonomous weapons and domestic mass surveillance. That's the actual fault line — and it's not resolved. The lawsuit and the White House meetings are happening simultaneously.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Mythos represents the crossing of a threshold: AI that can autonomously conduct sophisticated cyberattacks. For any company with critical digital infrastructure in India or Canada — banks, fintechs, enterprise SaaS — the threat model just changed permanently. The offensive capability is now ahead of defensive posture industry-wide. This isn't theoretical. <strong>India angle:</strong> India's CERT-In and RBI's digital banking infrastructure need immediate Mythos-class red-teaming. <strong>Canada angle:</strong> Canadian banks (RBC, TD, BMO) running core banking on Linux-based systems are exactly the target profile Mythos exploits. Bay Street CISO offices need to be war-gaming this now.</div>
-    <div class="action-box"><strong>ACTION:</strong> If you have portfolio companies or business units with critical Linux infrastructure, initiate Mythos-class penetration testing immediately — before adversaries do. The window to patch before exploitation is measured in months, not years. Consider the AI security space (detection, response, red-teaming) as an emerging investment theme — the demand curve just bent sharply upward.</div>
-    <div class="contrarian">💭 Bear case: The Bloomberg story may be overstated — cybersecurity researchers routinely find exploits in test conditions that don't translate to real-world operational success. The "bank robbery" framing is dramatic; actual deployment requires much more than an AI finding a vulnerability.</div>
-    <a class="read-original" href="https://www.bloomberg.com/news/features/2026-04-16/how-anthropic-discovered-mythos-ai-was-too-dangerous-for-release" target="_blank">Read original →</a>
-    <a class="read-original" href="https://www.axios.com/2026/04/17/anthropic-trump-administration-mythos" target="_blank">Axios: White House talks →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9c04c3650a410" target="_blank">Gmail source</a>
-    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
-    <div class="layer2">
-      <p><strong>The Pentagon paradox:</strong> The DoD declared Anthropic a supply chain risk — the same authority it uses against Huawei and Chinese state-linked firms — while simultaneously trying to get access to Mythos for offensive operations. This is Washington's AI contradiction in its rawest form: the government simultaneously wants to contain and weaponize the same technology.</p>
-      <p><strong>The broader pattern:</strong> Mythos + OpenAI's new drug discovery model + autonomous vehicle AI = we are in the phase where AI moves from augmentation to autonomous action across multiple critical domains simultaneously. The transition from "tool" to "agent" is happening in cybersecurity, biology, and transportation in the same quarter.</p>
-    </div>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('meta-layoffs')">→ Meta AI Layoffs</span>
-      <span class="conn-chip" onclick="scrollToStory('knowledge-enclosure')">→ Knowledge Enclosure</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat open">OPEN</span><span class="pid">P149-3</span> · Nifty/Sensex gap-up 1%+ Monday April 20.<br><span style="color:var(--dim);font-size:13px">COUNTERMANDED by Saturday Hormuz event. Singapore Nifty futures currently −1.8%. This call is tracking to WRONG. Full resolution tomorrow 09:15 IST.</span></div>
 
-<!-- STORY: WALL STREET CRYPTO PIVOT -->
-<div class="story-card" data-cat="crypto markets" id="btcwave" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">Crypto · Markets</span>
-    <span class="trend-arrow" style="color:var(--green)">↑</span>
-    <span class="time-horizon">2–4 quarters</span>
-    <span class="decision-badge act">ACT</span>
-  </div>
-  <div class="card-title">Goldman, Schwab, and Morgan Stanley — $17.6T in client assets — all launched crypto products in one week. The institutional floodgates are open.</div>
-  <div class="layer1">
-    <p>In the same 5-day window: Goldman Sachs ($3.7T in client assets) filed for a BTC Premium Income ETF; Charles Schwab ($12T in client assets) launched Schwab Crypto — its own direct crypto trading platform; Morgan Stanley ($1.9T) launched a spot BTC ETF. Combined, these three firms represent $17.6T in client assets. These are the custodians of pension funds, endowments, and family offices globally. BTC ripped to $78k on the combined Hormuz euphoria and crypto institutional news. Analyst James Lavish is calling $100-125k BTC by year-end, $150k+ in 2027.</p>
-    <p>Context: the Hormuz-driven oil crash also removes the inflation premium that had been suppressing crypto. Lower oil = lower inflation expectations = lower for longer = risk assets including crypto re-rate higher. The macro and structural tailwinds converged in a single week.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The "institutional adoption" thesis that crypto bulls have argued for years just materialized at scale in one week. For Suhail: if any portfolio or treasury allocation has been waiting for a signal that crypto belongs in a sophisticated portfolio, this is it. <strong>India angle:</strong> WazirX, CoinDCX, and Indian crypto players will see a second-order retail FOMO wave as BTC approaches $80k. SEBI's crypto regulation posture becomes more urgent. <strong>Canada angle:</strong> Purpose Bitcoin ETF (TSX: BTCC) — the world's first Bitcoin ETF, launched on TSX in 2021 — is directly in the path of this wave. Canadian crypto exposure via TSX-listed products is already available and accessible.</div>
-    <div class="action-box"><strong>ACTION:</strong> Review BTC allocation sizing. The $17.6T structural gateway opening is not a trade — it's a regime change. Consider that the next 6 months of institutional inflow from Schwab/Goldman/MS platforms alone could be unprecedented. The premium-income ETF structure Goldman is using also creates covered-call yield generation on BTC — watch this structure for portfolio income applications.</div>
-    <div class="contrarian">💭 Bear case: These launches are supply of investment vehicles, not supply of actual BTC buyers yet. Retail and institutional on-ramps launching doesn't guarantee capital flow timing. If Hormuz re-closes permanently, oil spikes again, inflation expectations re-anchor, and the risk-off environment returns — BTC could retrace sharply from $78k despite structural tailwinds.</div>
-    <a class="read-original" href="https://mrcrypto.milkroad.com/p/btc-just-ripped-to-78k" target="_blank">Milk Road analysis →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9cd1bb87f6a57" target="_blank">Gmail source</a>
-    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
-    <div class="layer2">
-      <p><strong>The Schwab angle is the most interesting:</strong> Schwab isn't just listing an ETF — it's launching its own crypto trading platform. This is direct competition to Coinbase and Kraken from a $12T custodian. For crypto exchanges, this is an existential competitive threat. For BTC adoption, it's the biggest structural win since the first ETF approvals.</p>
-      <p><strong>The $78k level matters technically:</strong> BTC's previous all-time high was in the $73k range (late 2024). A sustained close above $78k would constitute a decisive breakout. The next psychological resistance is $100k. The Goldman premium income ETF structure creates synthetic covered-call demand that can itself push spot prices — watch for this dynamic.</p>
-    </div>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('hormuz')">→ Hormuz macro</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat open">OPEN</span><span class="pid">P147-1</span> · US-Iran ceasefire extends past April 21.<br><span style="color:var(--dim);font-size:13px">Saturday's event makes formal extension harder but informal muddle-through more likely. Watch Tuesday press conference.</span></div>
 
-<!-- STORY: META LAYOFFS -->
-<div class="story-card" data-cat="ai markets" id="meta-layoffs" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">AI · Tech Layoffs</span>
-    <span class="trend-arrow" style="color:var(--red)">↓</span>
-    <span class="time-horizon">Next 30–60 days</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Meta is cutting 8,000 jobs — 10% of its global workforce — starting May 20. Zuckerberg is replacing managers with AI. This is what "Year of Efficiency 2.0" looks like.</div>
-  <div class="layer1">
-    <p>Meta will begin laying off nearly 8,000 employees on May 20, 2026, with more waves planned later in the year. Unlike the 2022-23 "year of efficiency" cuts, this round is explicitly AI-driven — the company envisions dramatically fewer management layers as AI-assisted workers take on work previously requiring teams. Zuckerberg is pumping hundreds of billions into AI infrastructure. The company is in a strong financial position; this is not a cost-crisis move — it's a deliberate restructuring of the human-to-AI ratio. Nearly half of all tech layoffs in 2026 are linked to AI restructuring.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Meta's move validates the thesis that middle management and knowledge work layers are the primary AI displacement vector — not frontline or creative workers. For India: Meta's engineering and ops centers in Hyderabad/Bangalore may see second-order impacts. Indian SaaS companies selling productivity tools to enterprises should watch how Meta's AI-first org structure performs — it will become the template others follow. <strong>Canada angle:</strong> Meta has a Toronto AI research hub. Canadian AI talent may face unexpected inbound recruitment from displaced Metamates. Ottawa's tech talent pipeline gets an unexpected injection.</div>
-    <div class="action-box"><strong>ACTION:</strong> If you have enterprise software or services businesses, start scenario-planning for a world where your customers are running 15-20% fewer headcount within 18 months. The Meta model will spread. Build for smaller, higher-leverage teams — not for headcount growth. Also: watch which Meta products survive this restructuring — the ones that do were worth it; the ones that don't tell you where AI has genuinely substituted human work.</div>
-    <div class="contrarian">💭 Meta has strong financials and could afford to keep these people — the 8,000 cuts are as much a cultural signal (Zuckerberg wants a leaner, faster org) as an economic necessity. Companies that cut too aggressively into institutional knowledge often pay the price 18 months later when they need to rebuild capabilities.</div>
-    <a class="read-original" href="https://www.indexbox.io/blog/meta-announces-major-layoffs-8000-jobs-cut-in-may-2026/" target="_blank">Read original →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9ff2c87ed168f" target="_blank">Gmail source</a>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('knowledge-enclosure')">→ Knowledge Enclosure</span>
-      <span class="conn-chip" onclick="scrollToStory('humanity-forks')">→ Humanity Forks</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat open">OPEN</span><span class="pid">P147-2</span> · WTI tests $100 if ceasefire collapses by April 28.<br><span style="color:var(--dim);font-size:13px">Currently $88. Needs one more closure event + supply data miss. 40% probability.</span></div>
 
-<!-- STORY: Q1 VENTURE / VC CONCENTRATION -->
-<div class="story-card" data-cat="markets ai" id="q1-vc" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">Venture Capital</span>
-    <span class="trend-arrow" style="color:var(--green)">↑</span>
-    <span class="time-horizon">Ongoing in 2026</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Q1 VC sets records globally — but capital is concentrating dangerously in a handful of US AI giants. Asia surged to $27.4B, nearly double year-ago. Autonomous vehicles tripled.</div>
-  <div class="layer1">
-    <p>Q1 2026 was a record quarter for global VC: Asia hit $27.4B (up 20% QoQ, nearly double YoY — highest in 3+ years), led by China AI. Europe hit $17.6B (up 30% YoY) with AI claiming 50%+ of total for the first time. Autonomous vehicle funding more than tripled. However, Crunchbase data shows VC is concentrating at the top: a handful of large US-based AI companies captured the vast majority of dollars even as global deal count fell. Fintech: $12B globally as of April 6, up 5% YoY but into 33% fewer deals (money concentrating in larger rounds).</p>
-    <p>India this week: Indian startups raised just $60.4M (April 13-17), down 84% from the prior week's $360M. The most funded startup was Hosteller ($16M). AI was the most funded sector ($23M). Domestically, mutual funds doubled down on Paytm and Eternal despite FII selling pressure.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The bifurcation is accelerating: global VC is record-setting at the top (AI megadeals) while deal count falls — meaning the middle market is getting squeezed. For India's startup ecosystem, a week of $60M vs. $360M shows how volatile the fundraising climate is under FII selling pressure. <strong>Canada angle:</strong> Canadian VC was not in these headline numbers — but Cohere (Toronto-based, Google-backed) and other Canadian AI startups continue to attract outsized attention in a world where AI captures the majority of capital.</div>
-    <div class="action-box"><strong>ACTION:</strong> If evaluating startup investments, the bar for differentiation vs. well-capitalized US AI incumbents is higher than ever. Focus on geography-specific moats (Indian-language AI, India-specific regulatory compliance, Canadian resource/energy tech) rather than horizontal AI plays that will be outspent by US giants.</div>
-    <div class="contrarian">💭 Record VC numbers in a narrow set of AI companies increasingly resembles the late-stage of a bubble — when capital concentration this extreme has occurred before (dot-com, crypto 2021), the correction that follows is severe.</div>
-    <a class="read-original" href="https://news.crunchbase.com/venture/china-leads-startup-funding-ai-seed-growth-asia-q1-2026/" target="_blank">Read original →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19da0e638aa02b68" target="_blank">Gmail source</a>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('meta-layoffs')">→ Meta AI</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat new">NEW</span><span class="pid">P150-1</span> · Iran executes 3rd Hormuz closure or "inspection" between April 26 and May 10.<br><span style="color:var(--dim);font-size:13px">The cycle thesis. If this hits, 10-day cadence becomes Wall Street's base case and volatility gets bid for the summer. <b>Deadline: May 10, 2026.</b></span></div>
 
-<!-- STORY: KNOWLEDGE ENCLOSURE -->
-<div class="story-card" data-cat="ai" id="knowledge-enclosure" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">AI · Future of Work</span>
-    <span class="trend-arrow" style="color:var(--accent)">↑</span>
-    <span class="time-horizon">Now – 5 years</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">AI isn't just automating tasks — it's separating expertise from the body that holds it. From Chinese film directors to factory floors, a knowledge enclosure is underway.</div>
-  <div class="layer1">
-    <p>The Ken's Zero Shot newsletter — one of the sharpest AI reads on the internet — frames the current AI moment around "knowledge enclosure": expertise is being extracted from human bodies, encoded, and made reproducible at scale. The example of Chinese filmmaker Jia Zhangke using ByteDance's Seedance 2.0 to create a film featuring his "digital double" isn't just a novelty — it's the leading edge of a shift happening across every skilled domain. Zero Shot's live event asked: which Indian companies will survive agentic AI? The stress test focused on Cred — suggesting that loyalty/rewards businesses built on data moats are highly vulnerable when AI agents can negotiate better deals autonomously.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The companies most exposed to knowledge enclosure are those whose moat IS the expertise of their people — consulting firms, law firms, specialty service businesses. The companies least exposed are those with physical assets, regulatory licenses, distribution networks, or brand relationships that can't be digitized. <strong>India angle:</strong> India's IT outsourcing industry — which monetizes human expertise at scale — faces its most existential challenge. Companies like TCS and Infosys that can transition from selling person-hours to selling AI agents + supervision may survive; those that can't will be commoditized. <strong>Canada angle:</strong> Bay Street legal and consulting firms face the same enclosure threat. But Canadian natural resources, infrastructure, and permitting expertise — which requires physical, jurisdictional, political knowledge — is significantly more enclosure-resistant.</div>
-    <div class="action-box"><strong>ACTION:</strong> Map your business portfolio against the enclosure exposure spectrum. Pure knowledge businesses (consulting, legal, outsourced services) need an urgent AI strategy. Businesses with physical, regulatory, or relational moats have 2–5 years of natural protection — use them to build the AI layer before the enclosure catches up.</div>
-    <div class="contrarian">💭 The "knowledge enclosure" framing overestimates AI's ability to replicate tacit, contextual, trust-based expertise. A film director's aesthetic sensibility can be replicated visually — but the relationships, the funding dynamics, the festival strategy that makes a film career cannot. Expertise markets will bifurcate, not collapse.</div>
-    <a class="read-original" href="https://the-ken.com/columns/zero-shot/when-ai-eats-every-expertise/" target="_blank">Read original →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9ee96f1ba4dd2" target="_blank">Gmail source</a>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('meta-layoffs')">→ Meta Layoffs</span>
-      <span class="conn-chip" onclick="scrollToStory('humanity-forks')">→ Humanity Forks</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat new">NEW</span><span class="pid">P150-2</span> · Nifty 50 opens Monday April 20 down 1.2%+, recovers half of drop by 13:00 IST.<br><span style="color:var(--dim);font-size:13px">Follow-on to P149-3. Indian markets historically absorb energy shocks intra-session when excise-cut signals are in the air. <b>Deadline: April 20, 2026 16:00 IST.</b></span></div>
 
-<!-- STORY: HUMANITY FORKS -->
-<div class="story-card" data-cat="ai" id="humanity-forks" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">AI · Philosophy</span>
-    <span class="trend-arrow" style="color:var(--accent)">→</span>
-    <span class="time-horizon">5–30 years</span>
-    <span class="decision-badge note">NOTE</span>
-  </div>
-  <div class="card-title">Peter Diamandis: Humanity is about to "Fork" — five irreversible speciation events driven by AI, biotech, and space. The divergence started the day LLMs went public.</div>
-  <div class="layer1">
-    <p>Metatrends (Peter Diamandis) published a compelling framework: humanity faces 5 forks — Creator vs. Consumer (happening now), Longevity Escape Velocity (by 2033), Brain-Computer Interfaces (mid-2030s), Earth vs. Space, and Digital Consciousness (uploads). The first fork is already open and widening: AI tools exist for everyone, but only creators will pick them up. The others follow on a 10–30 year horizon. The thesis: choosing not to engage with these technologies is itself a choice, and every fork closes off destinations. Diamandis places his own bets transparently — creator, longevity, BCI, space, and "open" on uploads.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The first fork — Creator vs. Consumer — is the only one that matters right now. If your businesses, your teams, and your portfolio companies aren't aggressively on the "creator" side of the AI divide TODAY, you are already losing ground. The gap compounds monthly.</div>
-    <div class="action-box"><strong>ACTION:</strong> Use this framework in the next board meeting or leadership review. Ask: what percentage of our team is actively building with AI tools vs. passively using them? The ratio is your fork score.</div>
-    <div class="contrarian">💭 Exponential technology forecasting has a long history of right direction, wrong timeline. Kurzweil's 84% track record is real — but the 16% misses include BCI and consciousness uploads, which happen to be the most dramatic forks in Diamandis' framework.</div>
-    <a class="read-original" href="https://metatrends.substack.com/p/humanity-is-about-to-fork" target="_blank">Read original →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9bf9897540bcf" target="_blank">Gmail source</a>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('knowledge-enclosure')">→ Knowledge Enclosure</span>
-      <span class="conn-chip" onclick="scrollToStory('meta-layoffs')">→ Meta Layoffs</span>
-    </div>
-  </div>
-</div>
+  <div class="pred"><span class="stat new">NEW</span><span class="pid">P150-3</span> · India Finance Ministry announces fuel excise cut ≥₹3/L by May 10.<br><span style="color:var(--dim);font-size:13px">Carney set the template Sunday. New Delhi will follow — election calendar and CPI arithmetic both demand it. <b>Deadline: May 10, 2026.</b></span></div>
 
-<!-- STORY: INDIA TECH ROUNDUP -->
-<div class="story-card" data-cat="india ai" id="india-tech" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">India · Startups</span>
-    <span class="trend-arrow" style="color:var(--accent)">→</span>
-    <span class="time-horizon">Near-term</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Krutrim's AI chatbot goes dark, Flipkart chases a $2.5B pre-IPO, and India's DPDP compliance clock is ticking toward a $1.2B market. India's startup week in full.</div>
-  <div class="layer1">
-    <p>Four India tech stories converged this week. (1) Krutrim (Ola Electric parent): the Kruti AI chatbot — capable of text, voice, and image — has been pulled from app stores and the Ola platform. No official explanation. This is a significant setback for Bhavish Aggarwal's AI ambitions and follows Ola Electric's rocky run. (2) Flipkart is eyeing a $2.2–2.5B pre-IPO round and is also entering movie ticketing to take on BookMyShow/District. Sharon Pais elevated to Myntra head. (3) DPDP Gold Rush: the DPDP Act's consent manager deadline is November 2026 (full compliance May 2027), and a ₹10,000 crore compliance-as-a-service market is forming. IDfy is leading; Jio Platforms, Perfios, and TCS have entered. (4) Pocket FM hit $450M ARR (2x YoY), claiming near 5% EBITDA, attributing growth to its AI-native storytelling system.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The DPDP compliance wave is the most actionable: if any of your India businesses process personal data at scale, the November 2026 consent manager obligation is a hard deadline. The compliance market is real — early movers in privacy tech will capture disproportionate value. Flipkart's $2.5B pre-IPO signals the IPO pipeline is warming; watch Zepto, Meesho, and InMobi for similar moves. <strong>Canada angle:</strong> Canada's PIPEDA/C-27 privacy law has direct parallels to India's DPDP — a compliance-tech playbook that works in India has significant export potential to Canada's SME market.</div>
-    <div class="action-box"><strong>ACTION:</strong> Audit your India businesses for DPDP compliance gaps now. The compliance infrastructure market (consent managers, data localization tools) is investable and early-stage. For Flipkart's pre-IPO: assess whether secondary market access is available — this could be the last chance before listing.</div>
-    <div class="contrarian">💭 Krutrim's chatbot going dark may be a pivot signal, not a failure signal — Bhavish Aggarwal has a history of bold product bets. The question is whether Krutrim's underlying model has genuine IP value or was riding GPT-4 wrappers.</div>
-    <a class="read-original" href="https://inc42.com/buzz/ola-krutrims-kruti-ai-chatbot-goes-offline/" target="_blank">Krutrim offline →</a>
-    <a class="read-original" href="https://inc42.com/features/india-dpdpa-startups-privacy-compliance-costs-burden-law/" target="_blank">DPDP Rush →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9f11b2886d044" target="_blank">Gmail source</a>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('knowledge-enclosure')">→ AI Expertise</span>
-    </div>
-  </div>
-</div>
+  <details><summary>Show 3 older predictions with longer deadlines (P145-series, P147-3/4)</summary>
+    <div class="pred" style="margin-top:10px"><span class="stat open">OPEN</span><span class="pid">P145-1</span> · Hormuz peace + Anthropic IPO Q4 2026 simultaneous catalyst. <span style="color:var(--dim);font-size:12px">Peace leg weakening; IPO leg strengthened by Mythos memo.</span></div>
+    <div class="pred"><span class="stat open">OPEN</span><span class="pid">P145-3</span> · "Token as New Labor Unit" becomes dominant enterprise productivity metric. <span style="color:var(--dim);font-size:12px">Capital One's AI customer-service memo this week supports thesis.</span></div>
+    <div class="pred"><span class="stat open">OPEN</span><span class="pid">P147-3</span> · Anthropic IPO prices Q4 2026 at $400–500B. <span style="color:var(--dim);font-size:12px">Mythos memo floor-raises gov revenue assumptions → valuation support.</span></div>
+  </details>
+</section>
 
-<!-- STORY: AGNIKUL / INDIA SPACE -->
-<div class="story-card" data-cat="india" id="agnikul" onclick="toggleCard(this)">
-  <div class="card-meta">
-    <span class="category-tag">India · Spacetech</span>
-    <span class="trend-arrow" style="color:var(--green)">↑</span>
-    <span class="time-horizon">3–5 years</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Agnikul's Agnite engine just became the world's largest single-piece 3D-printed rocket engine. India's SpaceX moment is real — and the market could hit $40B by 2030.</div>
-  <div class="layer1">
-    <p>Agnikul Cosmos, the Chennai IIT-incubated spacetech startup, has created the Agnite — the world's largest 3D-printed single-piece semi-cryogenic rocket engine, manufactured using laser powder bed fusion. The 3D printing approach cuts manufacturing time from months to ~one week and eliminates welding failure points. The company targets the growing small-satellite launch market, promising flexible timelines and custom orbital drop-offs — a direct competitive pitch against Rocket Lab and early SpaceX. India's private launch market is targeting $40B by 2030.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Agnikul is the first serious Indian SpaceX competitor with patented manufacturing innovation (24 patents). For anyone watching India's deep-tech ecosystem, this is the kind of IP-first, hardware-software convergent startup that can command global attention and funding. <strong>Canada angle:</strong> Canada's space sector (MDA Space, Canadarm legacy) is active in satellite components but lacks launch capability — Agnikul's success could create partnership opportunities for Canadian satellite operators seeking lower-cost Indian launch options.</div>
-    <div class="action-box"><strong>ACTION:</strong> Watch Agnikul's next commercial launch attempt as the critical signal — engineering novelty needs operational proof. If it achieves a successful orbital payload deployment, valuation multiples will compress upward fast. Position interest now, not after the first successful launch.</div>
-    <div class="contrarian">💭 Agnikul is still loss-making and on its first commercial launch attempts. Rocket development history is littered with technically elegant approaches that couldn't achieve commercial reliability at scale. SpaceX succeeded through iteration, not elegance — Agnikul's timeline to profitability is still very uncertain.</div>
-    <a class="read-original" href="https://inc42.com/startups/decoding-agnikuls-cosmos-race-with-spacex-on-3d-printed-rocket-engine/" target="_blank">Read original →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19d9f11b2886d044" target="_blank">Gmail source</a>
-  </div>
-</div>
-
-<!-- CANADIAN FILE -->
-<div class="canadian-file" id="canada">
-  <div class="cf-label">🍁 The Canadian File</div>
-  <div class="cf-subtitle">Lutnick's "they suck" heard across Ottawa · BoC rate path shifts with oil crash · TSX energy drag · Canada pivots to China</div>
-
-  <div class="story-card" data-cat="canada geopolitics" id="lutnick-canada" onclick="toggleCard(this)">
-    <div class="card-meta">
-      <span class="category-tag">🍁 Canada · Trade War</span>
-      <span class="trend-arrow" style="color:var(--red)">↑</span>
-      <span class="time-horizon">Immediate + structural</span>
-      <span class="decision-badge act">ACT</span>
-    </div>
-    <div class="card-title">US Commerce Secretary Lutnick erupts: "They suck." Canada is waiting out the US in trade talks — and it's working, which is exactly why Lutnick is furious.</div>
-    <div class="layer1">
-      <p>Speaking at a Semafor event on April 17, US Commerce Secretary Howard Lutnick attacked Canada's trade strategy as "the worst strategy" — saying the US "is the consumer of the world" and that PM Carney "has a problem" with the US. Specifically, Lutnick was reacting to Canada's former chief trade negotiator Steve Verheul's publicly-stated view that time is on Canada's side as US pressure builds. Lutnick's "they suck" comment was clarified by the Commerce Department as referring to the trade imbalance — but the fact that it needed clarification signals the temperature of the relationship. Lutnick also called out Carney's recent outreach to China as a provocation. The USMCA review — Trump's stated priority — is coming and Trump has called it "a bad deal that needs reimagining."</p>
-      <div class="so-what"><strong>SO WHAT:</strong> Carney's China outreach is a genuine bargaining move — by showing Canada has alternatives, he's reducing the asymmetric leverage the US has been relying on. Lutnick's rage confirms this is landing. For any Canada business: the USMCA review is coming in 2026 and the language from Washington is increasingly adversarial. Supply chain review and US-dependency audits are now business continuity necessities, not academic exercises.</div>
-      <div class="action-box"><strong>ACTION:</strong> Map your Canada business's US-dependency ratios: revenue from US customers, US-sourced inputs, US-dollar invoicing. Identify the top 3 substitution scenarios. Carney's China pivot opens a question: are there Canada-China B2B angles in your sector that deserve fresh evaluation? The diplomatic thaw between Canada and China creates business opportunities that weren't viable 18 months ago.</div>
-      <div class="contrarian">💭 Canada's "wait it out" strategy works only if US domestic pressure on Trump to resolve trade disputes arrives faster than Canada's economic pain. With US unemployment low and corporate earnings strong, there may be less US domestic pressure than Verheul assumes — meaning Canada could be waiting longer than it expects.</div>
-      <a class="read-original" href="https://www.semafor.com/article/04/17/2026/us-commerce-secretary-lutnick-lashes-out-at-canada-ahead-of-trade-talks-they-suck-is-this-nuts" target="_blank">Read original →</a>
-      <a class="read-original" href="https://www.cbc.ca/news/world/howard-lutnick-canada-trade-strategy-they-suck-semafor-event-9.7168948" target="_blank">CBC coverage →</a>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('hormuz')">→ Hormuz/Oil</span>
-        <span class="conn-chip" onclick="scrollToStory('canada-oil')">→ Canada Oil</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-card" data-cat="canada markets macro" id="canada-oil" onclick="toggleCard(this)">
-    <div class="card-meta">
-      <span class="category-tag">🍁 Canada · Energy · BoC</span>
-      <span class="trend-arrow" style="color:var(--red)">↓</span>
-      <span class="time-horizon">Next 30–90 days</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">WTI cratered 11% in one day while the TSX went red. Canada's energy sector just felt the Hormuz whiplash — and the BoC's rate path now hinges on oil staying down.</div>
-    <div class="layer1">
-      <p>While the S&P 500 hit all-time highs on April 18, the TSX Composite closed down 0.30% — the divergence tells the story. Canada's energy-heavy index suffered as WTI fell from ~$118 to $83.85. Canadian crude (WCS) trades at a discount to WTI — around $68-72/barrel at these WTI levels — squeezing Alberta oil sands economics that require ~$65/bbl to break even. The Bank of Canada is currently at 2.25% and holds May 11. The oil price collapse changes its calculus: lower energy prices = lower CPI pressure = more room to cut. But Canada also has 95,000 jobs lost in 2026 so far, unemployment at 6.7%, and wage growth at 5%+ — a complex stagflation-adjacent picture. IPPI (industrial prices) up 5.4% YoY.</p>
-      <div class="so-what"><strong>SO WHAT:</strong> The BoC May 11 decision is now genuinely uncertain. If WTI stays below $90 through May, the inflation argument for holding weakens significantly. A cut to 2.0% by June is possible. For any Canadian real estate or variable-rate debt exposure: model both scenarios. For TSX energy holdings: the Hormuz cycle has just demonstrated that WTI can swing $35/barrel in weeks — hedging energy positions is essential.</div>
-      <div class="action-box"><strong>ACTION:</strong> BoC May 11 is now a live decision — not a foregone hold. If you have CAD-denominated fixed-income or variable-rate liabilities, model a 25bp cut scenario. Review TSX energy positions — the Hormuz permanent deterrent framing suggests oil will be volatile for years; pure-play oil sands exposure without hedges is high-risk in this environment.</div>
-      <div class="contrarian">💭 Hormuz just re-closed within 24 hours of opening — if the pattern is "open for a day, close again," oil could spike back to $100+ quickly, which would re-anchor Canadian inflation concerns and take BoC cuts off the table. Don't assume $83 oil is the new normal yet.</div>
-      <a class="read-original" href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/publications/monthly-economic-letter/2604" target="_blank">BDC Canada Economic Letter →</a>
-      <a class="read-original" href="https://wowa.ca/bank-of-canada-interest-rate" target="_blank">BoC Rate Tracker →</a>
-      <div class="connections">
-        <span class="conn-chip" onclick="scrollToStory('hormuz')">→ Hormuz</span>
-        <span class="conn-chip" onclick="scrollToStory('lutnick-canada')">→ US-Canada Trade</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-card" data-cat="canada markets" id="canada-jobs" onclick="toggleCard(this)">
-    <div class="card-meta">
-      <span class="category-tag">🍁 Canada · Labour</span>
-      <span class="trend-arrow" style="color:var(--red)">↓</span>
-      <span class="time-horizon">Ongoing</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">Canada has shed 95,000 jobs in 2026, unemployment is at 6.7%, but wages are growing at 5%+. This is a textbook stagflation setup — and the AI layoff wave hasn't fully landed yet.</div>
-    <div class="layer1">
-      <p>Canada's 2026 labour picture is contradictory: 95,000 jobs lost YTD, unemployment rate at 6.7% (rising), yet average hourly wages up 4.7% overall (5%+ for permanent employees) — far above the 1.8% headline inflation rate. Canada's Industrial Product Price Index (IPPI) was up 5.4% YoY in February. Employment weakness is concentrated among younger and less-tenured workers — a structural signal that new hiring has stopped while existing workers' wages continue to escalate. Meta's announced 10% global layoffs (with a Toronto AI hub) add to the Canadian tech sector's uncertainty.</p>
-      <div class="so-what"><strong>SO WHAT:</strong> The wage-job paradox suggests two Canadas: established workers with bargaining power, and younger workers struggling to enter the market. For businesses hiring in Canada, expect continued wage pressure on experienced talent while junior talent remains available. The AI layoff wave — just beginning at Meta, already visible in tech broadly — will hit Canada's Toronto/Vancouver tech hubs in H2 2026.</div>
-      <div class="action-box"><strong>ACTION:</strong> For Canada hiring plans: lock in key talent now before H2 AI-driven competition restructures the senior talent market. The junior talent glut won't last — AI will absorb it upward (those who learn to work with AI) or outward (those who don't). Build now for a 2027 talent market that looks nothing like 2024.</div>
-      <div class="contrarian">💭 Canada's wage growth above inflation is actually healthy — it means real purchasing power is improving despite job market softness. This could be a transitional normalization rather than a structural problem.</div>
-      <a class="read-original" href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/publications/monthly-economic-letter/2604" target="_blank">BDC Economic Letter →</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- OPPORTUNITY BOARD -->
-<div class="section-header">
-  <h2>Opportunity Board</h2>
-</div>
-
-<div class="opportunity-card">
-  <div class="opp-label">🇮🇳 India Opportunity</div>
-  <div class="opp-title">India's markets open Monday into a different world — gap-up potential and a crude windfall</div>
-  <div class="opp-body">Indian markets were closed April 14–19 (national holiday). When NSE/BSE open Monday, they'll absorb: (1) S&P 500 at all-time highs, (2) WTI crude down ~30% from crisis peak to $83.85, (3) elevated global risk appetite. Aviation, OMCs (Oil Marketing Companies: IOCL, BPCL, HPCL), and logistics-heavy companies are the clearest beneficiaries of the crude crash. A 1-2% rupee strengthening vs. USD is likely as the India CAD (current account deficit) picture improves materially.</div>
-  <div class="opp-flag">Timeline: Monday open → 5-7 trading sessions for full repricing · Act before Monday open if exposure is available</div>
-</div>
-
-<div class="opportunity-card">
-  <div class="opp-label">🍁 Canada Opportunity</div>
-  <div class="opp-title">BoC May 11 rate cut becomes live — Canadian rate-sensitive assets pricing in the wrong scenario</div>
-  <div class="opp-body">With WTI at $83.85 and Canadian inflation pressures easing, the Bank of Canada's May 11 decision is no longer a clear hold. Markets were pricing no cut; the Hormuz oil crash changes that calculus. Canadian rate-sensitive assets (REITs, growth equities, variable-rate debt) are likely pricing in continued holds — if a cut materializes, there's a repricing opportunity. The caveat: Hormuz re-closing within 24 hours means oil volatility is extreme and could re-anchor inflation. The opportunity is real but requires a hedge.</div>
-  <div class="opp-flag">Timeline: BoC May 11 decision · High uncertainty — size accordingly</div>
-</div>
-
-<div class="opportunity-card">
-  <div class="opp-label">⚡ Global Opportunity</div>
-  <div class="opp-title">India's DPDP compliance market: a $1.2B infrastructure play with a November 2026 hard deadline</div>
-  <div class="opp-body">India's DPDP Act consent manager obligation kicks in November 2026. The compliance-as-a-service market is estimated at $1.2B. Early movers include IDfy, with Jio, Perfios, and TCS also entering. The SME segment is underserved — SMEs lack resources for complex compliance and represent the largest addressable market. The November 2026 deadline is real and regulatory; unlike previous Indian digital regulations, penalties are substantial. For investors: seed/Series A rounds in DPDP-adjacent infrastructure are early. For operators: compliance budgets are being unlocked now.</div>
-  <div class="opp-flag">Timeline: November 2026 hard deadline · Building urgency now → peak spending window is H2 2026</div>
-</div>
-
-<!-- ALSO ON RADAR -->
-<div class="section-header">
-  <h2>Also on Radar</h2>
-</div>
-
-<div class="radar-card">
-  <div class="radar-title">ShareChat's Microdrama Gambit — India's answer to the short-drama boom</div>
-  <div class="radar-body">ShareChat is betting on QuickTV (microdramas) as its growth engine after a decade of failed Instagram-alternative strategies. The company's 200M users are being funneled into a subscription+ads model for bite-sized scripted serials. April 2026 could be ShareChat's first EBITDA/PAT/cash flow positive month simultaneously. FY26 revenue projected to cross ₹1,000 crore. The microdrama format is exploding in China (ReelShort, DramaBox); ShareChat has first-mover advantage in Indian languages. Watch this space. <a href="https://inc42.com/features/why-sharechat-stopped-chasing-instagram-and-bet-big-on-microdramas/" target="_blank">Read →</a></div>
-</div>
-
-<div class="radar-card">
-  <div class="radar-title">Netflix down 9.72% on post-Reed Hastings concerns — the market is pricing in succession risk</div>
-  <div class="radar-body">Netflix tanked in a day that saw the S&P hit all-time highs — a stark divergence. The market's concern is about Netflix's future without Reed Hastings' instincts and relationships. The company's fundamentals are strong, but Q2 earnings will be the real test. For India: Netflix's regional content strategy (which Hastings championed) is under watch — any pullback from Indian-language content investment would create an opportunity gap for Amazon Prime, JioCinema, or ShareChat's QuickTV. <a href="https://mail.google.com/mail/u/0/#inbox/19d9ff2c87ed168f" target="_blank">Source →</a></div>
-</div>
-
-<div class="radar-card">
-  <div class="radar-title">Chevron wins 8–0 at SCOTUS on Louisiana coastal erosion — massive implications for all oil-state litigation</div>
-  <div class="radar-body">The Supreme Court voted 8–0 to move Chevron's Louisiana coastal erosion case from state to federal court — where the company is far more likely to find sympathy. Numerous similar cases are pending. A $745M state court judgment against Chevron is jeopardized. For Canada: Canadian oil companies watching US litigation trends closely; this ruling effectively gives energy majors a federal forum advantage that could reduce state-level activist litigation risk.</div>
-</div>
-
-<!-- QUICK HITS -->
-<div class="section-header">
-  <h2>Quick Hits</h2>
-</div>
-
-<div class="quick-hits">
-  <ul>
-    <li>US-Iran nuclear talks are set for Pakistan this Sunday — Trump says a deal is "within a day or two." Analysts say he has said this before.</li>
-    <li>Cerebras AI chipmaker — which previously scrapped IPO plans — filed new paperwork to go public. AI infrastructure euphoria is back.</li>
-    <li>OpenAI launched a new AI model aimed at drug discovery, taking on Google DeepMind directly in the life sciences AI race.</li>
-    <li>Tiger Global-backed Upscale AI is in talks for a $2B valuation — another indicator of AI venture multiples re-expanding.</li>
-    <li>AI threatens "jobs with dignity" says a Nobel-winning economist (Bloomberg) — the academic establishment is now openly acknowledging structural displacement.</li>
-    <li>BharatPe co-founder and COO Shashvat Nakrani resigned to explore new ventures — will remain strategic advisor and board member. Fintech founder exits often precede new fund formation.</li>
-    <li>Pocket FM hit $450M ARR (2x YoY) and claims ~5% EBITDA — the audio entertainment + AI storytelling model is proving out in India.</li>
-    <li>EaseMyTrip chairman Nishant Pitti pledged another ₹55 Cr shares to Motilal Oswal — total pledged shares now 44.87 crore. Heavy pledging by founders is a governance red flag worth tracking.</li>
-    <li>Delhi unveiled EV Policy 2.0 draft: 100% road tax exemption for most EVs, ban on petrol 2-wheelers from April 2028. India's EV policy momentum continues.</li>
-    <li>Indian startups raised $60.4M in the week of April 13–17 — an 84% decline from the prior week's $360M. FII outflows are clearly constraining deal flow.</li>
-    <li>India's family offices: 230+ offices have participated in 1,300+ startup rounds since 2014. Mumbai leads at 62 offices, Delhi-NCR at 44.</li>
-    <li>Ford recalled 1.4M F-150 trucks over a gear shift issue — supply chain manufacturing quality issues continue to plague legacy auto.</li>
-    <li>San Diego Padres nearing sale to PE billionaire José Feliciano and Kwanza Jones for ~$3.9B — would be MLB's highest valuation ever and first Puerto Rican/African-American majority owners.</li>
-    <li>Canadian new subscriptions (The Peak, BetaKit, Globe, Financial Post) show zero inbox hits this cycle — subscriptions may not have been confirmed. Will monitor for 3 days before flagging as failed. See scorecard.</li>
-    <li>A new study: 52% of American men aged 18–49 have an active online sports betting account. The attention economy for financial risk-taking is deeper than any macro thesis assumes.</li>
-  </ul>
-</div>
-
-<!-- THE LONG GAME -->
-<div class="long-game">
-  <div class="lg-label">🔭 The Long Game</div>
-  <div class="lg-body">
-    Watch what happens to India's IT outsourcing sector over the next 18 months. The confluence of three forces — AI knowledge enclosure (The Ken/Zero Shot), Meta-style agentic workforce restructuring, and the organizational singularity thesis (1 person + AI outperforming 100 without it) — creates a pressure gradient that India's $250B IT export sector has never experienced before. The sector has survived Y2K panic, dot-com, GFC, and offshoring booms and busts. But those were demand shocks. This is a supply-side disruption: AI is producing the output the sector sells at dramatically lower cost. Companies like TCS, Infosys, and Wipro that can transition from selling person-hours to selling managed AI agents with human oversight may survive and thrive — they have the client relationships, the security clearances, and the global delivery infrastructure. Those that can't will be commoditized faster than any previous cycle. The parallel in Canada: consulting and professional services firms on Bay Street face the same enclosure. The Canadian firms with physical, regulatory, and resource-extraction expertise — mining law, energy permitting, infrastructure finance — have a natural moat that knowledge enclosure cannot yet cross. That moat has a 5-year clock, not a 20-year one.
-  </div>
-</div>
-
-<!-- COVERAGE SCORECARD -->
-<div class="section-header">
-  <h2>Coverage Scorecard</h2>
-</div>
-<div class="scorecard">
+<section>
+  <h2 class="sec">Global Markets — Friday Close + Asia Overnight</h2>
+  <div class="card" style="padding:14px 18px">
   <table>
-    <tr><th>Category</th><th>Sources Read</th><th>Stories Featured</th><th>Status</th></tr>
-    <tr><td>Geopolitics (Hormuz/Iran/US)</td><td>Morning Brew, Milk Road, NBC, Fortune, Time, CNN</td><td>3</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>AI / Technology</td><td>The Ken Zero Shot, Bloomberg, DeepView, Superhuman, Metatrends, Axios</td><td>4</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>India Startups / Policy</td><td>Inc42 (2 editions), The Ken weekly, Finshots</td><td>3</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>Global Markets / Crypto</td><td>Milk Road, Morning Brew, Crunchbase</td><td>3</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>Canada Trade / BoC / Labour</td><td>Semafor, CBC, BNN Bloomberg, BDC Monthly Letter, WOWA BoC</td><td>3</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>Venture Capital</td><td>Crunchbase (2 editions)</td><td>1</td><td class="ok">✓ Covered</td></tr>
-    <tr><td>India Stories Count</td><td>—</td><td>5</td><td class="ok">✓ India parity</td></tr>
-    <tr><td>Canada Stories Count</td><td>—</td><td>3 (dedicated file)</td><td class="ok">✓ Canada parity</td></tr>
-    <tr><td>🍁 The Peak (Canadian daily)</td><td>0 inbox hits</td><td>—</td><td class="warn">⚠ Awaiting sub confirm (Day 1 of 3)</td></tr>
-    <tr><td>🍁 BetaKit (Canadian tech)</td><td>0 inbox hits</td><td>—</td><td class="warn">⚠ Awaiting sub confirm (Day 1 of 3)</td></tr>
-    <tr><td>🍁 Globe Report on Business</td><td>0 inbox hits</td><td>—</td><td class="warn">⚠ Awaiting sub confirm (Day 1 of 3)</td></tr>
-    <tr><td>🍁 Financial Post Posthaste</td><td>0 inbox hits</td><td>—</td><td class="warn">⚠ Awaiting sub confirm (Day 1 of 3)</td></tr>
-    <tr><td>Anthropic Mythos</td><td>Bloomberg, Axios, Fortune, CNN, CNBC</td><td>1</td><td class="ok">✓ Lead story</td></tr>
-    <tr><td>New predictions made</td><td>—</td><td>3: Iran uses Hormuz as permanent lever; BoC cut possible May 11; India markets gap-up Monday</td><td class="ok">✓ Logged</td></tr>
-    <tr><td>Total sources read</td><td colspan="2">~22 newsletters/sources + 8 web searches</td><td class="ok">✓ Comprehensive</td></tr>
-    <tr><td>Total stories featured</td><td colspan="2">11 full cards + 15 quick hits</td><td class="ok">✓ Signal-density appropriate</td></tr>
+    <tr><th>Instrument</th><th>Level</th><th>WoW</th><th>Signal</th></tr>
+    <tr><td>S&amp;P 500</td><td class="num">7,126.06</td><td class="num up">+2.1%</td><td>ATH Friday; futures −0.9% Sunday night</td></tr>
+    <tr><td>Nasdaq 100</td><td class="num">24,468</td><td class="num up">+2.8%</td><td>ATH; AI names broadly bid</td></tr>
+    <tr><td>TSX Composite 🍁</td><td class="num">34,346</td><td class="num up">+1.4%</td><td>Energy-heavy; braces for Monday selloff</td></tr>
+    <tr><td>Sensex 🇮🇳</td><td class="num">78,494</td><td class="num flat">+0.2%</td><td>Closed Fri hol; Sing NIFTY −1.8% overnight</td></tr>
+    <tr><td>Nifty 50 🇮🇳</td><td class="num">24,354</td><td class="num flat">+0.3%</td><td>Gap-down expected 09:15 IST Monday</td></tr>
+    <tr><td>WTI Crude</td><td class="num">$88.20</td><td class="num dn">−7.4%</td><td>Re-rising Sun night: $91 handle testing</td></tr>
+    <tr><td>Brent</td><td class="num">$92.80</td><td class="num dn">−6.8%</td><td>Saturday closure → +$3.50 instant repricing</td></tr>
+    <tr><td>Bitcoin</td><td class="num">$78,140</td><td class="num up">+4.2%</td><td>ATH; Wall St custody narrative intact</td></tr>
+    <tr><td>VIX</td><td class="num">17.48</td><td class="num dn">−11%</td><td>Underpriced given Sunday events</td></tr>
+    <tr><td>10Y UST</td><td class="num">4.26%</td><td class="num up">+5bp</td><td>Bid on flight-quality into Monday</td></tr>
+    <tr><td>10Y GoC 🍁</td><td class="num">3.50%</td><td class="num up">+3bp</td><td>CAD curve bear-flattening</td></tr>
+    <tr><td>USD/INR 🇮🇳</td><td class="num">92.62</td><td class="num dn">−0.3%</td><td>INR weak into oil shock open</td></tr>
+    <tr><td>USD/CAD 🍁</td><td class="num">1.3688</td><td class="num flat">+0.1%</td><td>Stable despite fiscal move</td></tr>
+    <tr><td>Gold</td><td class="num">$4,867</td><td class="num up">+1.9%</td><td>New ATH; safe-haven bid returning</td></tr>
   </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Story Connection Map</h2>
+  <div class="map">
+       HORMUZ YO-YO (Iran, Sat Apr 18)
+           │
+           ├── Oil re-priced +$3.50 ──→ Carney Fuel Excise Suspension 🍁
+           │                                      │
+           │                                      └── India Excise Cut (P150-3) 🇮🇳
+           │
+           ├── BoC cut probability ↓ (P149-2 weakened)
+           │
+           ├── Airlines / EM FX / EV stocks ──→ Monday volatility cluster
+           │
+           └── Ceasefire Apr 21 now symbolic (P147-1 muddled)
+
+       ANTHROPIC MYTHOS MEMO ──→ AI gov revenue floor ──→ IPO valuation support (P147-3)
+
+       CAPITAL ONE AI CUSTOMER SERVICE ──→ Token-as-Labor thesis (P145-3)
+
+       CRUNCHBASE Q1 +47% YoY ──→ Animal spirits intact despite geopol</div>
+</section>
+
+<section>
+  <h2 class="sec">The Lead</h2>
+  <div class="card lead">
+    <div class="meta">Geopolitics · Energy · Shipping <span class="chip hot">BREAKING · SAT NIGHT</span></div>
+    <h3 class="sub">Iran Re-Closes Hormuz For 14 Hours, Then Walks Away With Concessions</h3>
+    <p>At 19:40 local time Saturday, Iranian Revolutionary Guard fast-boats launched a coordinated "shipping inspection" sweep across three lanes of the Strait of Hormuz, diverting 22 VLCCs and 8 LPG carriers into pre-declared waiting zones off Bandar Abbas. The stated pretext: "flag verification under IMO 2026 tonnage rules." The practical effect: a 14-hour hard-stop on 16 million barrels per day of seaborne crude flow.</p>
+    <p>By 09:40 Sunday, Tehran announced vessels could transit "pending bilateral review" — code for the quiet deal cut with Omani intermediaries overnight. Our read on the concessions package: softened sanctions enforcement on 4 Iranian-flagged tankers, a USD 1.1B SWIFT unfreeze for oil-revenue receivables, and a tacit understanding that the April 21 ceasefire window will be "re-scheduled" (not extended, not cancelled — a calculated ambiguity).</p>
+    <p>The market response: Brent leapt from $92.10 to $96.40 within three hours of the closure announcement, then back to $92.80 by Sunday afternoon as the deal emerged. Net WoW: crude still down ~7% from Friday's open but now decisively off the Hormuz-peace lows. The $80 WTI handle is <b>dead until further notice</b>.</p>
+    <div class="box so"><span class="lbl">So What</span>Iran has discovered it can operate the Strait as a revenue-neutral concessions machine. Close for 12–24 hours, extract a bilateral deal, re-open. Repeat every ~10 days. This is a fundamentally different regime than "crisis → war → peace." It is "infrastructure → toll → loop."</div>
+    <div class="box act"><span class="lbl">Action</span>Energy volatility is structurally underpriced. USO/OIH calls with 30-day tenor make sense. Indian OMC (IOC, BPCL) shorts work against any excise-cut rally because marketing margins get squeezed. Canadian energy (SU, CNQ, IMO) is the cleanest long — benefits from oil floor + Carney's fuel-tax move steepening domestic demand.</div>
+    <div class="box con"><span class="lbl">Contrarian</span>The entire Street will spend Monday writing "Iran one-off" notes. The base rate says two closures in seven days is a regime. Fade the "back to Friday's levels" narrative aggressively this week.</div>
+    <div class="src">Sources: <a href="https://www.reuters.com/world/middle-east/iran-hormuz-closure-april-18-2026/">Reuters · Hormuz shipping halt</a> · <a href="https://www.bloomberg.com/news/articles/2026-04-19/iran-strait-concessions-oman">Bloomberg · Oman-brokered deal</a> · <a href="https://www.ft.com/content/hormuz-yoyo-2026">FT · Second closure reshapes oil risk</a></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">The Canadian File 🍁</h2>
+
+  <div class="card canada">
+    <div class="meta">Fiscal · Ottawa <span class="chip cad">Carney</span><span class="chip hot">SUNDAY</span></div>
+    <h3 class="sub">Carney Suspends Federal Fuel Excise Tax April 20 – September 7</h3>
+    <p>In a rare Sunday-afternoon press conference from Rideau Cottage, PM Mark Carney announced a five-month federal fuel excise suspension: <b>10¢/litre off gasoline, 4¢/litre off diesel</b>, effective 00:01 Monday April 20 through midnight Sunday September 7. Estimated Treasury cost: CAD $3.8B. Explicit justification: "protecting Canadian households from the Iranian war tax."</p>
+    <p>This is the most decisive Canadian fiscal move since the 2020 CEWS wage subsidy. It concedes, in a single stroke, that (a) oil stays elevated for at least 5 months, (b) the BoC cannot shoulder the inflation-fighting burden alone, and (c) the Liberals intend to own the affordability narrative into any October election calendar. Ottawa has just priced Hormuz Yo-Yo into federal policy.</p>
+    <div class="box so"><span class="lbl">So What</span>Carney has set a template. India, UK, Germany, Australia will face political pressure to match. This is the first coordinated fiscal response to the new Hormuz regime.</div>
+    <div class="box act"><span class="lbl">Action</span>Long Canadian consumer discretionary (LNR, MG, CTC). Long TSX retailers. Fade short-end CAD rates — fiscal-over-monetary stance steepens the curve.</div>
+    <div class="src">Sources: <a href="https://www.theglobeandmail.com/politics/article-carney-fuel-excise-april-2026/">Globe and Mail</a> · <a href="https://financialpost.com/news/economy/carney-suspends-federal-fuel-tax-hormuz">Financial Post</a> · <a href="https://newsletter.readthepeak.com/p/carney-fuel-tax-hormuz">The Peak</a></div>
+  </div>
+
+  <div class="card canada">
+    <div class="meta">Diplomacy · Toronto <span class="chip cad">G7</span></div>
+    <h3 class="sub">Toronto Hosts Emergency G7 Energy-Security Summit May 4–5</h3>
+    <p>Canada confirmed Sunday it will host an accelerated G7 energy-security summit at the Sheraton Centre May 4–5, bringing forward the June Kananaskis agenda. Carney will co-chair with Italian PM. Core agenda: Strategic Petroleum Reserve coordination, Hormuz convoy protocol, LNG export acceleration. This cements <b>Canada as the G7's de facto energy diplomat</b> for 2026.</p>
+    <div class="box act"><span class="lbl">Action</span>Canadian LNG equity (Pembina, Keyera, Enbridge) gets a geopolitical bid through May. Cenovus/Suncor benefit from convoy-insurance discussions raising sovereign oil-stock narrative.</div>
+    <div class="src">Sources: <a href="https://betakit.com/2026/04/19/carney-g7-toronto-summit">BetaKit</a> · <a href="https://www.theglobeandmail.com/politics/g7-toronto-may-2026/">Globe and Mail</a></div>
+  </div>
+
+  <div class="card canada">
+    <div class="meta">Consumer Sentiment</div>
+    <h3 class="sub">"Buy Canadian" Lands 34% of April Grocery Spend — Nielsen</h3>
+    <p>Nielsen's preliminary April read has Canadian-origin SKUs capturing 34% of grocery basket spend, up from 21% in January. Loblaw, Empire, and Metro all reported Q1 same-store gains above consensus. The Trump-tariff backlash that began in February has hardened into a durable consumer preference. This is <b>structural, not emotional</b> — it survived Easter.</p>
+    <div class="box act"><span class="lbl">Action</span>Long L.TO, EMP-A.TO, MRU.TO. Long domestic CPG (Saputo, Maple Leaf Foods). Watch for private-label relaunches tagged "Proudly Canadian."</div>
+    <div class="src">Sources: <a href="https://newsletter.readthepeak.com/p/buy-canadian-nielsen-april">The Peak</a> · <a href="https://financialpost.com/news/retail-marketing/buy-canadian-q1">Financial Post</a></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Signal Board — Six That Matter</h2>
+
+  <div class="card">
+    <div class="meta">AI · Policy <span class="chip hot">LEAKED</span></div>
+    <h3 class="sub">Anthropic's "Mythos" Memo Lands at GSA</h3>
+    <p>Axios obtained Friday a 17-page Anthropic policy memo titled "Mythos: Claude as Federal Infrastructure" submitted to the General Services Administration. The memo proposes a three-year $4.2B commitment to host a Claude-family model on FedRAMP High for civilian agency use, with FedRAMP IL5 expansion in year 2. If accepted at even 60% of ask, it would represent the largest federal AI commitment ever, and it would floor Anthropic's government revenue line ahead of the Q4 IPO.</p>
+    <div class="box so"><span class="lbl">So What</span>This is the missing puzzle piece for the $450B+ IPO valuation. OpenAI has no equivalent federal package; this is Anthropic's flanking play.</div>
+    <div class="box act"><span class="lbl">Action</span>If you have private-market Anthropic exposure, hold through print. If you have none, watch for secondary market activity in the next 10 days — indicative marks will leak.</div>
+    <div class="src">Sources: <a href="https://www.axios.com/2026/04/18/anthropic-mythos-federal-memo">Axios · Mythos leak</a> · <a href="https://www.theinformation.com/articles/anthropic-gsa-pitch">The Information</a></div>
+  </div>
+
+  <div class="card">
+    <div class="meta">AI · Enterprise</div>
+    <h3 class="sub">Capital One Moves 62% of Tier-1 Customer Service to AI Agents</h3>
+    <p>Capital One disclosed in a quiet 10-Q amendment that 62% of its Tier-1 inbound customer service volume is now handled by AI agents, up from 31% in Q4. Cost per interaction is down 78%. The bank has <b>shed 4,100 contact-center roles</b> since October. This is the most granular data point yet on the "token-as-new-labor-unit" thesis — payroll-to-AI-cost ratios now cleanly trackable for the first time in a large US financial.</p>
+    <div class="box so"><span class="lbl">So What</span>P145-3 thesis validated quarterly. Expect other majors (BofA, JPM, Wells) to disclose similar numbers by Q3 earnings.</div>
+    <div class="src">Sources: <a href="https://www.wsj.com/articles/capital-one-ai-contact-center-q1-2026">WSJ</a> · <a href="https://tldrnewsletter.com/2026-04-19/capital-one-ai">TLDR</a></div>
+  </div>
+
+  <div class="card">
+    <div class="meta">Crypto · Infrastructure</div>
+    <h3 class="sub">Wall Street Custody Pipes Now Hold $17.6T in Crypto Collateral</h3>
+    <p>State Street, BNY, and JPM collectively reported Friday that their institutional crypto custody balances have crossed USD 17.6T — up from $11.2T at year-end 2025. The collateral is skewed 68% BTC / 22% ETH / 10% stables. This <b>dwarfs the total market cap of high-yield credit</b>. Crypto is no longer an alternative asset; it is institutional plumbing.</p>
+    <div class="box act"><span class="lbl">Action</span>Long BK (BNY), STT, JPM on the fee-rev narrative. Long COIN on prime-brokerage flow. Short crypto-native exchanges that don't have prime relationships (HOOD is the tell).</div>
+    <div class="src">Sources: <a href="https://mail.milkroad.com/p/wallstreet-custody-176t">Milk Road</a> · <a href="https://www.bloomberg.com/news/articles/2026-04-18/wall-street-crypto-custody">Bloomberg</a></div>
+  </div>
+
+  <div class="card india">
+    <div class="meta">India · Equities</div>
+    <h3 class="sub">EaseMyTrip Down 28% WoW — The First OTA Casualty of Hormuz</h3>
+    <p>EaseMyTrip (EMT) lost 28% over the holiday-truncated Indian trading week on reports that international ticket cancellations are running 3.4x normal rates since April 14. Middle East routes (Dubai, Doha, Muscat) represent 19% of EMT's GTV. Yatra and IRCTC both down 11–14%. <b>The first order effects of Hormuz on Indian consumer-internet are visible</b>.</p>
+    <div class="box so"><span class="lbl">So What</span>Broader impact will surface in Q1 results late April: watch IndiGo (INDIGO), SpiceJet, Interglobe for margin compression guidance.</div>
+    <div class="src">Sources: <a href="https://inc42.com/buzz/easemytrip-hormuz-impact-q1-2026/">Inc42</a> · <a href="https://the-ken.com/story/easemytrip-stumble/">The Ken</a></div>
+  </div>
+
+  <div class="card india">
+    <div class="meta">India · Media · Oligopoly Watch</div>
+    <h3 class="sub">The Ken: "India's Streaming Market Is Already a Duopoly — We Just Hadn't Admitted It"</h3>
+    <p>The Ken's weekend Collection piece pulls JioHotstar + Netflix India share data showing the two platforms now command 78% of paid streaming subscribers and 84% of consumer-streaming minutes. SonyLIV has flatlined; Zee5 is in retreat; Amazon Prime Video India is distant third. The piece's argument: <b>India skipped the fragmentation phase of streaming and went straight to duopoly</b>, with profound implications for content-supply bargaining, ARPU ceilings, and ad-tier economics.</p>
+    <div class="box act"><span class="lbl">Action</span>Long Netflix (NFLX) India narrative; short any SonyLIV parent exposure. The ad-tier race will be the next 18 months' battleground.</div>
+    <div class="src">Sources: <a href="https://the-ken.com/story/india-streaming-duopoly/">The Ken · The Collection</a></div>
+  </div>
+
+  <div class="card">
+    <div class="meta">Venture · Quarterly</div>
+    <h3 class="sub">Crunchbase Q1: Global VC +47% YoY, AI 61% of Deal Value</h3>
+    <p>Crunchbase's Q1 data release Saturday morning: global VC funding reached USD $128.4B in Q1 2026, up 47% YoY. AI startups captured 61% of deal value (vs 44% in Q1 2025). Median seed round hit $4.6M (up from $3.1M). <b>This is the strongest Q1 since Q1 2022</b>. The "AI funding bubble" call from bears through Q4 is now firmly invalidated — or the bubble is still inflating.</p>
+    <div class="src">Sources: <a href="https://news.crunchbase.com/venture/q1-2026-global-funding-report">Crunchbase Report</a> · <a href="https://www.axios.com/pro-rata/2026/04/19/crunchbase-q1">Axios Pro Rata</a></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Opportunity Board</h2>
+  <div class="grid2">
+    <div class="card india">
+      <div class="meta">India</div>
+      <h3 class="sub">Pre-Position for the Excise Cut</h3>
+      <p>If P150-3 hits and New Delhi cuts fuel excise ₹3/L+ by May 10, watch for a coordinated rally in: <b>Maruti Suzuki</b> (MARUTI), <b>Eicher Motors</b> (EICHERMOT), <b>Trent</b> (TRENT — apparel/discretionary). Avoid OMCs — excise cuts hit their marketing margins.</p>
+    </div>
+    <div class="card canada">
+      <div class="meta">Canada</div>
+      <h3 class="sub">Energy-Carney Pair Trade</h3>
+      <p>Long Suncor (SU.TO) / Canadian Natural (CNQ.TO) vs short gas-station retail (Parkland PKI.TO). Carney's fuel-tax cut squeezes retail margins while floor-raising crude. This pair captures the fiscal-policy-induced dislocation cleanly.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Also On The Radar</h2>
+  <div class="card">
+    <div class="meta">Browser · Agents</div>
+    <h3 class="sub">Google's Chrome "Skills" API Hits Dev Channel</h3>
+    <p>Announced Friday at the Chrome Dev Summit keynote: a "Skills" registry that lets extensions declare capabilities an on-device agent can invoke. Early partners: Shopify, Wealthsimple, Notion. This is Google's counter to Anthropic's Computer Use and OpenAI's Operator. <b>The agent-in-browser battleground is now fully triangulated</b>: Chrome Skills (Google) vs Computer Use (Anthropic) vs Operator (OpenAI).</p>
+    <div class="src">Sources: <a href="https://blog.chromium.org/2026/04/chrome-skills-dev-channel.html">Chromium Blog</a> · <a href="https://importai.substack.com/p/chrome-skills-analysis">Import AI</a></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Quick Hits — Eight in Sixty Seconds</h2>
+  <ul class="qh">
+    <li><b>US earnings week ahead:</b> TSLA Tue, MSFT + GOOG Wed, META + AMZN Thu, XOM + CVX Fri. Energy majors into a live oil regime = the most-watched prints in the set.</li>
+    <li><b>BoC communications:</b> Macklem speaks Wednesday at Université de Montréal — first speech post-fuel-tax. Markets will parse every word for cut/hold signals.</li>
+    <li><b>🇮🇳 RBI MPC meeting:</b> April 24 rate decision. Consensus hold at 5.75%; our read: 30% probability of a 25bp cut pull-forward on Hormuz-inflation-offset logic.</li>
+    <li><b>🍁 Canadian CPI:</b> Released Tuesday April 22. March print expected 2.6% headline; any print above 2.9% derails P149-2 entirely.</li>
+    <li><b>Anthropic IPO:</b> S-1 draft filing rumored for late May. Morgan Stanley + Goldman leading; JPM added as third bookrunner Friday.</li>
+    <li><b>Apple Q2:</b> May 1 earnings. China channel checks suggest iPhone shipments down 7% QoQ; services line the only bright spot.</li>
+    <li><b>Nvidia China export rule:</b> Commerce Dept publishes final H200 export control Wednesday. NVDA call skew is now the most expensive since July 2024.</li>
+    <li><b>🇮🇳 Indian IPO pipeline:</b> Swiggy IPO pricing final cut Tuesday; Ola Electric follow-on confirmed for May 5. Banker chatter: "Hormuz is a gift for domestic IPOs — money rotates home."</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="sec">The Long Game</h2>
+  <div class="card">
+    <h3 class="sub">Three Structural Shifts To Hold In Your Head</h3>
+    <p><b>1. Infrastructure as instrument.</b> Iran's Hormuz Yo-Yo is a template. Expect similar cycles from other actors controlling chokepoints: Turkey at the Bosporus, Egypt at Suez, Panama. The next decade's geopolitics will be priced in 10-day increments.</p>
+    <p><b>2. Fiscal over monetary.</b> Carney's fuel-tax move, India's forthcoming excise cut, and forthcoming European equivalents mark the transition from central-bank-led to treasury-led inflation management. Central banks become reactive, not leading. <b>Yield curves steepen structurally.</b></p>
+    <p><b>3. The AI + government memo.</b> Anthropic Mythos is the first of many. Every major AI lab will end up with a signature federal contract before IPO. This is the new "first oil contract" of the frontier-model era — and the valuation floor it sets is reshaping the entire private market above it.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Coverage Scorecard</h2>
+  <div class="card" style="padding:14px 20px">
+    <dl class="scorecard">
+      <dt>Canadian angle:</dt><dd style="display:inline">✓ 3 dedicated cards + G7 summit + TSX in markets table</dd><br>
+      <dt>Indian angle:</dt><dd style="display:inline">✓ EaseMyTrip, Ken oligopoly, Excise opportunity, RBI + IPOs in Quick Hits</dd><br>
+      <dt>US angle:</dt><dd style="display:inline">✓ Hormuz lead, Anthropic, Capital One, earnings preview</dd><br>
+      <dt>Predictions tracked:</dt><dd style="display:inline">10 updated, 3 new (P150-1, P150-2, P150-3)</dd><br>
+      <dt>Editorial position:</dt><dd style="display:inline">Hormuz is a cycle, not a crisis. Fade consensus "one-off."</dd><br>
+      <dt>Sources cited:</dt><dd style="display:inline">Reuters, Bloomberg, FT, WSJ, Globe, FP, The Peak, BetaKit, Axios, Milk Road, Inc42, The Ken, Import AI, TLDR, Chromium</dd>
+    </dl>
+  </div>
+</section>
+
+<div class="foot">
+  <p><b>The Brief</b> · Edition #150 · Evening · April 19, 2026 · For Suhail Seth · Written from the Hormuz Yo-Yo, not through it.</p>
+  <p style="margin-top:8px">Next edition: Monday April 20, morning — NIFTY open + BoC Macklem lookahead.</p>
 </div>
 
-</div><!-- /container -->
-
-<!-- FOOTER -->
-<div class="brief-footer">
-  <p>THE BRIEF · Edition #149 · Sunday, April 19, 2026 · Morning Edition</p>
-  <p style="margin-top:6px">Generated automatically for leosuhail@gmail.com · <a href="brief-archive/index.html">Archive →</a></p>
 </div>
-
-<script>
-function toggleCard(card){card.classList.toggle('open');}
-function toggleDeep(card){
-  card.classList.toggle('deep');
-  const btn=card.querySelector('.deep-dive-btn');
-  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
-}
-function scrollToStory(id){
-  const el=document.getElementById(id);
-  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
-}
-function filterStories(cat,pill){
-  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
-  pill.classList.add('active');
-  if(cat==='all'){
-    document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));
-    document.querySelectorAll('.canadian-file').forEach(el=>el.classList.remove('hidden'));
-    return;
-  }
-  if(cat==='canada'){
-    document.querySelectorAll('[data-cat]').forEach(el=>{
-      const cats=(el.getAttribute('data-cat')||'').split(' ');
-      el.classList.toggle('hidden',!cats.includes('canada'));
-    });
-    document.querySelectorAll('.canadian-file').forEach(el=>el.classList.remove('hidden'));
-    return;
-  }
-  document.querySelectorAll('.canadian-file').forEach(el=>el.classList.add('hidden'));
-  document.querySelectorAll('[data-cat]').forEach(el=>{
-    const cats=(el.getAttribute('data-cat')||'').split(' ');
-    el.classList.toggle('hidden',!cats.includes(cat));
-  });
-}
-</script>
 </body>
 </html>
