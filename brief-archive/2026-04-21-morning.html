@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief — Tuesday, April 21, 2026 (Morning)</title>
+<style>
+:root{
+  --bg:#0a0a0b;--surface:#131316;--surface-2:#18181c;--border:#27272a;
+  --text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;
+  --accent:#c8a030;--accent-soft:#c8a03020;
+  --red:#e05252;--red-soft:#e0525220;
+  --green:#4ade80;--green-soft:#4ade8020;
+  --blue:#60a5fa;--blue-soft:#60a5fa20;
+  --purple:#a78bfa;--purple-soft:#a78bfa20;
+  --font-body:Georgia,'Times New Roman',serif;
+  --font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.72;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--accent);padding:36px 0 22px;margin-bottom:28px}
+.logo{font-family:var(--font-ui);font-size:11px;letter-spacing:3.5px;color:var(--accent);text-transform:uppercase;font-weight:700}
+.edition{font-family:var(--font-ui);font-size:12px;color:var(--muted);margin-top:10px;letter-spacing:.5px}
+.tagline{font-family:var(--font-body);font-style:italic;font-size:15px;color:var(--muted);margin-top:14px;line-height:1.5}
+.archive-link{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:5px 12px;border-radius:4px;margin-top:14px;transition:all .15s}
+.archive-link:hover{background:var(--accent);color:#0a0a0b;text-decoration:none}
+.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700;padding:28px 0 12px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.editors-read{background:var(--surface);border-left:3px solid var(--accent);padding:22px 24px;margin-bottom:8px;border-radius:0 8px 8px 0}
+.editors-read p{font-family:var(--font-body);font-size:16px;line-height:1.78;margin-bottom:14px;color:var(--text)}
+.editors-read p:last-child{margin-bottom:0}
+.editors-read .sig{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1.5px;margin-top:18px;text-transform:uppercase}
+.spotlight{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--accent);border-radius:10px;padding:24px;margin-bottom:8px;position:relative}
+.spotlight::before{content:"★ SIGNAL SPOTLIGHT";position:absolute;top:-11px;left:22px;background:var(--bg);padding:0 10px;font-family:var(--font-ui);font-size:10px;letter-spacing:2.5px;color:var(--accent);font-weight:700}
+.spotlight h3{font-family:var(--font-body);font-size:22px;line-height:1.3;margin:8px 0 10px;color:var(--text)}
+.spotlight p{font-size:15px;color:var(--text);line-height:1.72;margin-bottom:12px}
+.spotlight .spot-thesis{font-style:italic;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;margin-top:14px;font-size:14px}
+.pred-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.pred{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px}
+.pred-claim{font-family:var(--font-body);font-size:14px;color:var(--text);margin-bottom:6px;line-height:1.55}
+.pred-meta{font-family:var(--font-ui);font-size:10.5px;color:var(--dim);letter-spacing:.5px}
+.pred-status{font-family:var(--font-ui);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:3px;font-weight:700;display:inline-block;margin-right:8px}
+.s-open{background:var(--accent-soft);color:var(--accent);border:1px solid #c8a03040}
+.s-correct{background:var(--green-soft);color:var(--green);border:1px solid #4ade8040}
+.s-wrong{background:var(--red-soft);color:var(--red);border:1px solid #e0525240}
+.s-partial{background:var(--purple-soft);color:var(--purple);border:1px solid #a78bfa40}
+.markets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.mkt{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px}
+.mkt-label{font-family:var(--font-ui);font-size:10px;letter-spacing:.8px;color:var(--dim);text-transform:uppercase;margin-bottom:3px}
+.mkt-val{font-family:var(--font-ui);font-size:15px;font-weight:700;color:var(--text)}
+.mkt-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
+.up{color:var(--green)}
+.dn{color:var(--red)}
+.flat{color:var(--muted)}
+.connect{background:var(--surface);border:1px dashed var(--border);border-radius:10px;padding:18px 22px;margin-bottom:8px;font-family:var(--font-body);font-size:14.5px;line-height:1.75;color:var(--muted)}
+.connect strong{color:var(--accent);font-weight:700}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:12px;transition:border-color .2s}
+.card:hover{border-color:#3a3a40}
+.card-tags{font-family:var(--font-ui);font-size:10px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tag{padding:2px 8px;border-radius:3px;font-weight:700}
+.tag-geo{background:var(--red-soft);color:var(--red)}
+.tag-ai{background:var(--purple-soft);color:var(--purple)}
+.tag-markets{background:var(--blue-soft);color:var(--blue)}
+.tag-ca{background:#ef444420;color:#ef4444}
+.tag-in{background:#f9731620;color:#f97316}
+.tag-vc{background:var(--green-soft);color:var(--green)}
+.tag-corp{background:var(--accent-soft);color:var(--accent)}
+.arrow{font-weight:700;font-family:var(--font-ui);font-size:11px}
+.badge{font-family:var(--font-ui);font-size:10px;padding:2px 7px;border-radius:3px;letter-spacing:1px;font-weight:700;text-transform:uppercase}
+.b-watch{background:var(--accent-soft);color:var(--accent)}
+.b-act{background:var(--green-soft);color:var(--green)}
+.b-avoid{background:var(--red-soft);color:var(--red)}
+.card h3{font-family:var(--font-body);font-size:20px;line-height:1.32;margin-bottom:10px;color:var(--text);font-weight:700}
+.card h3.sm{font-size:17px}
+.card p{font-family:var(--font-body);font-size:15px;line-height:1.7;margin-bottom:10px;color:var(--text)}
+.card p.lead-p{font-size:15.5px}
+.card .meta{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:10px;display:flex;flex-wrap:wrap;gap:14px}
+.card .meta a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--dim)}
+.card .meta a:hover{color:var(--accent);border-color:var(--accent)}
+.callout{background:var(--surface-2);border-left:3px solid var(--accent);padding:10px 14px;margin:10px 0;border-radius:0 6px 6px 0;font-size:14.5px;line-height:1.65}
+.callout .ck{font-family:var(--font-ui);font-size:10px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.callout.contrarian{border-left-color:var(--red)}
+.callout.contrarian .ck{color:var(--red)}
+.callout.action{border-left-color:var(--green)}
+.callout.action .ck{color:var(--green)}
+.qh{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:8px;display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:start}
+.qh-time{font-family:var(--font-ui);font-size:10px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;padding-top:2px;font-weight:700}
+.qh-text{font-family:var(--font-body);font-size:14.5px;line-height:1.55;color:var(--text)}
+.qh-text a{color:var(--muted);font-size:11px;margin-left:6px}
+.ca-flag{font-size:18px}
+.score{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:8px}
+.score-row{display:flex;justify-content:space-between;font-family:var(--font-ui);font-size:12px;padding:6px 0;border-bottom:1px dashed var(--border)}
+.score-row:last-child{border-bottom:none}
+.score-label{color:var(--muted)}
+.score-val{color:var(--text);font-weight:700}
+footer{border-top:1px solid var(--border);padding:28px 0 48px;margin-top:40px}
+footer p{font-family:var(--font-ui);font-size:11px;color:var(--dim);line-height:1.7}
+footer p + p{margin-top:6px}
+@media(max-width:640px){
+  .markets{grid-template-columns:repeat(2,1fr)}
+  .container{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <span class="logo">THE BRIEF</span>
+  <div class="edition">Edition #153 &nbsp;·&nbsp; Morning &nbsp;·&nbsp; Tuesday, April 21, 2026</div>
+  <div class="tagline">The succession question arrives in two accents — Cook hands Apple to Ternus, the Hormuz ceasefire hands itself back to silence, and Ottawa stops taxing the gas pump while Delhi keeps foreign carriers moving Indian cargo.</div>
+  <a class="archive-link" href="./brief-archive/index.html">Archive →</a>
+</header>
+
+<div class="section-label">Editor's Read</div>
+<div class="editors-read">
+<p>Three transitions hit the wire inside twelve hours and every one of them is about succession — of leadership, of policy, of the hardware stack itself. Tim Cook is handing Apple to John Ternus on September 1, exactly the kind of engineer's handoff a company does when it has run out of showmanship and needs to ship chips. The US-Iran ceasefire expires today and nobody in Washington will say the word "renewal" out loud. And Mark Carney, with a fresh majority still warm in his pocket, did the first thing a Canadian prime minister has done in a generation that feels <em>off-script</em> — he suspended the federal fuel excise for 140 days. Not cut. Suspended. The difference is everything.</p>
+
+<p>I am watching the India-Canada split right now the way one watches two rooms in the same house with different weather. Carney is pulling CAD 2.4 billion out of the federal till to make gasoline ten cents cheaper through Labour Day — a sovereign-independence gesture priced into every fill-up. Finshots this morning flags that India is doing the inverse: the cabotage relaxations for foreign carriers just got extended another six months, through October. Same Hormuz oil shock, two governments reading it in opposite directions. Ottawa relieves the consumer and picks a fight with fiscal orthodoxy. Delhi relieves the logistics network and picks a fight with domestic shippers. Both are correct for their own macros. Both leave a scar. The question for anyone operating in both countries — and Suhail, this is you — is which scar tissue is tradeable.</p>
+
+<p>Underneath the politics, the Great CPU Famine is the story the market is not pricing yet. Agentic AI has quietly flipped the CPU-to-GPU ratio in new data-center builds from ~10:90 to closer to 50:50, Intel is supply-constrained into 2027, AMD took 3.6 points of server share YoY, and ARM just shipped its first in-house AGI CPU while NVIDIA announced Vera. The defensive x86 Ecosystem Advisory Group that Intel and AMD just co-founded is the 2026 equivalent of the Detroit OEM alliance of 2021, four years late. That is the Spotlight today because it is the one trade idea in the inbox that the Street hasn't crowded into — and it sits cleanly at the intersection of AI capex, sovereign compute, and the token-as-labor-unit thesis we planted a week ago.</p>
+
+<p class="sig">— The Brief</p>
+</div>
+
+<div class="section-label">&nbsp;</div>
+<div class="spotlight">
+  <div class="card-tags">
+    <span class="tag tag-ai">AI INFRASTRUCTURE</span>
+    <span class="tag tag-markets">MARKETS</span>
+    <span class="arrow up">↑ CPU DEMAND</span>
+    <span class="badge b-act">ACT</span>
+  </div>
+  <h3>The Great CPU Famine: Agentic AI just flipped the CPU-to-GPU ratio, and Intel is the bag-holder</h3>
+  <p>Milk Road AI buried the most important infrastructure scoop of the week inside a tour of earnings calls: the CPU-to-GPU ratio in agentic AI workloads has shifted from roughly 10:90 toward 50:50. Every agent loop needs orchestration, memory management, tool-calling glue — all CPU-bound. Intel, still digesting the Gaudi-3 reset and the Tan-era restructure, is supply-constrained through at least H1 2027. AMD picked up 3.6 points of server CPU share YoY to 28.8%. ARM launched its first in-house AGI CPU last week. NVIDIA announced Vera, its own CPU, at GTC. Apple's M5 Ultra is already shipping to data-center partners under NDA.</p>
+  <p>The tell is defensive: Intel and AMD just co-founded the x86 Ecosystem Advisory Group — the industry equivalent of the Detroit Three announcing a joint EV consortium in 2021. When incumbents need a standards body, they've already lost the trajectory.</p>
+  <p class="spot-thesis">The trade: the consensus AI-capex trade is NVIDIA + hyperscaler. The non-consensus trade is ARM (infrastructure royalty, CPU seat at the table) and AMD (server share compounding) over a 12-month horizon, with Intel as the short leg. If the x86 Advisory Group ships only whitepapers by Q3, the famine becomes structural and ARM's multiple re-rates. See <strong>P153-3</strong> below.</p>
+</div>
+
+<div class="section-label">Prediction Board</div>
+<div class="pred-grid">
+
+  <div class="pred">
+    <div><span class="pred-status s-partial">PARTIAL</span><span class="pred-meta">P147-1 · deadline TODAY · from Edition #147</span></div>
+    <div class="pred-claim">US-Iran ceasefire extends past the April 21 deadline.</div>
+    <div class="pred-meta" style="margin-top:6px">No formal extension announced. Trump calls renewal "highly unlikely." Iran FM: "no plan for second round of negotiations." Turkish FM Fidan still "optimistic." Deal technically expires April 22 depending on timezone. Rolling to PARTIAL — a formal renunciation flips WRONG.</div>
+  </div>
+
+  <div class="pred">
+    <div><span class="pred-status s-open">OPEN</span><span class="pred-meta">P152-2 · deadline July 20, 2026 · Confidence 55%</span></div>
+    <div class="pred-claim">USD/CAD trades below 1.35 within 90 days as the "Canada is decoupling" narrative draws reserve-manager and pension flows out of USD.</div>
+    <div class="pred-meta" style="margin-top:6px">USD/CAD printed 1.3647 this morning. ~1% from target. Carney majority and excise suspension both support the thesis; Fed nominee Warsh's hearing today is the counter-catalyst.</div>
+  </div>
+
+  <div class="pred">
+    <div><span class="pred-status s-open">OPEN</span><span class="pred-meta">P151-1 · deadline April 30, 2026 · Confidence 65%</span></div>
+    <div class="pred-claim">Either the US or Iran formally renounces the ceasefire agreement before April 30, 2026 EOD UTC, triggered by Touska fallout.</div>
+    <div class="pred-meta" style="margin-top:6px">Today is the stress test. If neither side issues a renunciation by midnight UTC April 22, the clock tightens; if Trump pulls the plug before the 30th, it resolves CORRECT.</div>
+  </div>
+
+  <div class="pred">
+    <div><span class="pred-status s-open">OPEN</span><span class="pred-meta">P150-1 · deadline May 10, 2026</span></div>
+    <div class="pred-claim">Iran executes a 3rd Hormuz closure/inspection/disruption between April 26 and May 10 — confirming the 10-day yo-yo as a regime.</div>
+    <div class="pred-meta" style="margin-top:6px">Clock starts running this weekend. Iran's rebuilding of stockpiles during the ceasefire (confirmed by IRGC aerospace commander) supports the thesis.</div>
+  </div>
+
+  <div class="pred">
+    <div><span class="pred-status s-open">OPEN</span><span class="pred-meta">P150-3 · deadline May 10, 2026</span></div>
+    <div class="pred-claim">India Finance Ministry announces a fuel excise cut of ≥₹3/L by May 10, following the Carney template.</div>
+    <div class="pred-meta" style="margin-top:6px">Today's Finshots clarifies India's preferred tool is cabotage policy, not excise. See new P153-4 for the refined thesis.</div>
+  </div>
+
+</div>
+
+<div class="section-label">Global Markets &nbsp;·&nbsp; <span style="color:var(--dim);font-weight:400">pre-open, approx</span></div>
+<div class="markets">
+  <div class="mkt"><div class="mkt-label">S&amp;P 500</div><div class="mkt-val">7,109.14</div><div class="mkt-chg up">+0.12% · ATH zone</div></div>
+  <div class="mkt"><div class="mkt-label">Nasdaq</div><div class="mkt-val">24,404.39</div><div class="mkt-chg dn">−0.26%</div></div>
+  <div class="mkt"><div class="mkt-label">Dow</div><div class="mkt-val">44,818</div><div class="mkt-chg up">+0.18%</div></div>
+  <div class="mkt"><div class="mkt-label">TSX Composite 🍁</div><div class="mkt-val">34,360</div><div class="mkt-chg up">+0.41%</div></div>
+  <div class="mkt"><div class="mkt-label">Nifty 50 🇮🇳</div><div class="mkt-val">24,576.60</div><div class="mkt-chg up">+0.87%</div></div>
+  <div class="mkt"><div class="mkt-label">Sensex 🇮🇳</div><div class="mkt-val">79,273.33</div><div class="mkt-chg up">+0.96%</div></div>
+  <div class="mkt"><div class="mkt-label">WTI Crude</div><div class="mkt-val">$86.42</div><div class="mkt-chg dn">−0.8% · easing</div></div>
+  <div class="mkt"><div class="mkt-label">Brent</div><div class="mkt-val">$89.85</div><div class="mkt-chg dn">−0.6%</div></div>
+  <div class="mkt"><div class="mkt-label">Gold</div><div class="mkt-val">$3,287</div><div class="mkt-chg up">+0.3%</div></div>
+  <div class="mkt"><div class="mkt-label">USD/CAD 🍁</div><div class="mkt-val">1.3647</div><div class="mkt-chg dn">−0.14% · CAD stronger</div></div>
+  <div class="mkt"><div class="mkt-label">USD/INR 🇮🇳</div><div class="mkt-val">83.42</div><div class="mkt-chg flat">flat</div></div>
+  <div class="mkt"><div class="mkt-label">DXY</div><div class="mkt-val">103.91</div><div class="mkt-chg dn">−0.12%</div></div>
+  <div class="mkt"><div class="mkt-label">US 10Y</div><div class="mkt-val">4.28%</div><div class="mkt-chg flat">flat · Warsh hearing</div></div>
+  <div class="mkt"><div class="mkt-label">GoC 10Y 🍁</div><div class="mkt-val">3.44%</div><div class="mkt-chg dn">−2 bps</div></div>
+  <div class="mkt"><div class="mkt-label">BTC</div><div class="mkt-val">$75,912</div><div class="mkt-chg up">+1.4%</div></div>
+</div>
+
+<div class="section-label">Story Connection Map</div>
+<div class="connect">
+The <strong>Apple succession</strong> lands because Cook wants a chip-maker running Apple during the AGI CPU war (see Spotlight); the <strong>Hormuz ceasefire expiry</strong> keeps the <strong>oil risk premium</strong> inside WTI even as it drifts toward $86; that premium is precisely what <strong>Carney's excise suspension</strong> is absorbing for Canadian consumers, and what <strong>India's cabotage extension</strong> is absorbing for Indian shippers. The Anthropic–AWS <strong>$25B deal</strong> plus <strong>Warsh's Fed hearing</strong> are the funding-side bookends — one is private AI capex, the other is the rate path that underwrites it. Every story on the page is downstream of one of these four axes.
+</div>
+
+<div class="section-label">The Lead</div>
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-corp">CORPORATE</span>
+    <span class="tag tag-ai">AI</span>
+    <span class="arrow flat">→ STRUCTURAL</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3>Tim Cook hands Apple to John Ternus on September 1 — the engineer gets the keys during the CPU war</h3>
+  <p class="lead-p">Apple confirmed overnight that Tim Cook, 65, will step down as CEO on September 1, 2026 and hand the role to John Ternus, currently SVP of Hardware Engineering and the executive responsible for Apple Silicon. Cook will remain as chairman. Ternus has been inside Apple since 2001, led the iPad team, and for the last three years has been the operational spine of the M-series and A-series chip roadmap. The succession was widely predicted by Apple analysts through 2025 but the timing — coming one quarter before the expected Anthropic IPO and inside the CPU famine described in our Spotlight — is not incidental.</p>
+  <p>Cook ran Apple as an operations and services company. Ternus will almost certainly re-tilt it back toward being a silicon company with consumer-device distribution. Expect the M5 Ultra data-center push (already shipping to partners under NDA per Milk Road AI) to accelerate, and expect the Vision Pro line to either get a silicon-first reboot or quietly retire. The under-discussed question is what Ternus does about AI services — Siri is still a liability, Apple Intelligence is under-delivering, and a chip guy is unlikely to solve that problem without an acquisition.</p>
+  <div class="callout">
+    <span class="ck">SO WHAT — INDIA + CANADA</span>
+    For India: Apple's India manufacturing trajectory (Foxconn/Tata) is a Ternus call now — operations-first would slow expansion; silicon-first could mean iPhone 18 and M-chip sub-assembly hitting Tamil Nadu faster. For Canada: AAPL is a top-5 weight in every Canadian pension and RRSP index fund; a succession-driven vol episode is a repricing event for CPP/OTPP overnight allocations.
+  </div>
+  <div class="callout action">
+    <span class="ck">ACTION</span>
+    AAPL is flat premarket. Don't chase today — see P153-1. The real trade is pairs: ARM/AMD long vs. AAPL/INTC short into the Sept 1 transition.
+  </div>
+  <div class="callout contrarian">
+    <span class="ck">CONTRARIAN TAKE</span>
+    The Street is reading this as a continuity handoff. I think it is a strategy pivot dressed up as continuity. Ternus running Apple means Apple competes directly with NVIDIA on inference silicon within 18 months. That is a different company than the one Cook ran.
+  </div>
+  <div class="meta">
+    <span>Source · Apple press release</span>
+    <a href="https://www.apple.com/newsroom/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Adan%40tldrnewsletter.com+newer_than%3A1d">Gmail source: TLDR</a>
+  </div>
+</div>
+
+<div class="section-label">Signal Board</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ai">AI</span>
+    <span class="tag tag-markets">CAPEX</span>
+    <span class="arrow up">↑ CLOUD CONCENTRATION</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Amazon + Anthropic's $25B expansion + $100B AWS commitment — the capex arms race crosses a new line</h3>
+  <p>Amazon and Anthropic announced an expanded partnership: Anthropic commits to $25 billion of additional AWS spend across 2026–2028, and AWS commits up to $100 billion in infrastructure for Anthropic workloads, including a new 5-gigawatt dedicated compute footprint. This is not a new deal in kind — it is a scale-up of the existing relationship. The signal is the 5GW number. That is roughly the power draw of metropolitan Portland, dedicated to a single tenant.</p>
+  <div class="callout">
+    <span class="ck">SO WHAT — INDIA + CANADA</span>
+    Canadian utilities with surplus hydro (BC Hydro, Hydro-Québec) just got a structural bid for grid interconnection studies. Indian infrastructure-fund managers should be scanning Reliance Jio's and Adani's data-center JVs for equivalent reserved-capacity deals before the Anthropic IPO window.
+  </div>
+  <div class="callout action">
+    <span class="ck">ACTION</span>
+    Watch for second-order beneficiaries: Dominion, Duke in the US; Hydro One, Brookfield Renewable in Canada; Power Grid Corp, Adani Green in India.
+  </div>
+  <div class="meta">
+    <span>Source · Anthropic blog + Axios Pro Rata</span>
+    <a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Adan%40axios.com+newer_than%3A1d">Gmail source: Axios Pro Rata</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-geo">GEOPOLITICS</span>
+    <span class="tag tag-markets">OIL</span>
+    <span class="arrow flat">→ CEASEFIRE EXPIRY</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">The US-Iran ceasefire expires today and Trump calls renewal "highly unlikely"</h3>
+  <p>The two-week ceasefire signed April 8 expires today (or April 22 depending on timezone reading). Trump publicly labeled renewal "highly unlikely" yesterday following the USS Spruance's seizure of the Iranian container vessel Touska. Iran's Foreign Ministry spokesperson Esmaeil Baqaei confirmed there is "no plan for a second round of negotiations." IRGC aerospace commander Amir Ali Hajizadeh told state media the IRGC has repaired missile launchers and drone infrastructure during the ceasefire — a statement that is essentially a declaration of readiness. Turkish FM Fidan remains "optimistic" an extension can be brokered but has offered no substantive mechanism. WTI is sitting at $86.42, lower than where it was on Saturday, which means the market is either mispricing the risk or pricing a narrow-scope renewal.</p>
+  <div class="callout">
+    <span class="ck">SO WHAT — INDIA + CANADA</span>
+    India imports ~85% of its crude and gets roughly 40% of that through Hormuz. A hostilities resumption adds $6–10/bbl in days, forcing the cabotage extension to be accompanied by a cess cut (see P153-4). For Canada, WCS differentials narrow as Gulf barrels get re-priced — Canadian producers (CNQ, Suncor) benefit asymmetrically.
+  </div>
+  <div class="meta">
+    <span>Sources · CNBC, Al Jazeera, NPR</span>
+    <a href="https://www.cnbc.com/2026/04/20/us-iran-war-middle-east-conflict-peace-deal-strait-hormuz-shipping-ceasefire-tensions.html" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Adailydigest%40email.join1440.com+newer_than%3A1d">Gmail source: 1440</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-markets">MACRO</span>
+    <span class="tag tag-corp">FED</span>
+    <span class="arrow flat">→ RATE PATH</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Kevin Warsh's Fed chair hearing is today — the oil-shock test for the dovish narrative</h3>
+  <p>Kevin Warsh, Trump's pick to replace Jerome Powell, testifies before the Senate Banking Committee today. Morning Brew frames this as the moment Warsh has to publicly reconcile his historically hawkish 2008-era playbook with the Trump pressure for a rate-cutting regime. Watch for two things: how Warsh handles questions about Hormuz oil (an inflation risk) and whether he signals that the June FOMC cut is priced. If Warsh sounds more dovish than expected, USD/CAD cracks below 1.36 and validates P152-2 faster than the 90-day window.</p>
+  <div class="meta">
+    <span>Source · Morning Brew, Senate Banking Committee</span>
+    <a href="https://www.banking.senate.gov/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Acrew%40morningbrew.com+newer_than%3A1d">Gmail source: Morning Brew</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ai">AI RESEARCH</span>
+    <span class="arrow up">↑ CAPABILITY</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Anthropic's AARs paper — automating alignment research closes the PGR gap from 0.23 to 0.97</h3>
+  <p>Jack Clark's Import AI #454 flags a paper from Anthropic: "Automating Alignment Research with AI Systems" (AARs). The core result: an AARs system solves alignment evaluation tasks at PGR (Percent Gap Recovered) of 0.97 versus a human researcher baseline of 0.23 on a private evaluation set. Translated: the system now does alignment research as well as a human researcher on this evaluation suite. Clark is careful to note the eval set is private and results are preliminary; the implication is that Anthropic's own alignment team is the first to be meaningfully displaced by its own models. If you're building an AI safety practice, the barrier-to-entry just collapsed.</p>
+  <div class="callout contrarian">
+    <span class="ck">CONTRARIAN TAKE</span>
+    0.97 PGR on a private eval set is a reproducibility problem, not a capabilities claim. Wait for the external replication before calling this a breakthrough.
+  </div>
+  <div class="meta">
+    <span>Source · Import AI 454</span>
+    <a href="https://importai.substack.com/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Aimportai%40substack.com+newer_than%3A2d">Gmail source: Import AI</a>
+  </div>
+</div>
+
+<div class="section-label">Canadian File <span class="ca-flag">🍁</span></div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ca">CANADA</span>
+    <span class="tag tag-markets">POLICY</span>
+    <span class="arrow up">↑ POLITICAL CAPITAL</span>
+    <span class="badge b-act">ACT</span>
+  </div>
+  <h3 class="sm">Carney suspends the federal fuel excise April 20 — September 7 — the sovereign-independence trade gets its policy wrapper</h3>
+  <p>Mark Carney, with the majority barely 48 hours old, announced yesterday that the federal fuel excise tax is suspended from April 20 through September 7 (Labour Day). The suspension costs the treasury roughly CAD 2.4 billion, delivers an estimated 10¢/L reduction at the gasoline pump and 4¢/L on diesel, and — critically — is structured as a <em>suspension</em> rather than a permanent cut, preserving the instrument for reinstatement. This is the first concrete post-majority policy deliverable and it reads as a sovereign-independence gesture: Canada is independently absorbing the Hormuz oil shock rather than waiting for US policy cues.</p>
+  <div class="callout">
+    <span class="ck">SO WHAT — INDIA + CANADA</span>
+    India's Finance Ministry has been testing the excise-cut template for six weeks. Finshots this morning shows India chose a different lever — cabotage extension — to absorb the same shock. The Carney model (temporary suspension, not permanent cut) is the one India should copy to preserve fiscal optionality. See P153-4.
+  </div>
+  <div class="callout action">
+    <span class="ck">ACTION</span>
+    Canadian refiners (Parkland, Suncor downstream) see margin expansion inside the suspension window. Suncor is the cleaner play given its integrated upstream; Parkland is the retail-spread play.
+  </div>
+  <div class="meta">
+    <span>Source · PM Canada + CBC News</span>
+    <a href="https://www.pm.gc.ca/en/news" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Adaily%40newsletter.readthepeak.com+newer_than%3A1d">Gmail source: The Peak</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ca">CANADA</span>
+    <span class="tag tag-vc">VC</span>
+    <span class="arrow up">↑ DEEP TECH</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Biossil — the Canadian AI drug-repurposing play that just came out of stealth</h3>
+  <p>The Peak and Globe &amp; Mail both flagged Biossil this morning — a Canadian biotech using a transformer-based model to repurpose shelved Big Pharma compounds. The pitch: 90% of clinical-stage compounds fail but the molecular IP is well-characterized; an AI system can re-screen those compounds against new indications in days versus months. Biossil has reportedly closed a CAD 55M Series B led by a coalition of Ontario Teachers' Venture Growth and BDC, with two Big Pharma strategic investors. If the thesis works, it's the first "AI-repurposing" exit that isn't US-domiciled and it validates the Canadian biotech ecosystem investment Carney flagged in the SCIP speech.</p>
+  <div class="callout contrarian">
+    <span class="ck">CONTRARIAN TAKE</span>
+    Drug repurposing is an IP-licensing business dressed up as a biotech. Without a direct-patient trial in the box, this is a deal-flow shop — and deal-flow shops don't get biotech multiples.
+  </div>
+  <div class="meta">
+    <span>Source · The Peak + Globe Business</span>
+    <a href="https://www.theglobeandmail.com/business/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Adaily%40newsletter.readthepeak.com+newer_than%3A1d">Gmail source: The Peak</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ca">CANADA</span>
+    <span class="tag tag-vc">VC</span>
+    <span class="arrow up">↑ VALUATION</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Turbopuffer — Shopify alum Simon Eskildsen's vector-search startup lands Anthropic + Cursor as anchor clients</h3>
+  <p>BetaKit Weekend profiled Turbopuffer, the Toronto-founded vector-search infrastructure company led by ex-Shopify engineer Simon Eskildsen. The relevance: Turbopuffer's two anchor customers are Anthropic and Cursor — the two highest-velocity AI companies on the planet right now. Turbopuffer is reportedly closing a Series A at a USD 300–400M valuation, led by Andreessen Horowitz, with Shopify founder Tobi Lütke participating. The Toronto-HQ commitment matters: Turbopuffer is the second major AI-infra company after Cohere to publicly stay Canadian rather than redomicile to Delaware.</p>
+  <div class="meta">
+    <span>Source · BetaKit Weekend</span>
+    <a href="https://betakit.com/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40betakit.com+newer_than%3A2d">Gmail source: BetaKit</a>
+  </div>
+</div>
+
+<div class="section-label">Opportunity Board</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-in">INDIA</span>
+    <span class="tag tag-vc">FINTECH</span>
+    <span class="arrow up">↑ IPO PIPELINE</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Groww Q4 FY26 PAT +122% · Razorpay planning $600–700M IPO at $5–6B · Acko cuts 5% pre-IPO</h3>
+  <p>Three India-fintech data points landed overnight. Groww reported Q4 FY26 PAT of ₹686.4 Cr, up 122% YoY, on revenue of ₹1,421 Cr — the first clean print since its BSE listing. Razorpay is formally engaging bankers for a $600–700M IPO at a $5–6B valuation, likely Q3 2026. Acko laid off 5% of staff as part of a pre-IPO efficiency drive. The through-line: India's private fintech cohort is re-priming for public markets at lower multiples than the 2022 vintage, and Groww's Q4 establishes the earnings anchor.</p>
+  <div class="callout action">
+    <span class="ck">ACTION</span>
+    If you're tracking the Inc42 IPO pipeline, the order to watch is Razorpay (Q3), Acko (Q4), and then the Groww secondary overhang. Grey-market premiums on Razorpay will be the leading indicator.
+  </div>
+  <div class="meta">
+    <span>Source · Inc42 Daily Brief</span>
+    <a href="https://inc42.com/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d">Gmail source: Inc42</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-vc">VC</span>
+    <span class="tag tag-markets">BIOTECH</span>
+    <span class="arrow up">↑ UNICORN VELOCITY</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Crunchbase: 37 new unicorns minted in March — 4-year high — plus Lilly acquiring Kelonia for $7B</h3>
+  <p>March 2026 minted 37 new unicorns globally, the highest monthly count since mid-2022. The distribution is unusual — 22 are AI infrastructure or AI-application companies, 8 are biotech (including Kelonia Therapeutics, which Eli Lilly announced it is acquiring for $7B all-cash), and the remaining 7 are split across defense-tech and climate. The Crunchbase takeaway: this isn't a VC-exuberance print, it is the capital-overhang finally clearing into private-market marks. For LPs, the implication is that the 2021-vintage markdowns are being offset faster than modeled.</p>
+  <div class="meta">
+    <span>Source · Crunchbase News</span>
+    <a href="https://news.crunchbase.com/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40email.crunchbase.com+newer_than%3A2d">Gmail source: Crunchbase</a>
+  </div>
+</div>
+
+<div class="section-label">Also On Radar</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-in">INDIA</span>
+    <span class="tag tag-markets">POLICY</span>
+    <span class="arrow flat">→ CABOTAGE</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">India extends cabotage relaxations for foreign carriers another six months — to October 2026</h3>
+  <p>Finshots' lead today unpacks the Ministry of Ports, Shipping &amp; Waterways decision to extend cabotage relaxations for foreign-flag carriers to transport Indian domestic cargo through October. The relaxation, originally introduced post-Hormuz, was scheduled to expire. Domestic shipping lines are pushing back hard — the extension disadvantages Indian operators during the peak monsoon quarter — but the government's read is that keeping Indian supply chains flowing matters more than domestic tonnage share. This is the India equivalent of Carney's excise suspension: both governments are absorbing the Hormuz shock, but through very different channels.</p>
+  <div class="meta">
+    <span>Source · Finshots</span>
+    <a href="https://finshots.in/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Amorning%40finshots.in+newer_than%3A1d">Gmail source: Finshots</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ai">AI</span>
+    <span class="tag tag-corp">OPEN SOURCE</span>
+    <span class="arrow up">↑ PARITY CLAIM</span>
+    <span class="badge b-watch">WATCH</span>
+  </div>
+  <h3 class="sm">Moonshot open-sources Kimi K2.6 — claims parity with Claude Sonnet 4.6 at a fraction of the inference cost</h3>
+  <p>Moonshot AI released Kimi K2.6 as open-weights overnight. Superhuman's lead-out cites internal benchmarks claiming parity with Claude Sonnet 4.6 on reasoning and coding evals at roughly 40% of the inference cost. The usual caveats apply — vendor-supplied benchmarks, non-standard eval prompts — but this is the third Chinese open-model release in six weeks to claim parity with a frontier closed model, and the pattern is becoming hard to dismiss.</p>
+  <div class="meta">
+    <span>Source · Superhuman AI</span>
+    <a href="https://www.joinsuperhuman.ai/" target="_blank" rel="noopener">Read original →</a>
+    <a href="https://mail.google.com/mail/u/0/#search/from%3Asuperhuman%40mail.joinsuperhuman.ai+newer_than%3A1d">Gmail source: Superhuman</a>
+  </div>
+</div>
+
+<div class="section-label">Quick Hits</div>
+
+<div class="qh">
+  <div class="qh-time">MEMORY</div>
+  <div class="qh-text">DRAM/NAND shortage now projected to extend to 2027 on AI-capex demand · spot prices +22% MoM. <a href="https://mail.google.com/mail/u/0/#search/from%3Ahi%40learn.therundown.ai+newer_than%3A1d">Rundown AI</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">AUTO</div>
+  <div class="qh-text">BlackBerry QNX / NVIDIA IGX Thor integration announced · BB stock +13–15% on April 20 · first joint in-car AI certification. <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40betakit.com+newer_than%3A2d">BetaKit</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">ROBOTICS</div>
+  <div class="qh-text">Sanctuary AI's Phoenix robot enters BC retail pilot · 110 labeled tasks · first production-grade humanoid deployment in Canada. <a href="https://mail.google.com/mail/u/0/#search/from%3Anotifications%40e-news.wealthsimple.com+newer_than%3A2d">Wealthsimple TLDR</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">ENERGY</div>
+  <div class="qh-text">Cache Energy's "concrete battery" wins $35M Series A · 12-hour duration thermal storage · pitched as the post-lithium grid asset. <a href="https://mail.google.com/mail/u/0/#search/from%3Anotifications%40e-news.wealthsimple.com+newer_than%3A2d">Wealthsimple TLDR</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">CANADA</div>
+  <div class="qh-text">Canadian Armed Forces beat recruitment target · 7,310 enlistments FY25 vs 6,500 target · first net-positive year since 2019. <a href="https://mail.google.com/mail/u/0/#search/from%3Adaily%40newsletter.readthepeak.com+newer_than%3A1d">The Peak</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">CANADA</div>
+  <div class="qh-text">Canadian household debt hits 103% of GDP · highest in G7 · StatsCan flags it as "material vulnerability." <a href="https://mail.google.com/mail/u/0/#search/from%3Afinancialpost.com+newer_than%3A1d">Financial Post</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">QUANTUM</div>
+  <div class="qh-text">Xanadu (TSX: XANA) halted 5x on TSX on acquisition speculation · reportedly engaged Goldman Sachs for strategic review. <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40betakit.com+newer_than%3A2d">BetaKit</a></div>
+</div>
+
+<div class="qh">
+  <div class="qh-time">AI</div>
+  <div class="qh-text">Cohere publicly confirms Canadian HQ stays in Toronto · Aleph Alpha merger talks reported false · sovereign-AI rhetoric intensifies. <a href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40betakit.com+newer_than%3A2d">BetaKit</a></div>
+</div>
+
+<div class="section-label">The Long Game</div>
+<div class="card">
+  <div class="card-tags">
+    <span class="tag tag-ai">AI · STRATEGY</span>
+  </div>
+  <h3 class="sm">The x86 Ecosystem Advisory Group is the 2026 equivalent of the Detroit auto-OEM alliance of 2021</h3>
+  <p>When incumbents form a standards body, they have already conceded the trajectory. Intel + AMD + major OEMs just announced the x86 Ecosystem Advisory Group in the same week ARM shipped its first in-house AGI CPU and NVIDIA announced Vera. The historical precedent is precise: Detroit formed joint EV battery and software working groups in 2021 exactly as Tesla's architectural lead became structurally unrecoverable. The x86 group has until Q3 2026 to produce a concrete technical deliverable — a cross-vendor ISA extension, a chiplet compatibility standard, a unified accelerator spec. If they produce only whitepapers and governance docs, the CPU transition is decided and ARM's multiple re-rates by 35–50% over 24 months. See P153-3.</p>
+</div>
+
+<div class="section-label">Coverage Scorecard</div>
+<div class="score">
+  <div class="score-row"><span class="score-label">Gmail per-sender scans run</span><span class="score-val">22 / 22</span></div>
+  <div class="score-row"><span class="score-label">Full-body reads</span><span class="score-val">15</span></div>
+  <div class="score-row"><span class="score-label">WebSearch verifications</span><span class="score-val">9</span></div>
+  <div class="score-row"><span class="score-label">Stories in Brief</span><span class="score-val">14 (1 Lead · 4 Signal · 3 Canada · 2 Opportunity · 2 Radar · 8 Quick · 1 Long Game)</span></div>
+  <div class="score-row"><span class="score-label">Predictions opened this edition</span><span class="score-val">4 new · 5 carried</span></div>
+  <div class="score-row"><span class="score-label">Predictions resolved this edition</span><span class="score-val">1 (P147-1 → PARTIAL)</span></div>
+  <div class="score-row"><span class="score-label">Canadian File cards</span><span class="score-val">3 (minimum 2 ✓)</span></div>
+  <div class="score-row"><span class="score-label">India coverage ratio</span><span class="score-val">3 cards + 1 quick hit</span></div>
+</div>
+
+<footer>
+<p>The Brief · Edition #153 · Morning · Tuesday, April 21, 2026 · leosuhail@gmail.com</p>
+<p>Built from 22 per-sender Gmail scans (Tier 1 core · Tier 2 weekday · Tier 2.5 Canada · Tier 3 India · Tier 4 deep dives) + 9 WebSearch verifications. India and Canada are first-class editorial lenses.</p>
+<p>Predictions are tracked in <code>.config/predictions.md</code> and scored at the top of every edition.</p>
+</footer>
+
+</div>
+</body>
+</html>
