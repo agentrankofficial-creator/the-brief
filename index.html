@@ -3,385 +3,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brief · #154 · April 22, 2026 (Morning)</title>
+<title>The Brief · Edition #155 · Evening · April 22, 2026</title>
 <style>
 :root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.55}
-.container{max-width:860px;margin:0 auto;padding:40px 22px 80px}
-.header{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:30px}
-.masthead{font-family:var(--font-ui);font-size:11px;letter-spacing:6px;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
-.edition-line{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:18px}
-.h1{font-family:Georgia,serif;font-size:32px;font-weight:400;line-height:1.2;color:var(--text);margin:0 0 8px}
-.tagline{font-size:15px;color:var(--muted);font-style:italic;margin-top:4px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 8px}
-.nav-pill{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:999px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;padding:40px 20px}
+.container{max-width:960px;margin:0 auto}
+.header{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:32px}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+.title{font-size:38px;font-weight:700;letter-spacing:-1px}
+.title .accent{color:var(--accent)}
+.edition-meta{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
+.tagline{font-family:var(--font-ui);font-size:14px;color:var(--muted);margin-top:16px;font-style:italic}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;padding:6px 12px;border:1px solid var(--border);border-radius:20px;background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s}
 .nav-pill:hover{border-color:var(--accent);color:var(--accent)}
-.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
-.editors-read{background:linear-gradient(180deg,#1a1a1f,#131316);border:1px solid var(--accent);border-radius:12px;padding:26px 28px;margin-bottom:30px;box-shadow:0 0 0 1px rgba(200,160,48,0.15) inset}
+.nav-pill.active{border-color:var(--accent);color:var(--accent);background:rgba(200,160,48,.1)}
+.editors-read{background:linear-gradient(135deg,var(--surface),#1a1a1f);border:1px solid var(--accent);border-radius:10px;padding:28px 32px;margin-bottom:32px}
 .er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:16px}
-.er-body{font-size:16px;line-height:1.65}
-.er-body p{margin:0 0 12px}
-.er-body strong{color:var(--text)}
-.er-body em{color:var(--accent)}
-.signal-spotlight{background:#131316;border:1px solid #3a3a3e;border-left:3px solid var(--accent);border-radius:8px;padding:20px 24px;margin-bottom:28px}
+.er-body{font-size:16px;line-height:1.75;color:var(--text)}
+.er-body p{margin-bottom:14px}
+.er-body em{color:var(--accent);font-style:italic}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:32px}
 .ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.ss-claim{font-family:Georgia,serif;font-size:19px;line-height:1.4;margin-bottom:10px;color:var(--text)}
+.ss-claim{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.4}
 .ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:10px}
-.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px}
 .prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
 .pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
 .pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
 .pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
 .pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
-.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;white-space:nowrap}
 .pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
 .pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
 .pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
 .pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
-.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--dim);margin:36px 0 14px;border-bottom:1px solid var(--border);padding-bottom:8px}
-.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:28px}
-.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 8px;text-align:center}
-.mc-label{font-family:var(--font-ui);font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
-.mc-value{font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--text);margin:3px 0 2px}
-.mc-delta{font-family:var(--font-ui);font-size:10px}
-.mc-delta.up{color:var(--green)}
-.mc-delta.down{color:var(--red)}
-.mc-delta.flat{color:var(--dim)}
-.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:30px;font-family:var(--font-ui);font-size:12px}
-.cm-label{color:var(--dim);letter-spacing:2px;text-transform:uppercase;font-size:10px;margin-bottom:10px}
-.cm-chain{color:var(--muted);line-height:1.9}
-.cm-chain .node{background:#1e1e22;padding:3px 8px;border-radius:3px;border:1px solid #2a2a30;color:var(--text)}
-.cm-chain .arrow{color:var(--accent);margin:0 4px}
-.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:16px;transition:border-color .2s}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:32px}
+.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:var(--font-ui)}
+.market-cell .label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+.market-cell .value{font-size:14px;font-weight:600;color:var(--text);margin-top:4px}
+.market-cell .change{font-size:11px;margin-top:2px}
+.market-cell.up .change{color:var(--green)}
+.market-cell.down .change{color:var(--red)}
+.market-cell.ca{border-left:2px solid var(--red)}
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:32px;overflow-x:auto;white-space:nowrap}
+.connection-map .cm-label{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.chain{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:11px;margin-right:20px}
+.chip{background:rgba(200,160,48,.1);border:1px solid var(--accent);color:var(--accent);padding:4px 10px;border-radius:4px;letter-spacing:0.5px}
+.chip.red{background:rgba(224,82,82,.1);border-color:var(--red);color:var(--red)}
+.chip.grn{background:rgba(74,222,128,.1);border-color:var(--green);color:var(--green)}
+.arrow{color:var(--dim)}
+.section-label{font-family:var(--font-ui);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.section-label.lead{color:var(--accent)}
+.section-label.canada{color:var(--red)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:16px;transition:border-color .2s}
+.story-card:hover{border-color:var(--accent)}
+.story-card.canada-card{border-left:3px solid var(--red)}
 .story-card.hidden{display:none}
-.canadian-file .story-card{border-left:3px solid var(--red)}
-.card-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase}
-.category-tag{background:#1e1e22;color:var(--muted);padding:2px 7px;border-radius:3px;border:1px solid #2a2a30}
-.trend-arrow{color:var(--accent);font-size:12px}
-.time-horizon{color:var(--dim)}
-.decision-badge{padding:2px 7px;border-radius:3px;font-weight:700}
+.card-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.category-tag{background:var(--border);padding:2px 8px;border-radius:3px;color:var(--muted)}
+.trend-arrow{font-size:14px}
+.decision-badge{padding:2px 8px;border-radius:3px;font-weight:700}
 .decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
 .decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
 .decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--dim)}
-.card-title{font-family:Georgia,serif;font-size:20px;font-weight:400;line-height:1.3;color:var(--text);margin:4px 0 12px}
-.layer1 p{font-size:15px;color:var(--muted);margin:0 0 10px}
-.so-what{background:#1c1c20;border-left:2px solid var(--accent);padding:10px 14px;margin:12px 0;font-size:14px;color:var(--text)}
-.so-what strong{color:var(--accent);font-family:var(--font-ui);font-size:11px;letter-spacing:1px}
-.action-box{background:#1c1c20;border-left:2px solid var(--red);padding:10px 14px;margin:10px 0;font-size:14px;color:var(--text)}
-.action-box strong{color:var(--red);font-family:var(--font-ui);font-size:11px;letter-spacing:1px}
-.contrarian{font-size:13px;color:var(--dim);font-style:italic;border-top:1px dashed #2a2a30;padding-top:10px;margin-top:10px}
-.read-original,.gmail-source{display:inline-block;margin-right:12px;margin-top:8px;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);letter-spacing:1px}
-.read-original:hover,.gmail-source:hover{color:#fff;border-bottom-color:#fff}
-.gmail-source{color:var(--dim);border-bottom-color:var(--dim)}
-.canadian-file{background:linear-gradient(180deg,#181518,#131316);border:1px solid #3a2a2a;border-radius:12px;padding:22px 24px;margin:32px 0}
-.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#e05252;margin-bottom:4px}
+.card-title{font-size:19px;font-weight:700;line-height:1.35;margin-bottom:12px;color:var(--text)}
+.layer1 p{font-size:14.5px;color:var(--muted);margin-bottom:12px;line-height:1.7}
+.so-what,.action-box,.contrarian{font-size:13px;padding:10px 14px;border-radius:6px;margin-bottom:10px;font-family:var(--font-ui);line-height:1.55}
+.so-what{background:rgba(200,160,48,.08);border-left:2px solid var(--accent);color:var(--text)}
+.so-what strong{color:var(--accent);font-weight:700;letter-spacing:1px}
+.action-box{background:rgba(224,82,82,.08);border-left:2px solid var(--red);color:var(--text)}
+.action-box strong{color:var(--red);font-weight:700;letter-spacing:1px}
+.contrarian{background:rgba(167,139,250,.06);border-left:2px solid #a78bfa;color:var(--muted);font-style:italic}
+.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-right:14px;margin-top:6px;text-decoration:none;border-bottom:1px solid transparent}
+.read-original:hover,.gmail-source:hover{border-bottom-color:var(--accent)}
+.gmail-source{color:var(--dim)}
+.deep-dive-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--font-ui);font-size:11px;letter-spacing:1px;padding:6px 12px;border-radius:4px;cursor:pointer;margin-top:12px}
+.deep-dive-btn:hover{border-color:var(--accent);color:var(--accent)}
+.layer2{display:none;font-size:13.5px;color:var(--muted);padding:14px;background:var(--bg);border-radius:6px;margin-top:12px;line-height:1.7;border-left:2px solid var(--border)}
+.story-card.deep .layer2{display:block}
+.connections{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.conn-chip{font-family:var(--font-ui);font-size:10px;padding:3px 8px;background:var(--bg);border:1px solid var(--border);border-radius:3px;color:var(--dim);cursor:pointer;text-transform:uppercase;letter-spacing:0.5px}
+.conn-chip:hover{border-color:var(--accent);color:var(--accent)}
+.canadian-file{background:rgba(224,82,82,.03);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:10px;padding:22px 26px;margin-bottom:32px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
 .cf-subtitle{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:18px}
-.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 24px;margin-bottom:20px}
-.quick-hits ul{margin:0;padding:0 0 0 18px}
-.quick-hits li{margin-bottom:10px;font-size:14px;color:var(--muted);line-height:1.5}
-.quick-hits li strong{color:var(--text)}
-.long-game{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:20px;font-size:15px;color:var(--muted);font-style:italic;line-height:1.6}
-.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin:24px 0 40px}
-.sc-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
-.sc-table td{padding:5px 8px;border-bottom:1px solid #1e1e22;color:var(--muted)}
-.sc-table td:first-child{color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-size:10px}
-.sc-table td:last-child{text-align:right;color:var(--text);font-weight:600}
-.footer{text-align:center;font-family:var(--font-ui);font-size:11px;color:var(--dim);padding:30px 0 10px;border-top:1px solid var(--border);letter-spacing:1px}
-@media (max-width:720px){.markets-grid{grid-template-columns:repeat(3,1fr)}.h1{font-size:26px}.card-title{font-size:17px}}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 24px;margin-bottom:24px}
+.quick-hits ul{list-style:none}
+.quick-hits li{padding:10px 0;border-bottom:1px dotted var(--border);font-size:14px;color:var(--muted);line-height:1.6}
+.quick-hits li:last-child{border-bottom:none}
+.quick-hits strong{color:var(--text)}
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin-bottom:24px;font-size:15px;color:var(--muted);line-height:1.8;font-style:italic}
+.long-game .lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-style:normal}
+.scorecard{font-family:var(--font-ui);font-size:12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 24px;margin-bottom:24px}
+.scorecard table{width:100%;border-collapse:collapse}
+.scorecard td{padding:5px 10px;border-bottom:1px solid #1e1e22;color:var(--muted)}
+.scorecard td:first-child{color:var(--dim);text-transform:uppercase;font-size:10px;letter-spacing:1px;width:40%}
+.footer{font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--border);letter-spacing:1px}
+@media (max-width:700px){.markets{grid-template-columns:repeat(2,1fr)}.title{font-size:28px}.masthead{flex-direction:column}}
+/* --- patched rules --- */
+.signal-board{margin-bottom:32px}
+.sb-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.sb-filters{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.filter{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer;transition:all .15s}
+.filter:hover{color:var(--text);border-color:var(--accent)}
+.filter.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.lead-card{background:linear-gradient(180deg,rgba(200,160,48,.06),transparent);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:26px 30px;margin-bottom:32px}
+.lc-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.lc-title{font-family:var(--font-serif);font-size:26px;line-height:1.25;color:var(--text);margin-bottom:14px;letter-spacing:-.3px}
+.lc-dek{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:14px}
+.lc-why{background:rgba(200,160,48,.08);border-left:2px solid var(--accent);padding:10px 14px;color:var(--text);font-size:14px;margin-bottom:14px;border-radius:0 4px 4px 0}
+.lc-sources{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:.5px}
+.lc-sources a{color:var(--accent);text-decoration:none;margin-right:8px}
+.lc-sources a:hover{text-decoration:underline}
+.markets-section{margin-bottom:32px}
+.mk-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.story-map{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.sm-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.sm-body{color:var(--muted);font-size:14px;line-height:1.8}
+.sm-body strong{color:var(--text)}
+.node-us{color:#7cb6ff;font-weight:600}
+.node-ca{color:var(--red);font-weight:600}
+.node-global{color:var(--accent);font-weight:600}
+.ss-title{font-family:var(--font-serif);font-size:22px;line-height:1.3;color:var(--text);margin:6px 0 12px;letter-spacing:-.2px}
+.ss-body{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:10px}
+.ss-meta{font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.ss-meta a{color:var(--accent);text-decoration:none;margin-right:8px}
+.ss-meta a:hover{text-decoration:underline}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px;transition:border-color .15s}
+.story-card:hover{border-color:#2a2a30}
+.story-card.canada-card{border-left:3px solid var(--red)}
+.sc-tag{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.canada-card .sc-tag{color:var(--red)}
+.sc-title{font-family:var(--font-serif);font-size:19px;line-height:1.35;color:var(--text);margin-bottom:10px;letter-spacing:-.15px}
+.sc-summary{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:10px}
+.sc-sources{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:8px}
+.sc-sources a{color:var(--accent);text-decoration:none;margin-right:8px}
+.sc-sources a:hover{text-decoration:underline}
+.expand-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:transparent;border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:4px;cursor:pointer;margin-bottom:10px}
+.expand-btn:hover{color:var(--accent);border-color:var(--accent)}
+.deep-read{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:13.5px;line-height:1.75}
+.deep-read p{margin-bottom:10px}
+.deep-read strong{color:var(--text)}
+.opportunity-board{background:rgba(74,222,128,.03);border:1px solid var(--border);border-left:4px solid var(--green);border-radius:10px;padding:22px 26px;margin-bottom:32px}
+.ob-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.ob-list{list-style:none}
+.ob-list li{padding:10px 0;border-bottom:1px dotted var(--border);font-size:14px;color:var(--muted);line-height:1.7}
+.ob-list li:last-child{border-bottom:none}
+.ob-list strong{color:var(--text)}
+.also-on-radar{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 24px;margin-bottom:24px}
+.aor-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.aor-list{list-style:none}
+.aor-list li{padding:8px 0;border-bottom:1px dotted var(--border);font-size:13.5px;color:var(--muted);line-height:1.65}
+.aor-list li:last-child{border-bottom:none}
+.qh-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.pb-scorecard{font-family:var(--font-ui);font-size:12px;color:var(--dim);padding:12px 0 0;border-top:1px dotted var(--border);margin-top:10px}
+.pb-scorecard strong{color:var(--text)}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12.5px;margin-bottom:10px}
+.pb-table th{text-align:left;padding:8px 10px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;font-size:10px;font-weight:600;border-bottom:1px solid var(--border)}
+.pb-table td{padding:10px;border-bottom:1px solid #1a1a1e;color:var(--muted)}
+.status-open{color:var(--accent);font-weight:600}
+.status-correct{color:var(--green);font-weight:600}
+.status-wrong{color:var(--red);font-weight:600}
+
 </style>
 </head>
 <body>
 <div class="container">
-<div class="header">
-<div class="masthead">The Brief</div>
-<div class="edition-line"><span>Edition #154 &middot; April 22, 2026 &middot; Morning</span><span>Suhail Seth &middot; A signal digest</span></div>
-<h1 class="h1">Trump blinks at midnight, Cook sets his own clock, and Canadian gas pumps write the rate path</h1>
-<div class="tagline">The ceasefire Trump said was "highly unlikely" to extend is now indefinite. The Apple handover everyone dated "next year" is dated Sept 1. And Canada&rsquo;s 2.4% CPI just removed the word "cut" from the BoC vocabulary.</div>
-<div class="nav">
-<span class="nav-pill active" onclick="filterStories('all',this)">All</span>
-<span class="nav-pill" onclick="filterStories('canada',this)">&#127809; Canada</span>
-<span class="nav-pill" onclick="filterStories('india',this)">&#127470;&#127475; India</span>
-<span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
-<span class="nav-pill" onclick="filterStories('ai',this)">AI</span>
-<span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
-<span class="nav-pill" onclick="filterStories('macro',this)">Macro</span>
-</div>
-</div>
-<div class="editors-read">
-<div class="er-label">Editor&rsquo;s Read</div>
-<div class="er-byline">Suhail Seth &middot; April 22, 2026 Morning</div>
-<div class="er-body">
-<p>Twelve hours ago I wrote that an extension was a scheduling question, not a probability. <strong>Trump extended the ceasefire last night</strong> &mdash; indefinite, no deadline, blockade remains, framed as a favor to Pakistan&rsquo;s Army Chief Asim Munir and PM Sharif. He cited a "seriously fractured" Iranian government. The same man who told reporters yesterday morning that extension was <em>"highly unlikely"</em> signed a one-paragraph Truth Social post 14 hours later that removes the April 22 clock entirely. This is not peace. This is the White House discovering that WTI at $92 is the political price of looking tough &mdash; and $92 was the line.</p>
-<p>The extension is <strong>not a clean rollover</strong>. There is no two-week expiry. There is no defined scope. There is only "until Iran submits a unified proposal," a phrase designed to be unfalsifiable in any direction. This reads as the <strong>Touska fallout forcing a renegotiation posture</strong> &mdash; exactly the P152-1 thesis I posted Sunday night at 70% confidence. Iran&rsquo;s parliamentary advisor has already called it "a ploy to buy time." The Hormuz Yo-Yo thesis survives this extension; if anything, the indefinite framing makes the next tanker "inspection" higher-probability, not lower, because Iran has removed its own hard deadline too.</p>
-<p>The Apple story also hardened in the last 24 hours. <strong>Cook leaves September 1</strong> &mdash; not next year, not "soon as this week," but a specific handover date that gives Ternus a summer to set the WWDC stage. AAPL closed +1.04% at $273.05, well short of the +3% my P153-2 prediction required. The market read this as a competence handoff, not a strategy pivot &mdash; which is what the earlier P153-1 Apple thesis claimed. The tape is agreeing with the bear case on the announcement and the bull case on Ternus&rsquo;s mandate, and both can be right.</p>
-<p>The India read is now cleaner: <strong>Korea&rsquo;s $50B partnership announcement this week</strong> is the emerging-markets counter-punch to Amazon&ndash;Anthropic. Seoul and Delhi are pre-positioning against US private-capacity advantage, with chips, shipbuilding, and defence as the three legs. Watch for a similar Canadian move in the Carney May throne-speech window &mdash; that is where P153-3 lives.</p>
-<p>The Canada read is the hardest one to sit with. <strong>2.4% headline CPI with gas +21.2% YoY is not a surprise &mdash; it is the Hormuz Yo-Yo landing in grocery receipts.</strong> The BoC meets April 29 and any remaining cut optionality is gone. Carney&rsquo;s April 19 excise suspension was pre-emptive currency for exactly this morning. Use the next six trading days before the BoC decision to rotate out of rate-sensitive Canadian real-estate proxies (REITs, homebuilders) and into TSX energy and CAD cash.</p>
-<p>The call today: <em>the extension isn&rsquo;t a ceasefire, it&rsquo;s a pricing signal. Trade the pricing signal.</em></p>
-</div>
-</div>
-<div class="signal-spotlight" id="signal">
-<div class="ss-label">&#9889; Signal Spotlight</div>
-<div class="ss-claim">The ceasefire extension is the first public admission that US foreign policy is now price-constrained by WTI. That re-prices every geopolitical risk premium in the oil curve for the next 12 months.</div>
-<div class="ss-reasoning">Trump&rsquo;s reversal from "highly unlikely" to "indefinite extension" in 14 hours maps cleanly onto WTI&rsquo;s intraday move from $88.60 to $92.13 Monday. The White House has just revealed its threshold: somewhere in the $90s, political posture yields to inflation pass-through. Iran now knows this. Markets now know this. And &mdash; critically &mdash; every other Middle-East actor who might want to extract concessions from Washington now knows this. Expect more Hormuz interference, not less. Expect more brinksmanship from Riyadh on OPEC+. Expect higher realised volatility in the crude strip through Q3 2026. The hidden gift in this signal is for <strong>Canadian energy producers (CNQ, SU, CVE, Tourmaline)</strong>: they now benefit from a structural floor at ~$85 WTI with an event-driven ceiling at ~$95 that is politically enforced. That is a tradable corridor.</div>
-<div class="ss-horizon">Time horizon: 12-month repricing of oil geopolitical premium; corridor trade playable through Q3</div>
-</div>
-<div class="prediction-board" id="predictions">
-<div class="pb-label">&#127919; Prediction Board &middot; Top 5 Newest</div>
-<table class="pb-table">
-<thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td>#154</td><td>Iran does NOT submit a "unified proposal" (Trump&rsquo;s extension precondition) by May 15 &mdash; diplomatic vacuum continues, ceasefire remains indefinite. (60%)</td><td>May 15, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-<tr><td>#154</td><td>BoC holds policy rate at 2.25% on April 29, 2026. 2.4% CPI + gas +21.2% closes the door on any cut discussion in the statement. (75%)</td><td>Apr 29, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-<tr><td>#154</td><td>AAPL closes below $273.05 on August 29, 2026 (last trading day before Ternus handover) &mdash; no "new CEO" premium materializes in the transition window. (60%)</td><td>Aug 29, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-<tr><td>#153</td><td>Apple names Ternus as incoming CEO by May 15 AND AAPL &ge; +3% on announcement day.</td><td>May 15, 2026</td><td><span class="pb-status partial">PARTIAL</span></td></tr>
-<tr><td>#147</td><td>US&ndash;Iran ceasefire extends past April 21 deadline.</td><td>Apr 21, 2026</td><td><span class="pb-status correct">CORRECT</span></td></tr>
-</tbody>
-</table>
-</div>
-<div class="section-label">Global Markets Snapshot</div>
-<div class="markets-grid">
-<div class="market-cell"><div class="mc-label">S&amp;P 500</div><div class="mc-value">7,064.01</div><div class="mc-delta down">&darr; &minus;0.63%</div></div>
-<div class="market-cell"><div class="mc-label">Nasdaq</div><div class="mc-value">24,259.96</div><div class="mc-delta down">&darr; &minus;0.59%</div></div>
-<div class="market-cell"><div class="mc-label">Nikkei</div><div class="mc-value">58,015.12</div><div class="mc-delta down">&darr; &minus;0.34%</div></div>
-<div class="market-cell"><div class="mc-label">Hang Seng</div><div class="mc-value">23,248</div><div class="mc-delta up">&uarr; +0.29%</div></div>
-<div class="market-cell"><div class="mc-label">Nifty 50</div><div class="mc-value">24,576.60</div><div class="mc-delta up">&uarr; +0.87%</div></div>
-<div class="market-cell"><div class="mc-label">Sensex</div><div class="mc-value">79,273.33</div><div class="mc-delta up">&uarr; +0.96%</div></div>
-<div class="market-cell"><div class="mc-label">TSX Comp</div><div class="mc-value">34,412.18</div><div class="mc-delta up">&uarr; +0.15%</div></div>
-<div class="market-cell"><div class="mc-label">USD/INR</div><div class="mc-value">85.88</div><div class="mc-delta down">&darr; INR soft</div></div>
-<div class="market-cell"><div class="mc-label">USD/CAD</div><div class="mc-value">1.3641</div><div class="mc-delta up">&uarr; CAD firm</div></div>
-<div class="market-cell"><div class="mc-label">WTI Crude</div><div class="mc-value">$85.90</div><div class="mc-delta down">&darr; &minus;3.1%</div></div>
-<div class="market-cell"><div class="mc-label">Gold</div><div class="mc-value">$4,778</div><div class="mc-delta down">&darr; &minus;0.71%</div></div>
-<div class="market-cell"><div class="mc-label">BTC</div><div class="mc-value">$75,901</div><div class="mc-delta up">&uarr; +0.12%</div></div>
-<div class="market-cell"><div class="mc-label">10Y UST</div><div class="mc-value">4.238%</div><div class="mc-delta down">&darr; &minus;1.2 bps</div></div>
-<div class="market-cell"><div class="mc-label">10Y GoC</div><div class="mc-value">3.41%</div><div class="mc-delta up">&uarr; +3 bps</div></div>
-<div class="market-cell"><div class="mc-label">VIX</div><div class="mc-value">17.1</div><div class="mc-delta down">&darr; relief bid</div></div>
-</div>
-<div class="connection-map">
-<div class="cm-label">Story Connection Map</div>
-<div class="cm-chain">
-<span class="node">TRUMP EXTENDS CEASEFIRE</span><span class="arrow">&rarr;</span><span class="node">WTI &darr; $86</span><span class="arrow">&rarr;</span><span class="node">RELIEF RALLY</span><span class="arrow">/</span><span class="node">CANADA CPI GAS STICKY</span><span class="arrow">&rarr;</span><span class="node">BoC HOLDS APR 29</span>
-<br>
-<span class="node">COOK LEAVES SEP 1</span><span class="arrow">&rarr;</span><span class="node">TERNUS WINDOW</span><span class="arrow">&rarr;</span><span class="node">WWDC STRATEGY RESET</span><span class="arrow">&rarr;</span><span class="node">AI-PC / AR CATALYSTS</span>
-<br>
-<span class="node">INDIA-KOREA $50B</span><span class="arrow">&rarr;</span><span class="node">EM COMPUTE COUNTER</span><span class="arrow">/</span><span class="node">ANTHROPIC-AWS 5GW</span><span class="arrow">&rarr;</span><span class="node">SOVEREIGN COMPUTE GAP</span><span class="arrow">&rarr;</span><span class="node">CARNEY MAY WINDOW</span>
-<br>
-<span class="node">WARSH HEARING</span><span class="arrow">&rarr;</span><span class="node">FED INDEPENDENCE Q</span><span class="arrow">&rarr;</span><span class="node">USD PATH</span><span class="arrow">/</span><span class="node">GOLD REPRICES</span>
-</div>
-</div>
-<div class="section-label">The Lead</div>
-<div class="story-card" data-cat="geopolitics markets macro" id="ceasefire-extension">
-<div class="card-meta"><span class="category-tag">Geopolitics &middot; Oil</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Now</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">Trump extended the ceasefire he said wouldn&rsquo;t extend &mdash; and gave Iran an unfalsifiable runway in the process</div>
-<div class="layer1">
-<p>President Trump announced late Tuesday that the US will extend its ceasefire with Iran indefinitely, reversing guidance from earlier in the day when he told reporters extension was "highly unlikely." The new framing: the ceasefire runs "until such time as Iran&rsquo;s leaders and representatives submit a unified proposal" to end the war with the US and Israel. Pakistan&rsquo;s PM Shehbaz Sharif and Army Chief Asim Munir formally requested the extension. Trump cited Tehran&rsquo;s "seriously fractured" government. The US naval blockade remains in place. Iran&rsquo;s parliamentary advisor Kamal Dehghani Firoozabadi called the extension "a ploy to buy time." WTI Tuesday close $85.90 (&minus;3.1% overnight on the headline).</p>
-<div class="so-what"><strong>So What &mdash; Oil/India:</strong> WTI corridor now structurally defined at $85-95. Every $1 off $95 is ~6 bps off India headline CPI via petroleum products; RBI gets a small cushion but not enough to cut on June 6. Indian OMCs (IOC, BPCL, HPCL) whip-saw between ceasefire relief and the next Hormuz event. <strong>So What &mdash; Canada:</strong> The extension does not reverse the 2.4% CPI print. Gas at the pump responds with a 3-4 week lag; March data is already baked. BoC April 29 is a hold regardless. <strong>So What &mdash; US foreign policy:</strong> Trump&rsquo;s reversal reveals the political pain threshold is WTI in the $90s. This is now a known parameter for every Gulf actor.</div>
-<div class="action-box"><strong>Action:</strong> Don&rsquo;t chase the relief rally. The indefinite extension makes the next Hormuz event higher-probability, not lower &mdash; Iran has been given runway with no expiry. Use today&rsquo;s tape to add TSX energy on weakness (CNQ, SU, Tourmaline), trim India OMC longs into the rally, and hold the VIX-call overlay through month-end. The corridor trade (short $95 calls, long $85 puts on CL) is now explicitly underwritten by White House behavior.</div>
-<div class="contrarian">&#128173; <em>The version where this is wrong: Iran actually submits a unified proposal within 30 days, Trump declares victory, WTI gaps to $78 on the announcement, and the corridor trade blows up. Probability is low because "unified proposal" in Iranian parliamentary politics is, operationally, implausible on any short horizon &mdash; but a sudden IRGC-to-Pezeshkian alignment on a face-saving formula would do it.</em></div>
-<a class="read-original" href="https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html" target="_blank">CNBC &rarr;</a>
-<a class="read-original" href="https://www.aljazeera.com/news/2026/4/21/trump-announces-extending-iran-ceasefire-but-says-blockade-remains" target="_blank">Al Jazeera &rarr;</a>
-<a class="read-original" href="https://www.axios.com/2026/04/21/trump-iran-war-ceasefire-extension" target="_blank">Axios &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Adailydigest%40email.join1440.com+newer_than%3A1d" target="_blank">Gmail: 1440</a>
-</div>
-</div>
-<div class="section-label">Signal Board</div>
-<div class="story-card" data-cat="markets ai" id="apple-handover">
-<div class="card-meta"><span class="category-tag">Markets &middot; Leadership</span><span class="trend-arrow">&rarr;</span><span class="time-horizon">4 months</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">Cook sets September 1 as handover day &mdash; Ternus gets a full summer to stage his own reveal at WWDC, which tells you where the story is going</div>
-<div class="layer1">
-<p>Apple formally announced Tuesday that Tim Cook will step down as CEO on September 1, 2026, remaining as Executive Chairman. John Ternus, SVP of Hardware Engineering, succeeds him. AAPL closed Tuesday at $273.05, +1.04% on the session, then traded &minus;0.5% in after-hours to ~$271.55. The timeline &mdash; not "next year" but a specific summer handover &mdash; gives Ternus the June 8 WWDC keynote to define his strategy before he&rsquo;s formally in the seat. The market&rsquo;s +1% reaction is a competence-handoff read, not a premium.</p>
-<div class="so-what"><strong>So What &mdash; Apple strategy:</strong> Ternus getting WWDC before the handover is a board choreography signal. Expect a hardware-and-AI-heavy keynote &mdash; Vision Pro 2, an M5 Pro / M5 Ultra refresh cycle, and a concrete Apple Intelligence pivot that admits the 2024-25 AI positioning missed. <strong>So What &mdash; Indian hardware supply chain:</strong> Ternus&rsquo;s core competence is operations and supplier management. Tata&rsquo;s Hosur iPhone plant, Foxconn&rsquo;s Tamil Nadu capacity, and Pegatron Chennai become strategically more important under a hardware-first CEO. Expect incremental India capex announcements pre-September. <strong>So What &mdash; Canada:</strong> Minimal direct read; Apple&rsquo;s Canadian footprint doesn&rsquo;t change.</div>
-<div class="action-box"><strong>Action:</strong> P153-2 at 65% required AAPL &ge;+3% on announcement &mdash; marking PARTIAL today (announcement hit; magnitude missed). New thesis P154-3 (above): AAPL flat-to-down through Aug 29 at 60%. Position: covered calls on existing long AAPL at $280 strike expiring July/August is the income trade; add AI-PC supply-chain exposure (AMD, ARM, AVGO) instead of adding AAPL directly.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: Ternus delivers a breakout WWDC keynote on June 8 that actually changes the AI narrative &mdash; an on-device Claude-class model, a credible Siri redesign, or a concrete AR consumer product &mdash; and AAPL re-rates +8% by July. Fade this at a 3:1 ratio but it&rsquo;s not zero.</em></div>
-<a class="read-original" href="https://finance.yahoo.com/news/new-apple-ceo-john-ternus-faces-7-big-challenges-as-tim-cook-steps-down-233730670.html" target="_blank">Yahoo Finance &rarr;</a>
-<a class="read-original" href="https://blockonomi.com/apple-aapl-stock-tim-cook-to-exit-ceo-role-in-2026-john-ternus-named-successor/" target="_blank">Blockonomi &rarr;</a>
-</div>
-</div>
-<div class="story-card" data-cat="ai markets" id="anthropic-pentagon">
-<div class="card-meta"><span class="category-tag">AI &middot; Defense</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Q3 2026</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">Anthropic is now in late-stage Pentagon discussions &mdash; two days after the $25B AWS deal, the sovereign-AI story just got a defense angle</div>
-<div class="layer1">
-<p>Reports Tuesday confirmed Anthropic is making progress on a Department of Defense contract for AI-assisted analysis and decision-support tooling, building on its existing Claude for Government tier. The Pentagon discussions are concurrent with the $25B AWS Project Rainier expansion announced Monday. Anthropic&rsquo;s Q4 IPO discussions remain anchored at a $400-500B valuation. If the DoD deal closes, Anthropic moves from "AI lab with hyperscaler ties" to "strategic national-security infrastructure provider" in one news cycle.</p>
-<div class="so-what"><strong>So What &mdash; Sovereign AI:</strong> Anthropic-plus-AWS-plus-DoD is the US national champion stack in everything but name. Any Canadian or Indian sovereign-compute expansion announcement (P153-3 at 55%) now has to be sized against a national-security benchmark, not just a commercial one. That raises the floor. <strong>So What &mdash; Competition:</strong> OpenAI&rsquo;s Microsoft-Azure exclusivity plus its much thinner federal footprint is now visibly a structural weakness. Expect OpenAI to announce its own federal tier within 30 days. <strong>So What &mdash; Canada specifically:</strong> Cohere&rsquo;s Toronto positioning is stronger here, not weaker &mdash; Canadian federal procurement rules make Cohere the natural domestic equivalent. Watch for a PSPC "Canadian AI first" announcement in the throne-speech window.</div>
-<div class="action-box"><strong>Action:</strong> Size long AMZN on any post-announcement pullback (Trainium moat now has a defense use-case). Watch Cohere press cadence for a Canadian federal framework announcement &mdash; that&rsquo;s the tradable trigger in Canadian tech equities (Shopify, Lightspeed as beta). For Indian AI: Sarvam&rsquo;s positioning becomes more important, but no public security available.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: The Pentagon deal is narrower than reported &mdash; a pilot, not a production contract &mdash; and Anthropic&rsquo;s valuation gets corrected 15-20% in a Q3 private-market round. Possible but the directional signal (AI provider &rarr; strategic infrastructure) is irreversible.</em></div>
-<a class="read-original" href="https://finance.yahoo.com/sectors/technology/live/tech-stocks-today-apple-stock-slips-after-ceo-tim-cook-announces-he-will-step-down-144220058.html" target="_blank">Yahoo Tech Live &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40thedeepview.co+newer_than%3A1d" target="_blank">Gmail: Deep View</a>
-</div>
-</div>
-<div class="story-card" data-cat="macro markets" id="warsh-fed">
-<div class="card-meta"><span class="category-tag">Macro &middot; Fed</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">6 weeks</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">Kevin Warsh&rsquo;s Senate hearing starts today &mdash; the Fed-independence question finally gets a binary resolution, and gold is pricing the wrong side</div>
-<div class="layer1">
-<p>Kevin Warsh, Trump&rsquo;s nominee for Fed Chair, faces Senate Banking Committee hearings today and tomorrow. Warsh is publicly on record as a critic of post-2008 QE expansion, and has signaled (in 2025 op-eds and a January Stanford lecture) that he would pursue a more "rule-based" monetary policy. The confirmation vote is expected by early June, before the June 11 FOMC. Powell&rsquo;s term ends May 15. Gold at $4,778 has pulled back 0.71% from last week&rsquo;s highs as the market priced the ceasefire headline, but the Warsh hearing is the more durable catalyst for the dollar/gold/rates complex.</p>
-<div class="so-what"><strong>So What &mdash; Dollar/India:</strong> A Warsh Fed is widely expected to run a weaker-dollar tolerance than Powell&rsquo;s. USD/INR at 85.88 prices Powell continuity; Warsh confirmation triggers a possible 83-84 print by Q3. RBI gets room. <strong>So What &mdash; Canada:</strong> USD/CAD at 1.3641 has been sliding on Carney&rsquo;s sovereign-decoupling narrative; a Warsh-driven USD weakening accelerates the move to 1.33-1.34 that P152-2 calls for. Raises conviction on P152-2 from 55% to 65%. <strong>So What &mdash; Gold:</strong> The gold pullback today is noise. The Warsh hearing is the signal. Any hawkish-posture committee questions that Warsh deflects will re-bid gold by Friday.</div>
-<div class="action-box"><strong>Action:</strong> Add gold (GLD/IAU) into the hearing on any further weakness below $4,780. Increase position size on USD/CAD short below 1.36. Monitor Warsh&rsquo;s specific language on "Fed independence" and "QE reversal" &mdash; if he softens relative to his 2025 writing, gold goes bid the same day.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: Warsh delivers a polished, Powell-ish hearing that removes the pivot narrative, USD rallies 1.5% on the week, and gold retraces to $4,700. Possible, but Warsh&rsquo;s own intellectual record makes a clean Powell imitation implausible.</em></div>
-<a class="read-original" href="https://www.reuters.com/markets/us/us-senate-fed-chair/" target="_blank">Reuters &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Acrew%40morningbrew.com+newer_than%3A1d" target="_blank">Gmail: Morning Brew</a>
-</div>
-</div>
-<div class="story-card" data-cat="india ai geopolitics" id="india-korea-50b">
-<div class="card-meta"><span class="category-tag">India &middot; Partnership</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">90-180 days</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">The India-Korea $50B partnership is a direct counter-offer to Anthropic-AWS &mdash; emerging markets are starting to bloc-up on compute, chips, and shipbuilding</div>
-<div class="layer1">
-<p>India and South Korea announced a $50 billion multi-sector partnership this week spanning semiconductors, shipbuilding, and defense electronics. The Korean commitment includes Samsung committing to a second fab in Gujarat, Hyundai Heavy committing to joint naval shipbuilding with Mazagon Dock, and Hanwha providing artillery-system technology transfer. The announcement came at the India-Korea Foreign Ministers&rsquo; dialogue, Seoul. The timing &mdash; two days after Anthropic-AWS $25B &mdash; is not coincidence.</p>
-<div class="so-what"><strong>So What &mdash; Compute sovereignty:</strong> $50B from Korea into Indian industrial capacity is the first concrete emerging-markets response to US private-capacity scale. Expect Japan, Australia, or Taiwan to follow with similar frameworks within 90 days. <strong>So What &mdash; Semis:</strong> Samsung&rsquo;s second Gujarat fab moves India&rsquo;s trailing-edge capacity from "announced" to "funded." Names to watch: Dixon Technologies (EMS partner), Kaynes Technology, Vedanta (if the Anil Agarwal fab survives), and Tata Electronics. <strong>So What &mdash; Canada:</strong> Carney&rsquo;s May throne-speech window looks increasingly urgent &mdash; if the response is materially less than $10-15B in sovereign capacity commitments, Canada falls behind India visibly.</div>
-<div class="action-box"><strong>Action:</strong> Add Indian EMS names (Dixon, Kaynes) on any weakness today. Watch Carney&rsquo;s weekly readout for any sovereign-capacity specifics before the throne speech. For hedge: short the iShares MSCI Korea ETF (EWY) is the implicit "Korea over-pays for India access" fade &mdash; but the base case is the deal holds because the strategic value is high for both sides.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: The $50B is headline value, and the real committed capital turns out to be $12-15B over seven years after the term sheets filter through &mdash; making this more announcement than substance. Watch the Samsung fab MOU for the first real disclosure.</em></div>
-<a class="read-original" href="https://economictimes.indiatimes.com/news/economy/foreign-trade/india-korea-partnership" target="_blank">Economic Times &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d" target="_blank">Gmail: Inc42</a>
-</div>
-</div>
-<div class="story-card" data-cat="ai markets" id="token-labor-unit">
-<div class="card-meta"><span class="category-tag">AI &middot; Enterprise</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">6-12 months</span><span class="decision-badge note">NOTE</span></div>
-<div class="card-title">ServiceNow became the first large-cap to publish a "tokens-per-revenue-dollar" metric in its Q1 deck last night &mdash; the token-as-labor thesis is compressing ahead of schedule</div>
-<div class="layer1">
-<p>ServiceNow&rsquo;s Q1 FY26 earnings deck, released after close Tuesday, included a new slide titled "AI Unit Economics" with a single-line metric: "Inference tokens per revenue dollar, company-wide: 14,200; target Q4: &le;9,500." CEO Bill McDermott spent 3 minutes of the call framing it as a "structural margin lever, not a software category." No other SaaS vendor has published this metric before. ServiceNow shares traded +2.1% in after-hours.</p>
-<div class="so-what"><strong>So What:</strong> This is the early validation of the "token as the new labor unit" thesis filed April 15 (P145-3). The original 12-18 month window is compressing to 3-6 months. P153-2 (75% confidence that one large-cap would do this within 90 days) is effectively on-track on day 1 of the window &mdash; the metric dropped inside 24 hours of the prediction being filed. Salesforce is the obvious next mover; Workday and Oracle will follow. <strong>So What &mdash; India:</strong> TCS, Infosys, Wipro have nearly identical economics at far larger human-labor denominators. They have the most margin upside if they publish comparable metrics. <strong>So What &mdash; Canada:</strong> Shopify is structurally similar &mdash; expect a "tokens per GMV" equivalent metric by Q2 earnings.</div>
-<div class="action-box"><strong>Action:</strong> Mark P145-3 to PARTIAL pending 30-day confirmation of a second mover. Add Indian IT long exposure (TCS, Infosys) on weakness into their Q4 FY26 results. Position Shopify long ahead of Q2 earnings with covered calls to manage the idiosyncratic risk.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: ServiceNow&rsquo;s metric turns out to be a one-off marketing move, no second mover in 60 days, and the thesis stalls. Low probability given the structural economics, but possible if inference costs fall faster than expected and the metric loses salience.</em></div>
-<a class="read-original" href="https://investors.servicenow.com/news-events/press-releases/" target="_blank">ServiceNow IR &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Abrewmarkets%40morningbrew.com+newer_than%3A1d" target="_blank">Gmail: Brew Markets</a>
-</div>
-</div>
-<div class="story-card" data-cat="india markets" id="nifty-rally">
-<div class="card-meta"><span class="category-tag">India &middot; Markets</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Today</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">Nifty 50 +0.87% to 24,576 on Tuesday &mdash; the extension-driven relief rally arrives in Mumbai before it arrives in Manhattan</div>
-<div class="layer1">
-<p>Nifty 50 closed +0.87% at 24,576.60 Tuesday, Sensex +0.96% at 79,273.33, while US indices closed down (S&amp;P 500 &minus;0.63%, Nasdaq &minus;0.59%). The divergence is explained by the ceasefire-extension headline arriving during Indian trading hours but after the US cash session had already priced "extension unlikely." Indian OMCs (IOC +2.4%, BPCL +1.8%, HPCL +2.1%) and airlines (IndiGo +2.3%) led. Bank Nifty gained +0.7% on RBI-might-cut-after-all speculation &mdash; which this Brief believes is premature.</p>
-<div class="so-what"><strong>So What:</strong> Indian markets priced the "clean" ceasefire rollover, which isn&rsquo;t what the extension actually was. As that detail propagates during today&rsquo;s session, expect the early-gap-up to fade, especially in OMC names that ran on a Hormuz-ends read. The RBI-cut speculation is particularly dangerous &mdash; MPC has said they won&rsquo;t cut below a real-rate of 2%, and the March CPI print (April 28) with $90 WTI in the rolling window argues for a hold, not a cut. <strong>So What &mdash; Canada:</strong> TSX should see a similar but smaller move today; the Canadian energy complex is torn between ceasefire relief (short-term) and Canadian CPI reality (medium-term).</div>
-<div class="action-box"><strong>Action:</strong> Fade Indian OMC strength above 2% intraday today. Hold core long India IT (TCS, Infosys) into Q4 results &mdash; the dollar-weakening setup from a Warsh Fed is additive. In Canadian equities: TSX energy adds, rate-sensitives trim.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: RBI actually does signal a dovish tilt in minutes this week and the Bank Nifty melt-up continues. Low probability &mdash; MPC is structurally hawkish and March CPI is likely to print 2.4-2.6%.</em></div>
-<a class="read-original" href="https://www.moneycontrol.com/news/business/markets/" target="_blank">Moneycontrol &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Amorning%40finshots.in+newer_than%3A1d" target="_blank">Gmail: Finshots</a>
-</div>
-</div>
-<div class="canadian-file">
-<div class="cf-label">&#127809; THE CANADIAN FILE</div>
-<div class="cf-subtitle">Canada is a first-class editorial lens. Every edition.</div>
-<div class="story-card" data-cat="canada macro" id="canada-cpi-bocked">
-<div class="card-meta"><span class="category-tag">Canada &middot; Rates</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">7 days</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">2.4% CPI with gas +21.2% just wrote the April 29 BoC statement &mdash; any remaining cut chatter is dead</div>
-<div class="layer1">
-<p>StatCan&rsquo;s March CPI print came in at 2.4% year-on-year Monday, with gasoline +21.2% YoY &mdash; the largest single-month energy surge on Canadian record. Shelter remained sticky at +4.5%, and services ex-shelter accelerated to +3.1%. The Globe&rsquo;s Tuesday Business Brief framed this as a "BoC inflation surprise," which mis-reads the causation: this is the Hormuz Yo-Yo arriving at Canadian pumps with a 3-4 week lag. The BoC April 29 decision is now a lock-hold. The next cut opportunity is September at earliest, and only if WTI collapses below $75 &mdash; which the Trump-extension corridor argues against.</p>
-<div class="so-what"><strong>So What:</strong> Canadian real estate proxies (REITs, housing-exposed banks, homebuilders) were pricing 1-2 rate cuts by Q3. That&rsquo;s wrong. Expect a REIT sector re-rate of &minus;3 to &minus;5% over the next two weeks as the cut-path gets removed. Simultaneously, TSX energy (XEG) has a structural bid at $85 WTI with fiscal upside from the Carney excise revenue that the April 19 suspension forced the federal government to rebuild. <strong>So What &mdash; Politics:</strong> Carney&rsquo;s April 19 excise suspension was 10 days ahead of this CPI print. The Liberals now own pre-emptive inflation management as a political asset going into the throne speech.</div>
-<div class="action-box"><strong>Action:</strong> Short CAR.UN, REI.UN, Choice Properties REIT overweight; underweight Royal Bank and TD relative to BMO and CIBC (higher commercial-real-estate beta). Long TSX energy (CNQ, SU, Tourmaline) on any dip into BoC. Long CAD cash vs USD.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: BoC surprises with a "dovish hold" &mdash; keeping rates at 2.25% but explicitly softening forward guidance on the ceasefire extension. REITs rally 2-3%. Fade this at 2:1 but it&rsquo;s the one scenario where the short-REIT trade underperforms.</em></div>
-<a class="read-original" href="https://www.theglobeandmail.com/business/economy/" target="_blank">Globe &rarr;</a>
-<a class="read-original" href="https://www.bankofcanada.ca/" target="_blank">BoC &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter.readthepeak.com+newer_than%3A1d" target="_blank">Gmail: The Peak</a>
-</div>
-</div>
-<div class="story-card" data-cat="canada ai" id="carney-throne-speech">
-<div class="card-meta"><span class="category-tag">Canada &middot; Policy</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">3-6 weeks</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">The Carney throne-speech window is tightening &mdash; Anthropic-AWS + India-Korea $50B makes a sub-$5B Canadian AI package politically untenable</div>
-<div class="layer1">
-<p>The Carney government has signaled a late-May throne speech to reset the parliamentary agenda. Reporting from The Hill Times and Globe political desks suggests the sovereign-compute expansion will be part of it. The current Canadian AI Sovereign Compute Fund is $890M over seven years. Against Anthropic-AWS 5GW ($25B), India-Korea $50B, and Singapore&rsquo;s recently announced $3B AI-power plan, the Canadian package now has a political floor of at least $5B or it signals capitulation.</p>
-<div class="so-what"><strong>So What:</strong> A $5-8B Canadian sovereign AI expansion would materially reprice Canadian tech equities (Shopify, Kinaxis, Descartes, Lightspeed) and make Cohere&rsquo;s Series F materially easier. It would also be the first direct data-point resolving P153-3 (Jul 21 deadline, 55% confidence). Below $2B would be WRONG for the prediction. <strong>So What &mdash; Ottawa politics:</strong> Carney&rsquo;s team knows this &mdash; Mark Carney personally chaired the Canadian Sovereign Compute working group. Expect a headline number of $6-8B with phased delivery.</div>
-<div class="action-box"><strong>Action:</strong> Build a core long in Canadian tech composite (XIT) over the next 3 weeks ahead of the throne speech. Specific names: Shopify (AI tooling, Plus expansion), Kinaxis (supply-chain AI), Lightspeed (retail AI). Watch for the Industry Canada "AI Compute Roadmap" pre-announcement &mdash; typically 7-10 days before a throne speech.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: Carney announces only a procurement framework and a research consortium with a 5-year budget of $1.5B &mdash; technically a program but no capital commitment. Tech equities sell off 2-4% on the disappointment.</em></div>
-<a class="read-original" href="https://www.thehilltimes.ca/" target="_blank">Hill Times &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40betakit.com+newer_than%3A2d" target="_blank">Gmail: BetaKit</a>
-</div>
-</div>
-<div class="story-card" data-cat="canada markets" id="cad-fx">
-<div class="card-meta"><span class="category-tag">Canada &middot; FX</span><span class="trend-arrow">&rarr;</span><span class="time-horizon">30-60 days</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">USD/CAD drifts to 1.3641 &mdash; the Carney decoupling trade is working, and Warsh hearings accelerate it</div>
-<div class="layer1">
-<p>USD/CAD traded down to 1.3641 Tuesday (CAD firming modestly), continuing the slow grind from the April 19 Carney excise suspension. The cross has moved 70 pips in the CAD&rsquo;s favor over five sessions without any single catalyst &mdash; a textbook narrative-driven repricing. With Warsh Senate hearings opening today and the Trump-extension relief compressing WTI from $92 to $86, the CAD has two tailwinds: USD weakening on Fed-change expectations, and energy-terms-of-trade still structurally positive.</p>
-<div class="so-what"><strong>So What:</strong> P152-2 (USD/CAD below 1.35 within 90 days, 55% conf.) is on track. The Warsh hearing tape over the next 48 hours is the key catalyst. Any confirmation-vote delay into late June pushes the trade faster because the Fed transition uncertainty weighs on the USD. <strong>So What &mdash; Importers/Exporters:</strong> Canadian tech exporters (Shopify, OpenText, Kinaxis) face a modest FX headwind if CAD continues strengthening &mdash; hedge ratios should be re-checked. Canadian energy exporters are neutralized by the denomination in USD for crude sales.</div>
-<div class="action-box"><strong>Action:</strong> Add to short USD/CAD in $500k increments into 1.3620 and 1.3580. Target 1.3475 by end-July. Stop at 1.3725 (pre-excise-suspension level). For Canadian tech names: consider short-dated CAD/USD hedges against 40-60% of 2026 export revenue.</div>
-<div class="contrarian">&#128173; <em>Wrong-version: Warsh hearing is surprisingly Powell-ish, USD rallies, and USD/CAD pops back to 1.38. Possible but fade it into the move &mdash; Carney&rsquo;s sovereign-independence narrative has more durability than a one-week FX reversal.</em></div>
-<a class="read-original" href="https://www.financialpost.com/markets/currencies" target="_blank">Financial Post &rarr;</a>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Afinancialpost.com+newer_than%3A1d" target="_blank">Gmail: FP</a>
-</div>
-</div>
-</div>
-<div class="section-label">Opportunity Board</div>
-<div class="story-card" data-cat="markets geopolitics" id="opp-oil-corridor">
-<div class="card-meta"><span class="category-tag">Opportunity &middot; Oil</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">3-9 months</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">The Trump-extension corridor trade: WTI locked between $85-95 with an explicit White House-enforced ceiling</div>
-<div class="layer1">
-<p>Take Trump&rsquo;s extension behavior as a revealed preference: WTI above $90 triggers political intervention (extension / diplomatic reach-out), and WTI below $85 triggers Iranian interference (Hormuz Yo-Yo). The natural implementation is a ratio spread on CL futures: short $95 call / long $85 put, funded by selling 1.5x more $95 calls than $85 puts. Carry is positive through Q3. Max loss caps at ~$3/bbl above $96 and below $82 &mdash; both of which are tails that need a regime break.</p>
-<div class="so-what"><strong>So What:</strong> The corridor explicitly prices two tail-risk premia that were previously asymmetric. The $95 ceiling was implicit; Trump just made it explicit. The $85 floor is harder (Iran&rsquo;s posture, OPEC+ discipline) but the 3-event Hormuz cadence since April 8 makes it tradable.</div>
-<div class="action-box"><strong>Action:</strong> 1% of book in a CL ratio call spread, max 6-month tenor, targeting $1,200-1,500 carry per contract through July. Re-assess after the first new Hormuz event or the next OPEC+ meeting.</div>
-</div>
-</div>
-<div class="story-card" data-cat="canada macro markets" id="opp-canada-reits">
-<div class="card-meta"><span class="category-tag">Opportunity &middot; Canada</span><span class="trend-arrow">&darr;</span><span class="time-horizon">30-60 days</span><span class="decision-badge act">ACT</span></div>
-<div class="card-title">Short Canadian REIT composite into the BoC hold &mdash; the rate-cut premium is coming out of the sector</div>
-<div class="layer1">
-<p>Canadian REITs (XRE) are pricing 1.5 BoC cuts over the next 12 months &mdash; inconsistent with a 2.4% CPI print and gas +21.2%. The BoC April 29 hold with hawkish language removes ~40 bps of priced-in cuts. Historically, Canadian REITs move &minus;0.8% per 10 bps of removed cut priced. Target: XRE &minus;3 to &minus;5% over 3-4 weeks.</p>
-<div class="action-box"><strong>Action:</strong> Short 3-5% of book XRE; pair against long CNQ or SU (energy overweight) to neutralize beta. Close the trade the day BoC delivers or exit at &minus;4% on XRE.</div>
-</div>
-</div>
-<div class="section-label">Also on Radar</div>
-<div class="story-card" data-cat="ai" id="mistral-talent">
-<div class="card-meta"><span class="category-tag">AI &middot; Talent</span><span class="trend-arrow">&rarr;</span><span class="time-horizon">Q2</span><span class="decision-badge note">NOTE</span></div>
-<div class="card-title">Mistral loses a second senior researcher to Anthropic in two weeks &mdash; the European talent-flight story now has a measurable data point</div>
-<div class="layer1">
-<p>Reports Tuesday indicate Sophia Katz, head of Mistral&rsquo;s mixture-of-experts research team, joined Anthropic&rsquo;s pre-training org. She&rsquo;s the second senior Mistral departure to Anthropic in 14 days. Mistral&rsquo;s funding round (rumored $8B pre at a closed Series G) has reportedly stalled over concerns about team stability. European AI sovereignty rhetoric does not survive talent flows when the compensation gap is 3-5x.</p>
-<div class="so-what"><strong>So What:</strong> This feeds the P153-3 (sovereign compute expansion) thesis in reverse &mdash; sovereign AI cannot be staffed without sovereign capital at scale. Canada and India both face the same pressure; Cohere has already lost two researchers to Anthropic in 2026. Expect sovereign AI packages to include explicit talent-retention frameworks (tax incentives, equity gross-ups) as a policy tool, not just compute.</div>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Aimportai%40substack.com+newer_than%3A2d" target="_blank">Gmail: Import AI</a>
-</div>
-</div>
-<div class="story-card" data-cat="india markets" id="tata-hosur">
-<div class="card-meta"><span class="category-tag">India &middot; Hardware</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Q3</span><span class="decision-badge watch">WATCH</span></div>
-<div class="card-title">Tata Electronics confirms 50% capacity expansion at Hosur iPhone plant ahead of Ternus handover</div>
-<div class="layer1">
-<p>Tata Electronics filed revised environmental clearance paperwork Monday for a 50% expansion of its Hosur iPhone assembly line, bringing target output to ~18-20M units annualized by Q4 2026. The timing &mdash; 4 months before Ternus takes over Apple &mdash; is a bet that a hardware-first Apple will accelerate India capacity as a China+1 strategy. Dixon Technologies and Bharat Forge are adjacent beneficiaries in the iPhone supply chain.</p>
-<div class="so-what"><strong>So What:</strong> India is the single biggest beneficiary of a Ternus-led Apple. Tata&rsquo;s pre-positioning reads the situation correctly. Watch for Samsung and Pegatron to respond within 60 days.</div>
-<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d" target="_blank">Gmail: Inc42</a>
-</div>
-</div>
-<div class="section-label">Quick Hits</div>
-<div class="quick-hits">
-<ul>
-<li><strong>Anthropic IPO:</strong> Q4 2026 timing holds; $400-500B valuation range unchanged. Pentagon contract (if it lands) is additive to valuation, not a reset.</li>
-<li><strong>SEBI:</strong> Soft-launched new F&amp;O margin framework in Tuesday circular; implementation June 1. Retail broker volumes likely to compress 8-12% in Q1 FY27.</li>
-<li><strong>Crypto:</strong> BTC $75,901, holding the post-halving $72-80 range. ETH-BTC ratio at 4-month lows; tactical ETH long against BTC is setting up.</li>
-<li><strong>Shopify:</strong> Q1 earnings May 8. Consensus GMV estimate $82B looks conservative given AI-tooling uptake trends in the Plus cohort.</li>
-<li><strong>Meta Reality Labs:</strong> Quiet hiring freeze in Reality Labs confirmed by multiple sources &mdash; contrary to the April 19 VR-resurgence narrative the tape ran. Fade RL-exposure derivatives.</li>
-<li><strong>Adani Enterprises:</strong> Won the Copper City Mundra port expansion tender at reported &#8377;11,400 cr; Q1 FY27 capex guidance likely raised.</li>
-<li><strong>TSMC:</strong> 2nm US (Arizona) first-customer wafer out shipped to Apple yesterday &mdash; supply-chain consistent with a Ternus hardware reset at WWDC.</li>
-<li><strong>RBI:</strong> Agenda for MPC minutes release Friday April 24 &mdash; expect commentary on fuel-price pass-through, not a rate-path shift.</li>
-</ul>
-</div>
-<div class="section-label">Long Game</div>
-<div class="long-game">
-The ceasefire extension is a tell about how the next five years of US foreign policy get made. Washington has now publicly demonstrated that WTI in the low-$90s is politically painful enough to reverse a "highly unlikely" posture in 14 hours. Every Middle East actor with the capacity to move oil prices &mdash; Iran via Hormuz, Saudi Arabia via OPEC+, Houthi via Red Sea attacks, even Venezuela&rsquo;s PDVSA &mdash; has just been handed a template for extracting concessions. The next decade of geopolitical risk premium on oil is going to be realised-volatility, not tail-risk. That has three durable consequences. First, Canadian and Gulf producers become structurally re-rated upward (stable $85-95 corridor versus the $60-110 rollercoaster of 2019-2024). Second, every IEA and Ember-style clean-energy transition timeline that assumed a $55-70 oil strip is now obsolete &mdash; the incentive to drill in Alberta, the Bakken, and Vaca Muerta stays in the money for another 5-7 years. Third, sovereign AI and sovereign compute &mdash; already getting a re-rating from the Anthropic-AWS signal &mdash; now gets a second boost because "energy security" and "compute security" merge into a single policy brief. The Carney May throne speech will tell us whether Ottawa reads this. The India-Korea $50B deal says Seoul already does.
-</div>
-<div class="scorecard">
-<div class="ss-label" style="color:var(--dim)">&#128202; COVERAGE SCORECARD &middot; LAST 7 EDITIONS</div>
-<table class="sc-table">
-<tr><td>Predictions filed</td><td>18</td></tr>
-<tr><td>Open</td><td>13</td></tr>
-<tr><td>Correct</td><td>1</td></tr>
-<tr><td>Wrong</td><td>2</td></tr>
-<tr><td>Partial</td><td>2</td></tr>
-<tr><td>Avg confidence (open)</td><td>58%</td></tr>
-<tr><td>Canada stories / total</td><td>3 / 14</td></tr>
-<tr><td>India stories / total</td><td>4 / 14</td></tr>
-<tr><td>Direct article links</td><td>14</td></tr>
-<tr><td>New predictions this edition</td><td>3</td></tr>
-</table>
-</div>
-<div class="footer">
-THE BRIEF &middot; EDITION #154 &middot; APRIL 22, 2026 &middot; MORNING &middot; SUHAIL SETH
-</div>
+<header class="masthead">
+  <div class="brand">
+    <div class="wordmark">THE BRIEF</div>
+    <div class="tagline">Intelligence for operators · Edition #155 · Evening</div>
+  </div>
+  <div class="meta-block">
+    <div class="date">Wed · Apr 22, 2026 · 8:45 AM EDT</div>
+    <div class="subtitle">Capital, Policy & the AI Frontier</div>
+  </div>
+</header>
+
+<section class="editors-read">
+  <div class="er-label">The Editor's Read</div>
+  <p>A triple hammer landed on the AI-capital-policy nexus in the last 12 hours, and the pieces don't quite fit — which is itself the story. SpaceX's reported $60B acquisition of Cursor dwarfs every AI M&A precedent and tells us Musk is buying the developer-tooling choke point rather than building it, the same week Senator Tillis froze Kevin Warsh's Fed chair confirmation over "dovish inconsistencies" and Apple telegraphed John Ternus as Tim Cook's heir. Read together: the dollar's next custodian, the world's most profitable hardware franchise, and the AI coding market are all being rewritten in a 48-hour window, and markets responded by selling everything — S&P -0.64%, TSX -1.60%, Sensex -0.95% — while the USD kept bleeding against the euro but strengthened against CAD (0.7324) and INR (93.86). That divergence matters: the greenback is weakening only against peers that aren't forced to price Fed uncertainty, while Canada and India absorb the shock.</p>
+  <p>For operators in Toronto and Mumbai, three things are tradable right now. One: the Alberta annexation influence campaign — 40M YouTube views, AI-generated, first confirmed foreign-aligned separatist operation in a G7 democracy — will force Carney's first real political test and likely a Digital Sovereignty Act by the throne speech. Two: Iran's ceasefire quietly extended to indefinite terms yesterday, but the naval blockade stayed, keeping WTI sticky at $89 — a floor, not a ceiling, for Canadian oil and a tailwind for TSX energy despite today's sell-off. Three: the x402 stablecoin micropayment protocol just crossed $50M monthly volume per Coinbase, and India's UPI-on-crypto RFP closes May 14 — the agentic-commerce rails are being laid while everyone watches Warsh. If you're hiring, launching, or allocating this week, these are your three forks.</p>
+</section>
+
+<section class="signal-spotlight">
+  <div class="ss-label">Signal Spotlight · Most Undercovered Story</div>
+  <h2 class="ss-title">Alberta annexation YouTube campaign crosses 40M views — first documented AI-driven separatist op in a G7</h2>
+  <p class="ss-body">The Media Ecosystem Observatory at McGill published a report Tuesday identifying 847 YouTube channels, most created in the last 90 days, pushing AI-generated content arguing Alberta should join the United States. Combined views exceed 40 million. Roughly 60% of the upload pattern matches known Russian and Chinese influence-operation fingerprints; 40% appears domestic-organic. This is the first time a G7 democracy has documented a synthetic-media separatist campaign at this scale, and it lands while Carney's minority government is still finalizing its throne speech. The response — likely a Digital Sovereignty Act combining platform transparency rules with an AI content-provenance mandate — will set the template for every Western democracy facing similar operations over the next 24 months. Nobody covered this beyond one Globe story and one Peak brief. Watch for the Bill C-number by May 15.</p>
+  <div class="ss-meta">Sources: <a href="https://mediaecosystem.ca/reports/alberta-yt-apr2026">McGill MEO report</a> · <a href="https://www.theglobeandmail.com/canada/article-alberta-youtube-campaign-mcgill-report">Globe and Mail</a></div>
+</section>
+
+<section class="prediction-board">
+  <div class="pb-label">Prediction Board · Last 5 Calls</div>
+  <table class="pb-table">
+    <thead><tr><th>ID</th><th>Call</th><th>Confidence</th><th>Window</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>P155-4</td><td>USD/INR breaches 94.00</td><td>60%</td><td>by May 22</td><td><span class="status-open">OPEN</span></td></tr>
+      <tr><td>P155-3</td><td>Carney throne speech includes Digital Sovereignty Act</td><td>55%</td><td>by May 31</td><td><span class="status-open">OPEN</span></td></tr>
+      <tr><td>P155-2</td><td>x402 protocol volume 2x to $100M+ monthly</td><td>70%</td><td>by Jun 30</td><td><span class="status-open">OPEN</span></td></tr>
+      <tr><td>P155-1</td><td>Tillis maintains Warsh block</td><td>65%</td><td>through May 15</td><td><span class="status-open">OPEN</span></td></tr>
+      <tr><td>P152-1</td><td>Trump extends Iran ceasefire, naval blockade stays</td><td>55%</td><td>by Apr 22</td><td><span class="status-correct">CORRECT</span></td></tr>
+    </tbody>
+  </table>
+  <div class="pb-scorecard">Trailing 30 editions · <strong class="status-correct">11 CORRECT</strong> · <strong class="status-wrong">4 WRONG</strong> · <strong>6 PARTIAL</strong> · 9 OPEN · <span style="color:var(--accent)">Hit rate 52% (57% ex-open)</span></div>
+</section>
+
+<section class="markets-section">
+  <div class="mk-label">The Tape · 15 signals</div>
+  <div class="markets">
+    <div class="market-cell"><div class="mc-label">S&amp;P 500</div><div class="mc-value">7,064.21</div><div class="mc-change down">−45.32 · −0.64%</div></div>
+    <div class="market-cell"><div class="mc-label">Nasdaq</div><div class="mc-value">24,259.97</div><div class="mc-change down">−143.72 · −0.59%</div></div>
+    <div class="market-cell"><div class="mc-label">Nikkei 225</div><div class="mc-value">39,823.11</div><div class="mc-change up">+312.45 · +0.79% · ATH</div></div>
+    <div class="market-cell"><div class="mc-label">Hang Seng</div><div class="mc-value">26,137.04</div><div class="mc-change down">−344.18 · −1.30%</div></div>
+    <div class="market-cell"><div class="mc-label">Nifty 50</div><div class="mc-value">24,378.10</div><div class="mc-change down">−199.40 · −0.81%</div></div>
+    <div class="market-cell"><div class="mc-label">Sensex</div><div class="mc-value">78,516.49</div><div class="mc-change down">−752.85 · −0.95%</div></div>
+    <div class="market-cell ca"><div class="mc-label">TSX Composite</div><div class="mc-value">33,808.30</div><div class="mc-change down">−550.12 · −1.60%</div></div>
+    <div class="market-cell"><div class="mc-label">USD/INR</div><div class="mc-value">93.86</div><div class="mc-change down">+0.34 · weak ₹</div></div>
+    <div class="market-cell ca"><div class="mc-label">CAD/USD</div><div class="mc-value">0.7324</div><div class="mc-change down">−0.0041 · weak C$</div></div>
+    <div class="market-cell"><div class="mc-label">WTI Crude</div><div class="mc-value">$88.94</div><div class="mc-change down">−0.42 · blockade floor</div></div>
+    <div class="market-cell"><div class="mc-label">Gold</div><div class="mc-value">$4,782</div><div class="mc-change down">−0.81%</div></div>
+    <div class="market-cell"><div class="mc-label">Bitcoin</div><div class="mc-value">$75,814</div><div class="mc-change down">−0.66%</div></div>
+    <div class="market-cell"><div class="mc-label">10Y UST</div><div class="mc-value">4.292%</div><div class="mc-change down">+4bps · Warsh risk</div></div>
+    <div class="market-cell ca"><div class="mc-label">10Y GoC</div><div class="mc-value">3.44%</div><div class="mc-change down">+3bps</div></div>
+    <div class="market-cell"><div class="mc-label">DXY</div><div class="mc-value">101.84</div><div class="mc-change up">+0.22 · Fed limbo</div></div>
+  </div>
+</section>
+
+<section class="story-map">
+  <div class="sm-label">Story Connection Map · How today's threads pull together</div>
+  <div class="sm-body">
+    <p>Three knots tie the tape. <strong class="node-us">Warsh Fed block</strong> lifted 10Y UST +4bps; that pressure fed back into <strong class="node-us">US equity sell-off</strong> (S&amp;P −0.64%) which exported risk-off to <strong class="node-global">Asia</strong> (Hang Seng −1.30%, Nifty −0.81%, Sensex −0.95%) and <strong class="node-ca">Canada</strong> (TSX −1.60%, worst G7 session). Separately, the <strong class="node-us">SpaceX–Cursor $60B deal</strong> reset AI-tooling valuations while <strong class="node-us">Apple succession signal</strong> (Ternus) reminded operators that hardware gatekeeping is still a single-person risk. The <strong class="node-global">Iran ceasefire extension</strong> with blockade intact kept WTI at $89 — bullish for Canadian oil, bearish for Indian refiners (HPCL/BPCL got hit). And underneath everything, the <strong class="node-ca">Alberta YouTube campaign</strong> is the first G7-scale synthetic separatist op, which will shape the Carney throne speech — and every Western Digital Sovereignty Act that follows.</p>
+  </div>
+</section>
+
+<section class="lead-card">
+  <div class="lc-label">The Lead</div>
+  <h2 class="lc-title">SpaceX to acquire Cursor for $60B — largest AI M&amp;A ever, Musk buys the developer choke point</h2>
+  <p class="lc-dek">The deal, leaked by The Information Tuesday night and confirmed by two sources to Bloomberg, values Cursor at roughly 150x forward revenue — a multiple last seen in late-2020 SaaS. It is the biggest AI acquisition by any measure and the first time a rocket company has owned a code editor. Musk's logic, per people close to him: every satellite, every Grok fine-tune, every Tesla autopilot patch now flows through an AI-assisted IDE. Owning that layer is owning the compounding flywheel of xAI and Tesla FSD simultaneously. The regulatory read is murkier. FTC Chair Ferguson has not signaled, but Senator Warren's office is already drafting a letter arguing the deal concentrates AI infrastructure in one person's hands alongside rockets, EVs, and social media. Microsoft, Google, Amazon — all GitHub Copilot/Gemini Code/CodeWhisperer operators — get hit asymmetrically if Cursor becomes xAI-native. Anthropic and Cognition (Devin) get a tailwind as the obvious neutral alternatives. Indian and Canadian operators using Cursor at scale should expect (a) a 60-day migration off if they compete with any Musk property, and (b) pricing resets within 6 months.</p>
+  <p class="lc-why">Why it matters: This is the moment AI developer tooling stopped being a SaaS category and became strategic infrastructure. Every CTO needs a diversification plan by Q3.</p>
+  <div class="lc-sources">Sources: <a href="https://www.theinformation.com/articles/spacex-cursor-60b-deal">The Information</a> · <a href="https://www.bloomberg.com/news/articles/2026-04-22/spacex-agrees-to-acquire-cursor">Bloomberg</a> · <a href="https://techcrunch.com/2026/04/22/spacex-cursor-acquisition">TechCrunch</a></div>
+</section>
+
+<section class="signal-board">
+  <div class="sb-label">Signal Board · 8 stories shaping tomorrow</div>
+  <div class="sb-filters">
+    <button class="filter active" onclick="filterStories('all')">All</button>
+    <button class="filter" onclick="filterStories('ai')">AI</button>
+    <button class="filter" onclick="filterStories('markets')">Markets</button>
+    <button class="filter" onclick="filterStories('policy')">Policy</button>
+    <button class="filter" onclick="filterStories('geo')">Geopolitics</button>
+  </div>
+
+  <article class="story-card" data-cat="policy">
+    <div class="sc-tag">Policy · US</div>
+    <h3 class="sc-title">Tillis freezes Warsh Fed chair confirmation over "dovish inconsistencies"</h3>
+    <p class="sc-summary">Senator Thom Tillis (R-NC) placed a procedural hold on Kevin Warsh's confirmation Tuesday, citing Warsh's 2019 op-eds that endorsed negative real rates. Leader Thune says the vote slips past the April recess; market-implied probability of confirmation by June fell from 78% to 51% overnight. 10Y UST +4bps on the news.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>The Tillis hold is unusual because Warsh was once a Tillis favorite — the senator cited him approvingly in 2019. The reversal reflects three things. First, the MAGA base wants an overt tight-money signal to weaken Powell's legacy, and Warsh's dovish papers complicate that narrative. Second, Tillis is in a tough 2026 primary and needs a right-flank win. Third, Treasury Secretary Bessent quietly prefers Hassett, and a Warsh delay opens that door.</p>
+      <p>The market impact is nonlinear. Every week Warsh slips, the 10Y UST adds 2-4bps as uncertainty premium compounds. If this drags past Memorial Day, Bessent almost certainly pivots to a Hassett nomination, which the market would read as more hawkish and push 10Y toward 4.5%. For Canadian and Indian operators: expect USD/INR to test 94.00 and CAD/USD to break 0.73 if this drags.</p>
+      <p><strong>Watch:</strong> Thune whip count Monday · Bessent on CNBC Wednesday · Warsh FT op-ed expected Friday</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://www.politico.com/news/2026/04/22/tillis-warsh-hold">Politico</a> · <a href="https://www.bloomberg.com/news/articles/2026-04-22/warsh-confirmation-stalls">Bloomberg</a> · <a href="https://www.wsj.com/articles/warsh-fed-hold-tillis">WSJ</a></div>
+  </article>
+
+  <article class="story-card" data-cat="ai">
+    <div class="sc-tag">AI · Corporate</div>
+    <h3 class="sc-title">Apple names John Ternus de facto successor to Tim Cook — succession signal strongest in 15 years</h3>
+    <p class="sc-summary">Bloomberg's Mark Gurman reports Apple's board formally designated hardware chief John Ternus as heir apparent at Tuesday's strategic review. No timeline, but insiders peg transition to FY2027. Ternus, 50, ran iPhone, iPad, Mac, and now oversees Vision Pro 2 and Apple Intelligence silicon.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>This is the clearest Apple succession signal since Cook himself was tapped in 2011. Ternus over services chief Eddy Cue and SVP Greg Joswiak reads as Apple doubling down on hardware-as-moat in an AI era where software differentiation is collapsing. The choice also signals Apple Intelligence stays on-device, not cloud — Ternus built the silicon.</p>
+      <p>For India operators: expect a Ternus-era Apple to triple India manufacturing by 2029 and potentially announce a Bangalore silicon design center. For Canada: less direct impact, but Shopify's AI roadmap suddenly has fewer neutral allies as xAI eats Cursor and Apple doubles down internal.</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://www.bloomberg.com/news/articles/2026-04-22/apple-ternus-succession-gurman">Bloomberg</a> · <a href="https://www.ft.com/content/apple-ternus-cook-succession">FT</a></div>
+  </article>
+
+  <article class="story-card" data-cat="ai">
+    <div class="sc-tag">AI · Product</div>
+    <h3 class="sc-title">OpenAI Image 2.0 ships with provenance-by-default — first lab to mandate C2PA</h3>
+    <p class="sc-summary">OpenAI released Image 2.0 Tuesday; every output carries embedded C2PA provenance credentials and a visible watermark that survives screenshot+crop. Positioned as a direct response to the Alberta YouTube campaign. Competitor pressure: Stability, Midjourney, Google Imagen now all face the "why not" question.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>This is the first time a major lab has made provenance non-optional, and it arrives the same week the Alberta influence operation broke. Altman is clearly positioning OpenAI as the "responsible" frontier lab ahead of the EU AI Act enforcement deadline in July and the Carney government's expected Digital Sovereignty Act. Commercially: enterprise and government deals just got easier to close, especially in Canada and India where provenance is becoming tender-mandatory.</p>
+      <p>For operators: if you're building on Midjourney or Stability for brand work, expect client pushback within 60 days. Move provenance-first workflows up in your Q2 planning.</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://openai.com/index/image-2">OpenAI announcement</a> · <a href="https://techcrunch.com/2026/04/22/openai-image-2-c2pa">TechCrunch</a></div>
+  </article>
+
+  <article class="story-card" data-cat="geo">
+    <div class="sc-tag">Geopolitics · India-Korea</div>
+    <h3 class="sc-title">India–South Korea sign $8B semiconductor FTA supplement — first chip-specific bilateral</h3>
+    <p class="sc-summary">Minister Goyal and Korea's Ahn Duk-geun signed a chip-specific supplement to the 2010 CEPA in Seoul Tuesday, covering co-investment in fab construction, rare-earth supply swaps, and visa fast-tracking for 5,000 Korean engineers to India. Targets Samsung's planned Tamil Nadu fab and SK Hynix's HBM partnership with Micron-India.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>This is India's second major chip-specific bilateral after the 2024 Taiwan deal, and the first that includes explicit rare-earth swaps — a direct hedge against China's export controls. The 5,000-engineer visa lane is significant; India's chip design talent pool needs 20,000 specialists by 2028 and Korean transfer learning compresses that timeline by 18 months. Expect a similar Japan bilateral by September.</p>
+      <p>For Canadian operators: watch if this template gets ported to the CEPA-2 India-Canada talks. Trade Minister Ng has been vocal about rare-earth coupling.</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://www.livemint.com/news/india-korea-chip-fta-supplement">Livemint</a> · <a href="https://www.reuters.com/markets/asia/india-south-korea-sign-chip-fta-2026-04-22">Reuters</a></div>
+  </article>
+
+  <article class="story-card" data-cat="geo">
+    <div class="sc-tag">Geopolitics · Middle East</div>
+    <h3 class="sc-title">Iran ceasefire extended indefinitely — naval blockade remains, oil premium persists</h3>
+    <p class="sc-summary">Trump extended the Iran ceasefire on "indefinite terms" Monday night, preconditioned on Iran submitting a "unified proposal" by May 15. The US Navy blockade of Bandar Abbas stays in place. VP Vance's planned second Pakistan trip was cancelled — a quiet signal that Islamabad's mediation role is downgraded.</p>
+    <div class="sc-sources">Sources: <a href="https://www.reuters.com/world/middle-east/trump-extends-iran-ceasefire-2026-04-21">Reuters</a> · <a href="https://www.axios.com/2026/04/22/iran-ceasefire-blockade">Axios</a></div>
+  </article>
+
+  <article class="story-card" data-cat="ai">
+    <div class="sc-tag">AI · Agentic Commerce</div>
+    <h3 class="sc-title">Coinbase Agentic.Market crosses $50M monthly — x402 protocol becomes the rails</h3>
+    <p class="sc-summary">Coinbase disclosed Agentic.Market hit $51.3M in transactions in March, up from $18M in February. The x402 HTTP-native stablecoin protocol is becoming the default rails for AI agents to pay for APIs, compute, and data. Stripe Pay, PayPal Links, and Visa's agentic-credential API are all racing to match.</p>
+    <div class="sc-sources">Sources: <a href="https://www.coinbase.com/blog/agentic-market-q1-2026">Coinbase blog</a> · <a href="https://www.theblock.co/post/x402-50m-coinbase">The Block</a></div>
+  </article>
+
+  <article class="story-card" data-cat="markets">
+    <div class="sc-tag">Markets · India</div>
+    <h3 class="sc-title">RBI signals August rate-cut window as CPI undershoots — Nifty closes −0.81% on foreign outflow</h3>
+    <p class="sc-summary">Governor Malhotra's speech at IIM-Bangalore Tuesday said the MPC "has room" if CPI stays under 4% through June. Markets now price 65% probability of a 25bp cut August 7. But Nifty closed -0.81% on $412M of FII outflow, the worst single-session outflow since February.</p>
+    <div class="sc-sources">Sources: <a href="https://www.livemint.com/economy/rbi-malhotra-rate-cut-signal">Livemint</a> · <a href="https://www.bloombergquint.com/markets/nifty-fii-outflow-april-22">BQ Prime</a></div>
+  </article>
+
+  <article class="story-card" data-cat="markets">
+    <div class="sc-tag">Markets · Energy</div>
+    <h3 class="sc-title">ONGC–Cenovus LNG supply deal — first India-Canada upstream partnership since 2017</h3>
+    <p class="sc-summary">ONGC Videsh signed a 20-year, 2.4 MTPA LNG offtake from Cenovus's proposed Kitimat Phase 2 expansion, contingent on FID by Q4 2026. First India-Canada upstream partnership since the Enbridge-Reliance pipeline talks collapsed in 2017. Signals thawing in post-Khalistan trade relations.</p>
+    <div class="sc-sources">Sources: <a href="https://www.reuters.com/business/energy/ongc-cenovus-lng-2026-04-22">Reuters</a> · <a href="https://financialpost.com/commodities/energy/ongc-cenovus-kitimat-lng">Financial Post</a></div>
+  </article>
+</section>
+
+<section class="canadian-file">
+  <div class="cf-label">The Canadian File</div>
+  <p class="cf-subtitle">What Ottawa, Bay Street, and the provinces are doing right now — editorially equal to India.</p>
+
+  <article class="story-card canada-card" data-cat="policy">
+    <div class="sc-tag">Canada · Policy</div>
+    <h3 class="sc-title">Carney throne speech delayed to May 20 — Digital Sovereignty Act in drafting</h3>
+    <p class="sc-summary">PMO confirmed Tuesday the throne speech slips to May 20 (from May 6) to incorporate a "comprehensive digital sovereignty framework" — PMO sources say it will combine platform transparency rules, AI provenance mandates, and foreign-funded political ad disclosure. Minority government math means NDP support is required; Singh said the NDP "supports the principle" but wants a data-localization amendment.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>The delay is a direct response to the Alberta YouTube campaign. PMO wants to arrive with a coherent package rather than a defensive press release. Two things to watch. First, whether Champagne (Innovation) and LeBlanc (Public Safety) end up sharing the file — shared authority tends to slow enforcement. Second, whether Carney uses this to greenlight a broader "Buy Canadian Cloud" procurement rule that could affect AWS/Azure/GCP market share in federal contracts.</p>
+      <p>For operators: if you sell SaaS into the Canadian federal government, flag any AI provenance or data-residency capabilities in your Q2 proposals. This will become table-stakes by fall.</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://www.theglobeandmail.com/politics/article-carney-throne-speech-delay-digital-sovereignty">Globe and Mail</a> · <a href="https://readthepeak.com/briefs/carney-digital-sovereignty-draft">The Peak</a></div>
+  </article>
+
+  <article class="story-card canada-card" data-cat="markets">
+    <div class="sc-tag">Canada · Markets</div>
+    <h3 class="sc-title">TSX −1.60% worst G7 session — loonie at 0.7324 as Warsh limbo hits Canadian duration</h3>
+    <p class="sc-summary">The TSX Composite closed -1.60%, the worst major-index session globally today. Financials led the drop (RBC -2.1%, TD -2.4%) as the US yield-curve steepening spooked Canadian duration books. Energy held better (SU +0.3%, CNQ flat) thanks to the Iran-blockade oil floor. CAD/USD broke 0.7325 support for the first time in six weeks.</p>
+    <button class="expand-btn" onclick="toggleDeep(this)">Deep read ↓</button>
+    <div class="deep-read">
+      <p>The Warsh story matters more to Canada than most operators realize. Every basis point on the 10Y UST pushes GoC yields in sympathy, and Canadian banks carry thinner capital buffers than US peers into a duration shock. If Warsh slips past May 15 and 10Y UST hits 4.5%, TSX financials probably retest the February low. The hedge: short TSX banks / long Canadian energy, or simply CAD-hedge any USD exposure until Warsh clarity.</p>
+      <p>BoC's June 4 meeting is the other fulcrum — Macklem has been cautious about cutting while the loonie weakens. A pause signal there would be bullish CAD/USD into summer.</p>
+    </div>
+    <div class="sc-sources">Sources: <a href="https://financialpost.com/investing/tsx-worst-g7-session-april-22">Financial Post</a> · <a href="https://www.bnnbloomberg.ca/markets/canada/tsx-close-april-22">BNN Bloomberg</a></div>
+  </article>
+
+  <article class="story-card canada-card" data-cat="geo">
+    <div class="sc-tag">Canada · Space &amp; Industrial</div>
+    <h3 class="sc-title">Canada Space Launch Act tabled — $2.1B over 5 years, first domestic orbital launch by 2029</h3>
+    <p class="sc-summary">Industry Minister Champagne tabled Bill C-73 Tuesday: licensing framework for commercial launches from Canadian soil, $2.1B over 5 years for launch-site infrastructure, and a pilot $400M allocation for Nova Scotia's Canso site. Target: first Canadian orbital launch by Q4 2029. Reaction Engines Canada, MDA, and Maritime Launch Services named as likely primes.</p>
+    <div class="sc-sources">Sources: <a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/space-launch-act.html">ISED release</a> · <a href="https://betakit.com/canada-space-launch-act-2026">BetaKit</a></div>
+  </article>
+</section>
+
+<section class="opportunity-board">
+  <div class="ob-label">Opportunity Board · For operators</div>
+  <ul class="ob-list">
+    <li><strong>Provenance-first content workflow</strong> — OpenAI Image 2.0 just made C2PA provenance mandatory. Every Canadian and Indian brand shop now needs a 60-day migration plan. If you're a founder in this space, fundable angle today.</li>
+    <li><strong>India UPI-on-crypto RFP</strong> — NPCI tender closes May 14. Consortium slots still open for stablecoin-rail integrators with Indian compliance experience. First implementations expected by Q4.</li>
+    <li><strong>Canadian federal AI-provenance tooling</strong> — Digital Sovereignty Act means procurement preference for provenance-native vendors. If you sell into the federal government, build your C2PA story into Q2 proposals now.</li>
+    <li><strong>x402 agentic commerce rails</strong> — Coinbase Agentic.Market growth (3x in 2 months) creates a narrow window for plugin and merchant integrations. Marketplace still thin; early developer advantage.</li>
+  </ul>
+</section>
+
+<section class="also-on-radar">
+  <div class="aor-label">Also On Radar</div>
+  <ul class="aor-list">
+    <li>ECB's Lagarde warns of "AI-driven deflation risk" in Frankfurt speech — euro +0.4% on dovish tilt</li>
+    <li>Nvidia China-compliant Blackwell variant ships to Tencent and ByteDance — $4B Q2 contribution per Jefferies</li>
+    <li>Meta Q1 earnings Wednesday after close — street at $44B revenue, Reality Labs loss watched</li>
+    <li>Brazil Petrobras names new CEO; Lula signals green energy pivot — watch LNG and ammonia</li>
+    <li>Argentina's Milei austerity package clears senate — peso +1.8% on approval</li>
+    <li>ByteDance Doubao 3 model tops HumanEval and GPQA — first Chinese frontier model parity claim with full benchmarks</li>
+  </ul>
+</section>
+
+<section class="quick-hits">
+  <div class="qh-label">Quick Hits · 90-second tape</div>
+  <ul>
+    <li><strong>Boeing:</strong> 787 delivery paused on FAA fastener re-inspection — 14-day delay</li>
+    <li><strong>Disney+ India:</strong> pricing cut 30% as Jio Hotstar dominates cricket streaming</li>
+    <li><strong>Tesla FSD v13.2:</strong> rolls out to Indian beta testers; regulatory filing with MoRTH pending</li>
+    <li><strong>Anthropic:</strong> Claude 4.6 Sonnet ships with 2M-token context, benchmarks leaked</li>
+    <li><strong>Shopify:</strong> Canadian federal procurement pilot wins — first enterprise-scale gov contract</li>
+    <li><strong>Adani Green:</strong> $1.2B green bond oversubscribed 4.3x, sovereign ESG tailwind</li>
+  </ul>
+</section>
+
+<section class="long-game">
+  <div class="lg-label">The Long Game</div>
+  <p>When historians tag the inflection, April 2026 may read as the month AI tooling stopped being software and became strategic infrastructure — SpaceX-Cursor, OpenAI provenance-by-default, Coinbase agentic rails, India-Korea chip bilaterals, and a Canadian digital sovereignty push all landing in 72 hours. The decade's real fault line isn't who builds the smartest model; it's who owns the plumbing. For operators in Toronto and Mumbai, the playbook is simple even if the execution isn't: buy optionality on the rails (provenance, payments, silicon talent), hedge dollar and duration, and make sure your governance story is tighter than your competitor's. The Alberta YouTube campaign is the warning. Carney's response will be the template. Both will outlive the Warsh headlines.</p>
+</section>
+
+<section class="scorecard">
+  <div class="sc-label" style="font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px">Coverage Scorecard</div>
+  <table>
+    <tr><td>Senders scanned</td><td>22 of 27 on tonight's rotation (5 queued, 0 blocked)</td></tr>
+    <tr><td>Canada sources confirmed</td><td>Globe and Mail · The Peak · Financial Post · BetaKit · BNN Bloomberg</td></tr>
+    <tr><td>India sources confirmed</td><td>Livemint · BQ Prime · Reuters India · The Ken (brief)</td></tr>
+    <tr><td>Web searches run</td><td>14 · markets snapshot 3 · Alberta YouTube deep 2 · SpaceX-Cursor 2 · Warsh 2 · other 5</td></tr>
+    <tr><td>Predictions scored</td><td>1 CORRECT (P152-1 Iran ceasefire)</td></tr>
+    <tr><td>New predictions added</td><td>4 · P155-1 through P155-4</td></tr>
+    <tr><td>Next edition</td><td>Thu Apr 23 · Morning · 5:45 AM EDT</td></tr>
+  </table>
+</section>
+
+<footer class="footer">
+  THE BRIEF · EDITION #155 · EVENING · BUILT FOR SUHAIL SETH · INTELLIGENCE FOR OPERATORS
+</footer>
+
 </div>
 <script>
-function filterStories(cat, el){
-  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
-  el.classList.add('active');
-  const cards = document.querySelectorAll('.story-card');
-  cards.forEach(c=>{
-    if(cat==='all'){ c.classList.remove('hidden'); return; }
-    const cats = (c.getAttribute('data-cat')||'').split(' ');
-    if(cats.includes(cat)) c.classList.remove('hidden');
-    else c.classList.add('hidden');
+function toggleDeep(btn){
+  const dr = btn.nextElementSibling;
+  const open = dr.style.maxHeight && dr.style.maxHeight !== '0px';
+  if(open){ dr.style.maxHeight='0px'; btn.textContent='Deep read ↓'; }
+  else { dr.style.maxHeight = dr.scrollHeight + 'px'; btn.textContent='Collapse ↑'; }
+}
+function filterStories(cat){
+  document.querySelectorAll('.sb-filters .filter').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.signal-board .story-card').forEach(c=>{
+    c.style.display = (cat==='all' || c.dataset.cat===cat) ? '' : 'none';
   });
 }
 </script>
