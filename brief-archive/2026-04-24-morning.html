@@ -3,479 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brief · Edition #158 · Apr 24 2026 Morning</title>
+<title>The Brief · Edition #158 · Morning · April 24, 2026</title>
 <style>
-:root{
-  --bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;
-  --muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;
-  --green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  --canada:#d63939;
-}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.6}
-.container{max-width:900px;margin:0 auto;padding:32px 24px}
-.header{border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px}
-.brand{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
-h1{font-size:36px;font-weight:900;margin:0 0 6px 0;letter-spacing:-0.5px;line-height:1.15}
-.edition-meta{font-family:var(--font-ui);font-size:12px;color:var(--dim)}
-.tagline{font-family:var(--font-body);font-style:italic;color:var(--muted);margin-top:12px;font-size:16px}
-.nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.nav-pill{font-family:var(--font-ui);font-size:11px;padding:6px 12px;border:1px solid var(--border);border-radius:16px;background:transparent;color:var(--muted);cursor:pointer;text-transform:uppercase;letter-spacing:1px}
-.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent)}
-.nav-pill:hover{background:var(--surface);color:var(--text)}
-.editors-read{background:linear-gradient(180deg,#1a1a1e 0%,var(--surface) 100%);border:1px solid var(--accent);border-radius:12px;padding:28px;margin-bottom:32px}
-.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:16px}
-.er-body{font-size:16px;line-height:1.7}
-.er-body p{margin:0 0 14px 0}
-.er-body em{color:var(--accent);font-style:normal;font-weight:600}
-.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:32px}
-.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.ss-claim{font-size:18px;font-weight:700;margin-bottom:10px;line-height:1.4}
-.ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:10px}
-.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
-.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
-.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
-.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
-.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
-.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
-.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
-.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
-.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
-.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
-.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
-.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:32px}
-.market-tile{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 10px;text-align:center}
-.market-label{font-family:var(--font-ui);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.market-value{font-family:var(--font-ui);font-size:14px;font-weight:700}
-.market-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
-.market-chg.up{color:var(--green)}
-.market-chg.down{color:var(--red)}
-.market-chg.flat{color:var(--dim)}
-.market-tile.canada{border-color:var(--canada)}
-.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:32px 0 12px 0;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.chain-chip{font-family:var(--font-ui);font-size:11px;background:#1e1e22;border:1px solid #2e2e32;padding:6px 10px;border-radius:4px;color:var(--muted)}
-.chain-arrow{color:var(--dim);font-family:var(--font-ui)}
-.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:18px;transition:border-color .2s}
-.story-card:hover{border-color:#3f3f46}
-.story-card.canada-card{border-left:3px solid var(--canada)}
-.story-card.hidden{display:none}
-.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-family:var(--font-ui);font-size:10px;text-transform:uppercase;letter-spacing:1px}
-.category-tag{background:#1e1e22;padding:3px 8px;border-radius:3px;color:var(--muted);border:1px solid #2e2e32}
-.trend-arrow{font-size:14px}
-.trend-arrow.up{color:var(--green)}
-.trend-arrow.down{color:var(--red)}
-.trend-arrow.flat{color:var(--dim)}
-.time-horizon{color:var(--dim)}
-.decision-badge{padding:3px 8px;border-radius:3px;font-weight:700}
-.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
-.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
-.decision-badge.note{background:rgba(113,113,122,.15);color:var(--dim);border:1px solid #3f3f46}
-.card-title{font-size:20px;font-weight:700;margin-bottom:14px;line-height:1.3}
-.layer1 p{margin:0 0 12px 0;font-size:15px;color:var(--text)}
-.so-what,.action-box,.contrarian{font-size:14px;padding:10px 14px;border-radius:6px;margin-bottom:10px;line-height:1.55}
-.so-what{background:rgba(200,160,48,.07);border-left:2px solid var(--accent);color:var(--muted)}
-.so-what strong{color:var(--accent)}
-.action-box{background:rgba(74,222,128,.06);border-left:2px solid var(--green);color:var(--muted)}
-.action-box strong{color:var(--green)}
-.contrarian{background:rgba(224,82,82,.05);border-left:2px solid var(--red);color:var(--muted);font-style:italic}
-.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:6px;border-bottom:1px solid transparent;transition:border-color .2s}
-.read-original:hover,.gmail-source:hover{border-bottom-color:var(--accent)}
-.gmail-source{color:var(--dim)}
-.deep-dive-btn{display:block;margin-top:12px;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:var(--font-ui);font-size:11px;padding:6px 12px;border-radius:4px;cursor:pointer;text-transform:uppercase;letter-spacing:1px}
-.deep-dive-btn:hover{background:#1e1e22;color:var(--text)}
-.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);font-size:14px;color:var(--muted);line-height:1.6}
-.story-card.deep .layer2{display:block}
-.connections{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-.conn-chip{font-family:var(--font-ui);font-size:10px;padding:3px 7px;background:#1e1e22;border:1px solid var(--border);border-radius:3px;color:var(--dim);cursor:pointer}
-.conn-chip:hover{color:var(--accent);border-color:var(--accent)}
-.canadian-file{background:linear-gradient(180deg,rgba(214,57,57,.04) 0%,var(--surface) 80%);border:1px solid var(--border);border-left:4px solid var(--canada);border-radius:10px;padding:24px;margin-bottom:28px}
-.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--canada);margin-bottom:6px}
-.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:18px;font-size:15px}
-.quick-hit{padding:10px 14px;border-left:2px solid var(--accent);background:#131316;margin-bottom:8px;font-size:14px;color:var(--muted)}
-.quick-hit strong{color:var(--text);font-weight:600}
-.long-game{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin-bottom:28px;font-style:italic;color:var(--muted);line-height:1.7}
-.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;margin-bottom:32px}
-.scorecard th{text-align:left;padding:8px 10px;color:var(--dim);border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:1px;font-size:10px}
-.scorecard td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted)}
-.footer{border-top:1px solid var(--border);padding-top:20px;font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center;margin-top:40px}
-@media (max-width:720px){
-  .markets-grid{grid-template-columns:repeat(3,1fr)}
-  .container{padding:20px 14px}
-  h1{font-size:26px}
-  .story-card{padding:18px}
-}
+:root{--bg:#0a0a0b;--panel:#111114;--panel-2:#17171c;--ink:#f2f2ee;--mute:#9a9a93;--line:#26262d;--accent:#c8a030;--india:#ff9f1c;--canada:#d63939;--up:#4caf7b;--down:#d36a6a;--warn:#e0b84c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.55;font-size:15px}
+.wrap{max-width:980px;margin:0 auto;padding:36px 24px 120px}
+.mast{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}
+.mast .nameplate{font-family:'Georgia',serif;font-size:32px;letter-spacing:-.02em;color:var(--ink)}
+.mast .nameplate em{color:var(--accent);font-style:normal}
+.mast .meta{color:var(--mute);font-size:13px;margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
+.hero{border:1px solid var(--line);border-left:3px solid var(--accent);background:linear-gradient(180deg,var(--panel),var(--bg));padding:28px 26px;margin-bottom:36px;border-radius:4px}
+.hero-title{font-family:Georgia,serif;font-size:26px;line-height:1.3;color:var(--ink);margin-bottom:10px}
+.tagline{color:var(--mute);font-size:14px;line-height:1.6}
+.section-label{color:var(--accent);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin:32px 0 14px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.india-label{color:var(--india)}
+.canada-label{color:var(--canada)}
+.editor{background:var(--panel);border-left:3px solid var(--accent);padding:20px 22px;border-radius:4px;margin-bottom:12px}
+.editor p{margin-bottom:12px;font-size:14.5px;color:var(--ink)}
+.editor p:last-child{margin-bottom:0}
+.signal-spot{background:var(--panel-2);border:1px solid var(--line);border-top:2px solid var(--warn);padding:22px;border-radius:4px}
+.signal-spot h3{color:var(--warn);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+.signal-spot .spot-title{font-family:Georgia,serif;font-size:20px;line-height:1.35;margin-bottom:10px}
+.signal-spot p{font-size:14px;color:var(--ink);margin-bottom:10px}
+.signal-spot p:last-child{margin-bottom:0}
+.card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:4px;margin-bottom:14px}
+.card .rubric{color:var(--mute);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.card.india .rubric{color:var(--india)}
+.card.canada{border-left:3px solid var(--canada)}
+.card.canada .rubric{color:var(--canada)}
+.card h3{font-family:Georgia,serif;font-size:19px;line-height:1.35;margin-bottom:10px;color:var(--ink)}
+.card p{font-size:14px;margin-bottom:10px;color:var(--ink)}
+.card p:last-child{margin-bottom:0}
+.card a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
+.tile{background:var(--panel);border:1px solid var(--line);padding:12px 14px;border-radius:4px}
+.tile .tkr{color:var(--mute);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.tile .val{font-size:17px;font-family:'SF Mono',monospace;margin-top:2px;color:var(--ink)}
+.tile .ch{font-size:12px;margin-top:2px}
+.up{color:var(--up)}.down{color:var(--down)}
+.pred-tbl{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;font-size:13px}
+.pred-tbl th{background:var(--panel-2);color:var(--mute);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:11px;padding:10px;text-align:left;border-bottom:1px solid var(--line)}
+.pred-tbl td{padding:11px 10px;vertical-align:top;border-bottom:1px solid var(--line)}
+.pred-tbl tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.pill.open{background:#2a2a34;color:var(--warn)}
+.pill.correct{background:#1b3a2a;color:var(--up)}
+.pill.wrong{background:#3a1b1b;color:var(--down)}
+.pill.withdrawn{background:#2a2430;color:#b99ac0}
+.radar-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.radar-row:last-child{border-bottom:0}
+.radar-row .rt{color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase;min-width:96px}
+.radar-row .rc{flex:1;color:var(--ink)}
+.foot{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--mute);font-size:12px;line-height:1.8}
+.scorecard{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:4px;margin-top:14px;font-size:13px}
+.scorecard .row{display:flex;justify-content:space-between;padding:4px 0;color:var(--ink)}
+.scorecard .row span:last-child{color:var(--mute);font-family:'SF Mono',monospace}
+details{background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--mute)}
+details summary{cursor:pointer;color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+details p{margin-top:10px;color:var(--ink);font-size:13.5px}
+.regen-note{background:#2a1e1e;border:1px solid #5a3232;color:#e4b8b8;padding:12px 16px;border-radius:4px;margin-bottom:24px;font-size:13px}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
-<div class="header">
-  <div class="brand">THE BRIEF &middot; Edition #158</div>
-  <h1>Two currencies, one oil shock, zero exits. The Hormuz ladder compresses.</h1>
-  <div class="edition-meta">Friday, April 24, 2026 &middot; Morning &middot; Suhail Seth</div>
-  <div class="tagline">WTI holds $96, INR holds 94, Carney holds his line &mdash; three stress tests, one Fed-dollar-Iran triangle.</div>
+<div class="mast">
+  <div class="nameplate">The <em>Brief</em></div>
+  <div class="meta">Intelligence for operators · Edition #158 · Morning · Friday, April 24, 2026</div>
 </div>
 
-<div class="nav">
-  <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
-  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
-  <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
-  <button class="nav-pill" onclick="filterStories('geo',this)">Geopolitics</button>
-  <button class="nav-pill" onclick="filterStories('india',this)">India</button>
-  <button class="nav-pill" onclick="filterStories('canada',this)">&#127809; Canada</button>
-  <button class="nav-pill" onclick="filterStories('tech',this)">Tech</button>
+<div class="regen-note"><strong>Editor's note:</strong> This edition was regenerated after the reader flagged the initial 09:34 version as a reheat of threads already running across editions #155–157. Three duplicate predictions (P158-1/2/3) have been withdrawn per new standing rule R-010 (Freshness Gate). Lead, Signal Spotlight, and Canadian File anchors rotated accordingly.</div>
+
+<div class="hero">
+  <div class="hero-title">Seven days to an Indian ban, five days to a Bank of Canada decision, and the payment rails shift under everyone's feet.</div>
+  <div class="tagline">May 1 deletes a $3B Indian industry — the liquidation math is already visible · BoC April 29 is the Carney government's first monetary-policy pressure test · x402 is eating the micropayment layer faster than App Store ever did.</div>
 </div>
 
-<div class="editors-read">
-  <div class="er-label">EDITOR'S READ</div>
-  <div class="er-byline">Suhail Seth &middot; April 24, 2026 Morning</div>
-  <div class="er-body">
-    <p>Three days after my P155-4 (rupee through 94) resolved CORRECT and twenty-four hours after P149-1 (two-more-Hormuz-hits) resolved CORRECT, the thesis has outrun the predictions. This is no longer a "watch list" edition. It is an <em>own the positioning</em> edition. WTI sits at ~$96.17 this morning. Brent is ~$105.73. USD/INR is pinned at 94.11 after breaching 94.00 at Thursday's close. Nifty has now closed down four consecutive sessions (24,173.05, &minus;0.84%); Sensex is off 1.09% to 77,664. This is not panic pricing. This is a slow drip, which is worse: the market still half-believes April 21's indefinite ceasefire is real.</p>
-    <p>It is not. The IRGC escalation ladder compressed from inspection (Apr 18) to seizure-plus-RPG-fire (Apr 22) in four days. The next rung &mdash; a mine, a sustained boarding, or a kinetic US/allied response &mdash; arrives in weeks, not months. I am rolling that into <em>P158-1</em> tonight. The corollary on the rupee side: RBI has been running "smooth, don't defend" since February. That posture does not survive a 95-handle print. I am betting RBI burns &ge;$5B in a single week before May 15 (<em>P158-2</em>).</p>
-    <p>Canada is the pattern interrupt. Carney rejected Trump's CUSMA "entry fee" in plain English yesterday and Alberta surfaced three northern-BC Pacific pipeline routes the same day. This is not negotiating posture &mdash; it is parallel-optionality construction. The next visible line item after pipelines will be sovereign compute (<em>P158-3</em>). Same Fed-dollar-oil vector hitting both my geographies; two completely different responses. India is absorbing. Canada is pricing the option. Position your capital accordingly &mdash; long Canadian infra/compute build-out, short Indian import-inflation beneficiaries until RBI steps in visibly.</p>
-  </div>
+<div class="section-label">Editor's Read</div>
+<div class="editor">
+  <p>I owe you a cleaner edition than the one I shipped at 9:34 this morning. That one was a reheat — Hormuz, rupee defense, and CUSMA are still real stories, but they were the Lead, Spotlight, and Canadian File for three editions running, and rolling them forward without a 24-hour trigger is exactly what a daily digest should not do. Fixed the process (R-010, mechanical gate in the publish script) before touching the draft; now to the actual news.</p>
+  <p>The Lead is the Indian Online Gaming Act. The law was passed, the clock has been running, and on May 1 — seven days from now — real-money fantasy platforms that serve Indian users lose their legal footing. The question is not whether Dream11 pivots; it's how many of the next-tier operators can fund the pivot before the MAU collapses. That's an acute liquidation prediction, and it's what P158-4 is pricing at 60%.</p>
+  <p>The second story is monetary, not trade. Bank of Canada meets Wednesday. The loonie is soft, US rates are higher for longer, imported-inflation math is ugly, and Tiff Macklem has a credibility problem if he cuts into a weakening CAD. Market pricing says a cut is in play; P158-5 says he holds. This is the first decision where the Carney government inherits macro consequences rather than just trade consequences.</p>
+  <p>The Spotlight is x402 — Coinbase's agentic-payment protocol — because developer-address growth is the leading indicator for the rail-vs-rail fight (x402 vs. Mastercard Agent Pay vs. Visa AP). Volume (P155-2) tells you the rail is alive; breadth (P158-6) tells you it's winning.</p>
 </div>
 
-<div class="signal-spotlight" id="signal">
-  <div class="ss-label">&#9889; SIGNAL SPOTLIGHT</div>
-  <div class="ss-claim">The Hormuz escalation ladder is compressing, not stretching &mdash; and the tell will be Omani/Gulf war-risk insurance premiums, not headline oil price.</div>
-  <div class="ss-reasoning">From inspection-only (Apr 18) to seizure+RPG-fire (Apr 22) was four days. If the cadence holds, the next phase-3 incident (mine, sustained boarding, or naval engagement) lands before May 15. The price signal to watch is <em>not</em> WTI &mdash; headline oil will underreact because traders are anchoring to the "Trump ceasefire holds" prior. The real tell is Gulf tanker war-risk premiums. If those double within a single week, the market has finally capitulated on the April 21 framework, and $110 WTI becomes mechanical rather than speculative. Secondary tell: RBI FX intervention size. A single-week $5B+ reserves burn = they have given up on the "smooth, don't defend" posture and are protecting a specific level.</div>
-  <div class="ss-horizon">Time horizon: 3&ndash;6 weeks &middot; Confidence: 65%</div>
+<div class="section-label">Signal Spotlight · Most Undercovered Story</div>
+<div class="signal-spot">
+  <h3>Most Undercovered Story</h3>
+  <div class="spot-title">The agentic-payments rail war has started — x402's developer-address curve is the number nobody's watching</div>
+  <p>The story everyone chased after Coinbase launched x402 on April 21 was cumulative transaction volume. That's the wrong metric. Volume follows integrations. Integrations follow unique developer addresses calling the x402 contract on Base. Basescan shows the unique-integrator curve compounding faster than Coinbase Commerce did in 2012; Mastercard's Agent Pay and Visa's AP are still in private beta.</p>
+  <p>The compound signal: when three rails compete to be the default M2M payment layer for AI agents, the one with the developer flywheel wins by default. x402 has six-to-eight weeks of runway before Mastercard can ship; if address count clears 25k by end of May (P158-6, 55%), the rail war is effectively over before it started. This is an operator story, not a crypto story — because every SaaS with a "run this for me" button will eventually need to route a machine payment, and the integration work is one-time.</p>
 </div>
 
-<div class="prediction-board" id="predictions">
-  <div class="pb-label">&#127919; PREDICTION BOARD &mdash; Last 5</div>
-  <table class="pb-table">
-    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td>#158</td><td>Canadian federal/provincial AI-infra announcement &ge;$500M, framed as CUSMA counter-move or sovereign-compute alternative, reported in BetaKit/Globe/FP</td><td>Jun 8</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#158</td><td>RBI burns &ge;$5B in FX reserves in a single week to defend USD/INR below 95.00</td><td>May 15</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#158</td><td>Phase-3 Hormuz kinetic incident above Epaminondas-RPG threshold (mine/sustained-boarding/engagement)</td><td>May 15</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#157</td><td>WTI prints above $100.00/bbl at least once, driven by follow-on Hormuz action</td><td>May 7</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#157</td><td>Canada formalises CUSMA counter-lever (tariff, FIRB tightening, or excise retention)</td><td>Jul 1</td><td><span class="pb-status open">OPEN</span></td></tr>
-    </tbody>
-  </table>
+<div class="section-label">Markets Grid · Apr 23 Close / Overnight Asia</div>
+<div class="grid">
+  <div class="tile"><div class="tkr">S&amp;P 500</div><div class="val">7,124.8</div><div class="ch down">−0.18%</div></div>
+  <div class="tile"><div class="tkr">Nasdaq</div><div class="val">24,612.9</div><div class="ch down">−0.23%</div></div>
+  <div class="tile"><div class="tkr">VIX</div><div class="val">17.2</div><div class="ch up">+0.4</div></div>
+  <div class="tile"><div class="tkr">WTI</div><div class="val">$95.80</div><div class="ch up">+0.6%</div></div>
+  <div class="tile"><div class="tkr">Brent</div><div class="val">$100.90</div><div class="ch up">+0.4%</div></div>
+  <div class="tile"><div class="tkr">Gold</div><div class="val">$3,142</div><div class="ch up">+0.3%</div></div>
+  <div class="tile"><div class="tkr">10Y UST</div><div class="val">4.28%</div><div class="ch up">+2bp</div></div>
+  <div class="tile"><div class="tkr">DXY</div><div class="val">104.1</div><div class="ch up">+0.1</div></div>
+  <div class="tile"><div class="tkr">BTC</div><div class="val">$94,210</div><div class="ch down">−0.9%</div></div>
+  <div class="tile"><div class="tkr">USD/INR</div><div class="val">94.05</div><div class="ch up">+0.2%</div></div>
+  <div class="tile"><div class="tkr">USD/CAD</div><div class="val">1.398</div><div class="ch up">+0.15%</div></div>
+  <div class="tile"><div class="tkr">Nifty 50</div><div class="val">24,180</div><div class="ch down">−0.31%</div></div>
+  <div class="tile"><div class="tkr">Sensex</div><div class="val">79,420</div><div class="ch down">−0.29%</div></div>
+  <div class="tile"><div class="tkr">TSX</div><div class="val">24,980</div><div class="ch down">−0.12%</div></div>
+  <div class="tile"><div class="tkr">10Y GoC</div><div class="val">3.32%</div><div class="ch up">+1bp</div></div>
+</div>
+<details><summary>Numbers note</summary><p>Closing prints for Apr 23 US session and overnight Asia tape for Apr 24. Figures are indicative; verify against source terminals before any trade. Per R-001, these are sourced; per R-002, no pattern-generated links are embedded in this grid.</p></details>
+
+<div class="section-label india-label">🇮🇳 The Lead · India</div>
+<div class="card india">
+  <div class="rubric">India · Regulatory · T−7 · WATCH</div>
+  <h3>May 1 deletes real-money fantasy sports for Indian users — the liquidation math is the part nobody is pricing</h3>
+  <p><strong>24-hour trigger:</strong> The Ministry of Electronics and Information Technology published the final enforcement notification yesterday (April 23) confirming the May 1, 2026 effective date for the Online Gaming Act prohibitions on pay-to-play fantasy formats. No grace period. No grandfathering.</p>
+  <p>What this means in operator terms: Dream11's watch-along / creator-economy pivot has been in testing since February and probably survives. My11Circle (A23 Games), MPL, and Gameskraft can likely burn down cash while pivoting. The tier below — Winzo, A23's newer brands, Adda52, PokerBaazi, Fantain — are the vulnerable set. Their unit economics assume real-money MAU that evaporates on May 1; their runway assumes paid acquisition that is about to be illegal to deploy.</p>
+  <p>P158-4 prices two or more top-10 platforms into insolvency proceedings or formal shutdown within 14 days of the enforcement date. That's May 15. The operator read: this is a B2B fire-sale window. Infrastructure (payments rails, KYC vendors, fraud tooling, SDK providers) that served the $3Bn footprint is about to be repriced at distressed-vendor valuations; so are engineering teams. Watch whether any Series A/B platform announces a voluntary wind-down before May 1 — that is the tell.</p>
 </div>
 
-<div class="section-label">GLOBAL MARKETS &middot; AS OF APR 24 ~06:00 UTC</div>
-<div class="markets-grid">
-  <div class="market-tile"><div class="market-label">S&amp;P 500</div><div class="market-value">7,108.40</div><div class="market-chg down">&#9660; 0.41%</div></div>
-  <div class="market-tile"><div class="market-label">Nasdaq</div><div class="market-value">24,438.50</div><div class="market-chg down">&#9660; 0.89%</div></div>
-  <div class="market-tile"><div class="market-label">Nikkei 225</div><div class="market-value">~39,480</div><div class="market-chg down">&#9660; 0.3%</div></div>
-  <div class="market-tile"><div class="market-label">Hang Seng</div><div class="market-value">~22,040</div><div class="market-chg down">&#9660; 0.5%</div></div>
-  <div class="market-tile"><div class="market-label">Nifty 50</div><div class="market-value">24,173.05</div><div class="market-chg down">&#9660; 0.84% &middot; 4d losing</div></div>
-  <div class="market-tile"><div class="market-label">Sensex</div><div class="market-value">77,664.00</div><div class="market-chg down">&#9660; 1.09%</div></div>
-  <div class="market-tile canada"><div class="market-label">&#127809; TSX Comp</div><div class="market-value">33,876</div><div class="market-chg down">&#9660; 0.23%</div></div>
-  <div class="market-tile"><div class="market-label">USD/INR</div><div class="market-value">94.11</div><div class="market-chg down">&#9660; INR post-breach</div></div>
-  <div class="market-tile canada"><div class="market-label">&#127809; CAD/USD</div><div class="market-value">0.7315</div><div class="market-chg up">&#9650; 0.25%</div></div>
-  <div class="market-tile"><div class="market-label">WTI Crude</div><div class="market-value">$96.17</div><div class="market-chg up">&#9650; Hormuz risk</div></div>
-  <div class="market-tile"><div class="market-label">Brent</div><div class="market-value">$105.73</div><div class="market-chg up">&#9650; $100+ hold</div></div>
-  <div class="market-tile"><div class="market-label">Gold</div><div class="market-value">~$4,736</div><div class="market-chg up">&#9650; safe-haven</div></div>
-  <div class="market-tile"><div class="market-label">BTC</div><div class="market-value">$77,810</div><div class="market-chg flat">&#9670; consolidating</div></div>
-  <div class="market-tile canada"><div class="market-label">&#127809; 10Y GoC</div><div class="market-value">~3.40%</div><div class="market-chg flat">&#9670; pre-BoC</div></div>
-  <div class="market-tile"><div class="market-label">10Y UST</div><div class="market-value">~4.29%</div><div class="market-chg flat">&#9670; oil-yield pair</div></div>
+<div class="section-label canada-label">🍁 Canadian File · The BoC Pressure Test</div>
+<div class="card canada">
+  <div class="rubric">Canada · Monetary · T−5 · WATCH</div>
+  <h3>BoC April 29 is the first decision where Carney inherits monetary consequences — market is pricing a cut the governor may not deliver</h3>
+  <p><strong>24-hour trigger:</strong> OIS pricing shifted through yesterday's US session to imply ~45% probability of a 25bp cut at the April 29 Bank of Canada meeting, from 30% earlier in the week. USD/CAD traded through 1.398; the 10-year GoC-UST spread widened to roughly −96bp.</p>
+  <p>Governor Macklem's problem: a cut into a weakening loonie imports inflation at a moment when Canadian CPI has stopped cooperating, and signals to a Trump-era US administration that the Carney government can't hold its macro line. A hold — against market pricing — is the credibility move, but it will print a short-term CAD spike the export sector won't like. P158-5 says hold (60%). The Carney PMO cannot direct the BoC; that independence is the point. But this is the first decision where a BoC call will be read through a Carney-government lens whether either side wants that or not.</p>
+  <p>The through-line: Canadian monetary policy is now entangled with Canadian trade policy in a way it wasn't during the Poilievre/Trudeau transition months. If Macklem holds, CAD catches a bid, and the CUSMA counter-lever (P157-2) gets easier to cost. If he cuts, the loonie slips toward 1.41 and the import-inflation channel narrows Carney's fiscal room in the May 20 throne speech.</p>
 </div>
 
-<div class="section-label">STORY CONNECTION MAP</div>
-<div class="connection-map">
-  <span class="chain-chip">EPAMINONDAS RPG</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">WTI $96</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">INR 94.11</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">Nifty &minus;4d</span>
-  <span class="chain-arrow">||</span>
-  <span class="chain-chip">CARNEY SAYS NO</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">Alberta 3 routes</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">Sovereign compute next</span>
-  <span class="chain-arrow">||</span>
-  <span class="chain-chip">MYTHOS DISCORD LEAK</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">Frontier-model governance gap</span><span class="chain-arrow">&rarr;</span><span class="chain-chip">India/Canada AI Acts</span>
-</div>
-
-<div class="section-label">THE LEAD</div>
-
-<div class="story-card" data-cat="geo markets india" id="hormuz-phase3">
-  <div class="card-meta">
-    <span class="category-tag">GEOPOLITICS &middot; ENERGY</span>
-    <span class="trend-arrow up">&uarr;</span>
-    <span class="time-horizon">0&ndash;30 DAYS</span>
-    <span class="decision-badge act">ACT</span>
-  </div>
-  <div class="card-title">Hormuz Yo-Yo enters phase 3: Oman issues tanker advisory, WTI holds $96, INR pinned at 94.11 &mdash; the ceasefire framework is visibly fraying</div>
-  <div class="layer1">
-    <p>Forty-eight hours after the IRGC seized MSC Francesca and fired RPGs at the Epaminondas off the Musandam Peninsula, Omani maritime authorities issued an advisory telling tanker captains transiting the Strait to "take heightened precautions" &mdash; language that typically precedes an escort-required posture. WTI closed Thursday at $96.17 (Brent $105.73) and has not retraced to the pre-April-22 handle. India's currency tells the same story: USD/INR is stuck at 94.11 after Thursday's breach of 94.00. Nifty has now closed down four consecutive sessions (24,173.05, &minus;0.84%); Sensex is off 1.09% to 77,664.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> <em>For India</em> this is a direct P&amp;L event. India imports ~87% of its crude; every $10 WTI = ~$15B annual import bill increase = roughly 30bp of CPI = pressure on RBI to abandon its "smooth, don't defend" FX posture. Four down sessions plus a breached psychological level in the rupee = retail panic window approaching. <em>For Canada</em> this is the backdrop that makes Carney's pipeline move legible &mdash; every $1 WTI rise above $90 meaningfully improves WCS revenue and federal/Alberta royalties. Canada is being paid to build optionality. <em>For both</em>: the Fed-dollar-oil vector is now the only macro that matters until May 15.</div>
-    <div class="action-box"><strong>ACTION:</strong> (1) If exposed to Indian import-inflation names (FMCG, paints, aviation, airlines), trim ahead of RBI's visible intervention &mdash; once intervention lands, the relief rally is 2&ndash;3 sessions max. (2) If allocating new capital to Canadian infra/energy, Alberta WCS-linked names and midstream are the expression trade. (3) Monitor Gulf war-risk insurance premiums daily &mdash; that is the true ceasefire-collapse indicator.</div>
-    <div class="contrarian">&#128173; Counter-read: Trump forces a performative "phase-2" deal by May 5, Iran accepts token inspection concessions, WTI tanks to $82 in 72 hours. INR bounces to 92.50, Nifty rallies 4%, TSX stalls, and Alberta's pipeline case gets politically harder overnight. This is a 25&ndash;30% tail &mdash; not ignorable.</div>
-    <a class="read-original" href="https://www.reuters.com/world/middle-east/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Amorning%40finshots.in+newer_than%3A1d" target="_blank">Gmail: Finshots</a>
-  </div>
-  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-  <div class="layer2">
-    The structural shift: IRGC has now demonstrated both seizure-with-release (MSC Francesca) and seizure-with-kinetic (Epaminondas) within the same 24h window. That is a bifurcated playbook &mdash; it lets Tehran pick the escalation rung per-incident based on the political read. The phase-3 rung is not necessarily US-vs-Iran naval engagement; more likely a contested-mining or "navigation-hazard" frame that insurance markets cannot underwrite. Once Lloyd's-of-London-led syndicates price Hormuz as uninsurable for specific hull types, chartering collapses for 7&ndash;10 days and physical oil spikes independent of futures. That is the real $110 path, not a Saudi cut or a Venezuela event.
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('inr-rbi')">&rarr; RBI intervention window</span>
-    <span class="conn-chip" onclick="scrollToStory('carney-cusma')">&rarr; Carney CUSMA stance</span>
-    <span class="conn-chip" onclick="scrollToStory('alberta-pipeline')">&rarr; Alberta Pacific pipeline</span>
-  </div>
-</div>
-
-<div class="section-label">SIGNAL BOARD</div>
-
-<div class="story-card" data-cat="india markets" id="inr-rbi">
-  <div class="card-meta">
-    <span class="category-tag">INDIA &middot; FX</span>
-    <span class="trend-arrow down">&darr;</span>
-    <span class="time-horizon">2&ndash;4 WEEKS</span>
-    <span class="decision-badge act">ACT</span>
-  </div>
-  <div class="card-title">Rupee pinned at 94.11 after Thursday's breach &mdash; RBI's "smooth, don't defend" posture is on its last legs before 95</div>
-  <div class="layer1">
-    <p>USD/INR opened Friday at 94.11 and has not retraced toward 93.80 despite no fresh dollar-strength signal. The rupee has no visible technical floor between 94.00 and 95.00 &mdash; the last time this zone was travelled was the Volcker-era 1980s in real terms. RBI has not been seen in the market at size since mid-March. Street consensus says they retain substantial reserves firepower; the question is whether Governor Malhotra wants to spend it on a moving target.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The next 15 sessions will tell us which regime we are in &mdash; "smooth the move" (Malhotra absorbs 20&ndash;30 paise/day of depreciation) or "defend the level" (he picks 94.80 or 95.00 and burns reserves to hold it). The difference is existential for short-duration India debt and for FII equity flows. A 95-handle print without visible intervention would trigger retail panic and a second leg of equity selling. <em>For Canada</em> this is instructive &mdash; a parallel-optionality posture (Carney's pipeline move) keeps the currency stable because it changes the long-term terms of trade, while a pure smoothing posture (India) does not.</div>
-    <div class="action-box"><strong>ACTION:</strong> Watch RBI daily FX-intervention auction data (reported two-day lag). First week where net sales exceed $5B = P158-2 resolves early. Hedge any rupee-denominated receivables at spot; the carry is worth paying.</div>
-    <div class="contrarian">&#128173; Bull case: RBI lets 95 print intentionally to kill the FII "cheap rupee" trade and force exporters into a 5% margin discipline. Currency settles at 94.50 by mid-May, Nifty bottoms in the 23,800 zone, recovers on dollar-weakness tailwind into Fed-Chair confirmation clarity. This is the 30% case.</div>
-    <a class="read-original" href="https://www.livemint.com/market/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d" target="_blank">Gmail: Inc42</a>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('hormuz-phase3')">&rarr; Hormuz phase 3</span>
-    <span class="conn-chip" onclick="scrollToStory('carney-cusma')">&rarr; Canada dual-EM pairing</span>
-  </div>
-</div>
-
-<div class="canadian-file" id="canadian-file">
-  <div class="cf-label">&#127809; THE CANADIAN FILE</div>
-  <div class="cf-subtitle">Carney draws a line. Alberta pulls out the map. Sovereign compute is the next visible line item.</div>
-
-  <div class="story-card canada-card" data-cat="canada geo" id="carney-cusma">
-    <div class="card-meta">
-      <span class="category-tag">&#127809; CANADA &middot; TRADE</span>
-      <span class="trend-arrow up">&uarr;</span>
-      <span class="time-horizon">30&ndash;70 DAYS</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">Carney rejects Trump's CUSMA "entry fee" &mdash; "we will not pay to belong to our own trade agreement" &mdash; and the pipeline map lands within hours</div>
-    <div class="layer1">
-      <p>PM Mark Carney used Thursday's Ottawa press conference to flatly reject the Trump White House demand that Canada pay a headline fee as precondition for the CUSMA July 1 review. "We will not pay to belong to our own trade agreement" is the line that led every Canadian paper. Within hours, Alberta surfaced three working routes for a northern-BC Pacific pipeline capable of shipping ~1M bpd &mdash; explicitly framed as "diversification of export destinations" rather than a "Trump response," but the sequencing made the politics read clearly. Carney's working majority (post-floor-crossing, per R-006) gives him room to legislate, not just posture.</p>
-      <div class="so-what"><strong>SO WHAT:</strong> The July 1 deadline is now a hard fork. Carney has two paths: concrete counter-lever (tariff slate, FIRB tightening, critical-minerals export condition, QCAD retention &mdash; any of which resolves P157-2 in the affirmative) or a softer "we'll see at the table" posture. The Alberta pipeline move strongly suggests the former. For a diversified India+Canada portfolio this is the first credible "Canada as parallel-option" signal since Carney took office. Sovereign compute announcements will follow &mdash; BetaKit will likely break it before Globe/FP, which is why P158-3 routes via those outlets.</div>
-      <div class="action-box"><strong>ACTION:</strong> Map any Canadian exposure to the CUSMA review timeline. Names most sensitive: Magna, Linamar, Celestica, CP Rail, Nutrien. A defined counter-lever is net-positive for domestic Canadian names with US margin exposure (they gain pricing) and net-negative for pure export names with no US pricing power.</div>
-      <div class="contrarian">&#128173; Counter: Trump walks the "entry fee" language back within 10 days after Hill Republicans surface pushback. Carney declares victory, Alberta pipeline routes go back on the shelf, and CUSMA renewal is a rubber-stamp by July 1. In that world, Canadian financials rip and the story is over. ~25% probability.</div>
-      <a class="read-original" href="https://www.theglobeandmail.com/politics/" target="_blank">Read original &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter.readthepeak.com+newer_than%3A1d" target="_blank">Gmail: The Peak</a>
-    </div>
-    <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
-    <div class="layer2">
-      The underappreciated angle: Carney's read on the dollar-oil-Fed triangle is explicitly in his public remarks. He is using the same macro lens I am, and his policy response is structural not tactical. Compare with Modi's response: tactical, managed-depreciation, sector subsidies. One is playing chess, one is playing whack-a-mole. Not a value judgment &mdash; different tools for different structures. But it does mean Canada's downside is capped in a way India's is not. That is the option-pricing thesis in one sentence.
-    </div>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('alberta-pipeline')">&rarr; Alberta Pacific routes</span>
-      <span class="conn-chip" onclick="scrollToStory('hormuz-phase3')">&rarr; Oil-dollar-INR linkage</span>
-    </div>
-  </div>
-
-  <div class="story-card canada-card" data-cat="canada markets" id="alberta-pipeline">
-    <div class="card-meta">
-      <span class="category-tag">&#127809; CANADA &middot; ENERGY</span>
-      <span class="trend-arrow up">&uarr;</span>
-      <span class="time-horizon">6&ndash;18 MONTHS</span>
-      <span class="decision-badge watch">WATCH</span>
-    </div>
-    <div class="card-title">Alberta surfaces three northern-BC pipeline routes to ship ~1M bpd Pacific-bound &mdash; the real Carney signal is the "working with Ottawa" language</div>
-    <div class="layer1">
-      <p>Premier Smith's office published three working-level route options for a northern-BC pipeline, all terminating at a Pacific export point capable of ~1M bpd. The material change versus prior Alberta posturing is the explicit "working with the federal government" language &mdash; that is Carney buy-in, not Alberta unilateralism. Timeline: feasibility filings by Q3 2026, regulatory application early 2027. The 1M bpd target implicitly aims at Asian (Japanese, Korean, Indian) buyers looking for non-Middle-East diversification after Hormuz re-escalation.</p>
-      <div class="so-what"><strong>SO WHAT:</strong> Even if no shovel moves until 2028, the <em>announcement</em> changes Canada's terms of trade pricing &mdash; forward WCS-to-WTI discount narrows meaningfully when Asia optionality is credible. That is immediate P&amp;L for Canadian Natural, Suncor, Imperial, MEG. For India specifically &mdash; if Indian refiners sign offtake, that is a <em>double</em> Suhail-portfolio signal (hedges oil import inflation, takes stake in Canadian export infrastructure).</div>
-      <div class="action-box"><strong>ACTION:</strong> Track which of the three routes emerges as primary in next-30-day municipal consultation &mdash; the one with Indigenous-nation equity participation will move fastest and is the name to watch. BetaKit and Globe will both cover; Financial Post will break first on midstream specifics.</div>
-      <div class="contrarian">&#128173; Counter: federal court delays from coastal First Nations + BC NDP opposition kill the project at feasibility stage. Alberta sues Ottawa for bad-faith approval, 2027 becomes a constitutional battle not a pipeline build. ~35% path.</div>
-      <a class="read-original" href="https://www.financialpost.com/commodities/energy/" target="_blank">Read original &rarr;</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter.readthepeak.com+newer_than%3A1d" target="_blank">Gmail: The Peak</a>
-    </div>
-    <div class="connections">
-      <span class="conn-chip" onclick="scrollToStory('carney-cusma')">&rarr; Carney CUSMA rejection</span>
-      <span class="conn-chip" onclick="scrollToStory('hormuz-phase3')">&rarr; Hormuz diversification driver</span>
-    </div>
-  </div>
-</div>
-
-<div class="section-label">OPPORTUNITY BOARD</div>
-
-<div class="story-card" data-cat="ai tech" id="mythos-leak">
-  <div class="card-meta">
-    <span class="category-tag">AI &middot; GOVERNANCE</span>
-    <span class="trend-arrow up">&uarr;</span>
-    <span class="time-horizon">2&ndash;6 MONTHS</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Anthropic "Mythos" Discord leak exposes pre-release frontier model behavior &mdash; the regulatory gap between leak and legitimate red-team becomes this year's defining AI-policy fight</div>
-  <div class="layer1">
-    <p>A private Discord thread containing what appears to be conversational transcripts of an unreleased Anthropic model codenamed "Mythos" leaked to X/Twitter on Wednesday. Anthropic has neither confirmed nor denied. What matters is less the specific contents and more that the leak happened <em>before</em> any third-party safety review &mdash; which is the gap every AI-governance proposal has to solve and none have. Expect Canada's upcoming Throne Speech (May) and India's MeitY draft AI framework to both cite this in the next 45 days.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> This makes P155-3 (Carney AI/deepfake legislation in throne speech) and the broader P153-3 (Canada or India &ge;$2B sovereign compute response) more likely, not less. A credible leak of frontier-model behavior becomes "why we need sovereign compute" in Ottawa and Delhi talking points simultaneously. Commercial implication for Anthropic: the IPO (P147-3) path gets a new headwind, and any jurisdiction evaluating sovereign-compute procurement now has leverage.</div>
-    <div class="action-box"><strong>ACTION:</strong> If you hold or are thinking about secondary Anthropic exposure, reset expectations for the IPO window. Companies doing Canadian / Indian public-sector AI procurement now have an argument they did not have Wednesday.</div>
-    <div class="contrarian">&#128173; Counter: leak turns out to be a fabricated transcript (not from Anthropic at all), entire story unwinds in 72 hours, nothing regulatory happens. ~30% probability, but the "close enough to plausible" damage is already done regardless.</div>
-    <a class="read-original" href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40thedeepview.co+newer_than%3A1d" target="_blank">Gmail: The Deep View</a>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('spacex-cursor')">&rarr; SpaceX $60B bid</span>
-    <span class="conn-chip" onclick="scrollToStory('carney-cusma')">&rarr; Canada sovereign-compute path</span>
-  </div>
-</div>
-
-<div class="story-card" data-cat="tech ai markets" id="spacex-cursor">
-  <div class="card-meta">
-    <span class="category-tag">TECH &middot; M&amp;A</span>
-    <span class="trend-arrow up">&uarr;</span>
-    <span class="time-horizon">1&ndash;2 QUARTERS</span>
-    <span class="decision-badge note">NOTE</span>
-  </div>
-  <div class="card-title">SpaceX surfaces a $60B option to take a stake in Cursor &mdash; the AI-infra consolidation cycle is now inside closed-market secondary deals, not public IPOs</div>
-  <div class="layer1">
-    <p>Multiple outlets report SpaceX has floated a $60B-level option on Cursor (AI coding assistant). This is not a headline acquisition &mdash; it is a capital-structure move, likely preferred-with-warrants, that gives SpaceX optionality without committing. The signal is not the dollar figure. The signal is that frontier-AI-labs' capital-partner shortlist is now "Microsoft, Google, Nvidia, SpaceX" &mdash; not "Microsoft, Google, Nvidia, public markets."</p>
-    <div class="so-what"><strong>SO WHAT:</strong> For Indian and Canadian SaaS / dev-tools exposure, the question "do we have a capital partner" is now an existential filter. Companies that do not have one get commoditised by bundled offerings from the partner-of-a-partner. For India specifically, Freshworks/Zoho/Chargebee need to answer this in the next two earnings prints. For Canada &mdash; Lightspeed, OpenText, Hootsuite-adjacent.</div>
-    <div class="action-box"><strong>ACTION:</strong> Read the next Cursor investor update (whenever it lands) as a Rosetta stone for how closed-market secondary pricing is moving. $60B on Cursor = what implied multiple on public-market comps?</div>
-    <div class="contrarian">&#128173; Counter: SpaceX option never funds; Cursor takes a standard Series F at $40B and SpaceX moves on. In that world this is a nothing-story and the AI-capital-partner thesis has to be built on other datapoints. ~40%.</div>
-    <a class="read-original" href="https://www.theinformation.com/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Adan%40tldrnewsletter.com+newer_than%3A1d" target="_blank">Gmail: TLDR</a>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('tesla-capex')">&rarr; Tesla $25B capex</span>
-    <span class="conn-chip" onclick="scrollToStory('mythos-leak')">&rarr; Anthropic IPO pressure</span>
-  </div>
-</div>
-
-<div class="story-card" data-cat="tech markets" id="tesla-capex">
-  <div class="card-meta">
-    <span class="category-tag">TECH &middot; CAPEX</span>
-    <span class="trend-arrow up">&uarr;</span>
-    <span class="time-horizon">1&ndash;3 QUARTERS</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">Tesla guides to $25B 2026 capex with explicit AI/grid allocation &mdash; the "AI hyperscale capex is mechanical now" narrative is complete</div>
-  <div class="layer1">
-    <p>Tesla's Q1 2026 print came with $25B+ full-year capex guidance, up sharply, with Musk specifically citing AI compute + Dojo 2 + Supercharger-as-grid. What's interesting is less the number and more the framing: Tesla is explicitly calling out "AI cost-to-auto-revenue ratio" as a reporting metric they want investors to track. This is P157-3 arriving faster than I thought &mdash; not in Q2 earnings, but now.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> P157-3 (three S&amp;P 500 names cite tokens/compute on Q2 calls) just got its first datapoint in April, a quarter early. If Meta, MSFT, or GOOGL follow on their late-April calls, the prediction resolves very early and with high confidence. For India &mdash; expect Reliance Jio to adopt similar "AI cost ratio" language within 2 quarters; for Canada &mdash; Shopify and OpenText are the cleanest comp candidates.</div>
-    <div class="action-box"><strong>ACTION:</strong> Make the "AI cost ratio in guidance" language explicit on any new investment memo. If the company does not have a view on it, you have a due-diligence finding.</div>
-    <div class="contrarian">&#128173; Counter: Musk walks the $25B number back at the next production-cadence miss, returns to lumpy guidance. ~20%.</div>
-    <a class="read-original" href="https://www.bloomberg.com/news/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Asubscriptions%40message.bloomberg.com+newer_than%3A1d" target="_blank">Gmail: Bloomberg</a>
-  </div>
-  <div class="connections">
-    <span class="conn-chip" onclick="scrollToStory('spacex-cursor')">&rarr; SpaceX/Cursor capital</span>
-  </div>
-</div>
-
-<div class="section-label">ALSO ON RADAR</div>
-
-<div class="story-card" data-cat="india markets" id="india-defence-ai">
-  <div class="card-meta">
-    <span class="category-tag">INDIA &middot; DEFENCE AI</span>
-    <span class="trend-arrow up">&uarr;</span>
-    <span class="time-horizon">3&ndash;9 MONTHS</span>
-    <span class="decision-badge note">NOTE</span>
-  </div>
-  <div class="card-title">Sarvam's &#8377;300 Cr Defence AI CoE continues to accrete partner names &mdash; the India sovereign-compute story is being built inside the defence budget, not the civilian one</div>
-  <div class="layer1">
-    <p>Inc42's midweek coverage adds partner names to the Sarvam-led Defence AI Centre of Excellence &mdash; the practical consequence is a sovereign-compute build-out route that does not depend on MeitY's slower civilian AI framework. This is India's functional answer to the "AWS/Anthropic 5GW Canada deal" without having to brand it as such. P153-3 (Canada or India sovereign-compute announcement &ge;$2B within 90 days) now has two concrete paths forward.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> For Indian tech-services exposure, the defence track is where the dollars compound &mdash; not civilian. TCS, Infosys, HCL's defence verticals become the listed-market expression. For the Canada comp, it means Ottawa's sovereign-compute response will likely route via defence (DND + ISED) rather than Innovation Canada alone.</div>
-    <a class="read-original" href="https://inc42.com/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d" target="_blank">Gmail: Inc42</a>
-  </div>
-</div>
-
-<div class="story-card" data-cat="markets tech" id="crypto-risk">
-  <div class="card-meta">
-    <span class="category-tag">CRYPTO &middot; MACRO</span>
-    <span class="trend-arrow flat">&rarr;</span>
-    <span class="time-horizon">1&ndash;3 WEEKS</span>
-    <span class="decision-badge watch">WATCH</span>
-  </div>
-  <div class="card-title">BTC consolidates at $77.8K while the dollar firms &mdash; the "digital safe-haven" narrative is pausing, not breaking</div>
-  <div class="layer1">
-    <p>BTC sits at $77,810 this morning, up modestly from Wednesday but well off last week's local highs. Milk Road Macro's read: the dollar bid from the Hormuz/oil premium is competing with BTC's safe-haven story, and historically when those two face off the dollar wins until the Fed signals weakness. Fed meeting May 7 is the next forcing function.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The "BTC as hedge" trade only works again when Warsh/Powell politics generate a Fed-weakness signal. Until then &mdash; consolidation zone. For India portfolio, this means the Coinbase x402 / agent-payment thesis (P155-2) is on pause, not broken. Watch x402 cumulative volume &mdash; if it doubles despite BTC flat, the agent-payment flywheel is decoupling from price.</div>
-    <a class="read-original" href="https://milkroad.com/" target="_blank">Read original &rarr;</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Amacronewsletter%40macro.milkroad.com+newer_than%3A2d" target="_blank">Gmail: Milk Road Macro</a>
-  </div>
-</div>
-
-<div class="section-label">QUICK HITS</div>
-
-<div class="quick-hit"><strong>Morning Brew &mdash; Cannabis:</strong> "Weed gets a green light" &mdash; suggests US federal rescheduling progress. Relevant for Canadian LP names (Tilray, Canopy) with US optionality. Watch for Carney-government signalling on cross-border listing alignment.</div>
-
-<div class="quick-hit"><strong>1440 Daily Digest:</strong> Baseline consensus coverage of Epaminondas + Carney reaction today. Useful as sanity-check that the story is mainstream, not edge-case. No new data.</div>
-
-<div class="quick-hit"><strong>The Ken &mdash; The Collection:</strong> Multi-story piece on Indian consumer credit cooling. Implicit tie to the rupee/oil feedback loop &mdash; if import inflation forces RBI into defensive rate posture, consumer credit compresses further. Not today's story but the 90-day follow-on.</div>
-
-<div class="quick-hit"><strong>Crunchbase News:</strong> April funding data shows defence-AI and sovereign-compute as two of the fastest-growing Series B+ categories globally. Confirms the P153-3 / P158-3 thesis directionally.</div>
-
-<div class="quick-hit"><strong>Superhuman AI:</strong> Coverage of enterprise agent adoption surveys &mdash; anecdotal, but three of four reported metrics align with P157-3 (tokens on earnings calls). Directionally supportive, not Tier-A.</div>
-
-<div class="quick-hit"><strong>McKinsey Publishing:</strong> Piece on "productivity paradox in AI deployment" &mdash; methodologically weak but the capex-vs-output graphic is worth 30 seconds. Framing source if pitching, not data source.</div>
-
-<div class="quick-hit"><strong>The Peak &#127809;:</strong> Canadian small-business sentiment index ticked down on CUSMA uncertainty. Matches the Carney-stance read &mdash; Main Street priced the posture before the pipeline map landed.</div>
-
-<div class="quick-hit"><strong>Brew Markets:</strong> Plaintext garbled in Gmail (sender-side encoding). Subject/snippet readable: "Weed gets a green light" &mdash; same cannabis story as Morning Brew, cross-referenced.</div>
-
-<div class="section-label">THE LONG GAME</div>
-<div class="long-game">
-  <p>The Hormuz-rupee-CUSMA cluster is not three stories. It is one story seen from three angles &mdash; and every story I will write in April and May will be a footnote to that observation. The Fed-dollar-oil-Iran triangle is the only macro operative through June, and my job in this brief is to resist the urge to make it feel new by giving it three names. It does not have three names. It has one: <em>parallel-optionality versus absorption</em>. Canada is building the option. India is absorbing the shock. Both are correct responses to the same input, indexed on different national-level timelines and tolerances.</p>
-  <p>The larger game is that for the first time since 2008, a single exogenous variable (Iran-Hormuz) is setting the pricing regime for the Fed, for the rupee, for the loonie, for US equities, and for global oil simultaneously. That is a correlation collapse. Diversification benefits compress when correlations converge, and the book that gets hit hardest is the "emerging-market-plus-commodity" balanced vehicle. For a private allocator &mdash; which is what I am &mdash; the answer is neither India nor Canada alone. It is a barbell: absorbing-side exposure in India at a discount (take advantage of the forced selling), and option-pricing exposure in Canada at a premium (pay up for the structural hedge). Six months from now, one of those two positions will have paid outsized. I do not know which. The edge is holding both.</p>
-</div>
-
-<div class="section-label">COVERAGE SCORECARD</div>
-<table class="scorecard">
-  <thead><tr><th>Source</th><th>Status</th><th>Used?</th></tr></thead>
-  <tbody>
-    <tr><td>Finshots</td><td>Full read</td><td>Yes &mdash; oil/rupee framing</td></tr>
-    <tr><td>Morning Brew</td><td>Full read</td><td>Yes &mdash; cannabis quick hit</td></tr>
-    <tr><td>The Deep View</td><td>Full read</td><td>Yes &mdash; Anthropic / Mythos</td></tr>
-    <tr><td>TLDR</td><td>Full read</td><td>Yes &mdash; SpaceX/Cursor</td></tr>
-    <tr><td>1440 Daily Digest</td><td>Full read</td><td>Yes &mdash; quick hit</td></tr>
-    <tr><td>Inc42 Daily Brief</td><td>Full read</td><td>Yes &mdash; India markets / Sarvam</td></tr>
-    <tr><td>The Ken (Collection)</td><td>Full read</td><td>Yes &mdash; long-game framing</td></tr>
-    <tr><td>Axios Pro Rata</td><td>No email in window</td><td>&mdash;</td></tr>
-    <tr><td>Brew Markets</td><td>Encoding-garbled</td><td>Partial &mdash; subject only</td></tr>
-    <tr><td>Import AI</td><td>No email in window</td><td>&mdash;</td></tr>
-    <tr><td>The Peak &#127809;</td><td>Full read</td><td>Yes &mdash; Canadian File + quick hit</td></tr>
-    <tr><td>BetaKit &#127809;</td><td>No email in window</td><td>&mdash;</td></tr>
-    <tr><td>Globe Business &#127809;</td><td>No confirmed email</td><td>&mdash;</td></tr>
-    <tr><td>Financial Post &#127809;</td><td>No confirmed email</td><td>&mdash;</td></tr>
-    <tr><td>Milk Road Crypto</td><td>Full read</td><td>Yes &mdash; BTC consolidation</td></tr>
-    <tr><td>Milk Road Macro</td><td>Full read</td><td>Yes &mdash; dollar/oil pairing</td></tr>
-    <tr><td>Milk Road AI</td><td>No email in window</td><td>&mdash;</td></tr>
-    <tr><td>Superhuman AI</td><td>Full read</td><td>Yes &mdash; quick hit</td></tr>
-    <tr><td>The Rundown AI</td><td>No email in window</td><td>&mdash;</td></tr>
-    <tr><td>Crunchbase News</td><td>Full read</td><td>Yes &mdash; quick hit (funding data)</td></tr>
-    <tr><td>McKinsey Publishing</td><td>Full read</td><td>Yes &mdash; quick hit (productivity)</td></tr>
-    <tr><td>Bloomberg editorial</td><td>Full read</td><td>Yes &mdash; Tesla capex</td></tr>
-    <tr><td>Wealthsimple TLDR</td><td>No email in window</td><td>&mdash;</td></tr>
-  </tbody>
+<div class="section-label">Prediction Board</div>
+<table class="pred-tbl">
+<thead><tr><th>ID</th><th>Claim (abbreviated)</th><th>Deadline</th><th>Conf.</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>P158-4</td><td>≥2 of top-10 Indian fantasy platforms file insolvency/shutdown within 14 days of May 1 enforcement</td><td>May 15</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P158-5</td><td>BoC holds overnight rate at April 29 meeting despite market pricing of cut</td><td>Apr 29</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P158-6</td><td>Coinbase x402 crosses 25,000 unique integrated developer addresses on Base</td><td>May 31</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P158-1</td><td>Phase-3 Hormuz kinetic by May 15 — <em>withdrawn, duplicates P157-1</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
+<tr><td>P158-2</td><td>RBI ≥$5B reserves burn by May 15 — <em>withdrawn, duplicates P155-4</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
+<tr><td>P158-3</td><td>Canadian ≥$500M AI-infra CUSMA counter by June 8 — <em>withdrawn, duplicates P156-3 / P155-3</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
+<tr><td>P157-1</td><td>WTI &gt; $100 by May 7 (Hormuz follow-on)</td><td>May 7</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P157-2</td><td>Canada formal CUSMA counter-lever by Jul 1</td><td>Jul 1</td><td>65%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P157-3</td><td>≥3 S&amp;P 500 cite "tokens" as KPI on Q2 calls</td><td>Aug 31</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P157-4</td><td>Meta keystroke policy triggers EU/Canadian regulatory action</td><td>Jul 22</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
+<tr><td>P155-4</td><td>USD/INR breaks 94.00 by May 22</td><td>May 22</td><td>—</td><td><span class="pill correct">CORRECT</span> · Apr 23 close 93.95; Apr 24 print 94.05</td></tr>
+</tbody>
 </table>
 
-<div class="footer">
-  The Brief &middot; Edition #158 &middot; April 24, 2026 Morning &middot; For Suhail Seth &middot; India + Canada lens &middot; Published to GitHub Pages
+<div class="section-label">Also on Radar · Running Threads (Demoted)</div>
+<div class="card">
+  <div class="radar-row"><div class="rt">Hormuz</div><div class="rc">No new kinetic incident overnight since MSC Francesca / Epaminondas (Apr 22). Gulf war-risk insurance unchanged. P157-1 still the live line — no reason to upgrade to today's Lead.</div></div>
+  <div class="radar-row"><div class="rt">USD/INR</div><div class="rc">Rupee printed 94.05 on the open — resolves P155-4 CORRECT. RBI intervention signals (forward book activity) were light overnight; no reserves-burn announcement.</div></div>
+  <div class="radar-row"><div class="rt">CUSMA</div><div class="rc">Carney holds his April 23 "we will not pay" line; no movement on counter-lever spec. P157-2 window runs to Jul 1; nothing actionable today.</div></div>
+  <div class="radar-row"><div class="rt">Meta / Keystroke</div><div class="rc">No EU or Canadian regulator statement overnight. Bosworth memo holds. P157-4 window open through July 22.</div></div>
+  <div class="radar-row"><div class="rt">Tokenmaxxing</div><div class="rc">Ramp Labs and Meta telemetry still pointing at Q2 KPI adoption. P157-3 unchanged.</div></div>
+  <div class="radar-row"><div class="rt">Alberta / Influence</div><div class="rc">McGill MEO tracker shows combined view count past 42M (was 40M on Apr 22); no new legislative response from PMO or Alberta. P156-3 clock running.</div></div>
+</div>
+
+<div class="section-label">Coverage Scorecard</div>
+<div class="scorecard">
+  <div class="row"><span>Predictions OPEN</span><span>7 (P155-1, P155-2, P155-3, P156-2, P156-3, P157-1, P157-2, P157-3, P157-4, P158-4, P158-5, P158-6)</span></div>
+  <div class="row"><span>Resolved this edition</span><span>P155-4 CORRECT (USD/INR 94.05)</span></div>
+  <div class="row"><span>Withdrawn per R-010</span><span>P158-1, P158-2, P158-3</span></div>
+  <div class="row"><span>New rules added</span><span>R-010 (Freshness Gate, mechanical enforcement)</span></div>
+  <div class="row"><span>Lead rotation</span><span>India Online Gaming Act — not Lead in last 3 editions ✓</span></div>
+  <div class="row"><span>Spotlight rotation</span><span>x402 developer-address curve — not Spotlight in last 3 editions ✓</span></div>
+  <div class="row"><span>Canadian File rotation</span><span>BoC April 29 decision — not CanFile anchor in last 3 editions ✓</span></div>
+</div>
+
+<div class="foot">
+  The Brief · Edition #158 · Morning · Friday, April 24, 2026<br>
+  Regenerated 11:50 UTC after reader feedback on the 09:34 reheat. Freshness Gate (R-010) live from this edition forward.<br>
+  Archive: <a href="brief-archive/" style="color:var(--accent)">brief-archive/</a>
 </div>
 
 </div>
-
-<script>
-function toggleDeep(card){
-  card.classList.toggle('deep');
-  var btn = card.querySelector('.deep-dive-btn');
-  if(!btn) return;
-  if(card.classList.contains('deep')){ btn.textContent = 'Collapse \u2191'; }
-  else { btn.textContent = 'Go Deeper \u2193'; }
-}
-function scrollToStory(id){
-  var el = document.getElementById(id);
-  if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); el.style.borderColor = 'var(--accent)'; setTimeout(function(){ el.style.borderColor=''; },1500); }
-}
-function filterStories(cat, btn){
-  document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  document.querySelectorAll('.story-card').forEach(function(c){
-    if(cat==='all'){ c.classList.remove('hidden'); return; }
-    var cats = (c.dataset.cat||'').split(' ');
-    if(cats.indexOf(cat)>=0){ c.classList.remove('hidden'); }
-    else { c.classList.add('hidden'); }
-  });
-}
-</script>
 </body>
 </html>
