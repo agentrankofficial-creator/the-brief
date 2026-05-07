@@ -3,182 +3,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Brief · Edition #158 · Morning · April 24, 2026</title>
+<title>The Brief — Edition #159 · May 7, 2026 (Morning)</title>
 <style>
-:root{--bg:#0a0a0b;--panel:#111114;--panel-2:#17171c;--ink:#f2f2ee;--mute:#9a9a93;--line:#26262d;--accent:#c8a030;--india:#ff9f1c;--canada:#d63939;--up:#4caf7b;--down:#d36a6a;--warn:#e0b84c}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.55;font-size:15px}
-.wrap{max-width:980px;margin:0 auto;padding:36px 24px 120px}
-.mast{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}
-.mast .nameplate{font-family:'Georgia',serif;font-size:32px;letter-spacing:-.02em;color:var(--ink)}
-.mast .nameplate em{color:var(--accent);font-style:normal}
-.mast .meta{color:var(--mute);font-size:13px;margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
-.hero{border:1px solid var(--line);border-left:3px solid var(--accent);background:linear-gradient(180deg,var(--panel),var(--bg));padding:28px 26px;margin-bottom:36px;border-radius:4px}
-.hero-title{font-family:Georgia,serif;font-size:26px;line-height:1.3;color:var(--ink);margin-bottom:10px}
-.tagline{color:var(--mute);font-size:14px;line-height:1.6}
-.section-label{color:var(--accent);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin:32px 0 14px;border-bottom:1px solid var(--line);padding-bottom:6px}
-.india-label{color:var(--india)}
-.canada-label{color:var(--canada)}
-.editor{background:var(--panel);border-left:3px solid var(--accent);padding:20px 22px;border-radius:4px;margin-bottom:12px}
-.editor p{margin-bottom:12px;font-size:14.5px;color:var(--ink)}
-.editor p:last-child{margin-bottom:0}
-.signal-spot{background:var(--panel-2);border:1px solid var(--line);border-top:2px solid var(--warn);padding:22px;border-radius:4px}
-.signal-spot h3{color:var(--warn);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
-.signal-spot .spot-title{font-family:Georgia,serif;font-size:20px;line-height:1.35;margin-bottom:10px}
-.signal-spot p{font-size:14px;color:var(--ink);margin-bottom:10px}
-.signal-spot p:last-child{margin-bottom:0}
-.card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:4px;margin-bottom:14px}
-.card .rubric{color:var(--mute);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
-.card.india .rubric{color:var(--india)}
-.card.canada{border-left:3px solid var(--canada)}
-.card.canada .rubric{color:var(--canada)}
-.card h3{font-family:Georgia,serif;font-size:19px;line-height:1.35;margin-bottom:10px;color:var(--ink)}
-.card p{font-size:14px;margin-bottom:10px;color:var(--ink)}
-.card p:last-child{margin-bottom:0}
-.card a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
-.tile{background:var(--panel);border:1px solid var(--line);padding:12px 14px;border-radius:4px}
-.tile .tkr{color:var(--mute);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-.tile .val{font-size:17px;font-family:'SF Mono',monospace;margin-top:2px;color:var(--ink)}
-.tile .ch{font-size:12px;margin-top:2px}
-.up{color:var(--up)}.down{color:var(--down)}
-.pred-tbl{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;font-size:13px}
-.pred-tbl th{background:var(--panel-2);color:var(--mute);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:11px;padding:10px;text-align:left;border-bottom:1px solid var(--line)}
-.pred-tbl td{padding:11px 10px;vertical-align:top;border-bottom:1px solid var(--line)}
-.pred-tbl tr:last-child td{border-bottom:0}
-.pill{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-.pill.open{background:#2a2a34;color:var(--warn)}
-.pill.correct{background:#1b3a2a;color:var(--up)}
-.pill.wrong{background:#3a1b1b;color:var(--down)}
-.pill.withdrawn{background:#2a2430;color:#b99ac0}
-.radar-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
-.radar-row:last-child{border-bottom:0}
-.radar-row .rt{color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase;min-width:96px}
-.radar-row .rc{flex:1;color:var(--ink)}
-.foot{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--mute);font-size:12px;line-height:1.8}
-.scorecard{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:4px;margin-top:14px;font-size:13px}
-.scorecard .row{display:flex;justify-content:space-between;padding:4px 0;color:var(--ink)}
-.scorecard .row span:last-child{color:var(--mute);font-family:'SF Mono',monospace}
-details{background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--mute)}
-details summary{cursor:pointer;color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-details p{margin-top:10px;color:var(--ink);font-size:13.5px}
-.regen-note{background:#2a1e1e;border:1px solid #5a3232;color:#e4b8b8;padding:12px 16px;border-radius:4px;margin-bottom:24px;font-size:13px}
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.55;padding:24px;max-width:1100px;margin:0 auto}
+header{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:28px}
+.masthead{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--font-body);font-size:42px;letter-spacing:-1px;margin:6px 0 2px;color:var(--text)}
+.subhead{font-family:var(--font-ui);font-size:13px;color:var(--muted)}
+.tagline{font-family:var(--font-body);font-style:italic;color:var(--accent);margin-top:10px;font-size:15px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.nav-pill{font-family:var(--font-ui);font-size:11px;padding:5px 11px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:transparent;cursor:pointer;letter-spacing:.5px}
+.nav-pill.active{border-color:var(--accent);color:var(--accent)}
+.editors-read{background:linear-gradient(180deg,#1a1a1f 0%,#131316 100%);border:1px solid #2e2e35;border-left:3px solid var(--accent);border-radius:10px;padding:24px 28px;margin-bottom:28px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:14px}
+.er-body{font-family:var(--font-body);font-size:16px;color:var(--text);line-height:1.7}
+.er-body p{margin-bottom:12px}
+.signal-spotlight{background:#1a1715;border:1px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:28px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ss-claim{font-family:var(--font-body);font-size:18px;font-style:italic;color:var(--text);margin-bottom:10px;line-height:1.45}
+.ss-reasoning{font-size:13px;color:var(--muted);margin-bottom:8px;line-height:1.55}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.section-title{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin:32px 0 14px;border-top:1px solid var(--border);padding-top:18px}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:8px}
+.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:var(--font-ui)}
+.mc-name{font-size:9.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px}
+.mc-value{font-size:14px;color:var(--text);font-weight:600}
+.mc-change{font-size:11px;margin-top:3px}
+.up{color:var(--green)}
+.down{color:var(--red)}
+.flat{color:var(--muted)}
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cm-chip{font-family:var(--font-ui);font-size:11px;color:var(--text);padding:5px 10px;background:#1e1e22;border:1px solid var(--border);border-radius:4px;letter-spacing:.5px}
+.cm-arrow{color:var(--accent);font-family:var(--font-ui);font-size:11px}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:18px;transition:border-color .2s}
+.story-card.lead{border-left:4px solid var(--accent)}
+.story-card.hidden{display:none}
+.canadian-file{background:linear-gradient(180deg,#16110f 0%,#131316 100%);border:1px solid #3a2422;border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.cf-subtitle{font-family:var(--font-body);font-style:italic;color:var(--muted);margin-bottom:18px;font-size:14px}
+.canadian-file .story-card{background:#0f0d0c;border-color:#2a1f1d}
+.card-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;font-family:var(--font-ui)}
+.category-tag{font-size:9.5px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;border:1px solid var(--accent);padding:2px 7px;border-radius:3px}
+.trend-arrow{font-size:14px}
+.time-horizon{font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.decision-badge{font-size:9.5px;font-weight:700;letter-spacing:1.2px;padding:2px 7px;border-radius:3px;text-transform:uppercase}
+.decision-badge.act{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(161,161,170,.12);color:var(--muted);border:1px solid var(--border)}
+.card-title{font-family:var(--font-body);font-size:20px;color:var(--text);margin-bottom:14px;line-height:1.35;font-weight:600}
+.layer1 p{font-size:14.5px;color:var(--text);line-height:1.65;margin-bottom:14px}
+.so-what,.action-box,.contrarian{font-size:13px;padding:10px 12px;border-radius:6px;margin-bottom:10px;line-height:1.55}
+.so-what{background:#1a1d1a;border-left:2px solid var(--green);color:var(--text)}
+.action-box{background:#1d1a16;border-left:2px solid var(--accent);color:var(--text)}
+.contrarian{background:#1d1517;border-left:2px solid var(--red);color:var(--muted);font-style:italic}
+.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11.5px;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:6px;letter-spacing:.5px}
+.read-original:hover,.gmail-source:hover{text-decoration:underline}
+.gmail-source{color:var(--dim)}
+.deep-dive-btn{display:block;background:transparent;color:var(--dim);border:1px solid var(--border);border-radius:5px;padding:6px 12px;margin-top:14px;font-family:var(--font-ui);font-size:11px;cursor:pointer;letter-spacing:.5px}
+.deep-dive-btn:hover{color:var(--accent);border-color:var(--accent)}
+.layer2{display:none;margin-top:14px;padding:14px;background:#0f0f12;border:1px dashed var(--border);border-radius:6px;font-size:13px;color:var(--muted);line-height:1.6}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.conn-chip{font-family:var(--font-ui);font-size:10px;color:var(--dim);background:#1e1e22;padding:3px 8px;border-radius:3px;cursor:pointer}
+.conn-chip:hover{color:var(--accent)}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 24px}
+.quick-hits ul{list-style:none}
+.quick-hits li{font-size:13.5px;color:var(--text);padding:9px 0;border-bottom:1px solid #1e1e22;line-height:1.55}
+.quick-hits li:last-child{border-bottom:none}
+.long-game{background:#16140f;border:1px solid #2a2820;border-left:3px solid var(--accent);border-radius:10px;padding:20px 24px;font-style:italic;color:var(--muted);font-size:14.5px;line-height:1.7;margin-bottom:24px}
+.long-game strong{color:var(--accent);font-style:normal;font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px;font-weight:700}
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 24px;font-family:var(--font-ui);font-size:12px;margin-bottom:20px}
+.scorecard table{width:100%;border-collapse:collapse}
+.scorecard td{padding:6px 0;color:var(--muted);border-bottom:1px solid #1e1e22}
+.scorecard td:first-child{color:var(--dim);text-transform:uppercase;font-size:10px;letter-spacing:1.2px}
+.scorecard td:last-child{text-align:right;color:var(--text);font-weight:600}
+footer{text-align:center;color:var(--dim);font-family:var(--font-ui);font-size:11px;margin-top:40px;padding-top:20px;border-top:1px solid var(--border);letter-spacing:1px}
+@media(max-width:720px){.markets-grid{grid-template-columns:repeat(3,1fr)}h1{font-size:32px}}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<div class="mast">
-  <div class="nameplate">The <em>Brief</em></div>
-  <div class="meta">Intelligence for operators · Edition #158 · Morning · Friday, April 24, 2026</div>
+<header>
+  <div class="masthead">THE BRIEF · EDITION #159 · MORNING</div>
+  <h1>The Truce Trade</h1>
+  <div class="subhead">Thursday, May 7, 2026 · Suhail Seth · Premium Daily Intelligence</div>
+  <div class="tagline">Project Freedom paused · S&amp;P + Nasdaq print fresh records · Apple opens iOS to rival AI</div>
+  <nav>
+    <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
+    <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
+    <button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
+    <button class="nav-pill" onclick="filterStories('ai',this)">AI / Tech</button>
+    <button class="nav-pill" onclick="filterStories('india',this)">🇮🇳 India</button>
+    <button class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
+  </nav>
+</header>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · May 7, 2026</div>
+  <div class="er-body">
+    <p>The day everyone called the bottom on Iran, the market called the top on caution. S&amp;P 7,365 and Nasdaq 25,839 both closed at fresh records on Wednesday — the only data point that matters this morning. The proximate cause is Trump pausing Project Freedom and Iran "reviewing a one-page MoU." The actual cause is six weeks of compounding fear releasing in two sessions.</p>
+    <p>Here is the connection nobody is making. The same risk-off flow that pushed Indian and Canadian assets down in April is now reversing — but asymmetrically. The CAD has appreciated to 1.3583 against USD, a 90-day high. The INR is still pinned at 95. Both currencies were sold on Hormuz; only one is being bought back on the de-escalation. That tells me the rupee weakness is no longer purely an oil-premium story — it has migrated into a structural-flow story (FPI exit, FDI gate widening to absorb Chinese minority capital, RBI passivity). The Carney trade and the Modi trade have decoupled.</p>
+    <p>Second connection: Apple opening iOS 27 to Google and Anthropic for Apple Intelligence, the same week OpenAI/Microsoft/AMD/Broadcom/Nvidia/Intel publish an open compute-networking standard, the same week Anthropic ships ten finance-vertical agents. The model layer is commoditising in front of us. The moat is moving down — to compute fabric and proprietary data — and up — to distribution. If you are building a wrapper, you are dead by Q4.</p>
+    <p>The forward call: the market is pricing a peace that has not been signed. I think the snapback risk is a Hormuz incident inside the next 14 days that puts WTI back above $105 and the rupee through 96. The trade is to fade this rip on commodity-sensitive Indian financials, not chase it.</p>
+  </div>
 </div>
 
-<div class="regen-note"><strong>Editor's note:</strong> This edition was regenerated after the reader flagged the initial 09:34 version as a reheat of threads already running across editions #155–157. Three duplicate predictions (P158-1/2/3) have been withdrawn per new standing rule R-010 (Freshness Gate). Lead, Signal Spotlight, and Canadian File anchors rotated accordingly.</div>
-
-<div class="hero">
-  <div class="hero-title">Seven days to an Indian ban, five days to a Bank of Canada decision, and the payment rails shift under everyone's feet.</div>
-  <div class="tagline">May 1 deletes a $3B Indian industry — the liquidation math is already visible · BoC April 29 is the Carney government's first monetary-policy pressure test · x402 is eating the micropayment layer faster than App Store ever did.</div>
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">Apple's iOS 27 "Extensions" is the most underpriced regulatory signal of 2026 — Cupertino has just told the DOJ that it cannot win the AI war alone, and that admission breaks the bundle.</div>
+  <div class="ss-reasoning">Apple is a company that fights for control of the user surface. Letting users route Siri, Writing Tools, and Image Playground to Google or Anthropic is not a feature — it is a concession that the App Store choice-screen precedent (forced by EU DMA) is now spreading to AI by Apple's own hand. The disclaimer language ("Apple bears no responsibility for outputs from external AI") is the legal scaffolding for the next antitrust wave: if Apple is just a router, regulators get to decide pricing of access.</div>
+  <div class="ss-horizon">Time horizon: 6–18 months — watch the iOS 27 GA disclosure docs in September.</div>
 </div>
 
-<div class="section-label">Editor's Read</div>
-<div class="editor">
-  <p>I owe you a cleaner edition than the one I shipped at 9:34 this morning. That one was a reheat — Hormuz, rupee defense, and CUSMA are still real stories, but they were the Lead, Spotlight, and Canadian File for three editions running, and rolling them forward without a 24-hour trigger is exactly what a daily digest should not do. Fixed the process (R-010, mechanical gate in the publish script) before touching the draft; now to the actual news.</p>
-  <p>The Lead is the Indian Online Gaming Act. The law was passed, the clock has been running, and on May 1 — seven days from now — real-money fantasy platforms that serve Indian users lose their legal footing. The question is not whether Dream11 pivots; it's how many of the next-tier operators can fund the pivot before the MAU collapses. That's an acute liquidation prediction, and it's what P158-4 is pricing at 60%.</p>
-  <p>The second story is monetary, not trade. Bank of Canada meets Wednesday. The loonie is soft, US rates are higher for longer, imported-inflation math is ugly, and Tiff Macklem has a credibility problem if he cuts into a weakening CAD. Market pricing says a cut is in play; P158-5 says he holds. This is the first decision where the Carney government inherits macro consequences rather than just trade consequences.</p>
-  <p>The Spotlight is x402 — Coinbase's agentic-payment protocol — because developer-address growth is the leading indicator for the rail-vs-rail fight (x402 vs. Mastercard Agent Pay vs. Visa AP). Volume (P155-2) tells you the rail is alive; breadth (P158-6) tells you it's winning.</p>
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>#158</td><td>BoC holds at 2.25% on Apr 29</td><td>Apr 29</td><td><span class="pb-status correct">CORRECT</span></td></tr>
+      <tr><td>#157</td><td>WTI prints above $100/bbl before May 7</td><td>May 7</td><td><span class="pb-status correct">CORRECT</span></td></tr>
+      <tr><td>#156</td><td>India online gaming consolidates to ≤3 platforms by Dec 31</td><td>Dec 31</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#155</td><td>USD/INR breaches 94.00 within 30 days</td><td>May 22</td><td><span class="pb-status correct">CORRECT</span></td></tr>
+      <tr><td>#154</td><td>Iran does NOT submit "unified proposal" by May 15</td><td>May 15</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
 </div>
 
-<div class="section-label">Signal Spotlight · Most Undercovered Story</div>
-<div class="signal-spot">
-  <h3>Most Undercovered Story</h3>
-  <div class="spot-title">The agentic-payments rail war has started — x402's developer-address curve is the number nobody's watching</div>
-  <p>The story everyone chased after Coinbase launched x402 on April 21 was cumulative transaction volume. That's the wrong metric. Volume follows integrations. Integrations follow unique developer addresses calling the x402 contract on Base. Basescan shows the unique-integrator curve compounding faster than Coinbase Commerce did in 2012; Mastercard's Agent Pay and Visa's AP are still in private beta.</p>
-  <p>The compound signal: when three rails compete to be the default M2M payment layer for AI agents, the one with the developer flywheel wins by default. x402 has six-to-eight weeks of runway before Mastercard can ship; if address count clears 25k by end of May (P158-6, 55%), the rail war is effectively over before it started. This is an operator story, not a crypto story — because every SaaS with a "run this for me" button will eventually need to route a machine payment, and the integration work is one-time.</p>
+<div class="section-title">D · Global Markets · Wednesday May 6 close</div>
+<div class="markets-grid">
+  <div class="market-cell"><div class="mc-name">S&amp;P 500</div><div class="mc-value">7,365.12</div><div class="mc-change up">↑ +1.46%</div></div>
+  <div class="market-cell"><div class="mc-name">Nasdaq</div><div class="mc-value">25,838.94</div><div class="mc-change up">↑ +2.02%</div></div>
+  <div class="market-cell"><div class="mc-name">Dow</div><div class="mc-value">49,910.59</div><div class="mc-change up">↑ +1.24%</div></div>
+  <div class="market-cell"><div class="mc-name">Sensex</div><div class="mc-value">77,958.52</div><div class="mc-change up">↑ +1.22%</div></div>
+  <div class="market-cell"><div class="mc-name">Nifty 50</div><div class="mc-value">24,330.95</div><div class="mc-change up">↑ +1.24%</div></div>
+  <div class="market-cell"><div class="mc-name">TSX Composite 🍁</div><div class="mc-value">33,981</div><div class="mc-change up">↑ +1.23%</div></div>
+  <div class="market-cell"><div class="mc-name">USD/INR</div><div class="mc-value">94.98</div><div class="mc-change down">↓ −0.14%</div></div>
+  <div class="market-cell"><div class="mc-name">USD/CAD 🍁</div><div class="mc-value">1.3583</div><div class="mc-change down">↓ CAD strong</div></div>
+  <div class="market-cell"><div class="mc-name">WTI Crude</div><div class="mc-value">$100.60</div><div class="mc-change down">↓ −5% from week high</div></div>
+  <div class="market-cell"><div class="mc-name">Bitcoin</div><div class="mc-value">$82,320</div><div class="mc-change up">↑ +1.27%</div></div>
+  <div class="market-cell"><div class="mc-name">10Y UST</div><div class="mc-value">4.37%</div><div class="mc-change down">↓ −6 bps</div></div>
+  <div class="market-cell"><div class="mc-name">10Y GoC 🍁</div><div class="mc-value">~3.18%</div><div class="mc-change flat">→ steady post-BoC hold</div></div>
+  <div class="market-cell"><div class="mc-name">Gold</div><div class="mc-value">$3,290</div><div class="mc-change down">↓ −0.4%</div></div>
+  <div class="market-cell"><div class="mc-name">Hang Seng</div><div class="mc-value">22,704</div><div class="mc-change up">↑ +0.5%</div></div>
+  <div class="market-cell"><div class="mc-name">VIX</div><div class="mc-value">14.8</div><div class="mc-change down">↓ peace bid</div></div>
 </div>
 
-<div class="section-label">Markets Grid · Apr 23 Close / Overnight Asia</div>
-<div class="grid">
-  <div class="tile"><div class="tkr">S&amp;P 500</div><div class="val">7,124.8</div><div class="ch down">−0.18%</div></div>
-  <div class="tile"><div class="tkr">Nasdaq</div><div class="val">24,612.9</div><div class="ch down">−0.23%</div></div>
-  <div class="tile"><div class="tkr">VIX</div><div class="val">17.2</div><div class="ch up">+0.4</div></div>
-  <div class="tile"><div class="tkr">WTI</div><div class="val">$95.80</div><div class="ch up">+0.6%</div></div>
-  <div class="tile"><div class="tkr">Brent</div><div class="val">$100.90</div><div class="ch up">+0.4%</div></div>
-  <div class="tile"><div class="tkr">Gold</div><div class="val">$3,142</div><div class="ch up">+0.3%</div></div>
-  <div class="tile"><div class="tkr">10Y UST</div><div class="val">4.28%</div><div class="ch up">+2bp</div></div>
-  <div class="tile"><div class="tkr">DXY</div><div class="val">104.1</div><div class="ch up">+0.1</div></div>
-  <div class="tile"><div class="tkr">BTC</div><div class="val">$94,210</div><div class="ch down">−0.9%</div></div>
-  <div class="tile"><div class="tkr">USD/INR</div><div class="val">94.05</div><div class="ch up">+0.2%</div></div>
-  <div class="tile"><div class="tkr">USD/CAD</div><div class="val">1.398</div><div class="ch up">+0.15%</div></div>
-  <div class="tile"><div class="tkr">Nifty 50</div><div class="val">24,180</div><div class="ch down">−0.31%</div></div>
-  <div class="tile"><div class="tkr">Sensex</div><div class="val">79,420</div><div class="ch down">−0.29%</div></div>
-  <div class="tile"><div class="tkr">TSX</div><div class="val">24,980</div><div class="ch down">−0.12%</div></div>
-  <div class="tile"><div class="tkr">10Y GoC</div><div class="val">3.32%</div><div class="ch up">+1bp</div></div>
-</div>
-<details><summary>Numbers note</summary><p>Closing prints for Apr 23 US session and overnight Asia tape for Apr 24. Figures are indicative; verify against source terminals before any trade. Per R-001, these are sourced; per R-002, no pattern-generated links are embedded in this grid.</p></details>
-
-<div class="section-label india-label">🇮🇳 The Lead · India</div>
-<div class="card india">
-  <div class="rubric">India · Regulatory · T−7 · WATCH</div>
-  <h3>May 1 deletes real-money fantasy sports for Indian users — the liquidation math is the part nobody is pricing</h3>
-  <p><strong>24-hour trigger:</strong> The Ministry of Electronics and Information Technology published the final enforcement notification yesterday (April 23) confirming the May 1, 2026 effective date for the Online Gaming Act prohibitions on pay-to-play fantasy formats. No grace period. No grandfathering.</p>
-  <p>What this means in operator terms: Dream11's watch-along / creator-economy pivot has been in testing since February and probably survives. My11Circle (A23 Games), MPL, and Gameskraft can likely burn down cash while pivoting. The tier below — Winzo, A23's newer brands, Adda52, PokerBaazi, Fantain — are the vulnerable set. Their unit economics assume real-money MAU that evaporates on May 1; their runway assumes paid acquisition that is about to be illegal to deploy.</p>
-  <p>P158-4 prices two or more top-10 platforms into insolvency proceedings or formal shutdown within 14 days of the enforcement date. That's May 15. The operator read: this is a B2B fire-sale window. Infrastructure (payments rails, KYC vendors, fraud tooling, SDK providers) that served the $3Bn footprint is about to be repriced at distressed-vendor valuations; so are engineering teams. Watch whether any Series A/B platform announces a voluntary wind-down before May 1 — that is the tell.</p>
+<div class="section-title">E · Story Connection Map</div>
+<div class="connection-map">
+  <span class="cm-chip">PROJECT FREEDOM PAUSED</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">OIL OFF $106 HIGH</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">S&amp;P + NASDAQ RECORDS</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">CAD STRONG / INR SOFT</span>
+  <span class="cm-arrow">⇡</span>
+  <span class="cm-chip">APPLE OPENS iOS TO ANTHROPIC + GOOGLE</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">MODEL LAYER COMMODITISING</span>
+  <span class="cm-arrow">⇣</span>
+  <span class="cm-chip">COINBASE −14% HEADCOUNT</span>
 </div>
 
-<div class="section-label canada-label">🍁 Canadian File · The BoC Pressure Test</div>
-<div class="card canada">
-  <div class="rubric">Canada · Monetary · T−5 · WATCH</div>
-  <h3>BoC April 29 is the first decision where Carney inherits monetary consequences — market is pricing a cut the governor may not deliver</h3>
-  <p><strong>24-hour trigger:</strong> OIS pricing shifted through yesterday's US session to imply ~45% probability of a 25bp cut at the April 29 Bank of Canada meeting, from 30% earlier in the week. USD/CAD traded through 1.398; the 10-year GoC-UST spread widened to roughly −96bp.</p>
-  <p>Governor Macklem's problem: a cut into a weakening loonie imports inflation at a moment when Canadian CPI has stopped cooperating, and signals to a Trump-era US administration that the Carney government can't hold its macro line. A hold — against market pricing — is the credibility move, but it will print a short-term CAD spike the export sector won't like. P158-5 says hold (60%). The Carney PMO cannot direct the BoC; that independence is the point. But this is the first decision where a BoC call will be read through a Carney-government lens whether either side wants that or not.</p>
-  <p>The through-line: Canadian monetary policy is now entangled with Canadian trade policy in a way it wasn't during the Poilievre/Trudeau transition months. If Macklem holds, CAD catches a bid, and the CUSMA counter-lever (P157-2) gets easier to cost. If he cuts, the loonie slips toward 1.41 and the import-inflation channel narrows Carney's fiscal room in the May 20 throne speech.</p>
+<div class="section-title">F · The Lead</div>
+
+<div class="story-card lead" data-cat="geopolitics markets" id="hormuz-pause">
+  <div class="card-meta">
+    <span class="category-tag">GEOPOLITICS</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">14-DAY HORIZON</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Trump pauses Project Freedom mid-launch — and the bond market just bought a peace that hasn't been signed</div>
+  <div class="layer1">
+    <p>Trump halted Operation Project Freedom on Tuesday evening within 24 hours of its kickoff. US Navy had already sunk six Iranian small craft and the UAE intercepted 15 Iranian missiles plus four drones over Fujairah. Then Iran began reviewing a US one-page MoU drafted to end the war, and Trump pulled the convoy operation while leaving the naval blockade intact. WTI dropped from $106 mid-week to $100.60. Equities printed records.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> Every rupee paid above $90 WTI is a fiscal drag the Centre has been absorbing through OMC subsidy and the March 27 ₹10/L excise cut. A durable settlement at $80 WTI gives Modi back roughly ₹1.5 trillion of optionality — which the market has not priced. <strong>SO WHAT in Canada:</strong> A Hormuz ceasefire compresses the energy-export tailwind that just gave Canada its first trade surplus in six months. The CAD strengthening at 1.3583 is partially "global risk-on" not "Canada-specific" — be careful confusing the two when sizing CAD exposure.</div>
+    <div class="action-box"><strong>ACTION:</strong> Reduce energy beta in both books. In India: trim ONGC, Reliance refining-margin trades. In Canada: hold oil-sands names but tighten stops — Suncor, CNQ are now leveraged to a re-escalation premium that has been removed.</div>
+    <div class="contrarian">💭 Here is the version where everything above is wrong: Iran has not signed anything. Trump has paused the kinetic operation while leaving the naval blockade — meaning the structural pressure that was killing Iranian crude exports is unchanged. If Tehran reads "MoU" as "surrender document" and walks, WTI snaps back through $110 inside 72 hours and yesterday's record close becomes the local top of the cycle.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/05/trump-iran-deal-project-freedom-hormuz-strait.html" target="_blank">Read original →</a>
+    <a class="read-original" href="https://www.cnn.com/2026/05/06/world/live-news/iran-war-trump-strait-of-hormuz" target="_blank">CNN live updates →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    The IRGC escalation ladder over the past 21 days has compressed: April 18 inspection → April 22 Epaminondas RPG → May 3 small-boat attack on a bulk carrier → May 4 UAE missile/drone barrage → May 5 Project Freedom + Trump pause. Five rungs in 17 days. Even if a deal is signed, the regime's domestic faction split (Trump's stated rationale for the indefinite extension on April 21) means any deal has a ~50% probability of being repudiated by hardliners within 60 days. The trade therefore is not "buy peace" — it is "sell volatility on the next 14 days while the market is convinced peace has been bought."
+  </div>
+  <div class="connections">
+    <span class="conn-chip" onclick="scrollToStory('apple-ai')">↗ Apple opens iOS</span>
+    <span class="conn-chip" onclick="scrollToStory('cad-trade-surplus')">↗ Canada trade surplus</span>
+    <span class="conn-chip" onclick="scrollToStory('india-fdi')">↗ India FDI window</span>
+  </div>
 </div>
 
-<div class="section-label">Prediction Board</div>
-<table class="pred-tbl">
-<thead><tr><th>ID</th><th>Claim (abbreviated)</th><th>Deadline</th><th>Conf.</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td>P158-4</td><td>≥2 of top-10 Indian fantasy platforms file insolvency/shutdown within 14 days of May 1 enforcement</td><td>May 15</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P158-5</td><td>BoC holds overnight rate at April 29 meeting despite market pricing of cut</td><td>Apr 29</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P158-6</td><td>Coinbase x402 crosses 25,000 unique integrated developer addresses on Base</td><td>May 31</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P158-1</td><td>Phase-3 Hormuz kinetic by May 15 — <em>withdrawn, duplicates P157-1</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
-<tr><td>P158-2</td><td>RBI ≥$5B reserves burn by May 15 — <em>withdrawn, duplicates P155-4</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
-<tr><td>P158-3</td><td>Canadian ≥$500M AI-infra CUSMA counter by June 8 — <em>withdrawn, duplicates P156-3 / P155-3</em></td><td>—</td><td>—</td><td><span class="pill withdrawn">WITHDRAWN</span></td></tr>
-<tr><td>P157-1</td><td>WTI &gt; $100 by May 7 (Hormuz follow-on)</td><td>May 7</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P157-2</td><td>Canada formal CUSMA counter-lever by Jul 1</td><td>Jul 1</td><td>65%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P157-3</td><td>≥3 S&amp;P 500 cite "tokens" as KPI on Q2 calls</td><td>Aug 31</td><td>60%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P157-4</td><td>Meta keystroke policy triggers EU/Canadian regulatory action</td><td>Jul 22</td><td>55%</td><td><span class="pill open">OPEN</span></td></tr>
-<tr><td>P155-4</td><td>USD/INR breaks 94.00 by May 22</td><td>May 22</td><td>—</td><td><span class="pill correct">CORRECT</span> · Apr 23 close 93.95; Apr 24 print 94.05</td></tr>
-</tbody>
-</table>
+<div class="section-title">G · Signal Board</div>
 
-<div class="section-label">Also on Radar · Running Threads (Demoted)</div>
-<div class="card">
-  <div class="radar-row"><div class="rt">Hormuz</div><div class="rc">No new kinetic incident overnight since MSC Francesca / Epaminondas (Apr 22). Gulf war-risk insurance unchanged. P157-1 still the live line — no reason to upgrade to today's Lead.</div></div>
-  <div class="radar-row"><div class="rt">USD/INR</div><div class="rc">Rupee printed 94.05 on the open — resolves P155-4 CORRECT. RBI intervention signals (forward book activity) were light overnight; no reserves-burn announcement.</div></div>
-  <div class="radar-row"><div class="rt">CUSMA</div><div class="rc">Carney holds his April 23 "we will not pay" line; no movement on counter-lever spec. P157-2 window runs to Jul 1; nothing actionable today.</div></div>
-  <div class="radar-row"><div class="rt">Meta / Keystroke</div><div class="rc">No EU or Canadian regulator statement overnight. Bosworth memo holds. P157-4 window open through July 22.</div></div>
-  <div class="radar-row"><div class="rt">Tokenmaxxing</div><div class="rc">Ramp Labs and Meta telemetry still pointing at Q2 KPI adoption. P157-3 unchanged.</div></div>
-  <div class="radar-row"><div class="rt">Alberta / Influence</div><div class="rc">McGill MEO tracker shows combined view count past 42M (was 40M on Apr 22); no new legislative response from PMO or Alberta. P156-3 clock running.</div></div>
+<div class="story-card" data-cat="ai" id="apple-ai">
+  <div class="card-meta">
+    <span class="category-tag">AI / BIG TECH</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">FALL 2026</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Apple unbundles itself: iOS 27 will let users route Apple Intelligence to Google or Anthropic — Cupertino has effectively conceded the model layer</div>
+  <div class="layer1">
+    <p>Bloomberg reports Apple will ship "Extensions" in iOS 27, iPadOS 27, and macOS 27 this fall. Users will pick a third-party AI provider in Settings — initially Google and Anthropic — to power Siri, Writing Tools, and Image Playground. Apple will continue to offer in-house models alongside, with a disclaimer absolving Cupertino of responsibility for third-party output. Apple is also exploring Intel and Samsung as alternative chip foundries for main devices.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The AI moat just moved. The model layer is now a commodity routed through a settings toggle. The two remaining moats are (1) compute fabric and proprietary data, and (2) the surface that owns user attention. Apple is a surface, not a model. Anthropic and Google just got handed the keys to 1.4 billion devices. <strong>India angle:</strong> Indian SaaS and consumer apps that built India-specific Apple Intelligence wrappers now compete against Anthropic and Gemini directly inside the OS. <strong>Canada angle:</strong> Cohere is conspicuously absent — every quarter Cohere is not on the iOS Extensions list is a quarter the Canadian sovereign-AI thesis weakens.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have an AI-wrapper SKU in either book, kill it before iOS 27 ships in September. Reallocate to data-as-moat plays (proprietary verticals, integration-heavy enterprise). Add Cohere to the Canada watchlist — its inclusion or exclusion in Extensions by WWDC June is the binary signal.</div>
+    <div class="contrarian">💭 Counter-thesis: Apple has done this dance before. "Extensions" may end up like CarPlay — technically open, practically dominated by Apple's defaults. Most users never change a setting. The 95% of iOS users who keep Apple's native model on by default mean the third-party providers get the 5% power-user tail, not mass distribution. The "moat collapse" reading is a power-user fantasy.</div>
+    <a class="read-original" href="https://9to5mac.com/2026/05/06/apple-may-have-just-made-one-of-the-most-important-new-siri-announcements/" target="_blank">Read original →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    The strategic context: Apple has been losing the Apple Intelligence narrative since the WWDC 2024 launch slip. Cook's announcement of Ternus as successor (April 21) was framed as "competence, not strategy" by this Brief — Extensions is Ternus's first visible strategy move, even before the formal handover September 1. The implicit message: stop trying to win AI by building it, win AI by routing it. This mirrors Microsoft's posture circa 1995–2005 (Internet Explorer routing, not authoring). The trade-off: Apple gives up margin and narrative leadership in exchange for not being a model laggard. It is the right move if you accept you are losing — and the wrong move if you still think you can catch up.
+  </div>
+  <div class="connections">
+    <span class="conn-chip" onclick="scrollToStory('openai-mrc')">↗ OpenAI MRC protocol</span>
+    <span class="conn-chip" onclick="scrollToStory('hormuz-pause')">↗ Truce trade</span>
+  </div>
 </div>
 
-<div class="section-label">Coverage Scorecard</div>
+<div class="story-card" data-cat="ai" id="openai-mrc">
+  <div class="card-meta">
+    <span class="category-tag">AI / INFRA</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">12 MONTHS</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">OpenAI publishes MRC compute protocol with Microsoft, AMD, Broadcom, Nvidia, Intel — the entire frontier just standardised on one networking stack</div>
+  <div class="layer1">
+    <p>OpenAI and a coalition of researchers from Microsoft, AMD, Broadcom, Nvidia, and Intel published a joint paper on Multipath Reliable Connection (MRC), a networking protocol that uses "packet spraying" to scatter data across hundreds of paths simultaneously, prevents congestion, and reroutes around failures in microseconds. The protocol pairs with SRv6 IPv6 segment routing. It is already running in OpenAI/Microsoft training clusters in Abilene, TX and Microsoft's Fairwater supercomputers, and was used to train GPT-5.5. The spec is open-licensed via the Open Compute Project.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> When the five most concentrated players in AI compute publish a single shared protocol, two things happen — (1) frontier compute becomes cheaper for everyone in the consortium, (2) every smaller lab outside it just got further behind. India's nascent sovereign-compute ambitions and Canada's Cohere/Tenstorrent ecosystem either join the standard or pay a permanent efficiency tax. <strong>India action:</strong> Pre-budget signals on the National AI Mission compute layer should explicitly endorse MRC compatibility — silence here is itself a signal. <strong>Canada action:</strong> Watch whether Cohere announces Inference-1 cluster on MRC by year-end.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read the MRC spec on OCP. If you have any data-centre exposure (REIT, infra equity, or hyperscaler vendor), check vendor claims against MRC compatibility — it is the new TCP for AI infra.</div>
+    <div class="contrarian">💭 Counter-thesis: Open standards in compute have a history of being abandoned the moment one player gets a proprietary edge. Microsoft and OpenAI publishing MRC is partly cover for the fact that their Stargate buildout has hit a power and networking wall they cannot solve alone. The protocol may be open; the chip and power supply chain that runs it absolutely is not.</div>
+    <a class="read-original" href="https://openai.com/index/mrc-supercomputer-networking" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai" id="gpt55">
+  <div class="card-meta">
+    <span class="category-tag">AI / PRODUCT</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">IMMEDIATE</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">OpenAI ships GPT-5.5 Instant as ChatGPT default — 52.5% fewer hallucinations on high-stakes prompts, but the real story is the memory feature that lets you delete what the model knows about you</div>
+  <div class="layer1">
+    <p>OpenAI released GPT-5.5 Instant on May 5 as the default for hundreds of millions of ChatGPT users, replacing GPT-5.3 Instant. The company claims 52.5% fewer hallucinated claims on high-stakes prompts in medicine, law, and finance, and 37.3% fewer inaccuracies on user-flagged conversations. A new "memory sources" feature lets users see and delete what the model has stored across past chats. GPT-5.3 stays available to paid users for three months.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The hallucination metric is genuine — these are eval-tested numbers, not marketing — and it lifts the floor for everyone using ChatGPT in production. The memory feature is the bigger story: OpenAI is pre-empting the EU AI Act's "right to explanation" and Canada's incoming PIPEDA reforms by giving users transparency before regulators force it. <strong>Canada angle:</strong> Memory transparency arrives just as the OPC investigates Meta's "no opt-out" keystroke telemetry — the contrast is brutal for Meta.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have any team automating high-stakes workflows on GPT-5.3, validate on 5.5 this week before the API window closes in 90 days.</div>
+    <div class="contrarian">💭 Counter-thesis: 52.5% fewer hallucinations on a curated benchmark says nothing about the long-tail edge cases where users actually break models. Memory transparency is good UX but it is not a substitute for the underlying training-data audit problem.</div>
+    <a class="read-original" href="https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai geopolitics" id="white-house-ai">
+  <div class="card-meta">
+    <span class="category-tag">AI / POLICY</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">90 DAYS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Trump White House reverses Sacks era — proposes oversight committee to review new AI models, and Google/Microsoft/xAI agree to share early models for security probing</div>
+  <div class="layer1">
+    <p>The NYT reports the Trump administration is now considering mandatory government review of new AI models by an oversight committee with industry and government members. Google, Microsoft, and xAI have already agreed to share early-stage models with the federal government for security testing. The shift comes two months after AI czar David Sacks departed and follows researcher demonstrations of jailbroken AI tools producing step-by-step bioweapon instructions.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The "let er rip" American AI doctrine — JD Vance's Paris speech, Sacks's deregulation push — is dead within 90 days of Sacks leaving. Anthropic, with its constitutional AI and Responsible Scaling Policy, just became the lowest-friction US lab for the new regime. <strong>India angle:</strong> MeitY's draft AI rules now have political cover. <strong>Canada angle:</strong> Carney's incoming throne speech AI sovereignty framing aligns with this US shift, not against it — gives Ottawa room to legislate.</div>
+    <div class="action-box"><strong>ACTION:</strong> Anthropic exposure looks underpriced into the IPO window. Watch the Q3 federal procurement filings — government adoption of constitutional-AI-aligned vendors will be visible there first.</div>
+    <div class="contrarian">💭 Counter-thesis: This is a White House trial balloon, not policy. With midterm primaries underway, Trump cannot afford to be seen as a "regulator" of the AI industry that funded his coalition. Expect the proposal to be watered down to voluntary disclosures within 60 days.</div>
+    <a class="read-original" href="https://www.nytimes.com/2026/05/04/technology/trump-ai-models.html" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="india-fdi">
+  <div class="card-meta">
+    <span class="category-tag">INDIA / POLICY</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">12 MONTHS</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">India quietly opens FDI to non-Chinese funds with Chinese minority LPs — Press Note 3 has just been gutted, and global PE will move within weeks</div>
+  <div class="layer1">
+    <p>India's Finance Ministry has eased Press Note 3 (the 2020 China-clamp): non-Chinese companies with Chinese minority shareholders below 10% in non-controlling capacity no longer need government approval for FDI in India. The rule blocked roughly 80% of investment proposals worth ₹75,690 crore filed under PN3 in FY21–22. India's trade deficit with China ballooned 155% from $44B in FY21 to $112B in FY26 partly because PN3 strangled inbound capital while doing nothing to slow inbound goods.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Hundreds of US/European PE and VC funds with Chinese LP minority interests have been frozen out of India for five years. They are now back in scope. Expect a wave of pent-up dealflow into Indian SaaS, fintech, and industrials over the next 12 months. <strong>Canada angle:</strong> Canadian funds — many with Chinese LPs through provincial pension co-investments — were similarly blocked. CPPIB, OTPP and Quebec's CDPQ now have a clean run at India dealflow they have been priced out of.</div>
+    <div class="action-box"><strong>ACTION:</strong> Brief portfolio companies with international cap tables — they may now qualify for the automatic route. For Indian funds raising offshore, Chinese LP exposure under 10% is now back on the table without trading away India market access.</div>
+    <div class="contrarian">💭 Counter-thesis: The 10% threshold is a leaky bucket. Chinese state actors will route through multi-fund structures to engineer minority positions across half a dozen Indian companies, achieving aggregate influence that any single 10% cap could not have prevented. The optics of "open" hide the substance of "exposed."</div>
+    <a class="read-original" href="https://finshots.in/" target="_blank">Read original (Finshots) →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="dream11-pivot">
+  <div class="card-meta">
+    <span class="category-tag">INDIA / FINTECH</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">6–18 MONTHS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Dream11 launches DreamStreet broking — the post-RMG pivot is now a fintech distribution play, and the test is whether 200M cricket fans become first-time investors</div>
+  <div class="layer1">
+    <p>Dream Sports, post-RMG-ban, has launched DreamStreet — a SEBI-registered stock-broking platform offering equities, ETFs, F&amp;O, and (soon) IPO access, with an AI-powered investing companion called Veda. This builds on Dream Money (mutual funds, gold, SIPs, FDs, personal loans launched 2025). The strategy: leverage the company's non-metro user base — many first-time investors — to attack the Zerodha/Groww duopoly via distribution rather than product.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the biggest "deferred adoption" wager in Indian fintech. If even 5% of Dream11's pre-ban MAU converts to active broking accounts, DreamStreet hits Zerodha-tier scale within 18 months on distribution alone. The Veda AI layer is also the first mass-market application of personalised LLM investing guidance in India — a regulatory test the SEBI sandbox has not run before.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track DreamStreet's Day-1 active accounts vs. Zerodha's 2024 cohort. The 90-day retention curve will tell you whether the cricket-to-equity conversion thesis works at scale.</div>
+    <div class="contrarian">💭 Counter-thesis: Cricket fans bet on cricket. They do not buy ETFs. The 250M Dream11 user base is concentrated in ₹50 contest demographics — they cannot afford a meaningful brokerage account, let alone F&amp;O. DreamStreet will look like a Series-B fintech buried inside a $9B post-fantasy holding company within 24 months.</div>
+    <a class="read-original" href="https://inc42.com/buzz/dream-sports-launches-stock-broking-platform-dream-street/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets ai" id="coinbase-cuts">
+  <div class="card-meta">
+    <span class="category-tag">CRYPTO / LAYOFFS</span>
+    <span class="trend-arrow down">↓</span>
+    <span class="time-horizon">IMMEDIATE</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Coinbase fires 700 (14% of staff) citing "AI optimisation" — the COIN cost-structure reset is the cleanest read on what AI is actually doing to fintech headcount</div>
+  <div class="layer1">
+    <p>Coinbase laid off ~700 employees, roughly 14% of its workforce, on May 5 in a memo from CEO Brian Armstrong. The stated rationale: cool crypto market (BTC down ~15% YoY) plus AI-driven cost optimisation. COIN shares actually rose on the announcement.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Coinbase is the canary for AI-driven layoffs at large, profitable, well-capitalised crypto-fintech firms. When a company that is "well positioned to weather any storm" cuts 14%, it is a signal that the labour-to-AI-cost ratio is now a board-level KPI — exactly the P145-3 / P153-2 / P157-3 tokenmaxxing thesis playing out in real time. <strong>Action:</strong> Watch Indian Coinbase analogues (CoinDCX, CoinSwitch, WazirX) for Q2 headcount disclosures. <strong>Canada angle:</strong> Wealthsimple's crypto desk and Shakepay are next in line.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you operate fintech businesses in either book, the labour-to-AI-cost ratio is now an investor-relations disclosure — start tracking it as a KPI before the market starts asking.</div>
+    <div class="contrarian">💭 Counter-thesis: This is "AI" as PR cover for a routine cycle-cut. Coinbase has fired 14%+ of its workforce three times since 2022 in every market downturn. AI did not write any code that replaced these 700 people; the crypto market dropped and the comp ratio got cut.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/05/coinbase-cuts-headcount-by-14percent-citing-ai-acceleration-the-shares-are-gaining.html" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="kissht-ipo">
+  <div class="card-meta">
+    <span class="category-tag">INDIA / IPO</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">May 8 LIST</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Kissht IPO oversubscribed 9.5x — QIB book at 24.87x is the fintech-IPO appetite signal Inc42 has been waiting for</div>
+  <div class="layer1">
+    <p>Kissht's ₹850 Cr IPO closed Day 3 at 9.5x subscription. QIBs led the book at 24.87x; NII and retail at 6.6x and 2.03x. Listing scheduled May 8 at a ₹2,881 Cr valuation (₹162–171 price band). The company offers digital-lending tech and is one of the first post-RBI-2024 lending fintechs to test public-market appetite.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A 24.87x QIB book in a regulatory-sensitive fintech IPO is an unambiguous "the digital-lending winter is over" signal. This is the cleanest read since the November 2024 RBI lending restrictions; if Kissht prices at the upper end and pops on May 8, expect the entire LendingKart / Aye Finance / Indifi pipeline to accelerate Q3 filings.</div>
+    <div class="action-box"><strong>ACTION:</strong> Bid the listing day open. If it pops &gt;30%, lighten on the close. If it lists flat, the digital-lending thesis is in trouble.</div>
+    <div class="contrarian">💭 Counter-thesis: 9.5x oversubscription in a small IPO is more reflective of QIB hunger for any new paper than confidence in Kissht specifically. The post-listing performance — not the book — is the real test.</div>
+    <a class="read-original" href="https://inc42.com/buzz/kissht-ipo-issue-subscribed-1-9x-on-day-3-till-now/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">Carney appoints Arbour. Shopify melts down. Canada posts a trade surplus on commodities while the loonie rallies. Three signals, one country picking direction faster than its peers.</div>
+
+  <div class="story-card" data-cat="canada markets" id="cad-trade-surplus">
+    <div class="card-meta">
+      <span class="category-tag">🍁 MACRO</span>
+      <span class="trend-arrow up">↑</span>
+      <span class="time-horizon">90 DAYS</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">Canada flips to trade surplus first time in six months — and the loonie is now leading G10 versus a softening USD</div>
+    <div class="layer1">
+      <p>Canada's March trade balance flipped to surplus, driven by oil and gold exports. USD/CAD trades 1.3583, a 90-day low for the pair. The BoC held at 2.25% on April 29 (fourth consecutive hold, validating P147-4/P154-2/P158-5) citing oil-driven inflation pressure but soft labour markets (6.5–7% unemployment range) and US-tariff exposure on the goods side.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The CAD is now decoupling from the USD on the back of a commodity-export tailwind plus a credible "we will not pay to belong to our own trade agreement" Carney posture (April 23). At 1.3583 we are inside striking distance of P152-2's 1.35 target with 74 days to spare. If oil normalises to $80, CAD overshoots to 1.32. <strong>Cross-book read:</strong> CAD strength + INR weakness widening the spread is the cleanest currency-pair signal that Canada has positioned its sovereignty trade better than India has positioned its EM trade in 2026.</div>
+      <div class="action-box"><strong>ACTION:</strong> If you hold USD-denominated revenue from Canadian operations, lock-in forwards now while CAD is at 90-day highs. The June 10 BoC meeting is the next binary — base case is hold, but a hawkish hold pushes CAD through 1.35.</div>
+      <div class="contrarian">💭 Counter-thesis: A trade surplus driven by gold and oil is a commodity-cycle accident, not a structural improvement. The moment Hormuz peace removes the energy premium, CAD reverts and the surplus disappears. Don't confuse the cycle for a thesis.</div>
+      <a class="read-original" href="https://financialpost.com/news/economy/canada-swings-to-trade-surplus-for-first-time-in-six-months" target="_blank">Read original →</a>
+      <a class="read-original" href="https://www.bankofcanada.ca/2026/04/fad-press-release-2026-04-29/" target="_blank">BoC Apr 29 →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada ai" id="shopify-meltdown">
+    <div class="card-meta">
+      <span class="category-tag">🍁 TECH / EARNINGS</span>
+      <span class="trend-arrow down">↓</span>
+      <span class="time-horizon">IMMEDIATE</span>
+      <span class="decision-badge act">ACT</span>
+    </div>
+    <div class="card-title">Shopify −15.6% in one session — guidance cut isn't an AI story, it's an SMB consumption story, and the TSX caught the cold</div>
+    <div class="layer1">
+      <p>Shopify shares fell 15.6% on May 5 after the company guided slowing revenue growth for the next quarter, citing AI-related uncertainty in merchant behaviour. The drop dragged the TSX into the red on Tuesday before yesterday's broad rally. SHOP is roughly 5% of TSX market cap.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Street is reading this as an "AI threat" story (agentic shopping disintermediating Shopify). I think it is the simpler version: Canadian and US small-business merchants are absorbing the tariff noise of 2026 and trading down on inventory replenishment. <strong>Cross-book read:</strong> If SMB consumption is the issue, expect Indian D2C/SaaS plays (Shiprocket, Unicommerce) to face the same headwinds in Q2.</div>
+      <div class="action-box"><strong>ACTION:</strong> Don't buy the Shopify dip yet. Wait for the next AMZN SMB read on May 14. If both confirm slowdown, position defensively in Indian D2C and Canadian commerce names.</div>
+      <div class="contrarian">💭 Counter-thesis: This IS an AI story. Agentic shopping (Perplexity Computer, OpenAI Operator) routes commerce around merchant storefronts. SHOP guidance is the canary. The 15.6% drop is the start, not the bottom.</div>
+      <a class="read-original" href="https://www.reuters.com/business/canadas-shopify-tops-quarterly-revenue-estimates-2026-05-05/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="arbour-gg">
+    <div class="card-meta">
+      <span class="category-tag">🍁 POLITICS</span>
+      <span class="trend-arrow up">↑</span>
+      <span class="time-horizon">5 YEARS</span>
+      <span class="decision-badge note">NOTE</span>
+    </div>
+    <div class="card-title">Carney names Louise Arbour governor general — the constitutional spine for a Carney government willing to legislate sovereignty hard</div>
+    <div class="layer1">
+      <p>PM Carney appointed former Supreme Court justice Louise Arbour as Canada's next Governor General. Arbour prosecuted Slobodan Milošević for the ICTY and led the Rwandan genocide tribunal — a profile heavy on rule-of-law signaling, light on ceremonial anodyne.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A GG with that profile is not a routine appointment. It is constitutional positioning ahead of (a) a contested throne speech expected to legislate digital sovereignty and CUSMA counter-leverage, and (b) potential US tariff escalation that may require speed in proroguing or recalling Parliament. Carney is staffing for friction.</div>
+      <div class="action-box"><strong>ACTION:</strong> Read the May throne speech with this appointment in mind — expect harder language on US trade response and sovereignty than markets are pricing.</div>
+      <div class="contrarian">💭 Counter-thesis: Arbour is an apolitical jurist appointment that signals continuity, not friction. Reading constitutional drama into a GG appointment is overreach.</div>
+      <a class="read-original" href="https://www.ctvnews.ca/politics/article/pm-carney-names-louise-arbour-as-canadas-next-governor-general/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada ai" id="cohere-silence">
+    <div class="card-meta">
+      <span class="category-tag">🍁 AI / POLICY</span>
+      <span class="trend-arrow up">↑</span>
+      <span class="time-horizon">90 DAYS</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">Cohere's silence in the Apple Extensions list is the Canadian sovereign-AI story everyone is missing</div>
+    <div class="layer1">
+      <p>Apple's announced iOS 27 Extensions list reportedly includes Google and Anthropic. Cohere — Canada's flagship sovereign-AI champion, recently-funded, government-backed — is absent. This matters because Carney's incoming throne speech is expected to make AI sovereignty a national-security framing.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> If Cohere is not on the iOS 27 GA Extensions list by September, the Canadian sovereign-AI thesis loses its single most visible distribution channel. Either Apple adds Cohere by WWDC (June 9) — turning it into a US-Canada policy win — or the omission becomes a counter-data-point Ottawa cannot easily explain to its own caucus.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch WWDC 2026 keynote (June 9) for any Cohere or Canadian AI mention. Binary signal for the C$1B+ Canadian sovereign-AI buildout.</div>
+      <div class="contrarian">💭 Counter-thesis: Cohere is enterprise-focused, not consumer. Being on iOS Extensions would be off-strategy. Absence is a feature, not a bug.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">H · Opportunity Board</div>
+
+<div class="story-card" data-cat="ai" id="anthropic-finance-agents">
+  <div class="card-meta">
+    <span class="category-tag">OPPORTUNITY</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">12 MONTHS</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Anthropic ships 10 finance-vertical agents in one week — the "Big Tech does horizontal, Anthropic does vertical" thesis is now a product line</div>
+  <div class="layer1">
+    <p>Anthropic launched ten new AI agents tailored to financial services tasks (banks, insurers, asset managers) on May 5 — part of an explicit push into finance verticals.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Anthropic is now executing a vertical playbook (finance, code, government) while OpenAI plays horizontal (consumer, OS-level, hardware). The vertical playbook has higher LTV per customer but lower TAM — and it is the playbook that wins enterprise procurement budgets in 2026. <strong>India angle:</strong> Indian banks (HDFC, ICICI) and insurers (HDFC Life, Bajaj Allianz) are the next Anthropic-vertical-finance design partners. <strong>Canada angle:</strong> RBC and TD Bank are already piloting; expect Q3 announcements.</div>
+    <div class="action-box"><strong>ACTION:</strong> If your portfolio includes Indian or Canadian financial services, push management for an Anthropic Finance Agent eval before competitors get the integration discount.</div>
+    <div class="contrarian">💭 Counter-thesis: Vertical agents have repeatedly failed to displace incumbent SaaS. Salesforce is not dead. Anthropic's finance vertical may underperform the OpenAI horizontal play simply because banks rebuild on the lowest-friction model their existing CIO already approved — usually Microsoft Copilot.</div>
+    <a class="read-original" href="https://www.reuters.com/business/finance/anthropic-deepens-finance-push-with-10-new-ai-agents-banks-insurers-2026-05-05/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india" id="india-semicon">
+  <div class="card-meta">
+    <span class="category-tag">INDIA OPPORTUNITY</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">24 MONTHS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">India clears two more semicon units in Gujarat at ₹3,936 Cr — Crystal Matrix GaN fab + Suchi OSAT — the ISM is now executing on schedule for the first time</div>
+  <div class="layer1">
+    <p>The Union Cabinet approved two new semiconductor manufacturing projects under the India Semiconductor Mission: Crystal Matrix's GaN compound-semi fab and ATMP unit in Dholera (mini/micro-LED display modules + GaN foundry services), and Suchi Semicon's OSAT in Surat (1,033 Mn discrete-semi chips/year capacity). Combined investment ₹3,936 Cr, ~2,230 skilled jobs.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> GaN foundry + LED display modules is the right vertical mix — it solves the "no domestic display supply chain" complaint that has hampered Indian smartphone OEMs since 2022. Combined with India's semiconductor market projected to cross $110 Bn by 2030, this is the first ISM tranche where the unit economics make sense without subsidy maximalism.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch listed Indian semicap and packaging plays (Tata Elxsi, Kaynes, ASM Tech). MumbaiSemi (private, fabless RF/analog) is the cleanest pure-play startup if accessible.</div>
+    <div class="contrarian">💭 Counter-thesis: Two more units does not a semiconductor industry make. India's ISM has approved fabs before that never went operational. Until Crystal Matrix or Suchi shows first silicon out, this is press-release semiconductor manufacturing.</div>
+    <a class="read-original" href="https://inc42.com/buzz/cabinet-approves-2-new-semiconductor-manufacturing-units/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="section-title">I · Also On Radar</div>
+
+<div class="story-card" data-cat="ai" id="openai-phone">
+  <div class="card-meta">
+    <span class="category-tag">AI / HARDWARE</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">2027 LAUNCH</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">OpenAI fast-tracks AI phone for H1 2027 mass production — the Apple unbundling and the OpenAI hardware push are the same story</div>
+  <div class="layer1">
+    <p>OpenAI plans mass production of its AI agent phone as early as H1 2027 (per MacRumors), featuring an image signal processor for real-world sensing and dual AI processors. Smart glasses, smart lamp, and earbuds also reported in development.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Apple opening iOS to Anthropic and Google is a defensive move — and OpenAI's hardware ambitions are the offensive move that forced Apple's hand. The 2027 OpenAI phone is the first credible challenger to iPhone since the 2010s. India and Canada are both first-tier markets for OpenAI hardware.</div>
+    <a class="read-original" href="https://www.macrumors.com/2026/05/05/openai-fast-tracking-ai-phone-2027/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai" id="meta-bone-scan">
+  <div class="card-meta">
+    <span class="category-tag">PRIVACY / META</span>
+    <span class="trend-arrow down">↓</span>
+    <span class="time-horizon">90 DAYS</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Meta deploys AI to scan kids' bone structure for age verification — the icky factor is high enough to invite a Canadian Privacy Commissioner inquiry within 60 days</div>
+  <div class="layer1">
+    <p>Meta has begun using AI to scan photos and videos for height/bone-structure cues to identify users under 13 in select countries, for removal under youth-safety regulations.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Canada's privacy commissioner (OPC) and Bill C-27 reformers were already circling Meta over keystroke telemetry. Bone-structure age-verification gives them a second, more visceral hook. Expect a formal Canadian inquiry within 60 days — feeds directly into P157-4 (regulatory response by July 22).</div>
+    <a class="read-original" href="https://techcrunch.com/2026/05/05/meta-will-use-ai-to-analyze-height-and-bone-structure-to-identify-if-users-are-underage/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="section-title">J · Quick Hits</div>
+<div class="quick-hits">
+<ul>
+<li><strong>Crunchbase:</strong> 28 new unicorns in April 2026, AI labs and robotics dominate — the "two companies got half of global VC last month" data point is the cleanest concentration warning since 2021's Tiger Global era.</li>
+<li><strong>Anthropic-AWS 5GW deal context:</strong> still no concrete India or Canada sovereign-compute counter-announcement — P153-3 looks increasingly like a WRONG call ahead of July 21 deadline.</li>
+<li><strong>Carney trade surplus + 1.3583 CAD print:</strong> first 90-day low on the loonie since the Hormuz crisis began — confirms the Canadian sovereignty trade is now visible in spot FX, not just narrative.</li>
+<li><strong>Netradyne acquires Moove Connected Mobility:</strong> Indian fleet-AI unicorn going inorganic in Europe — the post-Series-D Indian unicorn cohort is finally executing M&amp;A rather than just announcing.</li>
+<li><strong>Subquadratic claims 1,000x AI efficiency gain:</strong> Miami startup claims subquadratic attention compute; researchers demand independent proof — file under "extraordinary claims, ordinary evidence" until benchmarks land.</li>
+<li><strong>SEC proposes letting public companies report semiannually:</strong> US drift toward European-style reporting cadence — bad for short-sellers, good for capex-heavy AI infra builders who hate quarterly tape-bombing.</li>
+<li><strong>Hantavirus human-to-human transmission flagged by WHO:</strong> three deaths on a cruise ship off West Africa, ship quarantined; risk to global population low, but the "first credible H2H case" is itself epidemiologically novel.</li>
+<li><strong>India trade deficit with China widened 155%</strong> (FY21 $44B → FY26 $112B) while PN3 blocked Chinese capital — the policy achieved the opposite of Atmanirbharta. The FDI relaxation is overdue, but the structural fix is on the goods side.</li>
+</ul>
+</div>
+
+<div class="section-title">K · The Long Game</div>
+<div class="long-game">
+  <strong>Slow-burn trend</strong>
+  The model layer of AI is finishing its commoditisation arc. Apple's iOS 27 Extensions, OpenAI's open-licensed MRC compute protocol, and Anthropic's vertical-agent push all happened inside seven days. The implication: the durable moats over the next five years are (1) compute fabric and proprietary data flywheels, (2) the consumer surface that owns user attention, and (3) regulatory access — being the "approved" provider in a jurisdiction. Indian and Canadian operators have to pick: compete on data (where sovereignty laws give domestic players an edge), distribution (where Jio, Reliance, and Telus already own the rails), or regulation (where Cohere, AI4Bharat, and policy-aligned vendors have asymmetric advantages). The wrapper era is over. The infra-and-distribution era starts at WWDC 2026.
+</div>
+
+<div class="section-title">L · Coverage Scorecard</div>
 <div class="scorecard">
-  <div class="row"><span>Predictions OPEN</span><span>7 (P155-1, P155-2, P155-3, P156-2, P156-3, P157-1, P157-2, P157-3, P157-4, P158-4, P158-5, P158-6)</span></div>
-  <div class="row"><span>Resolved this edition</span><span>P155-4 CORRECT (USD/INR 94.05)</span></div>
-  <div class="row"><span>Withdrawn per R-010</span><span>P158-1, P158-2, P158-3</span></div>
-  <div class="row"><span>New rules added</span><span>R-010 (Freshness Gate, mechanical enforcement)</span></div>
-  <div class="row"><span>Lead rotation</span><span>India Online Gaming Act — not Lead in last 3 editions ✓</span></div>
-  <div class="row"><span>Spotlight rotation</span><span>x402 developer-address curve — not Spotlight in last 3 editions ✓</span></div>
-  <div class="row"><span>Canadian File rotation</span><span>BoC April 29 decision — not CanFile anchor in last 3 editions ✓</span></div>
+<table>
+<tr><td>Edition</td><td>#159 · May 7 Morning</td></tr>
+<tr><td>Senders scanned</td><td>26 (Tier 1+2+2.5+3+4)</td></tr>
+<tr><td>Newsletters with hits</td><td>14 — Finshots, Morning Brew, TLDR, 1440, Inc42, The Ken, Axios, Brew Markets, The Peak, Crunchbase, Milk Road, Superhuman, Bloomberg, McKinsey, Deep View</td></tr>
+<tr><td>Web searches</td><td>14 (markets data + breaking news verification)</td></tr>
+<tr><td>Stories featured</td><td>14 cards + 8 quick hits</td></tr>
+<tr><td>India stories</td><td>4 (FDI, Dream11, Kissht IPO, Semicon)</td></tr>
+<tr><td>Canada stories 🍁</td><td>4 (Trade surplus + BoC, Shopify, Arbour, Cohere/Apple)</td></tr>
+<tr><td>Predictions resolved this run</td><td>9 (P147-2 WRONG, P147-4 CORRECT, P149-2 WRONG, P150-1 CORRECT, P150-3 WRONG, P151-1 WRONG, P154-2 CORRECT, P157-1 CORRECT, P158-5 CORRECT)</td></tr>
+<tr><td>New predictions made</td><td>4 (P159-1 to P159-4)</td></tr>
+</table>
 </div>
 
-<div class="foot">
-  The Brief · Edition #158 · Morning · Friday, April 24, 2026<br>
-  Regenerated 11:50 UTC after reader feedback on the 09:34 reheat. Freshness Gate (R-010) live from this edition forward.<br>
-  Archive: <a href="brief-archive/" style="color:var(--accent)">brief-archive/</a>
-</div>
+<footer>
+THE BRIEF · Edition #159 · May 7, 2026 (Morning) · Curated by Suhail Seth · Premium Daily Intelligence
+</footer>
 
-</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse \u2191':'Go Deeper \u2193';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+
 </body>
 </html>
