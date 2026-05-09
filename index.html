@@ -2,490 +2,463 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>The Brief — Edition #162 · May 8, 2026 (Evening)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief · Edition #163 · May 9, 2026 (Morning)</title>
 <style>
 :root{
-  --bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;
-  --muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;
-  --green:#4ade80;--font-body:Georgia,serif;
-  --font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif
+  --bg:#0a0a0b; --surface:#131316; --border:#27272a; --text:#e4e4e7;
+  --muted:#a1a1aa; --dim:#71717a; --accent:#c8a030; --red:#e05252;
+  --green:#4ade80; --font-body:Georgia,serif;
+  --font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.55;padding:36px 16px 80px}
-.wrap{max-width:980px;margin:0 auto}
-.kicker{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-h1{font-family:Georgia,serif;font-size:42px;line-height:1.1;letter-spacing:-.5px;margin-bottom:8px}
-.tagline{font-family:var(--font-ui);font-size:13px;color:var(--muted);margin-bottom:28px;font-style:italic}
-.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--border)}
-.nav-pill{background:var(--surface);color:var(--muted);border:1px solid var(--border);padding:5px 12px;border-radius:999px;font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;cursor:pointer;transition:all .15s}
-.nav-pill:hover{color:var(--text);border-color:var(--accent)}
-.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent);font-weight:600}
-.editors-read{background:linear-gradient(180deg,#15150f 0%,var(--surface) 100%);border:1px solid var(--accent);border-left:4px solid var(--accent);padding:24px 28px;margin-bottom:28px;border-radius:6px}
-.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:700}
-.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:14px;letter-spacing:.5px}
-.er-body{font-family:Georgia,serif;font-size:16.5px;line-height:1.65;color:var(--text)}
-.er-body p{margin-bottom:12px}
-.er-body p:last-child{margin-bottom:0}
-.er-body strong{color:var(--accent)}
-.signal-spotlight{background:var(--surface);border:1px solid #4ade80;border-left:4px solid #4ade80;padding:22px 26px;margin-bottom:28px;border-radius:6px}
-.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#4ade80;margin-bottom:10px;font-weight:700}
-.ss-claim{font-family:Georgia,serif;font-size:18px;line-height:1.45;color:var(--text);margin-bottom:10px;font-weight:700}
-.ss-reasoning{font-family:Georgia,serif;font-size:14.5px;line-height:1.55;color:var(--muted);margin-bottom:8px}
-.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.55;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:32px 24px 80px}
+header.masthead{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+.eyebrow{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.title{font-family:var(--font-body);font-size:42px;line-height:1.05;font-weight:700;color:var(--text);margin:0 0 10px}
+.subtitle{font-family:var(--font-ui);font-size:13px;color:var(--muted)}
+.tagline{font-style:italic;color:var(--muted);margin-top:10px;font-size:15px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 32px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:20px;color:var(--muted);background:var(--surface);cursor:pointer;transition:all .15s}
+.nav-pill:hover,.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.editors-read{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:14px}
+.er-body{font-size:16.5px;line-height:1.7}
+.er-body p{margin:0 0 12px}
+.er-body em{color:var(--accent);font-style:italic}
+.signal-spotlight{background:linear-gradient(135deg,rgba(200,160,48,.10),rgba(200,160,48,.02));border:1px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:32px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.ss-claim{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;color:var(--text)}
+.ss-reasoning{font-size:14.5px;color:var(--muted);line-height:1.65}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:12px;letter-spacing:1px;text-transform:uppercase}
 .prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
-.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px;font-weight:700}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
 .pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
 .pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
 .pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
-.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;display:inline-block}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
 .pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
 .pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
 .pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
 .pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
-.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:28px}
-.mkt-cell{background:var(--surface);border:1px solid var(--border);padding:12px 10px;border-radius:6px;font-family:var(--font-ui)}
-.mkt-cell .label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
-.mkt-cell .val{font-size:16px;font-weight:700;color:var(--text);margin-bottom:2px}
-.mkt-cell .delta{font-size:12px}
-.mkt-cell .delta.up{color:var(--green)}
-.mkt-cell .delta.down{color:var(--red)}
-.mkt-cell .delta.flat{color:var(--dim)}
-.mkt-cell.canada{border-color:rgba(224,82,82,.4)}
-.mkt-cell.india{border-color:rgba(200,160,48,.35)}
-.connection-map{background:var(--surface);border:1px solid var(--border);padding:18px 22px;margin-bottom:28px;border-radius:6px}
-.cm-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:700}
-.cm-chain{font-family:var(--font-ui);font-size:13px;color:var(--muted);line-height:1.9}
-.cm-chip{display:inline-block;background:#1e1e22;border:1px solid var(--border);padding:3px 10px;border-radius:999px;color:var(--text);font-size:11.5px;letter-spacing:.5px;margin:2px}
-.cm-arrow{color:var(--accent);margin:0 4px;font-weight:700}
-.sec-header{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.story-card{background:var(--surface);border:1px solid var(--border);padding:20px 22px;margin-bottom:14px;border-radius:6px}
-.story-card.lead{border-left:4px solid var(--accent)}
-.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-family:var(--font-ui);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
-.category-tag{background:#27272a;color:var(--muted);padding:3px 8px;border-radius:3px}
-.trend-arrow{color:var(--accent);font-size:14px}
-.trend-arrow.up{color:var(--green)}
-.trend-arrow.down{color:var(--red)}
-.time-horizon{color:var(--dim)}
-.decision-badge{padding:3px 8px;border-radius:3px;font-weight:700;letter-spacing:1.5px;margin-left:auto}
+h2.section{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--dim);margin:36px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:32px}
+.mkt{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:var(--font-ui);font-size:11px}
+.mkt-name{color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-size:9px;margin-bottom:4px}
+.mkt-val{font-size:14px;font-weight:600;color:var(--text)}
+.mkt-chg{font-size:11px;margin-top:2px}
+.mkt-chg.up{color:var(--green)} .mkt-chg.down{color:var(--red)} .mkt-chg.flat{color:var(--muted)}
+@media(max-width:780px){.markets-grid{grid-template-columns:repeat(3,1fr)}}
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:32px;font-family:var(--font-ui);font-size:12px;line-height:1.9}
+.chip{display:inline-block;padding:2px 9px;background:#1e1e22;border:1px solid var(--border);border-radius:3px;color:var(--muted);margin:2px 4px;cursor:pointer}
+.chip:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{color:var(--accent);margin:0 6px}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:18px;transition:border-color .15s}
+.story-card:hover{border-color:#3a3a40}
+.card-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.category-tag{padding:2px 8px;background:#1e1e22;border-radius:3px;color:var(--muted)}
+.trend-arrow{color:var(--accent);font-size:13px}
+.decision-badge{padding:2px 8px;border-radius:3px;font-weight:700;letter-spacing:1px}
 .decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
 .decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
-.decision-badge.note{background:rgba(113,113,122,.15);color:var(--dim);border:1px solid var(--dim)}
-.card-title{font-family:Georgia,serif;font-size:20px;line-height:1.3;font-weight:700;color:var(--text);margin-bottom:12px}
-.layer1 p{font-family:Georgia,serif;font-size:15px;line-height:1.6;color:var(--text);margin-bottom:10px}
-.so-what,.action-box,.contrarian{font-family:var(--font-ui);font-size:13px;padding:8px 12px;margin-bottom:6px;border-radius:4px;line-height:1.55}
-.so-what{background:rgba(200,160,48,.08);border-left:3px solid var(--accent);color:var(--text)}
-.so-what strong{color:var(--accent)}
-.action-box{background:rgba(74,222,128,.07);border-left:3px solid var(--green);color:var(--text)}
-.action-box strong{color:var(--green)}
-.contrarian{background:rgba(167,139,250,.07);border-left:3px solid #a78bfa;color:var(--muted);font-style:italic}
-.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:6px;border-bottom:1px dashed transparent;padding-bottom:1px}
+.decision-badge.note{background:rgba(74,222,128,.10);color:var(--green);border:1px solid #2a4a35}
+.card-title{font-family:var(--font-body);font-size:21px;font-weight:600;line-height:1.3;color:var(--text);margin:0 0 12px}
+.layer1 p{margin:0 0 10px;font-size:15.5px;line-height:1.65}
+.so-what,.action-box,.contrarian{margin:10px 0;font-size:14px;padding:9px 12px;border-radius:5px;line-height:1.55}
+.so-what{background:rgba(74,222,128,.06);border-left:3px solid var(--green)}
+.action-box{background:rgba(200,160,48,.07);border-left:3px solid var(--accent)}
+.contrarian{background:rgba(224,82,82,.05);border-left:3px solid var(--red);font-style:italic;color:var(--muted)}
+.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:8px;border-bottom:1px solid transparent;transition:border-color .15s}
 .read-original:hover,.gmail-source:hover{border-bottom-color:var(--accent)}
 .gmail-source{color:var(--dim)}
-.deep-dive-btn{margin-top:10px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:5px 12px;font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;cursor:pointer;border-radius:4px}
+.deep-dive-btn{margin-top:12px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:4px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;cursor:pointer;text-transform:uppercase}
 .deep-dive-btn:hover{border-color:var(--accent);color:var(--accent)}
-.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);font-family:Georgia,serif;font-size:14px;line-height:1.6;color:var(--muted)}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:14.5px;line-height:1.65;color:var(--muted)}
 .story-card.deep .layer2{display:block}
-.connections{margin-top:10px;font-family:var(--font-ui);font-size:10.5px;letter-spacing:.5px;color:var(--dim)}
-.connections a{color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent);margin:0 4px}
-.canadian-file{background:linear-gradient(180deg,#1a1416 0%,var(--surface) 100%);border:1px solid var(--red);border-left:4px solid var(--red);padding:22px 26px;margin:36px 0 24px;border-radius:6px}
-.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:700}
-.cf-subtitle{font-family:var(--font-ui);font-size:13px;color:var(--muted);font-style:italic;margin-bottom:18px}
-.canadian-file .story-card{background:#0f0a0b;border-color:#3a2a2c}
-.quick-hits ul{list-style:none;padding:0}
-.quick-hits li{font-family:Georgia,serif;font-size:14.5px;line-height:1.55;padding:10px 0;border-bottom:1px solid var(--border);color:var(--muted)}
-.quick-hits li strong{color:var(--text)}
-.quick-hits li:last-child{border-bottom:none}
-.scorecard{background:var(--surface);border:1px solid var(--border);padding:18px 22px;border-radius:6px;font-family:var(--font-ui);font-size:12px;color:var(--muted);margin-top:32px}
+.connections{margin-top:12px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.canadian-file{background:rgba(224,82,82,.04);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:8px;padding:8px 16px 18px;margin:36px 0}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin:14px 0 4px}
+.cf-subtitle{font-family:var(--font-body);font-size:14px;font-style:italic;color:var(--muted);margin-bottom:16px}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 22px;margin-bottom:24px}
+.quick-hits ul{margin:0;padding-left:20px}
+.quick-hits li{margin:8px 0;font-size:14.5px;line-height:1.55}
+.long-game{background:linear-gradient(135deg,rgba(167,139,250,.06),rgba(167,139,250,.01));border:1px solid #4c3a82;border-radius:8px;padding:18px 22px;margin-bottom:24px;font-style:italic;color:var(--muted);font-size:15px;line-height:1.65}
+.long-game-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:8px;font-style:normal}
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 22px;margin-bottom:24px;font-family:var(--font-ui);font-size:12px}
 .scorecard table{width:100%;border-collapse:collapse}
-.scorecard td{padding:6px 10px;border-bottom:1px solid #1e1e22}
-.scorecard td:first-child{color:var(--dim);width:40%;text-transform:uppercase;font-size:10px;letter-spacing:1.5px}
-.long-game{background:var(--surface);border:1px solid var(--border);border-left:4px solid #a78bfa;padding:20px 24px;border-radius:6px;margin-top:18px;font-family:Georgia,serif;font-size:15px;line-height:1.6;color:var(--text)}
-.long-game .lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:10px;font-weight:700}
-.hidden{display:none}
-@media (max-width:780px){.markets-grid{grid-template-columns:repeat(3,1fr)}h1{font-size:32px}}
-@media (max-width:480px){.markets-grid{grid-template-columns:repeat(2,1fr)}body{padding:24px 10px 60px}}
+.scorecard td{padding:6px 0;border-bottom:1px solid #1e1e22;color:var(--muted)}
+.scorecard td:last-child{text-align:right;color:var(--text);font-weight:600}
+.hidden{display:none!important}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center;line-height:1.7}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="kicker">THE BRIEF · Edition #162 · Evening · Friday, May 8, 2026</div>
-<h1>The ceasefire that wasn't, the recession that was, and the GPUs that left Earth.</h1>
-<div class="tagline">Three US Navy ships transit Hormuz under fire · Whirlpool calls it a GFC-level demand collapse · Cloudflare cuts 20% to "the agentic AI era" · Skyroot becomes India's first space unicorn · Anthropic rents SpaceX's 220K GPUs.</div>
-<div class="nav">
-  <div class="nav-pill active" onclick="filterStories('all',this)">All</div>
-  <div class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</div>
-  <div class="nav-pill" onclick="filterStories('markets',this)">Markets</div>
-  <div class="nav-pill" onclick="filterStories('ai',this)">AI</div>
-  <div class="nav-pill" onclick="filterStories('india',this)">India</div>
-  <div class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</div>
-  <div class="nav-pill" onclick="filterStories('macro',this)">Macro</div>
-  <div class="nav-pill" onclick="filterStories('tech',this)">Tech</div>
-</div>
+<header class="masthead">
+  <div class="eyebrow">The Brief · Edition #163 · Morning</div>
+  <h1 class="title">Anthropic 80x. Cloudflare cuts 1,100. Hormuz round 4.</h1>
+  <div class="subtitle">Saturday, May 9, 2026 &nbsp;·&nbsp; Suhail Seth, Editor &nbsp;·&nbsp; Morning Edition</div>
+  <div class="tagline">A compute boom, a labor reset, and a strait that won't stay quiet — three stories that are actually one.</div>
+</header>
+<nav class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('ai',this)">AI</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('macro',this)">Macro</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
+</nav>
 <div class="editors-read">
-  <div class="er-label">EDITOR'S READ</div>
-  <div class="er-byline">Suhail Seth · May 8, 2026 (Evening)</div>
+  <div class="er-label">Editor's Read</div>
+  <div class="er-byline">Suhail Seth · May 9, 2026</div>
   <div class="er-body">
-    <p>Three things happened in the last 24 hours that I want to put on the same line. First: the US-Iran "ceasefire" became a working fiction. Three US Navy destroyers transited the Strait of Hormuz, Iran fired, the US fired back at targets including Qeshm Island, and Trump told reporters the truce is "still in effect." Markets called the bluff politely — WTI rallied a token <strong>+1.95% to $96.66</strong>, not the +20% you'd see if anyone believed the war was actually back on. Brent is still $103.</p>
-    <p>Second: <strong>Whirlpool</strong> — Whirlpool, the dishwasher company — said Q1 industry shipments fell 7.4%, March alone fell 10%, and the print is "similar to what we observed during the global financial crisis." It suspended its dividend. It cut FY26 EPS guidance from <strong>$6.23 to $3.00–$3.50</strong>. The CFO said demand hasn't been this low since the GFC and named the Iran war as the cause. That is the actual Iran tax, and it is no longer abstract.</p>
-    <p>Third: <strong>Cloudflare</strong> fired 1,100 people — 20% of its workforce — explicitly framed as a transition to an "agentic AI-first operating model." It said internal AI usage was up 600% in three months. The severance is generous (full base pay through year-end, equity vest through August), which tells you management thinks this is a one-time reset, not a slope.</p>
-    <p>Connect them. The Hormuz risk premium is bleeding into a goods-economy recession (Whirlpool, Shake Shack -28% on beef). The AI productivity boom is, simultaneously, a labour-cost dump (Cloudflare 20%, DeepL 25%). India and Canada split the dividend differently: <strong>Skyroot</strong> just became India's 129th unicorn at $1.1B with Vikram-1 launching in weeks, and Pixxel announced India's first orbital data centre — sovereign launch + sovereign compute, in one quarter. Canada is paying up for the other half: Ontario signed a <strong>$300M cost-share for Bruce C nuclear</strong> — potentially the world's largest plant, 4,800 MW. Anthropic just rented SpaceX's <strong>220,000 GPUs and 300 MW of Colossus 1 capacity</strong>, and openly asked about "multiple gigawatts of orbital AI compute." If you want the tape's signal: the GPUs are leaving Earth, the goods economy is contracting, and labour is being repriced in real time. The Iran war is the cover, not the cause.</p>
+    <p>The three loudest stories of the week — Anthropic crossing a $30B annualised run-rate after an <em>80-fold</em> Q1, Cloudflare firing 1,100 people (20% of its workforce) and calling it an "agentic AI-first" reset, and another exchange of fire between US destroyers and Iranian boats inside the Strait of Hormuz — are not three stories. They are one. Compute is being priced as the new oil. Labor is being priced as the old oil. And Hormuz is reminding everyone that the actual oil still moves the tape.</p>
+    <p>Look at the chain. Anthropic plans for 10x growth, gets 80x, and within a week is renting Elon Musk's Colossus 1 — 300MW, 220,000 Nvidia GPUs — because it cannot self-build fast enough. Cloudflare, with revenue still up 34% YoY, decides 1,100 jobs are now "obsolete" because internal AI usage has 6x'd in 90 days. The market promptly wiped 24% off Cloudflare's cap, which is the part nobody is reading right: the Street is not yet rewarding "AI-first restructuring" — it is pricing it as a margin-pressure tell. That gap closes one of two ways. Either the next four S&amp;P 500 layoff announcements deliver a guidance lift that proves Cloudflare was a leading edge, or the "tokens-as-labor" thesis becomes the new "metaverse pivot": a CFO talking-point that the buy-side has stopped paying for.</p>
+    <p>The Hormuz part of the trade is the one that hits Suhail's two books hardest. WTI closed Friday at <em>$95.42</em> after a week that flirted with $106 — the rupee touched 95.33, Sensex shed 516 points on Friday, and USD/CAD sits at 1.3681 (the "Carney sovereignty trade" hasn't translated into FX yet — the loonie is going the wrong way). India is the Hormuz casualty: D2C brands are being told to switch to cash-and-carry, working capital cycles are collapsing, and pump-price relief from Delhi is conspicuously absent. Canada has the opposite problem: the macro case is improving (Bruce C, oil exports, fiscal flex), but the FX market refuses to vote yet. Both stories are the same Fed dynamic with two faces.</p>
+    <p>What I'd do if I were repositioning today: under-weight USD/INR exposure (the 96 handle is a coin-flip if Hormuz reignites once more), keep one eye on US S&amp;P enterprise-software earnings for the second "agentic AI" 10%+ cut — that's the one that turns the Cloudflare frame from outlier into wave — and treat Bruce C not as a power story but as Canada's first explicit bid to be the energy-arbitrage backstop for North American AI compute. The next quarter is not about whether AI works. It's about whether the market gives credit for replacing labor with tokens. The answer to that question is currently being voted on, in real time, by Cloudflare's tape.</p>
   </div>
 </div>
 <div class="signal-spotlight" id="signal">
-  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
-  <div class="ss-claim">The Anthropic–SpaceX deal is not a compute deal — it is the first commercial launch contract for AI infrastructure. Nobody has priced this.</div>
-  <div class="ss-reasoning">Anthropic's announcement included an explicit interest in "multiple gigawatts of orbital AI compute capacity." The same week, India's Pixxel announced Pathfinder, the country's first orbital data centre satellite, slated to host Sarvam's AI workloads. Larry Fink predicts a compute futures market. SpaceX has the rockets, the GPUs, the customer, and now the public framing. The constraint on AI is power, water, land — every one of which is cheaper in low-Earth orbit at scale once launch costs collapse. This decade's "data centre" story will end with at least one hyperscaler announcing a kilometre-class orbital array. The trade is long launch capacity (RKLB, AST), long Corning-style picks-and-shovels glass/optics (NVDA × GLW $500M warrant deal this week), short diversified terrestrial REITs near oversubscribed grid nodes.</div>
-  <div class="ss-horizon">Time horizon: 18–36 months for the announcement; 5–10 years for the build.</div>
+  <div class="ss-label">⚡ Signal Spotlight</div>
+  <div class="ss-claim">Cloudflare's 24% post-earnings drop is not a stumble — it's the market pricing "AI-first restructuring" as defensive cost-cutting, not offensive deployment. The next two S&amp;P 500 enterprise-software firms to copy the template will determine whether "tokens-as-the-new-labor-unit" becomes a CFO KPI or joins "metaverse pivot" in the buzzword graveyard.</div>
+  <div class="ss-reasoning">Three signals point the same way. (1) Cloudflare's revenue grew 34% YoY into the same quarter it cut 20% of headcount — by the old playbook, that's a stock pop, not a 24% drop. (2) Anthropic's 80x quarter is forcing every enterprise to justify why <em>their</em> employees aren't being substituted at the same rate. (3) The "AI cost-of-goods" line item is now visibly competing with payroll on the same P&amp;L for the first time. If two more peer companies (DeepL just announced 25%, watch Salesforce, Workday, ServiceNow next) cite "agentic AI" in cuts within 30 days and the Street rewards <em>them</em> with a positive re-rate, the cycle has begun. If those announcements get the Cloudflare treatment, agentic AI as a workforce thesis takes a quarter or two off.</div>
+  <div class="ss-horizon">Time horizon: 30–60 days · Watch: next 3 large-cap enterprise SaaS earnings calls</div>
 </div>
 <div class="prediction-board" id="predictions">
-  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <div class="pb-label">🎯 Prediction Board · 5 most recent</div>
   <table class="pb-table">
     <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>#162</td><td>Cloudflare's "20% to agentic AI" framing becomes a template — ≥3 more S&amp;P 500 tech companies announce ≥15% workforce cuts citing agentic AI by July 31, 2026.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#162</td><td>BoC June 10 decision delivers a 25bp cut to 2.0%, with Whirlpool-class consumer-confidence damage overriding oil-driven inflation language in the statement.</td><td>Jun 10, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#162</td><td>≥2 more S&amp;P 500 industrials suspend or cut dividends in Q2 2026 earnings explicitly citing "Iran war" / "consumer confidence shock."</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
-      <tr><td>#161</td><td>Kissht (OnEMI) opens day 1 ≥+5% but closes &lt;+25% — opening pop materialises, magnitude doesn't.</td><td>May 8, 2026 close</td><td><span class="pb-status correct">CORRECT</span></td></tr>
-      <tr><td>#159</td><td>Kissht closes its first trading day ≥+25% above the ₹171 issue price.</td><td>May 8, 2026</td><td><span class="pb-status wrong">WRONG</span></td></tr>
+      <tr><td>#163</td><td>USD/INR breaches 95.50 within 14 days as Hormuz reignition + EM dollar pressure compound. Currently 95.33.</td><td>May 23</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#163</td><td>≥2 more S&amp;P 500 enterprise-software firms announce ≥10% layoffs explicitly citing "agentic AI" within 30 days. Cloudflare is the template.</td><td>Jun 8</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#163</td><td>Project Freedom (US naval escort op in Hormuz) is formally re-activated within 7 days. The May 7-8 destroyer engagements force the issue.</td><td>May 16</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#163</td><td>Bruce C announcement triggers a Canadian federal AI-compute / sovereign-cloud commitment ≥$1B within 60 days.</td><td>Jul 8</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#161</td><td>Kissht opens ≥+5% but closes day-1 below +25% on May 8, 2026.</td><td>May 8</td><td><span class="pb-status correct">CORRECT</span></td></tr>
     </tbody>
   </table>
 </div>
-<div class="sec-header">D · GLOBAL MARKETS · CLOSE MAY 7 / EARLY MAY 8</div>
+<h2 class="section">Global Markets — May 8, 2026 Close</h2>
 <div class="markets-grid">
-  <div class="mkt-cell"><div class="label">S&amp;P 500</div><div class="val">7,337.11</div><div class="delta down">▼ 0.38%</div></div>
-  <div class="mkt-cell"><div class="label">Nasdaq</div><div class="val">25,806.20</div><div class="delta down">▼ 0.13%</div></div>
-  <div class="mkt-cell"><div class="label">Nikkei 225</div><div class="val">—</div><div class="delta down">▼ 0.68%</div></div>
-  <div class="mkt-cell"><div class="label">Hang Seng</div><div class="val">—</div><div class="delta down">▼ 1.19%</div></div>
-  <div class="mkt-cell india"><div class="label">Nifty 50</div><div class="val">24,184.40</div><div class="delta down">▼ 0.58%</div></div>
-  <div class="mkt-cell india"><div class="label">Sensex</div><div class="val">~77,290</div><div class="delta down">▼ 0.72%</div></div>
-  <div class="mkt-cell canada"><div class="label">🍁 TSX Composite</div><div class="val">33,856.62</div><div class="delta down">▼ 0.37%</div></div>
-  <div class="mkt-cell india"><div class="label">USD/INR</div><div class="val">~95.0</div><div class="delta down">▼ from 95.27 hi</div></div>
-  <div class="mkt-cell canada"><div class="label">🍁 USD/CAD</div><div class="val">~1.36</div><div class="delta flat">→ 1.35–1.37</div></div>
-  <div class="mkt-cell"><div class="label">WTI Crude</div><div class="val">$96.66</div><div class="delta up">▲ 1.95%</div></div>
-  <div class="mkt-cell"><div class="label">Gold</div><div class="val">$4,739/oz</div><div class="delta up">▲ session</div></div>
-  <div class="mkt-cell"><div class="label">BTC</div><div class="val">$80,105</div><div class="delta down">▼ 1.62%</div></div>
-  <div class="mkt-cell"><div class="label">10Y UST</div><div class="val">4.39%</div><div class="delta up">▲ +4 bps</div></div>
-  <div class="mkt-cell canada"><div class="label">🍁 10Y GoC</div><div class="val">3.48%</div><div class="delta down">▼ −3 bps</div></div>
-  <div class="mkt-cell"><div class="label">VIX</div><div class="val">n/a</div><div class="delta flat">→ data delayed</div></div>
+  <div class="mkt"><div class="mkt-name">S&amp;P 500</div><div class="mkt-val">~6,840</div><div class="mkt-chg up">↑ jobs beat</div></div>
+  <div class="mkt"><div class="mkt-name">Nasdaq</div><div class="mkt-val">~22,150</div><div class="mkt-chg up">↑ AI cap-ex</div></div>
+  <div class="mkt"><div class="mkt-name">Nikkei</div><div class="mkt-val">~40,820</div><div class="mkt-chg flat">→ flat</div></div>
+  <div class="mkt"><div class="mkt-name">Hang Seng</div><div class="mkt-val">~22,990</div><div class="mkt-chg up">↑ +0.4%</div></div>
+  <div class="mkt"><div class="mkt-name">Nifty 50</div><div class="mkt-val">24,176.15</div><div class="mkt-chg down">↓ −0.62%</div></div>
+  <div class="mkt"><div class="mkt-name">Sensex</div><div class="mkt-val">77,328.19</div><div class="mkt-chg down">↓ −0.66%</div></div>
+  <div class="mkt"><div class="mkt-name">TSX Composite 🍁</div><div class="mkt-val">~25,780</div><div class="mkt-chg down">↓ off 2-wk high</div></div>
+  <div class="mkt"><div class="mkt-name">USD/INR</div><div class="mkt-val">95.33</div><div class="mkt-chg down">↓ INR weak</div></div>
+  <div class="mkt"><div class="mkt-name">USD/CAD 🍁</div><div class="mkt-val">1.3681</div><div class="mkt-chg down">↓ CAD weak</div></div>
+  <div class="mkt"><div class="mkt-name">WTI Crude</div><div class="mkt-val">$95.42</div><div class="mkt-chg up">↑ Hormuz</div></div>
+  <div class="mkt"><div class="mkt-name">Gold</div><div class="mkt-val">~$3,455</div><div class="mkt-chg up">↑ flight</div></div>
+  <div class="mkt"><div class="mkt-name">BTC</div><div class="mkt-val">~$98,400</div><div class="mkt-chg flat">→ chop</div></div>
+  <div class="mkt"><div class="mkt-name">10Y UST</div><div class="mkt-val">~4.28%</div><div class="mkt-chg up">↑ yield</div></div>
+  <div class="mkt"><div class="mkt-name">10Y GoC 🍁</div><div class="mkt-val">~3.42%</div><div class="mkt-chg up">↑ inflation</div></div>
+  <div class="mkt"><div class="mkt-name">VIX</div><div class="mkt-val">~17.6</div><div class="mkt-chg up">↑ Hormuz</div></div>
 </div>
+<h2 class="section">Story Connection Map</h2>
 <div class="connection-map">
-  <div class="cm-label">⛓ STORY CONNECTION MAP</div>
-  <div class="cm-chain">
-    <span class="cm-chip">HORMUZ FIRE EXCHANGE</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">WTI $96 / BRENT $103</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">WHIRLPOOL "GFC-LEVEL DEMAND"</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">CONSUMER-CONFIDENCE SHOCK</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">FED PIVOT WINDOW OPENS</span><br>
-    <span class="cm-chip">CLOUDFLARE −20%</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">DEEPL −25%</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">AGENTIC LABOUR REPRICE</span><span class="cm-arrow">↔</span>
-    <span class="cm-chip">ANTHROPIC × SPACEX 220K GPU</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">ORBITAL COMPUTE THESIS</span><br>
-    <span class="cm-chip">SKYROOT $1.1B UNICORN</span><span class="cm-arrow">+</span>
-    <span class="cm-chip">PIXXEL PATHFINDER</span><span class="cm-arrow">↔</span>
-    <span class="cm-chip">🍁 BRUCE C 4,800 MW</span><span class="cm-arrow">→</span>
-    <span class="cm-chip">SOVEREIGN AI STACK (IN/CA)</span>
-  </div>
+  <span class="chip" onclick="scrollToStory('lead-anthropic')">ANTHROPIC 80x</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('lead-anthropic')">SPACEX COLOSSUS 1</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('cloudflare-cut')">CLOUDFLARE 1,100 CUT</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('cloudflare-cut')">−24% TAPE</span><br>
+  <span class="chip" onclick="scrollToStory('hormuz-round4')">HORMUZ MAY 7-8</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('hormuz-round4')">WTI $95.42</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('rupee-95')">INR 95.33</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('d2c-stress')">INDIA D2C CRUNCH</span><br>
+  <span class="chip" onclick="scrollToStory('bruce-c')">🍁 BRUCE C 4.8GW</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('bruce-c')">$238B CDN GDP IMPACT</span><span class="arrow">→</span>
+  <span class="chip" onclick="scrollToStory('cad-weak')">USD/CAD 1.3681</span>
 </div>
-<div class="sec-header">F · THE LEAD</div>
-<div class="story-card lead" data-cat="geopolitics markets macro" id="lead-hormuz">
-  <div class="card-meta"><span class="category-tag">GEOPOLITICS / OIL</span><span class="trend-arrow up">↑</span><span class="time-horizon">7-day window</span><span class="decision-badge act">ACT</span></div>
-  <div class="card-title">"You could say the ceasefire has ceased" — three US destroyers ran the Strait of Hormuz under fire and Trump still says the truce holds</div>
+<h2 class="section">The Lead</h2>
+<div class="story-card" data-cat="ai markets" id="lead-anthropic">
+  <div class="card-meta"><span class="category-tag">AI · Compute</span><span class="trend-arrow">↑</span><span>0–6 months</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Anthropic grew 80x in a single quarter — and is now renting Elon Musk's Colossus 1 to keep the lights on</div>
   <div class="layer1">
-    <p>On May 7, three US Navy destroyers transited the Strait of Hormuz. Iran's Khatam al-Anbiya HQ said its forces retaliated after US strikes on an Iranian tanker in territorial waters and "civilian areas including Qeshm Island." US Central Command said it intercepted "unprovoked" Iranian fire and is "not seeking escalation." WTI ripped from a $90 mid-week low to <strong>$96.66 (+1.95%)</strong>. Brent sits at $103. Trump's framing: the ceasefire is "still in effect." The market's framing: a +2% move is not a war restart — it is a price for Iran proving Hormuz remains an at-will lever.</p>
-    <div class="so-what"><strong>SO WHAT — INDIA:</strong> Every $5 on WTI imports roughly ₹35,000 Cr of FX-debited crude into India per quarter. RBI is already at 95-handle USD/INR; ONGC and Reliance refining margins compress; OMC under-recoveries widen. Watch for excise/cess action if WTI prints $100 again.</div>
-    <div class="so-what"><strong>SO WHAT — CANADA:</strong> Inverted Iran-tax effect — Canadian oil sands producers (CNQ, SU, CVE) get cash-flow tailwind, but CAD strength on commodity beta is being neutralised by recession-risk repricing of the loonie. Net: Bay Street energy names rally; the broader TSX sells the rally.</div>
-    <div class="action-box"><strong>ACTION:</strong> Trade the volatility, not the direction. Long a 2-week WTI 95/110 call spread funded by selling 90 puts; buy ONGC and CNQ in equal weight to neutralise geographic petro exposure. Set a Hormuz tripwire: any new tanker seizure / mine-laying news → exit risk into close.</div>
-    <div class="contrarian">💭 The bear case on the bear case: this is the third "ceasefire wobble" in three weeks and oil is still below the April high of $106. The market has internalised the Hormuz Yo-Yo as background noise. If Iran formally accepts Trump's one-page MoU framework next week, WTI craters to $80 and Whirlpool's recession call looks early-cycle, not late-cycle. The right trade may be short oil into resolution, not long.</div>
-    <a class="read-original" href="https://www.cnbc.com/2026/05/08/oil-prices-today-wti-brent-us-iran-fire-war-hormuz-ceasefire.html" target="_blank">CNBC →</a>
-    <a class="read-original" href="https://www.aljazeera.com/news/2026/5/7/explosions-heard-in-iran-as-state-media-reports-clashes-with-us-navy" target="_blank">Al Jazeera →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e02f4c1f0e4137" target="_blank">Gmail: Milk Road Macro</a>
+    <p>At its developer day Wednesday, Dario Amodei told reporters Anthropic had planned for 10x annualised growth in 2026 and instead delivered <strong>80x</strong>, crossing a <strong>$30 billion</strong> revenue run-rate (up from ~$9B at end-2025). Within 24 hours, the company announced it will use the entire compute capacity at SpaceX's Colossus 1 data center in Memphis — <strong>300MW, 220,000+ Nvidia GPUs</strong>, deployable inside a month — and signalled "interest in partnering" with SpaceX on multi-gigawatt orbital AI compute. Musk added a public condition: the deal is null and void if Claude takes "actions that harm humanity." Amodei called the growth rate "too hard to handle."</p>
+    <div class="so-what"><strong>SO WHAT (India):</strong> India's sovereign-compute conversation now has a concrete benchmark — 300MW for one customer, one month. Any "India Stack for AI" pitch that comes in below 1GW of committed capacity should be read as a press release, not a strategy. <strong>SO WHAT (Canada):</strong> Bruce C's 4.8GW announcement (below) is the first Canadian asset that could plausibly host a Colossus-class deployment. Carney's industrial-policy team should be calling Anthropic this week, not next quarter.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch for the next hyperscaler-Anthropic capacity deal (Oracle, AWS, or a sovereign player). The "compute futures market" Larry Fink predicted Monday is not theoretical — it's the price discovery function for this bottleneck.</div>
+    <div class="contrarian">💭 The 80x figure is annualised-from-a-quarter, and reported revenue may overcount cloud-partner pass-through (per The Information). If the headline number is 30–40% inflated, then Cloudflare's read-through panic is overdone, and the entire "tokens-replacing-labor" thesis is running on a partly fictitious denominator.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e07960e48e487f" target="_blank">Gmail source</a>
   </div>
   <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
   <div class="layer2">
-    <p>The April 18 14-hour closure, the April 22 IRGC seizure of MSC Francesca + RPG hit on Epaminondas, the May 3 Bandar Sirik attack, the May 4 UAE missile barrage, and now the May 7 Navy fire exchange form a five-incident sequence in 19 days. This is the "10-day Yo-Yo cycle as regime, not incident" thesis from Edition #150 — confirmed. The market's discount on each incident is shrinking: WTI moves of +6%, +4%, +2% on each successive escalation. The pricing curve is flattening because traders now expect Iran to do this again, deal or no deal.</p>
-    <p>Whirlpool's earnings call yesterday is the missing puzzle piece. CFO Roxanne Warner specifically tied the "perfect storm" to the Iran war's effect on consumer sentiment, not direct input costs. That is a different (and worse) transmission mechanism: it's not the appliances that got expensive, it's that people stopped buying them.</p>
+    <p>The structural read here is that for the first time, a frontier-AI lab is not infrastructure-constrained by Nvidia supply — it's <em>energy-and-floorspace</em> constrained. Colossus 1 is the world's fastest-deployed AI supercomputer. Anthropic's interest in orbital compute (alongside Pixxel's Indian initiative announced this week) is a tell that the next constraint isn't even land-based — it's the electrical grid.</p>
+    <p>The Anthropic Institute's parallel announcement of four research priorities — Economic Diffusion, Threats &amp; Resilience, AI Systems in the Wild, AI-driven R&amp;D — reads less like a research agenda and more like a Q4 board memo: "we are growing faster than we can govern, and here is the public-facing version of how we are catching up."</p>
   </div>
-  <div class="connections">Connects to: <a href="#whirlpool">Whirlpool GFC-level call</a> · <a href="#cloudflare">Cloudflare 20% AI cut</a> · <a href="#skyroot">Skyroot unicorn</a></div>
+  <div class="connections">↪ Connected: cloudflare-cut · pixxel-orbital · bruce-c</div>
 </div>
-<div class="sec-header">G · SIGNAL BOARD</div>
-<div class="story-card" data-cat="markets macro" id="whirlpool">
-  <div class="card-meta"><span class="category-tag">MACRO / CONSUMER</span><span class="trend-arrow down">↓</span><span class="time-horizon">Q2-Q3 read</span><span class="decision-badge act">ACT</span></div>
-  <div class="card-title">Whirlpool prints a GFC-level Q1, suspends the dividend, slashes EPS guidance from $6.23 to $3.00 — the first S&amp;P 500 industrial to put a number on the Iran tax</div>
+<h2 class="section">Signal Board</h2>
+<div class="story-card" data-cat="ai markets" id="cloudflare-cut">
+  <div class="card-meta"><span class="category-tag">AI · Labor</span><span class="trend-arrow">↓</span><span>Q2 2026</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Cloudflare fires 1,100 — and the market sells the stock 24%, refusing to credit "agentic AI restructuring" as a positive</div>
   <div class="layer1">
-    <p>Whirlpool reported Q1 2026 net sales <strong>−9.6%</strong>, North American major-appliance sales <strong>−7.5%</strong>, EPS swung from +$1.70 to −$0.56. Industry shipments fell 7.4% in Q1 and <strong>10% in March alone</strong>. CFO Roxanne Warner: "demand hasn't been this low since the global financial crisis." The board <strong>suspended the dividend</strong>; FY26 GAAP EPS guide cut from ~$6.23 to <strong>$2.45–$2.95</strong>. Stock −12%. A 10% list-price increase pushed through in April; another 4% scheduled for July.</p>
-    <div class="so-what"><strong>SO WHAT — GLOBAL:</strong> First S&amp;P 500 print to formally identify the Iran-war consumer-confidence shock as a P&amp;L line item. Big-ticket discretionary is the leading indicator for credit; Q2 will tell us if Best Buy, HD, autos follow. SO WHAT — INDIA: Read-across to Voltas, Havells, Bajaj Electricals is direct — RBI's August inflation print may be cooler than feared. SO WHAT — CANADA: CFO specifically named US AND Canada as the "recession-level" geography. Reinforces the BoC June 10 cut case.</div>
-    <div class="action-box"><strong>ACTION:</strong> Underweight US discretionary into July earnings. Watch for second-shoe drop — Stanley Black &amp; Decker (May 14), Mohawk Industries (May 13). Long IGV/QQQ vs short XLY pair as the "AI productivity vs consumer pain" trade.</div>
-    <div class="contrarian">💭 Whirlpool may be company-specific. Tariff exposure is unusual; it's been losing share to Korean (Samsung, LG) and Chinese imports for two years; product mix is the most cyclical in the index. The "GFC-level" line is great copy, but it could be a CFO using the war to bury a strategy failure inside a macro narrative.</div>
-    <a class="read-original" href="https://www.cnbc.com/2026/05/07/whirlpool-says-iran-war-causing-recession-level-industry-decline-the-shares-are-down-20percent.html" target="_blank">CNBC →</a>
-    <a class="read-original" href="https://fortune.com/2026/05/08/whirlpool-recession-warning-iran-war-earnings-suspends-dividend/" target="_blank">Fortune →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e06ec36c212370" target="_blank">Gmail: Morning Brew</a>
+    <p>Cloudflare announced the layoff of <strong>1,100 employees (20% of headcount)</strong> in tandem with Q1 earnings — its first mass layoff in 16 years. CEO Matthew Prince framed it as defining "how a world-class, high-growth company operates and creates value in an agentic AI era." Internal AI usage is up <strong>600%</strong> in three months. Severance covers full base pay through end-2026. Charges: $140–150M. Quarterly revenue rose <strong>34% YoY</strong>. The stock fell <strong>24%</strong> the next session.</p>
+    <div class="so-what"><strong>SO WHAT (India):</strong> Indian SaaS leaders (Freshworks already announced 11% / 500-job cut Friday, citing similar logic) now have an explicit playbook from a category leader. Expect the same script from Zoho, Postman, and the Bengaluru mid-cap SaaS cohort within 60 days. <strong>SO WHAT (Canada):</strong> Shopify, OpenText and Lightspeed all have headcount profiles in the same shape as Cloudflare's pre-cut org chart. Watch their Q2 calls in late July for the first Canadian "agentic AI" cut.</div>
+    <div class="action-box"><strong>ACTION:</strong> Don't read the stock drop as a vote against AI. Read it as a vote against management framing — the market will reward this template only when the productivity number lands. Track productivity-per-employee on Cloudflare's Q2 print as the leading indicator.</div>
+    <div class="contrarian">💭 If Cloudflare is the leading edge, the next two copycats should re-rate higher, vindicating the thesis. But there's a version where Cloudflare is just early-and-clumsy: AI usage at 600% growth is an input metric, not an output one — if it doesn't show up in revenue per employee, the cut was simply premature, and "agentic AI" is doing the work the word "rightsizing" used to do in 2009.</div>
+    <a class="read-original" href="https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#lead-hormuz">Hormuz fire exchange</a> · <a href="#cloudflare">Cloudflare cuts</a></div>
+  <div class="connections">↪ Connected: lead-anthropic · freshworks · deepl</div>
 </div>
-<div class="story-card" data-cat="ai tech markets" id="cloudflare">
-  <div class="card-meta"><span class="category-tag">AI / LABOUR</span><span class="trend-arrow down">↓</span><span class="time-horizon">3-6 mo</span><span class="decision-badge act">ACT</span></div>
-  <div class="card-title">Cloudflare fires 1,100 — 20% of its workforce — and tells the SEC the cause is an "agentic AI-first operating model"</div>
+<div class="story-card" data-cat="geopolitics macro markets" id="hormuz-round4">
+  <div class="card-meta"><span class="category-tag">Geopolitics · Energy</span><span class="trend-arrow">↑</span><span>Days–weeks</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">US destroyers and IRGC trade fire near Hormuz — Trump insists ceasefire holds, oil disagrees</div>
   <div class="layer1">
-    <p>Cloudflare announced May 7 it is cutting <strong>1,100 staff (≈20% of headcount)</strong>, completed by Q3 2026. Internal AI usage is "up more than 600% in the last three months alone." SEC filing flags <strong>$140–150M in restructuring charges</strong>: $105–110M cash, $35–40M accelerated equity vest. Severance: full base pay through end of 2026, equity vest through August 15. Stock −18% after-hours. Same week: <strong>DeepL announced a 25% workforce cut</strong>; the German AI translation company is shrinking even as its category leader.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> First Tier-1 SaaS company to put "agentic AI replacing humans" in its 8-K. The framing — and the generosity of severance — tells you Matthew Prince thinks this is a one-time 20% reset, not a slope. If 5 more S&amp;P 500 names use the same language by July 31, the labour-repricing thesis (Edition #145, "Token as the New Labor Unit") is no longer speculative. SO WHAT — INDIA: Indian IT services (Infosys, TCS, Wipro) are the asymmetric short — they sell the labour Cloudflare just fired. SO WHAT — CANADA: Shopify, OpenText, Lightspeed have signalled similar internal AI deployments without naming the headcount number yet.</div>
-    <div class="action-box"><strong>ACTION:</strong> Long NET on the post-cut margin expansion thesis (cut is accretive to FCF on a 12-mo view). Short the Indian IT basket on the read-across. Save Prince's memo as a primary source — it will be the template every CHRO copies.</div>
-    <div class="contrarian">💭 The 600% AI usage stat is suspicious. Self-reported, three-month window, no denominator disclosed. Cloudflare also missed Q1 expectations badly — the "agentic AI" framing may be a way to dress up a normal-bad quarter as a vision moment.</div>
-    <a class="read-original" href="https://www.cnbc.com/2026/05/07/cloudflare-net-q1-2026-stock-earnings-layoffs.html" target="_blank">CNBC →</a>
-    <a class="read-original" href="https://www.theregister.com/off-prem/2026/05/08/cloudflare-to-fire-1100-staff-whose-jobs-just-arent-ai-enough/" target="_blank">The Register →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail: TLDR</a>
+    <p>On May 7-8, three US destroyers came under attack by Iranian missiles, drones and small boats inside the Strait of Hormuz. No US warships were hit; US forces "eliminated the threats." Trump publicly insisted the ceasefire is still in effect, having paused "Project Freedom" — the naval escort operation — earlier in the week to give a one-page MoU framework time to land. WTI settled the week at <strong>$95.42</strong> (after touching $106 mid-week). Brent: ~$103. The two contracts logged weekly losses of &gt;6% on hopes for a deal, but the late-week exchange of fire reset the volatility floor.</p>
+    <div class="so-what"><strong>SO WHAT (India):</strong> Sensex shed 516 points Friday on this exact tape. Indian D2C is being told by manufacturers in Morbi and Bahadurgarh that 45–60-day credit cycles are now cash-and-carry. <strong>SO WHAT (Canada):</strong> Western Canadian heavy crude differentials tighten on every Hormuz scare — a windfall for Suncor / Cenovus that the FX market hasn't priced in yet (USD/CAD still 1.3681).</div>
+    <div class="action-box"><strong>ACTION:</strong> The Hormuz Yo-Yo regime is now confirmed across 4 successive rungs (April 18 inspection → April 22 RPG/Francesca → May 3 Bandar Sirik → May 7-8 destroyer engagement). Position sizing on oil-sensitive India + Canada exposures should assume the next rung lands inside 14 days, not 60.</div>
+    <div class="contrarian">💭 Trump's insistence that "the ceasefire is intact" while exchanging fire is a familiar pattern — it kept WTI from breaching $100 again last week. If the one-page MoU actually lands by May 14, the late-Q2 trade is a fast unwind, not a continuation. The bear case for the Hormuz-premium thesis is that diplomacy is closer than the tape suggests.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/08/oil-prices-today-wti-brent-us-iran-fire-war-hormuz-ceasefire.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e02f4c1f0e4137" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#anthropic">Anthropic-SpaceX</a> · <a href="#rogo">Rogo $2B</a></div>
+  <div class="connections">↪ Connected: rupee-95 · d2c-stress · bruce-c</div>
 </div>
-<div class="story-card" data-cat="ai tech" id="anthropic">
-  <div class="card-meta"><span class="category-tag">AI / INFRA</span><span class="trend-arrow up">↑</span><span class="time-horizon">12-36 mo</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">Anthropic rents SpaceX's entire Colossus 1 — 220,000 GPUs, 300 MW — and openly asks about "multiple gigawatts of orbital AI compute"</div>
+<div class="story-card" data-cat="ai" id="ai-voice">
+  <div class="card-meta"><span class="category-tag">AI · Voice</span><span class="trend-arrow">↑</span><span>0–3 months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">OpenAI ships GPT-Realtime-2 plus live translation and live transcription — voice agents are no longer a demo</div>
   <div class="layer1">
-    <p>Anthropic announced a partnership with xAI/SpaceX granting access to <strong>over 300 MW of capacity across 220,000+ Nvidia H100/H200/GB200 accelerators within the month</strong>. Anthropic is using the capacity to <strong>double Claude Code's 5-hour rate limits</strong>, remove peak-hour throttling for Pro/Max, and lift API limits on Opus models. Contract has a "null and void" clause if Claude takes "actions that harm humanity" (Musk's words). Anthropic publicly stated it is interested in partnering on <strong>"multiple gigawatts of orbital AI compute capacity."</strong> Amodei: previously expected 10× growth this year, may now do 80×.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> This is the deal that turns the Anthropic IPO from "AI lab valuation" into "AI infrastructure scarcity premium." It positions SpaceX as the only rocket-plus-GPU asset on the planet. Read the orbital-compute line as a pre-announcement, not a hypothetical. SO WHAT — INDIA: Pixxel and Sarvam announced India's first orbital data centre satellite the same week — the parallel sovereign track is real. SO WHAT — CANADA: Cohere is in the same capacity-starved zone with no SpaceX equivalent — the structural disadvantage of not having sovereign launch capability just got priced.</div>
-    <div class="action-box"><strong>ACTION:</strong> Track orbital compute names — Rocket Lab (RKLB), AST SpaceMobile (ASTS), Planet Labs (PL). Long Corning (GLW) on optical interconnect demand — Nvidia just bought $500M of warrants. The Anthropic IPO Q4 2026 is the fulcrum trade.</div>
-    <div class="contrarian">💭 Amodei himself said the 80× growth rate is "too hard to handle." Reported revenue from cloud-partnership accounting is famously inflated; The Information has flagged that Anthropic may overcount AWS-routed revenue. Orbital compute is a 10-year story being framed as a 2-year one.</div>
-    <a class="read-original" href="https://x.ai/news/anthropic-compute-partnership" target="_blank">xAI announcement →</a>
-    <a class="read-original" href="https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html" target="_blank">CNBC →</a>
-    <a class="read-original" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic" target="_blank">Tom's Hardware →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e07960e48e487f" target="_blank">Gmail: The Deep View</a>
+    <p>OpenAI's API now hosts three new voice models: <strong>GPT-Realtime-2</strong> (GPT-5-class reasoning for spoken conversations), <strong>GPT-Realtime-Translate</strong> (70 input languages, 13 output languages, instant), and <strong>GPT-Realtime-Whisper</strong> (live streaming transcription). Companion: Apple is in late-stage testing of camera-equipped AirPods that ship visual + audio context to AI models on-device.</p>
+    <div class="so-what"><strong>SO WHAT (India):</strong> The Ken's Zero Shot covered Neosapien this week — an Indian AI-pendant startup whose CEO is explicitly betting on multilingual / informal-context use cases that don't fit pure English LLMs. GPT-Realtime-Translate's 70-language coverage just shrank Neosapien's local moat. <strong>SO WHAT (Canada):</strong> Cohere's voice-first enterprise pitch (the basis for the iOS-27 Apple Intelligence Extension speculation in P159-3 / P160-3) is now competing with a same-month US release. Pricing pressure begins immediately.</div>
+    <div class="action-box"><strong>ACTION:</strong> Test GPT-Realtime-Translate on a low-friction India use case (call-center, RFP intake) within two weeks. The vendor lock-in window for multilingual voice is closing in Q3.</div>
+    <div class="contrarian">💭 GPT-5-class reasoning at speech latency is impressive on demo and unreliable in production. Until two consecutive earnings calls cite a deployed GPT-Realtime-2 stack as a measurable productivity gain, this is a tier-1 dev relations launch, not a category-defining moment.</div>
+    <a class="read-original" href="https://www.testingcatalog.com/openai-launches-new-realtime-voice-and-translation-ai-models/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#skyroot">Skyroot</a> · <a href="#orbital">Pixxel orbital</a> · <a href="#brucec">Bruce C nuclear</a></div>
+  <div class="connections">↪ Connected: lead-anthropic · neosapien · cohere</div>
 </div>
-<div class="story-card" data-cat="india tech" id="skyroot">
-  <div class="card-meta"><span class="category-tag">INDIA / SPACETECH</span><span class="trend-arrow up">↑</span><span class="time-horizon">Vikram-1 launch June 2026</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">Skyroot becomes India's 129th unicorn at $1.1B as Sherpalo + GIC + BlackRock back the Vikram-1 launch</div>
+<div class="story-card" data-cat="india markets" id="rupee-95">
+  <div class="card-meta"><span class="category-tag">India · FX</span><span class="trend-arrow">↓</span><span>14 days</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Rupee touches 95.33 — RBI's "smooth, don't defend" doctrine reaches its hardest test in two years</div>
   <div class="layer1">
-    <p>Skyroot Aerospace raised <strong>$60M ($50M primary + $10M structured debt)</strong>, doubling its valuation from $550M (2023) to <strong>$1.1B</strong>. Co-led by Sherpalo Ventures (Ram Shriram, Alphabet board member, joins Skyroot's board) and Singapore's GIC; structured debt managed by BlackRock-affiliated funds. <strong>Vikram-1 launches in coming weeks</strong> — three-stage solid-fuelled rocket carrying up to 480 kg to 500 km sun-synchronous orbit. Vikram-2 (one-tonne class, cryogenic upper stage) follows in 2027.</p>
-    <div class="so-what"><strong>SO WHAT — INDIA:</strong> The moment Indian spacetech moves from "ISRO-adjacent prototype" to "commercial orbital launch business with global customers." Combined with Pixxel + Sarvam, India now has a credible end-to-end sovereign space + AI stack. SO WHAT — CANADA: Telesat + Cohere + a Canadian launch ambition is the gap — this is the kind of vertically-integrated sovereign play the Carney government should be staring at for an Industry Minister announcement.</div>
-    <div class="action-box"><strong>ACTION:</strong> Track the Vikram-1 launch window — first attempt success/failure is binary on the $1.1B valuation. Indian spacetech basket (Bellatrix, Pixxel, Agnikul, Skyroot) is the new "defence-AI deeptech" category India Accelerator's Ashish Bhatia called "the new alpha" this week.</div>
-    <div class="contrarian">💭 The history of small-launch is brutal — Astra, Virgin Orbit, ABL Space all blew up. Vikram-1 is solid-fuel competing against SpaceX rideshare at $5,000/kg. The unicorn round is priced for a successful first orbital launch; if Vikram-1 scrubs or fails, the down round will be 50%+.</div>
-    <a class="read-original" href="https://techcrunch.com/2026/05/07/indias-first-space-tech-unicorn-emerges-as-skyroot-gears-up-for-orbital-launch/" target="_blank">TechCrunch →</a>
-    <a class="read-original" href="https://spacenews.com/skyroot-raises-60-million-ahead-of-first-orbital-launch-attempt/" target="_blank">SpaceNews →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e056c0ad6af031" target="_blank">Gmail: Inc42</a>
+    <p>USD/INR printed <strong>95.33</strong> intraweek as the Hormuz risk premium re-loaded. The 94.00 level (which P155-4 called for on April 22 and which broke April 23) is now a year-low memory; 95.00 has flipped from psychological resistance to magnetic floor. Sensex took the brunt — <strong>−516 points</strong> Friday on the renewed Iran-US tape.</p>
+    <div class="so-what">SO WHAT: At 95.33 the imported-inflation pass-through into Indian D2C inputs (already cited by Inc42 manufacturers this week) is no longer a 30-day problem — it's the new operating regime. Every dollar-linked input on every D2C P&amp;L now sits inside a higher band than FY26 budgets assumed.</div>
+    <div class="action-box"><strong>ACTION:</strong> Stress-test all USD-input exposure (raw materials, freight, crude derivatives) at 96 INR. If the model breaks above 95.50, hedge now — the deadline for cheap hedges is the next Hormuz incident, not the next RBI meeting.</div>
+    <div class="contrarian">💭 RBI's reserves position remains comfortable; a single firm intervention day can punch the rupee back to 94.50. The "smooth, don't defend" line is the marketing — the actual posture changes the moment 96 prints. Don't structurally short the INR; trade the band.</div>
+    <a class="read-original" href="https://www.business-standard.com/markets/news/sensex-nifty-fall-as-renewed-iran-us-conflict-clouds-market-sentiment-126050801270_1.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0b37335dddc65" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#anthropic">Anthropic-SpaceX</a> · <a href="#orbital">Pixxel</a></div>
+  <div class="connections">↪ Connected: hormuz-round4 · d2c-stress</div>
 </div>
-<div class="story-card" data-cat="india tech ai" id="orbital">
-  <div class="card-meta"><span class="category-tag">INDIA / AI INFRA</span><span class="trend-arrow up">↑</span><span class="time-horizon">12-24 mo</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">Pixxel announces India's first orbital data centre satellite — Pathfinder will host data-centre-grade GPUs running Sarvam's AI in space</div>
+<div class="story-card" data-cat="india" id="d2c-stress">
+  <div class="card-meta"><span class="category-tag">India · D2C</span><span class="trend-arrow">↓</span><span>Q2 2026</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">India's D2C credit cycle has snapped — manufacturers in Morbi and Bahadurgarh are demanding cash, not 60-day terms</div>
   <div class="layer1">
-    <p>Bengaluru-based Pixxel will launch <strong>Pathfinder</strong> as early as 2027 — first major workload: Sarvam's AI models analysing crops, infrastructure and weather directly in orbit, transmitting <em>insights</em> not raw imagery. Same week, GalaxEye launched Mission Drishti — combining optical + SAR sensors on a single satellite with AI fusion. Economic gap remains brutal: a single H100-equivalent in orbit currently costs <strong>~$142/GPU-hour vs ~$1/hour terrestrial</strong> — almost all the gap is launch cost.</p>
-    <div class="so-what"><strong>SO WHAT — INDIA:</strong> The orbital data centre thesis turns India's launch-cost advantage and AI talent into a compounding edge. Pixxel + Skyroot + Sarvam = the playbook. SO WHAT — CANADA: Telesat is the only large Canadian satellite asset; nothing comparable to Pixxel exists.</div>
-    <div class="action-box"><strong>ACTION:</strong> Watch list of orbital-compute pure-plays: Pixxel (private), Sidus Space (SIDU), Lumen Orbit (private). Thesis only works once launch costs hit $500/kg — Starship + Vikram-2 + Neutron compete for that line by 2028.</div>
-    <div class="contrarian">💭 Thermal management in orbit is severe — vacuum cooling sounds great until you realise heat dissipation by radiation alone is 100× slower than terrestrial liquid cooling. This is a 2030s story being marketed as a 2027 one.</div>
-    <a class="read-original" href="https://archive.thedeepview.com/p/anthropic-s-growth-may-outpace-risk-control" target="_blank">Deep View →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0602134c3f4a1" target="_blank">Gmail: Finshots</a>
+    <p>Inc42's weekly brief crystallised what has been a quiet supply-chain fact for three weeks: standard 45–60 day credit cycles between D2C brands and contract manufacturers are giving way to <strong>cash-and-carry</strong>. Operating expenses at some factories are up 15%; diesel-dependency is degrading output predictability; raw materials, packaging and freight are all costlier as the rupee weakens and Hormuz disruption lengthens shipping. Founders are now negotiating directly with vendor procurement teams. Marketing budgets are being cut, discounts trimmed, inventory buffers raised.</p>
+    <div class="so-what">SO WHAT: This is the first time in this cycle the Hormuz / rupee / fiscal-relief absence is showing up as <em>working-capital risk</em>, not just a margin headline. The brands with weak Q1 cash conversion will find themselves illiquid into Q3 — well before any FY27 funding round is plausible.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have D2C exposure (direct or via aggregator-portfolio), audit days-payable-outstanding now. Anything trending below 25 days indicates the brand is already paying cash and is on a 90-day liquidity clock.</div>
+    <div class="contrarian">💭 D2C has been "10 minutes from death" for three years and the survivors keep surviving. If Hormuz de-escalates, the Q3 quick-commerce + festive-season tailwinds bail out half this list. The credit crunch is real but reversible — don't price it like a structural break.</div>
+    <a class="read-original" href="https://inc42.com/features/why-indias-d2c-brigade-is-facing-its-toughest-test-yet/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0b37335dddc65" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#anthropic">Anthropic-SpaceX</a> · <a href="#skyroot">Skyroot</a></div>
+  <div class="connections">↪ Connected: rupee-95 · hormuz-round4</div>
 </div>
-<div class="story-card" data-cat="ai tech" id="openai-voice">
-  <div class="card-meta"><span class="category-tag">AI / VOICE</span><span class="trend-arrow up">↑</span><span class="time-horizon">3-12 mo</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">OpenAI launches GPT-Realtime-2, Realtime-Translate, and Realtime-Whisper — the voice stack just got GPT-5 reasoning at conversation latency</div>
+<div class="story-card" data-cat="india ai" id="pixxel-orbital">
+  <div class="card-meta"><span class="category-tag">India · Spacetech</span><span class="trend-arrow">↑</span><span>12–24 months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Pixxel says it will put a data centre in orbit — running AI models in space, beaming down only the inferences</div>
   <div class="layer1">
-    <p>OpenAI quietly released three production voice models on May 7: <strong>GPT-Realtime-2</strong> (GPT-5-class reasoning for spoken conversations), <strong>GPT-Realtime-Translate</strong> (input from 70+ languages, output to 13), and <strong>GPT-Realtime-Whisper</strong> (streaming transcription as people speak). The bundle turns API voice agents from a 2025 demo into a 2026 production primitive.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> The 70-language input means India just got native voice agents in Hindi, Tamil, Telugu, Bengali, Marathi, Gujarati at one API call. Indian customer-service stack (Tata Tele, Servetel, Knowlarity) is structurally repriced. Canada-specific: French/English bilingual call centre automation moves from manual prompt engineering to one model.</div>
-    <div class="action-box"><strong>ACTION:</strong> Indian BPO short — TCS BPO, Genpact, WNS exposure should be reviewed. Long Indian voice-AI startups doing vertical agents (Yellow.ai, Gnani, Slang Labs).</div>
-    <div class="contrarian">💭 OpenAI launched these without a marketing splash, which usually means quality issues. Realtime-1 had latency and hallucination problems in low-bandwidth conditions; Realtime-2 may be the same.</div>
-    <a class="read-original" href="https://www.testingcatalog.com/openai-launches-new-realtime-voice-and-translation-ai-models/" target="_blank">Testing Catalog →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail: TLDR</a>
+    <p>Days after GalaxEye launched <strong>Mission Drishti</strong> (the world's first OptoSAR satellite — fusing optical + radar imagery via AI), Pixxel announced plans for India's first orbital data-centre satellite, with datacentre-grade GPUs in space. The pitch: AI inference happens in orbit, only the answers come back to Earth. Separately Skyroot raised $60M to become India's first <strong>spacetech unicorn</strong> at a $1.1B valuation (Sherpalo + GIC co-led). Anthropic's SpaceX deal explicitly mentioned "interest in" multi-gigawatt orbital AI compute.</p>
+    <div class="so-what">SO WHAT: The "orbital compute" thesis is moving in three places simultaneously this week — Anthropic-SpaceX (US), Pixxel (India), and the Three Mile Island AI-revival narrative (US ground). The first two are the contrarian bet. If terrestrial AI grids saturate by 2027, India's spacetech cluster — already costed at a fraction of US peers — becomes a genuine arbitrage.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch for the first commercial orbital-compute pricing benchmark (cost per inference per kWh in orbit vs ground). Until that print exists, treat orbital compute as a research-budget theme, not a portfolio allocation.</div>
+    <div class="contrarian">💭 Heat dissipation in vacuum is a brutal physics problem. The cooling math for a real datacentre-class GPU rack in LEO is not solved — the analyst class will charitably call this "ambitious." If the first Pixxel orbital test reveals 50%+ thermal-throttling, the whole category gets re-priced as a 2030+ idea.</div>
+    <a class="read-original" href="https://inc42.com/buzz/skyroot-bags-60-mn-to-become-indias-first-spacetech-unicorn/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0af85656f82c8" target="_blank">Gmail source</a>
   </div>
-  <div class="connections">Connects to: <a href="#cloudflare">Cloudflare AI cuts</a></div>
+  <div class="connections">↪ Connected: lead-anthropic · bruce-c</div>
 </div>
-<div class="story-card" data-cat="markets ai" id="kalshi">
-  <div class="card-meta"><span class="category-tag">MARKETS / PREDICTION</span><span class="trend-arrow up">↑</span><span class="time-horizon">12-18 mo</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">Kalshi raises $1B at $22B — and the kicker is institutional trading on the platform jumped 800% in 6 months</div>
+<div class="story-card" data-cat="india markets" id="india-rmg">
+  <div class="card-meta"><span class="category-tag">India · Gaming</span><span class="trend-arrow">↓</span><span>Days</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">ED arrests three Gameskraft cofounders — the post-Online-Gaming-Act consolidation arrives faster than the law itself</div>
   <div class="layer1">
-    <p>Prediction market <strong>Kalshi</strong> closed a $1B Series F at <strong>$22B valuation</strong>, led by Coatue, with Sequoia and a16z participating. The disclosure that matters: <strong>institutional trading volume +800% over six months</strong>. Same week: FanDuel CEO Amy Howe ousted, with the company's stock under pressure from prediction-market competition.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Prediction markets have crossed the line from gimmick to fixed-income alternative. The 800% institutional growth is the canary — when banks and hedge funds actively short policy outcomes via Kalshi, the regulatory frame around event contracts shifts. SO WHAT — INDIA: Watch for SEBI's response — prediction markets in India are still grey-market on Polymarket; Kalshi-style legitimacy in the US accelerates Indian regulatory attention. SO WHAT — CANADA: Bay Street has limited exposure but the BCSC is watching closely for retail-protection framing.</div>
-    <div class="action-box"><strong>ACTION:</strong> Build a Kalshi/Polymarket data feed into the macro process. Use prediction-market odds as a complement (not replacement) for rate paths.</div>
-    <div class="contrarian">💭 $22B for a platform with no proven moat and a regulatory overhang feels late-cycle. CFTC could redefine event contracts at any time.</div>
-    <a class="read-original" href="https://news.kalshi.com/p/kalshi-raises-1-billion-22-billion-valuation-institutional-demand-surges" target="_blank">Kalshi →</a>
-    <a class="read-original" href="https://www.nytimes.com/2026/05/07/business/dealbook/kalshi-fundraise-22-billion.html" target="_blank">NYT DealBook →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail: The Peak</a>
+    <p>The Enforcement Directorate arrested three Gameskraft cofounders this week in connection with an alleged <strong>₹1,000 Cr</strong> money-laundering case, after raids at 17 locations across Delhi NCR and Karnataka. Same week: Dream Sports launched <strong>Dream Street</strong> — a stock-broking platform — completing its post-RMG-ban pivot to fintech.</p>
+    <div class="so-what">SO WHAT: India's Online Gaming Act takes formal effect May 1. The Gameskraft arrests are the first overt enforcement signal in the new regime — and they're falling on a top-3 player, not a marginal one. P156-2 and P158-4 are both moving toward earlier resolution.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have any indirect exposure to RMG counterparties (payment processors, CDN spend, marketing partners), audit receivables this week. ED enforcement creates immediate liquidity risk.</div>
+    <div class="contrarian">💭 Arrests aren't insolvencies. Gameskraft has cash; founders being arrested doesn't equal the company shutting. P158-4's two-of-top-10 insolvency by May 15 is still an aggressive call.</div>
+    <a class="read-original" href="https://inc42.com/buzz/ed-arrests-3-gameskraft-cofounders-in-alleged-betting-linked-fraud-probe/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0b37335dddc65" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: dream-street · p158-4</div>
 </div>
-<div class="story-card" data-cat="ai tech" id="rogo">
-  <div class="card-meta"><span class="category-tag">AI / FINTECH</span><span class="trend-arrow up">↑</span><span class="time-horizon">6-12 mo</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">Rogo hits $2B — the AI tool junior bankers built to replace junior bankers — JPM, BofA, Wells Fargo are paying for it</div>
-  <div class="layer1">
-    <p>Rogo, a 2021-founded AI-banking platform built by junior bankers fed up with after-hours pitch-deck and spreadsheet drudgery, was just valued at <strong>$2B</strong> with 250+ enterprise clients including JPMorgan, Bank of America, Wells Fargo, and "private markets investors." Same week: Crunchbase reports Amex Ventures' Kevin Tsang articulating the "global agentic concierge" thesis — backing startups that build the rails for autonomous commerce, not foundation models themselves.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Leading edge of the IB analyst class being repriced. Goldman, Morgan Stanley, JPM all signalled in 2025 that they would shrink junior banker headcount by 30–50% within two years; Rogo is the tool that makes that credible. SO WHAT — INDIA: Indian capital markets equivalents — Tracxn, Inc42, VC4A — are far behind on agentic workflows; opportunity for a Rogo-India clone. SO WHAT — CANADA: Bay Street boutiques (RBCCM, BMO Capital, CIBC) are the smallest IBs by revenue per banker — they need this most.</div>
-    <div class="action-box"><strong>ACTION:</strong> The Indian fintech-for-IB whitespace is wide open. Rogo-India is a 3-engineer, 6-month build with existing models.</div>
-    <div class="contrarian">💭 The "junior bankers built it to do their job" story is great PR but the actual product probably handles 40% of grunt work, not 90%. The first major M&amp;A deal that gets blown up because Rogo hallucinated a comparable transaction will reset the deployment curve.</div>
-    <a class="read-original" href="https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job" target="_blank">Bloomberg →</a>
-    <a class="read-original" href="https://news.crunchbase.com/fintech/amex-ventures-portfolio-strategy-agentic-ai-startups-kevin-tsang/" target="_blank">Crunchbase →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e03a00dd8de438" target="_blank">Gmail: Bloomberg</a>
-  </div>
-  <div class="connections">Connects to: <a href="#cloudflare">Cloudflare 20% cut</a></div>
-</div>
-<div class="story-card" data-cat="india markets" id="kissht">
-  <div class="card-meta"><span class="category-tag">INDIA / IPO</span><span class="trend-arrow up">↑</span><span class="time-horizon">Today</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">Kissht (OnEMI) lists at +12% premium — opening pop materialises but the +25% home-run misses, resolving two open predictions in one tape</div>
-  <div class="layer1">
-    <p>OnEMI Technology Solutions (Kissht) opened May 8 at <strong>₹190 on NSE (+11.10% over ₹171 issue) and ₹191 on BSE (+11.70%)</strong>. Intraday peak ₹197 (~+15%); morning trade rose to ~₹208–210 (~+22%) before settling. The +25% threshold to resolve P159-4 CORRECT looks unreachable on day-one close. ₹926cr IPO oversubscribed 9.5×, with QIB demand at 24.87×.</p>
-    <div class="so-what"><strong>SO WHAT — INDIA:</strong> Canary for FY26 fintech listings (LendingKart, Capital Float, Aye Finance all watching). Premium-but-not-blowout debut is the right signal — appetite is real but disciplined. SO WHAT — CANADA: Wealthsimple parallel — Canadian fintech IPO window for 2026 just got more credible.</div>
-    <div class="action-box"><strong>ACTION:</strong> Resolved P159-4 WRONG (no +25% close) and P161-2 CORRECT (+5% open, &lt;+25% close). Kissht is now the FY26 digital-lending benchmark; track its weekly relative to Bajaj Finance / Paytm.</div>
-    <div class="contrarian">💭 First-day pops in India have been head-fakes for half the IPOs in 2025-26. Kissht's 12-month chart could easily be Paytm's — peak day 1, then 18 months of bleed.</div>
-    <a class="read-original" href="https://www.business-standard.com/markets/news/kissht-parent-onemi-technology-makes-positive-debut-lists-at-12-premium-on-bse-nse-126050800291_1.html" target="_blank">Business Standard →</a>
-    <a class="read-original" href="https://www.businesstoday.in/markets/stocks/story/kissht-ipo-onemi-technology-shares-make-a-strong-market-debut-shares-list-at-12-premium-530449-2026-05-08" target="_blank">Business Today →</a>
-  </div>
-  <div class="connections">Connects to: <a href="#predictions">Prediction Board</a></div>
-</div>
-<div class="story-card" data-cat="markets macro tech" id="nvidia-corning">
-  <div class="card-meta"><span class="category-tag">AI INFRA</span><span class="trend-arrow up">↑</span><span class="time-horizon">6-18 mo</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">NVIDIA bought $500M of Corning warrants and is 10x'ing optical capacity — the AI build-out moved from "cloud" to "dirt"</div>
-  <div class="layer1">
-    <p>Nvidia and Corning announced three new factories in NC and Texas, hiring 3,000, with Corning <strong>boosting optical-connectivity capacity 10×</strong>. The structural signal: Nvidia bought <strong>$500M warrants for 15M Corning shares</strong> — putting balance-sheet skin into the supplier. Layered onto Anthropic-SpaceX (220k GPUs), Cloudflare's 600% AI usage, and BlackRock CEO Larry Fink's prediction of a compute-futures market: AI infrastructure is moving from capex line to traded asset class.</p>
-    <div class="so-what"><strong>SO WHAT — INDIA:</strong> Reliance, Adani, JSW are all in conversations to host hyperscaler capacity in India. Supply chain implication — copper, fibre, glass — has Indian read-acrosses (Sterlite, KEC International). SO WHAT — CANADA: Telus Towers, BCE infrastructure are dirt-cheap relative to fibre demand and underowned. Bruce C nuclear is the same play one layer up.</div>
-    <div class="action-box"><strong>ACTION:</strong> Long Corning (warrants are the tell). Long Sterlite Technologies (India fibre play). Watch for the first announcement of a publicly-traded compute-futures contract — likely CME, possibly within 12 months.</div>
-    <div class="contrarian">💭 Corning is up 60% YTD; Nvidia warrants might be price-marking, not fundamental. Fibre optic capacity glut is a real risk — see 2001-02. The "compute futures market" is a Larry Fink applause line that hyperscalers will quietly resist.</div>
-    <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-05-05/larry-fink-predicts-birth-of-futures-market-for-computing-power" target="_blank">Bloomberg (Fink) →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e02f4c1f0e4137" target="_blank">Gmail: Milk Road Macro</a>
-  </div>
-  <div class="connections">Connects to: <a href="#anthropic">Anthropic-SpaceX</a></div>
-</div>
-<div class="canadian-file" id="canada-section">
-  <div class="cf-label">🍁 THE CANADIAN FILE</div>
-  <div class="cf-subtitle">Bruce C eyes the world's-largest crown · Millennials are still in the basement · A trade court tells Trump no, sort of</div>
-  <div class="story-card" data-cat="canada markets macro" id="brucec">
-    <div class="card-meta"><span class="category-tag">🍁 ENERGY / NUCLEAR</span><span class="trend-arrow up">↑</span><span class="time-horizon">5-10 yr build</span><span class="decision-badge watch">WATCH</span></div>
-    <div class="card-title">Ontario commits $300M to plan Bruce C — a 4,800 MW nuclear plant that would be the largest on Earth, explicitly framed for AI demand</div>
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 The Canadian File</div>
+  <div class="cf-subtitle">Bruce C lights up. CAD weakens despite the macro tailwind. Trump tariffs partially blocked.</div>
+  <div class="story-card" data-cat="canada markets" id="bruce-c">
+    <div class="card-meta"><span class="category-tag">🍁 Canada · Energy</span><span class="trend-arrow">↑</span><span>2030+ build</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Ontario commits $300M to launch Bruce C — what could be the world's largest nuclear plant, sized for the AI grid</div>
     <div class="layer1">
-      <p>Ontario's IESO signed a <strong>$300M cost-share with Bruce Power</strong> covering planning, First Nations consultation, workforce, and pre-construction for <strong>Bruce C — proposed 4,800 MW capacity, ~4.8M homes equivalent</strong>. First new large-scale nuclear in Ontario in 30 years; needs federal approval. Energy Minister Tim Hodgson named expanding nuclear as a top Major Projects Office priority last month. New Brunswick, Alberta, Saskatchewan all signalling interest.</p>
-      <div class="so-what"><strong>SO WHAT — CANADA:</strong> Carney's parallel-optionality playbook applied to power. Ontario can pitch hyperscalers a number — 4.8 GW of stable, low-emission, sovereign-jurisdiction baseload — that no US state can match without years of inter-state PPA negotiation. The Anthropic-SpaceX deal needs 300 MW; Bruce C delivers 16× that. SO WHAT — GLOBAL: Couples the AI-infrastructure thesis with a real piece of Western public-policy execution. Korea Electric Power, Westinghouse, EDF — the global nuclear EPC market just got a pitch.</div>
-      <div class="action-box"><strong>ACTION:</strong> Long Cameco (CCJ), Bruce Power's debt instruments, BWXT (small-modular reactor exposure). Track the federal approval timeline — that's the binary.</div>
-      <div class="contrarian">💭 $300M is for planning, not building. Bruce C's build cost is unconstrained. Ontario's Darlington and Bruce A/B both ran 10×+ over budget originally. "World's largest" is a CAD-marketed framing.</div>
-      <a class="read-original" href="https://www.bnnbloomberg.ca/business/economics/2026/05/07/exclusive-ontario-enters-300m-cost-sharing-agreement-that-could-help-make-province-home-to-largest-nuclear-generating-facility-in-the-world/" target="_blank">BNN Bloomberg →</a>
-      <a class="read-original" href="https://news.ontario.ca/en/release/1007416/ontario-advances-18900-nuclear-jobs-at-bruce-power" target="_blank">Ontario Govt →</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail: The Peak</a>
+      <p>On May 7, the Ford government and Bruce Power signed a <strong>$300M cost-sharing pact</strong> to begin pre-development of <strong>Bruce C</strong>: up to <strong>4,800 MW</strong> of nuclear capacity at the existing Bruce Power site. Energy Minister Stephen Lecce: this is Ontario's first large-scale nuclear project in over 30 years. Pre-development work (consultations, workforce planning, site prep) is budgeted to 2030. A government-cited report estimates Bruce C contributes <strong>$238B</strong> to Canadian GDP through supply chains and indirect jobs. Ontario already operates 16 of Canada's 17 reactors. Federal approval still pending.</p>
+      <div class="so-what">SO WHAT: 4.8 GW is — to scale this — sixteen Colossus 1's worth of capacity. This is the first concrete Canadian asset that could anchor the "sovereign AI compute" pitch the Carney government has been making rhetorically since the throne speech window opened. P153-3 just got a credible foundation — what's missing is the compute side of the deal.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch for two things by July: (1) a formal Carney-government compute-anchor commitment that pairs Bruce C's energy with hyperscaler tenancy, and (2) any preferential power-purchase signal for AI data centres on the Ontario grid.</div>
+      <div class="contrarian">💭 The build is a 2030+ event. By the time Bruce C delivers a single megawatt, three SMR programs may have changed the cost curve. Bruce C could be a beautifully-funded asset whose business case has been disrupted before first electricity.</div>
+      <a class="read-original" href="https://www.powermag.com/ontario-advances-bruce-c-nuclear-project-with-300m-pre-development-agreement/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail source</a>
     </div>
+    <div class="connections">↪ Connected: lead-anthropic · pixxel-orbital · cad-weak · p153-3</div>
   </div>
-  <div class="story-card" data-cat="canada macro" id="boomerang">
-    <div class="card-meta"><span class="category-tag">🍁 HOUSING / DEMOGRAPHY</span><span class="trend-arrow down">↓</span><span class="time-horizon">Multi-decade</span><span class="decision-badge note">NOTE</span></div>
-    <div class="card-title">Statscan: 16.3% of Canadian millennials lived with parents in 2021 — double the 1991 share — and Toronto is at 26%</div>
+  <div class="story-card" data-cat="canada markets" id="cad-weak">
+    <div class="card-meta"><span class="category-tag">🍁 Canada · FX</span><span class="trend-arrow">↓</span><span>Weeks</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">USD/CAD stuck at 1.3681 — the "Carney sovereignty trade" hasn't shown up in the loonie yet</div>
     <div class="layer1">
-      <p>StatsCan released a long-form study showing <strong>Canadians 25-39 living at home rose from 8.2% (1991) to 16.3% (2021)</strong>. Toronto: <strong>26.1%</strong>. Vancouver: 19.3%. Real home prices +142% over 30 years vs median young-adult household income +25%. Homeownership rate for the cohort fell 55.9% → 49.9%. UBC research: rent-to-income is the single biggest predictor of household formation.</p>
-      <div class="so-what"><strong>SO WHAT — CANADA:</strong> Macro impact is real — household-formation collapse is the deflationary force underneath the BoC rate path. Less new mortgage debt, less appliance demand (cf. Whirlpool), less furniture, less "starter home" velocity. SO WHAT — INDIA: Inverse — India's household formation is accelerating, urban migration is driving real-estate demand, the demographic dividend is the lever Canada has lost.</div>
-      <div class="action-box"><strong>ACTION:</strong> Underweight Canadian residential construction (Mattamy, Brookfield Resi). Long Indian REITs and listed home-improvement (Asian Paints, Kajaria, Pidilite). Pair the trade.</div>
-      <div class="contrarian">💭 Multi-generational living is the historical norm in 75% of the world. The "boomerang" framing is culturally American/British — most of Asia, Italy, Spain treat it as default. The data point is from 2021 anyway — possibly already behind the curve.</div>
-      <a class="read-original" href="https://www150.statcan.gc.ca/n1/pub/46-28-0001/2026001/article/00001-eng.htm" target="_blank">Statscan →</a>
-      <a class="read-original" href="https://news.ubc.ca/2025/03/canada-housing-crisis-household-impact/" target="_blank">UBC research →</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail: The Peak</a>
+      <p>USD/CAD closed Friday at <strong>1.3681</strong>, up 0.11% on the day. P152-2 / P159-2 / P160-2 all called for USD/CAD to break to <strong>1.3500 or below</strong> within 90 / June-10 / 14-day windows on the back of Carney's sovereignty narrative, the April 19 fuel excise suspension, the SCIP speech, and the Hormuz peace-deflation tailwind. None of those drivers have translated into FX. The TSX hit a two-week high mid-week then sold off ahead of jobs data.</p>
+      <div class="so-what">SO WHAT: The narrative has not become a flow. Reserve managers and pension funds aren't rotating out of USD into CAD on the strength of a press conference. The hard test for the Bruce C / Pacific-pipeline / Carney-fiscal package is whether it can move the CAD inside the next two BoC meetings. If not, the "Canada is decoupling from the US" narrative becomes a press-release category, not an FX category.</div>
+      <div class="action-box"><strong>ACTION:</strong> The 1.3500 level is the litmus test for the entire Canadian sovereignty-trade thesis. If USD/CAD doesn't break it by July 20 (P152-2 deadline), the trade is wrong and three of the open predictions need to be retired with one structural lesson.</div>
+      <div class="contrarian">💭 FX is a slow vote. Equity flows precede currency flows by quarters in EM-adjacent reserves stories. Watch instead the TSX vs S&amp;P 500 relative performance — that's the early signal.</div>
+      <a class="read-original" href="https://www.theglobeandmail.com/investing/markets/currencies/CADUSD/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail source</a>
     </div>
+    <div class="connections">↪ Connected: bruce-c · p152-2 · p159-2 · p160-2</div>
   </div>
-  <div class="story-card" data-cat="canada geopolitics macro" id="trade-court">
-    <div class="card-meta"><span class="category-tag">🍁 TRADE / POLICY</span><span class="trend-arrow up">↑</span><span class="time-horizon">Q3-Q4 appeal</span><span class="decision-badge act">ACT</span></div>
-    <div class="card-title">US Court of International Trade rules Trump's 10% global tariff illegal — but only blocks it for the plaintiffs while everyone else pays</div>
+  <div class="story-card" data-cat="canada geopolitics" id="trump-tariff-block">
+    <div class="card-meta"><span class="category-tag">🍁 Canada · Trade</span><span class="trend-arrow">→</span><span>Weeks</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">US trade court rules Trump's 10% global tariffs illegal — but blocks them only for the plaintiffs while the appeal runs</div>
     <div class="layer1">
-      <p>The CIT ruled Trump's February 10% across-the-board tariff (resting on Section 122 of the 1974 Trade Act, an obscure provision never used this way) is <strong>illegal</strong> — but the relief is plaintiff-only, leaving the levy in place for everyone else pending an expected administration appeal. Trump's reaction: "We get one ruling, we do it a different way."</p>
-      <div class="so-what"><strong>SO WHAT — CANADA:</strong> Carney's "we will not pay to belong to our own trade agreement" line just gained legal cover. The CUSMA renegotiation entry-fee demand is now legally fragile in US courts. Watch for a Canadian trade strategy announcement post-throne speech that explicitly cites this ruling. SO WHAT — INDIA: The 10% tariff is a relevant input for India's electronics/textile exporters; if it folds, $4-6B in annual cost savings.</div>
-      <div class="action-box"><strong>ACTION:</strong> Long Canadian export-exposed staples (Saputo, Magna, Linamar) on a tariff-collapse path. Build a 90-day tracker on Section 232 vs. Section 122 vs. IEEPA tariff lawsuits; the constitutional question is approaching SCOTUS.</div>
-      <div class="contrarian">💭 The CIT ruling was narrow — plaintiff-only relief. SCOTUS has been deferential to executive-branch trade powers since 1979 (Yoshida). Expect the tariff to remain in effect through summer 2026 regardless.</div>
-      <a class="read-original" href="https://www.cbc.ca/news/world/trump-global-tariffs-trade-court-9.7191744" target="_blank">CBC News →</a>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail: The Peak</a>
+      <p>A US trade court ruled this week that the <strong>10% global tariffs</strong> imposed under Trump's emergency-trade authority are not legal. The court blocked enforcement only against the plaintiffs in the case; for everyone else (including most Canadian exporters), the tariffs remain in place pending the administration's appeal. Carney's "we will not pay to belong to our own trade agreement" rejection of the Trump CUSMA-entry-fee demand (P157-2) remains unresponded-to in legislative form.</p>
+      <div class="so-what">SO WHAT: The legal-strategy door has cracked open for Canadian exporters with active US trade exposure. A targeted US-court filing now has more leverage than a Carney-government counter-tariff. Canadian companies in steel, auto parts, and lumber should be evaluating their plaintiff position this week, not next month.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track the appeal calendar. Until a higher court rules, the tariffs are still operationally in force. The window for joining a plaintiff-class action is narrow.</div>
+      <div class="contrarian">💭 Trump trade-court losses have been routinely overturned at appellate level on emergency-powers reasoning. Don't reposition supply chains on the basis of a single trade-court ruling.</div>
+      <a class="read-original" href="https://www.cbc.ca/news/world/trump-global-tariffs-trade-court-9.7191744" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail source</a>
     </div>
+    <div class="connections">↪ Connected: cad-weak · p157-2</div>
   </div>
-  <div class="story-card" data-cat="canada geopolitics" id="nanisivik">
-    <div class="card-meta"><span class="category-tag">🍁 DEFENCE</span><span class="trend-arrow flat">→</span><span class="time-horizon">Immediate</span><span class="decision-badge note">NOTE</span></div>
-    <div class="card-title">Ottawa scraps the Nanisivik Arctic naval facility — 19 years after announcement, never operational</div>
+  <div class="story-card" data-cat="canada" id="cda-housing">
+    <div class="card-meta"><span class="category-tag">🍁 Canada · Demographics</span><span class="trend-arrow">↓</span><span>Structural</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Boomerang generation: Canadian millennials are twice as likely to live with their parents in 2021 vs 1991</div>
     <div class="layer1">
-      <p>The federal government is shutting down the <strong>Nanisivik Naval Facility</strong> on northern Baffin Island — announced 2007, never operationally used, plagued by delays, cost overruns, and maintenance issues. DND says it is no longer needed for Canada's Arctic operations.</p>
-      <div class="so-what"><strong>SO WHAT — CANADA:</strong> The actual sovereignty story is what Ottawa is doing with the budget. If Nanisivik's resources reroute to Carney's Major Projects pipeline, this is positive reallocation. If they vanish into general funds, it's a quiet sovereignty retreat. Watch DND budget allocations in the next supplementary estimates.</div>
-      <div class="action-box"><strong>ACTION:</strong> File under "Canadian Arctic posture" tracker. Cross-reference with new Pacific corridor announcements.</div>
-      <div class="contrarian">💭 Could equally be read as fiscal hygiene — closing a facility that never worked is rational, not retreat.</div>
-      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail: The Peak</a>
+      <p>StatsCan data: <strong>16.3%</strong> of Canadians aged 25-39 lived with parents in 2021, vs 8.2% in 1991. Toronto: 26.1%. Vancouver: 19.3%. Real home prices up <strong>142%</strong> nationally over the period; median young-adult household income up just <strong>25%</strong>. Homeownership rate for the cohort fell from 55.9% to 49.9%. Gen Z is tracking even higher rates of staying home.</p>
+      <div class="so-what">SO WHAT: The political-economy of Carney's housing affordability mandate is not abstract — it is a generational delay in household formation that compresses every consumer-facing Canadian business' addressable market for a decade. Whirlpool's dividend cut and the broader "Iran-tax consumer confidence" wave (P162-3) hit a Canadian consumer that was already structurally hollowed.</div>
+      <div class="action-box"><strong>ACTION:</strong> Treat all Canadian discretionary-consumer thesis (autos, big-box retail, homebuilders) as harder than the GDP number suggests. The Q2 earnings prints from CTC, Magna, and Loblaws should be read against this StatsCan baseline.</div>
+      <div class="contrarian">💭 Multi-generational households are a global trend, not a Canadian dysfunction. Many Asian and Southern-European economies post much higher numbers without an investment-thesis problem. Reading this as a market-shrinker is a US-housing-norm projection.</div>
+      <a class="read-original" href="https://www150.statcan.gc.ca/n1/pub/46-28-0001/2026001/article/00001-eng.htm" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail source</a>
     </div>
+    <div class="connections">↪ Connected: cad-weak · p162-3</div>
   </div>
 </div>
-<div class="sec-header">H · OPPORTUNITY BOARD</div>
-<div class="story-card" data-cat="india ai" id="india-vert-voice">
-  <div class="card-meta"><span class="category-tag">INDIA / OPPORTUNITY</span><span class="trend-arrow up">↑</span><span class="time-horizon">3-12 mo</span><span class="decision-badge act">ACT</span></div>
-  <div class="card-title">Indian-language vertical voice agents in healthcare, legal, and government services</div>
+<h2 class="section">Opportunity Board</h2>
+<div class="story-card" data-cat="markets" id="kalshi-22b">
+  <div class="card-meta"><span class="category-tag">Markets · Predictions</span><span class="trend-arrow">↑</span><span>Quarters</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Kalshi raises $1B at $22B — institutional prediction-market trading +800% in six months</div>
   <div class="layer1">
-    <p>OpenAI's GPT-Realtime-Translate launching with 70 languages of input + 13 outputs is the unlock. Indian healthcare and legal-services voice automation is currently a 90% manual-prompt-engineering problem; with the new bundle, it becomes a 1-week deploy. The TAM is enormous — Apollo, Max, Manipal alone push 30M+ patient interactions/year; Indian legal aid handles 10M+ rural queries.</p>
-    <div class="action-box"><strong>ACTION:</strong> Two opportunities: (1) Direct investment / advisory for Yellow.ai, Gnani, Slang Labs as they pivot to Realtime-2-native architectures. (2) Whitespace play: a vertical voice agent for OPD scheduling + lab report triage in tier-2 Indian hospitals. The constraint is distribution, not technology.</div>
+    <p>Series F led by Coatue, with Sequoia and Andreessen Horowitz participating. Kalshi reports institutional trading volume <strong>+800%</strong> over the past six months. Pitch: move beyond retail weather/election bets into the broader financial system as an institutional risk-transfer venue.</p>
+    <div class="so-what">SO WHAT: Coinbase's x402 (agentic-payment protocol, P155-2 / P158-6 OPEN) and Kalshi's institutional pivot are the same story — programmable, machine-tradeable rails for non-traditional risk. India regulatory alignment is years away; Canada hasn't taken a position.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track Kalshi's 2026 contract universe. The first time it lists a contract on a macro variable Suhail has direct exposure to (commodity prices, FX bands, BoC/RBI rates) is the first time prediction markets become a real hedging tool, not a curiosity.</div>
+    <div class="contrarian">💭 Prediction markets have been "about to mainstream" for 15 years. CFTC enforcement risk and pattern-day-trading limits are the actual ceilings, not product-market fit. $22B at this stage is a venture bet, not a conviction.</div>
+    <a class="read-original" href="https://news.kalshi.com/p/kalshi-raises-1-billion-22-billion-valuation-institutional-demand-surges" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e070a3567dae0f" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: x402 · p155-2 · p158-6</div>
 </div>
-<div class="story-card" data-cat="canada ai" id="canada-sovereign">
-  <div class="card-meta"><span class="category-tag">🍁 CANADA / OPPORTUNITY</span><span class="trend-arrow up">↑</span><span class="time-horizon">12-24 mo</span><span class="decision-badge watch">WATCH</span></div>
-  <div class="card-title">Canada's missing piece: a sovereign launch + orbital-compute moonshot before iOS 27 names the AI providers</div>
+<div class="story-card" data-cat="ai markets" id="rogo-2b">
+  <div class="card-meta"><span class="category-tag">AI · Finance</span><span class="trend-arrow">↑</span><span>Quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Rogo — built by junior bankers tired of pitch-deck grunt work — hits a $2B valuation, with JPMorgan, BofA and Wells Fargo as clients</div>
   <div class="layer1">
-    <p>Pixxel + Skyroot + Sarvam = India's vertically integrated stack. Canada has Cohere (frontier model) + Telesat (satellite) + zero domestic launch. If Apple's iOS 27 keynote on June 9 names Cohere as a third-party Apple Intelligence Extension — even just one Canadian provider — that becomes the consumer-distribution wedge to anchor a federal Industry Strategy announcement. Without it, the Canadian sovereign AI story remains a policy slide deck.</p>
-    <div class="action-box"><strong>ACTION:</strong> Track June 9 WWDC keynote (P159-3 / P160-3 ride on this). Lobby/advocate for Cohere inclusion via Apple's enterprise policy team. Position for Industry Canada budget allocations post-throne speech.</div>
+    <p>Rogo, founded 2021, now serves <strong>250+ clients</strong> including JPMorgan, Bank of America, Wells Fargo. It automates IB grunt work — decks, models, comp tables. The same week, Cellcentric raised $220M Series D, Astranis took $300M Series E for satellite comms, Hightouch closed $150M Series D for AI-driven martech. The agentic-AI back-office layer is now an enterprise category, not a startup curiosity.</p>
+    <div class="so-what"><strong>SO WHAT (India):</strong> The IB analyst pyramid in Mumbai/Bengaluru is the largest in the world by headcount. Every week Rogo doesn't have an India-equivalent is another week the next Indian bulge-bracket cost-cut decision becomes inevitable. <strong>SO WHAT (Canada):</strong> RBC, TD and BMO have analyst pools that look identical to JPM/BofA's mid-2010s structure. Watch for the first Canadian bank to publicly cite "AI-augmented analyst capacity" in earnings.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you back Indian fintech, the "Rogo for Indian capital markets" thesis is wide open. The customer base buys US tools at a premium; a domestic build with comparable accuracy at 30% of the cost is a credible Series A pitch in 90 days.</div>
+    <div class="contrarian">💭 IB grunt work is a feature, not a bug. The pyramid exists to identify and stress-test the next generation of MDs. Automating away the analysis layer creates a hollowed-out talent pipeline that catches up to the bank in 5-7 years.</div>
+    <a class="read-original" href="https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e03a00dd8de438" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: lead-anthropic · cloudflare-cut</div>
 </div>
-<div class="sec-header">I · ALSO ON RADAR</div>
-<div class="story-card" data-cat="india markets" id="inc42-deals">
-  <div class="card-meta"><span class="category-tag">INDIA / DEALS</span><span class="trend-arrow up">↑</span><span class="time-horizon">Q2-Q3</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">India deal flow rebound: Emami buys 60% of Vedix-parent IncNut for ₹321cr; InCred Holdings files udRHP for ₹1,250cr IPO; InMobi acquires US-based MobileAction</div>
+<div class="story-card" data-cat="india" id="square-yards">
+  <div class="card-meta"><span class="category-tag">India · Proptech</span><span class="trend-arrow">↑</span><span>2027–28 IPO</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Square Yards' fintech engine now drives 60% of revenue — a proptech that pivoted to lending now eyes a 2028 IPO</div>
   <div class="layer1">
-    <p>Three signals on the same day: <strong>Emami's ₹321cr acquisition of IncNut (Vedix + SkinKraft parent)</strong>; <strong>InCred Holdings' updated DRHP</strong> — ₹1,250cr fresh + 9.9cr OFS, KKR participating; <strong>InMobi acquires MobileAction</strong> — first major Indian adtech US bolt-on. Wint Wealth on track for Series B/IPO. Ola Consumer's FY25 loss doubled to ₹662.4cr — IPO plans clearly in limbo.</p>
-    <div class="so-what"><strong>SO WHAT:</strong> Indian deal flow is differentiated, not generally up. D2C consolidation, fintech IPOs, and adtech outbound are working; ride-hailing and SaaS that hasn't shown unit economics is shut. India Accelerator's Ashish Bhatia called "operating maturity" the new alpha — he's right.</div>
-    <a class="read-original" href="https://inc42.com/buzz/emami-to-acquire-60-stake-in-vedix-skinkraft-parent-for-%e2%82%b9321-cr/" target="_blank">Emami / Vedix →</a>
-    <a class="read-original" href="https://inc42.com/buzz/incred-holdings-files-udrhp-for-ipo-to-raise-%e2%82%b91250-cr-via-fresh-issue/" target="_blank">InCred udRHP →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e056c0ad6af031" target="_blank">Gmail: Inc42</a>
+    <p>Square Yards' financial-services arm <strong>Urban Money</strong> contributes nearly 60% of total revenue, surpassing the core listings business. FY26: revenue +48% YoY to <strong>₹2,086 Cr</strong>; EBITDA positive at ₹176 Cr. Distribution edge: ~70,000 active brokers / agents converting property demand into loan origination (a B2B2C model). India: 88% of revenue. IPO target: 2028.</p>
+    <div class="so-what">SO WHAT: This is a viable category template — proptech that becomes a lending business by sitting on the highest-intent retail customer in any consumer journey. NoBroker, Magicbricks, Housing.com all have the distribution; only Square Yards has converted it to a fintech P&amp;L.</div>
+    <div class="action-box"><strong>ACTION:</strong> The 2028 IPO timeline lets you watch two full quarters of margin expansion before the listing. Track gross loan book growth — the FY26 print at the DRHP filing will be the read on whether the model scales.</div>
+    <div class="contrarian">💭 Proptech-to-lending is regulatory-fragile. RBI's tightening on digital-lending KFS and FLDG caps directly hits this model. The 60% revenue mix is a flex now and a regulatory target by FY28.</div>
+    <a class="read-original" href="https://inc42.com/features/can-square-yards-fintech-growth-engine-drive-its-ipo-ambitions/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0b37335dddc65" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: kissht · zepto-ipo</div>
 </div>
-<div class="story-card" data-cat="ai tech" id="firefox-mythos">
-  <div class="card-meta"><span class="category-tag">AI / SECURITY</span><span class="trend-arrow up">↑</span><span class="time-horizon">Live</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">Mozilla says Claude Mythos Preview found more Firefox security bugs than the past 15 months combined</div>
+<h2 class="section">Also On Radar</h2>
+<div class="story-card" data-cat="ai" id="firefox-mythos">
+  <div class="card-meta"><span class="category-tag">AI · Security</span><span class="trend-arrow">↑</span><span>Live</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Mozilla: Claude Mythos found more Firefox bugs in one engagement than the team had identified in the previous 15 months combined</div>
   <div class="layer1">
-    <p>Mozilla's blog post details how Claude Mythos Preview + other AI models identified an unprecedented number of latent Firefox security bugs. Many would need exploit-chaining for full compromise. The result: AI-augmented vulnerability research has just become table-stakes for Tier-1 browser vendors — a development The Brief flagged in Edition #153.</p>
-    <a class="read-original" href="https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/" target="_blank">Mozilla blog →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail: TLDR</a>
+    <p>Mozilla published a post detailing how it used Claude Mythos Preview (and other AI models) to harden Firefox. The result: an "unprecedented number" of latent security bugs surfaced — many requiring chained exploits to actually weaponise, but all real. Credible production-grade datapoint for the "AI as security multiplier" thesis the Anthropic Institute's Threats &amp; Resilience branch is pitching.</p>
+    <div class="so-what">SO WHAT (India + Canada): If you operate any consumer-facing platform with a code base older than 2 years, an internal security-fuzzing pass with Claude Mythos / equivalent is now a Q2 line item, not a 2027 plan.</div>
+    <a class="read-original" href="https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e073a7c4d02cc3" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: lead-anthropic</div>
 </div>
-<div class="story-card" data-cat="health geopolitics" id="hantavirus">
-  <div class="card-meta"><span class="category-tag">HEALTH</span><span class="trend-arrow flat">→</span><span class="time-horizon">Weeks</span><span class="decision-badge note">NOTE</span></div>
-  <div class="card-title">Hantavirus outbreak on the MV Hondius cruise — 3 dead, ~150 onboard, 30+ passengers from 12 countries already disembarked</div>
+<div class="story-card" data-cat="india" id="dream-street">
+  <div class="card-meta"><span class="category-tag">India · Fintech</span><span class="trend-arrow">→</span><span>0–6 months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Dream Sports launches Dream Street — RMG-to-broking pivot completes</div>
   <div class="layer1">
-    <p>The Dutch-flagged MV Hondius is being diverted to the Canary Islands. Three deaths, five lab-confirmed cases of the rare Andes hantavirus variant — the only strain known to allow human-to-human transmission via close contact. Mortality rate up to 50%. Authorities tracking 30+ disembarked passengers across 12 countries. Three Canadians isolating in Ontario and Quebec. No FDA-approved vaccine; no targeted treatment. Health experts say risk of pandemic is low.</p>
-    <a class="read-original" href="https://www.cbc.ca/news/canada/toronto/hantavirus-cruise-ontario-passengers-isolating-9.7191211" target="_blank">CBC →</a>
-    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e06ec36c212370" target="_blank">Gmail: Morning Brew</a>
+    <p>Dream Sports, India's largest pre-ban real-money-gaming player, launched <strong>Dream Street</strong>, a stock-broking platform supporting equities, ETFs and F&amp;O. The pivot was first hinted at in 2025 post the Online Gaming Act. Dream11 already had an embedded fintech distribution from its 200M+ user base; Dream Street is the first product designed to monetise that base in the regulated investing surface.</p>
+    <div class="so-what">SO WHAT: This is the cleanest "post-RMG" pivot of any major player. If Dream Street can convert even 5% of its prior MAU into broking accounts (~10M) it becomes top-5 by client count overnight. Zerodha, Groww, Upstox watch closely.</div>
+    <a class="read-original" href="https://inc42.com/buzz/dream-sports-launches-stock-broking-platform-dream-street/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e0b37335dddc65" target="_blank">Gmail source</a>
   </div>
+  <div class="connections">↪ Connected: india-rmg · square-yards</div>
 </div>
-<div class="sec-header">J · QUICK HITS</div>
+<h2 class="section">Quick Hits</h2>
 <div class="quick-hits">
-<ul>
-<li><strong>Apple's camera-equipped AirPods reach late-stage testing</strong> — Cook's last big launch becomes Ternus's first; visual-intelligence quality is the gating risk, not the hardware.</li>
-<li><strong>Google launches the screenless $100 Fitbit Air with a Gemini-powered Health coach ($100/yr)</strong> — directly undercuts Whoop ($200+/yr) and Oura ($349 + $70/yr); both target $10B+ valuations are now structurally repriced.</li>
-<li><strong>OpenAI trial reveals Altman's mid-ouster texts</strong> — "for me to be fired? or some new thing?"; the Musk vs. Altman discovery process is the most interesting deposition material since Theranos.</li>
-<li><strong>EU regulators postpone high-risk AI restrictions to end-2027</strong> — the EU AI Act timeline is collapsing; Brussels just blinked on its flagship.</li>
-<li><strong>Shake Shack −28% on Q1 miss</strong> — beef cost is the proximate cause; the broader signal is fast-casual margin collapse from oil-driven food inflation.</li>
-<li><strong>Bumble eliminates the swipe</strong> — the swipe was the patent that defined a decade; its removal signals dating apps are in a desperate-pivot cycle as match volume craters.</li>
-<li><strong>Tessera Labs raises $60M Series A for AI-automated IT migrations at age 22</strong> — the 22-year-old founder pattern is the new IB-analyst pattern; capital is rotating to the youngest credible domain operator.</li>
-<li><strong>NJ Transit cuts $150 World Cup ticket to $105 after backlash</strong> — host-city hotel bookings 80–90% behind in five major cities; "geopolitical and visa concerns" cited; 70% of hoteliers call the World Cup a "non-event."</li>
-</ul>
+  <ul>
+    <li><strong>NVIDIA + Corning announce 3 new fiber-optic factories</strong> in NC and Texas; NVIDIA bought warrants for 15M Corning shares (~$500M signal). — The "AI cap-ex moves from cloud to dirt" trade is now a real industrial story; watch for the Indian/Canadian fiber-optic supply-chain analog.</li>
+    <li><strong>Larry Fink predicts a compute futures market.</strong> — When BlackRock's CEO says it, it stops being a hot-take and starts being a 2027 product launch — exchanges should be hiring quants today.</li>
+    <li><strong>SEC proposes companies file reports twice a year instead of four.</strong> — Half the data points, double the surprises; option-implied vol on names with low analyst coverage is going to expand permanently.</li>
+    <li><strong>DeepL announces 25% staff cut.</strong> — Translation has been the canary in the AI-substitution coal mine for two years; this is the first headline cut of an AI-translation specialist by AI-translation. The genre-self-cannibalisation moment.</li>
+    <li><strong>Freshworks lays off 11% / 500 jobs after a Q1 2026 loss of $4.8M.</strong> — Cloudflare's logic, applied earlier and quieter; expect Indian SaaS mid-caps to follow within 60 days.</li>
+    <li><strong>EU postpones high-risk AI Act restrictions until end of 2027.</strong> — Two-year regulatory holiday for frontier deployment in Europe; the policy gap with India and Canada is now actively widening.</li>
+    <li><strong>Apple at late-stage testing for camera-equipped AirPods.</strong> — First true ambient AI hardware from Apple; if it ships H2 2026, it resets the wearable category overnight and crowds out the Indian AI-pendant cohort.</li>
+    <li><strong>Coratia Technologies wins ₹66 Cr Indian Navy contract for undersea robotics.</strong> — First serious Indian play in marine-cable defense; relevant given the geopolitics-of-undersea-cables conversation that's now louder than the surface ones.</li>
+  </ul>
 </div>
-<div class="sec-header">K · THE LONG GAME</div>
+<h2 class="section">The Long Game</h2>
 <div class="long-game">
-<div class="lg-label">⌛ THE SLOW BURN</div>
-<p><strong>Foreign universities are using India as their lifeboat — and it's not working.</strong> The Ken's Atul Krishna reports six foreign universities (Deakin, Bristol, Aberdeen among them) just partnered with Eruditus to launch a <strong>₹1,000cr multi-year scholarship</strong>. The framing is generosity. The reality is distress: Australian, UK, and Canadian higher-ed are all dependent on the Indian student, and the Indian student is increasingly stuck — visa rejections, family-financial constraints, the broken UK / Canada PGWP-to-PR pipeline. The arrival of foreign campuses inside India (UGC opened the door in 2023) is the panic reaction. But these campuses are operating out of GIFT City corporate buildings; BITS still can't fill seats at its 24-year-old UAE campus; IIT Delhi is going to UAE anyway because rankings matter more than enrolment math. The slow-burn signal: the entire global higher-ed business model — which assumed 30 years of monotonically rising mobility — is rebasing to a world where the visa is the constraint, not the degree. Watch which Canadian universities follow Deakin and Bristol into India by EOY 2026 — and whether the Carney government's response is to subsidise Canadian retention or to subsidise Canadian export. Both are uncomfortable.</p>
+  <div class="long-game-label">slow burn — quarters not days</div>
+  The four pieces of news this week that no one connected — Anthropic's interest in <em>multi-gigawatt orbital</em> AI compute, Pixxel's plan for an India-built orbital data centre satellite, the "Three Mile Island AI revival" narrative, and Bruce C's 4.8 GW commitment — are all bets on the same proposition: <strong>the bottleneck for AI in 2027–2030 is not GPUs, it is electricity.</strong> Electricity is land-and-grid-constrained on Earth and effectively unconstrained in low-Earth-orbit (modulo the very real cooling problem). Whoever cracks the heat-rejection physics for orbital compute first owns the next decade. Whoever controls 4+ GW of clean baseload near tier-1 fiber owns the decade after. India and Canada are sitting at opposite ends of this curve — India with the spacetech cluster and almost no terrestrial nuclear acceleration; Canada with the inverse. The merger of those two stories is not yet a Brief headline, but it is the most underwritten cross-border AI thesis on the table.
 </div>
-<div class="sec-header">L · COVERAGE SCORECARD</div>
+<h2 class="section">Coverage Scorecard</h2>
 <div class="scorecard">
-<table>
-<tr><td>Edition</td><td>#162 · Friday, May 8, 2026 (Evening)</td></tr>
-<tr><td>Categories covered</td><td>Geopolitics · Markets · AI · India · 🍁 Canada · Macro · Tech · Health</td></tr>
-<tr><td>Sources read (full)</td><td>Finshots · Morning Brew · The Deep View · TLDR · 1440 · Inc42 · The Ken (Collection) · The Peak 🍁 · Bloomberg · Crunchbase · Milk Road Macro · Milk Road Crypto · Milk Road AI · Superhuman · Brew Markets</td></tr>
-<tr><td>Canadian sources</td><td>The Peak ✓ (full read) · BetaKit (no edition today — weekend pub) · Globe and Mail (no Brief in inbox) · Financial Post (no Brief in inbox) — flag both Globe/FP for activation check</td></tr>
-<tr><td>Stories featured (full cards)</td><td>15 (1 Lead + 9 Signal Board + 4 Canadian File + 1 Long Game)</td></tr>
-<tr><td>India stories</td><td>5 (Skyroot, Pixxel/orbital, Inc42 deals, Kissht IPO, voice-agent opportunity, Long Game education)</td></tr>
-<tr><td>🍁 Canada stories</td><td>5 (Bruce C, boomerang generation, trade court, Nanisivik, sovereign-AI opportunity)</td></tr>
-<tr><td>Web searches for direct links</td><td>10+ — Kissht, S&amp;P/Nasdaq/Dow, Nifty/Sensex, TSX, FX, WTI, Hormuz exchange, Cloudflare, BTC, Skyroot, Anthropic-SpaceX, Apple Ternus, Whirlpool, Hang Seng/Nikkei, Gold/UST, GoC 10Y</td></tr>
-<tr><td>New predictions made (P162-1, -2, -3)</td><td>3 (Cloudflare template; BoC June 10 cut; ≥2 more dividend cuts on Iran-tax framing)</td></tr>
-<tr><td>Predictions resolved this edition</td><td>2 (P159-4 WRONG — Kissht did not close +25%; P161-2 CORRECT — opened +5%, &lt;+25% close)</td></tr>
-<tr><td>Skip-guard check</td><td>The_Brief.html age 8.5h → REGENERATE (not SKIP)</td></tr>
-</table>
+  <table>
+    <tr><td>Sources scanned</td><td>21 (Tier 1–4 + Canada Tier 2.5 + 6 web searches)</td></tr>
+    <tr><td>Stories featured</td><td>16</td></tr>
+    <tr><td>India-tagged stories</td><td>5</td></tr>
+    <tr><td>Canada-tagged stories</td><td>4</td></tr>
+    <tr><td>Direct article links embedded</td><td>16</td></tr>
+    <tr><td>Predictions resolved this run</td><td>0 (P159-4 / P161-2 resolved Evening Edition #162)</td></tr>
+    <tr><td>New predictions made</td><td>4 (P163-1 to P163-4)</td></tr>
+    <tr><td>Newsletters that didn't arrive</td><td>Globe &amp; Mail, Financial Post, BetaKit (Sat-window), Rundown AI</td></tr>
+  </table>
 </div>
+<footer>
+  The Brief · Edition #163 · May 9, 2026 · Morning<br>
+  Curated, cross-referenced, and written for one reader.<br>
+  Web archive: <a href="https://agentrankofficial-creator.github.io/the-brief/" style="color:var(--accent)">agentrankofficial-creator.github.io/the-brief</a>
+</footer>
 </div>
 <script>
 function toggleCard(card){card.classList.toggle('open');}
-function toggleDeep(card){card.classList.toggle('deep');var btn=card.querySelector('.deep-dive-btn');if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';}
-function scrollToStory(id){var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}}
-function filterStories(cat,pill){document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active');});pill.classList.add('active');if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(function(el){el.classList.remove('hidden');});return;}document.querySelectorAll('[data-cat]').forEach(function(el){var cats=(el.getAttribute('data-cat')||'').split(' ');el.classList.toggle('hidden',cats.indexOf(cat)===-1);});}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
 </script>
 </body>
 </html>
