@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief · Edition #170 · May 12, 2026 (Evening)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7}
+.container{max-width:760px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--accent);padding:32px 0 20px;margin-bottom:28px}
+.logo{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;font-weight:700}
+.edition-num{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:6px;letter-spacing:1px}
+.tagline{font-family:Georgia,serif;font-size:20px;color:var(--text);margin-top:14px;font-style:italic;line-height:1.4}
+.archive-link{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:5px 12px;border-radius:4px;margin-top:14px}
+.archive-link:hover{background:var(--accent);color:#0a0a0b}
+.editors-read{background:linear-gradient(135deg,#1a1a1f 0%,#131316 100%);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:24px 28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:700}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:14px}
+.er-body{font-size:15.5px;color:var(--text);line-height:1.75}
+.er-body p{margin-bottom:12px}
+.er-body p:last-child{margin-bottom:0}
+.signal-spotlight{background:#1a1410;border:1px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:28px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+.ss-claim{font-size:18px;color:var(--text);font-weight:700;line-height:1.45;margin-bottom:12px}
+.ss-reasoning{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--accent);letter-spacing:1px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;display:inline-block}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:28px}
+.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center}
+.market-name{font-family:var(--font-ui);font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.market-value{font-family:var(--font-ui);font-size:13px;color:var(--text);font-weight:700;margin-bottom:2px}
+.market-change{font-family:var(--font-ui);font-size:10px;font-weight:600}
+.market-up{color:var(--green)}
+.market-down{color:var(--red)}
+.market-flat{color:var(--muted)}
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:28px}
+.cm-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:700}
+.cm-chain{font-family:var(--font-ui);font-size:13px;color:var(--text);line-height:1.9}
+.cm-chip{display:inline-block;background:#23231a;color:var(--accent);border:1px solid #c8a03060;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px 4px;font-family:var(--font-ui);letter-spacing:.5px}
+.cm-arrow{color:var(--dim);margin:0 4px}
+.section-header{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;padding:14px 0 10px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.nav-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;background:transparent;color:var(--muted);border:1px solid var(--border);padding:5px 12px;border-radius:14px;cursor:pointer;text-transform:uppercase;letter-spacing:1px}
+.nav-pill:hover{border-color:var(--accent);color:var(--accent)}
+.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:16px;transition:border-color .2s}
+.story-card.hidden{display:none}
+.story-card:hover{border-color:#3a3a40}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.category-tag{font-family:var(--font-ui);font-size:9px;background:#1f1f24;color:var(--muted);padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.trend-arrow{font-family:var(--font-ui);font-size:12px;color:var(--accent);font-weight:700}
+.time-horizon{font-family:var(--font-ui);font-size:10px;color:var(--dim)}
+.decision-badge{font-family:var(--font-ui);font-size:9px;padding:2px 7px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:18.5px;color:var(--text);font-weight:700;line-height:1.4;margin-bottom:12px}
+.layer1 p{font-size:14.5px;color:var(--text);line-height:1.7;margin-bottom:12px}
+.so-what,.action-box,.contrarian{font-size:13px;line-height:1.65;padding:10px 14px;border-radius:6px;margin-bottom:10px}
+.so-what{background:#171c17;border-left:3px solid var(--green);color:var(--text)}
+.action-box{background:#1c1714;border-left:3px solid var(--accent);color:var(--text)}
+.contrarian{background:#1c1517;border-left:3px solid var(--red);color:var(--muted);font-style:italic}
+.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:6px}
+.read-original:hover,.gmail-source:hover{color:var(--text)}
+.gmail-source{color:var(--dim)}
+.deep-dive-btn{display:block;width:100%;background:transparent;border:1px dashed var(--border);color:var(--muted);font-family:var(--font-ui);font-size:11px;padding:8px;border-radius:6px;cursor:pointer;margin-top:12px;letter-spacing:1px}
+.deep-dive-btn:hover{border-color:var(--accent);color:var(--accent)}
+.layer2{display:none;margin-top:14px;padding:14px 16px;background:#0f0f12;border-radius:6px;font-size:13.5px;color:var(--muted);line-height:1.7}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}
+.conn-chip{display:inline-block;font-family:var(--font-ui);font-size:10px;color:var(--accent);background:#1a1a1f;border:1px solid var(--border);padding:3px 8px;border-radius:3px;margin:3px 4px 3px 0;cursor:pointer;text-decoration:none}
+.conn-chip:hover{border-color:var(--accent)}
+.lead-card{background:linear-gradient(180deg,#1a1814 0%,#131316 100%);border:1px solid var(--accent);box-shadow:0 0 24px rgba(200,160,48,.12)}
+.lead-card .card-title{font-size:22px;line-height:1.35}
+.canadian-file{background:linear-gradient(180deg,#1a1414 0%,#131316 100%);border-left:4px solid var(--red);border-radius:0 10px 10px 0;padding:20px 22px;margin-bottom:24px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:6px}
+.cf-subtitle{font-family:Georgia,serif;font-style:italic;color:var(--muted);font-size:13.5px;margin-bottom:16px}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:24px}
+.qh-list{list-style:none;padding:0}
+.qh-list li{padding:10px 0;border-bottom:1px solid #1e1e22;font-size:14px;line-height:1.6;color:var(--muted)}
+.qh-list li:last-child{border-bottom:none}
+.qh-list strong{color:var(--text)}
+.long-game{background:var(--surface);border-left:3px solid #6366f1;border-radius:0 8px 8px 0;padding:18px 22px;margin-bottom:24px}
+.lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:8px;font-weight:700}
+.lg-body{font-size:14px;line-height:1.7;color:var(--muted)}
+.coverage-scorecard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:24px}
+.cs-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.cs-table th{text-align:left;padding:6px;color:var(--dim);font-size:10px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.cs-table td{padding:7px 6px;border-bottom:1px solid #1e1e22;color:var(--muted)}
+.cs-table td strong{color:var(--text)}
+footer{border-top:1px solid var(--border);padding:24px 0 50px;margin-top:30px}
+footer p{font-family:var(--font-ui);font-size:11px;color:var(--dim);line-height:1.7}
+@media(max-width:640px){.markets-grid{grid-template-columns:repeat(3,1fr)}.tagline{font-size:17px}.card-title{font-size:17px}.lead-card .card-title{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">THE BRIEF</div>
+  <div class="edition-num">EDITION #170 &middot; TUESDAY, MAY 12, 2026 &middot; EVENING</div>
+  <div class="tagline">"Ceasefire on 1% life support, rupee buckles at 95.63, OpenAI buys the consulting layer."</div>
+  <a class="archive-link" href="brief-archive/index.html">View Archive &rarr;</a>
+</header>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth &middot; May 12, 2026</div>
+  <div class="er-body">
+    <p>The story this evening is not just that Trump put the Iran ceasefire on "1% chance of living" &mdash; it is that three governments are now visibly running the same playbook on the same shock. Trump moved Monday to suspend the US federal gas tax. Carney suspended Canadian fuel excise April 19. Modi just made his second austerity appeal in 24 hours &mdash; asking Indians to skip gold for a year, cut foreign travel, carpool. Three economies, one Strait, one playbook: triage the household budget while the geopolitical chip is still being negotiated.</p>
+    <p>What I think the consensus is missing: this is not a symmetric shock. The rupee printed a record low 95.63 today, with &#8377;2.07 lakh crore of FII outflows YTD and Modi's escalating ask-the-citizen austerity rhetoric. Canada &mdash; same Hormuz, same fertilizer chain &mdash; has potash export leverage, soft CAD that helps exporters, and the Telus/Ottawa sovereign-AI cluster announcement coming through cleanly. The same closure is structurally bullish for CAD-denominated assets and structurally bearish for INR. That asymmetry will widen, not narrow, before it resets. I am sizing my own books accordingly.</p>
+    <p>Second: OpenAI's DeployCo ($4B raise from TPG, Advent, Bain Capital, Brookfield &mdash; with McKinsey, Bain &amp; Co and Capgemini as named partners, plus the Tomoro acquisition) is the most consequential AI move of the week, even on a week with a Trump-Xi summit. The traditional consulting model just invested $4B in its own replacement layer. They decided being inside the disruption beats being outside it. The April 15 "token as labor unit" thesis (P145-3) is no longer a thesis &mdash; it is a deployed product with McKinsey's logo on it.</p>
+    <p>The Beijing summit tomorrow is the safety valve, not the rupture. Trump's CEO delegation &mdash; Musk, Cook, Fink, Ortberg, Schwarzman, Solomon, Fraser, Culp, Miebach &mdash; signals managed escalation. The communique will be process language. The story will be in the side deals signed at hotel bars. Watch Boeing, Apple, BlackRock.</p>
+  </div>
+</div>
+
+<div class="signal-spotlight">
+  <div class="ss-label">&#9889; SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">McKinsey and Bain just paid to be inside the lab that will eat them. DeployCo isn't a side venture &mdash; it's the consulting industry's first existential hedge.</div>
+  <div class="ss-reasoning">OpenAI's $4B Deployment Company unifies frontier-AI development, big-firm consulting reach, and forward-deployed engineering into one stack. The investor list (TPG, Advent, Bain Capital, Brookfield + McKinsey, Bain &amp; Co, Capgemini) is not a coincidence &mdash; it's the consulting cartel buying optionality on its own obsolescence. Tomoro acquisition adds 150 deployment engineers immediately. Within two quarters, expect at least one Fortune 500 enterprise to disclose "deployed tokens per revenue dollar" as a board KPI. The token-as-labor unit thesis (P145-3, April 15) is now a quarterly OKR.</div>
+  <div class="ss-horizon">Time horizon: 6&ndash;12 months for first KPI disclosure; 24 months for full vertical-stack restructuring of enterprise consulting</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">&#127919; PREDICTION BOARD &middot; 5 MOST RECENT</div>
+  <table class="pb-table">
+    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>#169</td><td>Cerebras prices at top of bumped range ($160) May 13 &mdash; $4.8B raise at ~$48.8B valuation; 20x oversubscribed book forces upper-end print.</td><td>May 13</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#169</td><td>Trump-Xi Beijing summit (May 14-15) produces no formal joint communique with material US tariff carve-out (&gt;$50B/yr) or Iran-naming language. Deliverable will be process language.</td><td>May 17</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#169</td><td>BoC cuts 25bp at June 10 + statement cites GTA housing weakness AND adds "global energy price uncertainty" &mdash; first external-shock acknowledgment.</td><td>Jun 10</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#169</td><td>Ranovus (Ottawa silicon-photonics) named as lead bidder/equity participant in CPFC privatization &mdash; within ~12 weeks of Joly's May 10 announcement.</td><td>Jul 31</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#168</td><td>Cerebras (CBRS) day-1 closes &ge;+30% from $160 IPO price on May 14 (&ge;$208), 20x oversubscription + OpenAI 750MW/$20B anchor.</td><td>May 14</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-header">D &middot; GLOBAL MARKETS &middot; CLOSE OF MAY 11 / OPEN OF MAY 12</div>
+<div class="markets-grid">
+  <div class="market-cell"><div class="market-name">S&amp;P 500</div><div class="market-value">7,412.84</div><div class="market-change market-up">&uarr; +0.19% ATH</div></div>
+  <div class="market-cell"><div class="market-name">Nasdaq</div><div class="market-value">26,274.13</div><div class="market-change market-up">&uarr; +0.10% ATH</div></div>
+  <div class="market-cell"><div class="market-name">Nikkei 225</div><div class="market-value">&mdash;</div><div class="market-change market-flat">&rarr; choppy</div></div>
+  <div class="market-cell"><div class="market-name">Hang Seng</div><div class="market-value">&mdash;</div><div class="market-change market-down">&darr; &minus;0.16%</div></div>
+  <div class="market-cell"><div class="market-name">Nifty 50</div><div class="market-value">23,633</div><div class="market-change market-down">&darr; &minus;0.77%</div></div>
+  <div class="market-cell"><div class="market-name">Sensex</div><div class="market-value">75,301</div><div class="market-change market-down">&darr; &minus;0.94%</div></div>
+  <div class="market-cell"><div class="market-name">TSX Composite &#127809;</div><div class="market-value">34,139</div><div class="market-change market-up">&uarr; +0.18%</div></div>
+  <div class="market-cell"><div class="market-name">USD/INR</div><div class="market-value">95.63</div><div class="market-change market-down">&darr; record low</div></div>
+  <div class="market-cell"><div class="market-name">USD/CAD &#127809;</div><div class="market-value">1.3676</div><div class="market-change market-flat">&rarr; steady</div></div>
+  <div class="market-cell"><div class="market-name">WTI Crude</div><div class="market-value">~$98</div><div class="market-change market-up">&uarr; +2%</div></div>
+  <div class="market-cell"><div class="market-name">Gold</div><div class="market-value">$4,699</div><div class="market-change market-down">&darr; &minus;0.36%</div></div>
+  <div class="market-cell"><div class="market-name">Bitcoin</div><div class="market-value">$81,725</div><div class="market-change market-up">&uarr; +1.27%</div></div>
+  <div class="market-cell"><div class="market-name">10Y UST</div><div class="market-value">4.410%</div><div class="market-change market-up">&uarr; +5bp</div></div>
+  <div class="market-cell"><div class="market-name">10Y GoC &#127809;</div><div class="market-value">3.53%</div><div class="market-change market-up">&uarr; +5bp</div></div>
+  <div class="market-cell"><div class="market-name">Micron</div><div class="market-value">$795.33</div><div class="market-change market-up">&uarr; +6.50% ATH</div></div>
+</div>
+
+<div class="connection-map">
+  <div class="cm-label">E &middot; STORY CONNECTION MAP</div>
+  <div class="cm-chain">
+    <span class="cm-chip">HORMUZ STILL SHUT</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">WTI ~$98</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">US GAS $4.52</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">TRUMP GAS-TAX MOVE</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">CARNEY TEMPLATE COPIED</span><br>
+    <span class="cm-chip">HORMUZ SHUT</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">25% UREA EXPORTS HIT</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">CANADA POTASH +</span><span class="cm-arrow">/</span><span class="cm-chip">INDIA FERTILIZER &minus;</span><br>
+    <span class="cm-chip">CEASEFIRE 1% LIFE SUPPORT</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">USD SAFE-HAVEN BID</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">INR 95.63 ATH</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">MODI 2x AUSTERITY</span><br>
+    <span class="cm-chip">OPENAI DEPLOYCO $4B</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">MCKINSEY+BAIN BUY IN</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">P145-3 ACCELERATED</span><br>
+    <span class="cm-chip">CHIPS RECORD HIGH</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">CEREBRAS $4.8B IPO</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">TELUS/OTTAWA 150MW BC</span><span class="cm-arrow">&rarr;</span><span class="cm-chip">GOOGLE INDIA AI SERVERS</span>
+  </div>
+</div>
+
+<div class="nav-pills" id="navPills">
+  <button class="nav-pill active" onclick="filterStories('all',this)">All Stories</button>
+  <button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
+  <button class="nav-pill" onclick="filterStories('ai',this)">AI &amp; Tech</button>
+  <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
+  <button class="nav-pill" onclick="filterStories('india',this)">&#127470;&#127475; India</button>
+  <button class="nav-pill" onclick="filterStories('canada',this)">&#127809; Canada</button>
+</div>
+
+<div class="section-header">F &middot; THE LEAD</div>
+<div class="story-card lead-card" data-cat="geopolitics markets" id="lead-ceasefire">
+  <div class="card-meta"><span class="category-tag">GEOPOLITICS</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Hours to days</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Ceasefire on "1% chance of living" as Air Force One heads to Beijing tomorrow with Musk, Cook, Fink and a 13-CEO delegation</div>
+  <div class="layer1">
+    <p>Trump used a deliberately morbid Oval Office line Monday: "The ceasefire is on massive life support, where the doctor walks in and says, 'Sir, your loved one has approximately a 1% chance of living.'" He rejected Iran's response to the latest US peace proposal. The Strait of Hormuz remains effectively closed, WTI ticked +2% to roughly $98, and US pump prices are at $4.52 (up ~50% since the war began). Trump's plane is wheels-up for a May 13&ndash;15 Beijing state visit &mdash; and he is not flying alone. Confirmed in the delegation: Tesla's Musk, Apple's Cook, BlackRock's Fink, Boeing's Ortberg, Blackstone's Schwarzman, Goldman's Solomon, Citi's Fraser, GE Aerospace's Culp, Mastercard's Miebach, Cargill's Sikes, Illumina's Thaysen, Coherent's Anderson, plus Meta's Powell McCormick. Nvidia's Jensen Huang is reportedly skipping.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The CEO entourage is the structure of the deal, not the decoration. <strong>In India:</strong> INR hit 95.63 today; FII outflows &#8377;2.07 lakh crore YTD; Modi is asking citizens to stop buying gold. Any Hormuz reset is the dominant catalyst for a rupee reversal &mdash; until that lands, sit on USD-denominated assets and Indian exporters (IT, pharma) rather than domestic-cyclicals. <strong>In Canada:</strong> the same risk-off feeds USD strength, CAD softness, and the BoC's June 10 cut probability. CAD at 1.3676 is the asymmetric currency hedge &mdash; a Hormuz reopen reverses the rupee faster than it reverses the loonie.</div>
+    <div class="action-box"><strong>ACTION:</strong> Don't trade the communique &mdash; trade the side deals. Watch the Boeing China order book, any Apple supply-chain mention, BlackRock's China investment vehicles. On India: do not add to consumer-discretionary or financials until Modi's austerity language reverses. On Canada: hold long potash/oil exposure into the summit.</div>
+    <div class="contrarian">&#128173; The bear case: the ceasefire collapses, Iran formally renounces (P167-1 hits CORRECT early), and WTI breaks above $115. In that world, INR goes to 97+, RBI is forced to defend, and the China summit becomes irrelevant because the global oil shock dwarfs any bilateral. Trump's "1% life support" rhetoric could be a deliberate posture before a kinetic decision.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/12/trump-xi-china-trade-iran-taiwan.html" target="_blank">Read CNBC &rarr;</a>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/11/trump-ceos-elon-musk-tim-cook-larry-fink-xi-china-summit.html" target="_blank">CEO delegation &rarr;</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1b8b68b813276" target="_blank">Morning Brew source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <div class="layer2">The "unified proposal" precondition Trump set on April 21 has not been met. Iran's Sunday counter-position was framed by Trump as "totally unacceptable" &mdash; and on Iran's side, FM-level statements continue to demand sanctions removal and compensation packages. Saudi Aramco CEO Amin Nasser publicly warned the market is losing ~100M barrels/week and normalization may slip into 2027. The naval blockade and paused Project Freedom escort operation are the actual ground-truth conditions. The CEO delegation composition tells you what the US wants out of Beijing: aviation deliveries (Boeing), tech licensing relief (Apple, Meta), capital-market access (BlackRock, Goldman, Blackstone), and rare-earth/critical-mineral coordination. Notably absent: Jensen Huang (Nvidia) &mdash; likely because the export-control negotiations on advanced chips are too radioactive to involve the principal vendor publicly.</div>
+  <div class="connections"><a class="conn-chip" href="javascript:scrollToStory('story-deployco')">&rarr; DeployCo connects</a><a class="conn-chip" href="javascript:scrollToStory('story-modi')">&rarr; Modi austerity</a><a class="conn-chip" href="javascript:scrollToStory('story-telus')">&rarr; Telus/Ottawa cluster</a></div>
+</div>
+
+<div class="section-header">G &middot; SIGNAL BOARD</div>
+
+<div class="story-card" data-cat="ai" id="story-deployco">
+  <div class="card-meta"><span class="category-tag">AI / ENTERPRISE</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Quarters</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">OpenAI launches DeployCo with $4B &mdash; and McKinsey + Bain &amp; Co sign their own restructuring papers as named investors</div>
+  <div class="layer1">
+    <p>OpenAI on May 11 launched the OpenAI Deployment Company (DeployCo) with $4B of initial funding from TPG, Advent, Bain Capital and Brookfield, plus named participation from McKinsey &amp; Company, Bain &amp; Company and Capgemini. Accompanying the launch: acquisition of UK-based AI consulting firm Tomoro and its ~150 deployment engineers. Headline framing is "helping enterprises bring frontier AI into production." Operational framing: OpenAI now owns the lab + the implementation crew + the consulting cover, in one vertical stack.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the consulting industry's first existential hedge. <strong>India angle:</strong> Indian IT services (TCS, Infosys, Wipro, HCL) face the steepest pressure in this restructuring. Watch FY27 guidance for ANY mention of AI deployment partnerships with frontier labs. <strong>Canada angle:</strong> Cohere is now the most strategic Canadian asset in the world if you believe sovereign-AI replication of this stack matters. Federal procurement should be aggressively favoring Cohere-backed deployment for any government workload.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track Q2 2026 earnings of IBM, Accenture, Cognizant, TCS &mdash; first mentions of "deployment partnership" or "tokens-per-revenue" KPIs validate P145-3 / P153-2 within the original 12-month window.</div>
+    <div class="contrarian">&#128173; DeployCo flames out within 18 months. OpenAI is a model builder, not a services org. Forward-deployed engineering at enterprise scale demands an org structure (account managers, SLAs, change-control) that frontier labs have repeatedly failed to build. Tomoro absorption ends up being a $300M write-down. McKinsey and Bain quietly exit the cap table, retain the partnership veneer, and the consulting cartel survives intact.</div>
+    <a class="read-original" href="https://openai.com/index/openai-launches-the-deployment-company/" target="_blank">OpenAI announcement &rarr;</a>
+    <a class="read-original" href="https://www.axios.com/2026/05/11/openai-deployco-private-equity" target="_blank">Axios coverage &rarr;</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+  <div class="layer2">The Frontier Alliances enterprise pact OpenAI signed in February with BCG, McKinsey, Accenture and Capgemini is the precursor. DeployCo is the equity-backed evolution of that arrangement. The $4B sets up the "we'll build it for you" capability that ChatGPT Enterprise contracts have been demanding for 18 months. The Tomoro acquisition (formed 2023, London-based) is precisely the kind of capability that would otherwise have been a future competitor on the deployment layer.</div>
+  <div class="connections"><a class="conn-chip" href="javascript:scrollToStory('lead-ceasefire')">&rarr; Trump China context</a><a class="conn-chip" href="javascript:scrollToStory('story-cerebras')">&rarr; Cerebras IPO</a></div>
+</div>
+
+<div class="story-card" data-cat="ai markets" id="story-cerebras">
+  <div class="card-meta"><span class="category-tag">AI / IPO</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Days</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Cerebras bumps IPO to $4.8B at $48.8B valuation &mdash; pricing Wednesday, trading Thursday on Nasdaq under CBRS</div>
+  <div class="layer1">
+    <p>AI chipmaker Cerebras Systems raised its IPO range to $150&ndash;$160/share Monday (from $115&ndash;$125), targeting up to $4.8B in proceeds at the upper end and a fully diluted ~$48.8B valuation &mdash; up from the $23B mark set in February's private round. Book is reportedly 20x oversubscribed. Pricing is Wednesday May 13; trading begins May 14 on Nasdaq under ticker CBRS. Lead underwriters: Morgan Stanley, Citi, Barclays, UBS. Customer anchors named in the S-1: OpenAI (750MW / $20B framework) and Amazon.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The inference economy's first major public-market validation. <strong>India angle:</strong> validates India's MeitY decision to back semi-fab buildouts; a Cerebras-class success reshuffles the case for Tata Electronics, Vedanta-Foxconn and the Andhra fab. <strong>Canada angle:</strong> the CPFC privatization process (P167-4 / P169-4) now has a much stronger comparable; Ranovus and other CPFC-adjacent silicon-photonics names get a valuation tailwind.</div>
+    <div class="action-box"><strong>ACTION:</strong> P168-3 (&ge;$208 day-1 close) and P169-1 ($160 pricing) both resolve this week. If CBRS opens flat or below pricing Thursday, that is the strongest signal yet that the AI infrastructure bubble is in mature distribution, not early accumulation.</div>
+    <div class="contrarian">&#128173; 20x oversubscription on a $48.8B IPO is the textbook setup for a Day-2 dump as fast-money allocators flip. Cerebras's revenue concentration (OpenAI is the entire growth story) is the same customer-concentration risk that haunted ARM at its IPO. If OpenAI ever in-houses chip design &mdash; which Altman has been telegraphing for 18 months &mdash; Cerebras becomes a stranded asset.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/11/cerebras-raises-ipo-range.html" target="_blank">CNBC &rarr;</a>
+    <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-05-11/ai-chipmaker-cerebras-systems-seeks-4-8-billion-in-upsized-ipo" target="_blank">Bloomberg &rarr;</a>
+  </div>
+  <div class="connections"><a class="conn-chip" href="javascript:scrollToStory('story-deployco')">&rarr; DeployCo stack</a><a class="conn-chip" href="javascript:scrollToStory('story-telus')">&rarr; Telus/Ottawa BC</a></div>
+</div>
+
+<div class="story-card" data-cat="markets india" id="story-modi">
+  <div class="card-meta"><span class="category-tag">INDIA / MACRO</span><span class="trend-arrow">&darr;</span><span class="time-horizon">Weeks</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Rupee prints 95.63 record low as Modi makes his second austerity ask in 24 hours &mdash; gold-buying pause, less foreign travel, carpooling</div>
+  <div class="layer1">
+    <p>The Indian rupee touched a record low of 95.63 against the dollar on May 12 and closed Monday at 95.31 (down ~0.9%). PM Modi over Sunday-Monday issued two separate austerity appeals &mdash; asking Indians to skip gold buying for a year, cut non-essential foreign travel, carpool, reduce cooking oil, use public transport. Sensex closed &minus;1.70% Monday and was down ~&minus;0.94% in Tuesday session to 75,301; Nifty &minus;0.77% to 23,633. FII outflows in 2026 YTD: &#8377;2.07 lakh crore. The market read this as a precursor to actual policy austerity measures (temporary excise reduction, NRI bond programme, or gold import curbs).</p>
+    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> When the PM personally asks citizens to defer gold purchases, the implicit signal is that forex reserves are under more strain than RBI is officially acknowledging. The IT index (-3.67%) and consumer durables (-3.35%) are the two largest single-day declines, but Modi's framing as "less travel, less gold, less consumption" maps directly onto a current-account-deficit fix attempt. <strong>SO WHAT IN CANADA:</strong> the same dollar bid that crushed INR will pressure CAD against USD &mdash; but Canada's current-account composition (energy, potash, agri-commodity exporter) is the opposite of India's. CAD is structurally protected; INR is structurally exposed. The asymmetry is the trade.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you operate businesses in India, hedge USD payables to mid-June at minimum. Indian exporters (IT services, pharma, specialty chemicals) get a structural earnings tailwind from the FX move &mdash; but balance against potential government measures (windfall taxes, mandated remittances) if the rupee blows past 96.</div>
+    <div class="contrarian">&#128173; The bull case: a Hormuz reopen + RBI 50bp inter-meeting hike + sovereign-fund USD-INR support announcement crushes the short-rupee trade in a single session. Markets are positioned for crisis; even a partial de-escalation snaps the move 1-2% reverse. This is also the setup where Modi's austerity rhetoric proves to be cover for an aggressive RBI intervention already in motion.</div>
+    <a class="read-original" href="https://www.business-standard.com/markets/news/rupee-closes-at-fresh-low-of-95-31-per-dollar-amid-oil-price-surge-126051101115_1.html" target="_blank">Business Standard &rarr;</a>
+    <a class="read-original" href="https://www.businesstoday.in/markets/stocks/story/sensex-nifty-why-pm-modis-2nd-austerity-appeal-in-24-hrs-is-making-stock-market-jittery-530954-2026-05-12" target="_blank">BusinessToday &rarr;</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1a0575133e489" target="_blank">Inc42 source</a>
+  </div>
+  <div class="connections"><a class="conn-chip" href="javascript:scrollToStory('lead-ceasefire')">&rarr; Hormuz lead</a><a class="conn-chip" href="javascript:scrollToStory('story-fertilizer')">&rarr; Fertilizer chain</a></div>
+</div>
+
+<div class="story-card" data-cat="markets" id="story-gastax">
+  <div class="card-meta"><span class="category-tag">US / MACRO</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Weeks</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Trump moves to suspend US federal gas tax &mdash; Carney's April 19 Canadian template now imported into Washington, Hawley files the bill</div>
+  <div class="layer1">
+    <p>President Trump said Monday he will move to suspend the federal gas tax (18.4&cent;/gal regular, 24.4&cent; diesel) "for a period of time" &mdash; citing US pump prices at $4.52 (up ~50% since the Iran war began). Suspension requires Congressional action; Sen. Josh Hawley (R-MO) will file enabling legislation. Energy Secretary Wright is publicly supportive. This is a near-exact replication of the Carney federal government's April 19, 2026 fuel excise suspension in Canada (CAD$2.4B / 10&cent;/L).</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Carney's playbook made the trans-border jump in 22 days. <strong>Canada angle:</strong> any narrative of Canada operating with monetary/fiscal sovereignty distinct from the US (P152-2 sub-1.35 CAD thesis) just got reinforced &mdash; the US is now copying Canadian fiscal moves rather than the other way around. <strong>India angle:</strong> if both the US and Canada have suspended fuel excise within a 30-day window, India's Finance Ministry comes under structural pressure to follow. Pump-price relief of &#8377;3-4/L by end-May is now my base case.</div>
+    <div class="action-box"><strong>ACTION:</strong> Trade the rate of pass-through &mdash; the federal 18.4&cent; alone is only ~4% of the $4.52 price; the political theatre is bigger than the economic effect. Watch state-level matching announcements (likely Texas, Florida, Georgia within 2 weeks).</div>
+    <div class="contrarian">&#128173; Congress blocks the suspension on transportation-trust-fund grounds (the gas tax funds the Highway Trust Fund). Even Republican infrastructure hawks balk. Trump retreats to executive theatre with no actual relief delivered.</div>
+    <a class="read-original" href="https://www.npr.org/2026/05/11/nx-s1-5818446/trump-gas-tax" target="_blank">NPR &rarr;</a>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/11/trump-congress-gop-gas-tax-iran-war.html" target="_blank">CNBC &rarr;</a>
+  </div>
+  <div class="connections"><a class="conn-chip" href="javascript:scrollToStory('lead-ceasefire')">&rarr; Hormuz cause</a><a class="conn-chip" href="javascript:scrollToStory('story-modi')">&rarr; India fiscal pressure</a></div>
+</div>
+
+<div class="story-card" data-cat="ai" id="story-claude-aws">
+  <div class="card-meta"><span class="category-tag">AI / CLOUD</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Anthropic ships Claude Platform natively on AWS &mdash; 18 regions, customer data processed outside the AWS security boundary; AWS becomes first cloud to host the lab's native console</div>
+  <div class="layer1">
+    <p>AWS announced General Availability of Claude Platform on AWS on May 11. Anthropic's native Console, Messages API, Claude Managed Agents (beta), Advisor tool (beta), web search/fetch, MCP connector (beta), Agent Skills (beta), and code execution are now accessible through an existing AWS account &mdash; but requests are processed outside the AWS security boundary, by Anthropic directly. Models: Opus 4.7, Sonnet 4.6, Haiku 4.5. Available in 18 regions including Canada, US East/West, S&atilde;o Paulo, London, Frankfurt, Asia-Pacific, and Sydney.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Structurally different from Bedrock &mdash; Bedrock hosts the model with AWS security guarantees; Claude Platform on AWS gives AWS-billed access to Anthropic's actual native console while data routes to Anthropic. <strong>India angle:</strong> Indian enterprises blocked on Bedrock by data-sovereignty rules (BFSI, regulated healthcare) still cannot use Claude Platform on AWS for sensitive workloads &mdash; but Indian developer teams can now use AWS billing without separate Anthropic contracts. <strong>Canada angle:</strong> Canada is in the launch region list, which means a regulated Canadian enterprise can route Anthropic traffic with Canadian billing.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you have existing AWS enterprise contracts, ask your account team to enable Claude Platform on AWS &mdash; billing consolidation alone is worth it. Do not migrate sensitive workloads from Bedrock; the data-boundary is different.</div>
+    <div class="contrarian">&#128173; This is a defensive concession by Anthropic, not an offensive expansion. Anthropic gave up margin by sharing AWS billing in exchange for distribution access. The implicit admission is that direct-API growth had stalled. Watch Q3 Anthropic ARR commentary for confirmation.</div>
+    <a class="read-original" href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account/" target="_blank">AWS blog &rarr;</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1bce1f7082289" target="_blank">TLDR source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai geopolitics" id="story-zeroday">
+  <div class="card-meta"><span class="category-tag">SECURITY</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Months</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Google: first-ever AI-discovered zero-day weaponized by criminal hackers &mdash; exploit ran in the wild before the patch shipped</div>
+  <div class="layer1">
+    <p>Google's threat-intel team disclosed Monday that a criminal hacking group used AI to discover and weaponize a previously unknown vulnerability in a popular open-source web-based system administration tool. Strong evidence the actor leveraged a frontier-class model to identify the bug and write the working exploit. The software maker was notified in time to patch before mass damage. This is the first publicly attributed AI-enabled zero-day used in a real-world criminal campaign.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The AI-cyber defensive curve was supposed to lead the offensive curve. It does not. <strong>India angle:</strong> Indian BFSI cyber budgets (P165-3) become almost mandatory; expect SEBI / RBI / IRDAI joint advisories within 30 days. <strong>Canada angle:</strong> CSE and OSFI are likely to issue similar guidance for federally regulated FIs.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you run any open-source-heavy software stack, mandate immediate AI-assisted red-teaming in Q2. The cost of one breach now dwarfs the cost of an annual continuous-pentest contract.</div>
+    <div class="contrarian">&#128173; The attack was caught. The patch shipped before damage. The defensive curve is still ahead &mdash; Google's detection used AI too. The headline is misleading; the empirical net is that AI-enabled security is currently a wash, not an attacker advantage.</div>
+    <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-05-11/hackers-used-ai-to-build-zero-day-attack-google-researchers-say" target="_blank">Bloomberg &rarr;</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets" id="story-housing">
+  <div class="card-meta"><span class="category-tag">US / HOUSING</span><span class="trend-arrow">&darr;</span><span class="time-horizon">Quarters</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">US housing's spring season fizzles &mdash; existing-home sales +0.2% vs +3.0% expected; Iran war pushed mortgage rates back above 6%</div>
+  <div class="layer1">
+    <p>US existing-home sales in April rose only +0.2% (vs WSJ-surveyed +3.0% expected). 30-year mortgage rate is back at 6.37% after briefly dipping below 6% in February &mdash; the Iran war pushed it back up via inflation expectations. Median April price: $417,700 (all-time April high). Inventory: 1.47M unsold homes, highest April since 2019 but still well below the pre-COVID 2.0M norm. NAR economist Yun: 30% more inventory needed to balance buyers and sellers.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The Iran war is now visibly bleeding into US household demand via the mortgage-rate transmission. The Fed's worst possible composition &mdash; inflation from oil, no labor-market validation for cuts. <strong>India angle:</strong> US housing freeze means weaker US consumption demand for Indian IT services in H2. <strong>Canada angle:</strong> the GTA weakness referenced by BoC (P168-2) is mirrored here. Cross-border mortgage-rate divergence may finally produce the Canadian housing relief BoC has been waiting for.</div>
+    <div class="action-box"><strong>ACTION:</strong> Avoid US homebuilders (DHI, LEN, PHM) on any rallies; the 6.5% mortgage-rate threshold Ruben flagged is the realistic ceiling buyers will accept.</div>
+    <div class="contrarian">&#128173; Inventory rising to pre-COVID levels is healing, not damage. 1.47M is the highest April number in 6 years. If rates cut in H2, this is the setup for a 2027 acceleration.</div>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1b8b68b813276" target="_blank">Morning Brew source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai" id="story-figure">
+  <div class="card-meta"><span class="category-tag">ROBOTICS</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Figure scales humanoid production from one robot per day to one per hour at BotQ &mdash; two bots make a bed in latest demo</div>
+  <div class="layer1">
+    <p>Figure AI released video of two F03 humanoids autonomously cleaning a bedroom and making a bed &mdash; coordinated handoff, object manipulation, navigation in a furnished space. The company claims it has scaled production at its BotQ California facility from 1 robot/day to 1/hour &mdash; a 24x throughput uplift. F03 launched as their commercial-grade general humanoid in late 2025.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> One unit/hour is the threshold where humanoid production economics start to look industrial rather than artisanal. If sustained, BotQ alone produces ~8,000 units annually. <strong>India angle:</strong> Indian electronics assembly (Foxconn India, Tata Electronics) is the most exposed labor market in the world to this curve. <strong>Canada angle:</strong> Canadian labour shortages in eldercare and warehousing are the obvious domestic deployment market; Quebec's pension pool is already engaging humanoid-ROI studies per CDPQ disclosures.</div>
+    <div class="action-box"><strong>ACTION:</strong> Add Figure to your watch-the-IPO-window list. Likely Q4 2026 or H1 2027 file.</div>
+    <div class="contrarian">&#128173; Video demos are not deployments. The bed-making demo is a heavily-rehearsed environment with known object positions. Real warehouse / residential floors are 10x more chaotic; humanoid reliability still trails 3-axis articulated arms by 5+ years.</div>
+    <a class="read-original" href="https://interestingengineering.com/ai-robotics/humanoids-team-up-to-make-a-bed" target="_blank">Interesting Engineering &rarr;</a>
+  </div>
+</div>
+
+<div class="section-header">G.2 &middot; &#127809; THE CANADIAN FILE</div>
+<div class="canadian-file">
+  <div class="cf-label">&#127809; THE CANADIAN FILE</div>
+  <div class="cf-subtitle">Sovereign-AI cluster lands in BC, Toronto police corruption shakes 30 prosecutions, Canada Leads imports 80 scientists &mdash; and TD says we are uniquely cushioned against Hormuz food inflation.</div>
+
+  <div class="story-card" data-cat="canada ai" id="story-telus">
+    <div class="card-meta"><span class="category-tag">&#127809; SOVEREIGN AI</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Years</span><span class="decision-badge act">ACT</span></div>
+    <div class="card-title">Telus + Ottawa land a 150MW sovereign-AI cluster in BC &mdash; Kamloops + 26MW Mt. Pleasant + 100MW downtown Vancouver, 60,000 GPUs by 2032</div>
+    <div class="layer1">
+      <p>AI Minister Evan Solomon and Telus announced a three-site sovereign-AI cluster May 11: Kamloops facility expanded to 25MW, a converted ex-Hootsuite HQ in Mt. Pleasant Vancouver adding 26MW in Q4 2027, and a 100MW new-build in downtown Vancouver coming online in 2029. Aggregate: 150MW capacity powering 60,000+ GPUs by 2032. First project under the federal "Enabling Large-Scale Sovereign AI Data Centres" initiative.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The operational starter pistol on Carney's sovereign-compute thesis. The next 6 months will produce 3-5 similar announcements from Ontario hydroelectric corridors, Quebec hydro, and Atlantic offshore-wind regions. Combined with the CPFC privatization track (P167-4 / P168-4 / P169-4) and the Anthropic-AWS Canadian region, Canada is assembling the deepest non-US sovereign-AI stack in the OECD. <strong>India parallel:</strong> Google's $15B Andhra hub is the Indian equivalent.</div>
+      <div class="action-box"><strong>ACTION:</strong> Telus (T.TO) is the cleanest Canadian equity expression but data-centre revenue uplift is multi-year. Better targets: BCE infrastructure carve-outs, Brookfield Infrastructure (BIP.UN), and any CPP-IB / CDPQ public sovereign-AI infrastructure announcement.</div>
+      <div class="contrarian">&#128173; 150MW spread over 2026-2032 is a fraction of what a single Anthropic-AWS US deal commits in the same window. "Sovereign capacity" is performative if it lags US private capacity 50:1.</div>
+      <a class="read-original" href="https://www.theglobeandmail.com/business/article-telus-plans-ai-data-centre-expansion-in-bc-including-two-new-centres/" target="_blank">Globe and Mail &rarr;</a>
+      <a class="read-original" href="https://www.cbc.ca/news/canada/british-columbia/b-c-ai-data-centre-plan-vancouver-kamloops-9.7195426" target="_blank">CBC &rarr;</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1ba2bbf58036f" target="_blank">The Peak source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="story-toronto-police">
+    <div class="card-meta"><span class="category-tag">&#127809; RULE OF LAW</span><span class="trend-arrow">&darr;</span><span class="time-horizon">Quarters</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Toronto Police corruption hits ~30 federal prosecutions &mdash; Project South fallout threatens to collapse drug cases</div>
+    <div class="layer1">
+      <p>Roughly 30 ongoing federal prosecutions are affected by February's Project South charges, per Globe and Mail reporting. Seven TPS officers stand accused of drug trafficking, robberies, bribery, leaking intel to organized crime, and plotting an Ontario corrections officer's murder. Majority of affected prosecutions are drug cases. Defence bar nationally is expected to use the scandal to discredit unrelated officer testimony.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Structural risk to Crown prosecutorial credibility &mdash; slow-burn institutional damage that compounds over 18-36 months. The reopening track creates an enormous backlog if even half the cases are appealed.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track Ontario provincial budget for incremental Crown attorney FTE; the Toronto Crown office will need ~40% staffing uplift to absorb appeals.</div>
+      <div class="contrarian">&#128173; Public attention will dissipate within 60 days and most cases will be quietly resolved via plea deals on uncontaminated evidence.</div>
+      <a class="read-original" href="https://www.theglobeandmail.com/canada/article-thirty-federal-cases-affected-after-police-officers-charged-in-project/" target="_blank">Globe and Mail &rarr;</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1ba2bbf58036f" target="_blank">The Peak source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada markets" id="story-fertilizer">
+    <div class="card-meta"><span class="category-tag">&#127809; FOOD / TRADE</span><span class="trend-arrow">&rarr;</span><span class="time-horizon">Months</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">TD: Canada uniquely cushioned from the Hormuz fertilizer shock &mdash; 5% urea imports from Gulf, potash exporter status, high crop inventories</div>
+    <div class="layer1">
+      <p>TD Economics published a Hormuz / food-inflation note: ~25% of global urea, 13% of diammonium phosphate, and ~50% of sulfur exports normally pass through the Strait. The closure is pushing fertilizer prices sharply higher in Africa and Asia. Canada-specific: ~5% of urea imports come from Gulf suppliers, crop inventories elevated, potash industry a structural beneficiary. Most consumer food prices are downstream of non-farm costs (transportation, retail) &mdash; limiting Canadian grocery pass-through.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Canadian farmers, not consumers, absorb the squeeze. Nutrien (NTR) and Mosaic (MOS) are the institutional plays on the global potash benefit. <strong>India parallel:</strong> Indian urea imports massively exposed via the Gulf route &mdash; rabi-season cost surge could be a separate inflation impulse on top of rupee weakness. Watch RBI's CPI commentary in June for fertilizer/food inflation pass-through.</div>
+      <div class="action-box"><strong>ACTION:</strong> Long Nutrien (NTR.TO) is the textbook Canadian Hormuz hedge &mdash; same trade still has room. Avoid Canadian grocery-retail names (Loblaws, Metro) on inflation-pass-through bets; margins will compress, not expand.</div>
+      <div class="contrarian">&#128173; If Hormuz reopens within 30 days, the entire potash trade unwinds and TD's framing becomes obsolete. Nutrien gives back 12-18 months of gains.</div>
+      <a class="read-original" href="https://economics.td.com/ca-food-inflation-risk-strait-hormuz-disruption" target="_blank">TD Economics &rarr;</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1ba2bbf58036f" target="_blank">The Peak source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="story-canada-leads">
+    <div class="card-meta"><span class="category-tag">&#127809; TALENT</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Years</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Canada Leads recruits 80 scientists in one year, 800 more in pipeline &mdash; UHN-led brain-import program quietly building a Boston/SF talent reroute</div>
+    <div class="layer1">
+      <p>Toronto's University Health Network has recruited 80 foreign scientists over the past year through the Canada Leads initiative, particularly targeting US-based researchers. 800 additional researchers have expressed interest. The program leverages soft-coercive US dynamics &mdash; federal research funding uncertainty, visa friction, deportation rhetoric &mdash; to accelerate talent inflow.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The underrated Carney-era soft-power play. While Trump's CEO entourage flies to Beijing, Canada is quietly pulling biomedical, AI, and quantum-computing PIs out of US institutions at a rate that would have taken a decade pre-2024. <strong>India angle:</strong> the same dynamic that benefits Canada also benefits India for diaspora-returnees &mdash; but India lacks the institutional landing pad.</div>
+      <div class="action-box"><strong>ACTION:</strong> Canadian universities + UHN-style integrated networks are the recruitment frontier; expect 2-3 similar programs to spring up in BC and Quebec within 12 months.</div>
+      <div class="contrarian">&#128173; 80 scientists is anecdote, not data. Until the program documents publication outputs and citation lift over 5 years, this is pure PR.</div>
+      <a class="read-original" href="https://www.ctvnews.ca/toronto/article/dozens-of-scientists-from-around-the-world-recruited-by-university-health-network-for-medical-research/" target="_blank">CTV News &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="section-header">H &middot; OPPORTUNITY BOARD</div>
+
+<div class="story-card" data-cat="india" id="story-india-ai-servers">
+  <div class="card-meta"><span class="category-tag">&#127470;&#127475; OPPORTUNITY</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Years</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Vaishnaw: Google "seriously considering" AI server manufacturing in India; third fab begins commercial production July, fourth in December &mdash; 12 semi units in flight</div>
+  <div class="layer1">
+    <p>Ashwini Vaishnaw (IT Minister) confirmed Monday that Google is "seriously considering" manufacturing AI servers in India, alongside outreach to other OEMs. Two semiconductor fabs are in commercial production today; a third begins in July 2026 and a fourth in December. Twelve total semiconductor units are in various stages of buildout. Google's $15B Visakhapatnam AI hub had previously been positioned as data-centre only.</p>
+    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> If Google commits to TPU / AI-server fabrication on Indian soil, it rewrites the value-chain story Finshots flagged this morning ("compute landlords"). Server manufacturing puts India one rung higher up the stack &mdash; design IP still flows to Google but assembly and Tier-1 component sourcing creates 50-80K skilled jobs. <strong>SO WHAT IN CANADA:</strong> Canadian semiconductor strategy (CPFC + AI cluster) is operating at 1/10 the scale. The Indian playbook of "subsidies + Google as anchor tenant" is a model worth studying for Quebec/Ontario.</div>
+    <div class="action-box"><strong>ACTION:</strong> Tata Electronics, Dixon Technologies, Syrma SGS &mdash; three Indian electronics manufacturing names with credible AI server assembly capability. Monitor any MeitY-Google joint statement in the next 60 days.</div>
+    <div class="contrarian">&#128173; "Seriously considering" is ministerial euphemism. Google has said this about server manufacturing in 6 countries over 5 years; only Taiwan and Vietnam delivered real volumes.</div>
+    <a class="read-original" href="https://www.business-standard.com/technology/tech-news/google-exploring-india-investments-in-ai-infra-servers-drones-vaishnaw-126050800632_1.html" target="_blank">Business Standard &rarr;</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e1a0575133e489" target="_blank">Inc42 source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="story-acko">
+  <div class="card-meta"><span class="category-tag">&#127470;&#127475; IPO PIPELINE</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">12 months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Acko swings to &#8377;43.6 Cr profit in FY26 &mdash; insurtech unicorn lines up an H1-2027 IPO at ~$2.5B valuation</div>
+  <div class="layer1">
+    <p>Acko (founded 2016) posted FY26 net profit of &#8377;43.6 Cr vs FY25 loss of &#8377;193.4 Cr. Net earned premium +26% YoY to &#8377;191.8 Cr. Total income +39.7% YoY to &#8377;199.5 Cr. Operating expenses related to insurance business &minus;12.3% YoY. Bankers appointed for an IPO at a likely valuation up to $2.5B, H1 2027 listing target.</p>
+    <div class="so-what"><strong>SO WHAT IN INDIA:</strong> Acko's flip from &#8377;193 Cr loss to &#8377;43.6 Cr profit in a single year is the most aggressive unit-economics inversion in Indian insurtech since PolicyBazaar's pre-IPO pass-through. $2.5B pencils to ~12.5x FY26 income &mdash; aggressive but defensible if Q1 FY27 sustains margin.</div>
+    <div class="action-box"><strong>ACTION:</strong> Pre-IPO secondaries on Acko (via Kotak / IIFL / 360 ONE) are likely available at $1.8-2.0B; the spread is the alpha.</div>
+    <div class="contrarian">&#128173; One profitable quarter does not equal a profitable business model. Wingreens, Adda247, and a half-dozen FY26 "profitable" Indian unicorns have walked back guidance in pre-DRHP. Wait for Q1 FY27 disclosure.</div>
+    <a class="read-original" href="https://inc42.com/buzz/ipo-bound-acko-turns-profitable-posts-%e2%82%b943-6-cr-profit-in-fy26/" target="_blank">Inc42 &rarr;</a>
+  </div>
+</div>
+
+<div class="section-header">I &middot; ALSO ON RADAR</div>
+
+<div class="story-card" data-cat="ai" id="story-gemini-omni">
+  <div class="card-meta"><span class="category-tag">AI / PRODUCT</span><span class="trend-arrow">&uarr;</span><span class="time-horizon">Days</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Google Gemini Omni video model leaks ahead of I/O &mdash; Flash + Pro tiers, prompt-adherence praised, credit-burn flagged as a problem</div>
+  <div class="layer1">
+    <p>Screenshots of Gemini Omni's revised UI surfaced on Reddit over the weekend ahead of Google I/O (May 20). Early testers report strong prompt adherence but unsustainable credit consumption per generation. Two tiers expected: Omni Flash (lower-cost) and Omni Pro (premium). Positioned head-to-head against OpenAI Sora and Runway Gen-4.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The video-model arms race is now a 3-way fight (Google, OpenAI, Runway). The first to crack credit-per-second economics wins the enterprise market. Indian media-production startups (Glance, Pratilipi, Junglee Pictures) need to pick a primary stack.</div>
+    <a class="read-original" href="https://www.testingcatalog.com/googles-gemini-omni-video-model-surfaces-ahead-of-i-o-debut/" target="_blank">Testing Catalog &rarr;</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai markets" id="story-openai-trial">
+  <div class="card-meta"><span class="category-tag">LEGAL</span><span class="trend-arrow">&rarr;</span><span class="time-horizon">Weeks</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Nadella testifies in Musk-OpenAI trial &mdash; denied any special MSFT-OpenAI side agreement; said Musk never raised concerns directly with him</div>
+  <div class="layer1">
+    <p>Microsoft CEO Nadella took the stand Monday in the Musk-OpenAI nonprofit-mission lawsuit (Week 3 of trial). Nadella testified MSFT's $13B+ investment in OpenAI was not a "donation," that he and Musk "have each other's phone numbers" but Musk never raised any special-agreement concerns directly. Altman expected to testify later this week. Musk's lawyers introduced evidence Nadella played a role in Altman's 5-day reinstatement after the November 2023 board firing.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The trial is a sideshow to the real story (Microsoft's fading control over OpenAI's roadmap given the Anthropic-AWS deal and OpenAI's Stargate / SoftBank ties). Watch Altman's testimony.</div>
+    <a class="read-original" href="https://links.tldrnewsletter.com/widYSb" target="_blank">TLDR coverage &rarr;</a>
+  </div>
+</div>
+
+<div class="section-header">J &middot; QUICK HITS</div>
+<div class="quick-hits">
+  <ul class="qh-list">
+    <li><strong>Disney crosses $2B 2026 box office</strong> first studio to hit the mark &mdash; Devil Wears Prada 2, Avatar, Zootopia 2 all sequels &mdash; <em>the IP-monoculture is now the entire industry, and the path back to original IP is closed for 24+ months.</em></li>
+    <li><strong>OnlyFans architects a deal</strong> (per Axios Pro Rata) &mdash; <em>private-credit-backed creator economy consolidation is the next M&amp;A theme; Substack / Patreon / Fanhouse become acquisition targets at 4-6x revenue.</em></li>
+    <li><strong>NYT signs Wordle TV game show with NBC</strong> &mdash; Jimmy Fallon co-produces, Savannah Guthrie hosts &mdash; <em>NYT's diversification beyond news is its single biggest growth lever; the entire publishing industry should be studying this playbook.</em></li>
+    <li><strong>Daniel Craig becomes BYD spokesperson</strong> while Aston Martin lays off 20% &mdash; <em>Chinese EV brand-equity arbitrage is real and accelerating; legacy luxury auto is in structural decline.</em></li>
+    <li><strong>Andrew Left short-selling trial begins</strong> jury selection started yesterday; verdict could set precedent for activist short sellers &mdash; <em>a guilty finding would chill US short-research independence at exactly the moment AI-quality of bear theses is rising. Watch closely.</em></li>
+    <li><strong>iOS / macOS / iPadOS 26.5 ship encrypted RCS messaging</strong> &mdash; <em>Apple closes the SMS-iMessage encryption gap with Android; meaningful for enterprise BYOD compliance.</em></li>
+    <li><strong>Adda247 cuts 200 (20%) ahead of IPO</strong> &#8377;5 Cr annual savings; cash-runway concerns &mdash; <em>Indian edtech IPO pipeline is being prepped, but consolidation hasn't happened yet; expect 2-3 acquisitions before 2027 listings.</em></li>
+    <li><strong>Hantavirus cruise-ship outbreak hits 7 confirmed cases</strong> WHO confirms seventh; 17 Americans quarantined in Nebraska and Atlanta &mdash; <em>watch cruise lines (CCL, RCL) for travel-pattern impact; the 2026 wellness-paranoia consumer is a fragile setup.</em></li>
+  </ul>
+</div>
+
+<div class="section-header">K &middot; THE LONG GAME</div>
+<div class="long-game">
+  <div class="lg-label">&#128301; SLOW BURN</div>
+  <div class="lg-body">The Finshots data-centre piece (this morning's edition), the Telus/Ottawa BC announcement (last night), and Vaishnaw's "Google considering AI server manufacturing in India" statement are not three stories &mdash; they are one story being told in three places. We are watching the formation of a tri-polar sovereign-compute alliance structure: the US hyperscaler stack (Anthropic-AWS, OpenAI-Oracle, Google-Andhra), the Indo-Pacific sovereign overlay (Cohere-Canada, MeitY-Google, Vietnam fabs), and the European-Gulf-Korea wedge (Mistral, G42, Naver, Samsung Foundry). The geopolitics of compute is becoming the geopolitics of the next decade. The bet I am sizing: any country that ships sovereign-compute capacity ahead of August 2026 export-control crystallization will compound for 15 years. Any country that ships after will spend a decade as a "compute landlord" (Finshots' framing today, which I think is exactly right). Canada and India are right at the deadline. The next 90 days are decisive for both.</div>
+</div>
+
+<div class="section-header">L &middot; COVERAGE SCORECARD</div>
+<div class="coverage-scorecard">
+  <table class="cs-table">
+    <thead><tr><th>Category</th><th>Sources read</th><th>Stories featured</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Geopolitics / Energy</td><td>Morning Brew, The Peak, CNBC, WaPo, NPR, Bloomberg</td><td>3</td><td>Hormuz lead + US gas tax + fertilizer</td></tr>
+      <tr><td>AI / Tech</td><td>TLDR, The Deep View, OpenAI, AWS, Axios, Inc42</td><td>5</td><td>DeployCo + Claude AWS + Gemini Omni + Figure + zero-day</td></tr>
+      <tr><td>Markets / IPO</td><td>CNBC, Bloomberg, BSE/NSE, FXLeaders</td><td>3</td><td>Cerebras IPO + INR + Indian market drop</td></tr>
+      <tr><td><strong>&#127470;&#127475; India stories</strong></td><td>Inc42, BusinessToday, Business Standard, Deccan Herald</td><td><strong>4</strong></td><td>Rupee + Modi + Google servers + Acko</td></tr>
+      <tr><td><strong>&#127809; Canada stories</strong></td><td>The Peak, Globe and Mail, CBC, BNN Bloomberg, CTV</td><td><strong>4</strong></td><td>Telus cluster + Police + Fertilizer cushion + Canada Leads</td></tr>
+      <tr><td>Predictions added this edition</td><td>&mdash;</td><td>4 new (P170-1..4)</td><td>India FX, DeployCo KPI, Cerebras open, BoC framing</td></tr>
+      <tr><td>Predictions resolved this edition</td><td>&mdash;</td><td>0</td><td>All open positions; deadlines &gt; today</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>The Brief &middot; Edition #170 &middot; Tuesday, May 12, 2026 &middot; Evening<br>
+  Suhail's daily intelligence digest &middot; India + Canada dual lens &middot; Independent &middot; No sponsors<br>
+  Editor's voice. Genuine opinions. Falsifiable predictions. No hedge phrases.</p>
+</footer>
+</div>
+
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){card.classList.toggle('deep');var btn=card.querySelector('.deep-dive-btn');if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';}
+function scrollToStory(id){var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}}
+function filterStories(cat,pill){document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active');});pill.classList.add('active');if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(function(el){el.classList.remove('hidden');});return;}document.querySelectorAll('[data-cat]').forEach(function(el){var cats=(el.getAttribute('data-cat')||'').split(' ');el.classList.toggle('hidden',!cats.includes(cat));});}
+</script>
+</body>
+</html>
