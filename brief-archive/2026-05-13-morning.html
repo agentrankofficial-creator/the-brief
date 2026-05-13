@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Brief · Edition #171 · May 13, 2026 (Morning)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --bg:#0a0a0b; --surface:#131316; --border:#27272a; --text:#e4e4e7;
+  --muted:#a1a1aa; --dim:#71717a; --accent:#c8a030; --red:#e05252;
+  --green:#4ade80; --canada:#e05252; --font-body:Georgia,serif;
+  --font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:32px 24px 64px}
+header.brief{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+.brief-title{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1.brief-h{margin:6px 0 4px;font-size:36px;letter-spacing:-0.5px;line-height:1.15}
+.brief-meta{font-family:var(--font-ui);font-size:12px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.tagline{margin-top:14px;font-style:italic;color:var(--muted);font-size:15px}
+
+/* Nav pills */
+nav.pills{margin:24px 0 28px;display:flex;flex-wrap:wrap;gap:8px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:20px;color:var(--muted);background:transparent;cursor:pointer}
+.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.nav-pill:hover{color:var(--text)}
+
+/* Editor's Read */
+.editors-read{background:linear-gradient(180deg,#15151a,#101013);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:24px 28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;font-weight:700}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px;margin-bottom:14px}
+.er-body{font-size:16.5px;line-height:1.65;color:var(--text)}
+.er-body p{margin:0 0 14px}
+
+/* Signal Spotlight */
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin-bottom:32px;position:relative;overflow:hidden}
+.signal-spotlight::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#fbbf24,#c8a030)}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fbbf24;margin-bottom:10px}
+.ss-claim{font-size:19px;line-height:1.4;font-weight:700;color:var(--text);margin-bottom:12px}
+.ss-reasoning{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:10px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px}
+
+/* Prediction Board */
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+
+/* Markets table */
+.markets-table{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:32px}
+.mkt-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:var(--font-ui)}
+.mkt-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.mkt-val{font-size:15px;font-weight:700;margin:2px 0;color:var(--text)}
+.mkt-chg{font-size:11px}
+.mkt-up{color:var(--green)}
+.mkt-down{color:var(--red)}
+.mkt-flat{color:var(--dim)}
+.mkt-canada{border-left:3px solid var(--canada)}
+
+/* Story Connection Map */
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:32px;font-family:var(--font-ui);font-size:12px;color:var(--muted);overflow-x:auto;white-space:nowrap}
+.cm-chip{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:14px;margin:0 4px;color:var(--text);background:#1a1a1f}
+.cm-arrow{color:var(--accent);margin:0 6px;font-weight:700}
+
+/* Section labels */
+.section-label{font-family:var(--font-ui);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:36px 0 14px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.section-label.canada{color:var(--canada);border-bottom-color:#4a1f1f}
+
+/* Story Cards */
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:16px;transition:border-color .2s}
+.story-card.canada-card{border-left:3px solid var(--canada)}
+.story-card:hover{border-color:#3a3a40}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:8px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.category-tag{background:#1f1f24;padding:3px 8px;border-radius:3px;color:var(--accent)}
+.decision-badge{padding:3px 8px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:20px;line-height:1.3;font-weight:700;margin:4px 0 12px;color:var(--text)}
+.layer1 p{margin:0 0 12px;font-size:15px;line-height:1.6}
+.so-what,.action-box,.contrarian{font-size:13.5px;line-height:1.55;padding:10px 14px;margin:10px 0;border-radius:5px;font-family:var(--font-ui)}
+.so-what{background:rgba(200,160,48,.08);border-left:3px solid var(--accent);color:var(--text)}
+.action-box{background:rgba(74,222,128,.06);border-left:3px solid var(--green);color:var(--text)}
+.contrarian{background:rgba(224,82,82,.05);border-left:3px solid var(--red);color:var(--muted);font-style:italic}
+.so-what strong,.action-box strong,.contrarian strong{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);text-decoration:none;margin-right:14px;border-bottom:1px solid transparent;padding-bottom:1px}
+.read-original:hover,.gmail-source:hover{border-bottom-color:var(--accent)}
+.gmail-source{color:var(--dim)}
+.deep-dive-btn{margin-top:14px;background:transparent;color:var(--muted);border:1px solid var(--border);padding:6px 14px;border-radius:4px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.deep-dive-btn:hover{color:var(--text);border-color:var(--muted)}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);font-size:14px;line-height:1.6;color:var(--muted)}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.connections a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+.connections a:hover{border-bottom-color:var(--accent)}
+.hidden{display:none}
+
+/* Canadian File */
+.canadian-file{background:linear-gradient(180deg,#16100f,#0e0a09);border:1px solid #3a1f1f;border-radius:10px;padding:20px 22px;margin:36px 0 24px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--canada);margin-bottom:4px}
+.cf-subtitle{font-style:italic;color:var(--muted);font-size:14px;margin-bottom:18px}
+
+/* Quick Hits */
+.quick-hits ul{list-style:none;padding:0;margin:0}
+.quick-hits li{padding:10px 0;border-bottom:1px solid #1a1a1f;font-size:14.5px;line-height:1.55}
+.quick-hits li:last-child{border-bottom:none}
+.qh-bold{color:var(--accent);font-weight:700;font-family:var(--font-ui)}
+
+/* Long Game */
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:24px;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* Coverage Scorecard */
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;font-family:var(--font-ui);font-size:12px}
+.scorecard table{width:100%;border-collapse:collapse}
+.scorecard td{padding:6px 10px;color:var(--muted);border-bottom:1px solid #1a1a1f}
+.scorecard td:first-child{color:var(--dim);text-transform:uppercase;font-size:10px;letter-spacing:1px;width:40%}
+.scorecard tr:last-child td{border-bottom:none}
+
+footer{text-align:center;font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px;margin-top:48px;padding-top:24px;border-top:1px solid var(--border)}
+
+@media (max-width:720px){
+  .markets-table{grid-template-columns:repeat(2,1fr)}
+  h1.brief-h{font-size:26px}
+  .wrap{padding:20px 16px 48px}
+  .ss-claim{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="brief">
+  <div class="brief-title">THE BRIEF</div>
+  <h1 class="brief-h">Beijing lands, Mumbai bleeds, Cerebras prices</h1>
+  <div class="brief-meta">Edition #171 · Wed May 13, 2026 · Morning</div>
+  <div class="tagline">Trump touches down in Beijing at sundown. The Sensex just lost 1,456 points and ₹95.24 is staring at the wall. Cerebras prices tonight — the biggest US tech IPO of the year. Three signals, one cycle.</div>
+</header>
+
+<nav class="pills">
+  <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
+  <button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
+  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
+  <button class="nav-pill" onclick="filterStories('india',this)">🇮🇳 India</button>
+  <button class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
+  <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
+  <button class="nav-pill" onclick="filterStories('tech',this)">Tech</button>
+</nav>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · May 13, 2026 · Morning</div>
+  <div class="er-body">
+    <p>The single thread running through every screen this morning is the same one Bill Bishop laid out plainly in Sinocism last night: Nvidia's Jensen Huang is <em>not</em> on the CEO delegation flying to Beijing. That single absence tells you more than any joint statement will. Trump wants a win in China. Xi wants stability while he buys time. Neither wants a chip deal big enough to upend the federal-equity-anchor playbook the US has spent the last nine months perfecting. Julian Gewirtz at ChinaTalk called this exactly right when he framed the next three days as a "stalemate summit" — fighting continues, but tensions ease, and both leaders walk away saying they won.</p>
+    <p>What does this mean if you're sitting in Mumbai or Toronto? In Mumbai it means the Sensex losing 1,456 points yesterday wasn't an overreaction — it was the market pricing in the actual sequence. The rupee at 95.24, foreign investors $21 billion lighter on Indian stocks since February 28 (Chartbook quoting NSDL data), 10-year GoI yields above 7.1% — none of that resolves until Hormuz resolves, and Hormuz resolves through Beijing, not through Modi's austerity asks. Modi telling Indians to skip foreign holidays and pause gold-buying is the policy response of a government that knows it can't fix the price of oil — it can only ration its consequences. That is the inverse of strength. In Toronto, the same arithmetic produces a different ledger: the TSX closed at 34,291 last Monday and reopens today; potash and uranium will catch a bid every time someone mentions Hormuz; CAD/USD around 1.36 punishes nobody in Suhail's PCC business because it's local-cost local-revenue. Canada is the world's least-bad place to be sitting this week, and I don't think the rest of the world has fully priced that yet.</p>
+    <p>The third leg — Cerebras pricing tonight at the top of its $150-$160 range, raising $4.8B at a $48.8B valuation, the biggest US tech IPO of the year — closes the loop. Compute is being financialized in real time, on the same day the President flies to the country whose chip controls are "largely beginning not to work" (Eric Schmidt's words last week). I think the open tomorrow on CBRS prints between $185 and $210 — strong but not the +30% blow-out that P168-3 needs. The 20x oversubscription gets fully priced into the upper-range pricing tonight; the day-1 distribution begins immediately. My forward call: by Friday's lunch, when Trump's plane lifts off from Beijing, we'll know more about whether ST-005 (the Hormuz-China-India triangulation thesis) gets a regime-flip catalyst or has to wait until July. If the joint communiqué contains any oblique de-escalation language on the Gulf, INR rallies from 95.24 within five sessions. If it doesn't, we're staring at 96.</p>
+  </div>
+</div>
+
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">$21B has fled Indian stocks since February 28 — the worst foreign exit on record. The regime won't flip on Modi's austerity asks. It flips on what Trump's plane unloads in Beijing this week.</div>
+  <div class="ss-reasoning">Chartbook's Tuesday brief, quoting Krishn Kaushik and Chris Kay in the FT, surfaced the numbers that finally name the trade. $21 billion withdrawn by foreign portfolio investors from Indian stocks since the war started Feb 28 (NSDL data). Nearly $13 billion in March alone — the biggest single month on record. Rupee 91 → 95.24. 10-year GoI yields punched above 7.1% from 6.7% pre-war. RBI has spent $40 billion-plus in FX reserves defending the floor since end-February, and the floor has still moved 4% lower. Suvodeep Rakshit at Kotak Institutional Equities, quoted in the FT: "It's a double whammy of sorts. What was a capital flows problem is now a capital flows plus current account problem." None of this resolves through fiscal action in Delhi. India imports 90% of its oil and gas; half of crude and two-thirds of natural gas transit through Gulf countries whose exports are shut. The only release valve is Beijing. If Xi delivers anything in the next 72 hours that gives Trump cover to lift the most-punishing Iran sanctions — even just oblique "energy security cooperation" language — the capital flow inverts within two weeks. If he doesn't, July is the next window. This thread is ST-005 in your signal threads dossier; this is its first major firing.</div>
+  <div class="ss-horizon">Time horizon: 7-72 days (Trump-Xi summit window to early-July regime-flip backstop)</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#171-1</td>
+        <td>Trump-Xi joint communiqué (May 15) contains NO Iran/Hormuz binding language — only "regional stability" or "stable energy markets" boilerplate. Trump announces side-deals (Boeing, soybeans, rare-earth licenses) but the bilateral statement is thin. Sharpens P169-2.</td>
+        <td>May 17, 2026</td>
+        <td><span class="pb-status open">OPEN</span></td>
+      </tr>
+      <tr>
+        <td>#171-2</td>
+        <td>Cerebras (CBRS) prices tonight at $160 (top of range), but Day-1 close on May 14 lands between $180 and $200 — failing the P168-3 +30% test. Institutional flips into a strong-but-not-blowout open.</td>
+        <td>May 14 close</td>
+        <td><span class="pb-status open">OPEN</span></td>
+      </tr>
+      <tr>
+        <td>#170-4</td>
+        <td>BoC June 10 statement explicitly references Hormuz / Middle East / Iran / energy uncertainty in writing.</td>
+        <td>Jun 10, 2026</td>
+        <td><span class="pb-status open">OPEN</span></td>
+      </tr>
+      <tr>
+        <td>#170-3</td>
+        <td>Cerebras opens May 14 between $175 and $215 (+9% to +34% vs $160).</td>
+        <td>May 14 close</td>
+        <td><span class="pb-status open">OPEN</span></td>
+      </tr>
+      <tr>
+        <td>#170-1</td>
+        <td>USD/INR closes above 95.50 between May 13-23 AND India announces concrete forex/austerity policy action within 14 days.</td>
+        <td>May 26, 2026</td>
+        <td><span class="pb-status open">OPEN</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-label">GLOBAL MARKETS · Tue May 12 close</div>
+<div class="markets-table">
+  <div class="mkt-cell"><div class="mkt-name">S&amp;P 500</div><div class="mkt-val">7,400.96</div><div class="mkt-chg mkt-down">↓ -0.16%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Nasdaq</div><div class="mkt-val">26,088</div><div class="mkt-chg mkt-down">↓ -0.71%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Nikkei 225</div><div class="mkt-val">~38,200</div><div class="mkt-chg mkt-flat">→ flat est.</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Hang Seng</div><div class="mkt-val">~22,800</div><div class="mkt-chg mkt-flat">→ flat est.</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Nifty 50</div><div class="mkt-val">23,379.55</div><div class="mkt-chg mkt-down">↓ -1.83%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Sensex</div><div class="mkt-val">74,559.24</div><div class="mkt-chg mkt-down">↓ -1.92%</div></div>
+  <div class="mkt-cell mkt-canada"><div class="mkt-name">🍁 TSX Comp</div><div class="mkt-val">34,291</div><div class="mkt-chg mkt-flat">→ closed Mon (Victoria Day)</div></div>
+  <div class="mkt-cell"><div class="mkt-name">USD/INR</div><div class="mkt-val">95.24</div><div class="mkt-chg mkt-down">↓ rupee weak</div></div>
+  <div class="mkt-cell mkt-canada"><div class="mkt-name">🍁 CAD/USD</div><div class="mkt-val">~0.733</div><div class="mkt-chg mkt-flat">→ ~1.36 USD/CAD</div></div>
+  <div class="mkt-cell"><div class="mkt-name">WTI Crude</div><div class="mkt-val">$102.18</div><div class="mkt-chg mkt-up">↑ +4.2%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Gold</div><div class="mkt-val">$4,732</div><div class="mkt-chg mkt-up">↑ +0.47%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">Bitcoin</div><div class="mkt-val">$80,218</div><div class="mkt-chg mkt-up">↑ +0.43%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">10Y UST</div><div class="mkt-val">4.38%</div><div class="mkt-chg mkt-flat">→</div></div>
+  <div class="mkt-cell mkt-canada"><div class="mkt-name">🍁 10Y GoC</div><div class="mkt-val">~3.05%</div><div class="mkt-chg mkt-flat">→ BoC hold @ 2.25%</div></div>
+  <div class="mkt-cell"><div class="mkt-name">VIX</div><div class="mkt-val">17.14</div><div class="mkt-chg mkt-up">↑ +0.35%</div></div>
+</div>
+
+<div class="connection-map">
+  <span class="cm-chip">TRUMP LANDS BEIJING</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">HORMUZ STAYS SHUT</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">WTI $102</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">INR 95.24</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">FII -$21B / SENSEX -1,456</span>
+  <span class="cm-arrow">||</span>
+  <span class="cm-chip">CEREBRAS PRICES $160</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">COMPUTE-AS-ASSET</span>
+  <span class="cm-arrow">→</span>
+  <span class="cm-chip">SCHMIDT 6-MO GAP</span>
+</div>
+<div class="section-label">THE LEAD</div>
+
+<div class="story-card" data-cat="geopolitics china india" id="trump-lands-beijing">
+  <div class="card-meta">
+    <span class="category-tag">GEOPOLITICS</span>
+    <span>↑ STAKES RISING</span>
+    <span>3-DAY WINDOW</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Jensen Huang's seat is empty on the plane to the Chinese capital — Bishop calls the missing chip-maker the whole summit signal</div>
+  <div class="layer1">
+    <p>President Trump arrives in Beijing on the evening of Wednesday May 13 for a three-day state visit, departing after lunch on Friday. Vice Premier He Lifeng is in South Korea today and tomorrow holding pre-summit economic talks with Treasury Secretary Bessent — the customary "still working on deliverables" choreography. CEOs invited include Cook, Musk, Fink and a group of 13, but Nvidia's Jensen Huang did not make the cut, which Bill Bishop at Sinocism reads as the cleanest possible signal that no new Nvidia-to-China chip-sales deal is on the table. The US continues to escalate Iran-adjacent sanctions on PRC entities even on the eve of the trip — Friday's three-firm satellite-firm designation, followed by Treasury OFAC's Monday designation of 12 individuals and entities tied to IRGC oil flowing to China. Julian Gewirtz at ChinaTalk frames this as the "stalemate summit" — fighting continues, tensions lower, both leaders walk away saying they won.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For India: this is the only summit that matters for INR-95.24 + Sensex-74,559. If Xi gives Trump cover to lift the most-punishing Iran sanctions, Hormuz reopens within weeks; FII flows invert; HDFC → Bank of Baroda recurring monthly debit ₹161,951 (RVS-004) stops being a CAD-equivalent escalation; SOLARINDS / BEL / SRF watchlist stops being whipsawed by FX-drag overlay; India deeptech anchor-LP appetite (P166-4 / P167-3 / P168-4) survives the test. For Canada: opposite leverage. Carney's Bay Street operating environment depends on US-China stability for Bombardier / Magna / Linamar / forestry exporters; PCC operating margin on the 200-employee 10-campus base benefits from a stable CAD; AOL Toronto placement-volume sensitivity prefers calm energy markets. For China: ST-005 explicit threading — Tier 5 Sinocism + ChinaTalk hits map directly to the active triangulation thesis.</div>
+    <div class="action-box"><strong>ACTION</strong> Hold defensive overlay on India book through Friday's communiqué. Watch for these tells in joint statement language: (a) "Persian Gulf stability" / "energy security cooperation" → INR rally setup; (b) "strategic dialogue continues" boilerplate → INR breaks 96 in 5 sessions; (c) Boeing / soybean / rare-earth deals announced but no Iran language → market interprets as "Trump got side-deals, China gave nothing on substance" — bearish India by Monday.</div>
+    <div class="contrarian">💭 Here is the version where everything above is wrong: Xi reads Trump's domestic gas-price ceiling and decides this is the moment to <em>extract</em> rather than concede. He demands Taiwan declaratory language softening + chip-control rollback as the price of any Iran cover. Trump, knowing he needs the optics, gives more than his advisors want. The summit produces a US-China rapprochement the market mistakes for stability, but India and Canada both lose — India because Iran cover never materializes, Canada because a softer-on-China Washington undermines the federal-equity playbook (ST-003) that's been quietly underwriting Bay Street's photonics / semis pipeline.</div>
+    <a class="read-original" href="https://sinocism.com/p/trump-china-visit-chinas-next-generation" target="_blank">Read Sinocism →</a>
+    <a class="read-original" href="https://www.chinatalk.media/p/the-stalemate-summit" target="_blank">Read ChinaTalk →</a>
+    <a class="read-original" href="https://en.wikipedia.org/wiki/2026_state_visit_by_Donald_Trump_to_China" target="_blank">Wikipedia state-visit context →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    Gewirtz's "two competing briefings" frame is the most useful analytical lens going into Friday. The pro-China briefing: clean-energy purchase surge, world looking to Beijing as mediator, US burning through munitions stocks, THAAD pulled out of Asia, Iranian FM hosted in Beijing pre-summit. The anti-China briefing: economic disruption from petroleum inputs, China couldn't protect Iran or Venezuela, untested PLA watching US AI-enabled capabilities. On the net, Gewirtz judges the China-positive briefing wins. Worth reading alongside the Bloomberg / FT pre-summit takes that "China holds the upper hand" — Sinocism flags this as overblown from the US side, which is itself useful prior. The Macartney 1793 parallel Gewirtz reaches for — kowtow optics, Qianlong's "celestial empire" posture — maps Trump's status-game sensitivity onto Xi's choreography. The interpreters who will translate the one-on-one Trump-Xi dinner conversation have one of the most consequential jobs in the world this week.
+  </div>
+  <div class="connections">CONNECTS: <a href="#selling-india">Selling India</a> · <a href="#cerebras-prices">Cerebras prices</a> · <a href="#modi-austerity">Modi austerity</a></div>
+</div>
+
+<div class="section-label">SIGNAL BOARD</div>
+
+<div class="story-card" data-cat="markets india" id="selling-india">
+  <div class="card-meta">
+    <span class="category-tag">INDIA MARKETS</span>
+    <span>↓ ACCELERATING</span>
+    <span>NEAR-TERM</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Sensex tanks 1,456 points / 1.92% to 74,559 — Modi's "stop buying gold, skip foreign trips" asks read as the policy response of a government out of better options</div>
+  <div class="layer1">
+    <p>The Sensex slumped 1,456.04 points (1.92%) on Tuesday May 12 to close at 74,559.24. Nifty fell 436.30 points (1.83%) to 23,379.55. Year-to-date Sensex losses now exceed 10,000 points. IT, realty and consumer durables led the bleed. Rupee printed 95.24, within striking distance of the 95.40 all-time low and the 95.50 level that triggers P170-1. The proximate cause: Modi's two-in-24-hours austerity appeals — reduce energy consumption, pause foreign travel, hold off on gold purchases, carpool to work. Trader interpretation: this is the political signal that domestic policy is out of release valves and the next move is forex/fiscal intervention or RBI emergency action. RBI has burned $40 billion-plus in FX reserves since end-February defending the floor.</p>
+    <div class="so-what"><strong>SO WHAT</strong> R-013 cross-exposure: HDFC monthly debit ₹161,951 (RVS-004) — INR weakness compounds Suhail's CAD-equivalent cost of debt service materially this month; cumulative annual CAD impact now meaningful relative to last quarter. India watchlist SOLARINDS / BEL / SRF — stated local-currency returns continue to outrun the FX-adjusted return materially. Chandigarh real estate — 10y GoI yields above 7.1% raise domestic finance cost while INR weakness helps NRI buyer inflows; net read depends on whether you're funding new development or already in operating phase. Anchor-LP appetite test for India deeptech (P166-4 / P167-3 / P168-4): the magnitude of foreign capital outflow ($21B) is the actual stress test of whether sovereign LPs (GIC, BlackRock, etc.) hold their commitments or pull back. This is the real-world test for the next-round playbook.</div>
+    <div class="action-box"><strong>ACTION</strong> Defensive overlay stays on through Friday close. If joint communiqué contains de-escalation language, look for two-day FII positive print on NSDL — that's the regime-flip trigger. If 96 prints and FII outflows accelerate, prepare for emergency capital-control conversations from RBI.</div>
+    <div class="contrarian">💭 Maybe the rupee at 95.24 is already priced for a worse outcome than is likely. Hormuz has been "closed" since late February but tankers are still moving in disrupted-but-not-zero volumes (S&amp;P Platts data); WTI at $102 is not $130; the Sensex 10K YTD loss is more historical mean-reversion than crisis pricing. If India just survives May without 96, summer monsoon news flow + Q1 earnings + the SEBI buyback window reopening creates a tactical bounce setup that none of this captures.</div>
+    <a class="read-original" href="https://www.business-standard.com/markets/news/stock-market-live-may-12-nse-bse-sensex-today-nifty-gift-nifty-gold-stocks-brent-crude-ipos-q4-results-share-market-today-126051200101_1.html" target="_blank">Read Business Standard →</a>
+    <a class="read-original" href="https://www.businesstoday.in/markets/stocks/story/sensex-nifty-why-pm-modis-2nd-austerity-appeal-in-24-hrs-is-making-stock-market-jittery-530954-2026-05-12" target="_blank">BusinessToday on Modi austerity →</a>
+    <a class="read-original" href="https://www.fxleaders.com/news/2026/05/11/usd-inr-near-95-as-oil-surge-rbi-intervention-and-dollar-strength-pressure-rupee/" target="_blank">FX Leaders on RBI defence →</a>
+  </div>
+  <div class="connections">CONNECTS: <a href="#trump-lands-beijing">Trump lands Beijing</a> · <a href="#wti-rejected">WTI $102 rejection</a> · ST-005</div>
+</div>
+
+<div class="story-card" data-cat="ai tech markets" id="cerebras-prices">
+  <div class="card-meta">
+    <span class="category-tag">AI · IPO</span>
+    <span>↑ PRICED TODAY</span>
+    <span>24-HOUR EVENT</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Cerebras prices tonight at the top of $150-$160 — $4.8B raise, $48.8B fully-diluted, biggest US tech IPO of 2026 hits Nasdaq under CBRS tomorrow</div>
+  <div class="layer1">
+    <p>Cerebras Systems prices its IPO after the market close today, Wednesday May 13. The bumped range of $150-$160 (raised from $115-$125 last week) reflects a roadshow that was 20× oversubscribed. At the top of the range, the company nets up to $4.8 billion and lands a fully-diluted valuation of up to $48.8 billion. Shares debut on Nasdaq under ticker CBRS on Thursday May 14. Anchors include the OpenAI 750MW / $20 billion contract; Morgan Stanley + Citi + Barclays + UBS lead the book. This is the largest US tech IPO of the year and the most direct public-equity expression of the "inference is the bottleneck" thesis.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For Suhail's compute-revolution exposure: this is the public-equity instrument that lets you express the wafer-scale-inference thesis without taking single-customer concentration risk through OpenAI itself. ST-001 (compute as a new futures-market category — the Fink thread) gets indirect validation here: when the largest US tech IPO of the year is a chip company priced almost entirely on a single $20B inference contract, you've moved past "compute is energy" into "compute is the asset class." For Canadian operating businesses: tangential. For the India deeptech anchor-LP appetite test: positive read — sovereign/family-office capital that watches mega-IPOs as risk-on/off signal sees a successful $48.8B print as confirmation that AI capex is still being underwritten at scale, even with macro storm clouds.</div>
+    <div class="action-box"><strong>ACTION</strong> Watch the price-tape between 4:30 ET (pricing) and tomorrow's 9:30 ET open. If CBRS prices at $160 AND opens above $200, my P171-2 (close $180-$200) is testing toward wrong; if it opens $180-$195 the prediction is well-calibrated. Either way, do not chase on day-1 — the 20× oversubscription means allocations are already lop-sided and fast-money flips dominate the first session. P168-3 (close ≥$208, +30%) needs an upside surprise; P170-3 ($175-$215 open) is the realistic range.</div>
+    <div class="contrarian">💭 Here is the bear case for the open: Cerebras revenue ($510M trailing) is real but heavily concentrated; the OpenAI $20B is a contract, not delivered. At $48.8B fully-diluted, you're paying 95× sales on a single mega-customer. A weak open below $175 — institutional allocators clipping aggressively into a richly-valued AI name in a hot-CPI macro tape — is not at all impossible. P170-3 explicitly contemplates this downside.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/11/cerebras-raises-ipo-range.html" target="_blank">Read CNBC →</a>
+    <a class="read-original" href="https://www.investing.com/analysis/cerebras-48-billion-ipo-tests-the-markets-inference-bet-200680080" target="_blank">Investing.com inference-bet analysis →</a>
+  </div>
+  <div class="connections">CONNECTS: <a href="#trump-lands-beijing">Trump lands Beijing</a> · ST-001 · ST-003</div>
+</div>
+
+<div class="story-card" data-cat="ai geopolitics china" id="china-ai-agents">
+  <div class="card-meta">
+    <span class="category-tag">CHINA AI POLICY</span>
+    <span>↑ ESCALATING</span>
+    <span>18 MONTHS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">China just published the rulebook for AI agents — CAC, NDRC and MIIT jointly issue 70%-adoption-by-2027 target, with privacy and "behavioural loss-of-control" framed as the security threat</div>
+  <div class="layer1">
+    <p>The Cyberspace Administration of China, National Development and Reform Commission, and Ministry of Industry and Information Technology jointly released on Friday the "Implementation Opinions on the Standardized Application and Innovative Development of Intelligent Agents." Per the accompanying official Q&amp;A (translated in Sinocism): the explicit phased target is more than 70% adoption of "new-generation intelligent terminals and AI agents" in key sectors by 2027. The framing names privacy leakage, unauthorised actions, and "behavioural loss-of-control" as the security risks that justify the regulatory architecture. Crucially, the document arrives on the eve of the Trump-Xi summit and lands in the same week as Eric Schmidt's "6-month US-China AI gap" claim and Anthropic's Mythos safety disclosure that Gewirtz says will be on Trump's Xi-meeting agenda.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For ST-001 / ST-003 (federal-equity playbook expansion + compute-futures thesis): the symmetry is the point. The US is moving toward state-anchored compute via Treasury equity stakes in semis. China is now publishing the regulatory operating system for agent-driven AI deployment as state policy. Different mechanism, same direction: AI infrastructure becomes a state-coordinated category, not a free-market one. For Suhail's portfolio in Canadian / Indian deeptech, this is the third-party validation that the federal-equity-as-anchor playbook (CPFC privatization, second-US-semi-target) is not US idiosyncrasy — it's the new global default. R-013 cross-thread: ST-002 PCC retraining curve indirectly benefits; ST-004 Carney AI-backbone thesis gets reinforcement that Canadian industrial-policy parallel is well-timed.</div>
+    <div class="action-box"><strong>ACTION</strong> Add "China agent policy" to the watch zone for ST-003 status checks. Track whether Trump-Xi joint statement language touches AI safety / model governance directly — Gewirtz says Mythos may already be on the agenda. If yes, ST-001 confidence raises.</div>
+    <div class="contrarian">💭 Maybe China's regulatory architecture is the limiting factor, not the accelerant. Agent deployment requires permissionless experimentation; 70% adoption by 2027 with monthly central-government compliance reviews could simply mean Chinese enterprises wait for foreign agents to be banned rather than deploy their own.</div>
+    <a class="read-original" href="https://sinocism.com/p/trump-china-visit-chinas-next-generation" target="_blank">Sinocism translation →</a>
+  </div>
+  <div class="connections">CONNECTS: <a href="#trump-lands-beijing">Trump lands Beijing</a> · ST-001 · ST-003</div>
+</div>
+
+<div class="story-card" data-cat="india tech" id="mobikwik-q4">
+  <div class="card-meta">
+    <span class="category-tag">INDIA FINTECH</span>
+    <span>↑ TURNAROUND</span>
+    <span>EARNINGS</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">MobiKwik prints ₹4.4 Cr Q4 profit vs ₹56 Cr loss YoY — payments margins fix the bleeding even as revenue grows just 7.8%</div>
+  <div class="layer1">
+    <p>One MobiKwik Systems posted Q4 FY26 consolidated net profit of ₹4.38 crore against a loss of ₹56 crore in Q4 FY25. Revenue from operations rose 7.8% YoY to ₹288.71 crore. Expenses fell 14% YoY to ₹278.62 crore; payment processing costs alone declined 18.9% YoY (₹147 Cr → ₹119.31 Cr). The payments business is the company's backbone but flatlined on revenue — gross profit improved sharply on lower gateway costs and higher-margin merchant activity offsetting the zero-MDR UPI drag. Financial services GMV dipped slightly but gross profit jumped 18× YoY on the shift to ZIP EMI repeat-customer lending and away from high-volume risky lending. Full year FY26 net loss nearly halved to ₹61.9 crore from ₹121.5 crore in FY25, but revenue contracted 4.4% to ₹1,119.2 crore.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For India fintech-IPO watchers (Inc42 has been running the IPO conveyor-belt thesis for two weeks): this is the second profitable-quarter signal in fortnight after Acko's ₹43.6 Cr FY26 profit print Monday. The pattern is real — Indian fintech is finally selling profitable growth, not just GMV. But MobiKwik's revenue contraction over the full year tells you the path isn't through scale; it's through margin re-engineering on existing volume. For the InCred Holdings ₹1,250 Cr DRHP filed last week and the broader pre-IPO pipeline (Acko, Adda247, etc.), the read-through is favourable: the public market increasingly accepts "we got to profitability by cutting" as a valid path.</div>
+    <div class="action-box"><strong>ACTION</strong> Watch InCred Holdings IPO timing — the InCred Capital acquisition of S Cube Capital (Singapore) announced today widens the offshore wealth-management footprint exactly when listing prep is final.</div>
+    <div class="contrarian">💭 Revenue down 4% YoY for a fintech that's supposedly the future of Indian financial services is a tell. The merchant-business pivot ("₹55 Cr invested in QR/PoS infrastructure, targeting 10× revenue surge by FY28") is the same playbook every Indian fintech has run for five years. Profitability through cost-cutting is fragile; if regulatory MDR rules change again, the whole margin structure resets.</div>
+    <a class="read-original" href="https://inc42.com/buzz/mobikwik-posts-%E2%82%B94-4-cr-profit-in-q4-revenue-up-8-yoy/" target="_blank">Inc42 →</a>
+    <a class="read-original" href="https://www.business-standard.com/companies/quarterly-results/mobikwik-posts-rs-4-38-crore-profit-in-q4-fy26-126051200806_1.html" target="_blank">Business Standard →</a>
+  </div>
+  <div class="connections">CONNECTS: India IPO pipeline · Acko · InCred</div>
+</div>
+
+<div class="story-card" data-cat="india deeptech ai" id="india-cctv">
+  <div class="card-meta">
+    <span class="category-tag">INDIA DEEPTECH</span>
+    <span>↑ POLICY-DRIVEN</span>
+    <span>12-18 MO</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">India bans uncertified Hikvision/Dahua CCTV — BigEndian and Mindgrove race to build surveillance-specific SoCs to fill the gap, software layer pivots to AI-analytics</div>
+  <div class="layer1">
+    <p>India's government restrictions last month on uncertified internet-connected CCTV cameras locked out dominant Chinese brands like Hikvision and Dahua. Indian semiconductor startups including BigEndian and Mindgrove are using the policy shift to build surveillance-specific chips, arguing that domestic SoCs can power AI cameras and reduce dependence on Chinese supply chains. At the software layer, homegrown startups are transitioning to intelligence-led deployments with data residency, audit logs, local deployment and AI analytics becoming the new buying criteria. This is paired in Inc42 with HrdWyr Tech (Bengaluru) raising $13M Series A led by Ideaspring Capital for AI-native chips and Monk9 Tech (Rajkot) running a small-batch 350-130 nm domestic foundry with open-source PDK tools. India hosts 130+ semiconductor startups, projected to reach a $155 Bn sector opportunity by 2031.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For ST-003 federal-equity playbook expansion (Schmidt's 6-month-gap framing): India is building the third-OECD-instance template. Not full federal equity yet, but the regulatory exclusion of Chinese hardware combined with PLI scheme funding of domestic SoC startups produces the same protected-market dynamic. Vaishnaw's "Google seriously considering AI server manufacturing in India" framing (covered yesterday) lands here. The Vaishnaw 12-fabs-in-flight pipeline plus the CCTV shake-up creates a hardware-protected enclave for domestic startups that mirrors the CPFC privatization logic in Canada. P166-3 / P166-4 / P167-3 India deeptech anchor predictions all get marginal probability uplift.</div>
+    <div class="action-box"><strong>ACTION</strong> Add BigEndian and Mindgrove to the watch list. Check funding stage; if either announces a sovereign-LP-backed Series B in next 90 days, that's confirmation that the federal-equity-as-anchor playbook has third-country instance.</div>
+    <div class="contrarian">💭 India's "ban Chinese hardware, fund domestic alternatives" playbook has been tried with mobile phones, telecom equipment, and solar panels — each time the result has been "rebadge Chinese components, file the paperwork." Without enforcement teeth on the BoM-level audit, CCTV could become the next instance.</div>
+    <a class="read-original" href="https://inc42.com/features/the-cctv-gold-rush-indian-startups-oems-race-to-fill-surveillance-vacuum/" target="_blank">Inc42 features →</a>
+  </div>
+  <div class="connections">CONNECTS: ST-003 · Vaishnaw AI fabs · CPFC</div>
+</div>
+
+<div class="story-card" data-cat="india markets fintech" id="incred-scube">
+  <div class="card-meta">
+    <span class="category-tag">INDIA FINTECH</span>
+    <span>→ ACQUISITION</span>
+    <span>PRE-IPO</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">InCred Capital buys Singapore's S Cube Capital — Balaji Swaminathan and Hemant Mishr join InCred Global Wealth, second cross-border tuck-in before the parent's ₹1,250 Cr IPO</div>
+  <div class="layer1">
+    <p>InCred Group's wealth-management arm has acquired Singapore-based fund management company S Cube Capital for an undisclosed amount. S Cube's Balaji Swaminathan and Hemant Mishr will join InCred Global Wealth. InCred Capital plans to strengthen offshore capabilities in the Singapore-GCC-India investment corridor and add regulated fund vehicles to its Singapore-based platform. The transaction comes close after the acquisition of Dubai-based advisory firm Arrow Capital and one week after parent InCred Holdings filed updated DRHP with SEBI for an IPO (fresh issue up to ₹1,250 Cr + OFS up to 9.9 Cr shares).</p>
+    <div class="so-what"><strong>SO WHAT</strong> The pre-IPO acquisition sequencing is textbook: build the offshore wealth-corridor narrative (Singapore + Dubai), file DRHP, then list with a "we are the cross-border Indian wealth platform" pitch. This is the alpha-version of what every Indian wealth manager will copy in the next 18 months. For Suhail's anchor-LP appetite test on India deeptech, this is parallel signal — wealth-management capital aggregating into IPO-ready platforms suggests domestic capital depth is being prepared for the next-round absorption.</div>
+    <div class="action-box"><strong>ACTION</strong> Track InCred Holdings IPO timing. Read the actual DRHP for cross-corridor flow disclosure.</div>
+    <div class="contrarian">💭 Two tuck-ins in 90 days right before a DRHP is the exact behaviour you see when a company is dressing the offer document; it doesn't tell you anything about post-listing fundamentals.</div>
+    <a class="read-original" href="https://inc42.com/buzz/incred-capital-acquires-singapore-based-s-cube-capital/" target="_blank">Inc42 →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai tech" id="android-ai">
+  <div class="card-meta">
+    <span class="category-tag">AI · MOBILE</span>
+    <span>↑ DEPLOYMENT</span>
+    <span>NEAR-TERM</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Google ships Gemini Intelligence on Android at Android Show 2026 — Mindy Brooks says they bet utility over spectacle: AI saving 20 seconds across dozens of daily tasks</div>
+  <div class="layer1">
+    <p>Google's product VP Mindy Brooks announced Gemini Intelligence for Android in an Android Show 2026 keynote and an exclusive Deep View Conversations interview. Features include Rambler (AI voice dictation rivaling Wispr Flow), expanded Task Automation across more apps, Create My Widget on-demand widget generation, and Intelligent Autofill powered by Gemini's Personal Intelligence. The pitch: Android evolves from operating system to "intelligence system" — saving small amounts of time across dozens of tasks rather than running headline AI demos.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For ST-008 vertical AI agent commercial-traction thread: this is Google's response to Apple's WWDC June 8 setup and Anthropic's Claude Platform-on-AWS deployment. The infrastructure layer has been built; the application layer is now distributing through the OS. For Suhail's tech-watching: not a portfolio mover directly, but a confirmation that 2026 is the year AI moves from "open the app" to "your phone just does it." Anyone in a service-business operating context (PCC, AOL Toronto) should expect employees to start using these features whether sanctioned or not within 6 months.</div>
+    <div class="action-box"><strong>ACTION</strong> Quiet operational note: assume Android-native AI is in the hands of every Canadian-college-student smartphone by Q3 2026. Plan messaging / outreach / form-filling / admissions workflow accordingly.</div>
+    <div class="contrarian">💭 Save-20-seconds AI is the same value proposition every voice-assistant has run since Siri 2011. The reason previous attempts didn't compound was not that Gemini wasn't smart enough — it was that users don't want to learn new interaction patterns. Android may discover the same thing.</div>
+    <a class="read-original" href="https://www.thedeepview.com/articles/android-s-new-ai-trades-flashiness-for-smarts" target="_blank">Read Deep View →</a>
+    <a class="read-original" href="https://www.youtube.com/watch?v=0JcTQXoscvg" target="_blank">YouTube interview →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="leela-palaces">
+  <div class="card-meta">
+    <span class="category-tag">INDIA MARKETS</span>
+    <span>→ MISPRICING</span>
+    <span>3-6 MO</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">The Ken: Leela Palaces still trades below IPO price a year on — Brookfield's turnaround has fixed the fundamentals, the market hasn't caught up</div>
+  <div class="layer1">
+    <p>The Ken's Long &amp; Short by Anand Kalyanaraman (Wed May 13) walks through Leela Palaces Hotels &amp; Resorts (the Brookfield-controlled luxury hotel chain that IPO'd ~12 months ago at Rs 3,500 Cr). The IPO was 5× oversubscribed but listed at a discount — the market was wary of the debt-ridden legacy of Hotel Leelaventures, the meagre pre-IPO profit, and a triple-digit P/E. A year on the stock still trades below IPO price, but a sharp operating turnaround is visible in the numbers. Anand argues the market is mispricing the reborn chain.</p>
+    <div class="so-what"><strong>SO WHAT</strong> Multibagger framework adjacency: a Brookfield-controlled luxury asset trading below IPO with a documented turnaround is exactly the post-IPO-fatigue inefficiency that Saturday's framework should screen. The asymmetry is real if the operating numbers hold. Worth pulling for Saturday's review against the screening criteria (PE rerating potential, asset coverage, operator quality).</div>
+    <div class="action-box"><strong>ACTION</strong> Add Leela Palaces to Saturday's Multibagger review candidate list. Pull FY26 H2 hotel-occupancy + RevPAR data before sizing.</div>
+    <div class="contrarian">💭 Brookfield turnarounds that haven't re-rated in 12 months sometimes don't re-rate at all — the discount can be the equilibrium for an asset that the public market simply doesn't know how to value (luxury hospitality with debt history).</div>
+    <a class="read-original" href="https://the-ken.com/long_and_short/leela-palaces-waiting-to-be-discoveredon-the-bourses/" target="_blank">Read The Ken →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets geopolitics" id="wti-rejected">
+  <div class="card-meta">
+    <span class="category-tag">GLOBAL MACRO</span>
+    <span>↑ +4.2%</span>
+    <span>WEEKS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">WTI tops $102 as Trump rejects Iran's latest peace proposal as "totally unacceptable" — Aramco CEO Nasser says global market is losing 100M barrels of supply per week</div>
+  <div class="layer1">
+    <p>WTI crude June futures settled at $102.18 on Tuesday May 12, up 4.2%, after President Trump dismissed Iran's latest peace proposal and said the US-Iran ceasefire was on "massive life support." Trump is reportedly preparing to meet his national-security team to consider renewed military action and to discuss plans to escort commercial vessels through the Strait of Hormuz. Iran has reportedly demanded an end to the US naval blockade and sanctions relief while seeking to maintain some control over traffic through Hormuz. Saudi Aramco CEO Amin Nasser warned the market is losing about 100 million barrels of oil supply each week, adding that if disruptions continue, normalization may not come until next year.</p>
+    <div class="so-what"><strong>SO WHAT</strong> SO WHAT in India: every $5 / barrel sustained over $100 directly maps to current-account deterioration and INR pressure. WTI at $102 is the proximate driver of the FII outflow + rupee weakness story. SO WHAT in Canada: TD's report from Monday — Canada uniquely cushioned on the fertilizer-import side (5% urea from Gulf, potash exporter status, high crop inventories). Canadian oil-sands names (CNQ, Suncor) collect the premium; AB / SK fiscal positions strengthen marginally. For Carney's federal book this is a tailwind; for Modi's it's an existential constraint. The asymmetry is what makes ST-005 a coherent thesis.</div>
+    <div class="action-box"><strong>ACTION</strong> Monitor TankerTrackers Hormuz transit data daily — physical reality is the leading indicator, not diplomatic talk. If tanker traffic normalizes ahead of Friday's Trump-Xi statement, the market gets ahead of the news.</div>
+    <div class="contrarian">💭 Aramco saying "losing 100M barrels / week" is a Saudi-talking-its-own-book statement. Iran's actual sanctioned-oil flows are routed through Chinese state-aligned channels (per OFAC's Monday designation of 12 entities), not all 100M barrels are gone — some are just routed grey. The supply shock may be smaller than the headline.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html" target="_blank">CNBC →</a>
+    <a class="read-original" href="https://cryptobriefing.com/iran-conflict-disrupts-strait-of-hormuz-impacting-global-oil-supply-chains/" target="_blank">CryptoBriefing on supply chain →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets" id="us-cpi">
+  <div class="card-meta">
+    <span class="category-tag">US MARKETS</span>
+    <span>↓ -0.16% S&amp;P</span>
+    <span>NEAR-TERM</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">US CPI prints hot 3.8% YoY for April — S&amp;P 500 ekes a -0.16% close at 7,400.96, Nasdaq -0.71% as Fed-cut hopes thin out</div>
+  <div class="layer1">
+    <p>The April CPI release came in at 3.8% YoY, hotter than expected. S&amp;P 500 fell 0.16% to 7,400.96; Nasdaq fell 0.71% to 26,088.20. The hotter print is a third consecutive month of sticky-inflation surprises, driven primarily by energy (WTI / Hormuz) and shelter. Chinese CPI also rose more than forecast in April — 1.2% YoY, with PPI +2.8% — per Sinocism, partly Iran-war-driven energy effects feeding through.</p>
+    <div class="so-what"><strong>SO WHAT</strong> For the Fed: hot CPI + Hormuz-driven energy + a Trump-Xi summit makes any near-term cut difficult. Powell loses the inflation-trending-down narrative he needs. For Canada: BoC's April 29 hold at 2.25% now looks better-positioned. For India: dollar strength continues, INR pressure compounds. The dollar-strength / dollar-weakness binary remains the single most important external variable for the next 60 days.</div>
+    <div class="action-box"><strong>ACTION</strong> Watch May CPI release (June 11) for sequencing vs BoC June 10. If US CPI continues hot through May print, BoC has cover to hold one more time at the June meeting even though P168-2 expects a 25bp cut.</div>
+    <div class="contrarian">💭 Energy-driven CPI is mechanical, not structural. If Hormuz reopens in the next 60 days, the May and June CPI prints will look much better and the "Fed can't cut" thesis dies fast.</div>
+    <a class="read-original" href="https://www.thestreet.com/latest-news/stock-market-today-may-12-2026-updates" target="_blank">TheStreet →</a>
+  </div>
+</div>
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">BoC's Summary of Deliberations drops today; TSX reopens after Victoria Day; Carney's "ties as weaknesses" framing is the through-line</div>
+
+  <div class="story-card canada-card" data-cat="canada markets" id="boc-deliberations">
+    <div class="card-meta">
+      <span class="category-tag">CANADA · BOC</span>
+      <span>→ RELEASES TODAY</span>
+      <span>SAME-DAY</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">BoC publishes Summary of Deliberations today — first written window into the internal Council disagreement behind the April 29 hold at 2.25%</div>
+    <div class="layer1">
+      <p>The Bank of Canada releases its Summary of Deliberations for the April 29 policy decision on Wednesday May 13, 2026. The April 29 announcement held the overnight rate at 2.25%, the deposit rate at 2.20%, and the Bank Rate at 2.5%. The Summary documents the internal Governing Council debate that produced the hold. April MPR projected GDP growth of 1.2% for 2026 rising to 1.6% in 2027 and 1.7% in 2028; March CPI climbed to 2.4% on gasoline; inflation projected to ease back to 2% target in 2027. The next decision is June 10. P170-4 (BoC June 10 statement explicitly references Hormuz / Middle East / Iran / energy uncertainty) gets its first early-warning input from today's Summary.</p>
+      <div class="so-what"><strong>SO WHAT</strong> R-013 cross-exposure: for Suhail's PCC operating margin on the 200-employee 10-campus base, every BoC signal of a near-term hold is a stability tailwind — Canadian operating cost stability vs. CAD-denominated revenue. For AOL Toronto / placement-business volume sensitivity: a BoC that flags energy uncertainty in writing telegraphs the June cut path which weakens CAD modestly, which is mildly negative for outbound CAD-cost / INR-revenue programs. For Canadian deal-flow inbox (vbsgroup.biz / SearchGenius / education-agent-recruitment newsletters): a held rate environment continues to compress small-business M&amp;A valuations marginally — buyer's-market dynamics persist. For the broader STORY: today's Summary is the leading indicator for the June 10 statement language. If energy / Hormuz / Iran is named in today's document, P170-4 probability jumps materially.</div>
+      <div class="action-box"><strong>ACTION</strong> Read today's Summary release at 13:30 ET. Scan specifically for: "energy price", "Middle East", "Hormuz", "Iran", "global geopolitical", "external shock". Any of those terms in the deliberation document is a P170-4 leading signal.</div>
+      <div class="contrarian">💭 BoC Summaries are typically conservatively-worded — they document the consensus, not the dissents. A Council that held at 2.25% on April 29 has every reason to write the deliberation document in language that sounds rate-neutral, even if individual members were pushing toward cuts.</div>
+      <a class="read-original" href="https://www.bankofcanada.ca/2026/05/release-the-bank-canadas-summary-deliberations-2026-05-13/" target="_blank">BoC release →</a>
+      <a class="read-original" href="https://www.bankofcanada.ca/2026/04/fad-press-release-2026-04-29/" target="_blank">April 29 statement →</a>
+    </div>
+    <div class="connections">CONNECTS: <a href="#trump-lands-beijing">Trump lands Beijing</a> · <a href="#wti-rejected">WTI rejection</a> · ST-002 · ST-004</div>
+  </div>
+
+  <div class="story-card canada-card" data-cat="canada china geopolitics" id="canada-china-readtwo">
+    <div class="card-meta">
+      <span class="category-tag">CANADA · USMCA</span>
+      <span>→ POSITIONING</span>
+      <span>WEEKS</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">"Ties to the US have become weaknesses that must be corrected" — Carney's framing is the Canadian read-through to whatever Beijing delivers Friday</div>
+    <div class="layer1">
+      <p>Prime Minister Carney's recent CBC and Globe interviews have repeated a single line: Canada's ties to the US have become "weaknesses that must be corrected" as workers in auto, steel and lumber remain under tariff threat. The 25% US auto-parts tariff took effect May 3, with USMCA-compliant Canada-Mexico parts exempted. Carney met Trump in the Oval Office on May 6 — first in-person sit-down with the lowest point in decades for bilateral relations; the "Canada is not for sale" / "time will tell" exchange went viral. Carney has explicitly said Canada is not pursuing a free-trade deal with China even as Trump threatens 100% tariffs on Chinese goods. With Air Force One landing in Beijing tonight, every Canadian negotiating position depends on what Trump comes back with.</p>
+      <div class="so-what"><strong>SO WHAT</strong> Two scenarios for Canadian operating businesses. Scenario A — Trump-Xi produces a substantive Trump-friendly deal: Beijing makes purchase commitments and AI-safety language wins, Trump returns triumphant and pivots tariff energy back toward Canada (the "easier negotiating partner"). USMCA renegotiation pressure increases; CAD weakens; auto/steel/lumber outlook deteriorates further; PCC capacity-planning calculations need to factor in another tariff wave. Scenario B — Trump-Xi stalemate as Gewirtz predicts: Beijing concedes nothing material, Trump returns frustrated but with side-deals; Carney's Canada-as-stable-alternative pitch gains ground; Canadian deal-flow inbox quality rises. The Summary of Deliberations and TSX reopening after Victoria Day are minor signals; Friday's Beijing communiqué is the major one.</div>
+      <div class="action-box"><strong>ACTION</strong> Treat Friday afternoon ET as a decision point for any Q3 PCC capacity-planning or admissions-process commitments that depend on the macro environment. Defer commitments until Saturday read-through if possible.</div>
+      <div class="contrarian">💭 Carney's "ties as weaknesses" line is good politics but bad strategy — it's exactly the kind of repositioning Trump reads as weakness. Canada being publicly less-aligned with the US may invite more tariff pressure, not less.</div>
+      <a class="read-original" href="https://www.cbc.ca/news/politics/carney-trump-trade-u-s-negotiations-weaknesses-9.7169671" target="_blank">CBC →</a>
+      <a class="read-original" href="https://www.cnbc.com/2026/01/26/canada-china-trade-deal-tariffs-trump.html" target="_blank">CNBC on Canada-China →</a>
+    </div>
+    <div class="connections">CONNECTS: <a href="#trump-lands-beijing">Trump lands Beijing</a> · ST-002 · ST-004</div>
+  </div>
+
+  <div class="story-card canada-card" data-cat="canada markets" id="tsx-reopens">
+    <div class="card-meta">
+      <span class="category-tag">CANADA MARKETS</span>
+      <span>→ RESUMES</span>
+      <span>TODAY</span>
+      <span class="decision-badge note">NOTE</span>
+    </div>
+    <div class="card-title">TSX reopens at 34,291 after Victoria Day — investors return to a Sensex -1.92% / WTI +4.2% / Beijing-summit-night macro tape with potash and uranium as the natural longs</div>
+    <div class="layer1">
+      <p>The Toronto Stock Exchange was closed Monday May 11 for Victoria Day. Last close was 34,291 (+0.4%) on May 11 (Friday), supported by gains in energy and banking. The TSX reopens this morning, Wednesday May 13, into a tape where: WTI settled $102.18 (+4.2%); Sensex sold off 1.92%; S&amp;P 500 -0.16%; Trump landing in Beijing tonight. The asymmetric Canada positioning (TD report: cushioned from Hormuz fertilizer shock, potash exporter status, high crop inventories) means the TSX could outperform on a relative basis if Hormuz stays closed — energy + materials are over-represented in the index.</p>
+      <div class="so-what"><strong>SO WHAT</strong> Canadian operating context: TSX strength in this environment is more about being the world's least-bad option than about Canadian-domestic-economy improvement. For deal-flow inbox quality (vbsgroup.biz / SearchGenius listings): a strong TSX correlates with seller confidence — listing volumes typically rise 4-6 weeks after a TSX rally. Watch for that signal through June. For Canadian deeptech / photonics watchlist (CPFC + Ranovus + POET Technologies tracked in ST-003 update): TSX strength supports the federal-equity-as-anchor playbook by maintaining public-market sentiment for capital-intensive Canadian names.</div>
+      <div class="action-box"><strong>ACTION</strong> Quick TSX scan today after open: check whether Cameco (CCJ / Denison) and Nutrien (NTR) are catching the Hormuz-asymmetry bid. If yes, ST-005 cross-asset confirmation strengthens.</div>
+      <div class="contrarian">💭 TSX trading at 34,291 is already well-bid; "Canada is the least-bad place" is a consensus take, not a hidden insight. The marginal allocator dollar has already arrived. Real outperformance from here requires actual de-escalation news.</div>
+      <a class="read-original" href="https://money.tmx.com/canadian-markets" target="_blank">TMX Money →</a>
+      <a class="read-original" href="https://tradingeconomics.com/canada/stock-market" target="_blank">TradingEconomics →</a>
+    </div>
+    <div class="connections">CONNECTS: <a href="#wti-rejected">WTI rejection</a> · ST-005</div>
+  </div>
+</div>
+
+<div class="section-label">OPPORTUNITY BOARD</div>
+
+<div class="story-card" data-cat="india opportunity" id="opp-india-deeptech">
+  <div class="card-meta">
+    <span class="category-tag">INDIA OPPORTUNITY</span>
+    <span>↑ COMPOUNDING</span>
+    <span>12-24 MO</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">India semis as the third-instance federal-anchor template — BigEndian, Mindgrove, HrdWyr, Monk9 each map to different parts of ST-003 playbook</div>
+  <div class="layer1">
+    <p>The convergence story for India deeptech is unusually clean today. The CCTV ban + Vaishnaw's 12-fabs-in-flight + Schmidt's 6-month-US-China gap + the federal-equity playbook crossing to Canada (CPFC) all support one thesis: state-anchored semis become the dominant global growth engine 2026-2030 and India needs the third-instance to compete. The companies named today across Inc42 sources — BigEndian, Mindgrove, HrdWyr, Monk9 — are the operator-eye candidates for sovereign-LP or PLI-anchored Series B in the next 12 months. P166-3 / P166-4 / P167-3 anchor predictions all stress-test against today's news flow.</p>
+    <div class="so-what"><strong>SO WHAT</strong> The opportunity is not picking the winner among the four startups — it's reading the SECTOR-LEVEL signal that India is being moved by the same federal-equity playbook the US and Canada have run. For the Saturday Multibagger framework, the screening criterion should add: "candidate sits in a category where federal-equity / PLI / sovereign-LP anchor is plausible within 12 months." That's a much shorter list than today's stated watchlist.</div>
+    <div class="action-box"><strong>ACTION</strong> Add to Saturday's framework: "federal-equity / PLI / sovereign-LP anchor plausibility" as a new screening dimension. Pull funding data on BigEndian + Mindgrove this week.</div>
+    <div class="contrarian">💭 India has chronically underperformed its semiconductor potential for 20 years. PLI scheme money has been promised before. Without volume manufacturing at scale (not just startups), this is the same story as the last three cycles.</div>
+  </div>
+</div>
+
+<div class="story-card" data-cat="canada opportunity" id="opp-canada-photonics">
+  <div class="card-meta">
+    <span class="category-tag">CANADA OPPORTUNITY</span>
+    <span>↑ STILL OPEN</span>
+    <span>12-16 WEEKS</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">CPFC sovereign-anchor sourcing window remains open — Ranovus / CDPQ / OMERS / BCI named-commitment by Aug 31 is P168-4's deadline, and Friday's Trump-Xi outcome moves probability either way</div>
+  <div class="layer1">
+    <p>P168-4 commits to a Canadian sovereign / pension anchor (CDPQ, OMERS, CPP-IB, BCI, or PSP Investments) being publicly named as LP / equity participant in the CPFC privatization vehicle by August 31, 2026 — within 16 weeks of Joly's May 10 announcement. P169-4 sharpens: Ranovus is publicly named as lead bidder / equity participant / strategic anchor by July 31. Today (May 13) is week 1 of that window. The Trump-Xi summit outcome materially affects probability — a stalemate strengthens the "Canada as alternative compute substrate" narrative; a US-China rapprochement weakens it slightly but does not kill it because US chip-control "largely beginning not to work" (Schmidt) makes photonics still strategically attractive regardless.</p>
+    <div class="so-what"><strong>SO WHAT</strong> POET Technologies (already in Suhail's ₹55L direct book per dossier) is the cleanest direct-equity expression of this thesis. The ₹55L decision tree should explicitly track P169-4 and P168-4 deadlines as forcing functions — if either deadline is hit with a named anchor, POET's rerating thesis materializes; if both miss, the thesis weakens and option (e) "hold and ride" needs review.</div>
+    <div class="action-box"><strong>ACTION</strong> Set a calendar reminder for week of July 28 (final 4-day window before P169-4 deadline) to do a forcing-function review of POET + CPFC newsflow. Also a reminder for August 27 for P168-4.</div>
+    <div class="contrarian">💭 Canadian sovereign anchors move on bureaucratic timelines, not on prediction-board deadlines. 16 weeks is aggressive for CDPQ / OMERS / CPP-IB to formally name. The probability-weighted base case may be "named by year-end" not "named by August 31."</div>
+    <a class="read-original" href="https://thelogic.co/news/cpfc-canadian-photonics-fabrication-centre-privatization/" target="_blank">The Logic on CPFC →</a>
+  </div>
+</div>
+
+<div class="section-label">ALSO ON RADAR</div>
+
+<div class="story-card" data-cat="india gaming" id="nazara">
+  <div class="card-meta">
+    <span class="category-tag">INDIA GAMING</span>
+    <span>↑ PROFIT 13×</span>
+    <span>EARNINGS</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Nazara Q4 PAT jumps 13× to ₹56 Cr — gaming major's profitability surge masks a 23% revenue decline that demands scrutiny</div>
+  <div class="layer1">
+    <p>Nazara Technologies posted Q4 FY26 consolidated net profit of ₹55.7 Cr vs ₹4.1 Cr year-ago — a 13× jump. Operating revenue declined 23.5% YoY to ₹397.8 Cr. Total expenses cut 29% YoY to ₹375.5 Cr; EBITDA improved 52% YoY to ₹78 Cr; EBITDA margin 19.5%. Full FY26: revenue +12.6% YoY to ₹1,829 Cr; profits +60.8% YoY to ₹82 Cr.</p>
+    <div class="so-what"><strong>SO WHAT</strong> Gaming-major margin re-engineering same pattern as MobiKwik above. Revenue contraction + cost-cutting + improving EBITDA is the new Indian fintech / consumer-tech playbook. For Suhail's Saturday framework: gaming-revenue contraction in a sector that should be a structural-growth beneficiary needs an explanation before this is investable.</div>
+    <a class="read-original" href="https://inc42.com/buzz/nazara-q4-pat-jumps-over-13x-to-%E2%82%B956-cr-revenue-declines-23/" target="_blank">Inc42 →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india saas tech" id="swishx">
+  <div class="card-meta">
+    <span class="category-tag">INDIA SAAS</span>
+    <span>↻ PIVOT</span>
+    <span>FY27</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Swish Club rebrands to SwishX, pivots from laptop leasing to agentic-AI platform for pharma and medtech — Latam / MENA / EE expansion targeted</div>
+  <div class="layer1">
+    <p>Bengaluru's Swish Club (raised $4.5M last year, sunsetted IT asset-management business end-2024) has rebranded to SwishX and pivoted to agentic AI for pharma and medtech enterprises. Target: $5M in contracted ARR and 100+ enterprise clients by FY27. Expansion planned into Latin America, Middle East, Africa, Eastern Europe.</p>
+    <div class="so-what"><strong>SO WHAT</strong> ST-008 vertical-agent commercial-traction thread gets another India data-point. Pharma/medtech vertical agent + emerging-market focus is a credible niche; FY27 targets are aggressive but not absurd. Probability they hit $5M ARR + 100 enterprises in 18 months is ~20% on the inside view, ~40% if you trust the pivot execution.</div>
+    <a class="read-original" href="https://inc42.com/buzz/swish-club-rebrands-to-swishx-pivots-to-ai-for-pharma/" target="_blank">Inc42 →</a>
+  </div>
+</div>
+
+<div class="section-label">QUICK HITS</div>
+<div class="story-card quick-hits" data-cat="all">
+  <ul>
+    <li><span class="qh-bold">Daniel Craig signs as BYD spokesperson</span> in 90-second moody hero spot for Chinese EV-maker — Aston Martin just laid off 20% of workforce, stock at record lows. <em>Brand-equity migration story for the BYD-global-push thesis; Canadian and Indian luxury-auto markets get a celebrity-signal asymmetry.</em></li>
+    <li><span class="qh-bold">Canadians travelling to the US rose</span> month-on-month last month for the first time since December 2024 (Bloomberg). <em>Marginal tariff-fatigue / oil-price-blunting normalization; not a trend yet, but worth tracking through summer.</em></li>
+    <li><span class="qh-bold">McKinsey "build genius at scale"</span> podcast / piece dropped this week (Rest of World partnership). <em>Background reading for the consulting-AI-disruption thesis already running through DeployCo coverage from yesterday.</em></li>
+    <li><span class="qh-bold">UAE Make-It-In-The-Emirates forum</span> launched a $272M National Industrial Resilience Fund with 1,245 companies attending. <em>Gulf sovereign-industrial-policy template extension; not material for Suhail unless GCC outreach for India deeptech anchor LPs is part of the playbook.</em></li>
+    <li><span class="qh-bold">South Korea ordained a robot Buddhist monk named Gabi</span> at a temple combating falling participation (NYT via Rest of World). <em>Cultural-signal data point on humanoid deployment moving from industrial use cases to symbolic adoption; ST-006 humanoid-commercialization thread tangential reinforcement.</em></li>
+    <li><span class="qh-bold">Shein accusing Temu of "industrial scale" copyright theft</span> including thousands of lifted photographs (FT). <em>Fast-fashion knife fight gets uglier as both platforms run out of distinct moats; Canadian e-commerce regulatory environment likely to be next inflection.</em></li>
+    <li><span class="qh-bold">Andhra Pradesh claims Google's $15B data-centre investment</span> could generate 1.88 lakh direct + indirect jobs — Finshots argues McKinsey's actual math suggests 50 operational + ~3.5× indirect = closer to 200-700 total. <em>Indian state-level industrial-policy claims are inflated; cross-reference Hicks's Texas study showing net long-term zero jobs from DC hosting.</em></li>
+    <li><span class="qh-bold">Tata + JSW each commit $500M to in-house EV battery R&amp;D</span> per Bloomberg / Rest of World — explicit goal to reduce Chinese tech dependency. <em>Parallel to CCTV ban story; same federal-policy-driven import-substitution playbook; second-order POET / photonics signal because the broader semis-substitution dynamic strengthens.</em></li>
+  </ul>
+</div>
+
+<div class="section-label">THE LONG GAME</div>
+<div class="long-game">
+The slow-burn trend underneath today's news is the operationalisation of the federal-equity-to-state-anchored-supply-chain playbook across three economies simultaneously. The US (Treasury 9.9% Intel + Apple-Intel anchor + next-target watchlist), Canada (CPFC privatization with retained federal stake + Ranovus circling), and now India (CCTV import-substitution + Vaishnaw's 12 fabs + the BigEndian / Mindgrove / HrdWyr / Monk9 cohort building the protected-market beneficiaries) are running variants of the same template. China's published agent-deployment rulebook is the fourth variant — different mechanism, same direction. For an operator with multi-currency exposure and a multibagger framework, the question is no longer "is this picking winners under industrial policy a temporary intervention" — it's "how do you screen for the candidates most likely to receive the next sovereign-LP cheque?" The thesis crystallises into one operational rule: any post-IPO Canadian / Indian / US deeptech name in a critical-stack category with a state-anchor pattern emerging deserves a 12-month re-screen against the federal-equity probability. That is the screen that ST-003 should produce by year-end.
+</div>
+
+<div class="section-label">COVERAGE SCORECARD</div>
+<div class="scorecard">
+  <table>
+    <tr><td>Newsletters scanned</td><td>Finshots, Morning Brew, Deep View, TLDR, 1440, Inc42, The Ken, Axios Pro Rata, Brew Markets, The Peak, Sinocism, ChinaTalk, Chartbook, Rest of World, Superhuman AI (15 sources)</td></tr>
+    <tr><td>Tier 5 (China-lens) hits</td><td>4 — Sinocism (Trump-Xi prep + agent policy), ChinaTalk (Stalemate Summit Gewirtz), Chartbook (Selling India + Big Tech FCF), Rest of World (Chinese whiz kids SV)</td></tr>
+    <tr><td>R-012 disposition</td><td>Chartbook "Selling India" → FEATURED as SIGNAL SPOTLIGHT (maps to ST-005). Sinocism Trump-Xi → FEATURED as LEAD (ST-003 / ST-005). Sinocism agent-policy → FEATURED as Signal Board card (ST-001 / ST-003). ChinaTalk Stalemate Summit → FEATURED in LEAD framing (ST-003). Rest of World → quick-hits + adjacent context. All ST-active threads named in respective SO-WHATs.</td></tr>
+    <tr><td>R-011 disposition</td><td>Theme rotation: yesterday evening LEAD was Trump heading-to-Beijing summit (ST-003 / ST-005). Today's LEAD is Trump arriving Beijing with named-new-development (Huang absence, Gewirtz framing). NAMED-NEW-DEVELOPMENT criterion met. Yesterday SPOTLIGHT was DeployCo / McKinsey; today's SPOTLIGHT is Selling India (entirely different thread). Yesterday Canadian File was Telus DC cluster / Police corruption / TD Fertilizer / Canada Leads — today's Canadian File is BoC Summary / Carney USMCA / TSX reopen — all NEW topics. R-011 cleanly passed.</td></tr>
+    <tr><td>Stories featured</td><td>14 (1 LEAD, 9 Signal Board, 3 Canadian File, 2 Opportunity Board, 2 Radar). Quick hits: 8 bullets.</td></tr>
+    <tr><td>India stories</td><td>6 (Sensex/Modi, MobiKwik, CCTV, InCred-S Cube, Leela Palaces, Nazara/SwishX). Plus India angle in 4 cross-border cards.</td></tr>
+    <tr><td>Canada stories</td><td>3 dedicated (BoC Summary, Carney USMCA, TSX reopens). Plus Canada angle in 5 cross-border cards (Trump-Beijing, WTI, CPFC opportunity, photonics, US CPI cross-read).</td></tr>
+    <tr><td>New predictions filed</td><td>2 (P171-1 Trump-Xi communiqué; P171-2 Cerebras Day-1 close)</td></tr>
+    <tr><td>Open predictions on Board</td><td>5 displayed (P171-1, P171-2, P170-4, P170-3, P170-1); 12 total open</td></tr>
+  </table>
+</div>
+
+<footer>THE BRIEF · Edition #171 · May 13, 2026 · Morning · agentrankofficial-creator.github.io/the-brief/</footer>
+
+</div>
+
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  var btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  var el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active');});
+  pill.classList.add('active');
+  if(cat==='all'){
+    document.querySelectorAll('[data-cat]').forEach(function(el){el.classList.remove('hidden');});
+    return;
+  }
+  document.querySelectorAll('[data-cat]').forEach(function(el){
+    var cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',cats.indexOf(cat)===-1);
+  });
+}
+</script>
+</body>
+</html>
