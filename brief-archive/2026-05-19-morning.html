@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Brief — Edition #179 · May 19, 2026 (Morning)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--accent);padding:32px 0 20px;margin-bottom:24px}
+.logo{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;font-weight:700}
+.subtitle{font-family:var(--font-ui);font-size:13px;color:var(--muted);margin-top:6px}
+.tagline{font-style:italic;color:var(--text);font-size:15px;margin-top:14px;border-left:2px solid var(--accent);padding-left:14px}
+.nav-pills{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:transparent;cursor:pointer;transition:all .15s}
+.nav-pill.active,.nav-pill:hover{border-color:var(--accent);color:var(--accent)}
+.hidden{display:none!important}
+.editors-read{background:linear-gradient(180deg,#1a1a1f,#131316);border:1px solid var(--accent);border-radius:10px;padding:28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:700}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:18px}
+.er-body{font-size:16px;line-height:1.75;color:var(--text)}
+.er-body p{margin-bottom:14px}
+.er-body strong{color:var(--accent);font-weight:700}
+.signal-spotlight{background:var(--surface);border:1px solid #5b8def;border-radius:10px;padding:24px;margin-bottom:32px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#5b8def;margin-bottom:12px;font-weight:700}
+.ss-claim{font-size:19px;line-height:1.45;font-weight:600;margin-bottom:10px;color:var(--text)}
+.ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:10px;line-height:1.65}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px;font-weight:700}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;display:inline-block}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:28px}
+@media (max-width:680px){.markets-grid{grid-template-columns:repeat(3,1fr)}}
+.market-tile{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:left}
+.mt-name{font-family:var(--font-ui);font-size:9px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.mt-value{font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--text);margin-bottom:1px}
+.mt-change{font-family:var(--font-ui);font-size:10px}
+.mt-change.up{color:var(--green)}
+.mt-change.down{color:var(--red)}
+.mt-change.flat{color:var(--dim)}
+.connection-map{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:28px;font-family:var(--font-ui);font-size:11px;color:var(--muted);letter-spacing:.5px}
+.cm-label{color:var(--accent);font-weight:700;margin-right:8px;font-size:10px}
+.cm-chain{display:inline-block;margin-right:14px;line-height:2}
+.cm-chip{display:inline-block;padding:2px 8px;border:1px solid var(--border);border-radius:3px;margin:0 2px}
+.cm-arrow{color:var(--accent);margin:0 4px}
+.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700;padding:24px 0 12px;border-top:1px solid var(--border);margin-top:24px}
+.section-label:first-of-type{border-top:none}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin-bottom:14px;transition:border-color .15s}
+.story-card:hover{border-color:#3a3a40}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-family:var(--font-ui);font-size:10px;letter-spacing:.8px}
+.category-tag{padding:2px 8px;background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent);border-radius:3px;text-transform:uppercase;font-weight:700}
+.trend-arrow{font-size:14px;font-weight:700}
+.trend-arrow.up{color:var(--green)}
+.trend-arrow.down{color:var(--red)}
+.trend-arrow.flat{color:var(--dim)}
+.time-horizon{color:var(--dim);text-transform:uppercase}
+.decision-badge{padding:2px 8px;border-radius:3px;text-transform:uppercase;font-weight:700;letter-spacing:1px}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--border)}
+.card-title{font-size:19px;line-height:1.35;font-weight:700;margin-bottom:14px;color:var(--text)}
+.layer1 p{font-size:15px;line-height:1.65;color:var(--text);margin-bottom:12px}
+.so-what{background:rgba(91,141,239,.08);border-left:3px solid #5b8def;padding:10px 14px;font-size:13.5px;color:var(--muted);margin-bottom:10px;line-height:1.6}
+.so-what strong{color:#8eb1f0;letter-spacing:.5px}
+.action-box{background:rgba(74,222,128,.06);border-left:3px solid var(--green);padding:10px 14px;font-size:13.5px;color:var(--muted);margin-bottom:10px;line-height:1.6}
+.action-box strong{color:var(--green);letter-spacing:.5px}
+.contrarian{background:rgba(224,82,82,.06);border-left:3px solid var(--red);padding:10px 14px;font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6;font-style:italic}
+.read-original{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:4px 10px;border-radius:3px;margin-right:8px;letter-spacing:.5px;transition:all .15s}
+.read-original:hover{background:var(--accent);color:#0a0a0b}
+.gmail-source{font-family:var(--font-ui);font-size:10px;color:var(--dim);text-decoration:none;letter-spacing:.5px}
+.gmail-source:hover{color:var(--muted)}
+.deep-dive-btn{display:block;margin-top:12px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 12px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;border-radius:4px;cursor:pointer;text-transform:uppercase}
+.deep-dive-btn:hover{border-color:var(--accent);color:var(--accent)}
+.layer2{display:none;margin-top:14px;padding:14px;background:#0e0e10;border-radius:6px;font-size:13.5px;color:var(--muted);line-height:1.7}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;font-family:var(--font-ui);font-size:10px;color:var(--dim)}
+.connections a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);margin-right:8px;cursor:pointer}
+.canadian-file{background:linear-gradient(180deg,#1a1416,#131316);border:1px solid var(--red);border-left-width:4px;border-radius:10px;padding:24px;margin-top:18px;margin-bottom:24px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:700}
+.cf-subtitle{font-family:var(--font-ui);font-size:13px;color:var(--muted);font-style:italic;margin-bottom:18px}
+.canadian-file .story-card{background:#0e0e10}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;margin-bottom:24px}
+.quick-hits ul{list-style:none;padding:0}
+.quick-hits li{font-size:14px;color:var(--text);padding:9px 0;border-bottom:1px solid #1e1e22;line-height:1.55}
+.quick-hits li:last-child{border-bottom:none}
+.quick-hits li strong{color:var(--accent)}
+.long-game{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:18px 22px;margin-bottom:24px;font-style:italic;color:var(--muted);font-size:14.5px;line-height:1.7}
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:24px;font-family:var(--font-ui);font-size:12px}
+.scorecard table{width:100%;border-collapse:collapse}
+.scorecard td{padding:5px 8px;color:var(--muted);border-bottom:1px solid #1e1e22}
+.scorecard tr:last-child td{border-bottom:none}
+.scorecard td:first-child{color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-size:10px;width:55%}
+.scorecard td:last-child{color:var(--text);text-align:right;font-weight:700}
+footer{text-align:center;font-family:var(--font-ui);font-size:11px;color:var(--dim);padding:32px 0;border-top:1px solid var(--border);margin-top:32px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">THE BRIEF · Edition #179</div>
+  <div class="subtitle">Tuesday Morning · May 19, 2026 · Curated for Suhail Seth</div>
+  <div class="tagline">Compute clears like Brent crude — Ornn lists GPU futures on ICE · NextEra swallows Dominion in a $420B utility tie-up · Pentagon ghosts Ottawa over Carney · Musk-Altman lawsuit dies on statute of limitations · INR breaks 96.30 again · Starship V3 flies tonight 6:30 PM EDT</div>
+</header>
+
+<div class="nav-pills">
+  <button class="nav-pill active" onclick="filterStories('all',this)">All</button>
+  <button class="nav-pill" onclick="filterStories('ai',this)">AI</button>
+  <button class="nav-pill" onclick="filterStories('india',this)">India</button>
+  <button class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
+  <button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
+  <button class="nav-pill" onclick="filterStories('macro',this)">Macro</button>
+  <button class="nav-pill" onclick="filterStories('geo',this)">Geo</button>
+</div>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · May 19, 2026 (Morning)</div>
+  <div class="er-body">
+    <p>Today is the day compute stops being a chip-shortage story and becomes a <strong>cleared commodity</strong>. Ornn — the GPU price benchmark that landed on the Bloomberg Terminal on April 2 — has named Intercontinental Exchange as the venue for the first regulated, exchange-listed compute futures. Cash-settled, USD-denominated contracts referencing H100, H200, B200, and RTX 5090 rental prices will clear on the same plumbing that already settles Brent crude, EU carbon allowances, TTF natural gas, and the cotton contract that has traded continuously in New York since 1870. Pending regulatory approval — but ICE built ICE Clear Europe in 2008 and bought NYSE in 2013; this is not a venue that announces a road they cannot finish.</p>
+
+    <p>The downstream is the part I want every operator to feel. Once GPU rents clear at ICE, lenders financing the $7T datacenter buildout can hedge their exposure on the same rails as oil and gas. Hyperscaler treasury desks can lock in forward compute the way airlines have locked in jet fuel since the 1980s. Sovereign infrastructure pools and pension capital — which cannot touch unregulated OTC venues at meaningful size — finally get an instrument they're allowed to own. The financing constraint on the AI cycle loosens at exactly the moment its physical constraint is being consolidated: NextEra announced a $420B all-stock buy of Dominion Energy yesterday, building the country's largest regulated utility on top of the Virginia "data center alley" Dominion already feeds. Financial infrastructure for compute and physical infrastructure for compute hardened in the same 24 hours. That is not coincidence — that is a cycle's middle innings being capitalised.</p>
+
+    <p>The cross-cuts read uglier. The Pentagon walked out of the 86-year-old Permanent Joint Board on Defense with Canada yesterday, citing Carney by name; the integration that built North American air defence in 1940 is being unwound the same week the integration that builds compute markets is being welded shut. INR closed at 96.13 on Monday and ticked through 96.34 on Tuesday — oil at $103-$107 with Hormuz still effectively closed is doing the structural work. The trade I'd take from today: the financial architecture of the AI cycle is locking in faster than anyone priced. The political architecture holding it together is not.</p>
+  </div>
+</div>
+
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">The Ornn-ICE listing collapses the timeline from "compute is an asset class" to "compute is a financial commodity" from years to weeks — and the second-order consequence is that the structural moat for non-US sovereign compute platforms now shifts from "can you buy chips" to "can you hedge your buildout."</div>
+  <div class="ss-reasoning">For 18 months the bottleneck on every sovereign-AI buildout outside the US has been chip access — export controls, customs blocks, allocation politics. The Ornn-ICE listing changes the question. Once H100/H200/B200 rental prices settle on a regulated, cleared curve, lenders can issue datacenter financing against a forward compute strip the same way they price jet-fuel-hedged airline loans. The non-aligned compute platforms — the UAE-India Cerebras axis, the privatising Canadian Photonics Fabrication Centre, the European sovereign-AI pushes — suddenly have a borrowing instrument their domestic pension and sovereign-wealth pools are permitted to buy. The catch: the curve is anchored on US-controlled GPU types. So the cleared-compute world is structurally a US-currency world even when the chips physically run on UAE soil. Watch the first index-referenced bank loan for an AI datacenter as the marker that the regime has actually flipped.</div>
+  <div class="ss-horizon">Time horizon: 6–18 months for first cleared-compute-hedged datacenter loan. 24-36 months for the curve to become the reference rate that AI infra deals price off, the way Brent became the reference for traded oil.</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD · 5 most recent</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction (one-line)</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>#179</td><td>Ornn-ICE GPU futures receive CFTC clearance and first contract trades by Sep 30, 2026</td><td>Sep 30</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#179</td><td>Pentagon PJBD pause becomes a named Canadian counter-measure (specific federal action) by Jun 30</td><td>Jun 30</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#178</td><td>BoC holds at 2.25% on June 10 — does NOT cut despite tariff vulnerability</td><td>Jun 10</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#178</td><td>Starship V3 Flight 12 May 19 lands clean — both booster splashdown AND ship aquatic landing within 1hr</td><td>May 20</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#175</td><td>USD/INR closes above 96.00 on session-close basis within 7 sessions</td><td>May 25</td><td><span class="pb-status correct">CORRECT</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-label">Global Markets · May 18 close + May 19 open</div>
+<div class="markets-grid">
+  <div class="market-tile"><div class="mt-name">S&amp;P 500</div><div class="mt-value">7,403.05</div><div class="mt-change down">▼ -0.07%</div></div>
+  <div class="market-tile"><div class="mt-name">Nasdaq</div><div class="mt-value">26,090.73</div><div class="mt-change down">▼ -0.51%</div></div>
+  <div class="market-tile"><div class="mt-name">Dow</div><div class="mt-value">49,686.12</div><div class="mt-change up">▲ +0.32%</div></div>
+  <div class="market-tile"><div class="mt-name">Nifty 50</div><div class="mt-value">23,618</div><div class="mt-change down">▼ late profit take</div></div>
+  <div class="market-tile"><div class="mt-name">Sensex</div><div class="mt-value">75,687</div><div class="mt-change up">▲ +0.49%</div></div>
+  <div class="market-tile"><div class="mt-name">TSX Composite</div><div class="mt-value">33,833</div><div class="mt-change flat">Fri close · reopens today</div></div>
+  <div class="market-tile"><div class="mt-name">USD / INR</div><div class="mt-value">96.34</div><div class="mt-change down">▲ new historic low</div></div>
+  <div class="market-tile"><div class="mt-name">CAD / USD</div><div class="mt-value">0.7298</div><div class="mt-change down">▼ USDCAD 1.3702</div></div>
+  <div class="market-tile"><div class="mt-name">WTI Crude</div><div class="mt-value">$103.40</div><div class="mt-change down">▼ -3.5% vs Mon peak $107</div></div>
+  <div class="market-tile"><div class="mt-name">Gold (oz)</div><div class="mt-value">$4,569</div><div class="mt-change up">▲ +0.17%</div></div>
+  <div class="market-tile"><div class="mt-name">Bitcoin</div><div class="mt-value">$76,953</div><div class="mt-change down">▼ -1.79%</div></div>
+  <div class="market-tile"><div class="mt-name">10Y UST</div><div class="mt-value">4.623%</div><div class="mt-change up">▲ +3bp · 1-yr high zone</div></div>
+  <div class="market-tile"><div class="mt-name">10Y GoC</div><div class="mt-value">3.70%</div><div class="mt-change up">▲ 2-year high</div></div>
+  <div class="market-tile"><div class="mt-name">Hang Seng</div><div class="mt-value">25,962</div><div class="mt-change flat">Asia regional</div></div>
+  <div class="market-tile"><div class="mt-name">VIX</div><div class="mt-value">17.82</div><div class="mt-change flat">— quiet tape</div></div>
+</div>
+
+<div class="connection-map">
+  <span class="cm-label">CONNECTION MAP →</span>
+  <span class="cm-chain"><span class="cm-chip">ORNN</span><span class="cm-arrow">→</span><span class="cm-chip">ICE FUTURES</span><span class="cm-arrow">→</span><span class="cm-chip">DC DEBT HEDGEABLE</span><span class="cm-arrow">→</span><span class="cm-chip">PENSION CAP IN</span></span>
+  <span class="cm-chain"><span class="cm-chip">NEXTERA-DOMINION $420B</span><span class="cm-arrow">→</span><span class="cm-chip">VIRGINIA DC ALLEY</span><span class="cm-arrow">→</span><span class="cm-chip">UTILITY-AS-AI-INFRA</span></span>
+  <span class="cm-chain"><span class="cm-chip">PJBD PAUSE</span><span class="cm-arrow">→</span><span class="cm-chip">CARNEY REBUKE</span><span class="cm-arrow">→</span><span class="cm-chip">CAD-US RIFT WIDENS</span></span>
+  <span class="cm-chain"><span class="cm-chip">HORMUZ STUCK</span><span class="cm-arrow">→</span><span class="cm-chip">WTI $103-107</span><span class="cm-arrow">→</span><span class="cm-chip">INR 96.34 NEW LOW</span></span>
+</div>
+
+<div class="section-label">The Lead</div>
+
+<div class="story-card lead-card" data-cat="ai markets macro" id="ornn-ice-futures">
+  <div class="card-meta">
+    <span class="category-tag">AI · MARKETS · INFRA FINANCING</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">6–24 months</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Ornn picks Intercontinental Exchange as the listing venue for the world's first regulated GPU futures — cash-settled contracts on H100, H200, B200 and RTX 5090 rental prices will clear on the same plumbing that runs Brent crude</div>
+  <div class="layer1">
+    <p>Ornn, the compute-pricing benchmark backed by 021T Capital, announced on May 19 that it will launch exchange-listed futures on GPU compute through <strong>Intercontinental Exchange (ICE)</strong>, parent of the NYSE and operator of the regulated derivatives exchanges that clear Brent crude, EU carbon allowances, TTF natural gas, and the New York cotton contract that has traded continuously since 1870. The contracts will be USD-denominated and cash-settled, referencing the Ornn Compute Price Index (OCPI) series covering H100, H200, B200, and RTX 5090 GPU types. Launch is pending regulatory approval. OCPI itself only became reference-grade six weeks ago — it landed on the Bloomberg Terminal on April 2, 2026, settling against cleared GPU prices rather than rate cards or surveys. The credentialing step took six months. The clearing step now compresses to roughly the same window.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the moment compute joins oil and natural gas as a tradable, hedgeable, financeable commodity — not in the abstract sense the AI-bubble desk has been writing about, but in the concrete sense that a London or New York bank can now underwrite a multi-year datacenter loan whose floating-rate component is hedged against an ICE-cleared compute curve. The cycle's binding constraint stops being "do we have the chips" and becomes "can we finance the build at a known forward price." Two pools of capital that have been waiting on the sidelines — sovereign infrastructure funds and pension capital that cannot legally touch unregulated OTC venues — get an instrument they are allowed to buy. The compute curve becomes a real interest rate for AI infrastructure. The way Brent priced offshore production unlocked the 1980s North Sea, OCPI-on-ICE prices the 2026-2030 hyperscaler buildout.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the CFTC docket for the OCPI-futures application; the speed of approval will signal how regulators treat compute as a commodity vs. as a tech product. Watch the first datacenter loan that prices a floating-rate spread against the compute curve — that's the marker that the listing has actually crossed from "announcement" to "market." Treat any AI-infrastructure equity that benefits from cheaper project-level debt as repriced once the futures clear, not when they list.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: ICE listings have died in committee before. The CFTC has historically been allergic to novel underlyings that depend on proprietary index methodology; OCPI is brand-new, sparsely-traded, and Ornn has every incentive to want a tradable curve no matter what reality says about price discovery. The contracts may clear and trade thinly for years before any real loan references them. The cleared-compute story may also accelerate concentration — only firms big enough to hedge will build, killing the long-tail of smaller AI infra plays that some of the cycle's optimism is built on. Until the first index-referenced loan prints, this is venue news, not market news.</em></div>
+    <a class="read-original" href="https://theinnermostloop.substack.com/p/the-first-major-exchange-compute" target="_blank">Read original →</a>
+    <a class="read-original" href="https://www.prnewswire.com/news-releases/ornn-compute-price-index-added-to-bloomberg-terminal-302732184.html" target="_blank">Ornn-Bloomberg backgrounder →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e40678ca30cb06" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">
+    <p><strong>The Jeff Sprecher template.</strong> ICE was founded by Sprecher in 2000 — three years after he bought Continental Power Exchange, a struggling Atlanta trading platform, for $1,000 from MidAmerican Energy (later acquired by Berkshire). The pitch: drag opaque OTC energy markets into transparent electronically-cleared trading. ICE then acquired London's International Petroleum Exchange in 2001 (inheriting the Brent crude contract IPE launched in June 1988), went public on NYSE in 2005, acquired the New York Board of Trade in 2007, built ICE Clear Europe in 2008 (the first new major UK clearing house in over a century), and acquired NYSE itself in 2013. Brent now references roughly three-quarters of the world's traded oil. The parallel to GPU rentals today is not "exact" in the loose sense — it is exact in the literal sense that the same Atlanta-and-London plumbing is being extended to a new physical commodity for the third time in 30 years.</p>
+    <p><strong>What gets re-rated if this lands.</strong> First-order: AI-infra debt issuance accelerates because the floating-rate spread on a hedged compute strip is cheaper than an unhedged one — Goldman, JPM, and the project-finance desks at the European banks are the most direct beneficiaries. Second-order: pure-play GPU rental shops (CoreWeave, Lambda) get repriced because their margin compresses against a cleared curve; the spread they earn over OCPI becomes a tradable number. Third-order: the equity-side argument for hyperscaler vertical integration weakens once a credible forward curve exists — why build your own DC if you can hedge a multi-year rental at a known forward price? Fourth-order: every sovereign-AI buildout (UAE-India, Saudi, France, Korea) gets a real interest rate for its build, which is the precondition for sovereign-debt-funded AI infrastructure. The same shape oil-export-credit-agencies pioneered in the 1970s.</p>
+  </div>
+  <div class="connections">Connected: <a onclick="scrollToStory('nextera-dominion')">NextEra-Dominion $420B</a><a onclick="scrollToStory('meta-reorg')">Meta AI-native reorg</a><a onclick="scrollToStory('schmidt-booed')">AI commencement backlash</a></div>
+</div>
+
+<div class="section-label">Signal Board</div>
+
+<div class="story-card" data-cat="markets macro ai" id="nextera-dominion">
+  <div class="card-meta">
+    <span class="category-tag">MACRO · UTILITIES · AI POWER</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">12–18 months close</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">NextEra Energy and Dominion announce a $420B all-stock combination — building the country's largest regulated utility on top of Virginia's "data center alley," with $2.25B in two-year customer bill credits as the political tax</div>
+  <div class="layer1">
+    <p>On May 18, NextEra Energy (NYSE: NEE) and Dominion Energy (NYSE: D) signed a definitive agreement to combine in an all-stock transaction at an aggregate enterprise value of roughly $420 billion — the fourth-largest deal in US corporate history per The Peak's framing. Each Dominion shareholder receives 0.8138 NEE shares plus a $360M collective special cash payment. The combined company keeps the NextEra name and NYSE ticker NEE, runs as the nation's largest regulated utility, and serves about 10 million homes and businesses across the Southeast. The deal offers $2.25B in bill credits for Dominion customers in Virginia, North Carolina, and South Carolina over the two years post-close — the political-economy down payment that's now required to get a Virginia-anchored utility deal through state regulators. Expected close: 12-18 months pending regulatory approvals.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Dominion is the principal power supplier to Northern Virginia's data center alley, which handles roughly two-thirds of global internet traffic — so this is not a "utility tie-up," it is the physical-layer side of the same cycle the Ornn-ICE listing financialises. Utilities are being rebuilt around AI demand: nearly doubling electricity prices in parts of the US as data center demand collides with grid constraints. For any operator thinking about exposure to the AI cycle, the regulated-utility leg is no longer a defensive yield trade — it is a leveraged play on hyperscaler capex with state-utility-commission protection on the cash flows. The bill-credit structure is the new ransom every Carney-era state attorney general will extract from any utility merger that touches data center load.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track the Virginia State Corporation Commission filings and the FERC application; the bill-credit precedent will template every subsequent utility merger that touches a data-center load center. Watch the spread between regulated-utility multiples and the AI-bubble multiples — that spread is closing for structural reasons.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: state utility commissions in Virginia and NC have killed deals at the goal line before; the bill-credit may not be enough for the populist anti-data-center coalition that has formed around northern Virginia's water and noise complaints. A 12-18 month close means a different administration's regulators may inherit the file. Big regulated mergers tend to break on the political ground even when the financial logic is iron-clad.</em></div>
+    <a class="read-original" href="https://www.sec.gov/Archives/edgar/data/0000715957/000119312526227930/d158175dex991.htm" target="_blank">Read original (SEC 8-K) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3faf07c8339ae" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: <a onclick="scrollToStory('ornn-ice-futures')">Ornn-ICE GPU futures</a><a onclick="scrollToStory('meta-reorg')">Meta AI reorg</a></div>
+</div>
+
+<div class="story-card" data-cat="ai geo" id="musk-openai-verdict">
+  <div class="card-meta">
+    <span class="category-tag">AI · LEGAL · GOVERNANCE</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">Immediate · 0–6 months</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">A San Francisco jury throws out Musk's $134B suit against OpenAI on statute-of-limitations grounds — clearing Altman's path to an OpenAI IPO by 2027 and ending three years of "stole a charity" overhang</div>
+  <div class="layer1">
+    <p>After a three-week trial, a California jury dismissed Elon Musk's lawsuit against OpenAI and Sam Altman on May 18, ruling that Musk missed the three-year statute of limitations — OpenAI converted from a nonprofit lab to a for-profit entity in 2019, Musk sued in 2024. Musk had sought a $134B penalty, an overhaul of OpenAI's leadership, and a forced return to its nonprofit structure. He says he plans to appeal. Trial discovery produced some unflattering material on both sides: Ilya Sutskever testified that Altman "exhibits a consistent pattern of lying"; Musk obtained Greg Brockman's diary alleging an undisclosed family-office equity stake; Altman testified Musk had proposed folding OpenAI into Tesla and floated passing control of the lab to his children. Shivon Zilis — former OpenAI board member, mother of four of Musk's children — was accused of passing information back to him. The verdict clears OpenAI's path to a public listing reportedly targeted for 2027, while Musk's xAI is set to go public as part of the SpaceX IPO planned for as early as next month.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Removes the largest single structural overhang on the OpenAI IPO timeline. For the AI capital cycle, two consequences: the priced OpenAI round (next funding event) almost certainly clears at a higher mark than it would have with the suit still live; and the xAI/SpaceX combined IPO is now competing for the same pool of "the AI public-market trade" capital with a real, free-and-clear OpenAI listing on a 12-18 month horizon. The for-profit conversion governance template — non-profit board with a capped-profit subsidiary — survives the legal test, which makes it more likely the next wave of frontier-AI labs use a variation of it rather than starting from scratch. The trial discovery is colourful but, with the appeal hanging, mostly a footnote — unless an Altman-credibility narrative becomes the wedge a future regulator uses.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read this as a binary that just resolved in favour of the AI-public-equity trade. If you had been waiting for the verdict before sizing exposure to AI cycle equities, that gate is open. Watch for the OpenAI S-1 filing window — the bank syndicate is now free to talk timeline publicly.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: Musk will appeal, and an appellate reversal on the limitations question is non-trivial — the discovery rule on Sutskever's testimony is the obvious lever. A reversal would put the same overhang back on the IPO, only louder. Separately, the Brockman-diary disclosure is the kind of material that surfaces in an SEC review of any S-1 — even with the suit gone, the governance discount is real until OpenAI prices and trades clean.</em></div>
+    <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-05-18/musk-openai-lawsuit-jury-verdict" target="_blank">Read original (Bloomberg) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3f987f9bc5b0b" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai" id="meta-reorg">
+  <div class="card-meta">
+    <span class="category-tag">AI · BIG TECH · LABOUR</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">3–12 months</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Meta moves 7,000 workers into four "AI-native" organisations with explicitly fewer managers per employee — Zuckerberg's $135B capex year is also a $135B reorganisation of the management layer he's eliminating</div>
+  <div class="layer1">
+    <p>Meta is reassigning roughly 7,000 employees into four new organisations built on "AI-native design structures" — the public framing makes the structural change explicit: fewer managers per employee than the rest of the company. The reorg lands before what TLDR describes as a coming mass-layoff wave and inside a year where Meta plans up to $135B in capex, much of it for the compute facilities and researcher hires that anchor the AI bet. The Louisiana super-DC — Meta's plan for a 5GW AI facility costing more than $200B — is the physical manifestation. The reorg is the human-org manifestation of the same thesis.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The 7,000-into-four-orgs change reads like the predictable next chapter of the management-layer compression every hyperscaler has been telegraphing since 2024. The interesting part is the explicit "AI-native design structures" language — Meta is publicly saying the reorg is not "we removed redundant managers," it is "we rebuilt the org so that AI does the work the management layer used to do." That is a different claim, and if it holds, it changes how every public-market analyst should think about hyperscaler operating leverage. The under-priced consequence: if AI-native operating models actually compress G&amp;A as a percent of revenue at Meta scale, then the AI-capex-to-margin payoff arrives faster than current consensus, which still treats most AI spend as a margin drag in 2026-2027.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read the next Meta 10-Q for changes in "general and administrative" run rate vs. revenue — that's the line where the AI-native claim either prints or doesn't. If the G&amp;A compression shows up, the rest of MAANG is following within 4 quarters.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: "AI-native design structures" may be PR for an aggressive layoff. Reorgs at Meta have a history of being announced grandly and then absorbed into existing structures within 18 months. Engineering productivity gains from internal AI tools have been over-claimed before; consensus on Copilot/Codeium uptime productivity is still soft. The G&amp;A line may compress for entirely cyclical reasons that have nothing to do with AI-native anything.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/18/meta-ai-reorganization-workforce.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3fda9140c339d" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india macro geo" id="india-uk-fta-steel">
+  <div class="card-meta">
+    <span class="category-tag">INDIA · TRADE · STEEL</span>
+    <span class="trend-arrow down">↓</span>
+    <span class="time-horizon">Effective July 1, 2026</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Britain's July 1 steel safeguards cut tariff-free quotas 60% and slap a 50% tariff above — gutting one of the India-UK FTA's loudest sectoral wins less than a year after the deal was signed</div>
+  <div class="layer1">
+    <p>The UK's new steel safeguard regime takes effect July 1, 2026: tariff-free import quotas fall 60% and a 50% tariff applies above the threshold. The old regime allowed unrestricted volumes up to quota and applied a 25% tariff above. The new framework was structurally forced — WTO rules barred the existing safeguards from extending past June 2026 — but the result is that the India-UK FTA, signed in 2025 and meant to push bilateral trade from ~$57B to $120B by 2030, hits a fresh tariff wall on one of its highest-volume sectors. The macro driver is Chinese: global steelmaking capacity has reached an OECD-flagged 2.55 billion metric tonnes (fastest expansion since 2009), surplus capacity was ~680 million tonnes in 2025, and China exported a record 119 million metric tonnes of steel at heavily subsidised prices last year. Steel blocked elsewhere gets redirected; the UK has now joined the US and EU in slamming the door. India is negotiating for an India-specific quota inside the new framework.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two operator-grade takeaways. First, India's steel sector is structurally exposed to a global protectionism cycle, and the upcoming 160-to-300 million-tonne capacity ramp (Modi's 2030 target) only sharpens that exposure — India is building toward a problem that the rest of the world is actively trying to solve through tariffs. Second, the India-UK FTA is the template for every subsequent India bilateral (with the US, with the EU, the LATAM pushes); if a sectoral safeguard can pierce the deal in 11 months, no Indian capacity-investment plan should be sized on the headline FTA market access alone. The category most at risk inside India isn't just JSW and Tata Steel — it's the downstream auto and infra plays that priced the FTA into 2027 capex.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch for the India-specific quota carve-out negotiation to land before July 1; the size of the carve-out is the only thing that determines whether the FTA's sectoral logic survives. Track whether the EU follows with another safeguard tightening — that's the marker the China-overhang has fully redirected into the global tariff regime.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: neither side wants the deal to die, both are still negotiating, and the India-specific quota is a known instrument with a 12-month historical precedent. Chinese steel exports may also reverse as Beijing tightens domestic capacity through environmental rules; the UK action may turn out to be a 2026 spike rather than a regime shift.</em></div>
+    <a class="read-original" href="https://www.reuters.com/world/uk/indias-free-trade-deal-with-britain-hits-steel-hurdle-before-rollout-2026-05-15/" target="_blank">Read original (Reuters) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3e78d2ff50fde" target="_blank">Gmail source (Finshots)</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="macro geo markets" id="hormuz-petrodollar">
+  <div class="card-meta">
+    <span class="category-tag">MACRO · ENERGY · GEOPOLITICS</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">Weekly</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Adam Tooze on the Chartbook: American consumers have seen the biggest petrol-and-diesel price hike in the G7 since the start of the war on Iran — the "petrodollar dominance" frame is empirically backwards this cycle</div>
+  <div class="layer1">
+    <p>Chartbook Top Links (May 19, citing Gavekal Research and FT) makes the empirically uncomfortable observation: of all G7 economies, the US has seen the biggest hike in petrol and diesel prices since the onset of the war on Iran. Diesel-equipment-industry sources told the FT they were planning for $10/gallon diesel as a contingency, citing the operational problem that "the pumps and dispensers can't handle a number that high." Strait of Hormuz remains effectively closed. WTI traded $103 Tuesday after touching $108 Monday on no-strike comments from Trump; the structural overhang is the Asian importer redirect — Tooze flags that Asia is now physically buying the barrels the US once dominated, which is why US consumer pump prices spike harder than Asian ones during disruption. The petrodollar frame assumes the US is the price-setter; in 2026, Asia is.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two operator-grade reads. First, the empirical inversion of "the US dominates oil pricing" is a structural change that takes a full pricing cycle for desks to process — it has direct implications for Trump's domestic political ceiling on tolerating the Hormuz situation (60-90 days of $4+/gallon is the historical bound). Second, for any India-or-Canada operator running the $80-100 WTI base case, the Tooze framing says the new structural mid is the $90-110 range with much higher volatility, not the old $70-90 mid-cycle. INR at 96.34 and 10Y GoC at 3.70% are not transient — they are the early read of a higher-baseline-oil regime that hasn't fully priced.</div>
+    <div class="action-box"><strong>ACTION:</strong> Re-baseline oil-sensitive earnings models to a $95-100 WTI mid with $20+ vol bands. For the FX page, USD/INR 96-98 is the new working range until Hormuz unjams. Track Trump's domestic gas-price tracker — the pump price is the political clock.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: Hormuz tankers are still moving in reduced volume; OPEC+ spare capacity remains real; UAE has explicitly left OPEC+ formally and is pushing supply. The "Asian price-setter" frame may be an artifact of the war-driven dislocation, not a structural new world. The Trump no-strike rhetoric of May 18 is the most concrete de-escalation signal in six weeks, and if it sticks, oil reverts to $85-90 inside 30 days and the INR-GoC stress story reverses with it.</em></div>
+    <a class="read-original" href="https://adamtooze.substack.com/p/how-asia-trumped-the-petrodollar" target="_blank">Read original (Chartbook) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3fc4869fc96c2" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india ai" id="mythos-india-fintech">
+  <div class="card-meta">
+    <span class="category-tag">INDIA · AI · CYBERSEC</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">90–180 days</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">Inc42's "Mythos stress test" goes harder than the broader press — Indian banks still depend on manual triage, fragmented asset visibility, and slow vendor coordination, which the Anthropic model can ruthlessly exploit</div>
+  <div class="layer1">
+    <p>Inc42's feature on Indian fintechs and banks vs. Anthropic's Mythos puts a sharper edge on what last week's central-bank briefing implied. The Centre has urged top bankers to assess allied risks and is pushing faster threat-intelligence sharing with CERT-In; cybersecurity has been formally elevated to a national economic security category. But the operational reality Inc42 reports is that Indian banks still depend on manual triage, fragmented asset visibility, and slow vendor coordination — the exact failure modes a Mythos-class model is designed to exploit. The model can autonomously find and exploit software vulnerabilities; the Indian financial stack runs at a different cadence than the threat surface it now faces. Separately, Anthropic is briefing global central banks and financial regulators directly on the flaws Mythos has surfaced (per The Peak's "What's on our radar" line) — meaning the policy response is becoming international, not just Indian.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The under-priced angle for operators with India financial-services exposure: this is not a generic "cyber risk increased" story, it is a specific structural mismatch between a UPI-rails fintech stack built for scale-and-throughput and a threat model that rewards autonomous, surface-aware adversaries. The capex implication is real — Indian PSBs will be pushed to disclose cyber capex as a percent of IT budget at the next earnings cycle, and the model the Indian regulator picks (managed-vendor vs. capability-internal vs. specific-AI-cyber-tool) will determine which Indian SI/cyber firms get the multi-year revenue stream. Cross-border angle: the Anthropic central-bank briefing means whichever model becomes the standard for assessing AI-native cyber risk will be the same model the BoC, the Fed, and the ECB consume — there is an AI-cyber-policy emerging international consensus that any Canadian or Indian institution should pre-stage to.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch Q1 FY27 earnings calls from SBI, BoB, Canara, and PNB for explicit Mythos-or-AI-cyber-named capex lines. Track which Indian SIs (TCS, Wipro, Infosys, HCL, LTIMindtree) get named on PSB cyber outsourcing. Map this to Canadian and Australian PSB readiness as the policy template lands internationally.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: Anthropic's PR around Mythos has been heavy, and capability-claims about AI-native cyber exploits have historically been over-stated relative to the actual delivered tooling. Most Indian bank cyber capex will continue to go to compliance and audit theatre, not capability acquisition, because compliance is what Sitharaman and the RBI actually measure. The "Mythos forces transformation" thesis may be a story Anthropic likes to tell more than a story Indian banks intend to live.</em></div>
+    <a class="read-original" href="https://inc42.com/features/the-mythos-stress-test-can-indian-fintechs-banks-fend-off-ai-native-cyber-threats/" target="_blank">Read original (Inc42) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3e12bc95be566" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai" id="schmidt-booed">
+  <div class="card-meta">
+    <span class="category-tag">AI · SOCIAL · POLITICS</span>
+    <span class="trend-arrow down">↓</span>
+    <span class="time-horizon">6–24 months</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Eric Schmidt gets repeatedly booed at a commencement speech for praising AI — the third commencement-stage AI-rebuke in two weeks tells you the public-permission slope is tilting against the cycle</div>
+  <div class="layer1">
+    <p>Former Google CEO Eric Schmidt was "loudly and repeatedly booed" during a commencement address in which he talked up the potential of AI. "I know what many of you are feeling about that. I can hear you," he conceded. A commencement speaker in Florida was booed for calling AI "the next industrial revolution"; another in Tennessee told graduates to "deal with it" after being booed. ZipRecruiter survey: 47% of recent grads say AI is already impacting hiring in their fields. Canadian polling (last year): 61% see AI as a job/privacy/stability threat. The 18-29 cohort was historically the AI-friendly demographic; that's now eroding. Meta's reorg (above), the AI-attributed layoffs across tech, and the "AI replaces management" framing have made the public-sentiment cost of being a visible AI champion materially higher than it was 12 months ago.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Public sentiment shifts of this kind are slow-moving and asymmetric — they price into regulation 12-24 months later. The under-priced consequence for operators: the next wave of US state and Canadian provincial regulation around AI in hiring, education, and labour displacement will be more aggressive than the cycle's current consensus prices. For an India or Canada operator on the demand side of AI tooling (PCC enrollment, financial-services AI rollout, retail AI deployment), the social-permission-slope tilting against AI shows up as a higher friction cost on rollout — slower customer adoption, more vendor pushback, more board-level questioning. Worth a line item in 2026-2027 deployment plans.</div>
+    <div class="action-box"><strong>ACTION:</strong> Build "social-permission slope" into AI-rollout assumptions for both India and Canadian customer bases. Don't assume the 2024-2025 enthusiasm trajectory continues; expect higher friction on consumer-facing AI in 2026-2027. Watch for the first AI-specific labour-friendly state law in the US (California most likely) as the marker.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: commencement booing is theatre, not policy. Public-sentiment polls have lagged behind actual AI adoption rates throughout the cycle. Most consumer AI tools have grown subscriber bases double-digit through every "AI is bad" wave. The booing may be the loudest 5% — the silent majority is using ChatGPT daily.</em></div>
+    <a class="read-original" href="https://www.theverge.com/2026/05/18/eric-schmidt-commencement-booed-ai" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3faf07c8339ae" target="_blank">Gmail source (The Peak)</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="sedemac-q4">
+  <div class="card-meta">
+    <span class="category-tag">INDIA · DEEPTECH · LISTED EQ</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">12–24 months</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">SEDEMAC's Q4 net profit jumps 273% to ₹32 crore on 60% revenue growth — the listed deeptech ECU supplier to TVS, Bajaj and Hero quietly compounds while the public-market noise stays on AI names</div>
+  <div class="layer1">
+    <p>SEDEMAC Mechatronics reported a Q4 FY26 net profit of ₹32.1 crore (up 273% YoY) on operating revenue of ₹287.7 crore (up 60%), with EBITDA margins climbing to 21.3% from 16.1%. Mobility — TVS, Bajaj, Hero MotoCorp — is ~90% of revenue; annual ECU sales hit 39 lakh units (up 63%). Growth drivers: integrated starter-generator ECUs for ICE three-wheelers, deeper MCU penetration into 2W/3W EVs, and expansion into the North American genset market via electronic fuel injection ECUs. Capex push: new 1.2 lakh sq ft Chakan (Pune) plant begins shipments Q2 FY27; second 9,000 sq ft facility starts electric-machine shipments Q3; 13 acres acquired in Tamil Nadu's Shoolagiri for South India customer support.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> SEDEMAC is the kind of listed deeptech name that gets ignored when AI dominates the public-market narrative — but the operating-margin expansion and ECU unit volume put it on the trajectory analysts use to model Indian auto-component compounders. The structurally interesting part is the genset-ECU export push: every emerging market with grid instability (West Africa, Southeast Asia, parts of LatAm) is a long-cycle replacement market for distributed power, and Indian ECU suppliers have a real cost advantage. Worth a screener flag for the "operator-grade Indian listed-equity that isn't priced for AI" basket.</div>
+    <div class="action-box"><strong>ACTION:</strong> Run a Multibagger-framework screen on the listed Indian auto-component / deeptech compounders that have crossed 20% EBITDA margins with double-digit revenue growth and capex ahead of demand. SEDEMAC is the proof point; the basket is likely 8-12 names.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: 90% revenue concentration on two-wheeler OEMs (TVS, Bajaj, Hero) is structurally fragile — a single OEM volume reset cuts SEDEMAC's revenue 30% in one quarter. The North American genset push is real but small. And capex-ahead-of-demand stories in Indian auto-components have ended in margin compression before.</em></div>
+    <a class="read-original" href="https://inc42.com/buzz/sedemac-q4-profit-skyrockets-3-7x-to-32-cr-revenue-up-60-yoy/" target="_blank">Read original (Inc42) →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3e12bc95be566" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">Pentagon walks out of the 86-year-old defence board — Web Summit Vancouver delivers the Carney-era AI-infra script — and Canadian VC just printed its quietest quarter in nearly a decade.</div>
+
+  <div class="story-card" data-cat="canada geo" id="pjbd-pause">
+    <div class="card-meta">
+      <span class="category-tag">CANADA · DEFENCE · US RIFT</span>
+      <span class="trend-arrow down">↓</span>
+      <span class="time-horizon">Immediate</span>
+      <span class="decision-badge act">ACT</span>
+    </div>
+    <div class="card-title">Pentagon's Elbridge Colby suspends the 86-year-old Permanent Joint Board on Defence — citing Carney directly — and the Pentagon names Canada by name as "failing to make credible progress"</div>
+    <div class="layer1">
+      <p>Undersecretary of War for Policy Elbridge Colby announced on May 18 that the US is "pausing" participation in the Permanent Joint Board on Defence — the body that has coordinated Canada-US military consultation since 1940. "A strong Canada that prioritizes hard power over rhetoric benefits us all. Unfortunately, Canada has failed to make credible progress on its defense commitments," Colby wrote on X. Multiple outlets confirm the pause comes directly off Carney's Davos-era address calling for a "middle powers" coalition as a bulwark against US and Chinese influence — Colby called Carney's framing publicly. The withdrawal is described as "largely symbolic" because operational integrations (NORAD, RCAF coordination) continue. Notable irony: Ottawa hit NATO's 2% defence-spending target this year for the first time, which the Pentagon is choosing not to acknowledge in its rationale.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Operators with material Canadian exposure should treat this as the most public US-Canada relationship deterioration since the 2018 USMCA dispute. The integration that built North American air defence in 1940 is being unwound the same week the integration that builds compute markets is being welded shut globally. Direct consequence: the cabinet meeting at which Carney responds becomes a market event for the loonie. Second-order consequence: every Canadian operator with US supply-chain dependencies should pull forward the diligence on USMCA-protected vs. non-protected revenue lines, because the Pentagon withdrawal signals a Trump-administration willingness to use specific operational levers as bargaining chips even on items neither government officially considers in scope.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch the next Carney public statement (likely Wednesday); watch for an explicit Canadian counter-measure (tariff, procurement, or specific federal action) by end of June — the Prediction Board tracks this. For multibagger watchlists with US exposure: stress-test the cross-border revenue line against a 12-month tariff-bargaining regime where Carney is incentivized to demonstrate retaliation capability.</div>
+      <div class="contrarian">💭 <em>The version where this is wrong: PJBD has been largely advisory for decades; its pause is genuinely symbolic and operational NORAD continues. Carney has been actively cultivating the "middle powers" narrative precisely because he wants pressure points on the US — the Colby move may be the response Carney wanted, because it lets him pivot federal AI/industrial-policy spending toward sovereignty-themed line items without political cost.</em></div>
+      <a class="read-original" href="https://www.cbc.ca/news/politics/trump-canada-us-joint-defence-board-9.7203211" target="_blank">Read original (CBC) →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3faf07c8339ae" target="_blank">Gmail source (The Peak)</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada ai" id="web-summit-yvr">
+    <div class="card-meta">
+      <span class="category-tag">CANADA · AI · CAPITAL</span>
+      <span class="trend-arrow up">↑</span>
+      <span class="time-horizon">6–18 months</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">Web Summit Vancouver delivers the Carney-era AI-infra script — TELUS+Feds announce three BC AI data centres on Day 1, Photonic closes at $2B valuation, Nord Quantique prints $1.4B, and UniUni heads to TSX in a $1B USD SPAC</div>
+    <div class="layer1">
+      <p>Web Summit Vancouver concluded yesterday with a deliberate Carney-era industrial-policy showcase. On the opening day, the federal government and TELUS jointly announced three new AI data centres in BC — exactly the kind of "sovereign compute backbone" framing the Carney transcript has been pre-staging. Capital-markets confirmation: Vancouver-based Photonic closed the final tranche of its $200M USD round at a $2B valuation; Sherbrooke-based Nord Quantique hit a $1.4B USD valuation and appointed a CFO with IPO experience; Richmond BC's UniUni is reportedly heading to the TSX via a $1B USD SPAC deal. Xanadu posted its first earnings report — bigger net loss than expected but revenue quadrupled. The Carney-AI-infrastructure thesis acquires four named-deal data points in five days.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> This is the operational thickening of the Carney AI-infrastructure-backbone thesis. The combination of federal+TELUS DC announcements, $2B and $1.4B private valuations in BC and Quebec quantum, and a TSX-anchored SPAC route for a BC last-mile-logistics company is the kind of cluster a national industrial policy generates when it is working — multiple categories firing in the same week, all near a flagship event the prime minister is staking on. The PJBD rupture (above) and this cluster are the same story told in two directions: the political integration with the US fraying as Canada doubles down on domestic industrial capacity. The third pool of compute is taking national-asset form in real time.</div>
+      <div class="action-box"><strong>ACTION:</strong> Map the named names (Photonic, Nord Quantique, UniUni, Xanadu) against any Multibagger watchlist with quantum or photonics exposure. Track the TELUS+Feds DC announcement for downstream pipeline tenders. Watch whether the Major Projects Office surfaces a coordinated AI-infrastructure category at the next federal fiscal update.</div>
+      <div class="contrarian">💭 <em>The version where this is wrong: Canadian VC just printed its lowest quarterly deal count in nearly a decade (next card) — these large headline rounds may be exceptions concentrated in a few names, not a broad-based capital revival. Government+TELUS DC announcements have a long history of being announced grandly and then absorbed into existing TELUS capex. And Web Summit deliberately concentrates announcements in its host week, so the cluster may be timing rather than signal.</em></div>
+      <a class="read-original" href="https://betakit.com/photonic-secures-2-billion-usd-valuation-after-final-close-of-200-million-financing/" target="_blank">Read original (BetaKit) →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3d7be78ec845e" target="_blank">Gmail source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada markets" id="cvca-q1-bottom">
+    <div class="card-meta">
+      <span class="category-tag">CANADA · VC · CAPITAL FORMATION</span>
+      <span class="trend-arrow down">↓</span>
+      <span class="time-horizon">Quarterly</span>
+      <span class="decision-badge watch">WATCH</span>
+    </div>
+    <div class="card-title">Canadian VC just printed its lowest quarterly deal count in nearly a decade — CVCA's David Kornacki says growth-stage capital has effectively vanished, and the path back may run through the public markets</div>
+    <div class="layer1">
+      <p>The CVCA's Q1 2026 quarterly report shows Canadian VC concentrating into fewer players, with early-stage rounds taking the largest share and growth-stage rounds receiving "next to nothing." Director of data David Kornacki: this concentration "hasn't really happened before." His read: private companies may start turning to international capital or the public markets for next-stage growth. The early proof points are already moving — Xanadu hit public markets this year, General Fusion and Juno Industries are preparing to list, and UniUni's $1B USD SPAC deal (above) is on the TSX. The CVCA's deal count number is the formal version of what every Canadian growth-stage founder has been saying privately for 18 months — the growth round is gone.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Canadian public-markets-as-growth-capital hypothesis is now structurally tested. If 2026 prints a wave of TSX IPOs and SPACs for Canadian growth-stage companies that ran out of private growth options, the policy implication is that Ottawa's industrial-policy push (CPFC privatisation, Photonic Valley framing, BC data-centre announcements) needs a public-markets capital-formation track to actually work. Most operator-grade reading: a thin private growth market and a thickening public-listing track means Canadian operators with optionality should size for an earlier-than-planned exit through the public markets, and Canadian capital allocators should map the next wave of TSX IPO candidates as both opportunity and indirect signal on what the underlying business climate is actually doing.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track the TSX/TSXV new-listings pipeline for Q3-Q4 2026; the velocity will tell you whether the public-markets-as-growth-track thesis is real. Watch Canadian growth-stage names with $50M+ ARR and frustrated capital tables — UniUni's path is the new template.</div>
+      <div class="contrarian">💭 <em>The version where this is wrong: thin VC quarters historically reverse fast when a single fund announces a fresh raise. Canadian growth-stage capital flight to the US is a long-running trend that the CVCA print mostly confirms rather than introduces. SPAC deals in 2024 had a high failure rate post-close; UniUni's framing as "$1B USD SPAC" is a target valuation, not a deal closed.</em></div>
+      <a class="read-original" href="https://betakit.com/canadian-vc-sees-lowest-quarterly-deal-count-in-nearly-a-decade/" target="_blank">Read original (BetaKit) →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e3d7be78ec845e" target="_blank">Gmail source</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-label">Opportunity Board</div>
+
+<div class="story-card" data-cat="markets ai" id="opp-compute-rails">
+  <div class="card-meta">
+    <span class="category-tag">OPPORTUNITY · AI INFRA FINANCING</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">6–18 months</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">If compute futures clear at ICE, the first wave of derivative beneficiaries are the GPU lessors and the project-finance desks — the second wave is the sovereign-AI dollar-curve borrowers</div>
+  <div class="layer1">
+    <p>The Ornn-ICE listing creates a tradable forward compute curve. Direct beneficiaries when the curve goes live: the listed and pre-IPO GPU rental shops (CoreWeave, Lambda, and the Cerebras-anchored capacity) whose spread over a cleared OCPI becomes a marketable number — and the project-finance desks at Goldman, JPM, BNP, Crédit Agricole, and the European AAA energy-finance specialists who can write hedged datacenter loans. Indirect beneficiaries: every sovereign-AI buildout whose financing required an "unhedged compute spread" line item — UAE-India Cerebras axis, Saudi PIF infrastructure stack, the Canadian Photonic-and-DC announcements above, French sovereign-AI pushes.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two operator-grade plays. First, public-market GPU lessors get a structural re-rating once the curve clears — the cleared-spread becomes the multiple. Second, the project-finance equity in the early hedged-compute datacenter deals will print outsized IRRs on the same dynamic that early hedged-energy infrastructure deals did in the 1990s — knowing the forward curve was the alpha, not the building. Worth watching for the first ICE-cleared-compute-hedged datacenter loan as the canonical pricing event.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track CoreWeave, Lambda, and Cerebras share-price action against forward-OCPI prints once the curve goes live. Map the sovereign-AI debt issuance pipeline (Saudi PIF, ADQ, CDPQ-like Canadian pools) — the first index-referenced AI infrastructure bond is the canonical mark.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: cleared OCPI may concentrate, not democratise, AI infra financing — only the largest borrowers will hedge at scale, killing the long-tail of smaller plays. A regulator-approval delay of 6-12 months could neuter the listing's window of relevance.</em></div>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="opp-india-steel">
+  <div class="card-meta">
+    <span class="category-tag">OPPORTUNITY · INDIA · STEEL/COAL</span>
+    <span class="trend-arrow flat">→</span>
+    <span class="time-horizon">12–36 months</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">India's coal-gasification bet (Rs 37,500 crore, May 13 cabinet) plus the steel-capacity ramp (160 → 300 million tonnes) plus the UK FTA carve-out is the same trade in three forms — domestic resource sovereignty, priced for protectionist friction</div>
+  <div class="layer1">
+    <p>India's resource-sovereignty trade compounds the May 13 coal-gasification cabinet decision (Rs 37,500 crore committed for Jindal-style domestic gasification plants), the 2030 steel-capacity target (160 to 300 million tonnes), and the UK FTA steel-safeguard fight (above). All three are different expressions of the same operator-grade thesis: India is structurally building toward domestic primary-energy and primary-materials capacity on a 5-10 year horizon, against a global tariff regime that gets stricter not looser. The exposure-vehicles split into three buckets: (1) listed steel — JSW, Tata Steel, SAIL — with the FTA carve-out as the binary; (2) capex-cycle infra plays — L&amp;T, Siemens India — with the coal-gasification rollout as the timing; (3) downstream consumer-of-steel beneficiaries — auto OEMs, infra-construction — with the import substitution thesis as the multi-year tailwind.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The operator-grade angle is that the resource-sovereignty trade is not "buy steel because oil is up." It is "size the domestic primary-materials build into a 5-10 year horizon where every major Indian sectoral capex is structurally being pulled toward import substitution, and the FX-and-tariff regime is making that pull cheaper not more expensive." The right basket is not the obvious bulk-commodity plays; it is the infra-builder leverage to the multi-decade capex.</div>
+    <div class="action-box"><strong>ACTION:</strong> Run a Multibagger-framework screen on Indian capex-builder names with explicit coal-gasification, steel-capacity, and FTA-import-substitution revenue exposure. JSW Energy, L&amp;T, Cummins India, and Siemens India are the obvious starting points.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: India's domestic capex cycle has been "about to compound" for three decades and has consistently disappointed timeline. Coal gasification specifically has had one convincing success (Jindal) and many false starts. The tariff regime may also reverse if the WTO-led architecture re-asserts itself in 2027-2028.</em></div>
+    <a class="read-original" href="https://the-ken.com/story/indias-rs-37500-crore-coal-bet" target="_blank">Read original (The Ken) →</a>
+  </div>
+</div>
+
+<div class="section-label">Also on Radar</div>
+
+<div class="story-card" data-cat="geo" id="doj-fund">
+  <div class="card-meta">
+    <span class="category-tag">US POLICY · DOJ</span>
+    <span class="trend-arrow flat">→</span>
+    <span class="time-horizon">12–24 months</span>
+    <span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">DOJ creates an unprecedented $1.776B "anti-weaponization" fund as part of the Trump-IRS settlement — Democrats call it a slush fund, Acting AG Blanche calls it "lawful redress for victims of weaponization"</div>
+  <div class="layer1">
+    <p>As part of resolving President Trump's $10B lawsuit against the IRS over a contractor's leak of his tax returns, the DOJ has set up a $1.776B fund to compensate people who claim they were "targeted by the department under President Biden." Acting AG Todd Blanche framed it as "a lawful process for victims of lawfare and weaponization to be heard and seek redress." Democrats and critics frame it as a politically-directed payout to Trump allies, including January 6 participants. The "$1.776 billion" figure is deliberately rhetorical. The structure raises immediate questions about DOJ independence and the precedent for using settlement proceeds as a political-grievance fund.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The fund is the kind of US-institutional-norm marker that's worth tagging for operators with US legal or counterparty exposure — every subsequent administration will have a template for using DOJ settlement proceeds as a directed political mechanism. The market-relevance is muted in the immediate term but the rule-of-law-discount on US institutional risk should be ratcheted up incrementally for any operator pricing long-cycle US infrastructure or financial-services exposure.</div>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="npci-soundbox">
+  <div class="card-meta">
+    <span class="category-tag">INDIA · FINTECH · UPI</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">6–18 months</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">NPCI builds an interoperable Unified Soundbox infrastructure for merchants — one device accepts QR payments from any provider, ending the Paytm/PhonePe/Google Pay device-fragmentation tax</div>
+  <div class="layer1">
+    <p>The National Payments Corporation of India is building a common interoperable infrastructure for UPI soundboxes. Today merchants need separate devices for each provider (Paytm, PhonePe, Google Pay); the NPCI rollout means one device accepts payment from any QR code on the UPI network. The merchant-benefit story is obvious. The fintech-revenue-impact story is less obvious — soundbox rental fees are a meaningful recurring revenue line at Paytm and PhonePe, and an NPCI-built interoperability layer commoditises the device. The structural read is the same as every UPI-layer interoperability decision: NPCI is willing to compress private-sector economics if it accelerates merchant inclusion.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> For any India fintech model that depends on closed-ecosystem device economics, this is a margin-line event 6-12 months out. For the broader operator-thesis on India fintech, this is more confirmation that NPCI will repeatedly commoditise the private layer to expand the public rails — a structural reason any India-fintech IPO multiple should clear at a discount to global SaaS or payments comparables.</div>
+    <a class="read-original" href="https://inc42.com/buzz/npci-to-roll-out-unified-soundbox-infrastructure-for-merchants-report/" target="_blank">Read original (Inc42) →</a>
+  </div>
+</div>
+
+<div class="section-label">Quick Hits</div>
+
+<div class="quick-hits">
+  <ul>
+    <li><strong>Sinocism (Bishop)</strong> reads the Beijing summit communique as "constructive relationship of strategic stability" — and the implicit Taiwan-arms pause as the structural concession Trump made on the way home — <em>which is why the $14B Taiwan arms decision (due May 31) is the next test of whether Xi got an unwritten win.</em></li>
+    <li><strong>ChinaTalk reads Trump-Xi through Cold War history</strong> — the "Prestige on the Cheap" framing of the joint communique implies Beijing got the Taiwan-arms freeze for soybeans and Boeing orders — <em>tells you the next 90 days of US semis-and-AI policy will run through the Iran-rare-earth-minerals annex rather than Taiwan.</em></li>
+    <li><strong>Jensen Huang (Peak)</strong> says he expects Beijing will open the Chinese market to American chips — <em>which contradicts USTR Greer's "chip export controls not on agenda" read; either Jensen is reading a separate diplomatic track, or the post-summit signalling is incoherent on purpose.</em></li>
+    <li><strong>Three killed at the Islamic Center of San Diego</strong> in an attack by two teenage gunmen who then killed themselves — <em>a security guard's intervention prevented "much worse," per SDPD; the most direct AI-cycle relevance is the political weather around domestic stability that conditions Trump's bandwidth on Iran and Canada simultaneously.</em></li>
+    <li><strong>Lululemon proxy fight escalates</strong> as Chip Wilson nominates three directors and the company writes investors to vote against — <em>LULU stock down 43% YTD; the proxy is real because the business is in real trouble, not because Wilson is being colourful.</em></li>
+    <li><strong>Anthropic to brief global central banks and financial regulators</strong> on the cybersecurity flaws exposed by Mythos (Peak radar line) — <em>the international policy track for AI-native cyber is being built before any single country has settled on a domestic response.</em></li>
+    <li><strong>Cellogen Therapeutics raises $2M from Kotak Alternate Asset Managers</strong>; CAR-T platform targets $60-70K pricing vs. global $500K — <em>the India-priced cell-therapy thesis has a real proof point now, and Phase I trials at CMC Vellore are the next gate.</em></li>
+    <li><strong>Shadowfax turns profitable in Q4 FY26</strong> alongside record top-line, plans 100-dark-store quick-commerce expansion — <em>another Indian logistics name pivoting from parcel-only to full-stack operating system; the consolidation that's been telegraphed for 18 months is finally printing.</em></li>
+  </ul>
+</div>
+
+<div class="section-label">The Long Game</div>
+
+<div class="long-game">
+  The slow-burn story I keep coming back to this week is what happens when the financial architecture of the AI cycle finishes hardening (Ornn-ICE today, OpenAI IPO clearance via the Musk verdict, NextEra-Dominion as the utility-side anchor) inside a political architecture that is actively coming apart (Pentagon-PJBD, Hormuz unresolved, Carney-Trump tension, the social-permission slope tilting against AI). Every cycle's middle innings has this shape — the capital structure forms faster than the institutional structure can absorb. The 2008 mortgage cycle was the canonical recent example. The compute cycle of 2026 is heading toward that same misalignment: a financial infrastructure that allows AI infrastructure to be financed at scale, inside a political environment that is increasingly hostile to the social cost. The most interesting trade in 2027-2028 may not be long or short the cycle — it may be the spread between the financial pricing and the political pricing.
+</div>
+
+<div class="section-label">Coverage Scorecard</div>
+
+<div class="scorecard">
+<table>
+  <tr><td>Senders read (Tier 1)</td><td>6 of 7</td></tr>
+  <tr><td>Senders read (Tier 2 + 2.5 Canada)</td><td>4 of 4 (Globe/FP not yet arriving)</td></tr>
+  <tr><td>Senders read (Tier 5 China-lens)</td><td>4 of 7 (Innermost Loop, Chartbook, ChinaTalk, Sinocism)</td></tr>
+  <tr><td>Tier 5 disposition</td><td>Innermost Loop = LEAD/Spotlight (active thread match); Chartbook = Signal Board card; Sinocism + ChinaTalk = Quick Hits</td></tr>
+  <tr><td>Theme rotation check vs prior 2 editions</td><td>LEAD topic = compute futures (NEW); prior LEADs = Cerebras-UAE-India (May 18), Taiwan arms (May 17). Decision: NEW.</td></tr>
+  <tr><td>India stories (Signal Board + Opp + QH)</td><td>5 (Mythos-fintech, FTA-steel, SEDEMAC, NPCI Soundbox, Coal-gasification opp, Cellogen, Shadowfax)</td></tr>
+  <tr><td>Canada stories (Canadian File + QH)</td><td>4 (PJBD pause, Web Summit YVR, CVCA Q1, Lululemon proxy)</td></tr>
+  <tr><td>Web searches (verification + links)</td><td>9</td></tr>
+  <tr><td>Story cards featured</td><td>13 + 8 Quick Hits</td></tr>
+  <tr><td>New predictions filed</td><td>2 (Ornn-ICE CFTC approval; Canadian counter-measure to PJBD)</td></tr>
+</table>
+</div>
+
+<footer>The Brief · Edition #179 · May 19, 2026 · Curated for Suhail Seth · Generated by The Brief automation</footer>
+</div>
+
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
