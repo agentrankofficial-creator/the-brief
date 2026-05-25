@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>The Brief · Edition #186 · May 25, 2026 (Morning)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.55;padding:0}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 22px 80px}
+header.brief-header{border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:32px}
+.tagline-band{font-family:var(--font-ui);color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase}
+h1.brief-title{font-family:var(--font-ui);font-weight:900;font-size:42px;margin:8px 0 12px;letter-spacing:-1px}
+.brief-meta{font-family:var(--font-ui);color:var(--dim);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.brief-subtag{font-family:var(--font-body);color:var(--muted);font-style:italic;font-size:16px;margin-top:14px;max-width:780px}
+.nav-pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:18px;color:var(--muted);cursor:pointer;background:transparent}
+.nav-pill.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.editors-read{background:linear-gradient(180deg,#15151a 0%,#0e0e12 100%);border:1px solid var(--accent);border-left:3px solid var(--accent);border-radius:10px;padding:26px 28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.er-byline{font-family:var(--font-ui);color:var(--dim);font-size:11px;letter-spacing:1px;margin-bottom:18px}
+.er-body{font-size:17px;line-height:1.65;color:var(--text)}
+.er-body p{margin:0 0 14px}
+.er-body strong{color:#fff}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid #facc15;border-radius:10px;padding:22px 26px;margin-bottom:32px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#facc15;margin-bottom:10px}
+.ss-claim{font-size:19px;line-height:1.45;color:#fff;font-weight:700;margin-bottom:14px;font-family:var(--font-ui)}
+.ss-reasoning{color:var(--muted);font-size:15px;line-height:1.6}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;color:var(--dim);margin-top:12px;text-transform:uppercase}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;display:inline-block}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:32px}
+.market-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:var(--font-ui)}
+.mc-label{font-size:10px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;margin-bottom:4px}
+.mc-value{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.mc-change{font-size:11px}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.canadian-tile{border-color:#7f1d1d}
+.section-h{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin:36px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.connection-strip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.chain{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;color:var(--muted);padding:5px 10px;background:#1c1c20;border-radius:4px}
+.chain strong{color:#fff}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin-bottom:14px}
+.story-card.lead{border-left:3px solid var(--accent);background:#16161a}
+.canadian-file .story-card{border-left:3px solid #b91c1c}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-family:var(--font-ui)}
+.category-tag{font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:2px 8px;border:1px solid var(--accent);border-radius:3px}
+.trend-arrow{font-size:13px}
+.time-horizon{font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.decision-badge{font-size:10px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:3px}
+.decision-badge.act{background:rgba(224,82,82,.18);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.18);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.18);color:var(--muted);border:1px solid var(--muted)}
+.card-title{font-family:var(--font-ui);font-size:18px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:12px}
+.story-card.lead .card-title{font-size:22px}
+.layer1 p{margin:0 0 12px;font-size:15px;color:var(--text);line-height:1.6}
+.so-what,.action-box,.contrarian{padding:10px 12px;border-radius:5px;margin-bottom:10px;font-size:14px;line-height:1.55}
+.so-what{background:rgba(74,222,128,.06);border-left:2px solid var(--green)}
+.so-what strong{color:var(--green);font-family:var(--font-ui);letter-spacing:1px;font-size:11px}
+.action-box{background:rgba(200,160,48,.07);border-left:2px solid var(--accent)}
+.action-box strong{color:var(--accent);font-family:var(--font-ui);letter-spacing:1px;font-size:11px}
+.contrarian{background:rgba(224,82,82,.06);border-left:2px solid var(--red);color:var(--muted);font-style:italic}
+.contrarian em{color:#fff;font-style:italic}
+.read-original{display:inline-block;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;color:var(--accent);text-decoration:none;margin-right:14px;margin-top:6px;text-transform:uppercase}
+.read-original:hover{text-decoration:underline}
+.deep-dive-btn{margin-top:10px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;font-family:var(--font-ui);font-size:11px;letter-spacing:1px;border-radius:4px;cursor:pointer;text-transform:uppercase}
+.layer2{display:none;margin-top:14px;padding:12px 14px;background:#0c0c10;border-radius:5px;font-size:14px;color:var(--muted);line-height:1.6}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.connection-chip{font-family:var(--font-ui);font-size:10px;color:var(--dim);background:#1c1c20;padding:3px 8px;border-radius:3px;cursor:pointer}
+.canadian-file{background:linear-gradient(180deg,#1a0e0e 0%,#0e0e12 100%);border:1px solid #7f1d1d;border-radius:10px;padding:22px 24px;margin-bottom:24px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#ef4444;margin-bottom:6px}
+.cf-subtitle{color:var(--muted);font-style:italic;font-size:15px;margin-bottom:18px;line-height:1.55}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:18px}
+.quick-hits ul{margin:0;padding-left:20px}
+.quick-hits li{font-size:14px;color:var(--muted);margin-bottom:8px;line-height:1.55}
+.quick-hits li strong{color:#fff}
+.long-game{background:#0e0e12;border:1px solid var(--border);border-left:3px solid #a78bfa;padding:18px 22px;border-radius:8px;margin-bottom:18px;font-style:italic;color:var(--muted);font-size:15px;line-height:1.6}
+.long-game .lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;color:#a78bfa;text-transform:uppercase;font-style:normal;margin-bottom:8px;display:block}
+.scorecard{font-family:var(--font-ui);font-size:12px;color:var(--muted);background:#0e0e12;border:1px solid var(--border);padding:16px 18px;border-radius:6px}
+.scorecard h4{font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin:0 0 10px;font-weight:700}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sc-grid div span{color:#fff;font-weight:700}
+.hidden{display:none}
+@media (max-width:780px){.markets-grid{grid-template-columns:repeat(3,1fr)}h1.brief-title{font-size:32px}.sc-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="brief-header">
+<div class="tagline-band">EDITION #186 · MORNING · MAY 25, 2026</div>
+<h1 class="brief-title">THE BRIEF</h1>
+<div class="brief-meta">A personal daily intelligence digest · Suhail Seth</div>
+<div class="brief-subtag">Warsh takes the chair at the White House — the first Fed swearing-in there since Greenspan in 1987 — and the bond market is already broken. Anthropic-Microsoft Maia 200 talks open a fourth-vendor compute lane. Xi's "strategic stability" framework is the actual deliverable of the Beijing summit. The Canadian File leads with TSX at an all-time high while 10Y GoC pulls back from its peak.</div>
+<div class="nav-pills">
+<button class="nav-pill active" onclick="filterStories('all',this)">All</button>
+<button class="nav-pill" onclick="filterStories('macro',this)">Macro</button>
+<button class="nav-pill" onclick="filterStories('markets',this)">Markets</button>
+<button class="nav-pill" onclick="filterStories('ai',this)">AI &amp; Tech</button>
+<button class="nav-pill" onclick="filterStories('india',this)">India</button>
+<button class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</button>
+<button class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</button>
+<button class="nav-pill" onclick="filterStories('crypto',this)">Crypto</button>
+</div>
+</header>
+<div class="editors-read">
+<div class="er-label">EDITOR'S READ</div>
+<div class="er-byline">Suhail Seth · May 25, 2026 · Morning</div>
+<div class="er-body">
+<p><strong>Kevin Warsh was sworn in as Fed chair on Friday in the East Room of the White House — the first time a Fed chair has been sworn in there since Alan Greenspan in 1987.</strong> Clarence Thomas administered the oath. Trump spoke at length. The optics were not subtle, and they were not meant to be. Janet Yellen and Jerome Powell were sworn in quietly at the Eccles Building by fellow governors. Warsh was sworn in under a chandelier, with the president of the United States standing two feet to his left talking about "greatness." That setting choice is not stagecraft. It is a policy signal.</p>
+<p>And it lands into a bond market that was already broken before he picked up the gavel. The 30-year UST hit 5.197% on May 19 — a 19-year high — before settling back to 5.07%. Long bonds in the US, Japan, the UK and France all moved out of duration simultaneously last week. Barclays' Ajay Rajadhyaksha called it "get me out of duration" in four different political systems at once. The Iran-war fiscal repricing, the Bloom-Groshen estimate that the McEntarfer firing already cost the US economy $100B and 168,000 jobs by destroying confidence in BLS data, and the chronic G7 debt overhang are all pulling in the same direction. Warsh inherits a Fed where the long end is voting against the institution before he has held a single meeting.</p>
+<p><strong>Here is the cross-reference I think nobody is making yet.</strong> Anthropic's reported Microsoft Maia 200 talks (announced May 21, no deal yet) are the AI-cycle analogue of Warsh's swearing-in. Both are signals that a single point of leverage — Powell at the Fed, Nvidia in compute — is being engineered around because the institution can no longer be relied on to set the price. Anthropic now wants TSMC/Nvidia (training) + Amazon Trainium (Rainier) + Google TPU + Microsoft Maia 200 — four silicon sources for one model. That is the Larry Fink "compute as a futures category" thesis showing up not at the exchange yet, but on the procurement side first. If you are an AI lab, you are now hedging vendor risk the way a sovereign hedges currency risk. The Brief's compute-as-scarce-factor thesis is no longer aspirational — it is the operating regime.</p>
+<p><strong>India and Canada read this the same way.</strong> Both are EM-adjacent currencies tied to a Fed chair who has no room to either cut (oil shock + bond breakout) or hike (US labour market softening, eight straight S&amp;P weekly gains masking real-economy stress). USD/INR closed 95.59 on Friday — recovered from the record-low 97.15 on May 19 only because RBI sold dollars all week and has a $5B 3-year swap auction announced for Tuesday May 26. USD/CAD touched 1.38195 the same day, on the same Dollar/oil dynamic. Both central banks have meetings inside the next 17 days (RBI swap settlement May 26, BoC June 10). Both have to decide whether to defend the currency, defend growth, or accept that under a politicised Fed they don't get to pick.</p>
+<p><strong>What I am watching for next:</strong> Warsh's first FOMC is June 16-17. The market is already speculating he may have to hike, not cut, despite Trump bringing him in explicitly for cuts. If that's how it plays — Warsh raising rates from the chair Trump installed him in 25 days earlier — that is the cleanest possible signal that the post-2008 central-bank-as-policy-tool era is over. The new regime is: compute, oil, debt, and the dollar all repriced against political control. Anthropic, RBI and BoC are running the same hedging playbook on a different axis each.</p>
+</div>
+</div>
+
+<div class="signal-spotlight">
+<div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+<div class="ss-claim">Anthropic's Maia 200 talks with Microsoft are not a compute story — they are the first visible move of a frontier lab pricing its silicon supply chain the way a sovereign hedges currency risk. Four vendors for one model.</div>
+<div class="ss-reasoning">The Information reported Wednesday May 21 that Anthropic is negotiating to adopt Microsoft's Maia 200 — a TSMC-3nm chip with 216GB of HBM3e, launched January 2026 but never offered to external Azure customers. If signed, Anthropic becomes Microsoft's first major Maia customer and Anthropic's fourth silicon partner alongside Nvidia (training via TSMC), Amazon Trainium (Project Rainier inference), and Google TPU. Dario Amodei has publicly admitted "difficulties with compute." Pair this with The Ken's reporting Saturday that Uber's entire 2026 AI R&amp;D budget was burnt on Claude Code in four months, and the picture is clear: even the labs are now running multi-vendor compute-hedge strategies, because no single foundry-tier supplier can supply the Claude run-rate. The "compute as a new futures category" thesis is showing up first on the procurement side, not the exchange side. Watch which Indian or Canadian sovereign-stack entity tries to plug into this hedging logic first.</div>
+<div class="ss-horizon">Time horizon: 3–9 months</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+<div class="pb-label">🎯 PREDICTION BOARD — 5 Most Recent</div>
+<table class="pb-table">
+<thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>#185</td><td>30Y UST closes above 5.25% on at least one day before Jul 31 — second leg of G7 duration unwind.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#185</td><td>One of MSFT/GOOG/META/AMZN publicly announces a Claude/Copilot "AI tool cost cap" by Jul 31.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#184</td><td>Federal-equity playbook extends to a 4th sector (robotics/photonics/biotech/energy storage) by Jul 20.</td><td>Jul 20, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#184</td><td>Alberta separation-precursor ballot question fails by ≥30 pts on Oct 19.</td><td>Oct 20, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#183</td><td>FOMC under Warsh produces a 3+ dissent decision within 60 days of his May 22 swearing-in.</td><td>Jul 21, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-h">Global Markets · Friday May 22 Close</div>
+<div class="markets-grid">
+<div class="market-cell"><div class="mc-label">S&amp;P 500</div><div class="mc-value">7,473.47</div><div class="mc-change up">↑ +0.37% · 8W streak</div></div>
+<div class="market-cell"><div class="mc-label">Nasdaq</div><div class="mc-value">26,343.97</div><div class="mc-change up">↑ +0.19%</div></div>
+<div class="market-cell"><div class="mc-label">Dow Jones</div><div class="mc-value">50,579.70</div><div class="mc-change up">↑ +0.59% · ATH</div></div>
+<div class="market-cell"><div class="mc-label">Nikkei 225</div><div class="mc-value">63,339.07</div><div class="mc-change up">↑ +2.68%</div></div>
+<div class="market-cell"><div class="mc-label">Hang Seng</div><div class="mc-value">25,606.03</div><div class="mc-change up">↑ +0.86%</div></div>
+<div class="market-cell"><div class="mc-label">Nifty 50</div><div class="mc-value">23,719.30</div><div class="mc-change up">↑ +0.27%</div></div>
+<div class="market-cell"><div class="mc-label">Sensex</div><div class="mc-value">75,415.35</div><div class="mc-change up">↑ +0.31%</div></div>
+<div class="market-cell canadian-tile"><div class="mc-label">🍁 TSX Composite</div><div class="mc-value">34,471</div><div class="mc-change up">↑ +0.2% · ATH 34,575 intraday</div></div>
+<div class="market-cell"><div class="mc-label">USD/INR</div><div class="mc-value">95.59</div><div class="mc-change up">↓ from 97.15 low</div></div>
+<div class="market-cell canadian-tile"><div class="mc-label">🍁 USD/CAD</div><div class="mc-value">1.382</div><div class="mc-change down">↑ CAD weakening</div></div>
+<div class="market-cell"><div class="mc-label">WTI Crude</div><div class="mc-value">$96.60</div><div class="mc-change down">↓ -8% on week</div></div>
+<div class="market-cell"><div class="mc-label">Gold</div><div class="mc-value">$4,509.63</div><div class="mc-change down">↓ -0.58%</div></div>
+<div class="market-cell"><div class="mc-label">Bitcoin</div><div class="mc-value">$77,289</div><div class="mc-change flat">→ flat on week</div></div>
+<div class="market-cell"><div class="mc-label">10Y UST</div><div class="mc-value">4.56%</div><div class="mc-change down">↓ -3 bps · 30Y at 5.07%</div></div>
+<div class="market-cell canadian-tile"><div class="mc-label">🍁 10Y GoC</div><div class="mc-value">3.53%</div><div class="mc-change down">↓ from 3.74% peak</div></div>
+</div>
+<div class="market-cell" style="margin-bottom:24px;display:inline-block"><div class="mc-label">VIX</div><div class="mc-value">16.70</div><div class="mc-change down">↓ -0.36% · complacent under bond stress</div></div>
+
+<div class="section-h">Story Connection Map</div>
+<div class="connection-strip">
+<span class="chain"><strong>WARSH SWORN IN</strong> → BOND BREAKOUT → DOLLAR FLOOR → INR/CAD STRESS</span>
+<span class="chain"><strong>ANTHROPIC × MICROSOFT</strong> → MAIA 200 → 4-VENDOR COMPUTE-HEDGE</span>
+<span class="chain"><strong>BEIJING SUMMIT</strong> → STRATEGIC STABILITY 3Y → BOEING 200 + NVIDIA H200</span>
+<span class="chain"><strong>WTI -8% WEEK</strong> → IRAN "FINAL STAGES" → RBI/BOC RATE PATH</span>
+<span class="chain"><strong>HBM 52→63%</strong> → AI KILLS CHEAP SMARTPHONE → SHIPMENTS -13%</span>
+</div>
+<div class="section-h">The Lead</div>
+<div class="story-card lead" data-cat="macro markets" id="warsh-lead">
+<div class="card-meta"><span class="category-tag">MACRO</span><span class="trend-arrow">↑</span><span class="time-horizon">3–12 month regime</span><span class="decision-badge act">ACT</span></div>
+<div class="card-title">Warsh sworn in at the White House — the first Fed swearing-in there since Greenspan in 1987 — and the bond market broke before he picked up the gavel</div>
+<div class="layer1">
+<p>Kevin Warsh took the oath of office Friday May 22 from Supreme Court Justice Clarence Thomas in the East Room of the White House, replacing Jerome Powell as chair of the Federal Reserve. Trump gave lengthy political remarks at the ceremony. The Senate confirmed Warsh 54-45 on May 13 on a near-party-line vote; only Senator John Fetterman (D-PA) crossed over. The last Fed chair sworn in at the White House was Alan Greenspan, four decades ago. The two most recent chairs were sworn in quietly at the Eccles Building. Warsh's first FOMC is June 16-17. He inherits a 30-year UST that hit a 19-year high of 5.197% just three days before his ceremony, and a synchronised four-country (US/UK/Japan/France) long-bond unwind that Barclays' Ajay Rajadhyaksha called "get me out of duration" in four political systems at once.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The setting choice — White House, presidential remarks, partisan oath-giver — is itself the policy signal: Fed independence is now a contested rather than assumed condition. For Indian importers and Canadian exporters, the implication is the same: the Dollar floor is being set by political dynamics, not data dynamics. INR/CAD vol gets structurally higher. For a multi-jurisdiction operator, currency hedge cadence shortens from quarterly to monthly.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch the June 16-17 FOMC for the first dissent count. Three or more dissents is the regime-change signal. A unified hold or cut means Warsh has consolidated; a fragmented decision means the Fed is now operating like the ECB at its worst.</div>
+<div class="contrarian">💭 <em>The bear case: Warsh has historically been a hawk, has criticised QE since 2010, and is on record opposing the Powell rate cuts of late 2024. If he comes in and holds — or hikes — that is not "politicisation," it is the most orthodox Fed chair in 25 years correcting an over-easy stance. The optics are political; the policy may be the cleanest restoration of pre-Bernanke central banking the market has seen.</em></div>
+<a class="read-original" href="https://www.cnn.com/2026/05/22/economy/kevin-warsh-sworn-in-fed-chair" target="_blank">CNN →</a>
+<a class="read-original" href="https://www.cnbc.com/2026/05/22/trump-kevin-warsh-fed-chair-interest-rates.html" target="_blank">CNBC →</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+<div class="layer2">
+<p><strong>What the ceremony venue actually means:</strong> Greenspan was sworn in at the White House in 1987 by Reagan. That was the last time. Yellen (2014) and Powell (2018) were sworn in by fellow Board members at the Eccles Building. Trump bringing the ceremony back to the East Room, with himself making extended remarks, is a deliberate re-coupling.</p>
+<p><strong>The bond setup Warsh inherits:</strong> 30Y UST closed May 22 at 5.07% — but hit 5.197% on May 19, the highest since July 2007. By technical convention this isn't a confirmed breakout until it closes above the 2023 high of 5.103% and the 2025 high of 5.09% on a sustained basis. The 10Y closed 4.56% (-3bps on the day). The 30Y over 10Y spread at ~50bps is the steepest in years.</p>
+<p><strong>The institutional context:</strong> Bloom-Groshen-Hobbs-Strain published a working paper this week estimating the August 2025 firing of BLS chief Erika McEntarfer cost the US economy $100B+ in GDP and 168,000 non-farm payrolls — quantified through a 50% jump in the Economic Policy Uncertainty index in the week after the firing. The Fed Warsh inherits has a credibility problem on data inputs before he even gets to the rate decision.</p>
+</div>
+</div>
+
+<div class="section-h">Signal Board</div>
+
+<div class="story-card" data-cat="ai markets" id="anthropic-maia">
+<div class="card-meta"><span class="category-tag">AI / COMPUTE</span><span class="trend-arrow">↑</span><span class="time-horizon">3–9 months</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Anthropic in early talks with Microsoft for Maia 200 chips — the fourth silicon vendor in a multi-source hedge nobody else in frontier AI is running at this scale</div>
+<div class="layer1">
+<p>The Information reported Wednesday May 21 — confirmed by Bloomberg the same day — that Anthropic and Microsoft are in early talks to have Anthropic adopt the Maia 200 chip, Microsoft's second-generation AI accelerator. Maia 200 was launched January 2026 on TSMC's 3nm process and carries 216GB of HBM3e. It has not been offered to external Azure customers — Anthropic, if signed, would be the first. Microsoft stock rose ~2% on the report. Dario Amodei has publicly stated Anthropic has had "difficulties with compute." If the deal closes, Anthropic adds Microsoft Maia to its existing TSMC/Nvidia (training), Amazon Trainium / Project Rainier (inference), and Google TPU stack — making it the only frontier AI lab running four named silicon sources simultaneously.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The frontier-lab procurement playbook is now closer to a sovereign currency hedge than a hardware purchase. For Indian and Canadian AI infrastructure plays — particularly Carney's still-unannounced AI-infrastructure-backbone and India's Cerebras / G42 Condor Galaxy build-out — the lesson is identical: capacity reservations to a single foundry-tier vendor are no longer survivable. Sovereign-stack architecture has to be multi-vendor from day one.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch the Anthropic IPO filing or capital raise for explicit disclosure of the Maia 200 commit. The S-1 line item is the leading indicator. Until then, the Microsoft revenue tape (Q4 FY26 earnings late July) is where the deal would first surface.</div>
+<div class="contrarian">💭 <em>The bear case: this is a Microsoft PR leak to support a stock that fell behind AWS and GCP in custom AI silicon, and Anthropic talks to every major silicon vendor as a matter of course. The framing "fourth vendor" overstates a normal-practice procurement conversation.</em></div>
+<a class="read-original" href="https://www.cnbc.com/2026/05/21/anthropic-microsoft-maia-200-ai-chip.html" target="_blank">CNBC →</a>
+<a class="read-original" href="https://www.bloomberg.com/news/articles/2026-05-21/anthropic-in-talks-to-use-microsoft-ai-chips-information-says" target="_blank">Bloomberg →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="geopolitics" id="beijing-summit">
+<div class="card-meta"><span class="category-tag">GEOPOLITICS</span><span class="trend-arrow">→</span><span class="time-horizon">3-year framework</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Xi gets his "strategic stability" framing — the May 14-15 Beijing summit's actual deliverable is a 3-year operating regime for US-China relations, and Boeing + Nvidia H200 are the concession price</div>
+<div class="layer1">
+<p>Sinocism's Sharp China podcast Thursday parsed the post-summit messaging from both sides. The phrase Xi used and the US side adopted is "constructive relationship of strategic stability" — Beijing's preferred framing because it implies parity and a fixed time horizon. The summit was light on tangible deliverables: Trump confirmed China will order 200 Boeing aircraft (down from the 500 the press had floated, but up from Boeing's internal expectation of 150); Nvidia got Treasury clearance to sell H200 chips to major Chinese customers; both sides agreed the Strait of Hormuz must remain open; both reiterated Iran must not get a nuclear weapon. Taiwan stayed the explicit red line — Xi called it "the most important issue in US-China relations." Sinocism's read: this is a "calculated stalling tactic from both sides," not a thaw.</p>
+<div class="so-what"><strong>SO WHAT:</strong> "Strategic stability" framing has a half-life of about 12-18 months historically before either side breaks it. For India operators, the H200 export approval to China resets the AI-chip arbitrage geometry: India's Cerebras / G42 path remains the cleanest non-China alternative, but the US is no longer using China-tech-decoupling as the binding constraint. For Canadian operators, CUSMA renegotiation timing shifts — Carney's "no small deal" posture has more runway now.</div>
+<div class="action-box"><strong>ACTION:</strong> Track the next Taiwan-related move from PLA (military exercise frequency around Taiwan Strait) within 90 days. A framework that survives a deliberate Taiwan provocation has real durability; one that breaks at the first test was theatre.</div>
+<div class="contrarian">💭 <em>The bear case: this is the strongest US-China framework since the Shanghai Communiqué, and reading it as theatre underestimates how badly both leaders need this stability through 2026-2027 election and Party Congress cycles. Three years is the actual horizon.</em></div>
+<a class="read-original" href="https://www.cnbc.com/2026/05/15/trump-xi-summit-the-3-big-takeaways-from-historic-meeting-in-beijing.html" target="_blank">CNBC takeaways →</a>
+<a class="read-original" href="https://www.npr.org/2026/05/22/g-s1-123647/comparing-u-s-and-china-announcements" target="_blank">NPR side-by-side →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="markets india" id="inr-recovery">
+<div class="card-meta"><span class="category-tag">INDIA MACRO</span><span class="trend-arrow">↓</span><span class="time-horizon">Days</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">USD/INR back to 95.59 from 97.15 record low in 4 days — RBI sold dollars all week, and Tuesday's $5B 3-year swap auction is the test of whether the recovery sticks</div>
+<div class="layer1">
+<p>The Indian rupee recovered to 95.59 against the US dollar on May 22 after touching a record low of 97.15 on May 19. RBI sold dollars to state banks through the third week of May, intervening directly in spot. The RBI Reference Rate closed at 95.959. The recovery coincided with WTI losing 8%+ on the week as US-Iran peace messaging dominated the tape — both factors compounding to take pressure off the rupee. The Tuesday May 26 RBI $5B 3-year USD/INR swap auction is the next test: a fully subscribed auction at competitive forward premia (sub-50bp spread vs OIS) confirms RBI has regime-management capability; a wide spread or partial subscription confirms the rupee is in panic-defence mode.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The 95-97 range now defines the operating band for Indian importers and ECB-borrowers. For pharma exporters, every 1 INR of weakness adds roughly 80-120 bps to USD-cost-pass-through margins. For real-estate developers with USD-denominated debt, the same move is a roughly 1-1.5% increase in annual debt-service on a multi-year liability.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch the RBI auction result Tuesday May 26 evening, and Wednesday's spot rupee open. If forward premia clear sub-50bp and spot opens inside 95.80-96.50, regime management is confirmed. If the auction clears above 50bp spread or spot gaps to 96.80+, the rupee is in defence mode.</div>
+<div class="contrarian">💭 <em>The bear case: the recovery is borrowed entirely from the oil weakness and US-Iran peace optimism. If the Hormuz transit pattern reverses with even one Iranian provocation, WTI back to $100+ in 48 hours and the rupee retraces 96-97 instantly. The 1.5% recovery is rented, not earned.</em></div>
+<a class="read-original" href="https://hdfcsky.com/news/inr-vs-usd-may-22-rupee-gains-rbi-support-usd-inr-levels" target="_blank">HDFC Sky →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="ai markets" id="hbm-crunch">
+<div class="card-meta"><span class="category-tag">AI / SUBSTRATE</span><span class="trend-arrow">↑</span><span class="time-horizon">2026 calendar year</span><span class="decision-badge act">ACT</span></div>
+<div class="card-title">HBM went from 52% to 63% of total AI-chip component spending in under two years — and smartphone shipments are projected to fall 13% in 2026 because data centres are vacuuming up the memory supply</div>
+<div class="layer1">
+<p>Epoch AI's latest analysis, surfaced via Innermost Loop's May 22 dispatch, shows high-bandwidth memory (HBM) has ballooned from 52% to 63% of total AI-chip component spending in under two years. The downstream effect is now visible in handset markets: worldwide smartphone shipments are projected to fall 13% in 2026 because the cheap-handset HBM that used to be allocated to budget Android is being vacuumed up by AI data centres. This is the cleanest macroeconomic signal yet that AI compute is no longer additive demand — it is now displacing other demand on the same input.</p>
+<div class="so-what"><strong>SO WHAT:</strong> For Indian smartphone OEMs and the import cost-base, 13% lower global shipment volumes means component prices for the units that do ship are structurally higher. For Canadian operators with semis-adjacent exposure, the HBM bottleneck is the supply-chain choke point that determines AI-build economics through 2027. Anthropic-Maia, Nvidia-China, Cerebras-G42 are all downstream of this single memory crunch.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch Samsung HBM3e shipment guidance at the next Korean industrials update. SK Hynix is the other major. If either misses Q3 guidance, the AI cycle gets a different kind of constraint than the one consensus is pricing.</div>
+<div class="contrarian">💭 <em>The bear case: smartphone shipment forecasts are unreliable, the -13% projection is one analyst's number, and HBM allocation between consumer and data centre is fungible at the margin.</em></div>
+<a class="read-original" href="https://theinnermostloop.substack.com/p/welcome-to-may-22-2026" target="_blank">Innermost Loop →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="ai geopolitics" id="us-china-ai-fabric">
+<div class="card-meta"><span class="category-tag">AI / GLOBAL</span><span class="trend-arrow">→</span><span class="time-horizon">Structural</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">Rest of World's Viola Zhou: the US and China AI worlds are not in a race, they are in a tightly-coupled research network — and the underground Claude-token market for Chinese vibe-coders is the smoking gun</div>
+<div class="layer1">
+<p>Viola Zhou, senior reporter at Rest of World, published a Friday May 22 feature on Chinese AI researchers in Silicon Valley. The core finding: US and Chinese labs share alumni networks, trade gossip in WeChat groups, and openly congratulate each other on new model releases. Over the past decade, the US and China have been the most frequent AI-research partners by paper-collaboration count. US engineers have adopted algorithms from DeepSeek and Qwen to improve their own models' efficiency. A ChinaTalk piece this week documented an underground industry helping Chinese "vibe-coders" access Claude despite Anthropic's China ban — which Anthropic uses to support its argument for tighter US chip export controls.</p>
+<div class="so-what"><strong>SO WHAT:</strong> "AI race" framing is the official narrative; "AI fabric" is the operating reality. For sovereign-stack architects in India, Canada, the Gulf, this changes the buy-decision calculus: there is no clean technical decoupling, only a political-procurement decoupling. The cleanest hedge is buying both stacks in parallel — which is exactly what UAE / Saudi / Singapore are already doing.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch Anthropic's next public position on China access. The underground token market means existing controls are leaking — either Anthropic tightens (further sales hit) or quietly accepts (chip export controls argument weakens).</div>
+<div class="contrarian">💭 <em>The bear case: research networks have always been internationalised; the fact that DeepSeek and Qwen are studied in US labs is normal academic practice, not strategic risk. The underground Claude market is a marginal phenomenon being amplified by a journalist's framing.</em></div>
+<a class="read-original" href="https://restofworld.org/2026/chinese-ai-researchers-silicon-valley/" target="_blank">Rest of World →</a>
+<a class="read-original" href="https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in" target="_blank">ChinaTalk →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="ai" id="forecastbench">
+<div class="card-meta"><span class="category-tag">AI / CAPABILITY</span><span class="trend-arrow">↑</span><span class="time-horizon">Now</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">DeepMind's "green tree" model just topped ForecastBench — first LLM to match human superforecaster performance — while Qwen3.7-Max ran 35 hours of continuous autonomous execution with a 10x speedup</div>
+<div class="layer1">
+<p>Two compute-capability data points landed in the same Innermost Loop dispatch May 22. First: Google DeepMind's "green tree" model claimed the top spot on the Forecasting Research Institute's ForecastBench — the first LLM to match superforecaster performance on calibrated probability predictions. Second: Alibaba's Qwen3.7-Max ran 35 continuous autonomous-execution hours, performing 432 kernel evaluations across 1,158 tool calls, delivering a 10x geometric-mean speedup over the Triton reference. A separate OpenSCAD benchmark asked frontier models to reconstruct the Pantheon from photos — Gemini 3.5 Flash High won.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The "models predict the future better than humans" milestone re-rates a class of analyst-grade jobs (forecasting, research desks, policy briefings) on a faster curve than anyone budgeted for. The 35-hour autonomous Qwen run is the embodied agentic-AI milestone — no longer a 5-minute toy. For Indian IT services and Canadian consulting practices, the implication is that the analyst layer is now in the same automation pressure-cooker the developer layer entered in 2024-2025.</div>
+<div class="action-box"><strong>ACTION:</strong> Try the green-tree forecasting model when DeepMind releases it. If the calibration genuinely matches superforecasters, it changes how you build any forecast-dependent business — including PCC enrollment planning, real-estate absorption, investment-committee scenarios.</div>
+<div class="contrarian">💭 <em>The bear case: ForecastBench has known issues with question-leakage in training data, and "topping the benchmark" has historically not translated into operating-quality forecasts. The 35-hour Qwen run is on a heavily curated kernel-optimisation task — the autonomous-agent promise has been over-claimed many times.</em></div>
+<a class="read-original" href="https://theinnermostloop.substack.com/p/welcome-to-may-22-2026" target="_blank">Innermost Loop →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="india" id="zepto-ipo">
+<div class="card-meta"><span class="category-tag">INDIA / IPO</span><span class="trend-arrow">↑</span><span class="time-horizon">By July</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Zepto's ₹11,000 Cr IPO is now confirmed for a pre-July listing — Indian quick-commerce gets its third public-market data point, and the pricing window is being set by Swiggy's IOC failure</div>
+<div class="layer1">
+<p>Inc42's weekly brief Saturday confirmed Zepto's ₹11,000 Cr IPO is targeting a launch by July 2026. This makes Zepto the third Indian quick-commerce company to enter public markets after Zomato (Eternal) and Swiggy. The timing is structurally significant: Swiggy's Indian-Owned-and-Controlled (IOC) status bid failed last week at 72.36% vs the 75% special-resolution threshold, killing Instamart's inventory-led pivot route. Zepto's IPO now has a clearer pricing comparable set — Eternal at strong post-IPO performance, Swiggy at the lower end after the IOC failure overhang.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The Indian quick-commerce sector is converging on its public-market price discovery in real time. For consumer-internet operators looking at the Indian playbook export to Canada (e.g. quick-commerce in Toronto / Vancouver), Zepto's IPO valuation will set the template multiple. IOC regulatory overhang is now an explicit pricing factor.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch the Zepto DRHP for the explicit margin guidance and the foreign-investor cap-table disclosure. If Zepto's structure is closer to Eternal's than to Swiggy's, the deal prices at a premium to the comp set.</div>
+<div class="contrarian">💭 <em>The bear case: Indian IPO appetite has cooled since April, and a ₹11,000 Cr quick-commerce listing into a market that just absorbed Swiggy's stale-pricing concerns may have to discount 15-20% vs Zepto's private-round marks. The "July window" gets pushed to Q4.</em></div>
+<a class="read-original" href="https://inc42.com/buzz/zepto-to-float-%e2%82%b911000-cr-ipo-by-july-report/" target="_blank">Inc42 →</a>
+</div>
+</div>
+
+<div class="section-h">🍁 The Canadian File</div>
+<div class="canadian-file">
+<div class="cf-label">🍁 THE CANADIAN FILE</div>
+<div class="cf-subtitle">TSX hits a fresh intraday all-time high at 34,575 while 10Y GoC pulls back from its 3.74% peak to 3.53% — Canada's yield curve is telegraphing a different story than the equity tape. CAD weak at 1.382, BoC June 10 decision sits at the centre of every Canadian operator's planning calendar.</div>
+
+<div class="story-card" data-cat="canada markets" id="canada-yields">
+<div class="card-meta"><span class="category-tag">CANADA / RATES</span><span class="trend-arrow">↓</span><span class="time-horizon">2 weeks</span><span class="decision-badge act">ACT</span></div>
+<div class="card-title">10Y GoC eased back to 3.53% on May 22 from a 3.74% peak a week earlier — Canada is the first G7 sovereign to step out of the synchronised duration unwind</div>
+<div class="layer1">
+<p>The Canada 10Y government bond yield closed May 22 at 3.53%, down 2 bps on the day, down 21 bps from the 3.74% two-year high earlier in the week. Last Friday's G7 long-bond breakout (US 30Y to 5.197%, UK gilts wide, JGBs through 1.85%, French OATs through 4%) caught Canada too — but Canada was the first to retrace inside a week. The combination of Iran-peace messaging dropping WTI 8% on the week, BoC's known dovish bias, and Friday's CAD weakness all argue for the front end to stay anchored.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Canada is now the cleanest G7 sovereign tape for an operator running both INR-stress and a CAD-exposure book. The 10Y GoC is anchored, the curve is flatter, and BoC has known easing optionality. For Canadian real-estate operators and PCC capacity-planners, this is a structural re-rate of borrowing economics ahead of the June 10 decision.</div>
+<div class="action-box"><strong>ACTION:</strong> Lock in any 5-7 year fixed Canadian debt this week if the term-out option is available. The 10Y at 3.53% with BoC potentially cutting June 10 is the cleanest setup of 2026 so far.</div>
+<div class="contrarian">💭 <em>The bear case: Canada follows the global tape with a lag, not a lead. The 21bp retrace is technical noise, and if the US 30Y breaks 5.25% in the next 2-3 weeks, Canadian yields go back to 3.70%+ instantly. One week of relative outperformance does not equal a regime change.</em></div>
+<a class="read-original" href="https://www.bankofcanada.ca/rates/interest-rates/canadian-bonds/" target="_blank">Bank of Canada →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="canada markets" id="tsx-ath">
+<div class="card-meta"><span class="category-tag">CANADA / MARKETS</span><span class="trend-arrow">↑</span><span class="time-horizon">Days</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">TSX Composite hit an intraday all-time high of 34,575 on Friday and closed 34,471 — Canada is now eight consecutive weeks up alongside the S&amp;P, despite CAD at 1.382 vs USD</div>
+<div class="layer1">
+<p>The S&amp;P/TSX Composite touched 34,574.87 intraday on May 22 — the first fresh all-time high since the early-March peak — and closed at 34,471 (+0.2%). The rally was led by financials and consumer discretionary; mining stocks were pressured by softer gold ($4,509/oz, -0.58%). USD/CAD touched 1.38195 the same day, the cleanest expression of the divergence: equity strength alongside currency weakness, both driven by the same US-led risk-on plus Dollar-anchor dynamic. Lightspeed Commerce was the notable individual loser of the day, down 6.6% after Q4 earnings missed expectations.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Canadian equity is in lock-step with US equity on the up-side and partial-step on the down-side. For Canadian operators holding USD-denominated revenue and CAD-denominated cost base — which is most cross-border operations — the TSX rally masks a margin compression at the operational layer. The two tapes are telling different stories, and the operating book matters more than the equity tape.</div>
+<div class="action-box"><strong>ACTION:</strong> If running CAD payroll against USD revenue, the hedge ratio should be higher now than at any point in Q1 2026. Roll any FX hedge to a 6-9 month forward.</div>
+<div class="contrarian">💭 <em>The bear case: TSX at ATH on weak CAD is exactly the petro-buoyancy pattern that has historically preceded TSX corrections of 8-12%. The fundamental ROE on the index is not at ATH; the multiple expansion is. The next bad oil tape takes the TSX back to 33,000 inside a month.</em></div>
+<a class="read-original" href="https://www.theglobeandmail.com/investing/markets/indices/TXCX/" target="_blank">Globe and Mail →</a>
+<a class="read-original" href="https://www.reuters.com/business/tsx-futures-slip-uncertain-us-iran-peace-prospects-2026-05-21/" target="_blank">Reuters →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="canada tech" id="lightspeed-miss">
+<div class="card-meta"><span class="category-tag">CANADA / TECH</span><span class="trend-arrow">↓</span><span class="time-horizon">Quarters</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Lightspeed Commerce -6.6% on Friday as Q4 revenue beat but earnings missed — exactly the wrong shape for a Canadian fintech trying to defend a high-multiple comp</div>
+<div class="layer1">
+<p>Lightspeed Commerce closed down 6.6% on May 22 after Q4 results showed revenue ahead of expectations but earnings short. BetaKit's read: the revenue beat reflects continued top-line discipline, but the earnings miss flags rising cost-of-customer-acquisition and ongoing R&amp;D burn, exactly the wrong shape for a company in the Canadian tech comp set defending against US peers like Toast and Block. Lightspeed is now trading in the difficult middle: too large to be a takeover candidate at this multiple, too small to defend a Block-style operating leverage story.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Canadian listed tech with US-comparable comp sets gets re-rated on the operating-leverage line, not the revenue line. For BetaKit-watched names (Shopify, OpenText, Constellation Software, Lightspeed, Nuvei) the pattern repeats: beat the top, miss the bottom, get punished. Carney's industrial-policy attention is not yet showing up in operating-leverage terms.</div>
+<div class="action-box"><strong>ACTION:</strong> Watch Shopify's August earnings cadence — the bellwether for Canadian-listed tech operating leverage. If Shopify also beats revenue/misses operating, the Canadian-tech-rerate concern goes structural.</div>
+<div class="contrarian">💭 <em>The bear case: one earnings miss on one quarter is not a regime; Lightspeed's revenue line is healthy and the 6.6% drop is a normal post-print reaction. The "Canadian tech can't beat operating leverage" framing extrapolates one data point into a sector thesis it doesn't support.</em></div>
+<a class="read-original" href="https://betakit.com/lightspeed-beats-revenue-projections-but-falls-short-on-earnings-expectations-in-fiscal-q4/" target="_blank">BetaKit →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="canada policy" id="canada-disney-surveillance">
+<div class="card-meta"><span class="category-tag">CANADA / TECH-POLICY</span><span class="trend-arrow">↑</span><span class="time-horizon">Multi-quarter</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">Disney is being sued over theme-park facial recognition, Saudi's Qiddiya is buying Gemini-powered visitor surveillance, and Toronto's Rosedale is building Canada's first virtual gated community — biometric capture is mainstream now</div>
+<div class="layer1">
+<p>The Peak's Friday edition surfaced three converging stories: Disney is being sued by a Disneyland visitor over facial-recognition use, with the lawsuit claiming biometric data can be linked to identity, credit card and government-ID data; Saudi Arabia's new Riyadh entertainment district Qiddiya will use Google Gemini to track visitor behaviour, movement and spending habits; Toronto's Rosedale is now exploring Canada's first "virtual gated community" using AI surveillance. The Cadillac Fairview precedent (Canadian mall-data scandal, hidden directory cameras capturing 5M Canadians' biometric data) is the historical reference.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Biometric capture is moving from airport to mall to neighbourhood. For Canadian operators in retail, real estate, education and hospitality, the cost-and-compliance line item for biometric-system deployment is going to appear in 2026-2027 budgets whether you want it or not. The privacy commissioner's posture on this in BC and Ontario will set the operating constraints.</div>
+<div class="action-box"><strong>ACTION:</strong> If you operate a campus, mall, or office in Canada, get ahead of the question by Q3 2026. The operating cost of retrofitting consent layers later is much higher than embedding them up-front.</div>
+<div class="contrarian">💭 <em>The bear case: Canadian privacy law already covers most of this, the Cadillac Fairview precedent set the boundary clearly, and consumer-facing surveillance is unlikely to scale in Canada the way it has in the Gulf or US theme parks.</em></div>
+<a class="read-original" href="https://www.cbc.ca/news/entertainment/disneyland-lawsuit-facial-recognition-9.7207439" target="_blank">CBC Disney →</a>
+<a class="read-original" href="https://www.readthepeak.com/p/toronto-eyes-canada-s-first-virtual-gated-community" target="_blank">The Peak →</a>
+</div>
+</div>
+
+</div>
+
+<div class="section-h">Opportunity Board</div>
+<div class="story-card" data-cat="ai opportunity" id="compute-broker">
+<div class="card-meta"><span class="category-tag">OPPORTUNITY</span><span class="trend-arrow">↑</span><span class="time-horizon">6–18 months</span><span class="decision-badge act">ACT</span></div>
+<div class="card-title">If Anthropic is running a 4-vendor silicon hedge, the second-tier AI labs in India and Canada need a procurement broker — and nobody is building one yet</div>
+<div class="layer1">
+<p>The Anthropic-Maia 200 talks suggest frontier-AI silicon procurement is now a portfolio-management problem, not a sourcing problem. Sarvam, Krutrim, Cohere, Hugging Face's enterprise arm — every second-tier AI builder needs the same diversification logic Anthropic is running, but none of them has the engineering depth to evaluate Maia vs Trainium vs TPU vs Cerebras on their own model architectures. This is a brokerage business: capacity reservations across 4-6 silicon providers, contract optimisation, benchmark comparisons, allocation arbitrage. India and Canada are the most natural homes for it — multi-vendor neutrality, strong engineering talent, no national-champion silicon to defend.</p>
+<div class="so-what"><strong>SO WHAT:</strong> The compute-broker thesis is a derivative of the compute-as-futures thesis. The futures-market venue is the public play; the brokerage layer is the private-business play. Returns scale faster on the brokerage side because the AI-build cycle compounds before the futures market matures.</div>
+<div class="action-box"><strong>ACTION:</strong> Map the existing "AI procurement consultancy" landscape (CB Insights, Forrester, Gartner sub-practices) and the Cerebras/Groq/SambaNova channel-partner network. The seed-stage version of this business probably exists already; the question is whether a more institutional version with capital backing wins.</div>
+<div class="contrarian">💭 <em>The bear case: silicon vendors will eventually all converge on CUDA-compatible toolchains, the multi-vendor lock-in is short-lived, and the brokerage business is a 24-month window.</em></div>
+</div>
+</div>
+
+<div class="section-h">Also On Radar</div>
+<div class="story-card" data-cat="india" id="goyal-temple">
+<div class="card-meta"><span class="category-tag">INDIA / HARDWARE</span><span class="trend-arrow">↑</span><span class="time-horizon">Months</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Deepinder Goyal's "Temple" wearable startup has roped in Zetwerk and Ethereal Machines as contract manufacturers — Eternal's CEO doubling down on hardware production while running a public foodtech</div>
+<div class="layer1">
+<p>Inc42 reports Deepinder Goyal's new wearable venture Temple has signed Zetwerk and Ethereal Machines as contract manufacturers, planning to scale to a few thousand units in-house initially. Goyal is still CEO of Eternal (publicly listed, ex-Zomato). The pattern: an Indian internet founder running a public company simultaneously building a hardware venture is unusual and the conflict-of-interest disclosure on Eternal's next earnings call will be telling.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Indian deeptech-meets-consumer hardware is now well-capitalised enough that contract manufacturing scales without an obvious champion. Zetwerk's role as a B2B fabrication network is the underrated infrastructure story here.</div>
+<a class="read-original" href="https://inc42.com/buzz/deepinde-goyals-temple-taps-zetwerks-ethereal-machines-to-helm-manufacturing-report/" target="_blank">Inc42 →</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="crypto markets" id="hyperliquid-aqav2">
+<div class="card-meta"><span class="category-tag">CRYPTO</span><span class="trend-arrow">↑</span><span class="time-horizon">Weeks</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">Hyperliquid's $5B idle USDC reserves are now monetised at ~$180M/year via Coinbase/Circle AQAv2 — the protocol-revenue meta moves from speculation to T-bill-rebate</div>
+<div class="layer1">
+<p>Milk Road's analyst sold his HYPE position twice in 24 hours despite the token running from $39 to $59 (+50%) in a week. The catalyst: Coinbase and Circle jointly staked 1M HYPE (~$40M) on May 14 to operate AQAv2, a framework that puts Hyperliquid's $5B idle USDC reserves into T-bills at ~4% with a 90% revenue share back to the protocol — roughly $180M/year of fresh recurring revenue on top of trading fees. Market cap pushing $15B. The analyst's cut: the announcement leg of the re-rate has played out; the next leg fires when the assistance fund posts the first confirmed AQAv2 line item.</p>
+<div class="so-what"><strong>SO WHAT:</strong> Hyperliquid's USDC-to-T-bills monetisation is the model template for any DeFi protocol holding idle stablecoin reserves. The Treasury-yield rebate is now an institutional-grade revenue line that didn't exist 12 months ago. Coinbase and Circle running this framework is the regulatory accommodation that makes it work.</div>
+<a class="read-original" href="https://www.coingecko.com/en/coins/hyperliquid" target="_blank">CoinGecko →</a>
+</div>
+</div>
+
+<div class="section-h">Quick Hits</div>
+<div class="quick-hits"><ul>
+<li><strong>S&amp;P 500 logged its longest weekly winning streak since 2023 — 8 consecutive weekly gains</strong> — the rally is masking the largest fixed-income dislocation since 2022. Eight weeks of "everything's fine" coexisting with a 30Y at 5.07% is the definition of a regime-discordance trade.</li>
+<li><strong>Star Wars: The Mandalorian and Grogu opened at $82M domestic / $102M four-day Memorial Day</strong> — the worst opening since Disney bought Lucasfilm in 2012, but with an A- CinemaScore and 89% Rotten Tomatoes audience score. The franchise has a product-market-fit problem at the theatrical layer that the streaming layer didn't fix.</li>
+<li><strong>Swiggy's IOC bid failed at 72.36% vs the 75% special-resolution threshold</strong> — Instamart's inventory-led pivot now needs a different legal vehicle. Indian-Owned-and-Controlled status has become explicitly priced into the consumer-internet cap-table architecture.</li>
+<li><strong>Indian startups raised $92.2M between May 18-22</strong> — a 70% week-on-week drop from $303M the prior week. Scapia raised $63M, fintech led at $67M of total. The seed-to-Series-B funnel is thinning faster than the headline VC dry powder suggests.</li>
+<li><strong>ChinaTalk: China's 85% AI-optimism reading is not enthusiasm — it is the historical reflex of a society that lived through 24M layoffs in the late 1990s</strong> — and learned that the only permissible response to disruption is acquiescence framed as participation. Watching the Chinese AI-adoption number as a proxy for societal acceptance overreads the data.</li>
+<li><strong>Unacademy's CEO Sumit Jain is exiting; Gaurav Munjal returns to the helm as upGrad's acquisition closes</strong> — Indian edtech consolidation is now down to one effective survivor at scale.</li>
+<li><strong>$2B White House grants to 9 quantum firms (IBM, Rigetti, others) with government taking equity</strong> — re-confirming the federal-equity playbook but on a sector that was forecastable in Edition #184. The pattern is firm enough that the next sector (robotics / photonics / biotech / energy storage) is the prediction.</li>
+<li><strong>Putin and Xi signed 40 documents and a 47-page joint statement during Putin's Beijing visit May 20-21</strong> — but no binding Power of Siberia 2 price agreement, validating Edition #180's prediction. China is willing to extend strategic partnership language without paying for it in price.</li>
+</ul></div>
+
+<div class="section-h">The Long Game</div>
+<div class="long-game">
+<span class="lg-label">Slow-burn watch</span>
+Eli Lilly's retatrutide showed 28.3% bodyweight loss over 80 weeks with zero cardiac or liver signals — observers are now openly modeling retatrutide as "the best-selling drug of all time." Combined with orforglipron's any-time oral GLP-1 FDA approval, the GLP-1 cycle is moving from injectable-specialty to oral-mass-market. For Indian generic pharma exporters and Canadian pharmacy operations, the compounded effect over 5-7 years is that GLP-1s become an OTC-adjacent category. Watch which Indian player files the first orforglipron generic application post-patent — the cliff is later this decade, but the positioning trade starts now. Compounding adjacency: Colossal Biosciences just hatched 26 healthy chickens using a silicone-membrane synthetic egg shell, a foundational step toward de-extinction of the dodo and South Island giant moa. Biology is being rewritten on two ends of the operator stack simultaneously — therapeutic compression at the consumer end, synthetic-substrate engineering at the species end.
+</div>
+
+<div class="section-h">Coverage Scorecard</div>
+<div class="scorecard">
+<h4>Edition #186 · Morning · May 25, 2026</h4>
+<div class="sc-grid">
+<div>Categories covered: <span>8</span></div>
+<div>Newsletter sources scanned: <span>14</span></div>
+<div>Stories featured: <span>13</span></div>
+<div>India-tagged stories: <span>4</span></div>
+<div>Canada-tagged stories: <span>4</span></div>
+<div>New predictions made: <span>0</span></div>
+</div>
+<div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;line-height:1.55">
+<strong style="color:#fff">Theme rotation:</strong> LEAD topic = Warsh swearing-in + bond breakout regime. Prior 2 LEAD topics = #185 Uber AI budget on Claude Code; #184 Trump quantum equity stakes. Decision: <span style="color:var(--green)">NEW</span>. SPOTLIGHT = Anthropic-Microsoft Maia 200 talks. Prior 2 spotlights = #185 Sarama interspecies AI; #184 federal-equity playbook. Decision: <span style="color:var(--green)">NEW</span>. CANADIAN FILE anchor = 10Y GoC pullback from 3.74% peak to 3.53% + TSX ATH 34,575. Prior anchor = #185 10Y GoC at 3.74% peak. Decision: <span style="color:var(--green)">NAMED-NEW-DEVELOPMENT</span>.
+<br><br>
+<strong style="color:#fff">Tier-5 mandatory consideration:</strong> Tier 5 hits — Sinocism (Sharp China), Chartbook (Bond breakout + bad data), ChinaTalk (China AI optimism), Rest of World (US-China AI), Innermost Loop (May 22). Dispositions: Sinocism → Signal Board card (Beijing summit). Chartbook → woven into LEAD + Quick Hits. ChinaTalk → Quick Hits. Rest of World → Signal Board. Innermost Loop → Signal Spotlight (via Maia) + Signal Board (HBM, ForecastBench) + Long Game. Compliance: <span style="color:var(--green)">PASSED</span>.
+</div>
+</div>
+
+</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){card.classList.toggle('deep');const btn=card.querySelector('.deep-dive-btn');if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';}
+function scrollToStory(id){const el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}}
+function filterStories(cat,pill){document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));pill.classList.add('active');if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}document.querySelectorAll('[data-cat]').forEach(el=>{const cats=(el.getAttribute('data-cat')||'').split(' ');el.classList.toggle('hidden',!cats.includes(cat));});}
+</script>
+</body>
+</html>
