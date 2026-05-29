@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief · Edition #192 · May 29, 2026 (Evening)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+.header{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+.masthead{font-family:var(--font-ui);font-size:34px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.masthead span{color:var(--accent)}
+.edmeta{font-family:var(--font-ui);font-size:12px;color:var(--dim);letter-spacing:1px;margin-top:6px}
+.tagline{font-style:italic;color:var(--muted);margin-top:12px;font-size:16px}
+.nav{position:sticky;top:0;background:rgba(10,10,11,.92);backdrop-filter:blur(6px);padding:10px 0;margin-bottom:22px;border-bottom:1px solid var(--border);z-index:9;display:flex;flex-wrap:wrap;gap:7px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:5px 11px;border-radius:20px;cursor:pointer}
+.nav-pill.active{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:700}
+.editors-read{background:linear-gradient(180deg,#16160f,#131316);border:1px solid var(--accent);border-radius:12px;padding:24px 26px;margin-bottom:30px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin:4px 0 14px}
+.er-body p{margin:0 0 13px}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:20px 24px;margin-bottom:30px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:700}
+.ss-claim{font-size:19px;font-weight:600;margin-bottom:10px;line-height:1.4}
+.ss-reasoning{color:var(--muted);font-size:15px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px;margin-top:12px;text-transform:uppercase}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.section-head{font-family:var(--font-ui);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:8px;margin:38px 0 18px}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.mcell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center}
+.mcell .nm{font-family:var(--font-ui);font-size:10px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase}
+.mcell .val{font-family:var(--font-ui);font-size:15px;font-weight:700;margin:3px 0}
+.mcell .chg{font-family:var(--font-ui);font-size:11px;font-weight:600}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+.ca-tile{border-color:#7a2e2e}
+.note{font-size:12px;color:var(--dim);font-style:italic;margin-bottom:8px}
+.connmap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.chain{font-family:var(--font-ui);font-size:11px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--muted);letter-spacing:.5px}
+.chain b{color:var(--accent)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:16px}
+.story-card.lead{border-color:var(--accent);border-width:1.5px}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:9px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.category-tag{color:var(--accent);font-weight:700}
+.trend-arrow{color:var(--muted)} .time-horizon{color:var(--dim)}
+.decision-badge{padding:2px 7px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(161,161,170,.12);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:19px;font-weight:700;line-height:1.34;margin-bottom:10px}
+.lead .card-title{font-size:22px}
+.layer1 p{margin:0 0 11px;font-size:15.5px}
+.so-what,.action-box,.contrarian{font-size:14px;border-radius:6px;padding:9px 12px;margin-bottom:9px}
+.so-what{background:rgba(200,160,48,.07);border-left:3px solid var(--accent)}
+.action-box{background:rgba(74,222,128,.06);border-left:3px solid var(--green)}
+.contrarian{background:rgba(224,82,82,.06);border-left:3px solid var(--red);color:var(--muted);font-style:italic}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:12px;color:var(--accent);text-decoration:none;margin-right:16px}
+.read-original:hover,.gmail-source:hover{text-decoration:underline}
+.deep-dive-btn{font-family:var(--font-ui);font-size:12px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 12px;cursor:pointer;margin-top:10px}
+.layer2{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);font-size:14px;color:var(--muted)}
+.story-card.deep .layer2{display:block}
+.canadian-file{background:linear-gradient(180deg,#1a1112,#131316);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:10px;padding:20px 22px;margin:14px 0}
+.cf-label{font-family:var(--font-ui);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:700}
+.cf-subtitle{font-style:italic;color:var(--muted);margin:6px 0 16px}
+.quick-hits li{margin-bottom:9px;font-size:14.5px}
+.quick-hits b{color:var(--text)}
+.longgame{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;font-size:15px;color:var(--muted)}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12.5px;margin-top:8px}
+.scorecard td{padding:7px 10px;border-bottom:1px solid #1e1e22;color:var(--muted)}
+.scorecard td:first-child{color:var(--dim);text-transform:uppercase;letter-spacing:.5px;width:38%}
+.hidden{display:none}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets{grid-template-columns:repeat(3,1fr)}.masthead{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="masthead">THE <span>BRIEF</span></div>
+  <div class="edmeta">EDITION #192 · FRIDAY, MAY 29, 2026 · EVENING · for Suhail Seth</div>
+  <div class="tagline">Washington must refund $166B in unconstitutional tariffs while a bigger tariff cliff lands July 24 · a fabricated Hormuz "peace deal" whipsaws oil and Bitcoin · April PCE prints the hottest in three years.</div>
+</div>
+
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('macro',this)">Macro</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+</div>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · May 29, 2026</div>
+  <div class="er-body">
+    <p>Markets spent today chasing a disinflation mirage. The US 10-year fell to 4.47% (off the 4.7% high from mid-May), the Canadian 10-year to 3.45%, WTI back to roughly $90, Bitcoin under $77,000 — most of it on a rumour that turned out to be a forgery. Iranian state TV "released" a Strait of Hormuz memorandum the White House flatly called "a complete fabrication."</p>
+    <p>Strip out the head-fake and two hard facts survive the day. April PCE printed 3.8% headline and 3.3% core — the hottest in nearly three years. And $166B of tariffs the Supreme Court ruled unconstitutional now has to flow back to more than 300,000 importers, while a separate Section 122 tariff hits its 150-day statutory wall around July 24. Connect those: the bond market wants to price cuts off cheaper energy, but the inflation floor is structural and the fiscal plumbing is in open chaos.</p>
+    <p>The cross-border read is the same trade wearing two currencies. The rupee sits at a record-soft 96 as a hot dollar squeezes Indian importer margins; the loonie firmed to 1.38 and Canadian yields sank as the market front-runs a Bank of Canada cut on June 10 that this inflation data does not justify. Both currencies are leaning on the same Fed-and-oil story.</p>
+    <p>My call: the "rate-cut summer" trade is premature. The refund is phantom stimulus, the ceasefire is unsigned, and PCE was the only number that didn't lie today. The question nobody is pricing — does Section 122's July 24 expiry become the real catalyst of the summer?</p>
+  </div>
+</div>
+
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">The $166B tariff refund is phantom stimulus — it will not reach the real economy, and the market is watching the wrong number.</div>
+  <div class="ss-reasoning">Customs is paying in phases: of roughly $85B in refund claims accepted, only about $20.6B has actually been returned. Worse, consumer class-action firms are already suing the brands that kept the refunds after passing the tariff cost through to shoppers — an "unjust windfall" fight that traps the cash between importers and consumers in litigation for the rest of 2026. The liquidity injection everyone expects gets strangled in court. The catalyst that actually matters is the one no one is pricing: Section 122's hard 150-day expiry around July 24, a tariff cliff that flips overnight from cost to vacuum.</div>
+  <div class="ss-horizon">Time horizon: 2–3 months (refund drip through 2026; Section 122 cliff late July)</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>#192</td><td>Section 122 tariffs lapse at the 150-day statutory limit (~Jul 24) with no Congressional extension; Federal Circuit grants no permanent stay before then.</td><td>Jul 24, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#192</td><td>At least one major US brand/retailer faces a certified or settled "unjust windfall" class action over pocketed tariff refunds.</td><td>Dec 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#192</td><td>Groq's new $650M round closes at ≤$7.5B post-money — flat-to-down vs its $6.9B Series E — confirming inference-margin compression.</td><td>Sep 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#191</td><td>Trump formally re-affirms OR cancels the $14B Taiwan arms package (no more informal "pause").</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#191</td><td>An S&P 500 hardware/software vendor names "memory cost / DRAM / HBM" as a Q2 margin headwind.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-head" id="markets">Global Markets · as of May 28 close / May 29 Asia</div>
+<div class="markets">
+  <div class="mcell"><div class="nm">S&P 500</div><div class="val">record area</div><div class="chg down">▼ 0.02%</div></div>
+  <div class="mcell"><div class="nm">Nasdaq</div><div class="val">record area</div><div class="chg down">▼ 0.16%</div></div>
+  <div class="mcell"><div class="nm">Nikkei 225</div><div class="val">64,693</div><div class="chg down">▼ 0.47%</div></div>
+  <div class="mcell"><div class="nm">Hang Seng</div><div class="val">25,006</div><div class="chg down">▼ 1.27%</div></div>
+  <div class="mcell"><div class="nm">Nifty 50</div><div class="val">23,819</div><div class="chg down">▼ 0.68%</div></div>
+  <div class="mcell"><div class="nm">Sensex</div><div class="val">lower</div><div class="chg down">▼ w/ Nifty</div></div>
+  <div class="mcell ca-tile"><div class="nm">🍁 TSX Comp</div><div class="val">34,412</div><div class="chg down">▼ 0.70%</div></div>
+  <div class="mcell"><div class="nm">USD / INR</div><div class="val">96.09</div><div class="chg down">▼ rupee (rec. low)</div></div>
+  <div class="mcell ca-tile"><div class="nm">🍁 CAD / USD</div><div class="val">0.725</div><div class="chg up">▲ 0.29%</div></div>
+  <div class="mcell"><div class="nm">WTI Crude</div><div class="val">~$90.35</div><div class="chg down">▼ on ceasefire</div></div>
+  <div class="mcell"><div class="nm">Gold</div><div class="val">n/a</div><div class="chg flat">softer</div></div>
+  <div class="mcell"><div class="nm">Bitcoin</div><div class="val">&lt;$77,000</div><div class="chg down">▼ on Iran strikes</div></div>
+  <div class="mcell"><div class="nm">10Y UST</div><div class="val">4.47%</div><div class="chg down">▼ off 4.7% high</div></div>
+  <div class="mcell ca-tile"><div class="nm">🍁 10Y GoC</div><div class="val">3.45%</div><div class="chg down">▼ low since Apr</div></div>
+  <div class="mcell"><div class="nm">VIX</div><div class="val">16.75</div><div class="chg up">▲ 2.82%</div></div>
+</div>
+<div class="note">Gold close for May 28 not confirmed at publish — figure withheld rather than estimated. Sensex tracked the Nifty lower; an exact close was not reliably sourced. All other values verified against market reports for the May 28 session / May 29 Asia open.</div>
+
+<div class="section-head">Story Connection Map</div>
+<div class="connmap">
+  <div class="chain"><b>HORMUZ HEAD-FAKE</b> → OIL & YIELDS DROP → DISINFLATION MIRAGE</div>
+  <div class="chain"><b>PCE 3.8%</b> → INFLATION FLOOR HOLDS → RATE-CUT TRADE PREMATURE</div>
+  <div class="chain"><b>$166B REFUND</b> → UNJUST-WINDFALL SUITS → PHANTOM STIMULUS</div>
+  <div class="chain"><b>SECTION 122</b> → JULY 24 CLIFF → TARIFF SHOCK 2.0</div>
+  <div class="chain"><b>HOT DOLLAR</b> → INR 96 LOW + CAD FIRMS → SAME TRADE, TWO CURRENCIES</div>
+</div>
+
+<div class="section-head">The Lead</div>
+<div class="story-card lead" data-cat="macro markets" id="lead-tariff-refund">
+  <div class="card-meta">
+    <span class="category-tag">MACRO · TRADE</span><span class="trend-arrow">→</span><span class="time-horizon">Now → late July</span><span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Washington must hand back $166B in unconstitutional tariffs — and a bigger tariff cliff lands July 24</div>
+  <div class="layer1">
+    <p>The Supreme Court's February ruling in <em>Learning Resources, Inc. v. Trump</em> held that the IEEPA never authorised the nationwide tariffs — leaving an estimated $166B owed back to more than 300,000 importers. The administration's backup move, a 10% global tariff under Section 122 of the Trade Act of 1974, was itself ruled unlawful by the Court of International Trade in a 2-1 decision on May 7; the Federal Circuit granted a temporary administrative stay around May 13 while the appeal runs. Crucially, Section 122 carries a hard 150-day statutory ceiling — it expires near July 24 unless Congress acts, which it shows no sign of doing.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the single biggest unwind of executive trade power in a generation, and it cuts two ways for any cross-border operator. The refund is a balance-sheet event for importers, not a market stimulus — it drips out slowly and is already contested. The July 24 Section 122 expiry is the live wire: a multinational supply chain priced around a 10% universal tariff has to re-plan landed-cost and sourcing on a sub-90-day clock, in both directions. Exporters into the US — Indian and Canadian alike — get a potential tailwind; importers who built tariff pass-through into pricing face a margin reset.</div>
+    <div class="action-box"><strong>ACTION:</strong> Map any US-facing import/export exposure to the July 24 date now, not in July. Treat the refund as a contingent receivable trapped in litigation, not cash. Watch the Federal Circuit docket for whether the administrative stay becomes permanent.</div>
+    <div class="contrarian">💭 <em>Here's the version where this is wrong: Congress quietly extends Section 122 or the White House finds a third statutory hook before July 24, the Federal Circuit makes the stay permanent on appeal, and the refund machinery keeps the $166B in a slow enough drip that nothing actually reprices. Tariff policy has already survived two court losses — assuming the third kills it may be the rookie error.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/02/20/supreme-court-trump-tariff-decision-illegal-refunds.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mrmacro.milkroad.com/p/166b-in-tariff-refunds-who-actually-gets-paid" target="_blank">Milk Road Macro</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Refund mechanics: Customs launched the CAPE portal on April 20; about $85B in claims have been accepted and roughly $20.6B actually returned, prioritising recent payments first — so capital trickles into corporate reserves across the rest of 2026. The secondary crisis is legal: consumer class-action firms are suing brands and retailers that raised prices to offset tariffs, arguing that keeping the refund is an "unjust windfall." Section 122 was implemented under the Trade Act's balance-of-payments provision; the CIT found contemporary conditions don't present the "large and serious" deficits the statute requires. The government keeps collecting from non-plaintiff importers during the appeal — so the liability grows even as the legal ground shrinks.</div>
+  <div class="connections"><span class="chain">↔ Signal Spotlight · phantom stimulus</span> <span class="chain">↔ PCE 3.8% · inflation floor</span></div>
+</div>
+
+<div class="section-head" id="signalboard">Signal Board</div>
+
+<div class="story-card" data-cat="geopolitics markets" id="hormuz">
+  <div class="card-meta"><span class="category-tag">GEOPOLITICS · ENERGY</span><span class="trend-arrow">→</span><span class="time-horizon">Days</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">A forged Hormuz "peace deal" moved oil and Bitcoin before the White House called it "a complete fabrication"</div>
+  <div class="layer1">
+    <p>Iranian state TV "released" a memorandum claiming maritime traffic through the Strait of Hormuz would normalise within a month of an interim deal — while Iran kept the right to inspect vessels and charge wartime service fees. The White House said the report was "not true" and the MoU "a complete fabrication." Yet underneath the forgery, US and Iranian negotiators do say they reached a genuine draft to extend the ceasefire and gradually reopen Hormuz — pending final sign-off from Trump and Iran's Supreme Leader Mojtaba Khamenei. Oil erased the day's gains on the ceasefire-extension report; Bitcoin slid under $77,000 after fresh US strikes near Bandar Abbas earlier in the session.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The new development isn't "peace" — it's that the market now trades headlines it can't authenticate. A fabricated MoU was enough to pull WTI off its highs and drag yields down with it. For any operator with energy-linked input costs or petro-sensitive FX, the lesson is that the Hormuz risk premium is now a two-way coin-flip on unverified Tehran-sourced claims. India (a major Gulf-crude importer) and Canada (a net oil exporter) sit on opposite ends of every one of these whipsaws.</div>
+    <div class="action-box"><strong>ACTION:</strong> Don't chase the de-escalation rally on unsigned drafts. Treat any "Hormuz reopens" print as unconfirmed until Trump and Khamenei both sign. Energy hedges stay on.</div>
+    <div class="contrarian">💭 <em>The bull case: the forgery is a trial balloon, the real draft is closer than anyone admits, and within weeks Hormuz reopens, oil falls to the $70s, and the disinflation trade that looked premature today turns out to have been early-right.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/28/oil-prices-us-strikes-in-iran-revive-strait-of-hormuz-turmoil-fears.html" target="_blank">Read original →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Bloomberg reported the Iran-TV claim that flows "may return to normal within a month of a deal" on May 27; by May 28 the White House had disowned the document. The structural point made by analysts: even a real reopening may not return oil prices to pre-war normal, because the wartime inspection-and-fee regime and the rerouting of tanker insurance have already repriced the Gulf shipping cost base.</div>
+  <div class="connections"><span class="chain">↔ Lead · tariff/inflation regime</span> <span class="chain">↔ Bonds · yields fell on oil</span></div>
+</div>
+
+<div class="story-card" data-cat="macro" id="pce">
+  <div class="card-meta"><span class="category-tag">MACRO · INFLATION</span><span class="trend-arrow">↑</span><span class="time-horizon">Quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">April PCE ran 3.8% — the hottest in nearly three years — and the rate-cut crowd looked the other way</div>
+  <div class="layer1">
+    <p>The Fed's preferred gauge came in at 3.8% headline year-on-year with core at 3.3% (a two-year-plus high) and a 0.4% monthly print. On any normal day that's a hawkish shock. Instead, the 10-year Treasury <em>fell</em> to 4.47% as cheaper energy on the Hormuz ceasefire chatter dominated the tape. The bond market chose the energy story over the inflation story.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the cleanest "inflation isn't dead" data point of the month, and it sits directly under every rate-cut bet now embedded in North American curves. If energy relief proves to be a head-fake, the disinflation that justified today's yield drop reverses fast. The structural-inflation regime — sticky services, fiscal disorder, a tariff system in legal limbo — argues the floor is higher than the curve assumes.</div>
+    <div class="action-box"><strong>ACTION:</strong> Fade duration-long positioning that's leaning entirely on energy. The next CPI/PCE pair is the tell on whether 3.8% was a peak or a base.</div>
+    <div class="contrarian">💭 <em>The dovish read: April is the high-water mark, the tariff unwind is itself disinflationary as the $166B and Section 122 costs come out of prices, and by autumn PCE is rolling toward 3% — in which case the bond market front-ran the turn correctly today.</em></div>
+    <a class="read-original" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-28-2026" target="_blank">Read original →</a>
+  </div>
+  <div class="connections"><span class="chain">↔ Lead · tariffs</span> <span class="chain">↔ Canada · BoC June 10</span></div>
+</div>
+
+<div class="story-card" data-cat="tech markets" id="groq">
+  <div class="card-meta"><span class="category-tag">AI · SEMIS</span><span class="trend-arrow">↑</span><span class="time-horizon">2–3 quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Groq is raising again at $650M — but the smaller cheque after a $6.9B round is the inference-margin warning</div>
+  <div class="layer1">
+    <p>Groq announced plans to raise $650M, backed by existing investors Disruptive and Infinitum, as it pivots from selling inference hardware to running an inference "neocloud." That follows a $750M Series E that valued it near $6.9B and a roughly $20B licensing agreement with Nvidia struck in December 2025. A raise that's smaller in dollar terms than the prior round, paired with a business-model pivot, is worth reading closely.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The whole AI-inference layer is being squeezed between Nvidia's pricing power upstream and brutal token-price competition downstream. A challenger that licensed Nvidia tech and is now reframing itself as a cloud is a tell that pure-play inference silicon is a hard place to earn margin. For anyone tracking the AI capex cycle, watch whether inference economics compress the way memory pricing expanded — the mirror image of this month's HBM story.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the round's final valuation. A flat-to-down close confirms inference-margin compression; a markup says demand is still outrunning supply.</div>
+    <div class="contrarian">💭 <em>The bull case: a $650M raise from insiders is conviction money, the neocloud pivot is where the real recurring revenue is, and the Nvidia license is a moat, not a millstone — Groq is trading a hardware multiple for a cloud multiple on purpose.</em></div>
+    <a class="read-original" href="https://www.gurufocus.com/news/8889103/groq-seeks-650m-funding-as-ai-transition-accelerates" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://www.axios.com/newsletters/axios-pro-rata" target="_blank">Axios Pro Rata</a>
+  </div>
+  <div class="connections"><span class="chain">↔ SpaceX S-1 · private-market pricing</span></div>
+</div>
+
+<div class="story-card" data-cat="tech markets" id="spacex">
+  <div class="card-meta"><span class="category-tag">MARKETS · TECH</span><span class="trend-arrow">↑</span><span class="time-horizon">June 12 debut</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Founders Fund's SpaceX stake could clear $60B at IPO — the clearest number yet on the June 12 debut</div>
+  <div class="layer1">
+    <p>Ahead of an amended S-1, Founders Fund partner Scott Nolan detailed the firm's SpaceX history to Axios: a $20M first cheque in 2008, follow-ons before reusability and before Starlink were "real," and a stake that could be worth more than $60B at the listing. SpaceX is targeting a June 12 Nasdaq debut.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A single venture stake worth $60B is a marker for how much private-market value the largest "multi-chapter" tech companies now compound before they ever touch public markets. It also sets the anchor for how the year's marquee IPO gets priced — and resets the bar for every late-stage AI and space name watching the print.</div>
+    <div class="contrarian">💭 <em>The bear case: a $60B paper stake is a pre-IPO mark, not a clearing price; if the listing prices soft in a jittery, high-rate tape, the headline number compresses the moment real buyers set the book.</em></div>
+    <a class="read-original" href="https://www.axios.com/newsletters/axios-pro-rata" target="_blank">Read original →</a>
+  </div>
+  <div class="connections"><span class="chain">↔ Groq · private-market pricing</span></div>
+</div>
+
+<div class="story-card" data-cat="markets macro" id="bonds">
+  <div class="card-meta"><span class="category-tag">MARKETS · RATES</span><span class="trend-arrow">↓</span><span class="time-horizon">Weeks</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Yields blinked: the 10-year UST fell to 4.47% and the Canadian 10-year to 3.45% as oil — not data — drove the tape</div>
+  <div class="layer1">
+    <p>The US 10-year retreated to 4.47% from the 4.7% sixteen-month high touched May 20; Canada's 10-year dropped to 3.45%, its lowest since April, off a 3.7% two-year high. Both moves tracked the energy pullback on Hormuz ceasefire hopes — not any softening in inflation, which actually ran hotter.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The G7 long-bond complex is now hostage to a single, unauthenticated geopolitical variable. Yields that fall on an Iran rumour can round-trip on an Iran strike. For rate-sensitive sectors on both sides of the border — housing, leveraged credit, long-duration equity — this is borrowed calm, not a trend.</div>
+    <div class="contrarian">💭 <em>The other read: the May 20 yield high was the cycle peak, energy is genuinely rolling over, and today's drop is the leading edge of the real rate-relief everyone's been waiting for.</em></div>
+    <a class="read-original" href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank">Read original →</a>
+  </div>
+  <div class="connections"><span class="chain">↔ PCE · inflation floor</span> <span class="chain">↔ Hormuz · oil</span></div>
+</div>
+
+<div class="canadian-file" id="canada-file">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">The Big Six clear the bar but the TSX can't lift, Ottawa's passenger-rights regime gets lobbied in the dark, and the loonie front-runs a cut.</div>
+
+  <div class="story-card" data-cat="canada markets" id="ca-banks">
+    <div class="card-meta"><span class="category-tag">CANADA · BANKS</span><span class="trend-arrow">↑</span><span class="time-horizon">This quarter</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">BMO, Scotiabank and National Bank all beat — yet National fell 4% and the TSX still slid on Hormuz</div>
+    <div class="layer1">
+      <p>All three topped Q2 analyst estimates: BMO on capital-markets fee revenue, Scotiabank on a dividend raise, National Bank with a beat-and-hike. The earnings strength wasn't enough to lift the index — National Bank shares fell 4% and the S&P/TSX Composite dropped 0.7% to 34,412 as Middle East tension dominated sentiment.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Canadian banking lever is printing a clean beat sequence — the domestic-stability side of the trade is intact. But a 4% drop on a beat tells you the marginal buyer is selling the news and trading the macro (oil, rates, Hormuz) over the fundamentals. Bank earnings are confirming the "business-friendly Canada" thesis; the tape is ignoring it for now.</div>
+      <div class="action-box"><strong>ACTION:</strong> Treat bank-earnings strength as a structural positive that the index is temporarily masking. Watch whether RY/TD/CIBC complete the beat sequence.</div>
+      <div class="contrarian">💭 <em>The bear case: the National Bank drop is the signal, not the noise — capital-markets-driven beats are low-quality, credit costs are the next shoe, and the macro tape is right to fade Canadian banks here.</em></div>
+      <a class="read-original" href="https://financialpost.com/fp-finance/banking/scotiabank-tops-analysts-second-quarter-earnings-expectations-raises-dividend" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://www.readthepeak.com" target="_blank">The Peak</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="ca-westjet">
+    <div class="card-meta"><span class="category-tag">CANADA · POLICY</span><span class="trend-arrow">→</span><span class="time-horizon">Months</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">WestJet quietly lobbied Ottawa to gut the air-passenger-rights rules just as they're about to get tougher</div>
+    <div class="layer1">
+      <p>Documents obtained by the Toronto Star show WestJet pressing the federal government to remove the Air Passenger Protection Regulations, arguing they stifle competition and add cost. The timing is pointed: amendments proposed in December 2024 — still not in force — would automatically put responsibility for disruptions over three hours on the airline, with more than 95,000 complaints already unresolved.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> This is a tell on where Ottawa's consumer-protection energy is heading under a "competitiveness" banner. For anyone operating in regulated Canadian consumer sectors, watch whether the Carney government trades passenger rights for an airline-competition narrative — it signals the broader regulatory mood toward business-cost relief.</div>
+      <div class="contrarian">💭 <em>The counter-take: APPR is a paperwork regime that hasn't actually helped fliers (95,000 stuck complaints), and rolling it back for genuine competition could lower fares more than the rules ever lowered delays.</em></div>
+      <a class="read-original" href="https://www.thestar.com/business/document-shows-westjets-push-against-federal-air-passenger-rights-regulations/article_04d36601-d56e-49f9-b8a1-650bc3ef3e94.html" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://www.readthepeak.com" target="_blank">The Peak</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada macro" id="ca-loonie">
+    <div class="card-meta"><span class="category-tag">CANADA · RATES / FX</span><span class="trend-arrow">↓</span><span class="time-horizon">To June 10</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">The loonie firmed to 1.38 and GoC yields hit a multi-week low — the market is pre-pricing a June 10 BoC cut the data doesn't support</div>
+    <div class="layer1">
+      <p>USD/CAD eased to 1.3800 (loonie +0.29%) while the Canadian 10-year fell to 3.45%, lowest since April. The move is energy-and-Fed-driven, not a domestic inflation signal — and it lands two weeks before the Bank of Canada's June 10 decision.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Canadian curves are leaning into a cut on the same borrowed disinflation that drove US yields. If global energy relief is a Hormuz head-fake, the BoC's room to cut narrows fast. The loonie's strength here is a bet on the Fed and oil, not on Canada.</div>
+      <div class="contrarian">💭 <em>The dovish case: Canadian core CPI is already at multi-year lows, the domestic economy is softer than the US, and the BoC cuts June 10 regardless of an oil head-fake — making today's yield drop correctly positioned.</em></div>
+      <a class="read-original" href="https://tradingeconomics.com/canada/government-bond-yield" target="_blank">Read original →</a>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" id="opportunity">Opportunity Board</div>
+<div class="story-card" data-cat="markets macro" id="opp-sec122">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · GLOBAL</span><span class="trend-arrow">↑</span><span class="time-horizon">To July 24</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">The Section 122 expiry is a dated catalyst hiding in plain sight</div>
+  <div class="layer1">
+    <p>A hard statutory cliff near July 24 on the 10% universal tariff is the rare macro event with a known date and an unknown market reaction. Importers re-rate up on relief; exporters who'd gained on US protectionism lose an edge; supply chains reprice landed cost on a clock.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Dated catalysts are tradable in a way that open-ended geopolitics isn't. Indian and Canadian exporters into the US should model the post-July-24 cost curve now; US importers should treat refund receivables as optionality, not cash.</div>
+  </div>
+</div>
+<div class="story-card" data-cat="india macro" id="opp-inr">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow">↓</span><span class="time-horizon">Quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">A rupee pinned near 96 keeps the importer-margin squeeze on — and the integration premium intact</div>
+  <div class="layer1">
+    <p>With the rupee at a record-soft 96 on a hot dollar, Indian businesses that import inputs and can't reprice keep bleeding margin, while vertically integrated and export-oriented names hold the advantage. The FX regime, not demand, is the swing factor.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The durable read for an India operator: in a weak-rupee regime, pricing power and supply-chain integration are the moat. Watch RBI's tolerance for further depreciation versus intervention — the size and cadence of its FX operations is the signal of whether 96 is a line or a way-station.</div>
+  </div>
+</div>
+
+<div class="section-head" id="radar">Also on Radar</div>
+<div class="story-card" data-cat="tech" id="radar-mistral">
+  <div class="card-meta"><span class="category-tag">AI · ROBOTICS</span><span class="trend-arrow">↑</span><span class="time-horizon">Months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Mistral is aiming its newest product at robotics and physical AI — Europe's frontier lab follows the embodiment money</div>
+  <div class="layer1">
+    <p>Per The Deep View, Mistral is targeting robotics and physical AI with its latest product — another sign that the frontier-model race is migrating from chat toward embodiment, where Tesla's Optimus build-out and the humanoid wave already point.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> When a leading European lab pivots toward physical AI, the embodiment thesis stops being a US-only bet. It widens the field of listed and private exposure to humanoid and robotics infrastructure.</div>
+    <a class="read-original" href="https://www.thedeepview.co" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="section-head" id="quickhits">Quick Hits</div>
+<ul class="quick-hits" data-cat="all">
+  <li data-cat="geopolitics india"><b>Beijing eased hukou rules</b> so ~357M migrant workers can enrol in social insurance where they work — a real unlock of suppressed Chinese consumption, and a slow-burn variable for every emerging-market exporter, India included.</li>
+  <li data-cat="markets"><b>VIX rose to 16.75 (+2.8%)</b> — still a low absolute level for a tape juggling forged peace deals and a 3.8% PCE; the options market isn't pricing the headline risk the news flow implies.</li>
+  <li data-cat="tech"><b>Groq's ~$20B Nvidia licence (Dec 2025)</b> underpins its pivot — a reminder that even Nvidia's "rivals" are increasingly its customers, which is the real moat story in AI silicon.</li>
+  <li data-cat="markets"><b>Bitcoin fell below $77,000</b> after fresh US strikes near Bandar Abbas — crypto is still trading as a high-beta risk asset on geopolitics, not the "digital gold" hedge its backers claim.</li>
+  <li data-cat="macro"><b>Core PCE hit 3.3%</b>, a two-year-plus high — the part of the inflation print the rate-cut narrative is working hardest to ignore.</li>
+  <li data-cat="canada"><b>Covered Bridge, a New Brunswick chipmaker, is in a legal fight</b> with 17 residents over noise and odour — a small-town reminder that Canada's "build it" industrial mood still meets local NIMBY friction.</li>
+  <li data-cat="markets tech"><b>Founders Fund's first SpaceX cheque was $20M in 2008</b>; the stake may be worth $60B+ at the June 12 listing — an 18-year illustration of why pre-category venture bets compound hardest.</li>
+</ul>
+
+<div class="section-head" id="longgame">The Long Game</div>
+<div class="longgame">
+  The quiet structural story under this week's tariff chaos is the reassertion of Article I. Two courts have now told the executive it cannot levy nationwide tariffs by emergency decree, and the $166B refund is the price of having tried. Whatever happens to Section 122 on July 24, the precedent is being set that US trade policy — the single most market-moving lever of the past two years — runs through Congress and the courts, not the Oval Office alone. For cross-border operators who learned to trade every tariff headline, the slow-burn shift is that the next tariff regime will be slower, more litigated, and more predictable. That's less drama and more durability — and durability is tradable.
+</div>
+
+<div class="section-head" id="scorecard">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#192 · May 29, 2026 · Evening</td></tr>
+  <tr><td>Sources scanned</td><td>Finshots, Morning Brew, The Deep View, TLDR, 1440, Inc42, The Peak, Sinocism, Innermost Loop, Milk Road Macro, Axios Pro Rata + targeted web searches (CNBC, TheStreet, Bloomberg, Trading Economics, Financial Post, Toronto Star)</td></tr>
+  <tr><td>Stories featured</td><td>1 Lead + 5 Signal Board + 3 Canadian File + 2 Opportunity + 1 Radar + 7 Quick Hits</td></tr>
+  <tr><td>India stories</td><td>3 (rupee/importer-margin opportunity, hukou/EM-export quick hit, FX in markets table)</td></tr>
+  <tr><td>Canada stories</td><td>4 (Big Six banks, WestJet APPR, loonie/GoC/BoC, Covered Bridge)</td></tr>
+  <tr><td>China-lens (Tier 5) disposition</td><td>Sinocism (hukou) → Quick Hit; Innermost Loop singularity round-up → already featured in the May 28 edition, not re-run; no new Tier-5 item arrived after the morning edition.</td></tr>
+  <tr><td>Theme rotation</td><td>Today's Lead topic = tariff-refund / Section 122 (new). Prior two Leads = memory/HBM (May 28) and 30Y-UST/Iran (May 27). No overlap — fresh Lead, no repeat.</td></tr>
+  <tr><td>New predictions</td><td>3 (Section 122 July 24 lapse; unjust-windfall class action; Groq round ≤$7.5B)</td></tr>
+  <tr><td>Date note</td><td>System clock read May 28 23:55 UTC at publish; environment/working-memory date is May 29 (authoritative). Market data reflects the May 28 session close / May 29 Asia open.</td></tr>
+</table>
+
+<div class="foot">THE BRIEF · Edition #192 · Compiled for Suhail Seth · Markets as of May 28 close / May 29 Asia · Not investment advice — figures sourced and dated; unverified figures withheld.</div>
+
+</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
