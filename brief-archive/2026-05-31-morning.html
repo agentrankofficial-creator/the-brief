@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief — Edition #195 · May 31, 2026</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;padding:0}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+a{color:var(--accent)}
+.header{border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px}
+.masthead{font-family:var(--font-ui);font-size:34px;font-weight:800;letter-spacing:-1px;color:var(--text)}
+.edmeta{font-family:var(--font-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:8px}
+.tagline{font-style:italic;color:var(--muted);margin-top:14px;font-size:17px}
+.nav{position:sticky;top:0;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);padding:12px 0;margin-bottom:24px;border-bottom:1px solid var(--border);z-index:10;display:flex;flex-wrap:wrap;gap:8px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);background:var(--surface);border-radius:20px;padding:6px 13px;cursor:pointer}
+.nav-pill.active{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:700}
+.editors-read{background:linear-gradient(180deg,#16160f,#131316);border:1px solid var(--accent);border-radius:12px;padding:26px 28px;margin-bottom:30px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin:6px 0 16px}
+.er-body{font-size:17px;line-height:1.72}
+.er-body p{margin:0 0 14px}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:30px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:700}
+.ss-claim{font-size:20px;line-height:1.45;font-weight:600;margin-bottom:12px}
+.ss-reasoning{color:var(--muted);font-size:15px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-top:14px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.section-head{font-family:var(--font-ui);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.mkt{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center}
+.mkt .name{font-family:var(--font-ui);font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--dim)}
+.mkt .val{font-family:var(--font-ui);font-size:15px;font-weight:700;margin-top:3px}
+.mkt .chg{font-family:var(--font-ui);font-size:10px;margin-top:2px}
+.up{color:var(--green)}.down{color:var(--red)}
+.mkt-note{font-size:12px;color:var(--dim);font-style:italic;margin-bottom:8px}
+.connmap{display:flex;flex-wrap:wrap;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px}
+.chip{font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;color:var(--text);background:#1c1c20;border:1px solid var(--border);border-radius:14px;padding:5px 11px}
+.chip .arr{color:var(--accent)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.story-card.lead{border-color:var(--accent)}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.category-tag{font-family:var(--font-ui);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.trend-arrow{font-size:12px}
+.time-horizon{font-family:var(--font-ui);font-size:10px;color:var(--dim)}
+.decision-badge{font-family:var(--font-ui);font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:3px;margin-left:auto}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(161,161,170,.12);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:20px;font-weight:700;line-height:1.32;margin-bottom:12px}
+.lead .card-title{font-size:23px}
+.layer1 p{margin:0 0 12px;font-size:15.5px}
+.so-what,.action-box,.contrarian{font-size:14px;border-radius:6px;padding:10px 13px;margin-bottom:10px}
+.so-what{background:#16161a;border-left:2px solid var(--muted)}
+.action-box{background:rgba(200,160,48,.08);border-left:2px solid var(--accent)}
+.contrarian{background:rgba(224,82,82,.06);border-left:2px solid var(--red);color:var(--muted);font-style:italic}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;margin-right:16px}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--accent);border:1px solid var(--border);border-radius:5px;padding:6px 12px;cursor:pointer;margin-top:12px}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+.story-card.deep .layer2{display:block}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin-bottom:16px}
+.cf-label{font-family:var(--font-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700}
+.cf-subtitle{font-style:italic;color:var(--muted);margin:6px 0 16px}
+.canadian-file .story-card{border-left:2px solid #3a2424}
+.quick-hits li{margin-bottom:9px;font-size:14.5px}
+.quick-hits strong{color:var(--text)}
+.longgame{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:15px;color:var(--muted)}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;margin-top:10px}
+.scorecard td,.scorecard th{border:1px solid var(--border);padding:7px 10px;text-align:left}
+.scorecard th{color:var(--dim);text-transform:uppercase;font-size:10px;letter-spacing:1px}
+.hidden{display:none}
+.footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets{grid-template-columns:repeat(3,1fr)}.masthead{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="masthead">THE BRIEF</div>
+  <div class="edmeta">Edition #195 · Sunday, May 31, 2026 · Morning</div>
+  <div class="tagline">India and Canada stop fighting and start trading; the RBI hands Delhi a record windfall and quietly buys gold; and a closed Strait of Hormuz cuts India and Canada in opposite directions.</div>
+</div>
+
+<div class="nav" id="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('ai',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('geo',this)">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('opp',this)">Opportunity</span>
+</div>
+
+<!-- ============ EDITOR'S READ ============ -->
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · May 31, 2026</div>
+  <div class="er-body">
+    <p>The most important thing that happened this week wasn't in a war room or a server farm — it was Piyush Goyal landing in Toronto with the largest business delegation India has ever sent to Canada, and both sides committing to take bilateral trade from $8.5 billion to $50 billion by 2030. Two years ago these governments were expelling each other's diplomats. Now they're talking critical minerals, energy, and pension capital, and aiming to close a CEPA by year-end. I think this is the single most underpriced story on my desk, because it's the structural answer to the other two stories of the week.</p>
+    <p>Here's the chain nobody is drawing. The Strait of Hormuz is still closed, oil shocked higher for weeks, and that same barrel of crude cuts India and Canada in exactly opposite directions: it bleeds India's import bill (which is precisely why Delhi just threw ₹1 lakh crore at EV adoption) and it pulls Canada's oil-and-gas economy out of a technical recession in Q2. One commodity, two mirror-image macros — and a trade pact that lets the importer (India) lock in supply from the exporter (Canada). That's not a feel-good diplomacy headline. That's a hedge.</p>
+    <p>And underneath it: the RBI just handed the government a record ₹2.87 lakh crore surplus and kept buying gold while domestic retail money — not foreigners — drove Indian midcaps to an all-time high even as the Sensex slipped. India is learning to fund itself. My forward call: the India–Canada axis is an early bet that a fragmenting dollar world rewards bilateral resource-for-capital deals over the old multilateral plumbing. Watch whether CEPA actually gets signed this year — that's the tell.</p>
+  </div>
+</div>
+
+<!-- ============ SIGNAL SPOTLIGHT ============ -->
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">India is quietly assembling a self-funded, de-dollarized growth engine — and Canada, not the US, is becoming its resource-and-capital partner of choice.</div>
+  <div class="ss-reasoning">Three data points from one week rhyme: the RBI transferred a record ₹2.87 lakh crore to the Centre while expanding its balance sheet 20.6% and leaning harder into gold; domestic retail and HNI flows pushed the Nifty Midcap 100 to a fresh all-time high (62,299) even as foreign investors kept selling the large-cap benchmarks; and Goyal's delegation went to Canada explicitly for critical minerals, energy security, and long-term pension-fund investment. Foreign capital and dollar reserves are being substituted — by domestic savings, sovereign gold, and a bilateral resource partner. Each looks like an isolated headline. Together they're a balance-of-payments strategy.</div>
+  <div class="ss-horizon">Time horizon: 2–4 quarters to confirm (CEPA signature + sustained domestic-flow dominance)</div>
+</div>
+
+<!-- ============ PREDICTION BOARD ============ -->
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>#194</td><td>Canada's Q2 2026 GDP returns to positive annualized growth, ending the technical recession (validating the "already over" call)</td><td>Aug 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#194</td><td>Anthropic fails to sustain operating profitability in Q3 2026 as the concentrated compute discount rolls off</td><td>Nov 15, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#194</td><td>OpenAI completes its IPO at a valuation at or above $1 trillion</td><td>Nov 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#193</td><td>A US–Iran deal reopening Hormuz is signed at head-of-state level by Jun 15, and WTI trades below $85 within a week</td><td>Jun 15, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#193</td><td>Anthropic's eventual IPO prices above its $965B private mark</td><td>Dec 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ MARKETS ============ -->
+<div class="section-head">Global Markets · Last close Fri May 29, 2026</div>
+<div class="mkt-note">Markets closed for the weekend; figures are Friday's close (weekly change where shown). Three Canadian tiles flagged 🍁.</div>
+<div class="markets">
+  <div class="mkt"><div class="name">S&amp;P 500</div><div class="val">7,580</div><div class="chg up">▲ +1.4% wk</div></div>
+  <div class="mkt"><div class="name">Nasdaq</div><div class="val">27,002</div><div class="chg up">▲ +0.3%</div></div>
+  <div class="mkt"><div class="name">Nikkei 225</div><div class="val">66,198</div><div class="chg up">▲ +4.7% wk</div></div>
+  <div class="mkt"><div class="name">Hang Seng</div><div class="val">25,182</div><div class="chg up">▲ +0.7%</div></div>
+  <div class="mkt"><div class="name">Nifty 50</div><div class="val">23,547</div><div class="chg down">▼ -0.7% wk</div></div>
+  <div class="mkt"><div class="name">Sensex</div><div class="val">74,775</div><div class="chg down">▼ -0.9% wk</div></div>
+  <div class="mkt"><div class="name">🍁 TSX Comp</div><div class="val">34,759</div><div class="chg up">▲ +0.7%</div></div>
+  <div class="mkt"><div class="name">USD/INR</div><div class="val">95.05</div><div class="chg up">▲ ₹ +53p</div></div>
+  <div class="mkt"><div class="name">🍁 CAD/USD</div><div class="val">0.725</div><div class="chg down">▼ soft loonie</div></div>
+  <div class="mkt"><div class="name">WTI Crude</div><div class="val">$87.36</div><div class="chg down">▼ -1.7%</div></div>
+  <div class="mkt"><div class="name">Gold</div><div class="val">$4,541</div><div class="chg up">▲ +1.0% day</div></div>
+  <div class="mkt"><div class="name">Bitcoin</div><div class="val">$73,188</div><div class="chg down">▼ -0.3%</div></div>
+  <div class="mkt"><div class="name">10Y UST</div><div class="val">4.45%</div><div class="chg down">▼ -0.4bp</div></div>
+  <div class="mkt"><div class="name">🍁 10Y GoC</div><div class="val">3.41%</div><div class="chg down">▼ easing</div></div>
+  <div class="mkt"><div class="name">VIX</div><div class="val">15.30</div><div class="chg down">▼ -2.8%</div></div>
+</div>
+
+<!-- ============ STORY CONNECTION MAP ============ -->
+<div class="section-head">Story Connection Map</div>
+<div class="connmap">
+  <span class="chip">HORMUZ CLOSED <span class="arr">→</span> OIL SHOCK <span class="arr">→</span> INDIA IMPORT BILL ↑ / CANADA Q2 REBOUND</span>
+  <span class="chip">FPI SELLING <span class="arr">→</span> DOMESTIC RETAIL ABSORBS <span class="arr">→</span> MIDCAP ATH</span>
+  <span class="chip">RBI RECORD SURPLUS + GOLD <span class="arr">→</span> DE-DOLLARIZATION</span>
+  <span class="chip">CEPA RESET <span class="arr">→</span> CANADA MINERALS/ENERGY <span class="arr">→</span> INDIA SUPPLY HEDGE</span>
+  <span class="chip">OPENAI + SPACEX <span class="arr">→</span> TRILLION-DOLLAR IPO TEST</span>
+</div>
+
+<!-- ============ THE LEAD ============ -->
+<div class="section-head">The Lead</div>
+<div class="story-card lead" data-cat="india canada geo" id="lead-cepa">
+  <div class="card-meta">
+    <span class="category-tag">INDIA × CANADA · TRADE</span>
+    <span class="trend-arrow up">↑</span>
+    <span class="time-horizon">Horizon: this year (CEPA target)</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">India and Canada reset from diplomatic freeze to a $50 billion handshake — Goyal's record delegation puts critical minerals and pension capital on the table</div>
+  <div class="layer1">
+    <p>Commerce Minister Piyush Goyal, alongside Canadian Trade Minister Maninder Sidhu, wrapped a three-day visit (Ottawa May 25, Toronto May 26–28) leading the largest-ever Indian business delegation to Canada — leaders from 100+ companies. Both governments reaffirmed a target to roughly triple bilateral trade from ~$8.5 billion today to $50 billion by 2030, and to seal the long-stalled Comprehensive Economic Partnership Agreement (CEPA) by year-end. Talks centred on critical minerals, energy security, resilient supply chains, infrastructure, and long-term capital from Canadian pension funds.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the rare story that is first-class news in both of Suhail's home markets at once. For India, Canada is a source of the two things a closed Hormuz makes scarce — energy and critical minerals — plus patient pension capital at a moment foreign portfolio money is fleeing Indian equities. For Canada, India is the demand-side escape hatch from over-dependence on a tariff-happy United States. A resource-for-market bargain between a soft-rupee importer and a soft-loonie exporter is a genuine structural hedge, not a photo op.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat "CEPA signed in 2026" as the binary that re-rates the whole thesis. Watch Canadian critical-minerals, potash/fertilizer and LNG names for India-demand optionality, and Indian importers/infra players for Canadian-capital inflows. If CEPA slips into 2027, the reset is rhetoric.</div>
+    <div class="contrarian">💭 <em>Here's the version where this is wrong: India–Canada trade pacts have been "almost done" before and died on agriculture, dairy, and Khalistan-tinged politics. A 100-CEO delegation and a round number for 2030 is exactly what you stage when the hard chapters aren't actually agreed. $8.5B to $50B in four years is a near-sixfold jump no bilateral relationship at this base has delivered on schedule.</em></div>
+    <a class="read-original" href="https://www.tribuneindia.com/news/business/piyush-goyal-wraps-up-canada-visit-focusing-on-india-canada-cepa-talks-50-bn-trade-goal/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Asupport%40sbnri.com" target="_blank">Gmail source (SBNRI)</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The visit is the clearest sign yet of a thaw after the 2023–24 freeze that followed the Nijjar affair and mutual diplomat expulsions. India is explicitly exploring gas, fuel and critical-mineral imports from Canada while courting long-duration pension investors. The CEPA negotiations had been paused since 2023; reviving them with a year-end deadline is ambitious given Canada's political sensitivities and India's protected agri/dairy lines — the same rocks every India FTA hits.</div>
+  <div class="connections"><span class="chip">links: <span class="arr">→</span> Canadian File · RBI surplus · Hormuz oil</span></div>
+</div>
+
+<!-- ============ SIGNAL BOARD ============ -->
+<div class="section-head">Signal Board</div>
+
+<div class="story-card" data-cat="india markets" id="rbi-surplus">
+  <div class="card-meta"><span class="category-tag">INDIA · CENTRAL BANK</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: FY26 fiscal</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The RBI hands Delhi a record ₹2.87 lakh crore — and keeps stacking gold instead of dollars</div>
+  <div class="layer1">
+    <p>The Reserve Bank approved a record surplus transfer of ₹2,86,588 crore to the central government for FY26 at its 623rd Central Board meeting under Governor Sanjay Malhotra — even after raising its Contingent Risk Buffer to ₹1.09 lakh crore (from ₹44,862 crore). The balance sheet expanded 20.6% to ₹91.97 lakh crore, gross income rose 26.4%, and — per the RBI's annual report as read by SBNRI — gold reserves jumped sharply (to roughly ₹3.88 trillion) as the bank diversifies away from the dollar.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is fiscal oxygen. A record central-bank dividend gives the government room to keep spending on capex and subsidies (like the EV push) without blowing the deficit — a tailwind for domestic-demand sectors. The gold accumulation is the quieter signal: a structural lean away from dollar reserves that rhymes with the bilateral, non-dollar logic of the Canada reset.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read the dividend as support for government-capex beneficiaries and the domestic-demand trade. Track the gold share of reserves in the next RBI bulletin as a de-dollarization gauge.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: a record RBI dividend can be a sign of strain, not strength — it pulls forward central-bank profits (boosted by forex gains on a weak rupee) into government coffers and can mask a thin tax base. And a gold pile that "diversifies away from the dollar" is also just what every central bank did while gold ran to record highs; it may be momentum-chasing dressed as strategy.</em></div>
+    <a class="read-original" href="https://swarajyamag.com/economy/rbi-approves-record-rs-287-lakh-crore-surplus-transfer-to-centre-for-fy26-amid-strong-balance-sheet-growth" target="_blank">Read original →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">RBI dividend payouts have more than tripled over three years, making the surplus transfer one of the Centre's most important non-tax revenue lines. The CRB was held at 6.5% of balance-sheet size even as the absolute buffer more than doubled — i.e., the bank grew fast enough to fund both a bigger cushion and a bigger dividend.</div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="midcaps">
+  <div class="card-meta"><span class="category-tag">INDIA · MARKETS</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: near-term</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Indian midcaps punch to an all-time high while the Sensex slips — domestic money is now strong enough to fight the foreign sellers</div>
+  <div class="layer1">
+    <p>The Nifty Midcap 100 hit a fresh all-time high of 62,299 (up 18.3% so far in FY27) even as the Sensex fell 479 points on the day amid fresh US strikes on Iran. The split is structural: midcaps are relatively insulated from the foreign portfolio selling that has hammered the large-cap benchmarks, and domestic retail plus HNI flows are now the marginal buyer. The Ken's data work this week asked the obvious question — as FPIs sell, promoters cash out, and IPO insiders trim, who's on the other side? Indian households.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The character of the Indian market has changed. A decade ago an FPI exit of this scale would have gutted indices; today domestic SIP and HNI money absorbs it, and the divergence shows up as midcap leadership over FPI-heavy large caps. That's durable as long as domestic flows hold — but it also means valuations are increasingly set by price-insensitive monthly inflows, not foreign fundamental buyers.</div>
+    <div class="action-box"><strong>ACTION:</strong> Respect the domestic-flow bid in midcaps, but watch SIP-flow data monthly — that's the single variable holding the divergence up.</div>
+    <div class="contrarian">💭 <em>The bear version: "domestic flows absorb everything" is exactly the story every late-cycle retail mania tells itself. Midcaps at an all-time high while foreigners sell large caps isn't resilience — it's the least-informed money bidding up the most-expensive, least-liquid corner of the market right before a flows wobble.</em></div>
+    <a class="read-original" href="https://www.business-standard.com/markets/stock-market-news/nifty-midcap-100-hits-all-time-high-even-as-sensex-nifty-slide-126052601636_1.html" target="_blank">Read original →</a>
+    <a class="read-original" href="https://the-ken.com/the-collection/who-exactly-are-retail-investors-buying-from/" target="_blank">The Ken: who's selling →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="ai markets" id="openai-ipo">
+  <div class="card-meta"><span class="category-tag">AI · CAPITAL MARKETS</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: Q3–Q4 listing</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">OpenAI's confidential S-1 reveals the number that matters — $852B today, and a $9 billion hole it's racing to outgrow</div>
+  <div class="layer1">
+    <p>OpenAI confidentially filed its S-1 on May 22, with Goldman Sachs and Morgan Stanley leading and a listing possible as early as September at a valuation between its last private mark of $852 billion and a round $1 trillion. The reveal underneath the headline: OpenAI is running ~$2 billion/month in revenue (a ~$25 billion annualized run-rate by March, 50 million consumer subscribers, 9 million business users) — but in full-year 2025 it booked $13.1 billion of revenue while burning ~$22 billion, a ~$9 billion net loss.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The trillion-dollar IPO test is really a test of whether public markets will fund a business that grows 90%+ but loses nine billion dollars a year on the promise that compute costs fall faster than usage rises. It sets the public-market clearing price for the entire frontier-model layer — and by extension for every private AI comparable being marked off it.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the gross-margin and compute-cost lines when the S-1 goes public — that's the real disclosure, not the valuation headline.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: a September listing at a trillion isn't a vote of confidence, it's an exit. Insiders selling into index-fund demand at peak AI euphoria, before the compute-cost curve proves it can bend, is how cycle tops are made — and a $9B annual burn is a lot to ask a retirement account to underwrite.</em></div>
+    <a class="read-original" href="https://fortune.com/2026/05/22/openai-ipo-filing-1-trillion-may-finally-answer-these-big-questions/" target="_blank">Read original →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">India angle: The Ken's Zero Shot column framed this week as "the end of AI's venture era" — profits, IPOs, and deals that don't quite look like consolidation. For Indian IT-services majors (HCLTech's Sarvam cheque last week), a public OpenAI raising index-fund billions widens the capability-and-capital gap that labor-arbitrage models can't close.</div>
+</div>
+
+<div class="story-card" data-cat="ai markets geo" id="spacex">
+  <div class="card-meta"><span class="category-tag">SPACE · DEFENSE</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: pre-IPO</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">SpaceX banks two Space Force contracts worth $6.4B in a week — Washington is pre-funding the IPO it claims to worry about</div>
+  <div class="layer1">
+    <p>The US Space Force awarded SpaceX a $2.29 billion Other-Transaction deal to build the "Space Data Network Backbone" — an optically-interconnected Starshield satellite mesh acting as a military internet in orbit (operational prototype due end-2027) — and, on May 29, a separate $4.16 billion award for the Space-Based Airborne Moving Target Indicator (SB-AMTI) threat-tracking layer. SpaceX is reportedly targeting an IPO valuation north of $1.75 trillion.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The same government that frets about concentration in space and AI keeps writing the cheques that entrench it. Government revenue de-risks SpaceX's IPO story precisely as OpenAI files — back-to-back, the two largest private tech franchises are walking into public markets on a wave of state and index demand. For an operator-reader, the pattern is the story: defense procurement is now an explicit pillar of frontier-tech valuations.</div>
+    <div class="contrarian">💭 <em>The bear case: a $1.75T pre-IPO mark resting partly on multi-year prototype contracts (delivery "by end-2027") is valuing milestones that haven't been hit. Other-Transaction awards can be re-scoped or cancelled, and concentration that's politically convenient today is an antitrust target tomorrow.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/29/spacex-wins-4point16-billion-space-force-contract-for-threat-detection-satellites.html" target="_blank">Read original →</a>
+    <a class="read-original" href="https://spacenews.com/spacex-wins-2-29-billion-space-force-contract-for-military-data-network/" target="_blank">Second contract →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="geo markets" id="hormuz">
+  <div class="card-meta"><span class="category-tag">GEOPOLITICS · ENERGY</span><span class="trend-arrow down">↓</span><span class="time-horizon">Horizon: weeks</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Hormuz stays shut and crude posts its worst month since 2020 — the market is pricing a deal the battlefield hasn't signed</div>
+  <div class="layer1">
+    <p>The Strait of Hormuz remains effectively closed — Iran declared it shut in early March and has mined it and warned off shipping — even as the US ran a naval blockade of Iranian ports through May 29 and struck targets near Bandar Abbas (downing four drones, hitting a ground-control station). Yet WTI fell to $87.36 and Brent logged its biggest monthly loss since 2020, because the tape is trading the hope of a deal: Washington and Tehran are said to be negotiating a preliminary ceasefire and an easing of Strait restrictions, with Trump saying on May 27 he "won't rush" it.</p>
+    <div class="so-what"><strong>SO WHAT in India:</strong> Every dollar of Hormuz-driven crude widens India's import bill, pressures the rupee (now ~95/$), and is the explicit reason Delhi is subsidizing an EV shift. <strong>SO WHAT in Canada:</strong> The mirror image — elevated oil and gas activity is the single biggest reason economists think Canada's Q2 will rebound out of its technical recession. The same barrel is a tax on Delhi and a stimulus for Calgary.</div>
+    <div class="action-box"><strong>ACTION:</strong> A signed reopening is the catalyst that re-rates oil-sensitive INR assets up and oil-levered Canadian names down. Until ink hits paper, treat the oil rally lower as a hope trade that a single Strait incident can reverse.</div>
+    <div class="contrarian">💭 <em>The version where this is wrong: oil is falling because demand is quietly rolling over, not because peace is near. If the "deal" is a mirage — and fresh strikes this week say it might be — crude snaps back above $100 and the India-import-bill / rupee pain gets far worse before CEPA energy flows can matter.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/05/29/oil-price-iran-deal-war-ceasefire-trump.html" target="_blank">Read original →</a>
+    <a class="read-original" href="https://www.cnn.com/2026/05/27/world/live-news/iran-war-us-news" target="_blank">Trump "won't rush" →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="india-ev">
+  <div class="card-meta"><span class="category-tag">INDIA · AUTO / ENERGY</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: multi-year</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">India throws ₹1 lakh crore at EVs to escape the oil bill — but owners are stuck in the workshop, not the fast lane</div>
+  <div class="layer1">
+    <p>The oil shock from the US–Israel war on Iran has made the case for EVs urgent in India, and the government has rolled out incentive packages totalling ₹1 lakh crore to accelerate adoption and cut the crude-import bill. The Ken's reporting this week is the cold shower: poor after-sales service, thin charging infrastructure, and a lack of domestic manufacturing of critical components mean owners love the drive but live the daily friction. Tata and Mahindra need the volumes; the ecosystem isn't ready.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is where the Canada reset and the EV push physically connect: India can't build a credible EV base without critical minerals it doesn't have — exactly the supply CEPA is meant to unlock from Canada. Energy security and minerals security are the same problem wearing two hats.</div>
+    <div class="contrarian">💭 <em>The bear case: ₹1 lakh crore of incentives chasing adoption before the charging and parts ecosystem exists is how you subsidize frustration. If oil de-escalates and petrol gets cheap again, the EV economics that look compelling at $90 crude unwind fast.</em></div>
+    <a class="read-original" href="https://the-ken.com/story/india-needs-tata-mahindra-evs-to-cut-the-oil-bill-but-ev-owners-are-stuck-at-workshops/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<!-- ============ THE CANADIAN FILE ============ -->
+<div class="section-head">🍁 The Canadian File</div>
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">An official recession print collides with a bond market that refuses to believe it.</div>
+
+  <div class="story-card" data-cat="canada markets" id="cf-recession">
+    <div class="card-meta"><span class="category-tag">CANADA · MACRO</span><span class="trend-arrow down">↓</span><span class="time-horizon">Horizon: June 10 BoC</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">It's official and already contested: StatCan confirms a technical recession, but the bond market is 99% sure the Bank of Canada holds anyway</div>
+    <div class="layer1">
+      <p>Statistics Canada confirmed on May 29 that Q1 real GDP contracted 0.1% annualized, after Q4 2025 was revised down to -1.0% (from -0.6%) — three of the last four quarters now negative, the textbook technical recession. Yet markets priced a 99% chance the Bank of Canada holds its policy rate at 2.25% on June 10 (a fifth straight hold), and Capital Economics' Bradley Saunders argued the "trade-induced" recession is "likely already over," with Q2 tracking a solid rebound on rising oil-and-gas activity.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Canada is in the strange spot where the data says recession and the forward-looking signals (oil activity, bond pricing, a soft loonie that flatters exporters) say recovery. For a cross-border operator, the read is that the BoC is choosing to look through a backward-looking print — which keeps rates higher than a pure recession call would imply, and keeps the loonie under pressure against a still-firm US dollar.</div>
+      <div class="action-box"><strong>ACTION:</strong> Don't position for a June cut the market has all but ruled out. Position for the Q2-rebound narrative in oil-and-gas-levered Canadian names, and watch the StatCan Q2 print (due August) as the recession's actual verdict.</div>
+      <div class="contrarian">💭 <em>The version where this is wrong: "already over" is a forecast, not a fact. If the US tariff overhang bites harder and oil's hope-rally reverses, Q2 disappoints, the BoC is caught flat-footed at 2.25%, and the loonie has further to fall.</em></div>
+      <a class="read-original" href="https://www.bnnbloomberg.ca/business/economics/2026/05/29/canada-slips-into-technical-recession-as-economy-stalls-in-q1-statcan/" target="_blank">Read original →</a>
+      <a class="read-original" href="https://boereport.com/2026/05/29/economists-pour-cold-water-on-recession-talk-after-canadas-economy-stalls-in-q1/" target="_blank">"Already over" case →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada markets" id="cf-tsx">
+    <div class="card-meta"><span class="category-tag">CANADA · MARKETS</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: near-term</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">The TSX shrugs off the recession and grinds higher — weak GDP reads as "dovish BoC" to a market that wants cuts later, not now</div>
+    <div class="layer1">
+      <p>The S&amp;P/TSX Composite rose 0.7% to 34,759 on Friday as weak GDP data reinforced expectations of an eventually dovish Bank of Canada, the GoC 10-year eased to ~3.41% (down from a two-year high of 3.7% on May 19), and a soft loonie cushioned exporters. Energy and materials — the index's resource backbone — carry the oil-rebound thesis.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The TSX is a leveraged bet on the "recession-is-already-over, rate-relief-is-coming" story. A resource-heavy index with a weak currency and easing long yields is positioned to outperform if the Q2 rebound shows up — and is the most exposed if it doesn't.</div>
+      <div class="contrarian">💭 <em>The bear case: an index making highs into a confirmed recession on the hope of cuts the central bank just declined to deliver is running on narrative, not earnings.</em></div>
+      <a class="read-original" href="https://tradingeconomics.com/canada/stock-market" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada india opp" id="cf-minerals">
+    <div class="card-meta"><span class="category-tag">CANADA × INDIA · RESOURCES</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: multi-year</span><span class="decision-badge act">ACT</span></div>
+    <div class="card-title">Canada's pitch to India is its rock and its capital — critical minerals, energy, and pension money looking for a growth market</div>
+    <div class="layer1">
+      <p>The other side of the Lead: Goyal's delegation went to Canada specifically for critical minerals, energy (gas and fuel), resilient supply chains, and long-duration investment from Canadian pension funds. A separate Canadian-investor note this week flagged that with the Strait closed, urea/fertilizer prices are up ~50% and a Canadian producer sits squarely in that supply gap — a microcosm of the resource-for-market logic.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Canada has exactly what a Hormuz-squeezed, FPI-drained India needs — physical resources and patient capital — and India has the demand growth Canadian pensions and exporters can't find at home. CEPA is the wrapper that turns that complementarity into contracts.</div>
+      <div class="action-box"><strong>ACTION:</strong> Screen Canadian critical-minerals, potash/fertilizer and LNG names for India-demand optionality. The fertilizer-on-a-closed-Strait angle is the cleanest near-term expression.</div>
+      <div class="contrarian">💭 <em>The version where this is wrong: resource diplomacy is slow and politically fragile. Canadian pension funds answer to fiduciary boards, not trade communiqués, and "exploring imports" is a long way from signed offtake.</em></div>
+      <a class="read-original" href="https://www.millenniumpost.in/business/piyush-goyal-says-india-canada-aim-to-seal-cepa-by-year-end-target-50-billion-trade-by-2030-661565" target="_blank">Read original →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPPORTUNITY BOARD ============ -->
+<div class="section-head">Opportunity Board</div>
+
+<div class="story-card" data-cat="opp india" id="opp-india">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: multi-year</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">India's domestic-demand-and-semis stack is the trade that doesn't need foreigners to show up</div>
+  <div class="layer1">
+    <p>Two structural India threads ran this week: domestic flows driving midcaps to records (SBNRI flags WhiteOak Flexi Cap as its pick of the week), and the semiconductor build-out — The Ken's teardown of Tata's ground-up ecosystem versus Murugappa/CG Power's acquire-and-stack approach to building a chip stack "from what India doesn't have."</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Both are bets on India funding and supplying itself — domestic capital replacing FPI, domestic fabs replacing import dependence. They pair naturally with the de-dollarization and CEPA-minerals threads as one coherent self-reliance trade.</div>
+    <a class="read-original" href="https://the-ken.com/story/tata-and-murugappas-chip-race-starts-with-what-india-doesnt-have/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="opp canada" id="opp-canada">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · CANADA</span><span class="trend-arrow up">↑</span><span class="time-horizon">Horizon: 1–2 quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The Q2-rebound-plus-weak-loonie trade in Canadian resources is the cleanest way to play "recession already over"</div>
+  <div class="layer1">
+    <p>If Capital Economics is right that oil-and-gas activity pulls Canada out of recession in Q2, the beneficiaries are energy, materials, and fertilizer names — amplified by a soft loonie that boosts CAD revenue on USD-priced commodities, and now by a credible India-demand bid via CEPA.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This stacks three tailwinds — currency, commodity rebound, and a new export market — onto the same set of names. The risk is symmetric: all three reverse if the oil deal lands and crude falls hard.</div>
+    <a class="read-original" href="https://ca.finance.yahoo.com/news/statcan-reveal-early-economic-impacts-080001663.html" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<!-- ============ ALSO ON RADAR ============ -->
+<div class="section-head">Also on Radar</div>
+<div class="story-card" data-cat="india" id="radar-cipla">
+  <div class="card-meta"><span class="category-tag">INDIA · PHARMA</span><span class="trend-arrow up">↑</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Cipla posts one of its worst quarters — and the stock jumps 8% because investors are buying the pipeline, not the print</div>
+  <div class="layer1"><p>Cipla lost two of its most-profitable US drugs and saw a sharp Q4 FY26 profit drop, yet shares rose 8% the next day. The US contributes over a fifth of revenue; investors are looking past the damage to the new pipeline. A clean reminder that in this Indian market, narrative and flows are out-running near-term earnings.</p>
+  <a class="read-original" href="https://the-ken.com/story/cipla-had-one-of-its-worst-quarters-investors-still-rewarded-it/" target="_blank">Read original →</a></div>
+</div>
+
+<!-- ============ QUICK HITS ============ -->
+<div class="section-head">Quick Hits</div>
+<ul class="quick-hits">
+  <li><strong>IPL betting now runs on UPI.</strong> Platforms like 99 Exchange and 11xplay operate on rails MeitY's VPN crackdown can't see — meaning India's payments backbone is quietly underwriting the gambling it's supposed to throttle.</li>
+  <li><strong>PhysicsWallah pushes into lending via its NBFC, FinZ Finance.</strong> An edtech turning affordability into a credit business is a tell that Indian consumer-tech growth now runs through a lending P&amp;L, not a learning one.</li>
+  <li><strong>Real-money gaming faces a Supreme Court GST verdict.</strong> An industry that survived regulatory crackdowns may not survive retroactive tax math — the ruling could reprice the entire sector overnight.</li>
+  <li><strong>Bajaj Finance "masters self-disruption; succession may be harder."</strong> The hardest thing to institutionalize is a founder's paranoia — and that's the one asset that built the company.</li>
+  <li><strong>Mamaearth (Honasa) is the first new-age company to declare a dividend.</strong> A D2C darling paying a dividend is either maturity or a confession that the hyper-growth story is over.</li>
+  <li><strong>Microsoft killed Copilot on Xbox after calling it "entertainment only."</strong> The most tech-savvy audience in entertainment rejected the AI assistant fastest — a data point on where consumer AI actually has product-market fit, and where it doesn't.</li>
+  <li><strong>Chartbook flags Iran's migration picture, Russia's slowdown, and China's "fiscal-nicotine" state.</strong> The Iran thread feeds directly into the India FX / Hormuz-shock picture we're tracking — a reminder that the oil-and-rupee story has a demographic and a Chinese-fiscal tail, not just a military one.</li>
+  <li><strong>SBNRI's behavioral chart of the week:</strong> ₹1 lakh in the Nifty 500 since 1995 grew to ₹37 lakh if fully invested, but only ₹17 lakh if you missed the 10 best days — the best and worst days cluster, so timing the war/oil tape actively destroys returns.</li>
+</ul>
+
+<!-- ============ THE LONG GAME ============ -->
+<div class="section-head">The Long Game</div>
+<div class="longgame">
+  <strong>De-dollarization is becoming a balance-sheet fact, not a slogan.</strong> Watch the slow convergence of three things on my desk: central banks (the RBI this week) leaning into gold over dollar reserves at record prices; major economies cutting bilateral, resource-for-capital deals (India–Canada CEPA) that bypass dollar-centric multilateral plumbing; and the frontier-tech complex repricing compute and energy as the assets that actually back growth. None of these is a dollar-collapse story — the greenback is still firm, the rupee and loonie are both soft against it. But the direction of travel is a world where reserves, trade, and even "hard assets" are being re-bundled around physical resources and sovereign gold rather than US Treasuries alone. That's a decade-long re-plumbing, and 2026 is when the pipes started visibly moving.
+</div>
+
+<!-- ============ COVERAGE SCORECARD ============ -->
+<div class="section-head">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><th>Metric</th><th>This edition (#195)</th></tr>
+  <tr><td>Sources scanned</td><td>Finshots, Morning Brew, Inc42, The Ken (Sunday recap), SBNRI Weekly, Chartbook (Tier 5), Milk Road, OurCrowd, Motley Fool CA + 10 web searches</td></tr>
+  <tr><td>Sunday cadence note</td><td>TLDR / DeepView / 1440 / Axios / Peak / BetaKit / Globe / FP / Sinocism / SemiAnalysis did not send (weekday/weekend cadence). Canada-light day → added targeted Canada web searches per protocol.</td></tr>
+  <tr><td>Stories featured</td><td>1 Lead + 6 Signal Board + 3 Canadian File + 2 Opportunity + 1 Radar + 8 Quick Hits</td></tr>
+  <tr><td>India stories</td><td>7 (CEPA, RBI, midcaps, EV, semis/opportunity, Cipla, + India-facing Quick Hits)</td></tr>
+  <tr><td>Canada stories</td><td>4 (recession, TSX, minerals/CEPA, opportunity) — Canadian File present ✓</td></tr>
+  <tr><td>Theme rotation check</td><td>Lead topic = India–Canada CEPA reset (NEW; prior 2 leads = OpenAI $1T IPO, Anthropic $965B). Canada recession re-covered only as Canadian File (not Lead) on the NEW official StatCan print + 99% June-hold pricing. OpenAI demoted from lead to Signal Board on NEW S-1 detail ($852B, $9B loss).</td></tr>
+  <tr><td>China-lens (Tier 5) disposition</td><td>Chartbook (Iran migration / Russia / China fiscal) fired → matches active India-FX/Hormuz watch-zone → featured as a Quick Hit cross-referencing the thread (demoted, not dropped).</td></tr>
+  <tr><td>New predictions made</td><td>3 (India–Canada CEPA signature; BoC June-10 hold; midcap-over-largecap) — see prediction tracker</td></tr>
+  <tr><td>Predictions resolved</td><td>0 — none past deadline (nearest June 10 / June 15)</td></tr>
+</table>
+
+<div class="footer">THE BRIEF · Edition #195 · May 31, 2026 · Compiled from verified newsletter and web sources dated May 29–31, 2026 · Every figure sourced to a live search or email; no figure carried from a prior edition.</div>
+
+</div>
+<script>
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
