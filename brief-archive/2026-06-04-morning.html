@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Brief · Edition #201 · June 4, 2026 (Morning)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--canada:#d63838;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.55}.wrap{max-width:880px;margin:0 auto;padding:32px 24px 80px}
+header.masthead{border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:32px}
+.mast-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:2px;text-transform:uppercase}
+.mast-row.ed{color:var(--accent)}
+.mast-title{font-family:var(--font-body);font-size:44px;font-weight:700;letter-spacing:-1px;margin:8px 0 6px}
+.mast-tag{font-family:var(--font-body);font-style:italic;color:var(--muted);font-size:16px;max-width:720px}
+nav.pills{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 6px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:5px 11px;border-radius:50px;cursor:pointer}
+.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent);font-weight:700}
+.nav-pill:hover{color:var(--text)}
+.thesis-ticker{background:#131316;border:1px solid var(--dim);border-radius:6px;padding:10px 16px;margin-bottom:22px;font-family:var(--font-ui);font-size:12px;color:var(--muted)}
+.thesis-ticker .tt-label{color:var(--accent);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-right:8px}
+.thesis-ticker .tt-line{margin:3px 0;line-height:1.5}
+.editors-read{background:linear-gradient(180deg,#181616 0%,#131316 100%);border:1px solid var(--accent);border-radius:10px;padding:24px 28px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:14px;letter-spacing:1px}
+.er-body{font-size:16px;line-height:1.7;color:var(--text)}
+.er-body p{margin:0 0 12px}
+.er-body p:last-child{margin-bottom:0}
+.er-body em{color:var(--accent);font-style:italic}
+.signal-spotlight{background:#1a1410;border:1px solid var(--accent);border-left:5px solid var(--accent);border-radius:8px;padding:20px 24px;margin-bottom:32px}
+.ss-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ss-claim{font-size:19px;line-height:1.45;font-weight:600;margin-bottom:10px;color:var(--text)}
+.ss-reasoning{font-size:14px;color:var(--muted);margin-bottom:10px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);letter-spacing:1px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;white-space:nowrap}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets{margin-bottom:32px}
+.mk-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.mk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.mk-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 8px;font-family:var(--font-ui)}
+.mk-cell .nm{font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.mk-cell .val{font-size:14px;font-weight:700;color:var(--text);margin:4px 0 2px}
+.mk-cell .dir{font-size:11px}
+.mk-cell .dir.up{color:var(--green)}
+.mk-cell .dir.dn{color:var(--red)}
+.mk-cell .dir.fl{color:var(--accent)}
+.mk-cell.canada{border-color:var(--canada)}
+.mk-cell.canada .nm{color:var(--canada)}
+.connmap{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:32px}
+.cm-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.cm-chain{font-family:var(--font-ui);font-size:12px;color:var(--muted);margin:6px 0;line-height:1.6}
+.cm-chain b{color:var(--accent);font-weight:700}
+.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border-top:2px solid var(--accent);padding-top:8px;margin:40px 0 16px;font-weight:700}
+.section-label.canada-section{color:var(--canada);border-top-color:var(--canada)}
+.cf-subtitle{font-family:var(--font-body);font-style:italic;color:var(--muted);font-size:14px;margin-bottom:14px;margin-top:-8px}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px;transition:border-color .2s}
+.story-card.lead{border-left:4px solid var(--accent)}
+.story-card.canada-card{border-left:4px solid var(--canada)}
+.story-card:hover{border-color:#3f3f46}
+.card-meta{display:flex;gap:10px;align-items:center;font-family:var(--font-ui);font-size:10px;letter-spacing:1.5px;color:var(--dim);margin-bottom:8px;flex-wrap:wrap;text-transform:uppercase}
+.category-tag{background:#1f1f23;padding:2px 7px;border-radius:3px;color:var(--muted)}
+.trend-arrow{font-size:13px}
+.trend-arrow.up{color:var(--green)}
+.trend-arrow.dn{color:var(--red)}
+.trend-arrow.fl{color:var(--accent)}
+.decision-badge{padding:2px 7px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.18);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.18);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.18);color:var(--muted);border:1px solid var(--muted)}
+.card-title{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:12px;color:var(--text)}
+.layer1 p{margin:0 0 12px;font-size:15px;line-height:1.65}
+.so-what,.action-box{padding:10px 12px;border-radius:5px;margin:10px 0;font-size:13.5px;line-height:1.6}
+.so-what{background:#1a1a1f;border-left:3px solid var(--accent)}
+.so-what strong{color:var(--accent);letter-spacing:1px;font-family:var(--font-ui);font-size:11px}
+.action-box{background:#1a1410;border-left:3px solid var(--red)}
+.action-box strong{color:var(--red);letter-spacing:1px;font-family:var(--font-ui);font-size:11px}
+.contrarian{font-style:italic;color:var(--dim);font-size:13.5px;padding:8px 0 4px;border-top:1px dashed var(--border);margin-top:10px}
+.read-original,.gmail-source{display:inline-block;font-family:var(--font-ui);font-size:11px;color:var(--accent);text-decoration:none;margin-top:8px;margin-right:14px;border-bottom:1px dotted var(--accent);padding-bottom:1px}
+.gmail-source{color:var(--dim);border-bottom:1px dotted var(--dim)}
+.deep-dive-btn{background:none;border:1px solid var(--border);color:var(--accent);font-family:var(--font-ui);font-size:11px;padding:5px 12px;border-radius:50px;cursor:pointer;margin-top:12px}
+.layer2{display:none;font-size:14px;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);margin-top:12px;padding-top:12px}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.conn-chip{font-family:var(--font-ui);font-size:10px;color:var(--dim);background:#1f1f23;border:1px solid var(--border);border-radius:50px;padding:3px 9px}
+.hidden{display:none}
+.quick-hits{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px}
+.qh-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.qh-list{margin:0;padding:0 0 0 18px}
+.qh-list li{font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:8px}
+.qh-list li strong{color:var(--text)}
+.long-game{background:#1a1a1f;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px}
+.lg-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.lg-body{font-size:14.5px;color:var(--muted);line-height:1.7}
+.scorecard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:14px}
+.sc-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.sc-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.sc-table td{padding:6px 10px;border-bottom:1px solid #1e1e22;color:var(--muted)}
+.sc-table td:first-child{color:var(--text);font-weight:700;width:38%}
+footer{border-top:1px solid var(--border);margin-top:50px;padding-top:18px;font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center;letter-spacing:1px}
+@media (max-width:720px){.mk-grid{grid-template-columns:repeat(3,1fr)}.mast-title{font-size:32px}.wrap{padding:22px 16px 60px}}
+</style></head>
+<body><div class="wrap">
+
+<header class="masthead">
+<div class="mast-row ed"><span>Edition #201 · Morning</span><span>Thursday, June 4, 2026</span></div>
+<h1 class="mast-title">The Brief</h1>
+<p class="mast-tag">Hormuz reignites and snaps a nine-day rally · Microsoft builds its own brain to rival Claude · Ottawa puts $500M behind its AI ambitions.</p>
+<nav class="pills"><span class="nav-pill active" onclick="filterStories('all',this)">All</span><span class="nav-pill" onclick="filterStories('india',this)">&#127470;&#127475; India</span><span class="nav-pill" onclick="filterStories('canada',this)">&#127809; Canada</span><span class="nav-pill" onclick="filterStories('markets',this)">Markets</span><span class="nav-pill" onclick="filterStories('ai',this)">AI</span><span class="nav-pill" onclick="filterStories('geo',this)">Geopolitics</span><span class="nav-pill" onclick="filterStories('macro',this)">Macro</span></nav>
+</header>
+
+<div class="thesis-ticker">
+<span class="tt-label">Active theses</span>
+<div class="tt-line">&rarr; Oil shock is an India FX stress test: rupee near &#8377;96, foreigners selling five sessions, RBI verdict Friday.</div>
+<div class="tt-line">&rarr; Compute is becoming an asset class — AI's ~$1.5T debt build now collides with a 4.5% 10-year yield.</div>
+<div class="tt-line">&rarr; Canada is quietly building an AI-infrastructure industrial policy: a $500M growth fund and $700M more for compute.</div>
+</div>
+
+<div class="editors-read">
+<div class="er-label">EDITOR'S READ</div>
+<div class="er-byline">Suhail Seth · June 4, 2026</div>
+<div class="er-body">
+<p>For nine straight sessions the only direction was up. Yesterday the tape remembered there's a war on. A fresh exchange of strikes around the Strait of Hormuz — US forces hitting Qeshm Island, Iran firing ballistic missiles at its neighbours — pushed WTI up 2.4% to $96 and broke the S&amp;P 500's nine-day winning streak.</p>
+<p>What makes the day worth your attention isn't any single index; it's that one event punched all three of my economies through three different doors. In New York, the megacap-AI complex wobbled as the 10-year yield climbed to 4.46%. In Mumbai, the IT index cratered more than 5% — the rupee sits near &#8377;96, foreigners have sold for five sessions running, and an imported oil bill is the last thing an importer economy wants the week the RBI decides rates. In Toronto, the TSX handed back its brand-new 35,000 record.</p>
+<p>But here's the asymmetry I keep returning to: Canada is the only one of the three that gets <em>paid</em> when oil spikes. A petro-linked currency and an energy-heavy index are a hedge, not a wound. The synchronized selloff hides a real divergence — India imports the shock, Canada exports it, and the US just pays more for money. One detail nobody flagged: the VIX actually <em>fell</em>, to 15.77. This was a controlled give-back, not a panic.</p>
+<p>My call: if Trump's "Hormuz deal within a week" slips — and these always slip — $100 oil is the line that turns an orderly pullback into genuine risk-off. Watch the rupee, not the Dow.</p>
+</div>
+</div>
+
+<div class="signal-spotlight" id="signal">
+<div class="ss-label">&#9889; SIGNAL SPOTLIGHT</div>
+<div class="ss-claim">The oil shock just became a tax on the AI build-out — and the bond market is the wire connecting them.</div>
+<div class="ss-reasoning">Wall Street expects roughly $300B of AI-related investment-grade bond issuance this year, and Morgan Stanley and JPMorgan think the tech sector may need up to $1.5T over the next few years to pay for data centres. All of that is priced off the long end of the curve — which rose to 4.46% precisely because a Hormuz oil spike is reigniting inflation fear. Every dollar of Middle East risk premium quietly raises the financing cost of the compute supercycle. The market is trading "oil" and "AI capex" as separate stories; on the yield curve, they have become the same trade.</div>
+<div class="ss-horizon">Time horizon: 2–4 quarters</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+<div class="pb-label">&#127919; PREDICTION BOARD &middot; 5 MOST RECENT</div>
+<table class="pb-table">
+<thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>#201</td><td>A hyperscaler (Meta / Oracle / Alphabet / Amazon / Microsoft) prices a single investment-grade bond tranche of $10B+ before Sep 30 to fund AI capex.</td><td>Sep 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#201</td><td>RBI holds the repo rate at 5.25% on June 5 — a third straight hold — with a neutral, inflation-leaning stance. A cut or hike = WRONG.</td><td>Jun 5, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#201</td><td>WTI tests $100/bbl at least once before June 30 as the Hormuz reopening MOU slips past Trump's "within a week" claim.</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#200</td><td>Canada's national AI strategy commits a specific disclosed dollar figure to the Tech Growth Fund — not framework-only. (Progress: $500M now reported in the draft.)</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+<tr><td>#200</td><td>DeepSeek's first external round closes at a valuation of $52B or higher.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="markets">
+<div class="mk-label">GLOBAL MARKETS &middot; June 3, 2026 close</div>
+<div class="mk-grid">
+<div class="mk-cell"><div class="nm">S&amp;P 500</div><div class="val">7,553.68</div><div class="dir dn">&#9660; 0.74%</div></div>
+<div class="mk-cell"><div class="nm">Nasdaq</div><div class="val">26,853.98</div><div class="dir dn">&#9660; 0.89%</div></div>
+<div class="mk-cell"><div class="nm">Nikkei 225</div><div class="val">68,402.13</div><div class="dir up">&#9650; 2.50%</div></div>
+<div class="mk-cell"><div class="nm">Hang Seng</div><div class="val">&#8212;</div><div class="dir dn">&#9660; 1.62%</div></div>
+<div class="mk-cell"><div class="nm">Nifty 50</div><div class="val">23,244.45</div><div class="dir dn">&#9660; 1.01%</div></div>
+<div class="mk-cell"><div class="nm">Sensex</div><div class="val">73,759.94</div><div class="dir dn">&#9660; 1.19%</div></div>
+<div class="mk-cell canada"><div class="nm">TSX Composite</div><div class="val">34,801.54</div><div class="dir dn">&#9660; 1.05%</div></div>
+<div class="mk-cell"><div class="nm">USD/INR</div><div class="val">&#8377;95.80</div><div class="dir dn">rupee soft</div></div>
+<div class="mk-cell canada"><div class="nm">CAD/USD</div><div class="val">$0.722</div><div class="dir dn">loonie soft</div></div>
+<div class="mk-cell"><div class="nm">WTI Crude</div><div class="val">$96.02</div><div class="dir up">&#9650; 2.41%</div></div>
+<div class="mk-cell"><div class="nm">Gold</div><div class="val">$4,448</div><div class="dir up">&#9650; safe-haven</div></div>
+<div class="mk-cell"><div class="nm">Bitcoin</div><div class="val">$66,965</div><div class="dir dn">&#9660; risk-off</div></div>
+<div class="mk-cell"><div class="nm">10Y UST</div><div class="val">4.46%</div><div class="dir up">&#9650; +2bp</div></div>
+<div class="mk-cell canada"><div class="nm">10Y GoC</div><div class="val">3.45%</div><div class="dir up">&#9650; +4bp</div></div>
+<div class="mk-cell"><div class="nm">VIX</div><div class="val">15.77</div><div class="dir dn">&#9660; orderly</div></div>
+</div>
+</div>
+
+<div class="connmap">
+<div class="cm-label">Story connection map</div>
+<div class="cm-chain"><b>HORMUZ STRIKES</b> &rarr; OIL TO $96 &rarr; 10Y YIELD 4.46% &rarr; <b>AI DEBT GETS PRICIER</b></div>
+<div class="cm-chain"><b>OIL SHOCK</b> &rarr; RUPEE &#8377;96 + FII SELLING &rarr; NIFTY IT &#8211;5% &rarr; <b>RBI CAN'T CUT FRIDAY</b></div>
+<div class="cm-chain"><b>OIL SHOCK</b> &rarr; TSX OFF RECORD &rarr; BUT PETRO-CAD + ENERGY BID &rarr; <b>CANADA IS THE HEDGE</b></div>
+</div>
+
+<div class="section-label">THE LEAD</div>
+<div class="story-card lead" data-cat="geo markets macro" id="lead-hormuz">
+<div class="card-meta"><span class="category-tag">GEOPOLITICS</span><span class="trend-arrow dn">&#9660;</span><span class="time-horizon">DAYS–WEEKS</span><span class="decision-badge act">ACT</span></div>
+<div class="card-title">Hormuz reignites — US strikes Qeshm Island, oil jumps to $96, and the S&amp;P's nine-day record run snaps in a single session</div>
+<div class="layer1">
+<p>A renewed round of strikes around the Strait of Hormuz ended the calm. US Central Command confirmed forces hit Qeshm Island in response to attempted Iranian attacks, while Tehran launched ballistic missiles toward neighbouring states. WTI settled up 2.41% at $96.02 and Brent at $97.81 — a third straight up-session. The S&amp;P 500 fell 0.74% to 7,553.68, snapping a nine-day winning streak; the Dow shed 620 points (1.21%) and the Nasdaq lost 0.89%. President Trump said a memorandum to reopen the strait could land "within the next week," while conceding several issues remain unresolved.</p>
+<div class="so-what"><strong>SO WHAT</strong> An oil spike with no near-term ceiling is the cleanest macro stress test going: it lifts headline inflation, pushes back rate-cut timing, and firms the dollar — squeezing oil-importing economies and currencies while rewarding energy exporters. For a cross-border operator the read is directional — favour the petro-complex, stay cautious on import-margin and rate-sensitive names until the strait reopens.</div>
+<div class="action-box"><strong>ACTION</strong> Treat $100 WTI as the trigger line. Below it, this is an orderly pullback to add quality on. Above it, de-risk rate-sensitive and import-heavy exposure and assume the "deal within a week" has failed.</div>
+<div class="contrarian">&#128173; <em>Here's the version where this is noise: Trump's one-week MOU actually lands, the risk premium bleeds out as fast as it built in May (oil fell 20% from its 2026 peak late last month), and the streak resumes within days. The VIX falling to 15.77 says the smart money is already betting on exactly that.</em></div>
+<a class="read-original" href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-june-3-dow-sp-500-nasdaq-fall-oil-rises-224803128.html" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.cnbc.com/2026/06/03/stock-market-today-live-updates.html" target="_blank">CNBC markets &rarr;</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+<div class="layer2">May was the template: crude spiked to roughly $106 mid-month, then fell ~20% from its 2026 peak as US-Iran ceasefire optimism returned late in the month. The ceasefire has technically held "indefinitely" since April 21, but a US naval blockade and a contested Hormuz reopening remain the unresolved core. The strait carries close to a fifth of seaborne crude, which is why every flare-up reprices the global risk curve within hours. The tell to watch is duration: a one-day headline spike round-trips; a sustained closure above $100 is what forces central banks and importers to actually re-plan.</div>
+<div class="connections"><span class="conn-chip">&rarr; AI debt &amp; yields</span><span class="conn-chip">&rarr; India IT / rupee</span><span class="conn-chip">&rarr; Canada energy hedge</span></div>
+</div>
+
+<div class="section-label">SIGNAL BOARD</div>
+
+<div class="story-card" data-cat="ai" id="msft-mai">
+<div class="card-meta"><span class="category-tag">AI</span><span class="trend-arrow up">&#9650;</span><span class="time-horizon">QUARTERS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Microsoft built its own brain — MAI-Thinking-1 matches Claude Opus 4.6 with zero OpenAI data, and the divorce stops being theoretical</div>
+<div class="layer1">
+<p>At Build, Microsoft unveiled MAI-Thinking-1, its first in-house reasoning model — 35B active parameters in a roughly 1-trillion-parameter sparse Mixture-of-Experts, 256K context, trained from scratch on licensed enterprise data with no distillation from GPT. It scores 97.0% on AIME 2025 and 94.5% on AIME 2026, matches Claude Opus 4.6 on SWE-Bench Pro, and beat Claude Sonnet 4.6 in blind human evaluations. MAI-Code-1-Flash, a 5B coding model, ships to all GitHub Copilot plans today. AI chief Mustafa Suleyman says the team is "less concerned" about Google, Meta and OpenAI and is focusing on enterprise — Anthropic's lane.</p>
+<div class="so-what"><strong>SO WHAT</strong> Microsoft keeps a 27% OpenAI stake and model access to 2032, yet it is visibly building toward self-sufficiency even as it signs a $35B cloud deal with Anthropic. The strategic signal: the frontier is commoditising at the model layer, and distribution (Windows, Copilot, Azure) is where the margin sits. For anyone allocating across the AI stack, the model is no longer the moat — the channel is.</div>
+<div class="action-box"><strong>ACTION</strong> Watch enterprise AI spend consolidate toward whoever owns distribution, and re-rate pure model-API plays accordingly.</div>
+<div class="contrarian">&#128173; <em>The bear version: benchmark wins are not production wins, MAI-Thinking-1 is private-preview vapour until enterprises run it at scale, and Microsoft has trumpeted "OpenAI independence" before while leaning harder on GPT. A 27% stake plus access to 2032 is a hedge, not a divorce.</em></div>
+<a class="read-original" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.neowin.net/news/microsoft-unveils-mai-thinking-1-reasoning-and-mai-code-1-coding-models/" target="_blank">Model details &rarr;</a>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40thedeepview.co+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+<div class="layer2">The deeper read is vertical integration. Microsoft sells the chips' output (Azure), the developer surface (GitHub Copilot), the OS endpoint (Windows + on-device Aion models), and now the model itself. Owning the full stack lets it set price and capture margin at whichever layer competition is thinnest — today that's the model. The risk is organisational, not technical: running an OpenAI partnership and an OpenAI competitor inside the same company has obvious tension, which is exactly why Suleyman's "less concerned" framing reads as a declaration of independence in slow motion.</div>
+<div class="connections"><span class="conn-chip">&rarr; AI debt &amp; yields</span><span class="conn-chip">&rarr; Sarvam voice stack</span></div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="india-it">
+<div class="card-meta"><span class="category-tag">INDIA · MARKETS</span><span class="trend-arrow dn">&#9660;</span><span class="time-horizon">DAYS–WEEKS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">India's IT trade cracks — Nifty IT dives 5% as foreigners sell a fifth straight session and the rupee slides toward &#8377;96</div>
+<div class="layer1">
+<p>The Nifty IT index was the day's worst performer, down more than 5%, with TCS, HCL Technologies and Tech Mahindra leading the losers as investors booked profits on stretched valuations after a strong run. The Sensex fell 1.19% to 73,759.94 and the Nifty 50 lost 1.01% to 23,244.45. FIIs were net sellers for a fifth consecutive session, having offloaded &#8377;8,362 crore on June 2 alone. The rupee sits near &#8377;95.80/USD.</p>
+<div class="so-what"><strong>SO WHAT</strong> A weak rupee, an oil-import bill, and foreign selling form the classic India risk-off cluster. IT, paradoxically, benefits from a weak rupee on translation — so a 5% drop is valuation air coming out, not a fundamental downgrade. The macro pressure point is the importer and the bond market, not the exporter.</div>
+<div class="action-box"><strong>ACTION</strong> Separate the rupee tailwind (good for IT/pharma exporters) from the valuation reset (the actual cause of the drop). A reversal in FII flows is the all-clear to watch.</div>
+<div class="contrarian">&#128173; <em>The version where this is a buy: India's domestic SIP bid is structural and relentless, FII selling into that wall has repeatedly marked local bottoms this cycle, and a 5% IT puke on a geopolitics headline is exactly the dip the retail flow absorbs.</em></div>
+<a class="read-original" href="https://www.business-standard.com/markets/news/stock-market-live-june-3-nse-bse-sensex-today-nifty-gift-nifty-us-iran-deal-brent-crude-ipo-today-pfc-stock-delhivery-share-price-126060300110_1.html" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.indiatvnews.com/business/markets/why-is-market-down-today-sensex-nifty-down-over-1pc-here-are-factors-that-led-to-market-crash-2026-06-03-1043443" target="_blank">Why markets fell &rarr;</a>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Ainfo%40the-ken.com+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+<div class="layer2">Five straight sessions of foreign selling into a record-high market is the textbook FII-vs-domestic tug of war that has defined Indian equities this cycle. The SIP-driven domestic bid has absorbed every foreign exodus so far, which is why corrections have been shallow and fast. The thing that breaks that pattern is the currency: if the rupee keeps sliding past &#8377;96 on a sustained oil bill, foreign losses compound in dollar terms and the selling accelerates regardless of local flows. The rupee, not the index, is the variable to track into Friday's RBI verdict.</div>
+<div class="connections"><span class="conn-chip">&rarr; RBI rate call</span><span class="conn-chip">&rarr; Hormuz oil shock</span></div>
+</div>
+
+<div class="story-card" data-cat="markets ai macro" id="ai-debt">
+<div class="card-meta"><span class="category-tag">MARKETS · AI</span><span class="trend-arrow up">&#9650;</span><span class="time-horizon">QUARTERS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">AI's borrowing binge meets a 4.5% world — hyperscalers may need $1.5 trillion in debt just as yields turn against them</div>
+<div class="layer1">
+<p>Chartbook flagged it and the bond desks confirm it: the five largest hyperscalers issued about $121B of US corporate bonds in 2025, four times their prior annual average, and Wall Street pencils in roughly $300B of AI-related investment-grade supply for 2026. Morgan Stanley and JPMorgan estimate the tech sector may need up to $1.5T of new debt over the next few years to fund data-centre build-out. Oracle has said it will do a single one-time IG issuance early in 2026 to cover the balance of its funding and no more this year.</p>
+<div class="so-what"><strong>SO WHAT</strong> This is the quiet structural story beneath the AI rally: the capex is increasingly debt-financed, and that debt is priced off a 10-year yield that just rose to 4.46% on oil-driven inflation fear. A higher-for-longer curve lifts the hurdle rate on every data centre. Compute is becoming an asset class with a financing cycle — and that cycle now has a cost-of-capital problem.</div>
+<div class="action-box"><strong>ACTION</strong> Track hyperscaler net bond supply and IG spreads as a leading indicator of AI-capex sustainability, and watch whether any jumbo deal struggles to price.</div>
+<div class="contrarian">&#128173; <em>The bull case: these are the most cash-generative companies in history, demand for their paper is effectively bottomless, and a 4.5% coupon is trivial against AI's projected returns. The "debt-funded bubble" framing has been wrong at every prior rung of this cycle.</em></div>
+<a class="read-original" href="https://portfolio-adviser.com/ai-debt-issuance-is-transforming-the-corporate-bond-market/" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.mellon.com/insights/insights-articles/record-breaking-ai-related-debt-issuance-in-2025.html" target="_blank">Issuance data &rarr;</a>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Aadamtooze%2Bchartbook-top-links%40substack.com" target="_blank">Gmail source</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+<div class="layer2">The mechanism is simple and under-appreciated: a data centre is a long-duration asset financed with long-duration debt, and long-duration debt is the single most rate-sensitive instrument there is. When the 10-year backs up 50bp on an oil-inflation scare, the present value of a 10-to-15-year build-out falls and the breakeven return rises. The cash-rich hyperscalers can absorb this; the second tier — neoclouds, GPU lessors, junk-rated AI infrastructure — cannot. That's where the financing cycle bites first, and it's the layer to watch if yields stay elevated through the back half of the year.</div>
+<div class="connections"><span class="conn-chip">&rarr; Hormuz / yields</span><span class="conn-chip">&rarr; Signal Spotlight</span></div>
+</div>
+
+<div class="story-card" data-cat="india macro" id="rbi">
+<div class="card-meta"><span class="category-tag">INDIA · MACRO</span><span class="trend-arrow fl">&#8594;</span><span class="time-horizon">DAYS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">RBI faces an oil-shock rate call — Malhotra expected to hold at 5.25% Friday, but the dovish door just slammed shut</div>
+<div class="layer1">
+<p>The RBI's Monetary Policy Committee meets June 3–5, with Governor Sanjay Malhotra delivering the verdict on Friday, June 5 at roughly 10:00 IST. Economists expect a third consecutive hold at 5.25% and a neutral stance. Gita Gopinath sees a pause and a data-dependent approach. The Hormuz oil spike and a rupee near &#8377;96 have tilted the balance of risk back toward inflation just as the decision lands.</p>
+<div class="so-what"><strong>SO WHAT</strong> A central bank cannot ease into a fresh imported-inflation pulse and a weak currency. The oil shock effectively removes the rate-cut option that soft growth would otherwise argue for. The tone matters more than the level — a defensive, inflation-leaning statement signals higher-for-longer in the world's fastest-growing large economy.</div>
+<div class="action-box"><strong>ACTION</strong> Read the statement's inflation language, not just the rate. A hawkish hold is a bond-market and rate-sensitive-equity event.</div>
+<div class="contrarian">&#128173; <em>If oil reverses on a Hormuz deal before Friday, the MPC can afford a dovish hold and even hint at a cut — the soft-growth case hasn't gone away, it's just been overshadowed for a week.</em></div>
+<a class="read-original" href="https://www.businesstoday.in/latest/economy/story/rbi-mpc-june-2026-gita-gopinath-sees-rate-pause-amid-inflation-and-growth-risks-534789-2026-06-03" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.business-standard.com/finance/news/rbi-june-mpc-decision-when-and-where-to-watch-guv-malhotra-s-address-126060300316_1.html" target="_blank">When to watch &rarr;</a>
+</div>
+<button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper &darr;</button>
+<div class="layer2">The MPC's bind is the mirror image of the BoC's a week later: both face an oil-driven inflation pulse that argues for holding, layered on a growth picture that would otherwise argue for easing. For India the added wrinkle is the currency — a weak rupee imports inflation directly and limits how dovish the language can be without inviting more FII outflow. The market will parse the CPI projection closely; a revision toward the 5% handle would confirm the inflation-leaning read and keep the rate-cut cycle on ice.</div>
+<div class="connections"><span class="conn-chip">&rarr; India IT / rupee</span><span class="conn-chip">&rarr; BoC June 10</span></div>
+</div>
+
+<div class="story-card" data-cat="markets crypto" id="gold-btc">
+<div class="card-meta"><span class="category-tag">MARKETS · CRYPTO</span><span class="trend-arrow fl">&#8594;</span><span class="time-horizon">DAYS</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">Gold catches the safe-haven bid near $4,450 while Bitcoin sags to $67K — the "digital gold" trade fails its war test again</div>
+<div class="layer1">
+<p>As stocks fell, gold held near $4,450/oz, extending its run as the conflict hedge of choice. Bitcoin, by contrast, slid to about $66,965 — down roughly $2,300 in a day and far below year-ago levels. On a genuine geopolitical risk day, capital chose bullion over blockchain.</p>
+<div class="so-what"><strong>SO WHAT</strong> Each Middle East flare-up reruns the same experiment, and gold keeps winning the safe-haven role while crypto trades like a risk asset. For portfolio construction the takeaway is durable: bullion is the geopolitical hedge; Bitcoin is beta.</div>
+<div class="action-box"><strong>ACTION</strong> Use gold, not crypto, as the Hormuz hedge; treat BTC weakness as a risk-appetite gauge.</div>
+<div class="contrarian">&#128173; <em>Crypto bulls will note BTC's drawdown is modest, that its correlation regime shifts over time, and that a single risk-off day doesn't settle the digital-gold debate.</em></div>
+<a class="read-original" href="https://fortune.com/article/current-price-of-gold-06-03-2026/" target="_blank">Gold price &rarr;</a>
+<a class="read-original" href="https://fortune.com/article/price-of-bitcoin-06-03-2026/" target="_blank">Bitcoin price &rarr;</a>
+</div>
+<div class="connections"><span class="conn-chip">&rarr; Hormuz oil shock</span></div>
+</div>
+
+<div class="section-label canada-section">&#127809; THE CANADIAN FILE</div>
+<div class="cf-subtitle">Oil cuts both ways north of the border — the index slips off its record while the petro-currency quietly hedges, and Ottawa finally puts a number on its AI ambitions.</div>
+
+<div class="story-card canada-card" data-cat="canada markets" id="tsx">
+<div class="card-meta"><span class="category-tag">CANADA · MARKETS</span><span class="trend-arrow dn">&#9660;</span><span class="time-horizon">DAYS</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">The TSX gives back its 35,000 record in a day — but an oil shock is the one selloff Canada is built to survive</div>
+<div class="layer1">
+<p>One session after clearing 35,000 for the first time, the S&amp;P/TSX Composite fell 367.92 points (1.05%) to 34,801.54, with basic materials leading the decline. The pullback tracked the global risk-off as oil and yields rose. The Canada 10-year yield ticked up to 3.45%; the loonie traded near US$0.72.</p>
+<div class="so-what"><strong>SO WHAT</strong> Canada is structurally the relative winner of an oil shock: a petro-linked currency and an energy-heavy index mean a rising crude price supports the very sectors that should otherwise lead a risk-off day lower. The materials-led dip is a rotation tell, not a solvency one — of the three markets hit yesterday, only Canada carries a natural hedge.</div>
+<div class="action-box"><strong>ACTION</strong> Watch energy and the loonie decouple from the broad index if oil stays bid — that divergence is the Canadian tell.</div>
+<div class="contrarian">&#128173; <em>The offset: Canada is already in a technical recession, and a sustained oil/inflation pulse keeps the BoC from cutting into a weak economy — an oil "win" for the patch can still mean tighter money for everyone else.</em></div>
+<a class="read-original" href="https://www.bnnbloomberg.ca/markets/2026/06/03/sptsx-composite-down-more-than-150-points-us-stock-markets-also-lower/" target="_blank">Read original &rarr;</a>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Areadthepeak.com+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+<div class="connections"><span class="conn-chip">&rarr; Hormuz oil shock</span><span class="conn-chip">&rarr; BoC June 10</span></div>
+</div>
+
+<div class="story-card canada-card" data-cat="canada ai" id="canada-ai">
+<div class="card-meta"><span class="category-tag">CANADA · AI</span><span class="trend-arrow up">&#9650;</span><span class="time-horizon">QUARTERS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Ottawa puts a price on staying in the AI race — a $500M Tech Growth Fund, $700M more for compute, and equity stakes in home-grown firms</div>
+<div class="layer1">
+<p>Reporting on the draft national AI strategy now names figures: a new $500-million Canadian Tech Growth Fund that will take equity stakes in domestic AI companies, plus an extra $700 million for the AI Compute Access Fund, sitting alongside the $25-billion Canada Strong Fund for larger "national champion" bets. The equity approach is a break from Ottawa's usual loans and grants.</p>
+<div class="so-what"><strong>SO WHAT</strong> This is a government deciding that capital, not just policy, is how you keep founders from fleeing south. Taking equity puts Ottawa on the cap table — a sovereign-investor posture more familiar in Asia and the Gulf than in Canada. If it ships with the numbers intact, it's a structural new buyer for Canadian AI scale-ups.</div>
+<div class="action-box"><strong>ACTION</strong> Watch for the formal release and whether the $500M figure survives intact — Canadian AI scale-ups would gain a domestic growth-capital backstop.</div>
+<div class="contrarian">&#128173; <em>The skeptic's read: $500M is rounding error against the $1.5T US hyperscalers are about to borrow, government equity-picking has a poor track record, and a "leaked draft" is not a signed cheque.</em></div>
+<a class="read-original" href="https://thelogic.co/news/exclusive/canada-ai-strategy-funding-research/" target="_blank">Read original &rarr;</a>
+<a class="read-original" href="https://www.theglobeandmail.com/business/article-ottawa-ai-strategy-startup-investment-fund/" target="_blank">Globe report &rarr;</a>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Areadthepeak.com+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+<div class="connections"><span class="conn-chip">&rarr; AI debt &amp; yields</span><span class="conn-chip">&rarr; Microsoft MAI</span></div>
+</div>
+
+<div class="story-card canada-card" data-cat="canada macro" id="boc">
+<div class="card-meta"><span class="category-tag">CANADA · MACRO</span><span class="trend-arrow fl">&#8594;</span><span class="time-horizon">DAYS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">The loonie's oil hedge collides with a June 10 BoC stuck in a recession — Macklem can't cut into an inflation pulse</div>
+<div class="layer1">
+<p>The Bank of Canada decides June 10. A technical recession argues for a cut; a reviving oil-driven inflation pulse argues for a hold. The loonie near US$0.72 and a 10-year yield rising to 3.45% capture the bind. A fifth straight hold at 2.25% remains the base case.</p>
+<div class="so-what"><strong>SO WHAT</strong> Canada is the textbook case of an oil shock trapping a central bank: the export economy gets a price tailwind while the domestic economy needs relief it can't safely deliver. The split-screen — strong patch, weak Main Street — is the defining Canadian macro tension of this cycle.</div>
+<div class="action-box"><strong>ACTION</strong> Position for a hold on June 10; the surprise risk is a hawkish-hold tone, not a cut.</div>
+<div class="contrarian">&#128173; <em>If oil round-trips lower on a Hormuz deal, the recession case reasserts itself and a June 10 cut comes back onto the table fast.</em></div>
+<a class="read-original" href="https://www.bnnbloomberg.ca/" target="_blank">Read original &rarr;</a>
+</div>
+<div class="connections"><span class="conn-chip">&rarr; RBI June 5</span><span class="conn-chip">&rarr; TSX / loonie</span></div>
+</div>
+
+<div class="section-label">OPPORTUNITY BOARD</div>
+
+<div class="story-card" data-cat="india markets" id="opp-india">
+<div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow fl">&#8594;</span><span class="time-horizon">WEEKS</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">India's IT puke is a watchlist trigger, not a sell signal — a 5% valuation reset on a macro headline, not a fundamentals break</div>
+<div class="layer1">
+<p>The Nifty IT drop was profit-booking on stretched multiples, not an earnings event — and a weak rupee is a translation tailwind for exporters. The setup is a quality-on-weakness watchlist, armed for an FII-flow reversal.</p>
+<div class="so-what"><strong>SO WHAT</strong> Valuation resets driven by geopolitics tend to mean-revert faster than those driven by fundamentals. The signal to act is foreign-flow stabilisation, not the headline.</div>
+<div class="action-box"><strong>ACTION</strong> Build the list now; deploy when FII selling stops and the rupee steadies.</div>
+<div class="contrarian">&#128173; <em>If Hormuz escalates to $100+ oil, the rupee and FII exodus both worsen and the "reset" becomes a trend, not a dip.</em></div>
+</div>
+</div>
+
+<div class="story-card" data-cat="canada markets" id="opp-canada">
+<div class="card-meta"><span class="category-tag">OPPORTUNITY · CANADA</span><span class="trend-arrow up">&#9650;</span><span class="time-horizon">WEEKS</span><span class="decision-badge watch">WATCH</span></div>
+<div class="card-title">Canadian energy is the developed world's cleanest Hormuz hedge — you get the oil premium and the currency in one trade</div>
+<div class="layer1">
+<p>An oil shock that punishes importers pays Canada twice: higher crude prices for the patch and a firmer petro-linked loonie. While the TSX fell with the world, the energy complex is the part built to rise on exactly this catalyst.</p>
+<div class="so-what"><strong>SO WHAT</strong> For a portfolio exposed to imported-oil risk elsewhere, Canadian energy is a natural offset — a hedge that also stands on its own fundamentals rather than paying away carry.</div>
+<div class="action-box"><strong>ACTION</strong> Size energy and loonie exposure to the probability that the strait stays contested.</div>
+<div class="contrarian">&#128173; <em>A swift Hormuz deal collapses the premium, and Canada's recession reasserts itself as the dominant story north of the border.</em></div>
+</div>
+</div>
+
+<div class="section-label">ALSO ON RADAR</div>
+
+<div class="story-card" data-cat="macro india" id="radar-elnino">
+<div class="card-meta"><span class="category-tag">MACRO · CLIMATE</span><span class="trend-arrow fl">&#8594;</span><span class="time-horizon">MONTHS</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">The UN warns of a "super El Niño" — the climate phenomenon that reprices grain, insurance, and India's monsoon in one go</div>
+<div class="layer1">
+<p>Morning Brew leads with a UN warning to prepare for a super El Niño. The pattern historically distorts rainfall across Asia and the Americas, with knock-on effects on agricultural output, food inflation, and reinsurance pricing.</p>
+<div class="so-what"><strong>SO WHAT</strong> For India a wayward monsoon is a first-order inflation and rural-demand variable — and it lands precisely when an oil-import bill is already pressuring the CPI. A bad-monsoon scenario stacks directly on top of the Hormuz inflation pulse.</div>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Acrew%40morningbrew.com+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+</div>
+
+<div class="story-card" data-cat="india ai" id="radar-sarvam">
+<div class="card-meta"><span class="category-tag">INDIA · AI</span><span class="trend-arrow up">&#9650;</span><span class="time-horizon">QUARTERS</span><span class="decision-badge note">NOTE</span></div>
+<div class="card-title">Sarvam ships a voice stack — India's sovereign-AI push moves from models to the vernacular interface layer</div>
+<div class="layer1">
+<p>Inc42 reports Sarvam launched a voice AI stack, extending India's home-grown model effort into the speech and multilingual layer that actually meets a billion users.</p>
+<div class="so-what"><strong>SO WHAT</strong> Voice is the interface that unlocks AI for non-English, non-text users — the real Indian market. A domestic voice stack is the kind of distribution moat that policy money (and Ottawa's mirror-image strategy) is chasing everywhere at once.</div>
+<a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com+newer_than%3A1d" target="_blank">Gmail source</a>
+</div>
+</div>
+
+<div class="quick-hits" id="quick-hits">
+<div class="qh-label">QUICK HITS</div>
+<ul class="qh-list">
+<li><strong>Japan's Nikkei rose 2.50% to 68,402</strong> even as the world sold off — Tokyo is trading the weak-yen export tailwind, not the oil headline.</li>
+<li><strong>The VIX fell to 15.77</strong> on a down-1.2%-Dow day — the options market is pricing an orderly pullback, not a crisis.</li>
+<li><strong>Hang Seng dropped 1.62%</strong> while mainland CSI 300 edged up 0.49% — the familiar Hong Kong-offshore / China-onshore split held again.</li>
+<li><strong>Gold near $4,450 and BTC at $67K diverged hard</strong> — the war trade still picks bullion over blockchain, every time.</li>
+<li><strong>The US 10-year rose to 4.46% and Canada's to 3.45%</strong> — the oil-inflation impulse is repricing both curves higher together.</li>
+<li><strong>FIIs have sold Indian equities five straight sessions</strong> (&#8377;8,362 cr on June 2) — the foreign bid is on strike into the RBI decision.</li>
+<li><strong>Oracle will do one IG bond issuance early 2026 and no more</strong> — even the cash-rich are terming out AI capex while rates still allow.</li>
+<li><strong>Trump floated a Hormuz MOU "within a week"</strong> — the same framing that has slipped repeatedly since April; price the slippage, not the promise.</li>
+</ul>
+</div>
+
+<div class="long-game">
+<div class="lg-label">THE LONG GAME</div>
+<div class="lg-body">The slow-burn story isn't oil and it isn't AI — it's the wire now connecting them. The AI build-out is increasingly financed in the investment-grade bond market, with the sector potentially needing well over a trillion dollars of new debt this decade. That debt is priced off the long end of the curve, and the long end is now hostage to a Middle East risk premium that refuses to resolve cleanly. For the first time, a tanker incident in the Gulf and a data centre in Texas share a single transmission mechanism: the 10-year yield. The next leg of the compute supercycle will be set less by model benchmarks than by the cost of capital — and the cost of capital now has a geopolitics problem. Watch the yield, because that is where the war and the boom finally meet.</div>
+</div>
+
+<div class="scorecard">
+<div class="sc-label">COVERAGE SCORECARD</div>
+<table class="sc-table">
+<tr><td>Categories covered</td><td>Geopolitics, Markets, AI, India, Canada, Macro, Crypto, Climate</td></tr>
+<tr><td>Sources read</td><td>Finshots, Morning Brew, The Deep View, TLDR, 1440, Inc42, The Ken, The Peak, Chartbook, Sinocism + web (Yahoo, CNBC, Business Standard, BNN Bloomberg, The Logic, Globe &amp; Mail, Fortune, Business Today)</td></tr>
+<tr><td>Stories featured</td><td>13 (1 lead · 5 signal board · 3 Canadian File · 2 opportunity · 2 radar)</td></tr>
+<tr><td>India stories</td><td>5 (IT selloff, RBI preview, Sarvam, India opportunity, lead India lens)</td></tr>
+<tr><td>Canada stories</td><td>4 (TSX, AI strategy, BoC, Canada energy opportunity)</td></tr>
+<tr><td>Theme rotation</td><td>Today's lead = Hormuz oil shock; prior two leads = Microsoft/OpenAI agents and Canada's recession — new topic, no repeat.</td></tr>
+<tr><td>China / global-lens sources</td><td>Chartbook (AI-debt issuance) featured as Signal Board card + Spotlight; Sinocism (monthly, not fresh) held — no new development to feature.</td></tr>
+<tr><td>New predictions</td><td>3 (hyperscaler $10B+ bond tranche; RBI hold June 5; WTI tests $100 by June 30)</td></tr>
+</table>
+</div>
+
+<footer>The Brief &middot; Edition #201 &middot; June 4, 2026 (Morning) &middot; Generated for Suhail Seth &middot; leosuhail@gmail.com</footer>
+
+</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){card.classList.toggle('deep');const btn=card.querySelector('.deep-dive-btn');if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';}
+function scrollToStory(id){const el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}}
+function filterStories(cat,pill){document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));pill.classList.add('active');if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}document.querySelectorAll('[data-cat]').forEach(el=>{const cats=(el.getAttribute('data-cat')||'').split(' ');el.classList.toggle('hidden',!cats.includes(cat));});}
+</script>
+</body></html>
