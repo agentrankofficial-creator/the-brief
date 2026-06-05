@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BRIEF · Edition #202 · June 5, 2026 (Morning) — SpaceX prices history, RBI holds, Hezbollah blows up the ceasefire</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--blue:#5b9bd5;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.header{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:8px}
+.masthead{font-family:var(--font-ui);font-size:30px;font-weight:800;letter-spacing:6px;color:var(--text)}
+.edmeta{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:8px}
+.tagline{font-style:italic;color:var(--muted);margin-top:12px;font-size:16px}
+.nav{position:sticky;top:0;background:rgba(10,10,11,.92);backdrop-filter:blur(6px);padding:12px 0;margin:16px 0 28px;border-bottom:1px solid var(--border);z-index:10;display:flex;flex-wrap:wrap;gap:8px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;background:var(--surface)}
+.nav-pill.active{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:700}
+.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin:38px 0 14px;border-top:1px solid var(--border);padding-top:18px}
+.editors-read{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:24px 26px;margin-bottom:32px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.er-byline{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-bottom:14px}
+.er-body{font-size:16.5px;line-height:1.75}
+.er-body p{margin:0 0 14px}
+.signal-spotlight{background:linear-gradient(180deg,#16140c,#131316);border:1px solid var(--accent);border-radius:10px;padding:22px 24px;margin-bottom:32px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.ss-claim{font-size:19px;font-weight:700;line-height:1.45;margin-bottom:12px}
+.ss-reasoning{color:var(--muted);font-size:15px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-top:12px}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.mk{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px}
+.mk-name{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.mk-val{font-size:16px;font-weight:700;margin-top:3px}
+.mk-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.mk.ca{border-color:#5a2a2a}
+.conn-map{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chain{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-family:var(--font-ui);font-size:12px;color:var(--muted)}
+.chain b{color:var(--accent);font-weight:700}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.story-card.lead{border-left:3px solid var(--accent)}
+.card-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;font-family:var(--font-ui)}
+.category-tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.trend-arrow{font-size:13px;color:var(--muted)}
+.time-horizon{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.decision-badge{font-size:10px;font-weight:700;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase;margin-left:auto}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:19px;font-weight:700;line-height:1.4;margin-bottom:12px}
+.layer1 p{margin:0 0 12px;font-size:15.5px}
+.so-what,.action-box,.contrarian{font-size:14px;padding:10px 12px;border-radius:6px;margin-bottom:9px}
+.so-what{background:rgba(91,155,213,.08);border-left:2px solid var(--blue)}
+.action-box{background:rgba(200,160,48,.08);border-left:2px solid var(--accent)}
+.contrarian{background:rgba(224,82,82,.07);border-left:2px solid var(--red);color:var(--muted);font-style:italic}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-right:16px}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 12px;cursor:pointer;margin-top:12px}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:14.5px;color:var(--muted)}
+.story-card.deep .layer2{display:block}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin-bottom:14px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:16px}
+.world-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px;padding:20px 24px;margin-bottom:14px}
+.wf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.region-tag{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:14px;margin-bottom:6px;font-weight:700}
+.quick-hits li{margin-bottom:10px;font-size:15px}
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:15.5px;line-height:1.7}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:13px}
+.scorecard td{padding:7px 10px;border-bottom:1px solid #1e1e22}
+.scorecard td:first-child{color:var(--dim)}
+.hidden{display:none}
+.footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="masthead">THE BRIEF</div>
+  <div class="edmeta">Edition #202 · Friday, June 5, 2026 · Morning · Suhail Seth</div>
+  <div class="tagline">SpaceX prices the biggest IPO in history, the RBI holds as oil bites, and Hezbollah torches the Lebanon ceasefire hours after it was signed.</div>
+</div>
+
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('world',this)">🌍 World</span>
+  <span class="nav-pill" onclick="filterStories('geo',this)">Geopolitics</span>
+</div>
+
+<!-- EDITOR'S READ -->
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · June 5, 2026</div>
+  <div class="er-body">
+    <p>The headline today is the number — $1.77 trillion for SpaceX, the biggest IPO ever written. But the story I'm actually watching is what the number says about where money wants to sit at this point in the cycle. The largest capital event of the AI era is not an AI lab. It's a launch-and-satellite company. And it prices in the same week that the AI trade sprang two visible leaks: chip stocks rolled over (Broadcom, Micron led a Nasdaq that slipped while the Dow hit a record), and private-credit investors moved to pull cash — 10% from Blackstone's flagship fund, 17% from Cliffwater's. Underneath that, DeepSeek is closing $7.4B at roughly $52B on a cheaper-is-the-product thesis, and even the mathematicians are signing petitions to slow AI down.</p>
+    <p>Here's the thread connecting them: the Iran oil shock that should have crushed risk has instead been, in Semafor's energy desk's phrase, "remarkably mild" — China's lower imports and US production cushioned it. A war premium that fades frees capital to <em>rotate within</em> the tech complex rather than flee it: out of pay-any-price compute, into hard assets, cheaper AI, and the power that runs it. India and Canada are the same trade from the other side — the RBI held at 5.25% this morning, the BoC almost certainly holds June 10, both petro-linked central banks frozen by one oil-inflation-versus-soft-growth bind, both currencies (₹95.8, C$0.72) carrying the cost.</p>
+    <p>My call: SpaceX's June 12 debut is the real tell. If a hard-asset megacap pops while chip names chop, the rotation is confirmed — and "AI compute at any price" is officially last season.</p>
+  </div>
+</div>
+
+<!-- SIGNAL SPOTLIGHT -->
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">The undersea cable is the next Hormuz — and Iran just told us so.</div>
+  <div class="ss-reasoning">Everyone is pricing the oil chokepoint, which is already fading. The leverage Tehran is now floating is different: charging tolls on the data passing through the cables off its shores. Cables in the Strait of Hormuz carry roughly 20% of global data flow. The same week, Australia, the UK and the US agreed new measures — including autonomous submarine drones — to defend the "arteries of modern civilization" against sabotage running at "historically unprecedented" rates. The war's durable legacy won't be the oil premium. It'll be the weaponization of the physical internet, and a new security-spend cycle built around it.</div>
+  <div class="ss-horizon">Time horizon: 2–4 quarters</div>
+</div>
+
+<!-- PREDICTION BOARD -->
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>#202</td><td>ECB raises its policy rate 25bp to 2.25% on June 11, 2026.</td><td>Jun 11, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#202</td><td>The Israel–Lebanon ceasefire fails to hold — continued cross-border strikes through June 30 — after Hezbollah's rejection.</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#202</td><td>SpaceX (SPCX) closes its first trading day June 12 above the $135 IPO price.</td><td>Jun 12, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#201</td><td>A hyperscaler prices a single IG bond tranche of $10B+ for AI capex.</td><td>Sep 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#201</td><td>RBI holds the repo rate at 5.25% on June 5 — third consecutive hold.</td><td>Jun 5, 2026</td><td><span class="pb-status correct">CORRECT</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MARKETS -->
+<div class="section-label">GLOBAL MARKETS · prices as of June 4 close / June 5 open</div>
+<div class="markets">
+  <div class="mk"><div class="mk-name">S&amp;P 500</div><div class="mk-val">7,584.31</div><div class="mk-chg up">▲ 0.41%</div></div>
+  <div class="mk"><div class="mk-name">Nasdaq</div><div class="mk-val">26,830.96</div><div class="mk-chg down">▼ 0.09%</div></div>
+  <div class="mk"><div class="mk-name">Nikkei 225</div><div class="mk-val">67,470.69</div><div class="mk-chg down">▼ 1.36%</div></div>
+  <div class="mk"><div class="mk-name">Hang Seng</div><div class="mk-val">25,253.40</div><div class="mk-chg down">▼ 1.48%</div></div>
+  <div class="mk"><div class="mk-name">Nifty 50</div><div class="mk-val">23,416.55</div><div class="mk-chg flat">▶ flat</div></div>
+  <div class="mk"><div class="mk-name">Sensex</div><div class="mk-val">74,360.01</div><div class="mk-chg up">▲ 0.02%</div></div>
+  <div class="mk ca"><div class="mk-name">🍁 TSX Comp</div><div class="mk-val">34,801</div><div class="mk-chg down">▼ 1.0%</div></div>
+  <div class="mk"><div class="mk-name">USD / INR</div><div class="mk-val">95.76</div><div class="mk-chg down">▼ rupee soft</div></div>
+  <div class="mk ca"><div class="mk-name">🍁 CAD / USD</div><div class="mk-val">0.7199</div><div class="mk-chg flat">▶ 72¢</div></div>
+  <div class="mk"><div class="mk-name">WTI Crude</div><div class="mk-val">$95.84</div><div class="mk-chg up">▲ war bid</div></div>
+  <div class="mk"><div class="mk-name">Gold</div><div class="mk-val">$4,462</div><div class="mk-chg down">▼ −2% wk</div></div>
+  <div class="mk"><div class="mk-name">Bitcoin</div><div class="mk-val">~$66,900</div><div class="mk-chg down">▼ soft</div></div>
+  <div class="mk"><div class="mk-name">10Y UST</div><div class="mk-val">4.49%</div><div class="mk-chg down">▼ 1bp</div></div>
+  <div class="mk ca"><div class="mk-name">🍁 10Y GoC</div><div class="mk-val">3.44%</div><div class="mk-chg flat">▶ steady</div></div>
+  <div class="mk"><div class="mk-name">VIX</div><div class="mk-val">15.60</div><div class="mk-chg down">▼ 2.86%</div></div>
+</div>
+
+<!-- CONNECTION MAP -->
+<div class="section-label">STORY CONNECTION MAP</div>
+<div class="conn-map">
+  <div class="chain"><b>OIL SHOCK FADES</b> → CAPITAL ROTATES → <b>SPACEX / HARD ASSETS</b></div>
+  <div class="chain"><b>CHIP SELLOFF</b> → PRIVATE-CREDIT REDEMPTIONS → <b>AI-TRADE STRESS</b></div>
+  <div class="chain"><b>DOLLAR + OIL</b> → RBI HOLD + BoC HOLD → <b>₹ &amp; C$ WEAK</b></div>
+  <div class="chain"><b>HORMUZ CABLES</b> → DATA-TOLL THREAT → <b>SUBSEA SECURITY SPEND</b></div>
+  <div class="chain"><b>DEEPSEEK CHEAP AI</b> → MARGIN WAR → <b>US LAB ECONOMICS</b></div>
+</div>
+
+<!-- THE LEAD -->
+<div class="section-label">THE LEAD</div>
+<div class="story-card lead" data-cat="markets tech" id="spacex">
+  <div class="card-meta">
+    <span class="category-tag">MARKETS · IPO</span><span class="trend-arrow">↑</span>
+    <span class="time-horizon">days</span><span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">SpaceX prices the biggest IPO in history — $135 a share, $1.77 trillion, and Musk keeps 82% of the votes</div>
+  <div class="layer1">
+    <p>SpaceX set its IPO at $135 a share, valuing the company at $1.77 trillion and raising about $75 billion by selling 555.6 million shares; underwriters can add 83.3 million more for $11.2 billion. That makes it the seventh-largest US company by market cap, above Tesla (~$1.6T), and more than triple Alibaba as the largest US IPO ever. It debuts on the Nasdaq on June 12 under the ticker SPCX, with Musk holding over 82% voting control after the offering. The $1.77T mark assumes the EchoStar spectrum and Cursor transactions close.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The defining capital event of the AI era is a launch-and-satellite company, not a model lab — a tell about where late-cycle money wants to sit. For India (ISRO / IN-SPACe) and Canada (MDA Space, Telesat), a $1.77T comp resets the valuation ceiling for every sovereign-adjacent space play.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat the June 12 first-day print as a clean rotation signal — hard-asset megacap versus chip-name chop.</div>
+    <div class="contrarian">💭 Here is the version where this is the top: a $1.77T valuation on a company carrying AI losses, leaning on two unclosed deals, with 82% founder control and almost no public say — that is a late-cycle liquidity event, not a growth story. If SPCX breaks issue on day one, it is the bell ringing at the peak of the private-market boom.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e9243a27fe3343" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">At $74–75B in primary plus the greenshoe, the raise alone dwarfs prior records as the dominant draw on global equity capital this year. The structural read: index funds become forced buyers on inclusion, which front-loads demand regardless of fundamentals — exactly the dynamic that can produce a strong first day and a weak first year. The EchoStar spectrum and Cursor contingencies mean the headline valuation is partly a bet on deals not yet signed.</div>
+  <div class="connections">Connects to: AI-trade stress · capital rotation</div>
+</div>
+
+<!-- SIGNAL BOARD -->
+<div class="section-label">SIGNAL BOARD</div>
+
+<div class="story-card" data-cat="markets" id="aitrade">
+  <div class="card-meta"><span class="category-tag">MARKETS</span><span class="trend-arrow">↓</span><span class="time-horizon">weeks</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The AI trade just sprang two leaks — chip stocks rolled over and private-credit investors are pulling cash</div>
+  <div class="layer1">
+    <p>The Dow hit a record 51,561.93 (+1.73%) Thursday, but the Nasdaq slipped 0.09% as money rotated out of semis — Broadcom and Micron led a selloff after a historic chip rally. Underneath the tape, private-credit jitters deepened: investors in Blackstone's flagship fund sought to pull 10% this quarter; at Cliffwater's main lending fund, 17%. Direct lenders are heavily exposed to AI-threatened software firms.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two independent cracks — public chip rotation and private-credit redemptions — in the very week the biggest IPO ever prices. The "AI compute at any price" regime is being stress-tested from both the equity and the credit side at once.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch whether redemption pressure spreads beyond Blackstone and Cliffwater.</div>
+    <div class="contrarian">💭 Goldman's president says "this economy is much stronger than the narrative suggests." Three steps forward, one step back — a chip breather after a parabolic run, not a regime change.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/06/03/stock-market-today-live-updates.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e94a8b78355c78" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The redemption figures matter because private credit lent into the same software names AI is now disrupting — a reflexive loop where the technology eating the borrowers' revenue also spooks the lenders' investors. VIX at 15.6 says the broad market isn't pricing contagion yet; that gap is the thing to watch.</div>
+</div>
+
+<div class="story-card" data-cat="india" id="rbi">
+  <div class="card-meta"><span class="category-tag">INDIA · MACRO</span><span class="trend-arrow">→</span><span class="time-horizon">this quarter</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">RBI holds at 5.25% — Malhotra picks the oil-inflation devil over the growth-slowdown one</div>
+  <div class="layer1">
+    <p>The Monetary Policy Committee under Governor Sanjay Malhotra kept the repo rate at 5.25% on June 5, against a backdrop of rising crude, a rupee near ₹95.8/$, monsoon risk and the Iran war. Markets had priced the hold but hunted the statement for hawkish signals. The Sensex sat near 74,360 and the Nifty near 23,417 into the decision.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> India's central bank is caught in the same oil-inflation-versus-soft-growth bind as the Bank of Canada — both petro-linked, both on hold. Rupee weakness now reads as structural, not a blip.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read the stance language; a neutral-to-hawkish tilt caps any second-half cut hopes.</div>
+    <div class="contrarian">💭 If the oil shock keeps fading as fast as the energy desks claim, the RBI may have just missed the window to support a visibly slowing economy.</div>
+    <a class="read-original" href="https://www.indiatvnews.com/business/news/rbi-monetary-policy-news-live-today-2026-mpc-meeting-outcome-and-latest-update-by-reserve-bank-governor-sanjay-malhotra-on-repo-rate-2026-06-05-1043715" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92b6c45291c23" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">This resolves a tracked call (RBI hold on June 5) as correct. The cross-border symmetry is the operator's takeaway: when two emerging-market, petro-linked central banks freeze for the same reason in the same week, the driver is the Dollar-oil complex, not a domestic policy choice — which means the unlock for both is the same external variable.</div>
+</div>
+
+<div class="story-card" data-cat="tech world" id="deepseek">
+  <div class="card-meta"><span class="category-tag">AI · CHINA</span><span class="trend-arrow">↑</span><span class="time-horizon">months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">DeepSeek closes its first-ever raise — ~$7.4B at roughly $52B, with Tencent, CATL and a state fund on the cap table</div>
+  <div class="layer1">
+    <p>DeepSeek is closing a roughly $7.4 billion round at about a $52 billion valuation (earlier reports ran as high as $59B) — one of China's largest startup raises. Backers reportedly include Tencent, battery giant CATL and a state-backed AI fund. DeepSeek recently made a 75% discount on its flagship model permanent, what one veteran tech writer called "a disruptive assault on the capital-heavy business models" of US frontier labs — and US firms are increasingly paying DeepSeek directly.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The cheap-and-good Chinese AI thesis is now funded by the state-adjacent economy. The margin pressure on US labs is becoming structural rather than promotional, which reprices the whole "compute moat" argument.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch whether the round closes at or above $52B — a tracked call.</div>
+    <div class="contrarian">💭 A $52B mark dominated by Tencent, CATL and state money is a strategic subsidy, not a market price. DeepSeek's "disruption" hasn't yet been tested against a real cost of capital.</div>
+    <a class="read-original" href="https://www.semafor.com/article/06/02/2026/deepseek-funding-round" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e94a8b78355c78" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">CATL's presence is the interesting tell — a battery champion backing an AI lab signals Beijing is treating compute, energy and AI as one integrated industrial stack. For a reader tracking China's tech ascent, this is the cap table of a national champion being assembled in public.</div>
+</div>
+
+<div class="story-card" data-cat="markets tech" id="grid">
+  <div class="card-meta"><span class="category-tag">ENERGY · AI</span><span class="trend-arrow">↑</span><span class="time-horizon">quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Washington floats breaking up America's biggest grid operator as AI power demand outruns the wires</div>
+  <div class="layer1">
+    <p>Federal officials suggested breaking up PJM, the largest US grid operator, over rising bills and its failure to keep pace with data-center demand; one regulator cited a "great appetite for aggression." In Big Tech's latest workaround, Google struck a first-of-its-kind deal with a "virtual power plant" startup, financing payments to households and businesses to curb consumption and free up 100 megawatts.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Power, not silicon, is the binding AI constraint — and the state will now restructure markets to relieve it. Upstream energy and grid assets sit ahead of every AI rupee and loonie spent downstream.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch grid-operator restructuring and independent-power-producer names.</div>
+    <div class="contrarian">💭 Breaking up PJM is a years-long political brawl, and 100 MW from a virtual power plant is a rounding error against gigawatt-scale data-center demand.</div>
+    <a class="read-original" href="https://www.semafor.com/newsletter/06/05/2026/flagship" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e94a8b78355c78" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets geo" id="oil">
+  <div class="card-meta"><span class="category-tag">COMMODITIES</span><span class="trend-arrow">→</span><span class="time-horizon">weeks</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Oil's "remarkably mild" war — US reserves hit a 2004 low, yet the market learned to shrug it off</div>
+  <div class="layer1">
+    <p>US oil reserves fell to their lowest level since 2004 as the Iran war's energy impacts piled up — and yet the shock from the largest supply disruption in history feels "remarkably mild," per Semafor's energy desk. A drop in China's oil imports shielded the rest of the market, and higher US domestic production blunted the blow versus the 1970s. WTI sits near $96; gold eased to ~$4,460 (down ~2% on the week); the 10Y UST yield slipped to 4.49%.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A fading war premium lets the RBI and BoC stop pricing an oil spike — but it also pulls the tailwind from under Canadian energy and the safe-haven bid that propped up gold-levered names. The same calm cuts both ways.</div>
+    <div class="action-box"><strong>ACTION:</strong> Reassess any position built purely on a Hormuz-spike thesis.</div>
+    <div class="contrarian">💭 One more genuine Hormuz closure and "remarkably mild" reverses overnight — the calm is entirely conditional on Iran's restraint.</div>
+    <a class="read-original" href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-thursday-june-4-2026-some-upward-movement-this-morning-despite-no-progress-on-peace-105411481.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e94a8b78355c78" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="tech" id="mathrevolt">
+  <div class="card-meta"><span class="category-tag">AI · SOCIETY</span><span class="trend-arrow">→</span><span class="time-horizon">months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">The AI labs and the mathematicians agree on one thing this week — it's moving too fast</div>
+  <div class="layer1">
+    <p>Hundreds of mathematicians signed a declaration calling for AI use in math to be restricted, fearing a flood of "plausible but unreliable" papers — and unnerved that models just cracked several longstanding conjectures. Scott Aaronson called it "possibly the last days of human relevance" in the field. The same week, OpenAI's Altman, Anthropic's Amodei and DeepMind's Hassabis jointly warned about AI's bioweapon risk.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> When the builders and the domain experts both wave caution flags in the same week, the regulatory clock speeds up — a timeline risk for every AI deployment plan, India and Canada included.</div>
+    <div class="action-box"><strong>ACTION:</strong> File as a regulatory-risk signal, not a one-off.</div>
+    <div class="contrarian">💭 Petitions have never once slowed a capability race with this much capital behind it; the warnings may be noise against the spend.</div>
+    <a class="read-original" href="https://www.semafor.com/newsletter/06/05/2026/flagship" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92173bf1b7bcc" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<!-- CANADIAN FILE -->
+<div class="section-label">THE CANADIAN FILE</div>
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">The index slips off its record, retirees can't shake their mortgages, and Ottawa lines up a submarine bidding war.</div>
+
+  <div class="story-card" data-cat="canada markets" id="ca-boc">
+    <div class="card-meta"><span class="category-tag">CANADA · RATES</span><span class="trend-arrow">↓</span><span class="time-horizon">to Jun 10</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">The TSX gives back 35,000 and the loonie sits at 72 cents — Macklem walks into June 10 with no good options</div>
+    <div class="layer1">
+      <p>The S&amp;P/TSX closed near 34,801 (−1%), surrendering its first-ever 35,000 close, while CAD/USD holds at 0.7199 and the 10-year GoC yield steadies at 3.44%. The Bank of Canada decides June 10 — into a technical recession that argues for a cut, but a reviving oil-inflation pulse that argues for a hold.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The identical trap the RBI just faced — slowing growth pulling one way, the oil pulse pulling the other. The mirror-image macro is the point: same external driver, two countries Suhail operates in.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch June 10; a fifth straight hold is the base case.</div>
+      <div class="contrarian">💭 With two negative GDP quarters in view, the Bank may decide growth trumps a fading oil scare and cut anyway.</div>
+      <a class="read-original" href="https://ca.investing.com/news/stock-market-news/tsx-composite-analysis-as-canada-bond-yields-loonie-crash-3880515" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92155c1f88d7f" target="_blank">Gmail source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="ca-mortgage">
+    <div class="card-meta"><span class="category-tag">CANADA · HOUSEHOLDS</span><span class="trend-arrow">↑</span><span class="time-horizon">structural</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">More retired Canadians carry a mortgage they never expect to pay off — the housing trap is now a retirement problem</div>
+    <div class="layer1">
+      <p>Financial Post's Posthaste reports a mortgage in retirement is becoming a fact of life for many Canadians, with a growing share not expecting to ever clear the debt — a structural shift in household balance sheets after years of elevated prices and rates.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A debt-laden retiree cohort is rate-sensitive and consumption-constrained — a drag on domestic demand that compounds the recession case and tightens the BoC's bind.</div>
+      <div class="action-box"><strong>ACTION:</strong> Factor into any Canadian consumer-exposed thesis.</div>
+      <div class="contrarian">💭 If the BoC does cut, this same cohort gets immediate relief — the rate-sensitivity runs in both directions.</div>
+      <a class="read-original" href="https://financialpost.com/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92ad0f1c1bf3a" target="_blank">Gmail source</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="ca-subs">
+    <div class="card-meta"><span class="category-tag">CANADA · DEFENCE</span><span class="trend-arrow">↑</span><span class="time-horizon">multi-year</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">A bidding war breaks out to sell Canada new submarines — Ottawa's defence wallet finally opens</div>
+    <div class="layer1">
+      <p>The Peak reports rival builders are battling to win Canada's new submarine program, as defence procurement becomes a live industrial-policy lever. (The same edition flagged a short-selling scheme that blew up.)</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Defence and industrial spend is a rare fiscal tailwind in a recessionary backdrop — domestic supply chains and contractors stand to benefit if Ottawa actually commits.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch the shortlist and the offset / industrial-benefit terms.</div>
+      <div class="contrarian">💭 Canadian megaprocurements are notorious for delay and cancellation; a "bidding war" can be years from a signed cheque.</div>
+      <a class="read-original" href="https://readthepeak.com/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92155c1f88d7f" target="_blank">Gmail source</a>
+    </div>
+  </div>
+</div>
+
+<!-- WORLD SCAN -->
+<div class="section-label">THE WORLD SCAN</div>
+<div class="world-file" id="world">
+  <div class="wf-label">🌍 THE WORLD SCAN</div>
+  <div class="cf-subtitle">Hungary clears Ukraine's EU path, Singapore corners Southeast Asia's AI money, and Senegal seats a government at war with its own majority.</div>
+
+  <div class="region-tag">— EUROPE</div>
+  <div class="story-card" data-cat="world europe geo" id="w-europe">
+    <div class="card-meta"><span class="category-tag">EUROPE</span><span class="trend-arrow">↑</span><span class="time-horizon">to Jun 11</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Hungary lifts its veto on Ukraine's EU accession — and the ECB lines up a rare hike into an oil-driven inflation pulse</div>
+    <div class="layer1">
+      <p>Hungary dropped its long-standing veto on Ukraine's EU membership path, a real unlock after years of obstruction. Separately, the ECB is expected to nudge rates up to 2.25% on June 11 — a careful one-off step against energy-driven inflation — even as European stocks fell Thursday on the global tech pullback led by ASML. Eleven EU states also called for a crackdown on Russian tourist visas.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Europe is the one major bloc tightening into the oil shock while the RBI and BoC hold — a widening policy divergence that matters for the euro and for emerging-market flows.</div>
+      <div class="contrarian">💭 Hungary's "lift" can be re-imposed at the next budget fight; Orbán has reversed concessions before.</div>
+      <a class="read-original" href="https://www.riotimesonline.com/europe-eu-intelligence-brief-tech-pullback-ecb-june-4/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="region-tag">— SOUTHEAST ASIA</div>
+  <div class="story-card" data-cat="world sea tech" id="w-sea">
+    <div class="card-meta"><span class="category-tag">SOUTHEAST ASIA</span><span class="trend-arrow">↑</span><span class="time-horizon">structural</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Singapore is vacuuming up Southeast Asia's AI money — funding up 202% while Indonesia craters 77%</div>
+    <div class="layer1">
+      <p>Per a Tracxn report, Singapore captured roughly 99% of disclosed AI-infrastructure funding across the four main SEA markets, with funding up 202% year-on-year; Indonesia fell 77%. The city-state now anchors regional fintech and deep-tech raises, backed by 4,500+ active startups and 510+ investors.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Southeast Asia's AI capital is concentrating in one jurisdiction — a deepening moat for Singapore and a warning for every other ASEAN hub competing for the same dollars.</div>
+      <div class="contrarian">💭 A 99% concentration is fragile — one tax or regulatory change in Singapore and that mobile capital reroutes fast.</div>
+      <a class="read-original" href="https://www.crowdfundinsider.com/2026/06/282798-singapore-dominates-southeast-asia-ai-infrastructure-funding-tracxn-says/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="region-tag">— AFRICA</div>
+  <div class="story-card" data-cat="world africa geo" id="w-africa">
+    <div class="card-meta"><span class="category-tag">AFRICA</span><span class="trend-arrow">→</span><span class="time-horizon">months</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Senegal seats a 30-member government without its own ruling party — and Barrick eyes London to shed its Africa risk</div>
+    <div class="layer1">
+      <p>President Bassirou Diomaye Faye named a 30-minister cabinet that pointedly excludes Pastef, the party of rival Ousmane Sonko — who controls 130 of 165 parliamentary seats, setting up a governing clash in a key West African economy. Meanwhile Barrick Mining is weighing a London listing for its African assets (DRC, Mali, Tanzania, Zambia), possibly via an all-share deal with Endeavour worth ~$30B combined.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Two signals to track closely — political instability risk in a pivotal West African state, and a major miner actively de-risking out of African assets just as commodity attention rises.</div>
+      <div class="contrarian">💭 Barrick is only "weighing" a listing, and the Faye–Sonko friction may resolve into the usual coalition horse-trading rather than a rupture.</div>
+      <a class="read-original" href="https://www.semafor.com/article/06/03/2026/barrick-mining-weighs-london-stock-exchange-listing" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e8d6450ca3de19" target="_blank">Gmail source</a>
+    </div>
+  </div>
+</div>
+
+<!-- OPPORTUNITY BOARD -->
+<div class="section-label">OPPORTUNITY BOARD</div>
+
+<div class="story-card" data-cat="india markets" id="opp-power">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow">↑</span><span class="time-horizon">12–24 mo</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Own the bottleneck, not the application — power and grid sit upstream of every AI, EV and manufacturing rupee</div>
+  <div class="layer1">
+    <p>With Washington floating a break-up of its biggest grid operator and India's peak power demand near record highs into the heatwave, the scarce input across both economies is electricity, not models. Generation, transmission and grid-equipment names sit ahead of the entire downstream AI stack.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The cleanest way to be long the AI build-out without betting on which model wins is to be long the power that runs all of them.</div>
+    <div class="contrarian">💭 Utilities and grid names are rate-sensitive and politically capped on pricing — the bottleneck thesis can be real and still deliver mediocre equity returns.</div>
+  </div>
+</div>
+
+<div class="story-card" data-cat="world geo" id="opp-subsea">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · GLOBAL</span><span class="trend-arrow">↑</span><span class="time-horizon">quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Subsea security is becoming a spending cycle — the Australia–UK–US cable pact names the buyers</div>
+  <div class="layer1">
+    <p>The three nations agreed new measures to protect undersea cables and pipelines, including autonomous submarine drones and anti-submarine reconnaissance. Cables carry 95%+ of intercontinental data; defence ministers call the attack rate "historically unprecedented."</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A government-funded, multi-nation security theme with named buyers — marine surveillance, autonomous undersea vehicles and cable operators all sit in the path of new budgets.</div>
+    <div class="contrarian">💭 Defence-procurement timelines are glacial; the "spending cycle" may be more communiqué than contract for a while.</div>
+  </div>
+</div>
+
+<!-- ALSO ON RADAR -->
+<div class="section-label">ALSO ON RADAR</div>
+
+<div class="story-card" data-cat="markets" id="radar-a16z">
+  <div class="card-meta"><span class="category-tag">VC</span><span class="trend-arrow">↑</span><span class="time-horizon">—</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">a16z goes global — Andreessen Horowitz pushes its footprint beyond the US</div>
+  <div class="layer1">
+    <p>Axios Pro Rata reports a16z is expanding internationally, a notable shift for a firm long anchored in Silicon Valley. Watch which geographies it prioritizes — India and the Gulf are obvious candidates.</p>
+    <a class="read-original" href="https://www.axios.com/newsletters/axios-pro-rata" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e92be6c4f94ad3" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india" id="radar-ola">
+  <div class="card-meta"><span class="category-tag">INDIA · STARTUPS</span><span class="trend-arrow">→</span><span class="time-horizon">—</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Ola Electric raises fresh capital via QIP as Kuku FM readies a public debut</div>
+  <div class="layer1">
+    <p>ETtech reports Ola Electric has topped up its balance sheet through a QIP, while audio platform Kuku FM's parent has taken its first step toward a listing — two reminders that India's capital markets keep absorbing new tech supply.</p>
+    <a class="read-original" href="https://economictimes.indiatimes.com/tech" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19e95a4f652842cd" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<!-- QUICK HITS -->
+<div class="section-label">QUICK HITS</div>
+<ul class="quick-hits">
+  <li>SpaceX debuts on the Nasdaq June 12 under SPCX — the first-day print is the cleanest read yet on whether the private-market boom still has a public bid.</li>
+  <li>US oil reserves hit a 2004 low yet the shock feels "mild" — the world quietly built a resilience the 1970s never had.</li>
+  <li>Prediction markets are going institutional: a Spanish soccer club hedged relegation on Kalshi, and Kalshi is building Bloomberg-style terminals — the "casino" is becoming infrastructure.</li>
+  <li>DeepSeek made its 75% model discount permanent — the margin war against US labs is now a permanent feature, not a promotion.</li>
+  <li>The ECB likely hikes to 2.25% on June 11 — Europe tightens while India and Canada hold, a divergence the euro will have to price.</li>
+  <li>Nikkei −1.36%, Hang Seng −1.48% — the chip rotation that hit the Nasdaq is already a global Asia trade.</li>
+  <li>Hundreds of mathematicians signed a declaration to restrict AI in math — the first organized professional revolt against capability, and unlikely to be the last.</li>
+  <li>Indian immigrants lead US unicorn founders, per ET — the talent India exports is still building America's startups faster than its own.</li>
+</ul>
+
+<!-- LONG GAME -->
+<div class="section-label">THE LONG GAME</div>
+<div class="long-game">
+  Watch the slow handoff from "AI compute" to "AI power" as the scarce input that actually gets priced. For two years the bottleneck story was chips; this week it quietly became electricity — Washington floating a break-up of its largest grid operator, Google paying households to free up megawatts, CATL (a battery maker) underwriting DeepSeek. The next logical step is financialization: when power becomes the gating constraint on the most valuable industry on earth, someone builds the instrument to hedge it. If a major exchange lists a tradeable compute-power contract, that is the moment electricity stops being a utility input and becomes an asset class — and the entire AI capex debate reprices around the cost of the watt, not the chip.
+</div>
+
+<!-- COVERAGE SCORECARD -->
+<div class="section-label">COVERAGE SCORECARD</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#202 · Morning · June 5, 2026</td></tr>
+  <tr><td>Sources scanned</td><td>Tiers 1–7: Finshots, Morning Brew, The Deep View, TLDR, 1440, Inc42, The Ken, Axios, Brew Markets, The Peak, Posthaste, Semafor Flagship (×2), Semafor Africa, Semafor Washington, Sinocism, Rest of World, Daily Maverick, The Spinoff, ET / ETtech, Milk Road, The Rundown + 7 WebSearches</td></tr>
+  <tr><td>Stories featured</td><td>16 cards + 8 quick hits</td></tr>
+  <tr><td>India stories</td><td>3 (RBI hold, Ola/Kuku FM, power-bottleneck opportunity) + Quick Hit on unicorn founders</td></tr>
+  <tr><td>Canada stories</td><td>3 (TSX/BoC June 10, retirement mortgages, submarine bidding war)</td></tr>
+  <tr><td>Europe stories</td><td>1 (Hungary lifts Ukraine EU veto + ECB June 11 hike) — World Scan satisfied</td></tr>
+  <tr><td>Southeast Asia stories</td><td>1 (Singapore dominates SEA AI funding, +202% YoY) — World Scan satisfied</td></tr>
+  <tr><td>Africa stories</td><td>1 (Senegal 30-member govt excl. Pastef; Barrick London listing) — World Scan satisfied</td></tr>
+  <tr><td>China-lens disposition</td><td>Scanned Sinocism (Sharp China: Shangri-La Dialogue, Europe trade policy, "commanding heights") + Rest of World (China battery plant in Michigan, India EV-maker fall). No hard match to active tracked threads (compute-futures / Canada-labor-PCC / US-semis-federal-equity); the DeepSeek raise was surfaced as a China-lens Signal Board card by editorial discretion.</td></tr>
+  <tr><td>World (Tier 6/7) hits scanned</td><td>Semafor Flagship June 4 + June 5, Semafor Africa, Semafor Washington DC, Daily Maverick, The Spinoff, ET / ETtech + Europe WebSearch + SEA WebSearch</td></tr>
+  <tr><td>Theme rotation</td><td>LEAD topic = SpaceX IPO (NEW). Prior 2 LEADs = Hormuz strike (#201), OpenAI banker agents (#200). Spotlight = undersea cables (NEW vs. oil-as-AI-tax / OpenAI data layer). Decision: NEW.</td></tr>
+  <tr><td>Predictions resolved</td><td>1 CORRECT (RBI hold June 5). Progress noted on DeepSeek raise and WTI-$100 calls.</td></tr>
+  <tr><td>New predictions</td><td>3 (ECB hike June 11; ceasefire fails by June 30; SpaceX first-day close above $135)</td></tr>
+</table>
+
+<div class="footer">THE BRIEF · Edition #202 · Compiled June 5, 2026 · A daily intelligence digest for Suhail Seth · India · Canada · World</div>
+
+</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
