@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief — Edition #207 · June 7, 2026 (Evening)</title>
+<style>
+:root{
+--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;
+--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;
+--green:#4ade80;--blue:#5b9bd5;--font-body:Georgia,serif;
+--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px;}
+a{color:var(--blue);}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:26px;}
+.brand{font-family:var(--font-ui);font-size:34px;font-weight:800;letter-spacing:-1px;}
+.brand span{color:var(--accent);}
+.edition-line{font-family:var(--font-ui);font-size:12px;color:var(--dim);letter-spacing:1px;margin-top:6px;text-transform:uppercase;}
+.tagline{font-size:18px;color:var(--muted);font-style:italic;margin-top:14px;}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px;}
+.nav-pill{font-family:var(--font-ui);font-size:12px;padding:5px 13px;border:1px solid var(--border);border-radius:20px;color:var(--muted);cursor:pointer;background:var(--surface);}
+.nav-pill.active{background:var(--accent);color:#0a0a0b;border-color:var(--accent);font-weight:700;}
+.editors-read{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 26px;margin-bottom:30px;}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);margin-bottom:4px;}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:14px;}
+.er-body p{margin:0 0 14px;}
+.signal-spotlight{background:linear-gradient(180deg,#16140c,#131316);border:1px solid var(--accent);border-radius:10px;padding:20px 24px;margin-bottom:30px;}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:10px;}
+.ss-claim{font-size:19px;font-weight:600;margin-bottom:10px;line-height:1.4;}
+.ss-reasoning{color:var(--muted);font-size:15px;margin-bottom:10px;}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px;}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px;}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top;}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px;}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa;}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green);}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red);}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent);}
+.section-head{font-family:var(--font-ui);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:38px 0 16px;border-bottom:1px solid var(--border);padding-bottom:8px;}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px;}
+.mcell{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:10px;text-align:center;}
+.mname{font-family:var(--font-ui);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;}
+.mval{font-size:15px;font-weight:700;margin-top:3px;}
+.mchg{font-family:var(--font-ui);font-size:11px;margin-top:2px;}
+.up{color:var(--green);}.down{color:var(--red);}
+.mkt-note{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:10px;}
+.connmap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.chip{font-family:var(--font-ui);font-size:11px;background:#1a1a1f;border:1px solid var(--border);border-radius:5px;padding:6px 10px;color:var(--muted);}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:16px;}
+.story-card.lead{border-left:3px solid var(--accent);}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--font-ui);font-size:10px;margin-bottom:8px;}
+.category-tag{background:#1f1f25;color:var(--blue);padding:2px 8px;border-radius:4px;letter-spacing:1px;text-transform:uppercase;}
+.trend-arrow{color:var(--muted);}
+.time-horizon{color:var(--dim);}
+.decision-badge{padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:1px;}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red);}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent);}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--dim);border:1px solid var(--dim);}
+.card-title{font-size:19px;font-weight:700;line-height:1.35;margin-bottom:10px;}
+.layer1 p{margin:0 0 12px;}
+.so-what,.action-box,.contrarian{font-size:14px;padding:10px 12px;border-radius:6px;margin-bottom:9px;}
+.so-what{background:#15171a;border-left:2px solid var(--blue);}
+.action-box{background:#15140e;border-left:2px solid var(--accent);}
+.contrarian{background:#1a1316;border-left:2px solid var(--red);color:var(--muted);font-style:italic;}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:12px;margin-right:14px;}
+.deep-dive-btn{font-family:var(--font-ui);font-size:12px;background:none;border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:5px;cursor:pointer;margin-top:8px;}
+.layer2{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:14px;color:var(--muted);}
+.story-card.deep .layer2{display:block;}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin:18px 0 32px;}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:4px;}
+.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:14px;}
+.world-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px;padding:20px 24px;margin:18px 0 32px;}
+.wf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+.region-tag{font-family:var(--font-ui);font-size:9px;background:#1f1f25;color:var(--accent);padding:2px 7px;border-radius:4px;letter-spacing:1px;}
+.qhits li{margin-bottom:9px;}
+.longgame{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;color:var(--muted);font-style:italic;}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;margin-top:8px;}
+.scorecard td{padding:6px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);}
+.scorecard td:first-child{color:var(--dim);width:42%;}
+.hidden{display:none;}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A. HEADER -->
+<div class="masthead">
+  <div class="brand">THE <span>BRIEF</span></div>
+  <div class="edition-line">Edition #207 · Sunday, June 7, 2026 · Evening (Late Update) · for Suhail Seth</div>
+  <div class="tagline">Google rents the future from SpaceX five days before its $1.77T listing · Iran fires on Kuwait and Bahrain yet oil falls · the ECB readies a hike into a slowdown.</div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('world',this)">🌍 World</span>
+</div>
+
+<!-- B. EDITOR'S READ -->
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · June 7, 2026</div>
+  <div class="er-body">
+    <p>Friday the market told one story; this weekend the cap table told another. On Friday a $1 trillion chip rout said AI valuations had run too far ahead of cash. Then on June 5 Google quietly agreed to pay SpaceX <strong>$920 million a month — roughly $30 billion through 2029</strong> — for access to about 110,000 Nvidia GPUs sitting in xAI's data centres, five days before SpaceX lists at a <strong>$1.77 trillion</strong> valuation. So which is true: AI is over-bid, or the largest buyers on earth are signing nine-figure monthly cheques to lock up compute they cannot build fast enough? Both. The equity multiple compressed; the demand for the underlying did not. That gap is the whole game right now.</p>
+    <p>The signal I keep coming back to is the one in the oil pit. On June 6, Iran sent attack drones at the Strait of Hormuz and fired seven ballistic missiles at <em>Kuwait and Bahrain</em> — a new escalation rung, two new Gulf targets — and the US answered by striking Iranian radar at Goruk and on Qeshm Island. A year ago that headline puts WTI through $100. Instead crude <em>fell</em> Friday and is sitting near $91. The war premium is being arbitraged away even as the shooting escalates. The market has decided Iran's Hormuz theatre is leverage, not a durable closure — and it is probably right, until it is catastrophically wrong for 48 hours.</p>
+    <p>For an operator in both my markets the through-line is the same: the cost of money is staying high (US jobs ran hot, the ECB is 99% set to hike June 11, the BoC holds Wednesday) and the cost of <em>compute</em> is becoming a financeable, contracted asset. Cheap capital is not coming back this half; cheap-ish, long-dated compute contracts are the new working capital. My forward call: the next company to copy Google's SpaceX deal — a hyperscaler signing a multi-year compute-offtake to fund someone else's build — will tell you more about 2027 than any Fed dot.</p>
+  </div>
+</div>
+
+<!-- C. SIGNAL SPOTLIGHT -->
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">Iran just attacked two new Gulf states and oil went down. The market has stopped pricing the Hormuz tail — which is either the smartest call of the year or the most dangerous.</div>
+  <div class="ss-reasoning">June 6 was the widest Iranian escalation in weeks: drones at Hormuz, ballistic missiles at Kuwait and Bahrain, US strikes on Goruk and Qeshm. Yet WTI closed Friday near $91, down ~3% on the day and holding only a +4% weekly gain. Traders have concluded that every Iranian move so far has been an "inspection" or a salvo, never a sustained physical closure — so the risk premium decays between incidents faster than each incident adds it. The mispricing is asymmetric: the downside of being wrong (a real &gt;48-hour closure of 20% of seaborne oil) is a $20–30 gap, not a $3 one.</div>
+  <div class="ss-horizon">Time horizon: days to weeks — resolves on whether any incident converts to a sustained (&gt;48h) closure.</div>
+</div>
+
+<!-- C.5 PREDICTION BOARD -->
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>#207</td><td>SpaceX (SPCX) first-day close ≥ +10% over the $135 IPO price (≥$148.50) on June 12.</td><td>Jun 12</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#207</td><td>ECB hikes 25bp to 2.25% on June 11 AND the statement names Middle East / energy prices as the primary upside-inflation driver.</td><td>Jun 11</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#207</td><td>By July 7, a second hyperscaler or AI lab (beyond Google/Anthropic) signs a publicly-disclosed multi-year compute-offtake (SpaceX/xAI or a neocloud) at ≥$5B total value.</td><td>Jul 7</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#206</td><td>US 10-year yield does NOT close above 4.60% before June 20 despite the hot jobs print.</td><td>Jun 20</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#206</td><td>Canada's June LFS does NOT reverse May's gain into net-negative full-time employment.</td><td>Jul 15</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- D. GLOBAL MARKETS -->
+<div class="section-head">Global Markets · Friday June 5 close</div>
+<div class="markets">
+  <div class="mcell"><div class="mname">S&P 500</div><div class="mval">7,383.74</div><div class="mchg down">▼ 2.64%</div></div>
+  <div class="mcell"><div class="mname">Nasdaq</div><div class="mval">25,709.43</div><div class="mchg down">▼ 4.18%</div></div>
+  <div class="mcell"><div class="mname">Nikkei 225</div><div class="mval">66,588</div><div class="mchg down">▼ 1.31%</div></div>
+  <div class="mcell"><div class="mname">Hang Seng</div><div class="mval">24,962</div><div class="mchg down">▼ 1.15%</div></div>
+  <div class="mcell"><div class="mname">Nifty 50</div><div class="mval">23,366.70</div><div class="mchg down">▼ 0.21%</div></div>
+  <div class="mcell"><div class="mname">Sensex</div><div class="mval">74,243.34</div><div class="mchg down">▼ 0.16%</div></div>
+  <div class="mcell"><div class="mname">🍁 TSX Comp</div><div class="mval">34,413</div><div class="mchg down">▼ 2.30%</div></div>
+  <div class="mcell"><div class="mname">USD/INR</div><div class="mval">94.95</div><div class="mchg up">▲ INR firm</div></div>
+  <div class="mcell"><div class="mname">🍁 CAD/USD</div><div class="mval">0.718</div><div class="mchg down">▼ USD/CAD 1.393</div></div>
+  <div class="mcell"><div class="mname">WTI Crude</div><div class="mval">~$91</div><div class="mchg up">▲ +4% wk</div></div>
+  <div class="mcell"><div class="mname">Gold</div><div class="mval">~$4,346</div><div class="mchg down">▼ 2026 low</div></div>
+  <div class="mcell"><div class="mname">Bitcoin</div><div class="mval">~$61,900</div><div class="mchg down">▼ −17% wk</div></div>
+  <div class="mcell"><div class="mname">10Y UST</div><div class="mval">4.54%</div><div class="mchg up">▲ yield up</div></div>
+  <div class="mcell"><div class="mname">🍁 10Y GoC</div><div class="mval">3.47%</div><div class="mchg up">▲ yield up</div></div>
+  <div class="mcell"><div class="mname">VIX</div><div class="mval">~20.4</div><div class="mchg up">▲ +34%</div></div>
+</div>
+<div class="mkt-note">Sunday edition — all figures are Friday, June 5 closes (last full session; markets shut Sat/Sun). The standout: a hot May jobs print (+172k) spiked the 10Y to 4.54% and broke the H2 rate-cut trade, driving a $1T chip rout (Nasdaq −4.18%), while gold, bitcoin and oil all fell together — the rare day every "debasement" trade sold off because rates said no debasement.</div>
+
+<!-- E. STORY CONNECTION MAP -->
+<div class="section-head">Story Connection Map</div>
+<div class="connmap">
+  <span class="chip">HOT JOBS → 10Y 4.54% → $1T CHIP ROUT</span>
+  <span class="chip">CHIP ROUT ⟷ GOOGLE–SPACEX $30B = MULTIPLE DOWN, DEMAND UP</span>
+  <span class="chip">SPACEX $30B DEAL → SPCX IPO JUNE 12 → COMPUTE-AS-COLLATERAL</span>
+  <span class="chip">IRAN HITS KUWAIT/BAHRAIN → WTI FALLS → HORMUZ PREMIUM ARBITRAGED</span>
+  <span class="chip">HIGHER-FOR-LONGER → ECB HIKE JUN 11 → BoC HOLD JUN 10</span>
+  <span class="chip">US 10% TARIFF THREAT → CANADA DIVERSIFIES → CARNEY–PRABOWO CALL</span>
+</div>
+
+<!-- F. THE LEAD -->
+<div class="section-head">The Lead</div>
+<div class="story-card lead" data-cat="tech markets" id="spacex-google">
+  <div class="card-meta">
+    <span class="category-tag">AI INFRASTRUCTURE</span>
+    <span class="trend-arrow">↑</span>
+    <span class="time-horizon">now → 2029</span>
+    <span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Google just agreed to pay $920M a month for AI compute — the demand signal that rebuts Friday's $1T chip rout</div>
+  <div class="layer1">
+    <p>On June 5, the same day chip stocks lost about $1 trillion, Google agreed to pay SpaceX roughly <strong>$920 million per month from October 2026 through June 2029</strong> — about <strong>$30 billion</strong> total — for access to ~110,000 Nvidia GPUs plus CPUs and memory housed at xAI's data centres. Google called it a response to "unexpected demand" for its new AI products. SpaceX disclosed it one week before listing on the Nasdaq under <strong>SPCX on June 12</strong>: ~556 million Class A shares at <strong>$135</strong>, a ~$75 billion raise at a <strong>$1.77 trillion</strong> valuation — the largest IPO ever. It follows an earlier Anthropic compute pact.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the cleanest rebuttal to Friday's "AI is over-valued" tape. Equity multiples repriced on rates; the offtake market repriced upward. A hyperscaler signing multi-year, fixed monthly compute cheques to fund a rival's build is compute graduating into a contracted, financeable asset class — the thing futures exchanges have started circling. For operators, it reframes the AI capex debate from "is there a bubble?" to "who controls the GPUs, the power and the balance sheet to lock them up?"</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the SPCX open Friday as a referendum on whether the chip rout was rates (recoverable) or demand (not). A strong open while semis are still bleeding confirms the demand-is-real read; a soft open says the multiple compression has spread to the infra layer itself.</div>
+    <div class="contrarian">💭 Here is the version where this is wrong: $920M/month to a pre-IPO issuer that also happens to be raising $75B looks less like arms-length demand and more like an ecosystem of cross-holdings (Google, xAI, SpaceX) inflating each other's books right before a listing. If "unexpected demand" softens, a $30B take-or-pay becomes a stranded-cost millstone, and the deal ages like a 1999 capacity swap.</div>
+    <a class="read-original" href="https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40economictimesnews.com" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">At $135 and a $1.77T valuation, SPCX would list at roughly Meta-scale market cap with a fraction of the float (~556M Class A shares). The Google contract — ~$11B/year run-rate — is material against SpaceX's launch + Starlink revenue base and gives underwriters a clean recurring-revenue story to anchor the AI narrative. The structural tell: the GPUs are physically at xAI's data centres, so this is as much an Elon-Musk-entity compute-pooling arrangement as a conventional cloud deal. Cross-reference the Friday rout — Broadcom −7%, Marvell −16%, Micron −13% — and the contradiction sharpens: the names that build the compute fell hardest the same week the demand for compute got a $30B vote.</div>
+  <div class="connections"><span class="chip">↔ chip-rout-rebuttal</span><span class="chip">↔ compute-as-asset</span></div>
+</div>
+
+<!-- G. SIGNAL BOARD -->
+<div class="section-head">Signal Board</div>
+
+<div class="story-card" data-cat="geopolitics markets" id="iran-escalation">
+  <div class="card-meta">
+    <span class="category-tag">GEOPOLITICS</span><span class="trend-arrow">↑</span>
+    <span class="time-horizon">live</span><span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">Iran widens the war — drones at Hormuz, missiles at Kuwait and Bahrain — and the US strikes Goruk and Qeshm, but the talks stay deadlocked</div>
+  <div class="layer1">
+    <p>Early June 6, Iran launched attack drones toward the Strait of Hormuz and fired <strong>seven ballistic missiles at Kuwait and Bahrain</strong>, largely intercepted. The US said it had downed six Iranian one-way drones over two days and retaliated against Iranian coastal radar at <strong>Goruk and on Qeshm Island</strong>. An adviser to Iran's supreme leader told CNN talks are "at a deadlock" and "the ball is in Trump's court," demanding the US unfreeze billions in Iranian assets. The April ceasefire is, in practice, a fiction held together by the absence of a sustained closure.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The new element is target expansion to Kuwait and Bahrain — Gulf states, not just shipping. That raises the odds of a wider regional response and a real (not theatrical) supply interruption. Yet oil still fell Friday, which means the market is offside if Tehran ever converts a salvo into a multi-day Hormuz shutdown. For energy-importing economies, the cheap-insurance window — buying oil-price protection while the premium is compressed — is open precisely because everyone has stopped fearing the tail.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat WTI under $92 with active Hormuz escalation as an asymmetric hedging opportunity, not a calm. The trigger to watch is any transit interruption that lasts beyond an "inspection" window.</div>
+    <div class="contrarian">💭 The bear case for caring: Iran has cried wolf for two months. Each incident has reopened within hours; the US Navy escort posture caps duration; and Gulf air defence intercepted the Kuwait/Bahrain salvo. If the pattern holds, the correct trade was the one the market already made — fade the premium.</div>
+    <a class="read-original" href="https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Awashingtondc%40semafor.com" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Roughly 20% of seaborne oil and LNG moved through Hormuz pre-war. The escalation ladder over the past weeks: inspection-style detentions → IRGC boardings and RPG fire → small-boat and drone attacks → now ballistic missiles at Gulf states. The duration, not the frequency, is what would move price durably; so far no incident has held transit shut for more than hours. The deadlock over frozen Iranian assets is the real blocker — it is a money fight dressed as a security fight.</div>
+  <div class="connections"><span class="chip">↔ hormuz-premium</span><span class="chip">↔ india-oil-import</span></div>
+</div>
+
+<div class="story-card" data-cat="markets tech" id="spcx-ipo">
+  <div class="card-meta">
+    <span class="category-tag">MARKETS</span><span class="trend-arrow">↑</span>
+    <span class="time-horizon">Jun 12</span><span class="decision-badge watch">WATCH</span>
+  </div>
+  <div class="card-title">SpaceX's $75B raise is a test of whether the IPO window survived Friday — the largest listing ever lands into the worst tape of the year</div>
+  <div class="layer1">
+    <p>SpaceX targets June 12 on the Nasdaq: ~556M Class A shares at $135, ~$75B raised, a $1.77T valuation. It arrives three trading days after the Nasdaq's worst session since April 2025. The Google and Anthropic compute deals are the bull anchor; the higher-for-longer rate shock is the headwind. A clean pricing makes SPCX the proof that quality mega-cap supply can clear even a hawkish market; a cut price or weak open chills the rest of 2026's AI-adjacent pipeline.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The IPO is a single-name event with index-level meaning. For an Indian or Canadian allocator, SPCX is also the cleanest public proxy for the "compute + space + connectivity" stack that neither home market can list domestically — a reminder that the most important AI-infrastructure equity is American and effectively single-founder-controlled.</div>
+    <div class="action-box"><strong>ACTION:</strong> Size any participation to the float reality (tiny relative to the cap) and the lockup calendar. The day-1 print is signal; the day-30 print after fast-money rotates is the real read.</div>
+    <div class="contrarian">💭 Counter: a $1.77T debut with a sliver of float and a captive compute customer is exactly the kind of supply that prints high and bleeds for a quarter as index funds get their weight and flippers exit. "Largest ever" has historically been a contrarian top-tick more often than a launchpad.</div>
+    <a class="read-original" href="https://www.cnbc.com/2026/06/05/google-to-pay-spacex-920-million-a-month-for-xai-compute-capacity.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40economictimesnews.com" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections"><span class="chip">↔ spacex-google</span></div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="kuku-ipo">
+  <div class="card-meta">
+    <span class="category-tag">INDIA</span><span class="trend-arrow">→</span>
+    <span class="time-horizon">weeks</span><span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">India's first microdrama IPO arrives — Kuku tests whether Dalal Street will fund an AI-powered, mobile-first entertainment bet</div>
+  <div class="layer1">
+    <p>Per Inc42, Kuku's planned IPO would create a new listed category in India: short-form "microdrama" mobile entertainment, an import of the format that exploded in China. The question is whether public investors back a content-and-distribution model whose moat is recommendation algorithms and bingeable short episodes rather than a back-catalogue.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> It is a live read on Indian IPO appetite for AI-native consumer businesses after a year of gaming-sector destruction and selective fintech listings. A strong book says the market will pay for engagement-economics it can't yet see in cash flow; a weak one says India still wants profits, not formats.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the QIB subscription multiple and the grey-market premium as the proxy for whether "new-category" India IPOs can clear in a higher-rate tape.</div>
+    <div class="contrarian">💭 Bear case: microdrama is a content treadmill with Chinese precedent for brutal churn and thin per-user economics. Listing the category at the hype peak could repeat the fantasy-gaming arc — euphoric book, structural compression once regulation or fatigue hits.</div>
+    <a class="read-original" href="https://inc42.com/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections"><span class="chip">↔ india-ipo-window</span></div>
+</div>
+
+<div class="story-card" data-cat="india" id="ola">
+  <div class="card-meta">
+    <span class="category-tag">INDIA</span><span class="trend-arrow">↓</span>
+    <span class="time-horizon">months</span><span class="decision-badge note">NOTE</span>
+  </div>
+  <div class="card-title">Ola Consumer's valuation markdown puts the ride-hailing-to-everything story back on the clock</div>
+  <div class="layer1">
+    <p>Per Inc42, a fresh valuation markdown has refocused attention on Ola Consumer, whose decline has looked inevitable for a while. The markdown reframes Bhavish Aggarwal's super-app ambitions against a cash runway that is shrinking faster than the pivot is compounding.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Ola sits at the intersection of two stressed Indian themes — mobility and the Ola Electric EV story — and a markdown here is a private-market signal that late-stage Indian consumer-tech is still repricing toward profitability discipline, not growth-at-any-cost. It tightens the bar for every Indian unicorn eyeing a 2026–27 listing.</div>
+    <div class="action-box"><strong>ACTION:</strong> Read Ola's markdown as a comp input for the broader Indian consumer-tech IPO pipeline (including the microdrama and fintech names) — the private marks are the leading indicator the public books will follow.</div>
+    <div class="contrarian">💭 Counter: markdowns are accounting catch-ups, not operating verdicts. If Ola's core mobility unit-economics have actually turned, a conservative mark could be the bottom rather than a warning — distressed-looking entries have launched more than one Indian turnaround.</div>
+    <a class="read-original" href="https://inc42.com/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40inc42emails.com" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections"><span class="chip">↔ india-consumer-tech</span></div>
+</div>
+
+<!-- G.2 THE CANADIAN FILE -->
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">A fresh US tariff threat, a $200B AI bet, and a central bank three days from its fifth straight hold.</div>
+
+  <div class="story-card" data-cat="canada geopolitics" id="ca-tariff">
+    <div class="card-meta"><span class="category-tag">CANADA · TRADE</span><span class="trend-arrow">↓</span><span class="time-horizon">live</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Trump readies a new 10% levy on Canadian goods tied to "forced labour" — and Carney says he's not surprised</div>
+    <div class="layer1">
+      <p>The US signalled a fresh 10% tariff on Canadian goods allegedly linked to forced labour. Carney's response was deliberately flat — "not a surprise" — framing it as one more move in a grinding trade war he says is "fundamentally transforming" the Canadian economy through a "settling-in" recession. On June 6 he also spoke with Indonesia's President Prabowo, part of a visible diversification push.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Each new US tariff lever hardens Canada's strategic logic of building parallel optionality — trade diplomacy with Asia, domestic compute and energy, supply chains that don't route through Washington. The macro cost is real (technical recession, weak loonie at ~0.718), but the policy direction is set: Ottawa now treats US access as conditional, not assumed.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track which Canadian export categories the forced-labour framing actually captures — the definition, not the headline rate, determines the hit. Diversification announcements (India, Indonesia, EU) are the offset to monitor.</div>
+      <div class="contrarian">💭 Counter: a 10% forced-labour tariff may be narrow in scope and more symbolic than economic — a negotiating chip ahead of the CUSMA fight rather than a durable cost. Carney's calm may reflect that Ottawa expects it to be bargained away.</div>
+      <a class="read-original" href="https://www.cbc.ca/news/politics/carney-trump-tariffs-forced-labour-9.7221762" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada tech" id="ca-ai">
+    <div class="card-meta"><span class="category-tag">CANADA · AI</span><span class="trend-arrow">↑</span><span class="time-horizon">5-yr</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">"AI for All": Carney's national strategy bets $200B of growth and 250,000 jobs on dragging adoption from 12% to 60%</div>
+    <div class="layer1">
+      <p>Launched June 4, Canada's "AI for All" strategy promises new legislation, investment and programs over five years, targeting an extra <strong>$200B</strong> of economic growth and <strong>250,000</strong> AI jobs, and lifting AI adoption from just over 12% to 60% by 2034. It pairs with earlier-reported plans for a Canadian Tech Growth Fund and an AI Compute Access Fund.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> This is the Canadian bookend to today's Lead. While Google rents American compute by the month, Ottawa is trying to manufacture sovereign demand and capacity — cheap hydro power, critical minerals, federal anchor tenancy. The strategy is an adoption play, not a frontier-model play: Canada is betting it can win by deploying AI broadly rather than building the biggest lab.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch for the dedicated dollar figure committed to the Tech Growth Fund and Compute Access Fund in the formal program detail — the difference between a framework and a cheque is the whole signal.</div>
+      <div class="contrarian">💭 Counter: 12%→60% adoption by 2034 is a heroic curve, and "$200B of growth / 250k jobs" is the kind of round number that rarely survives contact with a recession and a hostile US trade posture. Strategy documents are cheap; the compute and power build-out is where it lives or dies.</div>
+      <a class="read-original" href="https://www.pm.gc.ca/en/news/news-releases/2026/06/04/prime-minister-carney-launches-ai-all-canadas-new-national-artificial" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-top:8px;"><strong>BoC watch (Jun 10):</strong> A fifth straight hold at 2.25% is the consensus — the technical recession argues for a cut, but the reviving oil-driven inflation pulse and a weak loonie keep the Bank pinned. The tell will be whether the statement names energy/oil explicitly as an inflation factor.</p>
+</div>
+
+<!-- G.3 THE WORLD SCAN -->
+<div class="world-file" id="world">
+  <div class="wf-label">🌍 THE WORLD SCAN</div>
+  <div class="cf-subtitle">A near-certain ECB hike, a Singapore AI raise, and a deepening South African xenophobia crisis.</div>
+
+  <div class="story-card" data-cat="world europe markets" id="ecb">
+    <div class="card-meta"><span class="region-tag">EUROPE</span><span class="category-tag">MACRO</span><span class="trend-arrow">↑</span><span class="time-horizon">Jun 11</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">The ECB is 99% priced to hike to 2.25% on Thursday — tightening into a slowdown because Middle East energy won't let inflation fall</div>
+    <div class="layer1">
+      <p>Markets imply a ~99% probability the ECB raises to 2.25% on June 11. Eurozone inflation accelerated to 2.6% (highest since mid-2024) on energy costs from the Iran war; the Governing Council held in April but openly debated a hike. A move Thursday would put three major central banks (Fed-by-implication via hot jobs, ECB, BoC-on-hold) on the same hawkish line in one week.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Europe hiking into weak growth is the clearest evidence that the global rate-cut narrative is dead for this half — and it is energy, i.e. Hormuz, doing the tightening by proxy. The euro-rate path matters for every emerging-market currency (rupee included) because it sets the floor under global yields and the dollar's competition.</div>
+      <div class="action-box"><strong>ACTION:</strong> Read the ECB statement for the energy framing — if Lagarde names Middle East oil as the inflation driver, it confirms the "geopolitics is the new monetary policy" regime and argues for higher-for-longer everywhere.</div>
+      <div class="contrarian">💭 Counter: with growth this soft, a hike could be a one-and-done insurance move, after which the ECB pivots dovish fast if oil rolls over — making Thursday the top of the cycle, not the start of a tightening run.</div>
+      <a class="read-original" href="https://tradingeconomics.com/euro-area/interest-rate" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="world sea tech" id="sea">
+    <div class="card-meta"><span class="region-tag">SOUTHEAST ASIA</span><span class="category-tag">VC</span><span class="trend-arrow">↑</span><span class="time-horizon">now</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Singapore keeps eating SEA's AI funding — Galatek lands a $30M Series A for life-sciences and semiconductor automation</div>
+    <div class="layer1">
+      <p>Singapore-based automation/AI startup <strong>Galatek</strong> raised a $30M Series A to expand in life sciences and semiconductor manufacturing. It lands as the regional pattern hardens: Singapore (4,500+ startups, #4 global ecosystem) absorbs the bulk of Southeast Asia's serious AI-infrastructure capital while Indonesia and Vietnam shift to a more disciplined, M&A-tilted phase after the easy-money era.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Galatek round (AI applied to semis and pharma manufacturing) is a microcosm of where SEA capital is concentrating — applied, industrial AI in Singapore, not consumer apps across the archipelago. For anyone allocating to "Asia ex-China AI," the city-state is increasingly the only liquid venue.</div>
+      <div class="action-box"><strong>ACTION:</strong> Use Singapore deal flow (not pan-ASEAN aggregates) as the leading indicator for applied-AI verticals; the funding concentration there front-runs where the exits will be.</div>
+      <div class="contrarian">💭 Counter: Singapore's gravity is also a fragility — capital chasing a small set of names in one jurisdiction inflates valuations while Indonesia's 270M-person market goes underfunded. The mispricing could be the over-funded hub, not the "collapsing" periphery.</div>
+      <a class="read-original" href="https://startup-weekly.com/Singapore-based-startup-Galatek-raises-30m-Series-A-to-expand-AI-automation/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="world africa" id="africa">
+    <div class="card-meta"><span class="region-tag">AFRICA</span><span class="category-tag">POLITICS</span><span class="trend-arrow">↓</span><span class="time-horizon">live</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">South Africa's xenophobia crisis deepens — immigration crackdown, DSD corruption fallout and Joburg's sinkholes converge into a governance stress test</div>
+    <div class="layer1">
+      <p>Daily Maverick's June 7 Weekend Wrap leads with escalating xenophobic protests and an illegal-immigration crackdown, alongside fresh fallout implicating more members in the Department of Social Development scandal and literal infrastructure failure — Johannesburg's spreading sinkholes. It is the picture of a state fighting fires across service delivery, migration politics and corruption at once.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> South Africa is the continent's most-watched governance bellwether, and a simultaneous migration, corruption and infrastructure squeeze is the kind of compound stress that moves the rand and the country's risk premium. For EM allocators, the xenophobia flare is also a leading indicator of regional migration pressure across Southern Africa.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch whether the immigration crackdown is contained politically or spills into violence that hits investment sentiment — the rand and SA government-bond spreads are the cleanest market reads.</div>
+      <div class="contrarian">💭 Counter: South African headlines often look more destabilising than the market reaction warrants — institutions, courts and a free press have repeatedly absorbed worse. The xenophobia and corruption stories may be a media-cycle peak, not a fresh investment-risk regime.</div>
+      <a class="read-original" href="https://www.dailymaverick.co.za/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletters%40dailymaverick.co.za" target="_blank">Gmail source</a>
+    </div>
+  </div>
+</div>
+
+<!-- H. OPPORTUNITY BOARD -->
+<div class="section-head">Opportunity Board</div>
+<div class="story-card" data-cat="india tech" id="opp-india">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow">↑</span><span class="time-horizon">6–18 mo</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">If compute is becoming take-or-pay collateral, India's missing layer is bankable domestic capacity — the gap is the opportunity</div>
+  <div class="layer1">
+    <p>The Google–SpaceX deal shows global buyers will sign multi-year compute offtakes worth tens of billions. India has the demand (Sarvam, the IT majors, sovereign use-cases) but thin domestic capacity and power. The arbitrage: data-centre + power + financing structures that let Indian compute be contracted the way Google just contracted SpaceX's.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The winners in India's AI build won't be the model labs — they'll be whoever can package power, land, GPUs and a creditworthy offtake into a financeable asset. That's an infrastructure-and-capital game Indian operators with energy and real-estate balance sheets are positioned to play.</div>
+    <div class="action-box"><strong>ACTION:</strong> Map which Indian power/real-estate groups could underwrite anchor-tenant compute offtakes — the structure, not the chips, is the moat.</div>
+    <div class="contrarian">💭 Counter: India's binding constraint is grid power and GPU import economics, not capital structure — and those don't yield to clever financing. The offtake model may simply route demand to the US and Gulf, leaving India a buyer, not a builder.</div>
+    <a class="read-original" href="https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/" target="_blank">Read original →</a>
+  </div>
+</div>
+<div class="story-card" data-cat="canada tech" id="opp-canada">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · CANADA</span><span class="trend-arrow">↑</span><span class="time-horizon">12–24 mo</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Canada's cheap hydro + AI Compute Access Fund is the sovereign-compute thesis the SpaceX deal just validated</div>
+  <div class="layer1">
+    <p>"AI for All" plus the mooted Compute Access Fund give Canada a credible pitch: abundant clean power, political stability, and federal anchor demand for domestic compute. The Google–SpaceX template — long-dated offtake funding a build — is exactly the structure Canadian sovereign-compute capacity would need to be financeable.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Canada can't out-spend US hyperscalers, but it can offer power-cost and sovereignty advantages to AI workloads that want a non-US home. The opportunity is in being the offtaker of first resort for domestic capacity — turning policy into a bankable demand signal.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch for the first signed Canadian compute-offtake (federal or provincial anchor tenant) — it would convert "AI for All" from a press release into an investable asset class.</div>
+    <div class="contrarian">💭 Counter: Canada's auto and resource economy is in a tariff-driven recession; finding fiscal room for compute subsidies while defending jobs is politically hard, and the build-out timelines run past this government's mandate.</div>
+    <a class="read-original" href="https://globalnews.ca/news/11889388/canada-ai-strategy-release/" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<!-- I. ALSO ON RADAR -->
+<div class="section-head">Also On Radar</div>
+<div class="story-card" data-cat="tech" id="radar-agi">
+  <div class="card-meta"><span class="category-tag">AI</span><span class="trend-arrow">→</span><span class="time-horizon">structural</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">The Deep View reframes the AI debate: stop asking when AGI arrives, start asking whether it pulls us onto screens or off them</div>
+  <div class="layer1">
+    <p>The Deep View (June 7) carries Airbnb CTO Ahmad Al-Dahle arguing the real question isn't whether AGI arrives but whether AI increases or decreases time on devices — a values-and-product framing rather than a capabilities race.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> It's a useful operator reframe: the commercial winners may be the products that use AI to reduce friction and screen time (concierge, automation) rather than maximise engagement — a different design north star than the attention economy that built the last cycle.</div>
+    <a class="read-original" href="https://www.thedeepview.co/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/from%3Anewsletter%40thedeepview.co" target="_blank">Gmail source</a>
+  </div>
+</div>
+
+<!-- J. QUICK HITS -->
+<div class="section-head">Quick Hits</div>
+<ul class="qhits">
+  <li><strong>Gold (~$4,346) and bitcoin (~$61,900) both fell with oil on Friday</strong> — when rates spike, every "debasement" hedge sells off at once; the trade only works while the market fears easy money, and Friday it feared the opposite.</li>
+  <li><strong>Chartbook (Tooze) flags "India in financial trouble" alongside AI-segmentation and an African echo of the Lisbon-earthquake analogy</strong> — worth heeding as a contrarian macro tell while the rupee sits near ₹95 and global yields climb.</li>
+  <li><strong>Adani reclaimed the Asia's-richest crown this weekend per ET</strong> — a reminder that India's index weakness (Nifty −0.2%) masks sharp single-name concentration at the top.</li>
+  <li><strong>India floated E85 fuel at a ~₹20/litre discount</strong> — a quiet ethanol-blending push that doubles as pump-price relief and an oil-import hedge as Hormuz risk lingers.</li>
+  <li><strong>The Israel–Lebanon ceasefire is fraying</strong> — Hezbollah rejected it and Israel kept up much of its campaign; a clean hold through June looks unlikely.</li>
+  <li><strong>The US May jobs print (+172k) was the week's hinge</strong> — it killed the H2 rate-cut bet, spiked the 10Y to 4.54%, and turned a chip wobble into a $1T rout.</li>
+  <li><strong>SPCX lists June 12 at a $1.77T valuation</strong> — the largest IPO ever lands as the cleanest test of whether the AI-equity window survived Friday.</li>
+</ul>
+
+<!-- K. THE LONG GAME -->
+<div class="section-head">The Long Game</div>
+<div class="longgame">
+  The quiet structural shift of 2026 is compute becoming a financed, contracted asset rather than a capex line. Google paying SpaceX $920M a month, Anthropic's earlier pact, exchanges circling AI-compute futures, and Canada designing a Compute Access Fund are all the same motion: GPUs and the power behind them are being turned into long-dated, creditworthy cash-flow streams. When that happens, control of compute starts to look like control of energy infrastructure a century ago — owned through offtake contracts and balance sheets, not bought on a spot market. The economies that learn to underwrite that asset class — not just consume it — are the ones that will set terms in the next cycle.
+</div>
+
+<!-- L. COVERAGE SCORECARD -->
+<div class="section-head">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#207 · Sunday June 7, 2026 · Evening (Late Update) — third refresh of the day (skip-guard returned REGENERATE; prior #206 was 9.1h old). Archived under a distinct filename to preserve #206.</td></tr>
+  <tr><td>Sources scanned</td><td>Gmail Tiers 1–7 (Finshots, Morning Brew, Deep View, 1440 Sunday, The Ken, Inc42, ET/ETtech, Daily Maverick, Semafor DC, Chartbook/Tooze) + targeted web for breaking news + markets</td></tr>
+  <tr><td>Stories featured</td><td>1 Lead + 4 Signal Board + 2 Canadian + 3 World + 2 Opportunity + 1 Radar + 7 Quick Hits</td></tr>
+  <tr><td>India stories</td><td>3 (Kuku microdrama IPO, Ola markdown; Adani / E85 in Quick Hits)</td></tr>
+  <tr><td>Canada stories</td><td>2 cards + BoC-watch (US 10% tariff threat; AI-for-All strategy)</td></tr>
+  <tr><td>Europe stories</td><td>1 (ECB June 11 hike, ~99% priced; eurozone CPI 2.6%)</td></tr>
+  <tr><td>Southeast Asia stories</td><td>1 (Singapore Galatek $30M Series A; Indonesia discipline)</td></tr>
+  <tr><td>Africa stories</td><td>1 (South Africa xenophobia / DSD / Joburg sinkholes — Daily Maverick June 7)</td></tr>
+  <tr><td>China-lens (Tier 5) disposition</td><td>Sinocism / Rest of World quiet for the window; Chartbook (Tooze) fired — surfaced as a Quick Hit ("India in financial trouble") per mandatory consideration</td></tr>
+  <tr><td>Tier 6/7 (world) hits scanned</td><td>Semafor Flagship returned nothing for the window (possible weekend gap — flag if &gt;5 days); Semafor DC, Daily Maverick, ET, Tech-in-Asia (no 1d hit; SEA backfilled via web)</td></tr>
+  <tr><td>Markets note</td><td>All values are Friday June 5 closes (weekend — no Sat/Sun session); reused from the verified #206 table, cross-checked against web</td></tr>
+  <tr><td>New predictions</td><td>3 (P207-1 SPCX day-1 ≥+10%; P207-2 ECB hike + energy language; P207-3 second ≥$5B compute-offtake by Jul 7)</td></tr>
+  <tr><td>Rotation check</td><td>LEAD = Google–SpaceX compute deal (new; prior 2 LEADs = jobs-report hawkish pivot / earlier oil). Iran escalation demoted to Signal Board with named-new development (Kuwait/Bahrain missile targets).</td></tr>
+</table>
+
+<div class="foot">
+  THE BRIEF · Edition #207 · A daily intelligence digest for Suhail Seth · Built from a targeted multi-source scan, cross-referenced and opinionated. Market values are Friday June 5, 2026 closes. Not financial advice.
+</div>
+
+</div>
+
+<script>
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
