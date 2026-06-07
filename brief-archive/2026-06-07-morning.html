@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief · Edition #205 · June 7, 2026 (Morning)</title>
+<style>
+:root{--bg:#0a0a0b;--surface:#131316;--border:#27272a;--text:#e4e4e7;--muted:#a1a1aa;--dim:#71717a;--accent:#c8a030;--red:#e05252;--green:#4ade80;--blue:#5b9bd5;--font-body:Georgia,serif;--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:16px;margin-bottom:8px}
+.masthead h1{font-family:var(--font-ui);font-size:34px;letter-spacing:6px;margin:0;font-weight:800;text-transform:uppercase}
+.masthead .sub{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-top:8px;display:flex;gap:14px;flex-wrap:wrap}
+.tagline{font-size:18px;color:var(--muted);font-style:italic;margin:18px 0 26px;line-height:1.5}
+.nav{position:sticky;top:0;background:rgba(10,10,11,.92);backdrop-filter:blur(6px);padding:10px 0;margin-bottom:24px;border-bottom:1px solid var(--border);z-index:10;display:flex;gap:8px;flex-wrap:wrap}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--muted);cursor:pointer;background:var(--surface)}
+.nav-pill.active{border-color:var(--accent);color:var(--accent)}
+.section-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin:36px 0 14px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.editors-read{background:linear-gradient(180deg,#15140f,#131316);border:1px solid var(--accent);border-radius:12px;padding:24px 28px;margin-bottom:28px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin:4px 0 14px}
+.er-body p{margin:0 0 14px}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.ss-claim{font-size:19px;font-weight:600;line-height:1.4;margin-bottom:10px}
+.ss-reasoning{color:var(--muted);font-size:15px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;color:var(--dim);margin-top:12px;text-transform:uppercase}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.markets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.m-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px}
+.m-name{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.m-val{font-family:var(--font-ui);font-size:15px;font-weight:700;margin-top:3px}
+.m-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
+.up{color:var(--green)}.down{color:var(--red)}
+.ca-tile{border-color:var(--red)}
+.connmap{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chip{font-family:var(--font-ui);font-size:11px;letter-spacing:.5px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:5px 12px;color:var(--muted);cursor:pointer}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:16px}
+.card-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.category-tag{color:var(--accent)}
+.trend-arrow{color:var(--muted)}
+.time-horizon{color:var(--dim)}
+.decision-badge{padding:2px 8px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(113,113,122,.15);color:var(--muted);border:1px solid var(--dim)}
+.card-title{font-size:21px;font-weight:700;line-height:1.3;margin-bottom:10px}
+.card-lead.lead .card-title{font-size:25px}
+.layer1 p{margin:0 0 12px}
+.so-what,.action-box,.contrarian{font-size:14px;border-radius:6px;padding:10px 14px;margin-bottom:10px}
+.so-what{background:rgba(91,155,213,.08);border-left:2px solid var(--blue)}
+.action-box{background:rgba(74,222,128,.07);border-left:2px solid var(--green)}
+.contrarian{background:rgba(224,82,82,.06);border-left:2px solid var(--red);color:var(--muted);font-style:italic}
+.read-original{font-family:var(--font-ui);font-size:12px;font-weight:600;margin-right:16px}
+.gmail-source{font-family:var(--font-ui);font-size:12px;color:var(--dim)}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;background:none;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:6px 12px;cursor:pointer;margin-top:8px}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);color:var(--muted);font-size:14px}
+.story-card.deep .layer2{display:block}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:16px}
+.world-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.wf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.region-tag{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.quick-hits li{margin-bottom:10px}
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:15px;color:var(--muted)}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px;margin-top:8px}
+.scorecard td{padding:6px 10px;border-bottom:1px solid #1e1e22}
+.scorecard td:first-child{color:var(--dim)}
+.hidden{display:none}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets{grid-template-columns:repeat(3,1fr)}.masthead h1{font-size:24px;letter-spacing:3px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="masthead">
+  <h1>The Brief</h1>
+  <div class="sub"><span>Edition #205</span><span>Sunday, June 7, 2026 · Morning</span><span>For Suhail Seth</span><span>India · Canada · World</span></div>
+</div>
+<div class="tagline">Two shocks landed in one weekend: a red-hot US jobs print revived the Fed-hike trade and erased $2.5T across stocks, gold and crypto — then US jets hit Iranian radar at Hormuz and put oil up 6% on the week. Rupee 94.95, loonie 71.7 cents, and two central banks now trapped between recession and oil.</div>
+
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('geo',this)">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">🇮🇳 India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('world',this)">🌍 World</span>
+</div>
+
+<!-- ===== EDITOR'S READ ===== -->
+<div class="editors-read">
+  <div class="er-label">Editor's Read</div>
+  <div class="er-byline">Suhail Seth · June 7, 2026</div>
+  <div class="er-body">
+    <p>Two inflation shocks arrived inside the same 48 hours, and they push the same direction. Friday's US jobs print ran hot — 172,000 against an 85,000 consensus, unemployment steady at 4.3% — and the market read it as one thing: the Fed is back in play. The 10-year jumped to 4.54%, the Nasdaq fell 4.18% (its worst day since April 2025), the S&P shed 2.64%, and the selling didn't stay in equities — Bitcoin broke below $60,000 for the first time since October 2024, gold dropped 3.38%, and roughly $2.5 trillion evaporated across asset classes. Then on Saturday, while everyone was digesting that, Iran sent drones toward the Strait of Hormuz and US forces struck coastal radar sites at Goruk and on Qeshm Island — the fourth American strike since the April ceasefire. Crude is now up about 6% on the week.</p>
+    <p>Here is the connection nobody is drawing cleanly: a rates shock and an oil shock are far more dangerous together than apart, because the oil shock removes the central bank's option to ease into the rates shock. I operate in both India and Canada, and this lands on both at once. The rupee at 94.95 and the loonie at 71.7 cents are the same trade — weak, import-dependent currencies getting hit by a hawkish-dollar dynamic <em>and</em> a reflating oil bill simultaneously. The Bank of Canada (June 10) and the ECB (June 11) both walk into decisions where the textbook says ease — Canada is in a technical recession, Europe is stalling — but the crude tape says you can't.</p>
+    <p>My call: the banks blink toward inflation, not growth. BoC holds a fifth straight time; the ECB delivers its 25bp hike. The asset that decides Monday's open isn't a chip stock — it's the front-month crude contract. Watch oil, not Nvidia.</p>
+  </div>
+</div>
+
+<!-- ===== SIGNAL SPOTLIGHT ===== -->
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ Signal Spotlight</div>
+  <div class="ss-claim">The market spent two months learning to shrug off Hormuz. It is about to learn that a supply shock is a different animal when it lands on top of a rates shock.</div>
+  <div class="ss-reasoning">For weeks oil has barely flinched at Iranian provocations — a fourth US strike moved crude only ~6% on the week, and traders called the war "remarkably mild." That complacency was earned in a world where central banks could still cut to cushion any growth hit. Friday changed the backdrop: with the Fed-hike trade reborn, an oil spike now feeds an inflation impulse that monetary policy is no longer willing to offset. The tell to watch is the first central banker who names "oil" as the explicit reason a cut didn't happen. That sentence — not a barrel count — is when the two shocks fuse into a single regime.</div>
+  <div class="ss-horizon">Time horizon: this month — BoC June 10, ECB June 11</div>
+</div>
+
+<!-- ===== PREDICTION BOARD ===== -->
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 Prediction Board</div>
+  <table class="pb-table">
+    <thead><tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>#205</td><td>WTI front-month closes ≥ $95/bbl on at least one day, driven by Hormuz escalation</td><td>Jun 20, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#205</td><td>The BoC's Jun 10 rate statement explicitly names oil / energy / gasoline as an inflation factor in its decision</td><td>Jun 10, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#205</td><td>Gold recovers above $4,400/oz before month-end after the Jun 6 −3.4% flush</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#204</td><td>No top-4 US hyperscaler cuts 2026 AI-capex guidance despite the Jun 5 selloff</td><td>Aug 15, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#204</td><td>US 10Y does not close above 4.75% before end-July (at 4.54% Jun 5)</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== MARKETS ===== -->
+<div class="section-label">Global Markets · latest close (Jun 5–6, 2026)</div>
+<div class="markets">
+  <div class="m-cell"><div class="m-name">S&P 500</div><div class="m-val">7,383.74</div><div class="m-chg down">▼ 2.64%</div></div>
+  <div class="m-cell"><div class="m-name">Nasdaq</div><div class="m-val">25,709.43</div><div class="m-chg down">▼ 4.18%</div></div>
+  <div class="m-cell"><div class="m-name">Nikkei 225</div><div class="m-val">66,588</div><div class="m-chg down">▼ 1.31%</div></div>
+  <div class="m-cell"><div class="m-name">Hang Seng</div><div class="m-val">24,961.95</div><div class="m-chg down">▼ 1.15%</div></div>
+  <div class="m-cell"><div class="m-name">Nifty 50</div><div class="m-val">23,366.70</div><div class="m-chg down">▼ 0.21%</div></div>
+  <div class="m-cell"><div class="m-name">Sensex</div><div class="m-val">74,243.34</div><div class="m-chg down">▼ 0.16%</div></div>
+  <div class="m-cell ca-tile"><div class="m-name">🍁 TSX Comp</div><div class="m-val">34,413.45</div><div class="m-chg down">▼ 2.30%</div></div>
+  <div class="m-cell"><div class="m-name">USD/INR</div><div class="m-val">94.95</div><div class="m-chg down">▼ rupee</div></div>
+  <div class="m-cell ca-tile"><div class="m-name">🍁 CAD/USD</div><div class="m-val">0.717</div><div class="m-chg down">▼ 71.7¢</div></div>
+  <div class="m-cell"><div class="m-name">WTI Crude</div><div class="m-val">~$93</div><div class="m-chg up">▲ +6% wk</div></div>
+  <div class="m-cell"><div class="m-name">Gold /oz</div><div class="m-val">$4,345.70</div><div class="m-chg down">▼ 3.38%</div></div>
+  <div class="m-cell"><div class="m-name">Bitcoin</div><div class="m-val">~$59,900</div><div class="m-chg down">▼ 6.31%</div></div>
+  <div class="m-cell"><div class="m-name">10Y UST</div><div class="m-val">4.54%</div><div class="m-chg up">▲ yields</div></div>
+  <div class="m-cell ca-tile"><div class="m-name">🍁 10Y GoC</div><div class="m-val">3.47%</div><div class="m-chg up">▲</div></div>
+  <div class="m-cell"><div class="m-name">VIX</div><div class="m-val">21.51</div><div class="m-chg up">▲ +39.7%</div></div>
+</div>
+
+<!-- ===== CONNECTION MAP ===== -->
+<div class="section-label">Story Connection Map</div>
+<div class="connmap">
+  <span class="chip">HOT JOBS PRINT → FED-HIKE TRADE → 10Y 4.54%</span>
+  <span class="chip">RATES SHOCK → RISK-OFF → STOCKS+GOLD+BTC −$2.5T</span>
+  <span class="chip">HORMUZ STRIKE → OIL +6% → SECOND INFLATION SHOCK</span>
+  <span class="chip">TWO SHOCKS → BoC TRAPPED → NO JUNE 10 CUT</span>
+  <span class="chip">DOLLAR + OIL → RUPEE 94.95 + LOONIE 71.7¢</span>
+</div>
+
+<!-- ===== THE LEAD ===== -->
+<div class="section-label">The Lead</div>
+<div class="story-card card-lead lead" data-cat="geo markets world" id="lead-hormuz">
+  <div class="card-meta">
+    <span class="category-tag">Geopolitics · Oil</span>
+    <span class="trend-arrow">↑</span>
+    <span class="time-horizon">Days</span>
+    <span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">US jets hit Iran's Hormuz radar for the fourth time since the ceasefire — and this strike lands on a market that's already bleeding</div>
+  <div class="layer1">
+    <p>Early Saturday, Iran launched one-way attack drones toward the Strait of Hormuz; CENTCOM shot down four of them and then struck Iranian coastal surveillance radar at Goruk and on Qeshm Island, calling it self-defense. Tehran's Mehr agency framed the launches as "warning shots" tied to US ship movements. It is the fourth publicly announced US strike on Iran since the April ceasefire took hold — proof that the truce is a framework, not a peace. Crude finished the week roughly 6% higher, with WTI around $93 and a trading range that ran toward $95 as the strike news hit.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The danger isn't the strike in isolation — it's the timing. A supply shock that would normally be absorbed becomes a genuine inflation event when it arrives the same week markets reprice the Fed hawkish. For India, every dollar of crude is a direct hit to an import bill already straining a 94.95 rupee. For Canada, higher oil is a terms-of-trade positive for the West but an inflation headache that pins the Bank of Canada exactly when its economy wants a cut. Same barrel, opposite political problems.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat the front-month crude contract as Monday's real index. A clean break and hold above $95 changes the BoC and ECB calculus this week; a fade back under $90 means the market is still pricing the war as "mild."</div>
+    <div class="contrarian">💭 <em>Here's the version where this is wrong: the market has correctly priced these strikes as theater. Four rounds in and oil is up single digits — Iran fires warning drones, the US hits empty radar huts, nobody touches a tanker. If the pattern holds, this is noise dressed as risk, and the only real driver this week is rates, not crude.</em></div>
+    <a class="read-original" href="https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html" target="_blank">Read original →</a>
+    <a class="read-original" href="https://abc7ny.com/live-updates/iran-war-peace-talks-oil-prices-lebanon-strait-of-hormuz/19212967/" target="_blank">Live updates →</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Context: shipping through Hormuz has been largely blocked since late February 2026, when the US and Israel opened the air war on Iran. The "10-day Hormuz cycle" — Iran provokes, the US retaliates, oil ticks up then fades — has repeated since April. What's new is the macro backdrop: prior cycles played out while the Fed was assumed to be on an easing path, giving markets a cushion. With the May jobs report reviving hike bets, that cushion is gone, which is why this fourth strike matters more than the previous three even though it looks identical on the surface.</div>
+  <div class="connmap" style="margin-top:14px"><span class="chip" onclick="scrollToStory('selloff')">→ Cross-asset selloff</span><span class="chip" onclick="scrollToStory('canada-boc')">→ BoC trapped</span></div>
+</div>
+
+<!-- ===== SIGNAL BOARD ===== -->
+<div class="section-label">Signal Board</div>
+
+<div class="story-card" data-cat="markets" id="selloff">
+  <div class="card-meta"><span class="category-tag">Markets · Macro</span><span class="trend-arrow">↓</span><span class="time-horizon">Now</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">A 172k jobs print did what a war couldn't — it wiped $2.5 trillion and broke Bitcoin under $60k</div>
+  <div class="layer1">
+    <p>May nonfarm payrolls came in at 172,000 versus an 85,000 consensus — a double-beat that reframed the Fed from "done" to "maybe not." The 10-year vaulted to 4.54%, the Nasdaq fell 4.18% to 25,709 (worst session since April 2025, led by a semiconductor rout after weak Broadcom guidance), the S&P lost 2.64% to 7,383.74, and the Dow dropped 695 points. The risk-off bled everywhere: gold −3.38% to ~$4,346/oz, Bitcoin −6.31% below $60,000 for the first time since October 2024, VIX +40% to 21.51. Roughly $2.5 trillion in value gone in 24 hours.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is a multiple-repricing driven by the discount rate, not a demand collapse — the economy is too strong, not too weak. That distinction matters: a growth scare and a rates scare look identical on a one-day chart but demand opposite responses. India's Nifty (23,367) and Sensex (74,243) held up far better than Wall Street, a reminder that domestic-flow markets can decouple from a US rates tantrum. Canada's TSX was not so lucky, down 2.3%.</div>
+    <div class="action-box"><strong>ACTION:</strong> If this is rotation rather than breakdown, the tell is breadth — watch whether financials and energy hold while only the high-multiple AI names bleed. That's a rotation you can lean into; a broad-based slide is a different signal.</div>
+    <div class="contrarian">💭 <em>The bear case: 4.18% on the Nasdaq with gold and Bitcoin selling alongside isn't healthy rotation — it's a liquidity event. When every asset falls together, someone is being forced to sell, and forced selling rarely stops at one session.</em></div>
+    <a class="read-original" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-05-2026" target="_blank">Read original →</a>
+    <a class="read-original" href="https://www.coindesk.com/markets/2026/06/04/bitcoin-drops-below-usd62-000-as-usd1-5-billion-in-crypto-longs-get-wiped-out" target="_blank">Crypto wipeout →</a>
+  </div>
+  <div class="connmap" style="margin-top:14px"><span class="chip" onclick="scrollToStory('lead-hormuz')">→ Oil second shock</span></div>
+</div>
+
+<div class="story-card" data-cat="tech" id="anthropic">
+  <div class="card-meta"><span class="category-tag">AI · Governance</span><span class="trend-arrow">→</span><span class="time-horizon">Quarters</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Anthropic asks the whole industry to build a brake pedal — and admits it can't pull one alone</div>
+  <div class="layer1">
+    <p>Anthropic's Jack Clark and the Anthropic Institute's Marina Favaro published a call for a coordinated mechanism to slow or temporarily pause frontier AI development, warning the technology is approaching the point where it can improve itself "without human involvement." Crucially, they did not call for a unilateral halt — they argued a credible slowdown needs multiple well-resourced labs across multiple countries stopping under the same verifiable conditions. It is a governance proposal, not a moratorium.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The most capable lab publicly saying "we may need to be able to stop" is a regime marker for anyone building on top of frontier models — it signals the capability curve is steep enough that the builders themselves are flagging it. For an operator deploying AI across an Indian or Canadian workforce, the practical read is continuity risk: bake in vendor-diversity and a fallback model tier, because the policy environment around frontier AI is going to get less predictable, not more.</div>
+    <div class="contrarian">💭 <em>The cynic's read: a frontier lab calling for an industry-wide "pause option" it can't trigger alone is a competitive move dressed as safety — it slows rivals, generates goodwill in Washington, and costs Anthropic nothing it wasn't already constrained by.</em></div>
+    <a class="read-original" href="https://www.aljazeera.com/economy/2026/6/5/anthropic-urges-ai-labs-to-pause-warns-humans-risk-losing-control" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="adani-rupee">
+  <div class="card-meta"><span class="category-tag">India · Markets</span><span class="trend-arrow">↓</span><span class="time-horizon">Now</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Rupee at 94.95 is the quiet crisis under India's calm tape — even as Adani reclaims Asia's richest crown</div>
+  <div class="layer1">
+    <p>Indian equities barely moved on Friday — Nifty −0.21% to 23,366.70, Sensex −0.16% to 74,243.34 — a striking calm against Wall Street's 4% rout. But the currency tells the real story: USD/INR sits at 94.95, a structurally weak rupee absorbing both a hawkish-dollar pull and an oil-import bill that just reflated on Hormuz. Underneath, the corporate tape churned on: Gautam Adani reclaimed the title of Asia's richest person, and ET flagged "15 concurrent losers" with the Nifty's next move hinging on the 23,000 level.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A 94.95 rupee plus rising crude is a margin tax on every import-exposed Indian business and a tailwind for exporters and IT services that bill in dollars. The equity index's calm is real but partly a currency illusion — measured in USD, Indian assets are quietly cheaper than the rupee chart suggests. The 23,000 Nifty line is the level that decides whether this is consolidation or the start of a deeper pullback.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch 23,000 on the Nifty and 95 on the rupee as the two trip-wires this week. A rupee print past 95 with oil holding above $93 is the combination that finally pressures the equity tape.</div>
+    <div class="contrarian">💭 <em>Counter-view: a 94.95 rupee is old news the market has fully absorbed — India's FX reserves and domestic SIP flows have made the currency level almost irrelevant to equity direction. The calm isn't fragility; it's strength.</em></div>
+    <a class="read-original" href="https://economictimes.indiatimes.com/markets" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="india tech" id="oyo">
+  <div class="card-meta"><span class="category-tag">India · IPO</span><span class="trend-arrow">↑</span><span class="time-horizon">Months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">OYO's parent Prism clears SEBI for a ₹6,650 crore IPO — the third attempt, finally at a grown-up valuation</div>
+  <div class="layer1">
+    <p>SEBI issued its observations between June 1–5 on Prism, OYO's parent, clearing a fresh-issue IPO of up to ₹6,650 crore at a targeted $7–8 billion valuation. That's a long fall from the ~$9B+ ambitions of OYO's failed 2021 and 2023 attempts — and it comes with actual profits: FY25 net income up 7% to ₹244.8 crore on revenue of ₹6,252.8 crore (+16%). An updated draft prospectus is expected in July.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A profitable, right-sized OYO listing is a health signal for India's IPO pipeline — the market is rewarding companies that grew into their valuations rather than the 2021-vintage growth-at-any-cost stories. It sits alongside a busy SEBI desk (five IPOs cleared June 5) that says India's primary market remains the deepest in Asia even as global risk appetite wobbles.</div>
+    <div class="contrarian">💭 <em>The skeptic's take: a third IPO attempt at a 20%+ valuation haircut is not a triumph, it's a capitulation — OYO is going public because private money dried up, and ₹244 crore of profit on ₹6,250 crore of revenue is a 4% margin that won't excite anyone.</em></div>
+    <a class="read-original" href="https://www.businesstoday.in/markets/ipo-corner/story/oyo-parent-prism-gets-sebi-nod-for-rs6650-cr-ipo-eyes-7-8-bn-valuation-534541-2026-06-02" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<div class="story-card" data-cat="markets geo" id="centralbanks">
+  <div class="card-meta"><span class="category-tag">Macro · Central Banks</span><span class="trend-arrow">→</span><span class="time-horizon">This week</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Two rate decisions in 24 hours will tell us whether oil now overrides recession</div>
+  <div class="layer1">
+    <p>The BoC (June 10) and ECB (June 11) decide back-to-back into this two-shock backdrop. Markets price the BoC near-certain to hold at 2.25% — a fifth straight hold — with only a 4% chance of a hike and Polymarket at 65% for no change, despite Canada slipping into a technical recession. The ECB is the mirror image: markets price a 99% chance of a 25bp hike to 2.25%, with Lagarde having flagged that the March inflation forecast will be revised at this meeting.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two banks, opposite moves, same cause — oil-driven inflation is removing the option to ease. The BoC holding into a recession and the ECB hiking into stagnation are both the same admission: the crude tape is now writing monetary policy. That's the macro regime to internalize, because it means the "central bank put" that has cushioned every dip since 2023 is suspended as long as Hormuz stays hot.</div>
+    <div class="contrarian">💭 <em>The other read: the ECB hike is fully priced and the BoC hold is consensus — there's no surprise here, and a "no-surprise" central bank week is exactly when markets stop caring about rates and refocus on earnings.</em></div>
+    <a class="read-original" href="https://dailyhive.com/vancouver/bank-of-canada-interest-rate-june-2026" target="_blank">BoC preview →</a>
+    <a class="read-original" href="https://investinglive.com/centralbank/lagarde-flags-ecb-inflation-forecast-revision-ahead-of-june-11-rate-decision-20260524/" target="_blank">ECB preview →</a>
+  </div>
+</div>
+
+<!-- ===== THE CANADIAN FILE ===== -->
+<div class="canadian-file" id="canada">
+  <div class="cf-label">🍁 The Canadian File</div>
+  <div class="cf-subtitle">Macklem walks into June 10 in a recession he can't cut into — because the war won't let him.</div>
+
+  <div class="story-card" data-cat="canada markets" id="canada-boc" style="margin-bottom:14px">
+    <div class="card-meta"><span class="category-tag">Canada · Rates</span><span class="trend-arrow">→</span><span class="time-horizon">Jun 10</span><span class="decision-badge act">ACT</span></div>
+    <div class="card-title">The cruelest hold: Canada is in a technical recession and the BoC still can't cut on Wednesday</div>
+    <div class="layer1">
+      <p>The TSX fell 2.3% Friday to 34,413, the loonie sits at 71.7 US cents (USD/CAD 1.3926), and the 10-year GoC yield rose to 3.47%. Into that, the Bank of Canada meets June 10 with the economy in its first technical recession since 2020 and a labour market still shedding tariff-exposed goods jobs — the textbook case for stimulus. Markets price a near-certain fifth hold at 2.25% anyway, because gasoline-driven inflation and a fresh Hormuz oil spike make a cut indefensible.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A central bank holding rates into a recession is the clearest local proof of the two-shock thesis: oil has taken the easing option off the table. For Canadian operators that means financing costs stay elevated through a downturn — the worst of both worlds, and a planning input for anyone carrying floating-rate debt or sizing 2027 capacity.</div>
+      <div class="action-box"><strong>ACTION:</strong> Don't model a Canadian rate cut into H2 plans until oil breaks decisively lower. The base case is "higher for longer in a recession," not the cutting cycle the recession alone would imply.</div>
+      <div class="contrarian">💭 <em>Contrarian: if the recession deepens and crude fades back under $85, the BoC could deliver a surprise dovish pivot in July — the market is too confident that oil pins them all summer.</em></div>
+      <a class="read-original" href="https://www.bnnbloomberg.ca/business/2026/06/05/sptsx-composite-down-more-than-500-points-us-stock-markets-also-fall/" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="aircanada">
+    <div class="card-meta"><span class="category-tag">Canada · Business</span><span class="trend-arrow">→</span><span class="time-horizon">Note</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Air Canada previews a new aircraft as Bay Street braces — the consumer story still has a pulse</div>
+    <div class="layer1">
+      <p>Per The Peak, Air Canada is previewing a new aircraft and Nova Scotia is putting the seafood business into school curricula — small signals that the domestic consumer and regional-development story keeps moving even as markets wobble. It's the kind of quiet operating-economy news that gets drowned out on a −2.3% TSX day but matters for anyone reading Canadian demand.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Carriers don't preview fleet upgrades into a demand cliff — Air Canada's confidence is a modest counter-signal to the recession headline. The Canadian consumer is softer, not broken, which is exactly the ambiguity the BoC is staring at.</div>
+      <a class="read-original" href="https://readthepeak.com/" target="_blank">Read original →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== THE WORLD SCAN ===== -->
+<div class="world-file" id="world">
+  <div class="wf-label">🌍 The World Scan</div>
+  <div class="cf-subtitle">Putin slams the door on Zelensky, Pretoria scrambles as African neighbours pull their citizens out, and Singapore quietly writes a S$1B deep-tech cheque.</div>
+
+  <div class="story-card" data-cat="world europe geo" id="ukraine" style="margin-bottom:14px">
+    <div class="card-meta"><span class="region-tag">Europe</span><span class="category-tag">Geopolitics</span><span class="trend-arrow">→</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Zelensky offers Putin a face-to-face and a full ceasefire — Putin calls the letter "rude" and says come to Moscow</div>
+    <div class="layer1">
+      <p>In a rare open letter, Volodymyr Zelensky proposed a face-to-face meeting in a third country and a full ceasefire for the duration of talks — published a day after Ukrainian drones struck Saint Petersburg during a major economic forum. Putin rebuffed it flatly, said there was "no point," called the letter rude, and a Kremlin spokesman suggested Zelensky could "come to Moscow." Trump said a meeting would be "great" but that both sides must compromise.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A public peace overture met with a public insult means the war's risk premium stays in European energy and defense names — and reinforces why the ECB can't treat inflation as transitory. For a global operator, Europe remains the slow-burn geopolitical tax that isn't going away in 2026.</div>
+      <a class="read-original" href="https://www.cnn.com/2026/06/04/europe/zelensky-putin-meeting-intl-latam" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="world africa geo" id="southafrica" style="margin-bottom:14px">
+    <div class="card-meta"><span class="region-tag">Africa</span><span class="category-tag">Politics</span><span class="trend-arrow">↓</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">South Africa sends envoys across the continent as a wave of xenophobic killings empties its migrant workforce</div>
+    <div class="layer1">
+      <p>A deadly wave of anti-migrant violence — at least seven Mozambicans killed, five directly in attacks around Mossel Bay on May 29 — has triggered a regional crisis. President Ramaphosa announced envoys to other African nations after talks with Kenya's Ruto, while Ghana, Nigeria (planning to fly home 2,000–4,000), Mozambique and Malawi evacuate citizens ahead of a June 30 deadline set by vigilante groups checking documents and shutting foreign-run businesses.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> This is a labour-and-diplomacy shock in Africa's most developed economy — mass departures of migrant workers hit South African small business and strain ties with the exact neighbours Pretoria needs for regional trade. It's the kind of intra-African friction that rarely reaches Western tape but reshapes the continent's investment and migration map.</div>
+      <a class="read-original" href="https://www.usnews.com/news/world/articles/2026-06-04/south-africa-to-send-envoys-to-other-african-countries-after-xenophobic-attacks-ramaphosa-says" target="_blank">Read original →</a>
+    </div>
+  </div>
+
+  <div class="story-card" data-cat="world sea tech" id="sea">
+    <div class="card-meta"><span class="region-tag">Southeast Asia</span><span class="category-tag">Tech · Capital</span><span class="trend-arrow">↑</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">While the West de-risks AI, Singapore writes a S$1B deep-tech cheque and Indonesia lines up 50 IPOs</div>
+    <div class="layer1">
+      <p>Singapore startups raised $3.21B across 78 equity rounds through May 2026 — up nearly 14% year-on-year — with Budget 2026 setting aside S$1 billion for early- and growth-stage deep-tech. Indonesia's IDX is targeting 50 IPOs in 2026, riding fintech, AI and logistics demand. The contrast with Friday's US AI selloff is the story: SEA capital is leaning in as Western risk appetite pulls back.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Southeast Asia is positioning as the counter-cyclical AI and deep-tech venue — government-anchored capital and active IPO pipelines while US public markets de-rate. For anyone allocating to emerging tech, the gap between SEA's state-backed enthusiasm and Wall Street's caution is a real arbitrage to watch.</div>
+      <a class="read-original" href="https://abovea.tech/startup-funding-in-singapore/" target="_blank">Read original →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== OPPORTUNITY BOARD ===== -->
+<div class="section-label">Opportunity Board</div>
+<div class="story-card" data-cat="india markets" id="opp-india">
+  <div class="card-meta"><span class="category-tag">India · Opportunity</span><span class="trend-arrow">↑</span><span class="time-horizon">Quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The dollar-billers win the rupee — Indian IT and export services are the cleanest hedge against 94.95</div>
+  <div class="layer1">
+    <p>A structurally weak rupee plus reflating oil squeezes importers but pays exporters that earn in dollars and spend in rupees. The Ken's "giant sucking sound" essay asks why Indian companies aren't making bolder AI bets — but the quieter opportunity is mechanical: every leg lower in the rupee is a margin tailwind for IT services, pharma exporters and global-capability centres.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> In a two-shock world where the rupee stays soft, the dollar-revenue, rupee-cost basket is the structural beneficiary — not a trade idea so much as a tilt that compounds while the macro stays hostile.</div>
+  </div>
+</div>
+<div class="story-card" data-cat="canada markets" id="opp-canada">
+  <div class="card-meta"><span class="category-tag">Canada · Opportunity</span><span class="trend-arrow">↑</span><span class="time-horizon">Quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Higher-for-longer in a recession is a gift to Canadian energy and a trap for everyone levered</div>
+  <div class="layer1">
+    <p>If oil pins the BoC and the loonie stays near 72 cents, Canadian energy producers earn a strong-crude, weak-currency windfall while rate-sensitive consumer and real-estate names absorb the cost of a hold-into-recession. The barbell is doing itself.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The cleanest Canadian expression of the two-shock thesis is long the terms-of-trade winners (energy/resources) and cautious on floating-rate-dependent demand — the same oil price that traps Macklem pays the western producers.</div>
+  </div>
+</div>
+
+<!-- ===== ALSO ON RADAR ===== -->
+<div class="section-label">Also On Radar</div>
+<div class="story-card" data-cat="tech" id="radar-ai">
+  <div class="card-meta"><span class="category-tag">AI · Product</span><span class="trend-arrow">↑</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Airbnb's CEO is building an AI lab and ChatGPT's Codex gets new "superpowers" — the agent race keeps compounding</div>
+  <div class="layer1">
+    <p>Per The Deep View, Airbnb's Brian Chesky is standing up a dedicated AI lab, while OpenAI is expanding what its Codex coding agent can do; TLDR notes AI agents arriving inside iMessage. The product cadence hasn't slowed a beat despite Friday's selloff — a reminder the equity repricing is about multiples, not adoption.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The gap between a falling AI <em>stock</em> tape and an accelerating AI <em>product</em> tape is the single most important thing to hold in your head this week — they are not the same signal.</div>
+    <a class="read-original" href="https://www.thedeepview.co/" target="_blank">Read original →</a>
+  </div>
+</div>
+<div class="story-card" data-cat="india" id="radar-fuel">
+  <div class="card-meta"><span class="category-tag">India · Energy</span><span class="trend-arrow">→</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">India dangles E85 ethanol-blend fuel at a ₹20/litre discount — a quiet hedge against the oil-import bill</div>
+  <div class="layer1">
+    <p>ET reports E85 (85% ethanol) is to be sold at roughly a ₹20/litre discount to petrol. It's a small line item that fits a bigger pattern: with crude reflating and the rupee at 94.95, New Delhi keeps reaching for domestic-fuel substitution to blunt the import shock.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Ethanol blending is India's structural answer to exactly the Hormuz risk in today's lead — every point of blend is a point less crude exposure. Watch the sugar/ethanol complex as a domestic beneficiary of a sustained oil spike.</div>
+    <a class="read-original" href="https://economictimes.indiatimes.com/industry/energy/oil-gas" target="_blank">Read original →</a>
+  </div>
+</div>
+
+<!-- ===== QUICK HITS ===== -->
+<div class="section-label">Quick Hits</div>
+<ul class="quick-hits" style="font-family:var(--font-ui);font-size:14px;color:var(--muted)">
+  <li><strong>Broadcom guidance</strong> led the semiconductor rout that drove the Nasdaq's 4.18% drop — the chip cycle, not the macro, was the proximate trigger, which means it can reverse just as fast.</li>
+  <li><strong>US May unemployment held at 4.3%</strong> even as payrolls doubled estimates — a tight labour market is the strongest argument that Friday was a rates scare, not a growth scare.</li>
+  <li><strong>Sinocism flags the Shangri-La Dialogue and Europe "mooting trade policy"</strong> — the US-China security theatre and a possible EU trade pivot are the slow plates to watch behind the oil headlines.</li>
+  <li><strong>SEBI cleared five IPOs on June 5</strong> (OYO/Prism among them) — India's primary market stays wide open even as global risk appetite contracts.</li>
+  <li><strong>Daily Maverick: the US House moved to block Trump from continuing the Iran war</strong> — domestic constraint on the strikes is building even as CENTCOM keeps hitting radar sites.</li>
+  <li><strong>Gold −3.38% in a risk-off move</strong> is the week's strangest tell — when the haven sells with the risk assets, it's a liquidity/real-rate signal, not a fear signal.</li>
+  <li><strong>The Ken asks why Indian firms won't make bolder AI bets</strong> — the "giant sucking sound" of global AI capital is a real competitiveness question for India Inc, not just a think-piece.</li>
+  <li><strong>Bitcoin under $60k for the first time since October 2024</strong> — the "digital gold" thesis took real damage selling alongside both equities and metal.</li>
+</ul>
+
+<!-- ===== THE LONG GAME ===== -->
+<div class="section-label">The Long Game</div>
+<div class="long-game">
+  The slow-burn trend worth tracking is the suspension of the "central bank put." Since 2023, every market dip has carried an implicit floor: if things break, policymakers ease. A world where the Bank of Canada holds into a recession and the ECB hikes into stagnation — both because oil won't let them do otherwise — is a world where that floor is conditional on the price of a barrel. If Hormuz stays a recurring flashpoint, the structural consequence isn't a single oil spike; it's a higher, stickier cost of capital that persists through growth scares it would previously have cushioned. That reprices everything with a long duration — from Canadian housing to Indian infrastructure to the AI-capex buildout itself. The question for the next two quarters isn't "when does the Fed cut" — it's "what oil price finally lets any of them ease again."
+</div>
+
+<!-- ===== COVERAGE SCORECARD ===== -->
+<div class="section-label">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#205 · Sunday June 7, 2026 (Morning)</td></tr>
+  <tr><td>India stories</td><td>4 (rupee/Adani, OYO IPO, E85 fuel, The Ken AI competitiveness)</td></tr>
+  <tr><td>Canada stories</td><td>3 (BoC hold-into-recession, TSX/loonie, Air Canada)</td></tr>
+  <tr><td>Europe stories</td><td>2 (Zelensky–Putin letter/rebuff, ECB June 11 hike preview)</td></tr>
+  <tr><td>Southeast Asia stories</td><td>1 (Singapore S$1B deep-tech / Indonesia 50-IPO pipeline)</td></tr>
+  <tr><td>Africa stories</td><td>1 (South Africa xenophobic violence, regional evacuations)</td></tr>
+  <tr><td>Tier 5 (China-lens) disposition</td><td>1 hit scanned (Sinocism, Jun 4 — Shangri-La / Europe trade). No active watch-list match → editorial discretion; surfaced as Quick Hit.</td></tr>
+  <tr><td>Tier 6/7 (world) hits scanned</td><td>Semafor Flagship ×2, Semafor Africa, Daily Maverick ×3, ET ×5, The Peak; SEA via web (Tech in Asia no fresh hit) + Europe web search per world-scan rule.</td></tr>
+  <tr><td>Theme rotation</td><td>LEAD topic = Iran/Hormuz strike (fresh). Prior 2 LEADs = AI-equity selloff (#204), US AI-equity stakes (#203). Decision: NEW.</td></tr>
+  <tr><td>Sources read</td><td>Finshots, Morning Brew, 1440, Inc42, The Ken, TLDR, Semafor Flagship/Africa, Daily Maverick, ET, The Peak, Sinocism, The Deep View + ~12 web verifications</td></tr>
+  <tr><td>New predictions</td><td>3 (oil ≥$95, BoC oil-cited hold, gold recovery)</td></tr>
+  <tr><td>Date note</td><td>Dated June 7 per authoritative session date; bash UTC was Jun 6 21:37 (≈3am IST Jun 7); latest source content Jun 6 evening IST.</td></tr>
+</table>
+
+<div class="footer">THE BRIEF · Edition #205 · Compiled for Suhail Seth · India · Canada · World · Markets as of June 5–6, 2026 close · Not investment advice</div>
+
+</div>
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
