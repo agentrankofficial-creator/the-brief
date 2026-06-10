@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BRIEF — Edition #213 · June 10, 2026 (Evening)</title>
+<style>
+:root{
+--bg:#0a0a0b; --surface:#131316; --border:#27272a; --text:#e4e4e7;
+--muted:#a1a1aa; --dim:#71717a; --accent:#c8a030; --red:#e05252;
+--green:#4ade80; --blue:#5b9bd5; --font-body:Georgia,serif;
+--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-family:var(--font-ui)}
+.mast-title{font-family:var(--font-ui);font-weight:800;letter-spacing:5px;font-size:30px;color:var(--text)}
+.mast-meta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.mast-tagline{font-style:italic;color:var(--muted);margin-top:12px;font-size:15px}
+.mast-note{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:8px}
+.nav{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 28px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:20px;color:var(--muted);background:var(--surface);cursor:pointer}
+.nav-pill.active{border-color:var(--accent);color:var(--accent)}
+.editors-read{background:linear-gradient(180deg,#16140d,#131316);border:1px solid var(--accent);border-radius:12px;padding:24px 28px;margin-bottom:28px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:14px}
+.er-body{font-size:16px;line-height:1.7}
+.er-body p{margin:0 0 13px}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.ss-claim{font-size:18px;font-weight:600;line-height:1.5;margin-bottom:10px}
+.ss-reasoning{color:var(--muted);font-size:15px;margin-bottom:10px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.section-label{font-family:var(--font-ui);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:38px 0 16px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.mkt{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.mkt-name{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.mkt-val{font-family:var(--font-ui);font-size:15px;font-weight:700;margin-top:3px}
+.mkt-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+.mkt.ca{border-color:#5a2a2a}
+.connmap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:18px 0 8px;font-family:var(--font-ui);font-size:12px;line-height:2.2}
+.chip{display:inline-block;background:#1c1c20;border:1px solid var(--border);border-radius:14px;padding:3px 10px;margin:2px;color:var(--muted)}
+.chip .arr{color:var(--accent)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:16px}
+.story-card.hidden{display:none}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.category-tag{color:var(--accent)}
+.trend-arrow{color:var(--muted)}
+.time-horizon{color:var(--dim)}
+.decision-badge{margin-left:auto;padding:2px 9px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(91,155,213,.15);color:var(--blue);border:1px solid var(--blue)}
+.card-title{font-size:19px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.layer1 p{margin:0 0 12px;font-size:15px}
+.so-what,.action-box,.contrarian{font-size:14px;border-radius:7px;padding:10px 13px;margin-bottom:9px}
+.so-what{background:#14171a;border-left:2px solid var(--blue)}
+.action-box{background:#161613;border-left:2px solid var(--accent)}
+.contrarian{background:#1a1416;border-left:2px solid var(--red);color:var(--muted)}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-right:14px}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);border-radius:16px;padding:5px 14px;margin-top:12px;cursor:pointer}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin:32px 0}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:16px;font-size:14px}
+.world-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px;padding:20px 24px;margin:32px 0}
+.wf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.quick-hits li{margin-bottom:10px;font-size:15px}
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:15px;color:var(--muted)}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:13px}
+.scorecard td{padding:7px 10px;border-bottom:1px solid #1e1e22}
+.scorecard td:first-child{color:var(--muted);width:38%}
+.scorecard td:last-child{color:var(--text)}
+.footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets-grid{grid-template-columns:repeat(3,1fr)}.mast-title{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="masthead">
+  <div class="mast-top">
+    <div class="mast-title">THE BRIEF</div>
+    <div class="mast-meta">Edition #213 · Wed, June 10, 2026 · Evening</div>
+  </div>
+  <div class="mast-tagline">The energy shock just became an inflation shock: US CPI hits 4.2%, the world flips from rate cuts to rate hikes, and SpaceX rushes a $1.77T IPO door. Macklem decides into the storm.</div>
+  <div class="mast-note">Compiled ~midday UTC June 10 from 30+ targeted sources across India, Canada, Europe, SEA &amp; Africa. Bank of Canada decision (≈13:45 UTC) lands AFTER this edition — no outcome is asserted here.</div>
+</div>
+
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('macro',this)">Macro</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('world',this)">🌍 World</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
+</div>
+
+<div class="editors-read">
+  <div class="er-label">EDITOR'S READ</div>
+  <div class="er-byline">Suhail Seth · June 10, 2026</div>
+  <div class="er-body">
+    <p>For two months I've watched the tape treat the Iran war as a geopolitics story and an oil story. Today it stopped being either. US CPI printed <strong>4.2% year-over-year for May</strong> — the hottest since April 2023 — with energy up a brutal 23.5%. China's factory-gate prices rose at their fastest pace since 2022. Japan's producer prices jumped. Three of the world's four biggest economies are now importing the same shock through the same chokepoint, and it has crossed from the pump into the core. The war premium didn't fade; it metabolised into inflation.</p>
+    <p>Here is the connection nobody is drawing cleanly: the market has, in a single week, flipped from pricing rate <em>cuts</em> to pricing rate <em>hikes</em> from both the Federal Reserve and the Bank of Japan. The synchronized global easing cycle that everyone built their 2026 book around is dead. And the cruel symmetry I keep coming back to — the rupee at ~95 and the loonie at ~0.718 are both being punished by the very same dynamic: a higher-for-longer dollar attached to an oil shock neither Mint Road nor Ottawa controls. India's fertiliser subsidy is now tracking to <em>double</em> its budget; Macklem walks into today's decision boxed by an inflation print he can't ease against.</p>
+    <p>So my call: stop trading the headlines from Hormuz and start trading the second derivative. The next leg isn't a missile — it's a fertiliser-and-food inflation wave that hasn't hit a single CPI basket yet. Who's positioned for a world where the Fed's next move is up?</p>
+  </div>
+</div>
+
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ SIGNAL SPOTLIGHT</div>
+  <div class="ss-claim">The fertiliser that moved through Hormuz is the inflation shock that hasn't arrived yet — the food leg of this war is still in the post.</div>
+  <div class="ss-reasoning">Roughly 30% of global fertiliser supply transited the Strait of Hormuz before the war; that flow is now choked. Brazilian farmers are already cutting purchases at a loss, India's fertiliser subsidy is tracking to double the budgeted figure, and the WEF is warning "the next food crisis is already in motion." Today's 4.2% CPI captured energy and shelter — it did NOT yet capture a planting season missed across the import-dependent global south. Food is the second shock, and it lands on a lag.</div>
+  <div class="ss-horizon">Time horizon: 2–3 quarters (Q3–Q4 2026 harvest &amp; CPI prints)</div>
+</div>
+
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 PREDICTION BOARD</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>#213</td><td>India revises FY27 fertiliser subsidy above ₹2 lakh crore (vs budget) as the Hormuz fertiliser choke bites.</td><td>Sep 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#213</td><td>The Federal Reserve does NOT cut at its June 2026 meeting (holds or hikes) — the 4.2% CPI kills the cut case.</td><td>Jul 1, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#213</td><td>US 10Y Treasury yield closes ≥4.60% on at least one session as the hawkish repricing hardens.</td><td>Jul 1, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#212</td><td>India–US do NOT finalise a deal removing the proposed 12.5% Section 301 tariff before mid-Aug.</td><td>Aug 15, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#212</td><td>WTI stays below $95/bbl through end-June despite continued Hormuz kinetics.</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-label">Global Markets &middot; as of June 9 close / June 10 Asia</div>
+<div class="markets-grid">
+  <div class="mkt"><div class="mkt-name">S&amp;P 500</div><div class="mkt-val">7,386.65</div><div class="mkt-chg down">▼ 0.26%</div></div>
+  <div class="mkt"><div class="mkt-name">Nasdaq</div><div class="mkt-val">25,678.82</div><div class="mkt-chg down">▼ 0.97%</div></div>
+  <div class="mkt"><div class="mkt-name">Nikkei 225</div><div class="mkt-val">65,416</div><div class="mkt-chg up">▲ 2.17%</div></div>
+  <div class="mkt"><div class="mkt-name">Hang Seng</div><div class="mkt-val">24,565.90</div><div class="mkt-chg down">▼ 0.37%</div></div>
+  <div class="mkt"><div class="mkt-name">Nifty 50</div><div class="mkt-val">23,214.95</div><div class="mkt-chg down">▼ 0.12%</div></div>
+  <div class="mkt"><div class="mkt-name">Sensex</div><div class="mkt-val">73,983.18</div><div class="mkt-chg up">▲ 0.09%</div></div>
+  <div class="mkt ca"><div class="mkt-name">🍁 TSX Comp</div><div class="mkt-val">34,411.69</div><div class="mkt-chg down">▼ 0.19%</div></div>
+  <div class="mkt"><div class="mkt-name">USD/INR</div><div class="mkt-val">~95.0</div><div class="mkt-chg down">▼ rupee soft</div></div>
+  <div class="mkt ca"><div class="mkt-name">🍁 CAD/USD</div><div class="mkt-val">0.7180</div><div class="mkt-chg up">▲ 0.12%</div></div>
+  <div class="mkt"><div class="mkt-name">WTI Crude</div><div class="mkt-val">$87.73</div><div class="mkt-chg down">▼ 3.93%</div></div>
+  <div class="mkt"><div class="mkt-name">Gold</div><div class="mkt-val">$4,286</div><div class="mkt-chg down">▼ 1.76% (yr low)</div></div>
+  <div class="mkt"><div class="mkt-name">Bitcoin</div><div class="mkt-val">$62,534</div><div class="mkt-chg down">▼ 2.0%</div></div>
+  <div class="mkt"><div class="mkt-name">10Y UST</div><div class="mkt-val">~4.56%</div><div class="mkt-chg up">▲ hawkish</div></div>
+  <div class="mkt ca"><div class="mkt-name">🍁 10Y GoC</div><div class="mkt-val">3.49%</div><div class="mkt-chg down">▼ 0.04</div></div>
+  <div class="mkt"><div class="mkt-name">VIX</div><div class="mkt-val">~19.9</div><div class="mkt-chg flat">→ elevated</div></div>
+</div>
+
+<div class="connmap">
+  <span class="chip">HORMUZ ENERGY SHOCK <span class="arr">→</span> US CPI 4.2%</span>
+  <span class="chip">CPI 4.2% <span class="arr">→</span> FED + BoJ HIKE BETS <span class="arr">→</span> GOLD YEAR-LOW</span>
+  <span class="chip">HIGHER-FOR-LONGER USD <span class="arr">→</span> RUPEE ~95 + LOONIE 0.718</span>
+  <span class="chip">FERTILISER CHOKE <span class="arr">→</span> INDIA SUBSIDY 2× <span class="arr">→</span> FOOD INFLATION (PENDING)</span>
+  <span class="chip">DRC COBALT CURB <span class="arr">→</span> AFRICA LEVERAGE OVER CHINA</span>
+  <span class="chip">IPO RUSH: SPACEX $1.77T <span class="arr">→</span> APOTEX $1.3B 🍁</span>
+</div>
+
+<div class="section-label">The Lead</div>
+<div class="story-card" data-cat="macro markets" id="lead-cpi">
+  <div class="card-meta">
+    <span class="category-tag">GLOBAL MACRO</span><span class="trend-arrow">↑</span>
+    <span class="time-horizon">Immediate</span><span class="decision-badge act">ACT</span>
+  </div>
+  <div class="card-title">US inflation roars back to 4.2% — and the market just buried the 2026 rate-cut trade for the Fed AND the Bank of Japan</div>
+  <div class="layer1">
+    <p>May US CPI rose <strong>4.2% year-over-year</strong> (and 0.5% on the month) — the highest reading since April 2023 — driven by a 23.5% surge in energy costs from the Iran war, with shelter at 3.4% and food at 3.1%. Core held at 2.9%. The same day, China's producer prices rose at their fastest pace since 2022 and Japan's PPI jumped (Japan imported ~90% of its oil from the Middle East pre-war). Traders now bet <em>both</em> the Fed and the BoJ will <strong>raise</strong> rates this year — a stunning reversal from the cuts priced just weeks ago. "Higher-for-longer energy means higher-for-longer inflation and lower-for-longer growth," an S&amp;P economist warned.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the first synchronized developed-market tightening impulse since 2022, and it's entirely energy-driven rather than demand-driven — the worst kind, because hiking into a supply shock buys disinflation only by crushing growth. For India: an RBI that was eyeing easing is now trapped, the rupee near 95 imports more inflation, and fuel/fertiliser subsidies balloon the fiscal. For Canada: the BoC's path to a cut evaporates just as a weak labour market needs relief — stagflation-lite in both jurisdictions, sourced from the same barrel of crude.</div>
+    <div class="action-box"><strong>ACTION:</strong> Re-underwrite anything that assumed falling rates in H2 2026 — floating-rate debt, long-duration growth equity, rate-sensitive real estate. Favour pricing-power businesses and real assets over multiple-expansion bets. Watch the Fed's June 16–17 meeting as the live test.</div>
+    <div class="contrarian">💭 <em>Here's the version where this is wrong: a single hot print driven by a war-energy spike is precisely what central banks are trained to "look through." If Israel-Iran de-escalation holds and oil keeps sliding (WTI already $87.73, gold at a year-low signalling fading fear), the energy base effect reverses by Q4 and the "hikes" repricing unwinds as fast as it arrived — making today's panic the top in yields, not the start of a cycle.</em></div>
+    <a class="read-original" href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor Flagship</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The mechanism that makes this dangerous is the breadth: energy (+23.5%) is the headline driver, but shelter ticking to 3.4% and food to 3.1% shows the pass-through is already moving into sticky core components. Markets pricing BoJ hikes is the real tell — Japan spent a generation fighting deflation; a BoJ forced to tighten by imported energy inflation would lift the yen, unwind carry trades, and tighten global dollar liquidity all at once. That is the channel through which a Middle East war reaches a Toronto mortgage and a Mumbai bond desk simultaneously.</div>
+  <div class="connections">Connects to → Signal Spotlight (food leg) · Iran war expansion · Canadian File (BoC)</div>
+</div>
+
+<div class="section-label">Signal Board</div>
+
+<div class="story-card" data-cat="geopolitics world" id="iran-expand">
+  <div class="card-meta"><span class="category-tag">GEOPOLITICS</span><span class="trend-arrow">↑</span><span class="time-horizon">Days</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The Iran war just jumped its borders — strikes on US bases in three Gulf states and a Houthi threat to the Red Sea open a second chokepoint</div>
+  <div class="layer1">
+    <p>Iran's military said it struck US bases in <strong>Bahrain, Jordan and Kuwait</strong>; Israel bombed Tyre in southern Lebanon (at least eight killed); and a cargo vessel off Yemen was attacked by a small boat after Houthi rebels threatened Red Sea shipping. With Hormuz traffic already choked, the Red Sea — <strong>12% of global trade</strong> — is now the second pressure point. The widening complicates Trump's peace push, since Iran has made an Israeli withdrawal from Lebanon a precondition and Hezbollah has rejected Israel-Lebanon talks.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A two-chokepoint war (Hormuz + Bab-el-Mandeb) is a fundamentally different supply-chain risk than a one-chokepoint war — it removes the Red Sea as the relief valve that absorbed earlier Hormuz disruption. For India, more cargo reroutes around the Cape, lengthening lead times on energy and fertiliser; for Canada, it keeps the global oil bid alive even as WTI dips, sustaining the inflation that pins the BoC.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track Red Sea transit/insurance rates as the leading indicator — they will move before oil does. Shipping and tanker names re-rate on a sustained Bab-el-Mandeb closure.</div>
+    <div class="contrarian">💭 <em>The bear-on-escalation case: these are signalling strikes, not war-widening ones — calibrated to extract concessions before a deal, exactly as the April Hormuz "yo-yo" closures were. Oil falling to $87 says the market reads it that way.</em></div>
+    <a class="read-original" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-10-2026" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor / Daily Maverick</a>
+  </div>
+  <div class="connections">Connects to → The Lead · Signal Spotlight</div>
+</div>
+
+<div class="story-card" data-cat="markets tech" id="spacex">
+  <div class="card-meta"><span class="category-tag">MARKETS / IPO</span><span class="trend-arrow">↑</span><span class="time-horizon">Jun 12</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">SpaceX rushes the biggest IPO in history on Friday — $1.77 trillion, $75 billion raised, into the teeth of a rates scare</div>
+  <div class="layer1">
+    <p>SpaceX debuts on the Nasdaq <strong>June 12 under ticker SPCX at a fixed $135/share</strong>, valuing it at <strong>$1.77 trillion</strong> — instantly the seventh-largest US company, above Tesla. It plans to sell 555.6M shares for a <strong>$75 billion</strong> raise, more than triple Alibaba's record. It headlines an IPO stampede alongside OpenAI and Anthropic filings and Canada's Apotex.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A $75B raise drains an enormous pool of capital out of the market in one week, precisely as yields spike on the CPI print — the supply-of-paper-meets-cost-of-money squeeze is the real risk to the whole 2026 IPO class. For India and Canada, a successful mega-print keeps the global risk window open for their own listings ($6bn share-sale wave in India; Apotex's $1.3B in Toronto); a flop slams it shut.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch SPCX's first-day close as the tape's verdict on whether there's "enough money for all of them." A break below $135 would chill the secondary pipeline globally.</div>
+    <div class="contrarian">💭 <em>Morningstar has called SpaceX "overvalued by half." The version where this is wrong: at 7th-largest-in-America on day one, SPCX prices in flawless Starship economics and Mars optionality — one launch failure or Musk-headline and the most expensive IPO ever becomes the fastest de-rate.</em></div>
+    <a class="read-original" href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Axios Pro Rata</a>
+  </div>
+  <div class="connections">Connects to → Canadian File (Apotex) · The Lead (rates)</div>
+</div>
+
+<div class="story-card" data-cat="tech" id="fable">
+  <div class="card-meta"><span class="category-tag">AI / FRONTIER</span><span class="trend-arrow">→</span><span class="time-horizon">Now</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Anthropic finally puts a Mythos-class model in everyone's hands — Claude Fable 5 ships with guardrails after months of "too dangerous to release"</div>
+  <div class="layer1">
+    <p>Anthropic publicly released <strong>Claude Fable 5</strong>, its first Mythos-powered consumer model, claiming the same performance as the restricted Mythos 5 but with stricter guardrails and a 1M-token context window. Mythos had been withheld for months — offered only to vetted cybersecurity groups and large tech firms — over fears it could hack sophisticated systems. The public release came just days after Anthropic warned AI is "getting too dangerous."</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The two-tier model — a gated, maximal-capability "Mythos" for banks/governments and a guardrailed "Fable" for everyone — is now live, not theoretical. Capability is being rationed by customer identity, a template every frontier lab will copy. For operators in India and Canada, access to the genuine frontier increasingly depends on your institutional tier, not your willingness to pay.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you run regulated operations (finance, education, health), establish enterprise/vetted-tier relationships now — that's where the capability gap opens.</div>
+    <div class="contrarian">💭 <em>The skeptic's read: "same performance, stricter guardrails" is marketing. If Fable truly matches Mythos, the two-tier story collapses into a pricing gimmick; if it doesn't, Anthropic just admitted its public product is deliberately hobbled.</em></div>
+    <a class="read-original" href="https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">TLDR / The Deep View</a>
+  </div>
+  <div class="connections">Connects to → Long Game (compute supercycle)</div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="india-flows">
+  <div class="card-meta"><span class="category-tag">INDIA</span><span class="trend-arrow">↑</span><span class="time-horizon">Weeks</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">India's deal machine wakes up — a $6bn share-sale wave hits as foreigners pile ₹10,000 cr into bonds in four sessions</div>
+  <div class="layer1">
+    <p>India is seeing a <strong>$6 billion share-sale wave</strong> signalling that deal-making is perking up, while FPIs bought <strong>₹10,000 crore of bonds in four sessions</strong> — even as Zepto's IPO filing reveals where it really stands against Blinkit and Instamart, and H-1B relief kicked in for Indian tech workers. Nifty closed near-flat at 23,214.95; the Sensex eked out a gain to 73,983.18 despite the US-Iran escalation, with banks leading (analysts see up to 26% upside in eight banking names).</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Foreign bond buying into a weak-rupee, hot-CPI tape is a contrarian vote of confidence in Indian carry — but it sits awkwardly against equity caution and a hiring slowdown flagged across India Inc. The equity-supply wave ($6bn) arriving as global rates spike is the same squeeze SpaceX faces, localised: India's primary market is testing whether domestic flows can absorb paper without the foreign bid.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch whether the FPI bond bid persists through the next RBI commentary; sustained inflows cap the rupee's downside even with a hawkish global backdrop.</div>
+    <div class="contrarian">💭 <em>The counter: a $6bn supply wave plus cautious hiring is late-cycle behaviour — promoters and PE sell into strength when they sense the top, not the bottom.</em></div>
+    <a class="read-original" href="https://www.business-standard.com/markets/news/stock-market-live-june-10-nse-bse-sensex-today-nifty-gift-nifty-us-iran-strikes-cmr-green-technologies-ipo-listing-126061000115_1.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">ET / ETtech / Inc42</a>
+  </div>
+  <div class="connections">Connects to → The Lead · SpaceX (IPO window)</div>
+</div>
+
+<div class="story-card" data-cat="macro world" id="china-japan-ppi">
+  <div class="card-meta"><span class="category-tag">MACRO / ASIA</span><span class="trend-arrow">↑</span><span class="time-horizon">Now</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">China starts exporting inflation instead of deflation — factory-gate prices rise at the fastest pace since 2022</div>
+  <div class="layer1">
+    <p>China's producer prices rose at their <strong>quickest pace since 2022</strong>, and Japanese PPI jumped, as the energy shock feeds the world's manufacturing base. For a decade China exported disinflation to the world via cheap goods; a rising China PPI flips that channel. Japan — ~90% Middle-East-oil-dependent pre-war — is the most exposed, which is why traders now bet the BoJ hikes.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The single most underappreciated macro variable of 2026: if China's factory prices keep rising, the disinflationary tailwind that let the Fed and everyone else run loose policy for a decade is gone. Imported-goods inflation hits the US, India and Canada alike — and it's structural, not transitory, if the war persists.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat China PPI as a Fed input now, not a China-only data point. A second hot print would confirm the regime change.</div>
+    <div class="contrarian">💭 <em>Bear case on the bear case: Chinese PPI is rising off a deeply negative base — it may simply be exiting deflation, not entering inflation, and weak domestic demand (consumers have stopped spending) caps how far it runs.</em></div>
+    <a class="read-original" href="https://www.semafor.com/newsletters/flagship" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor Flagship</a>
+  </div>
+  <div class="connections">Connects to → The Lead</div>
+</div>
+
+<div class="story-card" data-cat="markets macro" id="gold">
+  <div class="card-meta"><span class="category-tag">MARKETS</span><span class="trend-arrow">↓</span><span class="time-horizon">Now</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Gold at a year-low while CPI runs hot — the cross-asset tell that says "rate hikes," not "inflation hedge"</div>
+  <div class="layer1">
+    <p>Gold fell 1.76% to <strong>$4,286</strong> — its lowest of 2026 — and silver hit a year-low too, even as CPI printed 4.2%. Bitcoin slid 2% to ~$62,500. On the surface a paradox: inflation up, the inflation hedge down. The resolution is rates: when the market prices central-bank <em>hikes</em>, rising real-yield expectations crush non-yielding assets faster than inflation lifts them.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Gold and bitcoin falling on a hot CPI is the market voting that this is a real-rates story, not a debasement story. That's a clean signal for asset allocators in every market: the regime is "higher real rates," which favours cash and short-duration over both gold and long-duration growth — at least until the hike bets peak.</div>
+    <div class="action-box"><strong>ACTION:</strong> Don't reflexively buy gold on the inflation headline. Watch real yields; gold turns when the hike-pricing exhausts, not when CPI prints.</div>
+    <div class="contrarian">💭 <em>The gold bull's retort: a year-low into 4.2% CPI and a two-chokepoint war is exactly the capitulation that marks a bottom — if the Fed blinks and refuses to hike into a supply shock, gold reprices violently higher.</em></div>
+    <a class="read-original" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-09-2026" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Brew Markets / Milk Road</a>
+  </div>
+  <div class="connections">Connects to → The Lead</div>
+</div>
+
+<div class="canadian-file" id="canada-file">
+  <div class="cf-label">🍁 THE CANADIAN FILE</div>
+  <div class="cf-subtitle">Macklem decides into a global hike scare; a $6.4B bridge Trump tried to block finally opens; and Apotex supersizes the biggest Canadian IPO since 2021.</div>
+
+  <div class="story-card" data-cat="canada macro" id="boc">
+    <div class="card-meta"><span class="category-tag">🍁 BANK OF CANADA</span><span class="trend-arrow">→</span><span class="time-horizon">Today 13:45 UTC</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Macklem walks into today's decision with the cut case dead — killed by a US inflation print he doesn't control</div>
+    <div class="layer1">
+      <p>The BoC announces its rate decision today (≈9:45 ET). Consensus — the C.D. Howe Monetary Policy Council and the forward curve — is a <strong>fifth consecutive hold at 2.25%</strong>, with the Council explicitly calling for a hold now and a possible rise to 2.5% by mid-2027. <em>(This edition publishes before the announcement; no outcome is asserted.)</em> The trap is visible: a soft labour market (112,000 jobs lost YTD) screams for a cut, while oil-driven inflation and now a hot US CPI scream against one. The 10Y GoC eased to 3.49%; the loonie firmed slightly to 0.718.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Canada is the cleanest example of the global bind — stagflation-lite, where the central bank can't ease into weakness because the inflation is imported through energy. The mechanism that hits a Toronto mortgage renewal is the same one lifting an Indian fuel-subsidy bill: a higher-for-longer dollar plus a barrel of crude neither Ottawa nor Mint Road controls.</div>
+      <div class="action-box"><strong>ACTION:</strong> Read the <em>statement</em>, not just the rate — whether Macklem names energy/oil as the binding upside risk tells you if the next move is genuinely off the table.</div>
+      <div class="contrarian">💭 <em>The dovish surprise: with full-time jobs collapsing and the GoC curve already easing, a single dovish line — or a surprise 25bp "insurance" cut — would whip the loonie and front-end. Markets are positioned for a hold; the pain trade is a cut.</em></div>
+      <a class="read-original" href="https://www.bankofcanada.ca/press/press-releases/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">The Peak</a>
+    </div>
+    <div class="connections">Connects to → The Lead · India (RBI parallel)</div>
+  </div>
+
+  <div class="story-card" data-cat="canada" id="gordie">
+    <div class="card-meta"><span class="category-tag">🍁 TRADE / INFRA</span><span class="trend-arrow">↑</span><span class="time-horizon">Opens Jun 12</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">The Gordie Howe Bridge opens Friday — Canada built a $6.4B artery Trump publicly vowed to block, and won</div>
+    <div class="layer1">
+      <p>The <strong>Gordie Howe International Bridge</strong> linking Windsor and Detroit opens Friday, with traffic flowing Monday. Canada funded the entire <strong>$6.4 billion</strong> project (tolls flow to Canada until costs are recovered, then split 50-50). It arrives two years late and ~$500M over budget — and in February Trump posted that he would "not allow" it to open until the US is "fully compensated." Ontario truckers could save up to <strong>$100,000 per fleet per month</strong> versus the rival Ambassador Bridge.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Windsor-Detroit corridor is the busiest Canada-US commercial crossing and the auto industry's spine. New capacity that lowers tolls is a direct, durable cost-down for Canadian cross-border logistics — and a quiet rebuke to the idea that a Truth Social post is policy. In a CUSMA-renewal year, a Canada-funded, Canada-controlled trade artery is leverage.</div>
+      <div class="action-box"><strong>ACTION:</strong> Cross-border supply chains routing through Windsor should model the toll savings now; the Ambassador Bridge's pricing power just collapsed.</div>
+      <div class="contrarian">💭 <em>The skeptic: a bridge two years late and half a billion over budget is not a triumph of execution — and tolls accrue to Canada only "until costs are paid off," which on $6.4B could be a very long time.</em></div>
+      <a class="read-original" href="https://www.bloomberg.com/news/articles/2026-06-08/michigan-canada-plan-opening-of-bridge-trump-threatened-to-block" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">The Peak</a>
+    </div>
+    <div class="connections">Connects to → CUSMA renewal watch</div>
+  </div>
+
+  <div class="story-card" data-cat="canada markets" id="apotex">
+    <div class="card-meta"><span class="category-tag">🍁 IPO / PHARMA</span><span class="trend-arrow">↑</span><span class="time-horizon">Pricing</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Apotex supersizes its IPO 30% to $1.3B — the biggest Canadian listing since 2021, riding generic-Ozempic demand</div>
+    <div class="layer1">
+      <p>Canadian generic drugmaker <strong>Apotex</strong> is upping its IPO by 30% to <strong>$1.3 billion</strong> on strong demand — set to be the largest Canadian IPO since 2021. Apotex makes ~20% of Canada's generic drugs and was among the first approved to sell a <strong>generic Ozempic</strong> in Canada. The TSX itself slipped to 34,411.69 as energy shares fell 3.1% on lower oil.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A 30% upsize into a rates scare is a real signal that the IPO window is open for the right story — defensive, cash-generative healthcare. For Bay Street, Apotex is the litmus test that Canadian primary markets can clear size without the US bid; for operators, generic-GLP-1 economics are the durable tailwind underneath the deal.</div>
+      <div class="action-box"><strong>ACTION:</strong> Apotex pricing sets the tone for the Canadian IPO pipeline — a strong book argues the window stays open through summer despite the macro.</div>
+      <div class="contrarian">💭 <em>The bear: generic-Ozempic margins compress fast once every competitor gets approval; a 30% upsize at the top of demand can be the underwriter selling the last of the enthusiasm.</em></div>
+      <a class="read-original" href="https://www.theglobeandmail.com/business/article-apotex-ipo-tsx/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">The Peak / Bloomberg</a>
+    </div>
+    <div class="connections">Connects to → SpaceX (global IPO window)</div>
+  </div>
+</div>
+
+<div class="world-file" id="world-scan">
+  <div class="wf-label">🌍 THE WORLD SCAN</div>
+  <div class="cf-subtitle">Brussels widens its empire and slaps Meta; Foxconn greens Vietnam to dodge the oil shock; and Africa turns a cobalt monopoly into leverage over Beijing — as Ebola climbs in Congo.</div>
+
+  <div class="story-card" data-cat="world europe" id="eu">
+    <div class="card-meta"><span class="category-tag">🌍 EUROPE</span><span class="trend-arrow">↑</span><span class="time-horizon">This week</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">The EU goes expansionist on two fronts — courting 10 new members while ordering Meta to unblock rival AI on WhatsApp</div>
+    <div class="layer1">
+      <p>Brussels is debating a <strong>Franco-German proposal to ease enlargement</strong>, with up to 10 countries (Iceland, Moldova, Ukraine among them) in varying stages of joining and three eyeing the euro. The same week, the EU hosts South Korea's president for defense/trade talks as Europe rearms, and it <strong>ordered Meta to reverse its block on third-party AI assistants in WhatsApp</strong>, arguing self-preferencing — on top of existing Google/Apple antitrust cases and a €200M Meta fine. It's also threatening to regulate smart glasses on privacy grounds.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Europe is simultaneously deepening (enlargement, euro), hardening (rearmament, Korea defense ties) and tightening the screws on US Big Tech — a posture that raises US-EU tension in a year Washington already calls EU rules anti-American. For global operators, the WhatsApp ruling is the template: regulators forcing platform interoperability on AI assistants changes distribution economics for every model maker.</div>
+      <div class="action-box"><strong>ACTION:</strong> If your distribution depends on a US platform's gatekeeping, the EU's interoperability push is a tailwind — watch whether it spreads to other messaging/AI surfaces.</div>
+      <div class="contrarian">💭 <em>The skeptic: EU enlargement has been "imminent" for two decades and the euro-accession economics are "modest" by Goldman's own read — this is political theatre that rarely converts to treaties on schedule.</em></div>
+      <a class="read-original" href="https://www.semafor.com/newsletters/flagship" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor Flagship</a>
+    </div>
+    <div class="connections">Connects to → AI distribution (Fable)</div>
+  </div>
+
+  <div class="story-card" data-cat="world sea" id="vietnam">
+    <div class="card-meta"><span class="category-tag">🌍 SOUTHEAST ASIA</span><span class="trend-arrow">↑</span><span class="time-horizon">Multi-year</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Foxconn bets 1 gigawatt of green power on Vietnam — the war is forcing the world's biggest manufacturer to de-risk its energy AND its China exposure at once</div>
+    <div class="layer1">
+      <p>Foxconn — Apple and Nvidia's key assembler — will invest in <strong>1 GW of solar and wind in Vietnam</strong>, where the war upended energy supply (Vietnam imported ~80% of its oil from Kuwait pre-war). It's a double de-risk: greening a fragile grid <em>and</em> deepening the manufacturing shift away from China amid the Sino-US trade standoff.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The Iran war is accelerating two structural trends already underway — energy-supply diversification and the China+1 manufacturing migration to Southeast Asia. For India, this is the competitive backdrop: Vietnam is locking in the anchor tenants (Apple/Nvidia supply chain) that India's PLI scheme is also chasing.</div>
+      <div class="action-box"><strong>ACTION:</strong> Track which SEA grids the hyperscaler supply chain greens next — power availability is becoming the gating factor for where AI hardware gets built.</div>
+      <div class="contrarian">💭 <em>The counter: 1 GW of intermittent renewables doesn't solve a manufacturer's baseload problem; without storage or grid firming, Foxconn still leans on the same fossil grid it's trying to escape.</em></div>
+      <a class="read-original" href="https://www.semafor.com/newsletters/flagship" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor Flagship</a>
+    </div>
+    <div class="connections">Connects to → India PLI competition</div>
+  </div>
+
+  <div class="story-card" data-cat="world africa" id="africa">
+    <div class="card-meta"><span class="category-tag">🌍 AFRICA</span><span class="trend-arrow">↑</span><span class="time-horizon">Structural</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Congo turns its cobalt monopoly into a weapon against Beijing — as Rwanda becomes the first African economy to need an IMF lifeline since the war</div>
+    <div class="layer1">
+      <p>The DRC's export caps on cobalt — it mines <strong>over 70% of global supply</strong> — sent smelters scrambling and pushed prices to record levels, a deliberate play to force domestic processing and exercise "leverage over China," the continent's biggest miner. Meanwhile the IMF approved a <strong>$250M facility for Rwanda</strong> (the first African package since the war; Rwanda grew 9.4% last year but inflation hit 13%), Mozambique's $30B Exxon gas project is forecast to lift GDP 4%+/year as an LNG alternative to Hormuz-disrupted supply, and South Africa eked out just <strong>0.5% Q1 GDP</strong>. Separately, DRC Ebola cases neared 600.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Africa is quietly repricing its raw-materials leverage at the exact moment the energy shock makes every input scarcer — cobalt for batteries, gas for LNG buyers fleeing Hormuz. For any operator in the EV, battery or energy-transition supply chain, a "resource-nationalism premium" is now a line item; the DRC just proved a single-country supplier can move a global price at will.</div>
+      <div class="action-box"><strong>ACTION:</strong> Stress-test battery/EV input costs for a sustained cobalt squeeze; watch whether other African producers copy the DRC's processing-mandate playbook.</div>
+      <div class="contrarian">💭 <em>The bear: export caps invite substitution — cobalt-free LFP chemistries and recycling erode the DRC's leverage over time, and a country this aid-dependent can ill afford to choke its own export revenue for long.</em></div>
+      <a class="read-original" href="https://www.semafor.com/newsletters/africa" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor Africa / Daily Maverick</a>
+    </div>
+    <div class="connections">Connects to → EV/battery supply chains · The Lead (commodity inflation)</div>
+  </div>
+</div>
+
+<div class="section-label">Opportunity Board</div>
+<div class="story-card" data-cat="india macro" id="opp-india">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · INDIA</span><span class="trend-arrow">↑</span><span class="time-horizon">2–4 quarters</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">India's fertiliser-and-agri-input squeeze is a policy-driven trade hiding in a subsidy line</div>
+  <div class="layer1">
+    <p>With ~30% of global fertiliser once moving through Hormuz and India's subsidy bill tracking to <strong>double its budget</strong>, the government faces a choice: eat the fiscal hit or let input costs pass through to farmers ahead of the monsoon planting. Either path moves capital — toward domestic fertiliser producers, agri-input substitutes, and the logistics rerouting supply around the war.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A doubling subsidy is both a fiscal risk (wider deficit, more bond supply, weaker rupee) and a demand signal (the state will pay to keep inputs flowing). Domestic fertiliser capacity and supply-chain intermediaries are the operators positioned for it.</div>
+    <div class="action-box"><strong>ACTION:</strong> Map domestic fertiliser/agri-input capacity against the import gap; the subsidy overshoot is the catalyst to watch by Q3.</div>
+    <div class="contrarian">💭 <em>The counter: if oil rolls over and Hormuz reopens, the fertiliser premium evaporates and the "trade" was just a war-spike that mean-reverts.</em></div>
+    <a class="read-original" href="https://www.semafor.com/newsletters/flagship" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">Semafor / The Indian Express</a>
+  </div>
+</div>
+<div class="story-card" data-cat="canada macro" id="opp-canada">
+  <div class="card-meta"><span class="category-tag">OPPORTUNITY · CANADA</span><span class="trend-arrow">↑</span><span class="time-horizon">Multi-year</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">Canada's twin edge: LNG/gas as the Hormuz alternative, and a softening labour market feeding the retraining pipeline</div>
+  <div class="layer1">
+    <p>Two slow-burn Canadian tailwinds compound. First, with global buyers fleeing Hormuz-disrupted supply (see Mozambique's gas rush), Canadian LNG and energy exports gain a structural bid. Second, Canada's labour market keeps shedding full-time jobs (112,000 lost YTD) — a painful macro that structurally lifts demand for re-skilling and career retraining over the 2027-28 horizon.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The energy-export thesis and the human-capital/retraining thesis are both downstream of the same shock — high energy prices and tariff-driven job losses. Operators with exposure to Canadian energy logistics or workforce re-skilling sit on the right side of both.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch BoC's labour-market language today and the next jobs print — a continued full-time slide hardens the retraining-demand curve.</div>
+    <div class="contrarian">💭 <em>The counter: a Canada-US trade thaw (CUSMA renewal) could reverse the goods-sector job losses, and LNG buildout timelines are long enough that the Hormuz bid may fade before Canadian export capacity arrives.</em></div>
+    <a class="read-original" href="https://www.readthepeak.com" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">The Peak / Wealthsimple</a>
+  </div>
+</div>
+
+<div class="section-label">Also On Radar</div>
+<div class="story-card" data-cat="india tech" id="cyient">
+  <div class="card-meta"><span class="category-tag">INDIA · M&amp;A</span><span class="trend-arrow">→</span><span class="time-horizon">Watch</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Cyient spends $218M on a revival while its own balance sheet is "crying out for saving"</div>
+  <div class="layer1">
+    <p>India's Cyient is making a <strong>$218 million acquisition</strong> to drive a turnaround — even as two other large expenses already weigh on its balance sheet, per The Ken. It's a bet that buying growth beats waiting for it.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Mid-cap Indian IT/engineering names buying revival amid a cautious-hiring, AI-disrupted services backdrop is a tell about where the sector thinks organic growth has gone — into deals, not headcount.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch the leverage; an acquisition funded into a strained balance sheet is a high-beta bet on integration.</div>
+    <div class="contrarian">💭 <em>The bull: distressed-balance-sheet acquirers sometimes buy best, picking up assets cheap when others can't.</em></div>
+    <a class="read-original" href="https://the-ken.com" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#search/rfc822msgid" target="_blank">The Ken</a>
+  </div>
+</div>
+
+<div class="section-label">Quick Hits</div>
+<ul class="quick-hits">
+  <li><strong>DRC Ebola cases neared 600</strong> within a month of detection, believed to have spread undetected for weeks — a public-health shock layering onto Congo's cobalt-leverage moment, and a reminder that resource power and state fragility coexist.</li>
+  <li><strong>New Zealand killed the levy funding its proposed LNG import terminal</strong> but named no alternative — energy-security ambition running ahead of a willingness to say who pays.</li>
+  <li><strong>India's H-1B relief kicked in</strong> for tech workers (flagged by ETtech alongside Zepto's IPO filing) — a small tailwind for Indian IT talent flows just as domestic hiring turns cautious.</li>
+  <li><strong>Trump told NBC it's "unfair" to raise rates when the economy is doing well</strong> — pre-positioning blame on the Fed days before a CPI print that makes a cut nearly impossible.</li>
+  <li><strong>"Scarcity is driving AI innovation outside Silicon Valley"</strong> (Rest of World) — the compute-constrained world is forcing efficiency the well-funded labs never had to learn, the real long-run threat to US AI margins.</li>
+  <li><strong>A Somali World Cup referee with a valid visa was denied US entry on "vetting concerns"</strong> — the tournament's globalisation colliding with the host's border politics in real time.</li>
+  <li><strong>SBI research: India's current-account deficit to stay 1.5–1.7% of GDP</strong> — manageable, but the war's fuel/fertiliser bill is exactly what could push it to the top of that band.</li>
+  <li><strong>World Cup matches are still not sold out</strong> the day before kickoff — a soft-demand signal for the year's biggest discretionary-spend event, against a hot-inflation consumer.</li>
+</ul>
+
+<div class="section-label">The Long Game</div>
+<div class="long-game">
+  Adam Tooze's Chartbook is pushing a frame worth holding onto: a <strong>"Tri-Polar World Spending Supercycle"</strong> in which public and private capital across <strong>AI, Defense and Climate</strong> surges in parallel across Asia, Europe and the Americas — roughly <strong>$10 trillion this year, forecast toward $16 trillion by 2030</strong> (Gartner/Bloomberg estimates). It's the through-line connecting half of today's edition: Europe rearming and courting Korea's arms makers, Foxconn greening Vietnam, China building computing hubs, the IPO stampede funding AI infrastructure. The compute-as-an-investable-asset thread we've been tracking — AI energy demand becoming financialised — lives inside this. The investment implication is that "diversification across regions" no longer dilutes the bet, because all three poles are spending into the same three buckets at once. The risk: $16T of simultaneous AI+Defense+Climate spend, much of it deficit-funded, is also the structural force that keeps the inflation we led with today higher-for-longer. The supercycle and the rate scare are the same story told at different speeds.
+</div>
+
+<div class="section-label">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#213 · June 10, 2026 · Evening</td></tr>
+  <tr><td>Sources scanned</td><td>30+ across Tiers 1–7 (Finshots, Morning Brew, Deep View, TLDR, 1440, Inc42, The Ken, ETtech, Axios, Brew Markets, The Peak, Sinocism, Chartbook, Rest of World, Semafor Flagship ×2, Semafor Africa, Semafor DC, Daily Maverick, The Spinoff, Milk Road, McKinsey) + 5 WebSearches</td></tr>
+  <tr><td>Stories featured</td><td>16 cards + 8 quick hits</td></tr>
+  <tr><td>India stories</td><td>4 (CPI/RBI parallel, $6bn share wave/FPI bonds, Cyient $218M, fertiliser opportunity) + quick hits (H-1B, CAD/GDP)</td></tr>
+  <tr><td>Canada stories</td><td>3 cards (BoC decision, Gordie Howe Bridge, Apotex IPO) + Canada opportunity card</td></tr>
+  <tr><td>Europe stories</td><td>1 card (EU enlargement + Meta/WhatsApp order + Korea defense summit) — Semafor Flagship Brussels dateline</td></tr>
+  <tr><td>Southeast Asia stories</td><td>1 card (Foxconn 1GW green power in Vietnam). Tech in Asia returned no fresh issue; covered via Semafor Flagship SEA dateline</td></tr>
+  <tr><td>Africa stories</td><td>1 combined card (DRC cobalt, Rwanda IMF $250M, Mozambique gas, SA GDP 0.5%) + DRC Ebola quick hit — Semafor Africa + Daily Maverick</td></tr>
+  <tr><td>Tier 5 (China-lens) disposition</td><td>Chartbook tri-polar supercycle → surfaced in The Long Game (cross-refs the compute-as-asset thread); China PPI → Signal Board card; Rest of World → quick hit; Sinocism (Xi/NK) already covered prior edition, not repeated</td></tr>
+  <tr><td>Tier 6/7 (world) hits scanned</td><td>Semafor Flagship (2 issues), Semafor Africa, Semafor DC, Daily Maverick, The Spinoff (NZ); ET/ETtech (India mainstream). Europe covered via Flagship Brussels dateline</td></tr>
+  <tr><td>New predictions</td><td>3 (fertiliser subsidy &gt;₹2L cr; Fed no-cut June; 10Y UST ≥4.60%)</td></tr>
+  <tr><td>Theme rotation</td><td>LEAD topic = global CPI/inflation regime flip (NEW). Prior 2 LEADs = Iran/US bombing (#212), OpenAI IPO (#211). Decision: NEW. Iran kinetics demoted to Signal Board with named-new-development (US-base strikes + Red Sea). Canadian anchor rotated to Gordie Howe/Apotex (BoC retained as 2nd card with new global-hike context)</td></tr>
+  <tr><td>Editorial note</td><td>Run executed ~midday UTC; labelled Evening per daily alternation (morning #212 already published). BoC decision (≈13:45 UTC) lands AFTER publication — no outcome asserted, per anti-hallucination discipline</td></tr>
+</table>
+
+<div class="footer">THE BRIEF · Edition #213 · A premium daily intelligence digest · Compiled for Suhail Seth · June 10, 2026</div>
+
+</div>
+
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</h
