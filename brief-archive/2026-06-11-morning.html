@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BRIEF — Edition #214 · June 11, 2026 (Morning)</title>
+<style>
+:root{
+--bg:#0a0a0b; --surface:#131316; --border:#27272a; --text:#e4e4e7;
+--muted:#a1a1aa; --dim:#71717a; --accent:#c8a030; --red:#e05252;
+--green:#4ade80; --blue:#5b9bd5; --font-body:Georgia,serif;
+--font-ui:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);margin:0;padding:0;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-family:var(--font-ui)}
+.mast-title{font-family:var(--font-ui);font-weight:800;letter-spacing:5px;font-size:30px;color:var(--text)}
+.mast-meta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.mast-tagline{font-style:italic;color:var(--muted);margin-top:12px;font-size:15px}
+.mast-note{font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:8px}
+.nav{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 28px}
+.nav-pill{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:20px;color:var(--muted);background:var(--surface);cursor:pointer}
+.nav-pill.active{border-color:var(--accent);color:var(--accent)}
+.editors-read{background:linear-gradient(180deg,#16140d,#131316);border:1px solid var(--accent);border-radius:12px;padding:24px 28px;margin-bottom:28px}
+.er-label{font-family:var(--font-ui);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.er-byline{font-family:var(--font-ui);font-size:12px;color:var(--dim);margin-bottom:14px}
+.er-body{font-size:16px;line-height:1.7}
+.er-body p{margin:0 0 13px}
+.signal-spotlight{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+.ss-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.ss-claim{font-size:18px;font-weight:600;line-height:1.5;margin-bottom:10px}
+.ss-reasoning{color:var(--muted);font-size:15px;margin-bottom:10px}
+.ss-horizon{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.prediction-board{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.pb-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px}
+.pb-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:12px}
+.pb-table th{text-align:left;padding:6px 10px;color:var(--dim);font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.pb-table td{padding:8px 10px;border-bottom:1px solid #1e1e22;color:var(--muted);vertical-align:top}
+.pb-status{padding:2px 8px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:1px}
+.pb-status.open{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid #a78bfa}
+.pb-status.correct{background:rgba(74,222,128,.15);color:var(--green);border:1px solid var(--green)}
+.pb-status.wrong{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.pb-status.partial{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.section-label{font-family:var(--font-ui);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin:38px 0 16px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.markets-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.mkt{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.mkt-name{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.mkt-val{font-family:var(--font-ui);font-size:15px;font-weight:700;margin-top:3px}
+.mkt-chg{font-family:var(--font-ui);font-size:11px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+.mkt.ca{border-color:#5a2a2a}
+.connmap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:18px 0 8px;font-family:var(--font-ui);font-size:12px;line-height:2.2}
+.chip{display:inline-block;background:#1c1c20;border:1px solid var(--border);border-radius:14px;padding:3px 10px;margin:2px;color:var(--muted)}
+.chip .arr{color:var(--accent)}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:16px}
+.story-card.hidden{display:none}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.category-tag{color:var(--accent)}
+.trend-arrow{color:var(--muted)}
+.time-horizon{color:var(--dim)}
+.decision-badge{margin-left:auto;padding:2px 9px;border-radius:3px;font-weight:700}
+.decision-badge.act{background:rgba(224,82,82,.15);color:var(--red);border:1px solid var(--red)}
+.decision-badge.watch{background:rgba(200,160,48,.15);color:var(--accent);border:1px solid var(--accent)}
+.decision-badge.note{background:rgba(91,155,213,.15);color:var(--blue);border:1px solid var(--blue)}
+.card-title{font-size:19px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.layer1 p{margin:0 0 12px;font-size:15px}
+.so-what,.action-box,.contrarian{font-size:14px;border-radius:7px;padding:10px 13px;margin-bottom:9px}
+.so-what{background:#14171a;border-left:2px solid var(--blue)}
+.action-box{background:#161613;border-left:2px solid var(--accent)}
+.contrarian{background:#1a1416;border-left:2px solid var(--red);color:var(--muted)}
+.read-original,.gmail-source{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-right:14px}
+.deep-dive-btn{font-family:var(--font-ui);font-size:11px;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);border-radius:16px;padding:5px 14px;margin-top:12px;cursor:pointer}
+.layer2{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+.story-card.deep .layer2{display:block}
+.connections{margin-top:12px;font-family:var(--font-ui);font-size:11px;color:var(--dim)}
+.canadian-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:20px 24px;margin:32px 0}
+.cf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.cf-subtitle{font-style:italic;color:var(--muted);margin-bottom:16px;font-size:14px}
+.world-file{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px;padding:20px 24px;margin:32px 0}
+.wf-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.quick-hits li{margin-bottom:10px;font-size:15px}
+.long-game{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:15px;color:var(--muted)}
+.scorecard{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:13px}
+.scorecard td{padding:7px 10px;border-bottom:1px solid #1e1e22}
+.scorecard td:first-child{color:var(--muted);width:38%}
+.scorecard td:last-child{color:var(--text)}
+.footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:11px;color:var(--dim);text-align:center}
+@media(max-width:680px){.markets-grid{grid-template-columns:repeat(3,1fr)}.mast-title{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="masthead">
+  <div class="mast-top">
+    <div class="mast-title">THE BRIEF</div>
+    <div class="mast-meta">Edition #214 · June 11, 2026 · Morning</div>
+  </div>
+  <div class="mast-tagline">The ECB hikes into a war · SpaceX prices the biggest IPO ever · Iran shuts Hormuz again as China quietly caps the oil price.</div>
+  <div class="mast-note">A daily intelligence digest for Suhail Seth — India · Canada · the World.</div>
+</div>
+
+<div class="nav">
+  <span class="nav-pill active" onclick="filterStories('all',this)">All</span>
+  <span class="nav-pill" onclick="filterStories('macro',this)">Macro</span>
+  <span class="nav-pill" onclick="filterStories('markets',this)">Markets</span>
+  <span class="nav-pill" onclick="filterStories('tech',this)">AI / Tech</span>
+  <span class="nav-pill" onclick="filterStories('geopolitics',this)">Geopolitics</span>
+  <span class="nav-pill" onclick="filterStories('india',this)">India</span>
+  <span class="nav-pill" onclick="filterStories('canada',this)">🍁 Canada</span>
+  <span class="nav-pill" onclick="filterStories('world',this)">🌍 World</span>
+</div>
+
+<!-- ===================== EDITOR'S READ ===================== -->
+<div class="editors-read">
+  <div class="er-label">Editor's Read</div>
+  <div class="er-byline">Suhail Seth · June 11, 2026</div>
+  <div class="er-body">
+    <p>The market spent yesterday burying the Fed rate-cut trade after a 4.2% CPI print. This morning the European Central Bank did something more consequential: it actually hiked — 25 basis points, its first increase since 2023 — straight into a shooting war. That is the story.</p>
+    <p>For two months I've argued the Strait of Hormuz had stopped being an oil story and become a monetary one. The ECB just made it official. When a central bank tightens into a supply shock it cannot control, it is telling you the inflation it fears is no longer transitory — it is structural, and it is arriving through the energy line. Connect the dots: the ECB hikes, Fed futures now price a hike by year-end (a cut was consensus six weeks ago), the Bank of Canada held yesterday but quietly stripped the dovish language out of its statement, and the rupee sits at 95.7 while Indian gold prints a six-month low.</p>
+    <p>Four central banks, one mechanism: a war premium leaking out of crude and into core. The cross-border tell that matters to me as an operator in both Canada and India — weak CAD and weak INR are the same trade. Two dollar-sensitive, energy-exposed currencies getting crushed by a stronger dollar and a higher-for-longer path. This is a synchronized tightening regime, not a set of local decisions.</p>
+    <p>What happens next? Watch China. It has quietly cut crude imports by roughly 5 million barrels a day to cap the oil price. The day its reserves force it to buy again with Hormuz still shut is the day the "steady-state war" everyone is now pricing breaks. My call: the next surprise in oil is up, not down.</p>
+  </div>
+</div>
+
+<!-- ===================== SIGNAL SPOTLIGHT ===================== -->
+<div class="signal-spotlight" id="signal">
+  <div class="ss-label">⚡ Signal Spotlight</div>
+  <div class="ss-claim">China — not OPEC, not Iran — is setting the price of oil right now. It has cut crude imports by ~5 million barrels a day since the war began, and that single act of demand destruction is why Brent is near $95 instead of $130.</div>
+  <div class="ss-reasoning">Beijing is drawing down strategic reserves to pull this off, which has a clock on it. The moment China resumes pre-war buying with the Strait still closed, you strip ~5% of global demand-side slack out of a supply-constrained market — and the price gaps. Every macro desk is modelling the war. Almost none are modelling China's reserve drawdown as the real swing factor. The risk is mispriced because it sits inside the one actor nobody can audit.</div>
+  <div class="ss-horizon">Time horizon: weeks to one quarter</div>
+</div>
+
+<!-- ===================== PREDICTION BOARD ===================== -->
+<div class="prediction-board" id="predictions">
+  <div class="pb-label">🎯 Prediction Board</div>
+  <table class="pb-table">
+    <thead>
+      <tr><th>Edition</th><th>Prediction</th><th>Deadline</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>#214</td><td>India's Nifty 50 does <strong>not</strong> close above 24,000 before July 1 — war premium, rupee at ~95.7 and gold at a 6-month low keep FII flows defensive.</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#214</td><td>Brent crude does <strong>not</strong> sustain a close above $110/bbl before July 1 despite the renewed Hormuz "closed to all vessels" order — China's ~5M bpd import cut caps it.</td><td>Jun 30, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#214</td><td>The ECB does <strong>not</strong> hike again at its next meeting after today's 25bp move to a 2.25% deposit rate — staff projections (HICP 3.0% in 2026) give cover to pause.</td><td>Jul 31, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#213</td><td>The US 10-year Treasury yield closes ≥4.60% on at least one session before July 1 as the post-CPI hawkish repricing hardens.</td><td>Jul 1, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+      <tr><td>#213</td><td>The Fed does <strong>not</strong> cut at its June 16–17 meeting — the 4.2% CPI print removes the cut case.</td><td>Jul 1, 2026</td><td><span class="pb-status open">OPEN</span></td></tr>
+    </tbody>
+  </table>
+  <div style="font-family:var(--font-ui);font-size:11px;color:var(--dim);margin-top:12px">Resolved this edition: <span style="color:var(--green)">#210 — BoC holds at 2.25% on June 10 (5th straight hold), statement cites energy/oil inflation → CORRECT.</span></div>
+</div>
+
+<!-- ===================== GLOBAL MARKETS ===================== -->
+<div class="section-label">Global Markets · as of Jun 10 close / Jun 11 intraday</div>
+<div class="markets-grid">
+  <div class="mkt"><div class="mkt-name">S&amp;P 500</div><div class="mkt-val down">▼ 1.62%</div><div class="mkt-chg down">Jun 10 close</div></div>
+  <div class="mkt"><div class="mkt-name">Nasdaq</div><div class="mkt-val down">25,170</div><div class="mkt-chg down">▼ 1.98%</div></div>
+  <div class="mkt"><div class="mkt-name">Nikkei 225</div><div class="mkt-val up">68,402</div><div class="mkt-chg up">▲ latest</div></div>
+  <div class="mkt"><div class="mkt-name">Hang Seng</div><div class="mkt-val down">▼ 1.6%</div><div class="mkt-chg down">risk-off</div></div>
+  <div class="mkt"><div class="mkt-name">Nifty 50</div><div class="mkt-val down">23,162</div><div class="mkt-chg down">▼ 53</div></div>
+  <div class="mkt"><div class="mkt-name">Sensex</div><div class="mkt-val down">73,833</div><div class="mkt-chg down">▼ 151</div></div>
+  <div class="mkt ca"><div class="mkt-name">TSX Comp 🍁</div><div class="mkt-val down">34,151</div><div class="mkt-chg down">▼ 0.76% · 3-wk low</div></div>
+  <div class="mkt"><div class="mkt-name">USD/INR</div><div class="mkt-val down">95.74</div><div class="mkt-chg down">▲ rupee weak</div></div>
+  <div class="mkt ca"><div class="mkt-name">CAD/USD 🍁</div><div class="mkt-val down">0.715</div><div class="mkt-chg down">USD/CAD 1.399 · 8-wk low</div></div>
+  <div class="mkt"><div class="mkt-name">WTI Crude</div><div class="mkt-val flat">$89.2</div><div class="mkt-chg flat">Brent ~$95 ▲</div></div>
+  <div class="mkt"><div class="mkt-name">Gold</div><div class="mkt-val down">~$4,050</div><div class="mkt-chg down">▼ 6-mo low</div></div>
+  <div class="mkt"><div class="mkt-name">Bitcoin</div><div class="mkt-val down">$62,640</div><div class="mkt-chg down">▼ 14% MTD</div></div>
+  <div class="mkt"><div class="mkt-name">10Y UST</div><div class="mkt-val flat">4.52%</div><div class="mkt-chg flat">→ hawkish</div></div>
+  <div class="mkt ca"><div class="mkt-name">10Y GoC 🍁</div><div class="mkt-val up">3.49%</div><div class="mkt-chg up">▲ inflation bid</div></div>
+  <div class="mkt"><div class="mkt-name">VIX</div><div class="mkt-val up">22.2</div><div class="mkt-chg up">▲ 11.8%</div></div>
+</div>
+
+<!-- ===================== CONNECTION MAP ===================== -->
+<div class="connmap">
+  <span class="chip">HORMUZ CLOSED <span class="arr">→</span> BRENT ~$95</span>
+  <span class="chip">BRENT <span class="arr">→</span> ECB HIKE <span class="arr">→</span> FED HIKE BETS</span>
+  <span class="chip">FED HAWKISH <span class="arr">→</span> STRONG USD <span class="arr">→</span> CAD &amp; INR WEAK</span>
+  <span class="chip">CHINA −5M bpd <span class="arr">→</span> OIL CAPPED <span class="arr">→</span> RESERVE CLOCK</span>
+  <span class="chip">RATES SCARE <span class="arr">→</span> SPACEX PRICES ANYWAY</span>
+  <span class="chip">CPI 4.2% <span class="arr">→</span> GOLD 6-MO LOW <span class="arr">→</span> BTC −14%</span>
+</div>
+
+<!-- ===================== THE LEAD ===================== -->
+<div class="section-label">The Lead</div>
+<div class="story-card" data-cat="macro world europe markets" id="ecb-hike">
+  <div class="card-meta"><span class="category-tag">Macro · Europe</span><span class="trend-arrow">↑</span><span class="time-horizon">now–year-end</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">The ECB raises rates for the first time since 2023 — turning the Hormuz energy shock into a central-bank problem, not just a crude-price one</div>
+  <div class="layer1">
+    <p>The European Central Bank raised its three key rates by 25bp this morning — deposit to 2.25%, main refi to 2.40%, marginal lending to 2.65%, effective June 17 — its first hike since 2023. The Governing Council explicitly tied the move to the Middle East war and Strait of Hormuz disruption feeding energy-driven inflation, and called the decision "robust across a range of scenarios." New staff projections put euro-area HICP at 3.0% in 2026, easing to 2.3% in 2027, with growth a thin 0.8% this year.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A central bank tightening into a supply shock is a signal about the durability of inflation, not the strength of demand. This converts the Hormuz war from a commodity event into a synchronized global tightening regime: ECB hiking, Fed futures now pricing a hike by year-end, the BoC holding but turning less dovish. For an operator with India and Canada exposure, the read-through is identical on both sides — a stronger dollar and a higher-for-longer path pressure both the rupee (95.7) and the loonie (USD/CAD 1.40, an 8-week low).</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat "higher for longer" as the base case across all four blocs through the summer. Stress-test floating-rate exposure and any thesis that quietly assumed H2 cuts. Watch the June 16–17 FOMC for whether the Fed validates the hike bets.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: the ECB just hiked at the exact moment oil is rolling over (WTI back below $90, China capping crude). If Hormuz reopens and energy falls, the ECB has tightened into the top — and will be cutting again by Q4, with this hike remembered as a policy error, not a regime.</em></div>
+    <a class="read-original" href="https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260611~4d41bd5e83.en.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The last time the ECB hiked (2022–23) it was chasing post-Covid and post-Ukraine inflation that it had called transitory for a year. The institutional memory of being late is precisely why it is moving pre-emptively now. The tell is in the projections: a 3.0% 2026 HICP that converges to 2.0% only by 2028 is the ECB conceding that energy-driven inflation is sticky. Note the divergence with Canada: the 10Y GoC is at ~3.49% versus the 10Y UST at 4.52% — nearly a full point of spread — which is exactly why the loonie keeps leaking against the dollar even as Canadian yields rise.</div>
+  <div class="connections">Connected: Hormuz war · Fed hike bets · China oil cap · BoC hold</div>
+</div>
+
+<!-- ===================== SIGNAL BOARD ===================== -->
+<div class="section-label">Signal Board</div>
+
+<div class="story-card" data-cat="markets tech" id="spacex-ipo">
+  <div class="card-meta"><span class="category-tag">Markets · Tech</span><span class="trend-arrow">↑</span><span class="time-horizon">today / tomorrow</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">SpaceX prices the biggest IPO in history today — $135 a share, $75bn raised at a $1.75tn valuation — and trades tomorrow into a rate scare</div>
+  <div class="layer1">
+    <p>SpaceX sets its IPO price today and begins trading Friday on Nasdaq under SPCX. It is selling 555.6 million shares at a fixed $135, raising ~$75bn at a post-money valuation near $1.75 trillion — dwarfing Saudi Aramco's $35.4bn 2019 record. Reports put the book at more than four times oversubscribed, with $10bn+ in institutional orders verified; underwriters hold an option on a further 83.3m shares (~$11.2bn).</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A trillion-dollar listing pricing into a week when the Fed-cut trade just died is the cleanest tell yet that scarcity premium beats macro for genuinely singular assets. It also drains an enormous slug of capital from the market at exactly the moment OpenAI and Anthropic are circling the same IPO door — the funding pie is being tested in real time.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch Friday's first-day close versus $135 as the read on risk appetite. A strong debut re-opens the mega-IPO window; a break of issue price slams it shut for the AI labs behind it.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: "four times oversubscribed" at a fixed price is an allocation story, not a value story. Morningstar already called it overvalued by half. A pop on day one followed by a grind lower would be the textbook trajectory of a hyped, supply-constrained float.</em></div>
+    <a class="read-original" href="https://www.fool.com/investing/2026/06/11/spacex-ipo-135-share-is-it-a-buy-price-spcx/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb6516409a13b0" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Indian desks are already trading the proxy: ET reports investors using Inox (an Ambani-linked aerospace play) as a SpaceX read-through, and floating that the listing could "rub off on Ambani." That is the classic emerging-market pattern — when you can't buy the asset, you buy the locally listed adjacency and accept the tracking error.</div>
+  <div class="connections">Connected: AI IPO door · rate scare · India proxy plays</div>
+</div>
+
+<div class="story-card" data-cat="geopolitics macro world" id="hormuz">
+  <div class="card-meta"><span class="category-tag">Geopolitics</span><span class="trend-arrow">↑</span><span class="time-horizon">live</span><span class="decision-badge act">ACT</span></div>
+  <div class="card-title">Iran declares Hormuz "closed to all vessels" again and says it hit two tankers — Trump warns Tehran will "pay the price" as the ceasefire frays</div>
+  <div class="layer1">
+    <p>The US and Iran exchanged fire for a second straight day. Iran's IRGC declared the Strait of Hormuz closed to all vessels and claimed it struck two oil tankers in the channel; Trump said Iran would "pay the price" for not making a deal and that the US military had escorted ships carrying 100 million barrels through the strait — which, as Semafor notes, is just five days of normal throughput. Brent jumped overnight toward $95; WTI traded near $89.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The "escort 100 million barrels" line is the giveaway — managed transit is not open transit, and five days of flow does not unclog a 20-million-barrel-a-day artery. The market is pricing a recurring, capped disruption. The fat tail is a miscalculation that turns a managed standoff into a real closure.</div>
+    <div class="action-box"><strong>ACTION:</strong> Keep an energy hedge on through any "ceasefire" headline. The asymmetry favours owning upside oil optionality into a market that has convinced itself the premium is spent.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: Iran has "closed" Hormuz repeatedly for weeks and crude keeps fading. The closures are theatre with a release valve; China's import cut means even a real shutdown bites less than the 2019 playbook assumes.</em></div>
+    <a class="read-original" href="https://www.business-standard.com/world-news/strait-of-hormuz-closed-to-all-vessels-says-iran-s-irgc-after-us-strikes-126061100091_1.html" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The naval-escort approach is a tell about US intentions: Washington is trying to keep oil moving without a full ground commitment, which means the conflict is being managed for duration, not resolution. That favours a long tail of $80–100 crude rather than a single spike — unless the China demand variable flips.</div>
+  <div class="connections">Connected: ECB hike · China oil cap · gold · rupee</div>
+</div>
+
+<div class="story-card" data-cat="macro markets" id="fed-dead-cut">
+  <div class="card-meta"><span class="category-tag">Macro · Markets</span><span class="trend-arrow">↑</span><span class="time-horizon">to Jun 17 FOMC</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The Fed rate-cut trade is dead and the market now flirts with a hike — gold at a 6-month low and bitcoin down 14% are the cross-asset confirmation</div>
+  <div class="layer1">
+    <p>May CPI at 4.2% YoY — the hottest since April 2023 — pushed CME FedWatch to price zero cuts in 2026, with a year-end hike now on the table. The 10-year sits at 4.52%. The tell is in the safe-havens that aren't behaving like safe-havens: gold has slid to a six-month low near $4,050 and bitcoin is around $62,600, down ~14% month-to-date — a worse drawdown than gold's 10%.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Gold falling while CPI runs hot is the signature of a real-rates story, not an inflation-hedge story — when the market expects hikes, the discount rate beats the inflation bid. For India, a 6-month low in gold against a 95.7 rupee is unusual and worth watching: domestic gold demand and FX are pulling in opposite directions. For Canada, the same dollar strength that hammers gold is what keeps the loonie pinned.</div>
+    <div class="action-box"><strong>ACTION:</strong> Stop treating gold and bitcoin as war hedges in this regime — they are trading as rate-sensitive risk assets. The cleaner war hedge is energy.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: a one-month CPI print driven almost entirely by energy is exactly what the Fed looks through. If oil rolls over, the "hike" repricing reverses violently and gold's 6-month low becomes the buy of the quarter.</em></div>
+    <a class="read-original" href="https://www.techtimes.com/articles/318172/20260610/may-cpi-report-inflation-hits-42-tech-stocks-slide-fed-rate-cut-hopes-evaporate.htm" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb6325358e6dc1" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">VIX at 22.2 (+11.8% on the day) says the market is repricing, not panicking — there is no 30-handle fear spike yet. That gap between rising rates and still-contained volatility is the window in which a clean macro surprise (an oil gap, a failed Treasury auction) would do the most damage, because nobody is hedged for it.</div>
+  <div class="connections">Connected: ECB hike · Hormuz · SpaceX float</div>
+</div>
+
+<div class="story-card" data-cat="tech markets" id="ai-price-war">
+  <div class="card-meta"><span class="category-tag">AI · Tech</span><span class="trend-arrow">↓</span><span class="time-horizon">this year</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">OpenAI weighs drastic token price cuts to pre-empt Anthropic — the first real AI price war is about to test two pre-IPO business models</div>
+  <div class="layer1">
+    <p>OpenAI is considering significant cuts to its token pricing to counter anticipated cuts from Anthropic, as enterprise customers balk at AI usage bills. Both companies are already losing billions on compute; a price war would compress margins further — right as both circle public listings. TLDR frames it bluntly: this is an early stress test of whether either business model survives contact with competition.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The token is becoming a commodity, and commodities don't carry trillion-dollar multiples. A price war is great for every company that <em>buys</em> intelligence — including Indian IT services and Canadian SaaS operators whose input costs are about to fall — and brutal for the labs trying to IPO into it. Falling token prices are a margin tailwind for AI adopters and a margin headwind for AI sellers.</div>
+    <div class="action-box"><strong>ACTION:</strong> If you build on these APIs, delay long-term pricing commitments — the cost curve is bending in your favour. If you're sizing the AI-lab IPOs, model the price war into the unit economics before the roadshow does it for you.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: a price war accelerates consumption so fast that volume more than offsets per-token margin — the AWS playbook. Cheaper tokens could be the thing that finally makes these the highest-revenue software businesses ever built.</em></div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb6516409a13b0" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb6516409a13b0" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">This is the natural sequel to Anthropic's two-tier Mythos/Fable split from earlier this week: gate capability at the top, then fight on price at the bottom. The high end becomes a regulated, institution-only product with pricing power; the commodity tier races to zero. That bifurcation — premium-gated vs commodity-cheap — is the shape the whole industry is taking.</div>
+  <div class="connections">Connected: Anthropic two-tier · AI IPO door · enterprise adoption</div>
+</div>
+
+<div class="story-card" data-cat="macro geopolitics world" id="china-oil">
+  <div class="card-meta"><span class="category-tag">China · Macro</span><span class="trend-arrow">→</span><span class="time-horizon">this quarter</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">China is propping up the world economy by buying less oil — a ~5M bpd import cut is the hidden hand capping crude, even as it commits ~$295bn to an AI buildout</div>
+  <div class="layer1">
+    <p>China's crude imports have fallen by almost 5 million barrels a day — roughly 5% of global supply — since the Iran war began, helping tame prices that should be far higher with Hormuz shut. Demand destruction only partly explains it, by most accounts; Beijing is drawing down reserves. Separately, Sinocism reports a ~$295bn national AI/compute buildout and Xi's visit to North Korea this week — China managing both an energy ceiling and an industrial-policy surge at once.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The single most important number in the oil market is not Iranian — it is Chinese. A reserve-funded import cut is a temporary subsidy to the entire world's inflation rate. When it ends, the ECB's hike will look early and the Fed's "hike" repricing will look prescient. The AI buildout, meanwhile, is the demand-side bet that compute and power are the next strategic commodities.</div>
+    <div class="action-box"><strong>ACTION:</strong> Track Chinese customs crude-import data as the leading indicator for the next oil leg — it matters more than the next Hormuz headline.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: China's cut is structural demand destruction from a genuinely weak economy, not a tactical reserve play — in which case it persists, and the global oil ceiling holds for longer than the bulls think.</em></div>
+    <a class="read-original" href="https://sinocism.com/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb5f893a5c17e9" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The ~$295bn compute buildout connects to a thread I am watching closely: compute and power are migrating from "costs" to financialized, tradeable assets — Larry Fink has floated energy as a new futures category, and a state-scale Chinese buildout is the demand signal that makes power-as-an-asset investable. Watch whether a major exchange or asset manager converts that into a product.</div>
+  <div class="connections">Connected: Hormuz · ECB hike · compute-as-asset</div>
+</div>
+
+<div class="story-card" data-cat="tech world europe" id="google-liable">
+  <div class="card-meta"><span class="category-tag">AI · Regulation · Europe</span><span class="trend-arrow">↑</span><span class="time-horizon">precedent-setting</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">A German court makes Google the author of its own AI — Munich strips search "safe harbor" and holds it directly liable for false AI Overview answers</div>
+  <div class="layer1">
+    <p>The Landgericht München I issued a preliminary injunction holding Google directly and primarily liable for false, defamatory claims generated by its AI Overviews, after the feature falsely tied two publishers to "dubious business practices" that appeared in none of its cited sources. The court ruled Google "alone has influence over the AI's offering and the algorithms" — making it the author and publisher, outside DSA host-provider protections and beyond notice-and-takedown.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> This is the first ruling to treat AI-generated output as the platform's own speech rather than third-party content it merely hosts. If it holds, every AI search and assistant product in Europe inherits publisher-grade liability for what its model says — a structural cost and design constraint, not a one-off fine. It reframes the entire "we just surface information" defense.</div>
+    <div class="action-box"><strong>ACTION:</strong> Anyone shipping generative features into the EU should assume output liability is coming and build retrieval/citation guardrails now, before the precedent hardens on appeal.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: a preliminary injunction from one regional court is not settled law. Higher German and EU courts may restore intermediary protections, and the ruling becomes a footnote rather than a template.</em></div>
+    <a class="read-original" href="https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">This stacks on the Independent Publishers Alliance antitrust complaint and the European Commission's December 2025 Article 102 proceedings over AI Overviews using publisher content without compensation or opt-out. Europe is assembling a two-front pincer on AI search — liability for what the model says and antitrust for how it's built — that the US shows no appetite to match.</div>
+  <div class="connections">Connected: AI price war · EU regulation · publisher economics</div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="india-ai">
+  <div class="card-meta"><span class="category-tag">India</span><span class="trend-arrow">↑</span><span class="time-horizon">structural</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">India's AI winners strike $48 billion — but the rupee at 95.7 and gold at a 6-month low show the macro tape fighting the equity story</div>
+  <div class="layer1">
+    <p>ET's lead reports India's AI cohort has captured ~$48 billion in value, with pharma names also rallying. But the index tape is heavy: Sensex at 73,833 (−151) and Nifty at 23,162 (−53), with the rupee at a record-weak 95.7 and domestic gold at a six-month low. A US Section 301 trade probe still hangs over an expanded India–US deal, and quick-commerce player Zepto has filed its IPO papers into this same crosswind.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Two India stories are running in opposite directions — a structural AI/services value-capture narrative, and a cyclical war-and-dollar macro drag. A 95.7 rupee is a real tailwind for IT and pharma exporters (revenue in dollars, costs in rupees) even as it pressures importers and the broad index. The split tape rewards selection over beta.</div>
+    <div class="action-box"><strong>ACTION:</strong> Lean toward dollar-revenue exporters over domestic-demand names while the rupee stays weak; watch the Section 301 probe as the binary risk to the India–US deal before mid-August.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: a 95.7 rupee is a flashing warning, not a tailwind — if FII outflows accelerate on the war premium, the currency drag swamps the export benefit and the whole index de-rates regardless of the AI story.</em></div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb68c265dff736" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb68c265dff736" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">Note the China–India infrastructure handoff buried in the same ET edition: a Chinese company has taken over a Kenya airport project after Adani exited. The same week India's AI cohort books $48bn, China is quietly absorbing the African infra footprint India is vacating — two different bets on where the next decade of returns sits.</div>
+  <div class="connections">Connected: rupee · Section 301 probe · Zepto IPO · gold</div>
+</div>
+
+<div class="story-card" data-cat="geopolitics tech world" id="killer-robots">
+  <div class="card-meta"><span class="category-tag">Defense · Frontier</span><span class="trend-arrow">↑</span><span class="time-horizon">now</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Fully autonomous war robots are confirmed to have killed — the drone-and-AI rewrite of warfare crosses a line on the Ukraine front</div>
+  <div class="layer1">
+    <p>Semafor's flagship confirms fully autonomous weapons systems have now made lethal kill decisions without a human in the loop, with drones and AI reshaping the battlefield in Ukraine. It arrives the same week a German court ruled AI output is the platform's own speech — two ends of the same question about who is accountable when a machine acts.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> The autonomy threshold in warfare has been crossed quietly, while the regulatory debate is still theoretical. The defense-tech and autonomy supply chain — sensors, edge compute, drone airframes — is now a confirmed-demand category, not a speculative one, and the liability framework is nowhere close to catching up.</div>
+    <div class="action-box"><strong>ACTION:</strong> Treat autonomous-weapons capability as a live procurement reality when reading defense and dual-use names; the policy backlash is a future catalyst, not a present brake.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: "confirmed autonomous kill" is doing heavy lifting — most "autonomous" systems still have humans approving target sets. The line may be blurrier than the headline, and the capability less mature than the fear.</em></div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+  </div>
+  <button class="deep-dive-btn" onclick="toggleDeep(this.parentElement)">Go Deeper ↓</button>
+  <div class="layer2">The accountability vacuum is the through-line of today's edition: a German court says a company owns what its AI writes, but no court has yet said who owns what an autonomous weapon does. The gap between deployed capability and legal responsibility is widening fastest exactly where the stakes are highest.</div>
+  <div class="connections">Connected: Google liability · defense tech · AI regulation</div>
+</div>
+
+<!-- ===================== THE CANADIAN FILE ===================== -->
+<div class="canadian-file" id="canada-file">
+  <div class="cf-label">🍁 The Canadian File</div>
+  <div class="cf-subtitle">Macklem holds but turns less dovish · Apotex pulls off the biggest life-sciences IPO in TSX history · the loonie at an 8-week low.</div>
+
+  <div class="story-card" data-cat="canada macro" id="boc">
+    <div class="card-meta"><span class="category-tag">Canada · Rates</span><span class="trend-arrow">→</span><span class="time-horizon">to Sept/Oct</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Macklem holds at 2.25% for a fifth time — but quietly drops the dovish language, and economists now read September as the turning point</div>
+    <div class="layer1">
+      <p>The Bank of Canada held at 2.25% on Wednesday (its fifth consecutive hold), framing the decision purely as a "balance of risks" amid the Iran-driven oil shock. Sibley Creek's Jay Zhao-Murray flags that the BoC dropped the word "appropriate" on the rate level and cut the line that "changes in the policy rate can be expected to be small" — and reads September, with October's monetary policy report, as the likely break point in either direction. Scotiabank's Derek Holt argues the BoC is over-weighting the trade conflict.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The BoC is now openly torn between two opposite moves — cut if the tariff-hit economy stalls, hike if inflation spreads beyond the gas pump. The dropped language is the dovish tilt quietly leaving the building. With the 10Y GoC at 3.49% versus the 10Y UST at 4.52%, the rate-differential pressure on the loonie isn't going away whichever way the BoC eventually jumps.</div>
+      <div class="action-box"><strong>ACTION:</strong> Map both branches now — a stagflation cut and an inflation hike are very different worlds for CAD-exposed borrowing and hiring. September is the decision the curve is building toward.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: parsing dropped words is over-reading a routine hold. The BoC may simply sit at 2.25% into 2027, and the "September turning point" is economist theatre around a bank that wants to do nothing.</em></div>
+      <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb6b7f52969fb7" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb6b7f52969fb7" target="_blank">Gmail source</a>
+    </div>
+    <div class="connections">Connected: ECB hike · Fed · loonie · CUSMA</div>
+  </div>
+
+  <div class="story-card" data-cat="canada markets" id="apotex">
+    <div class="card-meta"><span class="category-tag">Canada · Markets</span><span class="trend-arrow">↑</span><span class="time-horizon">this week</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Apotex jumps 12% in its TSX debut — Canada's biggest life-sciences IPO ever lands a strong open even as the index hits a three-week low</div>
+    <div class="layer1">
+      <p>Apotex Health (TSX: APTX) rose ~12% to about $27 from a $24 offer in its market debut, raising ~$1.3 billion — the largest life-sciences IPO in TSX history and the biggest TSX float since 2021. It opened on a rough tape: the S&P/TSX Composite fell 260 points (−0.76%) to 34,151, a three-week low, with miners down hard as gold slid (Barrick −5%, Agnico −4.7%) and energy names up on oil.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> A billion-dollar IPO popping into a risk-off, three-week-low tape says the Canadian primary market is open for the right asset — quality and scarcity are cutting through the macro gloom. It also shows the TSX's split personality this week: defensive bid leaving gold, risk bid chasing energy and a marquee new listing.</div>
+      <div class="action-box"><strong>ACTION:</strong> If Apotex holds its premium, expect the Canadian IPO pipeline to test the window behind it. Watch whether the gold-miner selloff is a rotation or the start of a deeper de-rate.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: a 12% pop on a heavily marketed, single-name life-sciences float is sentiment, not a re-opening. One strong debut in a down tape can just as easily mark the top of risk appetite as the start of a pipeline.</em></div>
+      <a class="read-original" href="https://www.theglobeandmail.com/business/article-apotex-shares-jump-12-in-tsx-debut-of-billion-dollar-ipo/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb622f61be0c01" target="_blank">Gmail source</a>
+    </div>
+    <div class="connections">Connected: SpaceX float · gold selloff · TSX</div>
+  </div>
+
+  <div class="story-card" data-cat="canada geopolitics" id="cusma">
+    <div class="card-meta"><span class="category-tag">Canada · Trade</span><span class="trend-arrow">↓</span><span class="time-horizon">to Jul 1</span><span class="decision-badge watch">WATCH</span></div>
+    <div class="card-title">Trump dangles a USMCA threat again — and the July 1 review deadline turns the trade pact into a live Canadian risk</div>
+    <div class="layer1">
+      <p>Semafor's flagship flags a renewed Trump USMCA threat as the July 1 trilateral review approaches. Canada and Mexico are negotiating against a US administration that has used tariff leverage repeatedly; the BoC itself cited "trade troubles with the United States" as one of the two forces pinning its rate decision. A signed 16-year CUSMA extension by July 1 looks unlikely on current form.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Trade uncertainty is now baked into Canadian monetary policy itself — the BoC can't cut decisively while the tariff path is unknown. For any operator with Canadian goods exposure, the July 1 review is a hard date to plan around, not a background risk.</div>
+      <div class="action-box"><strong>ACTION:</strong> Treat July 1 as a scenario fork for Canadian supply chains; don't assume a clean extension. Hedge tariff-sensitive cost lines into the review.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: Trump's tariff threats have a high bark-to-bite ratio, and a last-minute extension or quiet rollover is the base case. The "threat" may be negotiating posture that resolves without disruption.</em></div>
+      <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+    </div>
+    <div class="connections">Connected: BoC hold · loonie · US tariffs</div>
+  </div>
+</div>
+
+<!-- ===================== THE WORLD SCAN ===================== -->
+<div class="world-file" id="world-scan">
+  <div class="wf-label">🌍 The World Scan</div>
+  <div class="cf-subtitle">Europe tightens and litigates AI · Southeast Asia keeps funding climate and blue-collar tech · Africa opens the World Cup as South Africa's growth flatlines.</div>
+
+  <div class="story-card" data-cat="world europe macro" id="europe-scan">
+    <div class="card-meta"><span class="category-tag">🌍 Europe</span><span class="trend-arrow">↑</span><span class="time-horizon">now</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Europe's double move: the ECB hikes into the war while a German court redraws the liability map for AI search</div>
+    <div class="layer1">
+      <p>Beyond the lead ECB hike, Europe is also setting the world's AI-accountability precedent: the Munich court's AI Overviews ruling (covered above) makes Google the publisher of its own model's output. Markets had already priced the ECB move; the surprise is the willingness to tighten with growth at just 0.8%. Ukraine, meanwhile, remains the proving ground for the autonomous-weapons shift.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Europe is simultaneously the most hawkish major central bank right now and the most aggressive AI regulator — a bloc choosing to lead on both monetary discipline and tech accountability while the US leans the other way. That divergence is itself a tradeable theme across rates and tech.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch whether the ECB hike is one-and-done (my call) or the start of a cycle — the July meeting decides which.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: Europe is tightening into a stagnant 0.8%-growth economy and litigating its own tech sector into irrelevance — leadership that reads as self-harm if the war premium fades.</em></div>
+      <a class="read-original" href="https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260611~4d41bd5e83.en.html" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb61d642c85bed" target="_blank">Gmail source</a>
+    </div>
+    <div class="connections">Connected: ECB lead · Google liability · Ukraine autonomy</div>
+  </div>
+
+  <div class="story-card" data-cat="world sea tech" id="sea-scan">
+    <div class="card-meta"><span class="category-tag">🌍 Southeast Asia</span><span class="trend-arrow">↑</span><span class="time-horizon">structural</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Singapore quietly owns Southeast Asia's climate-tech money — ~$872M of the region's ~$1.1B in tracked equity funding — while Indonesia funds blue-collar tech</div>
+    <div class="layer1">
+      <p>Singapore accounted for roughly $872 million of the ~$1.1 billion in disclosed Southeast Asian climate-tech equity tracked from 2018 to early June 2026, cementing its role as the region's capital hub; Indonesia trails at ~$162 million. In Indonesia, blue-collar job platform Pintarnya secured a $14 million credit facility to expand — a signal that SEA funding is concentrating in AI, fintech, deep tech and real-economy labor tooling rather than consumer hype.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> Southeast Asia's "easy-money phase is over, discipline phase is here" — capital is flowing to future-demand sectors (climate, blue-collar logistics, deep tech) and Singapore is the gateway. For anyone allocating to emerging Asia, the regional thesis is consolidating around Singapore-as-hub with Indonesia as the volume market.</div>
+      <div class="action-box"><strong>ACTION:</strong> Treat Singapore as the SEA climate/deep-tech access point and Indonesia as the demand-scale play; the consumer-internet era's froth is gone.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: $1.1B over eight years is tiny — SEA climate tech is a rounding error, and concentration in Singapore reflects a thin, illiquid market, not a winning hub.</em></div>
+      <a class="read-original" href="https://www.eco-business.com/news/funding-for-climate-tech-startups-in-southeast-asia-rose-year-on-year-in-2025/" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://www.techinasia.com/" target="_blank">Source</a>
+    </div>
+    <div class="connections">Connected: emerging-Asia allocation · deep tech · climate</div>
+  </div>
+
+  <div class="story-card" data-cat="world africa macro" id="africa-scan">
+    <div class="card-meta"><span class="category-tag">🌍 Africa</span><span class="trend-arrow">→</span><span class="time-horizon">now</span><span class="decision-badge note">NOTE</span></div>
+    <div class="card-title">Africa opens the World Cup with a record 10 teams as South Africa's growth flatlines, Rwanda lands an IMF facility, and DRC tightens cobalt</div>
+    <div class="layer1">
+      <p>South Africa kicks off the World Cup against co-host Mexico today, anchoring the largest-ever African contingent (10 teams) — even as Semafor Africa reports the country's GDP growth came in flat. Rwanda secured an IMF credit facility, gas is being framed as a growth driver, and the DRC moved to tighten cobalt export restrictions. Daily Maverick separately flags an Ebola outbreak spreading in the DRC.</p>
+      <div class="so-what"><strong>SO WHAT:</strong> The market-relevant signal is DRC cobalt — restrictions from the world's dominant supplier are a direct input to battery and EV cost curves at a moment when energy and critical minerals are already politicized. Rwanda's IMF deal shows frontier financing is still flowing despite the global war premium; flat South African growth shows the continent's anchor economy isn't yet converting the spotlight into momentum.</div>
+      <div class="action-box"><strong>ACTION:</strong> Watch DRC cobalt policy as a critical-minerals price input; track the Ebola outbreak as a regional-stability and logistics risk in central Africa.</div>
+      <div class="contrarian">💭 <em>Here is the version where this is wrong: DRC export "restrictions" are routine posturing that rarely move delivered cobalt, and the World Cup macro bump for host and participant economies outweighs the soft-growth print.</em></div>
+      <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb174b97ee2639" target="_blank">Read original →</a>
+      <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb174b97ee2639" target="_blank">Gmail source</a>
+    </div>
+    <div class="connections">Connected: critical minerals · IMF frontier financing · World Cup macro</div>
+  </div>
+</div>
+
+<!-- ===================== OPPORTUNITY BOARD ===================== -->
+<div class="section-label">Opportunity Board</div>
+
+<div class="story-card" data-cat="india markets" id="opp-india">
+  <div class="card-meta"><span class="category-tag">Opportunity · India</span><span class="trend-arrow">↑</span><span class="time-horizon">this quarter</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">A 95.7 rupee is a hidden subsidy to Indian exporters — the FX drag the index hates is a margin gift to IT and pharma</div>
+  <div class="layer1">
+    <p>The rupee's slide to a record-weak 95.7 against the dollar is being read as risk, but for dollar-revenue, rupee-cost businesses — IT services, pharma, specialty manufacturing — it is a translated-margin tailwind. ET's edition pairs the AI cohort's $48bn value-capture with a pharma rally; both are export-weighted.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> In a weak-rupee regime, the cleanest India exposure is the export book, not the domestic-consumption book. The opportunity is in selection — owning the FX winners while the index discounts the whole market for the war premium.</div>
+    <div class="action-box"><strong>ACTION:</strong> Screen for high-dollar-revenue, low-import-cost Indian names; treat the Section 301 probe as the binary that could reprice the trade before mid-August.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: a record-weak currency is rarely a clean "buy exporters" story — it usually signals capital flight that drags every name down before the FX benefit ever shows up in earnings.</em></div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb68c265dff736" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb68c265dff736" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: rupee · India AI · gold</div>
+</div>
+
+<div class="story-card" data-cat="canada markets" id="opp-canada">
+  <div class="card-meta"><span class="category-tag">Opportunity · Canada</span><span class="trend-arrow">↑</span><span class="time-horizon">months</span><span class="decision-badge watch">WATCH</span></div>
+  <div class="card-title">The TSX IPO window just proved it's open — Apotex's debut is the signal Canadian primary issuance has been waiting for</div>
+  <div class="layer1">
+    <p>Apotex's ~$1.3bn float pricing strongly into a three-week-low tape is the first hard evidence in a while that Canadian institutional appetite for new equity is intact for quality. It reopens a question for any Canadian operator with scale: is the public-market door wide enough to walk through this year?</p>
+    <div class="so-what"><strong>SO WHAT:</strong> A successful marquee IPO in a down tape de-risks the path for the names behind it. For a Canadian business owner, the read is timing — the window can shut fast if the war premium spikes or the BoC turns, so a strong print now is an argument for moving sooner rather than waiting for a calmer tape that may not come.</div>
+    <div class="action-box"><strong>ACTION:</strong> If Canadian listing is anywhere on the multi-year roadmap, pressure-test the case for accelerating into this open window rather than waiting out the macro.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: one life-sciences name is not a market. A loonie at 8-week lows and a BoC that may hike is a hostile backdrop for issuance, and the window could be shut again within weeks.</em></div>
+    <a class="read-original" href="https://www.theglobeandmail.com/business/article-apotex-shares-jump-12-in-tsx-debut-of-billion-dollar-ipo/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb622f61be0c01" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: Apotex · SpaceX float · BoC</div>
+</div>
+
+<div class="story-card" data-cat="macro tech" id="opp-compute">
+  <div class="card-meta"><span class="category-tag">Opportunity · Compute</span><span class="trend-arrow">↑</span><span class="time-horizon">2–4 quarters</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Compute and power are becoming tradeable assets — China's ~$295bn buildout plus Fink's energy-futures pitch point to a new instrument class</div>
+  <div class="layer1">
+    <p>China's state-scale ~$295bn AI/compute buildout is the latest data point that electricity and compute are migrating from operating costs to strategic, potentially financialized commodities — the same direction Larry Fink gestured at by floating energy as a new futures category.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> When the largest buyers in the world treat compute and power as strategic assets, the next step is a market to hedge and trade them. The opportunity is in the picks-and-shovels and the eventual instruments — power, grid, cooling, and the financial wrappers around AI-driven demand.</div>
+    <div class="action-box"><strong>ACTION:</strong> Watch for a major exchange or asset manager launching a power- or compute-linked product; that launch is the confirmation that turns this thread from idea into investable.</div>
+    <div class="contrarian">💭 <em>Here is the version where this is wrong: "compute futures" is a narrative in search of a contract. Power is already traded; bolting an "AI" label on it doesn't create a new asset class, just a new marketing wrapper.</em></div>
+    <a class="read-original" href="https://sinocism.com/" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb5f893a5c17e9" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: China buildout · AI power demand · energy futures</div>
+</div>
+
+<!-- ===================== ALSO ON RADAR ===================== -->
+<div class="section-label">Also on Radar</div>
+
+<div class="story-card" data-cat="tech" id="brain-implant">
+  <div class="card-meta"><span class="category-tag">Frontier Tech</span><span class="trend-arrow">↑</span><span class="time-horizon">now</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">China approves the world's first commercial brain implant — beating Neuralink to market by years</div>
+  <div class="layer1">
+    <p>China's NMPA approved commercial use of NEO, a coin-sized brain-computer interface from Shanghai's NeuraMatrix and Tsinghua, letting patients control a pneumatic glove by thought. Neuralink has implanted its N1 in 21+ patients under research protocols but has no commercial approval — China just leapt ahead on the regulatory clock.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> First commercial approval is a durable lead in a field where regulatory precedent compounds. China is showing it will approve frontier medical tech faster than the US — a pattern with implications well beyond BCIs.</div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb6516409a13b0" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb6516409a13b0" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: China tech · regulatory speed · Neuralink</div>
+</div>
+
+<div class="story-card" data-cat="india markets" id="zepto">
+  <div class="card-meta"><span class="category-tag">India · IPO</span><span class="trend-arrow">→</span><span class="time-horizon">months</span><span class="decision-badge note">NOTE</span></div>
+  <div class="card-title">Zepto files to go public — India's quick-commerce wants public money before the margins are proven</div>
+  <div class="layer1">
+    <p>Finshots dissects Zepto's IPO filing, asking what the 10-minute-delivery business is really worth. The filing lands in a heavy India tape (Nifty 23,162, rupee 95.7) and into a global IPO week dominated by SpaceX.</p>
+    <div class="so-what"><strong>SO WHAT:</strong> Quick-commerce IPOs test whether public investors will fund land-grab economics that haven't cleared profitability — the same question hanging over the AI labs, just at India scale. The timing into a weak tape is itself a tell about how long the private window stays friendly.</div>
+    <a class="read-original" href="https://mail.google.com/mail/u/0/#inbox/19eb4e7579132c41" target="_blank">Read original →</a>
+    <a class="gmail-source" href="https://mail.google.com/mail/u/0/#inbox/19eb4e7579132c41" target="_blank">Gmail source</a>
+  </div>
+  <div class="connections">Connected: SpaceX float · India macro · quick-commerce</div>
+</div>
+
+<!-- ===================== QUICK HITS ===================== -->
+<div class="section-label">Quick Hits</div>
+<ul class="quick-hits">
+  <li><strong>Apotex +12% in its TSX debut, ~$1.3bn raised</strong> — the Canadian life-sciences IPO window is open even in a risk-off tape, which says more about appetite than the index level does.</li>
+  <li><strong>China approved the world's first commercial brain implant (NEO)</strong> — it beat Neuralink to market commercially, confirming China will out-speed the US on frontier-medical approvals.</li>
+  <li><strong>Bitcoin ~$62,600, down ~14% MTD versus gold's ~10%</strong> — "digital gold" is failing its first real war-and-inflation test, trading as risk, not refuge.</li>
+  <li><strong>A Chinese firm took over a Kenya airport after Adani exited</strong> — Beijing is absorbing the African infrastructure footprint India is vacating, one project at a time.</li>
+  <li><strong>Rwanda secured an IMF credit facility</strong> — frontier-market financing is still flowing despite the global war premium, a small vote of confidence in African macro.</li>
+  <li><strong>The World Cup opens today (Mexico v South Africa), a ~$13bn tournament</strong> — a genuine, if temporary, growth tailwind for the three North American hosts heading into a soft patch.</li>
+  <li><strong>VIX at 22.2 (+11.8%)</strong> — fear is rising but nowhere near panic; the market is repricing the war and rates, not capitulating to them.</li>
+  <li><strong>Life Biosciences dosed its first age-reversal vision-therapy patients</strong> — a five-year readout, but the first human test of "make cells young again" is now live.</li>
+</ul>
+
+<!-- ===================== THE LONG GAME ===================== -->
+<div class="section-label">The Long Game</div>
+<div class="long-game">
+The slow-burn to watch is the financialization of compute and power. Within a single week we have China committing ~$295bn to a national AI/compute buildout, AI labs heading for trillion-dollar listings, and the energy line driving four central banks' decisions. The logical endpoint is that electricity and compute stop being operating costs and become strategic, tradeable, hedgeable commodities — with futures, indices, and the financial plumbing to match. Larry Fink has already floated energy as a new futures category; a state-scale Chinese buildout is the demand signal that makes power-as-an-asset investable. The day a major exchange or asset manager launches a compute- or power-linked instrument is the day this thread stops being a thesis and becomes a market. Watch the picks-and-shovels — grid, cooling, transmission — ahead of the instruments themselves.
+</div>
+
+<!-- ===================== COVERAGE SCORECARD ===================== -->
+<div class="section-label">Coverage Scorecard</div>
+<table class="scorecard">
+  <tr><td>Edition</td><td>#214 · June 11, 2026 · Morning</td></tr>
+  <tr><td>Sources scanned</td><td>Semafor Flagship + Washington DC + Africa, Finshots, Morning Brew, TLDR, 1440, Inc42, Axios, Brew Markets, The Peak, Financial Post (Posthaste), Sinocism, Daily Maverick, Economic Times, Tech in Asia (web), plus web searches for markets/links</td></tr>
+  <tr><td>Stories featured</td><td>17 cards + 8 Quick Hits</td></tr>
+  <tr><td>India stories</td><td>3 (AI $48bn / rupee / gold; export-FX opportunity; Zepto IPO) + Kenya-airport quick hit</td></tr>
+  <tr><td>Canada stories</td><td>3 (BoC hold + dovish-language drop; Apotex IPO; USMCA threat) + IPO-window opportunity</td></tr>
+  <tr><td>Europe stories</td><td>2 (ECB hike = LEAD; German court Google-AI liability) + Europe World-Scan card</td></tr>
+  <tr><td>Southeast Asia stories</td><td>1 (Singapore climate-tech hub + Indonesia Pintarnya) — World Scan</td></tr>
+  <tr><td>Africa stories</td><td>1 (World Cup + flat SA GDP + Rwanda IMF + DRC cobalt + Ebola) — World Scan</td></tr>
+  <tr><td>China-lens disposition</td><td>1 hit (Sinocism: Xi to North Korea, ~$295bn AI buildout) — surfaced as Signal Board card + Opportunity Board + Long Game, cross-referenced to the compute-as-asset thread</td></tr>
+  <tr><td>World-desk hits scanned</td><td>Semafor Flagship (2 issues), Washington DC (2), Africa (1), Daily Maverick (2), Tech in Asia (none in inbox → web search), Europe web search run</td></tr>
+  <tr><td>Theme rotation</td><td>LEAD topic = ECB rate hike (new); prior 2 LEADs = US CPI 4.2% (#213), US-Iran bombing (#212). Decision: NEW anchor, distinct from both.</td></tr>
+  <tr><td>Predictions</td><td>1 resolved (#210 BoC hold → CORRECT); 3 new (#214: Nifty &lt;24k, Brent &lt;$110, ECB one-and-done)</td></tr>
+</table>
+
+<div class="footer">
+  THE BRIEF · Edition #214 · Generated June 11, 2026 · India · Canada · World<br>
+  A daily intelligence digest. Opinions are the editor's own and are not investment advice.
+</div>
+
+</div>
+
+<script>
+function toggleCard(card){card.classList.toggle('open');}
+function toggleDeep(card){
+  card.classList.toggle('deep');
+  const btn=card.querySelector('.deep-dive-btn');
+  if(btn)btn.textContent=card.classList.contains('deep')?'Collapse ↑':'Go Deeper ↓';
+}
+function scrollToStory(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});if(!el.classList.contains('open'))el.classList.add('open');}
+}
+function filterStories(cat,pill){
+  document.querySelectorAll('.nav-pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(cat==='all'){document.querySelectorAll('[data-cat]').forEach(el=>el.classList.remove('hidden'));return;}
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const cats=(el.getAttribute('data-cat')||'').split(' ');
+    el.classList.toggle('hidden',!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
